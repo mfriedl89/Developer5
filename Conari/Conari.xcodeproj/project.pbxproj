@@ -13,6 +13,8 @@
 		E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC01CBE2220003001BD /* Assets.xcassets */; };
 		E06D7FC41CBE2220003001BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */; };
 		E06D7FCF1CBE2220003001BD /* ConariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FCE1CBE2220003001BD /* ConariTests.swift */; };
+		E07CFBFF1CBE2B97005BDFAA /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
+		E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		E06D7FCA1CBE2220003001BD /* ConariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06D7FCE1CBE2220003001BD /* ConariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariTests.swift; sourceTree = "<group>"; };
 		E06D7FD01CBE2220003001BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
+		E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				E06D7FC01CBE2220003001BD /* Assets.xcassets */,
 				E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */,
 				E06D7FC51CBE2220003001BD /* Info.plist */,
+				E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */,
+				E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */,
 			);
 			path = Conari;
 			sourceTree = "<group>";
@@ -197,8 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */,
 				E06D7FBC1CBE2220003001BD /* ViewController.swift in Sources */,
 				E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */,
+				E07CFBFF1CBE2B97005BDFAA /* WelcomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +398,7 @@
 				E06D7FD51CBE2220003001BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E06D7FD61CBE2220003001BD /* Build configuration list for PBXNativeTarget "ConariTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +407,7 @@
 				E06D7FD81CBE2220003001BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
