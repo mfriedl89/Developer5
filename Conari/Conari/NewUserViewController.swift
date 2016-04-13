@@ -59,13 +59,91 @@ func checkingNameAndSurname(name: String) -> Bool {
 
 //TODO: check if username isn`t used yet
 
+func checkEmailAddress(mail:String) -> Bool {
+        // println("validate calendar: \(testStr)")
+    let trimmedStr = mail.stringByTrimmingCharactersInSet(
+        NSCharacterSet.whitespaceAndNewlineCharacterSet()
+    )
 
-class NewUserViewController: UIViewController {
+    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+    let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
     
+    return emailTest.evaluateWithObject(trimmedStr) ? true : false
+}
+
+func checkPassword(password:String) -> Bool {
+    
+    var lowLetterExists = false
+    var upperLetterExists = false
+    var specialLetterExists = false
+    var countExists = false
+    
+    let upperCaseLetterSet:NSCharacterSet = NSCharacterSet.uppercaseLetterCharacterSet()
+    let lowerCaseLetterSet:NSCharacterSet = NSCharacterSet.lowercaseLetterCharacterSet()
+    let specialCharacterSet:NSCharacterSet = NSCharacterSet.init(charactersInString: "!\"§$%&/()=?´`+*#'-_.:,;<>@")
+    let countCaseLetterSet:NSCharacterSet = NSCharacterSet.decimalDigitCharacterSet()
+    
+    if(password.characters.count < 8 || password.characters.count > 32) {
+        return false
+    }
+
+
+    for Character in password.utf16 {
+        if(lowerCaseLetterSet.characterIsMember(Character)) {
+            lowLetterExists = true
+        }
+        else if(upperCaseLetterSet.characterIsMember(Character)) {
+            upperLetterExists = true
+        }
+        else if(countCaseLetterSet.characterIsMember(Character)) {
+            countExists = true
+        }
+        else if(specialCharacterSet.characterIsMember(Character)) {
+            specialLetterExists = true
+        }
+    }
+    
+    if(lowLetterExists == true &&
+       upperLetterExists == true &&
+       specialLetterExists == true &&
+       countExists == true) {
+        return true
+    }
+    else {
+        return false
+    }
+    
+}
+
+func checkRepeatedPassword(password:String, repeated:String) -> Bool {
+
+    return (password == repeated) ? true : false
+}
+
+class NewUserViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var surname: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var repeatedPassword: UITextField!
+    
+    
+    @IBOutlet weak var doneBtn: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+
+        userName.delegate = self
+        name.delegate = self
+        surname.delegate = self
+        email.delegate = self
+        password.delegate = self
+        repeatedPassword.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,15 +161,24 @@ class NewUserViewController: UIViewController {
      }
      */
     
-    @IBOutlet weak var userName: UITextField!
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var surname: UITextField!
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var repeatedPassword: UITextField!
-    
-      
-    @IBOutlet weak var doneBtn: UIButton!
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if(textField == userName) {
+            name.becomeFirstResponder()
+        }
+        else if(textField == name) {
+            surname.becomeFirstResponder()
+        }
+        else if(textField == surname) {
+            email.becomeFirstResponder()
+        }
+        else if(textField == email) {
+            password.becomeFirstResponder()
+        }
+        else {
+            repeatedPassword.becomeFirstResponder()
+        }
+        return true
+    }
     
     @IBAction func test(sender: UIButton) {
         
@@ -103,7 +190,15 @@ class NewUserViewController: UIViewController {
 
         bool = checkingNameAndSurname(surname.text!)
         checkInput(bool, textField: surname)
-
+        
+        bool = checkEmailAddress(email.text!)
+        checkInput(bool, textField: email)
+        
+        bool = checkPassword(password.text!)
+        checkInput(bool, textField: password)
+        
+        bool = checkRepeatedPassword(password.text!, repeated: repeatedPassword.text!)
+        checkInput(bool, textField: repeatedPassword)
         
     }
     
