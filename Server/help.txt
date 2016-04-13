@@ -1,0 +1,30 @@
+https://citycommerce.net/
+
+
+
+FindTutorial.php: 
+/*	Reveives: title */
+/*  Returns Array: {[TutID,Title,Category,Difficulty,Duration]} */
+$title   = $_POST['title'];
+
+RequestTutorial.php 
+	/*	Receives: tutorialID */
+	/*  Returns Array: {[Title,Category,Difficulty,Duration,Text]} */
+	$tutorialID   = $_POST['tutorialID'];
+
+Login.php
+	/*	Receives: username, password*/
+	/*	Returns: true or "success":-1*/
+	$username  = $_POST['username'];
+	$password = $_POST['password'];
+	
+CreateTutorial.php:
+	/*	Receives: Tut info*/
+	/*	Returns: true or "success":-1*/
+	$username 		= $_POST['username'];
+	$password 		= $_POST['password']; 
+	$TutTitle 		= $_POST['title'];
+	$TutCategory 	= $_POST['category'];
+	$TutDifficulty 	= $_POST['difficulty'];
+	$TutDuration 	= $_POST['duration'];
+	$TutText 		= $_POST['text'];
