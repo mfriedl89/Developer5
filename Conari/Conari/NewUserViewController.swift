@@ -8,6 +8,16 @@
 
 import UIKit
 
+func checkInput(bool: Bool, textField: UITextField) {
+    if(bool == false) {
+        textField.backgroundColor = UIColor(red: 1, green: 0.498, blue: 0.498, alpha: 1.0)
+    }
+    else {
+        textField.backgroundColor = UIColor.whiteColor()
+    }
+}
+
+
 func checkingUsername(userName: String) -> Bool {
     let trimmedStr = userName.stringByTrimmingCharactersInSet(
         NSCharacterSet.whitespaceAndNewlineCharacterSet()
@@ -19,6 +29,26 @@ func checkingUsername(userName: String) -> Bool {
     
     for Character in trimmedStr.characters {
         if(Character == " ") {
+            return false
+        }
+    }
+    
+    return true
+}
+
+func checkingNameAndSurname(name: String) -> Bool {
+    let trimmedStr = name.stringByTrimmingCharactersInSet(
+        NSCharacterSet.whitespaceAndNewlineCharacterSet()
+    )
+    
+    if(trimmedStr.isEmpty) {
+        return false
+    }
+    
+    for Character in trimmedStr.characters {
+        if (!(Character >= "a" && Character <= "z") &&
+            !(Character >= "A" && Character <= "Z") &&
+            (Character != " ")) {
             return false
         }
     }
@@ -64,14 +94,16 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var doneBtn: UIButton!
     
     @IBAction func test(sender: UIButton) {
-        let bool = checkingUsername(userName.text!)
         
-        if(bool == false) {
-            userName.backgroundColor = UIColor(red: 1, green: 0.498, blue: 0.498, alpha: 1.0)
-        }
-        else {
-            userName.backgroundColor = UIColor.whiteColor()
-        }
+        var bool = checkingUsername(userName.text!)
+        checkInput(bool, textField: userName)
+        
+        bool = checkingNameAndSurname(name.text!)
+        checkInput(bool, textField: name)
+
+        bool = checkingNameAndSurname(surname.text!)
+        checkInput(bool, textField: surname)
+
         
     }
     
