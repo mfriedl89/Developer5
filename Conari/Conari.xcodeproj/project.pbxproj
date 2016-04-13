@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		DA4B14A31CBE922200134193 /* NewUserUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B14A21CBE922200134193 /* NewUserUITest.swift */; };
 		E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		DA4B14A21CBE922200134193 /* NewUserUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUITest.swift; sourceTree = "<group>"; };
 		E06D7FB61CBE2220003001BD /* Conari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conari.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 		E06D7FB81CBE2220003001BD /* Conari */ = {
 			isa = PBXGroup;
 			children = (
+				3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */,
 				E06D7FB91CBE2220003001BD /* AppDelegate.swift */,
 				E06D7FBD1CBE2220003001BD /* Main.storyboard */,
 				E06D7FC01CBE2220003001BD /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 			files = (
 				E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */,
 				DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */,
+				3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */,
 				E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */,
 				E07CFBFF1CBE2B97005BDFAA /* WelcomeScreenViewController.swift in Sources */,
 			);
