@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E03E31521CBE1FB800F954A7"
+               BlueprintIdentifier = "E06D7FB51CBE221F003001BD"
                BuildableName = "Conari.app"
                BlueprintName = "Conari"
                ReferencedContainer = "container:Conari.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E03E31661CBE1FB900F954A7"
+               BlueprintIdentifier = "E06D7FC91CBE2220003001BD"
                BuildableName = "ConariTests.xctest"
                BlueprintName = "ConariTests"
                ReferencedContainer = "container:Conari.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E03E31521CBE1FB800F954A7"
+            BlueprintIdentifier = "E06D7FB51CBE221F003001BD"
             BuildableName = "Conari.app"
             BlueprintName = "Conari"
             ReferencedContainer = "container:Conari.xcodeproj">
@@ -65,7 +65,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E03E31521CBE1FB800F954A7"
+            BlueprintIdentifier = "E06D7FB51CBE221F003001BD"
             BuildableName = "Conari.app"
             BlueprintName = "Conari"
             ReferencedContainer = "container:Conari.xcodeproj">
@@ -84,7 +84,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E03E31521CBE1FB800F954A7"
+            BlueprintIdentifier = "E06D7FB51CBE221F003001BD"
             BuildableName = "Conari.app"
             BlueprintName = "Conari"
             ReferencedContainer = "container:Conari.xcodeproj">
