@@ -57,7 +57,7 @@
             </objects>
             <point key="canvasLocation" x="452" y="19"/>
         </scene>
-        <!--Tutorial-->
+        <!--Login-->
         <scene sceneID="jIX-GL-9dT">
             <objects>
                 <viewController id="Cs8-tZ-awG" customClass="LoginViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,8 +84,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yEP-ai-75t">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yEP-ai-75t">
                                 <rect key="frame" x="20" y="101" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="username"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
@@ -95,8 +96,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hu5-ID-NKf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Hu5-ID-NKf">
                                 <rect key="frame" x="20" y="168" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="password"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
@@ -131,7 +133,7 @@
                             <constraint firstItem="yEP-ai-75t" firstAttribute="leading" secondItem="x8J-Tb-YUX" secondAttribute="leading" id="yQh-rV-yLz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tutorial" id="hKd-Yg-0DM"/>
+                    <navigationItem key="navigationItem" title="Login" id="hKd-Yg-0DM"/>
                     <connections>
                         <outlet property="passwordTextField" destination="Hu5-ID-NKf" id="z4G-cj-YtG"/>
                         <outlet property="userNameTextField" destination="yEP-ai-75t" id="JyF-SM-OZy"/>

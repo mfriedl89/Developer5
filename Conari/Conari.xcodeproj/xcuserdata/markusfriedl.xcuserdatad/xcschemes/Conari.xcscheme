@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Conari.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E0DBB9C41CBE5445009D6520"
+               BuildableName = "ConariUITests.xctest"
+               BlueprintName = "ConariUITests"
+               ReferencedContainer = "container:Conari.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
