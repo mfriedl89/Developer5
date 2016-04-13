@@ -39,24 +39,26 @@ if($_POST) {
 			} else {
 				
 				$insertSuccessful = 0;
-				if(checkIfValidUser($username, $password) && checkIfValidTutorialInformation($TutCategory, $TutDifficulty, $TutDuration)){
-					$insertSuccessful = insertTutorial($mysqli,$TutTitle, $TutCategory, $TutDifficulty, $TutDuration, $TutText);
-				}
+				if(validUser($mysqli,$username, $password)) { 
+					if(validTutorialInformation($TutCategory, $TutDifficulty, $TutDuration)){
+						
+						$insertSuccessful = insertTutorial($mysqli,$TutTitle, $TutCategory, $TutDifficulty, $TutDuration, $TutText);
+						
+						if ($insertSuccessful) {
+					
+							echo "success";
+						} else {
+							
+							echo 'Tutorial could not be saved!';
+						}
+					
+					}else{	echo "Tutorial Info not valid!";	}
+				}else{	echo "User not logged in!";	}
 				
 
 				$mysqli->close();
 					
-				if ($insertSuccessful) {
-					/*error_log("Inserted requsted stations!");
-					
-					return success!
-					*/
-					echo "success";
-			
-				} else {
-					error_log("Arguments do not match.");
-					echo '{"success":-1,"error_message":"We are sorry - This Tutorial does already exist!"}';
-				}
+				
 				
 			}
 	} else {
@@ -70,12 +72,35 @@ if($_POST) {
 
 
 
-function checkIfValidUser(&$username,&$password){
+function validUser(&$mysqli,&$username,&$password){
+
+	$userValid = 0;
+	
+	if ($stmt = $mysqli->prepare("SELECT UserID FROM USER WHERE Username = ? AND Password = ?")) {
+
+		/* bind parameters for markers */
+		$stmt->bind_param("ss", $username, $password);
+
+		/* execute query */
+		$stmt->execute();
+
+		/* bind result variables */
+		$stmt->bind_result($userValid);
+		
+		$stmt->fetch();
+		
+		/* close statement */
+		$stmt->close();
+	}
+	
+	if($userValid){
+		return true;
+	}
 	
 	return true;
 }
 
-function checkIfValidTutorialInformation(&$TutCategory, &$TutDifficulty, &$TutDuration){
+function validTutorialInformation(&$TutCategory, &$TutDifficulty, &$TutDuration){
 	if($TutCategory > 0 && $TutCategory < 20 &&
 		$TutDifficulty > 0 && $TutDifficulty < 6 &&
 		$TutDuration > 0 && $TutDuration < 2880){

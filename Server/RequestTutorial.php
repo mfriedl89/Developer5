@@ -41,6 +41,7 @@ if($_POST) {
 						$foundTutorials[] = $tCat;
 						$foundTutorials[] = $tDif;
 						$foundTutorials[] = $tDur;
+						$foundTutorials[] = $tText;
 						
 					}
 

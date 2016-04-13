@@ -1,6 +1,7 @@
 <?php
 
-
+/*	Receives: username, password*/
+/*	Returns: true or "success":-1*/
 
 header('Content-type: application/json');
 

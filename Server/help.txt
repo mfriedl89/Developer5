@@ -1,30 +1,49 @@
-https://citycommerce.net/
 
+Files on https://citycommerce.net/
 
+Login.php:
+	/*	Receives: 	username, password		*/
+	/*	Returns: 	true or "success":-1	*/
+	$username  	= $_POST['username'];
+	$password 	= $_POST['password'];
 
 FindTutorial.php: 
-/*	Reveives: title */
-/*  Returns Array: {[TutID,Title,Category,Difficulty,Duration]} */
-$title   = $_POST['title'];
+	/*	Reveives: 		title 											*/
+	/*  Returns Array: 	{[TutID,Title,Category,Difficulty,Duration]} 	*/
+	$title	= $_POST['title'];
 
-RequestTutorial.php 
-	/*	Receives: tutorialID */
-	/*  Returns Array: {[Title,Category,Difficulty,Duration,Text]} */
-	$tutorialID   = $_POST['tutorialID'];
+FindTutorialInCategory.php: 
+	/*	Reveives: 		title, category 								*/
+	/*  Returns Array: 	{[TutID,Title,Category,Difficulty,Duration]} 	*/
+	$title   	= $_POST['title'];
+	$category   = $_POST['category'];
 
-Login.php
-	/*	Receives: username, password*/
-	/*	Returns: true or "success":-1*/
-	$username  = $_POST['username'];
-	$password = $_POST['password'];
+RequestTutorial.php: 
+	/*	Receives: 		username,password + tutorialID 					*/
+	/*  Returns Array: 	{[Title,Category,Difficulty,Duration,Text]} 	*/
+	$tutorialID	= $_POST['tutorialID'];
 	
 CreateTutorial.php:
-	/*	Receives: Tut info*/
-	/*	Returns: true or "success":-1*/
+	/*	Receives: 	Tutorial info							*/
+	/*	Returns: 	true or "success":-1 + error_message	*/
 	$username 		= $_POST['username'];
 	$password 		= $_POST['password']; 
 	$TutTitle 		= $_POST['title'];
-	$TutCategory 	= $_POST['category'];
-	$TutDifficulty 	= $_POST['difficulty'];
-	$TutDuration 	= $_POST['duration'];
+	$TutCategory 	= $_POST['category'];		// from 1 to 19
+	$TutDifficulty 	= $_POST['difficulty'];		// from 1 to 5
+	$TutDuration 	= $_POST['duration'];		// in minutes
 	$TutText 		= $_POST['text'];
+	
+CreateUser.php:
+	/*	Receives:	UserInfo								*/
+	/*	Returns: 	true or "success":-1 + error_message	*/
+	$username 		= $_POST['username'];
+	$password 		= $_POST['password']; 
+	$firstName 		= $_POST['firstName'];
+	$surName 		= $_POST['surName'];
+	$email 			= $_POST['email'];
+	
+	
+	
+	
+	
