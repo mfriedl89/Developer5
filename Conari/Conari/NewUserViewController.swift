@@ -121,12 +121,29 @@ func checkRepeatedPassword(password:String, repeated:String) -> Bool {
     return (password == repeated) ? true : false
 }
 
-class NewUserViewController: UIViewController {
+class NewUserViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var surname: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var repeatedPassword: UITextField!
+    
+    
+    @IBOutlet weak var doneBtn: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+
+        userName.delegate = self
+        name.delegate = self
+        surname.delegate = self
+        email.delegate = self
+        password.delegate = self
+        repeatedPassword.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -144,15 +161,24 @@ class NewUserViewController: UIViewController {
      }
      */
     
-    @IBOutlet weak var userName: UITextField!
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var surname: UITextField!
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var repeatedPassword: UITextField!
-    
-      
-    @IBOutlet weak var doneBtn: UIButton!
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if(textField == userName) {
+            name.becomeFirstResponder()
+        }
+        else if(textField == name) {
+            surname.becomeFirstResponder()
+        }
+        else if(textField == surname) {
+            email.becomeFirstResponder()
+        }
+        else if(textField == email) {
+            password.becomeFirstResponder()
+        }
+        else {
+            repeatedPassword.becomeFirstResponder()
+        }
+        return true
+    }
     
     @IBAction func test(sender: UIButton) {
         
