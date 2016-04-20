@@ -174,13 +174,18 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         else if(textField == email) {
             password.becomeFirstResponder()
         }
-        else if(textField == password) {
+        else if(textField == password){
             repeatedPassword.becomeFirstResponder()
         }
         else {
-            doneBtn.becomeFirstResponder()
+            repeatedPassword.resignFirstResponder()
+            test(doneBtn)
         }
         return true
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func test(sender: UIButton) {
