@@ -174,8 +174,11 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         else if(textField == email) {
             password.becomeFirstResponder()
         }
-        else {
+        else if(textField == password) {
             repeatedPassword.becomeFirstResponder()
+        }
+        else {
+            doneBtn.becomeFirstResponder()
         }
         return true
     }

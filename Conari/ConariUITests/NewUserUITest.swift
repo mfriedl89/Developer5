@@ -49,15 +49,26 @@ class NewUserUITest: XCTestCase {
         textFieldsurName.tap()
         textFieldsurName.typeText("Müller")
         
-        let textFieldPassword = app.textFields["password"]
+        
+        app.textFields["emailAddress"].tap()
+        app.textFields["emailAddress"]
+        app.textFields["emailAddress"]
+        app.textFields["emailAddress"]
+        
+        let textFieldEmail = app.textFields["emailAddress"]
+        textFieldEmail.tap()
+        textFieldEmail.typeText("hallo@aon.at")
+
+        let textFieldPassword = app.secureTextFields["password"]
         textFieldPassword.tap()
         textFieldPassword.typeText("P@sswort1234")
         
-        let textFieldRepeatPassword = app.textFields["repeatPassword"]
+        
+        let textFieldRepeatPassword = app.secureTextFields["repeatPassword"]
         textFieldRepeatPassword.tap()
         textFieldRepeatPassword.typeText("P@sswort1234")
         
-        app.buttons["Done"].tap()
-    }
-    
+        //app.buttons["Done"].tap()
+        
+        }
 }
