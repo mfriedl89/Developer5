@@ -35,29 +35,59 @@ class NewUserUITest: XCTestCase {
         
         let app = XCUIApplication()
         app.buttons["Login"].tap()
+        //sleep(1)
+        let exists = NSPredicate(format: "exists == true")
+        
+        // wait until next page appears before clicking the "Create new user" button.
+        let newUserButton = app.buttons["Create new user"]
+        expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
+        waitForExpectationsWithTimeout(5, handler: nil)
+        
         app.buttons["Create new user"].tap()
+        
+        XCTAssert(app.staticTexts["Desired username:"].exists)
+        XCTAssert(app.staticTexts["First name:"].exists)
+        XCTAssert(app.staticTexts["Surname:"].exists)
+        XCTAssert(app.staticTexts["Email address:"].exists)
+        XCTAssert(app.staticTexts["Password:"].exists)
+        XCTAssert(app.staticTexts["Repeat password:"].exists)
+        
         
         let textFieldUsername = app.textFields["desiredUsername"]
         textFieldUsername.tap()
         textFieldUsername.typeText("anton")
+        XCTAssertEqual(textFieldUsername.value as? String, "anton")
         
-        let textFieldfirstName = app.textFields["firstName"]
-        textFieldfirstName.tap()
-        textFieldfirstName.typeText("Anton")
+        let textFieldFirstName = app.textFields["firstName"]
+        textFieldFirstName.tap()
+        textFieldFirstName.typeText("Anton")
+        XCTAssertEqual(textFieldFirstName.value as? String, "Anton")
         
-        let textFieldsurName = app.textFields["surName"]
-        textFieldsurName.tap()
-        textFieldsurName.typeText("Müller")
+        let textFieldSurname = app.textFields["surName"]
+        textFieldSurname.tap()
+        textFieldSurname.typeText("Müller")
+        XCTAssertEqual(textFieldSurname.value as? String, "Müller")
         
-        let textFieldPassword = app.textFields["password"]
+        
+        app.textFields["emailAddress"].tap()
+        app.textFields["emailAddress"]
+        app.textFields["emailAddress"]
+        app.textFields["emailAddress"]
+        
+        let textFieldEmail = app.textFields["emailAddress"]
+        textFieldEmail.tap()
+        textFieldEmail.typeText("hallo@aon.at")
+        XCTAssertEqual(textFieldEmail.value as? String, "hallo@aon.at")
+        
+        let textFieldPassword = app.secureTextFields["password"]
         textFieldPassword.tap()
         textFieldPassword.typeText("P@sswort1234")
         
-        let textFieldRepeatPassword = app.textFields["repeatPassword"]
+        
+        let textFieldRepeatPassword = app.secureTextFields["repeatPassword"]
         textFieldRepeatPassword.tap()
         textFieldRepeatPassword.typeText("P@sswort1234")
+        //app.buttons["Done"].tap()
         
-        app.buttons["Done"].tap()
-    }
-    
+        }
 }

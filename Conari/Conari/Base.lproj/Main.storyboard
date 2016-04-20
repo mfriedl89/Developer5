@@ -161,7 +161,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-XQ-JNP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-XQ-JNP">
                                 <rect key="frame" x="20" y="113" width="560" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label="desiredUsername"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -173,11 +173,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lsQ-4c-MhM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lsQ-4c-MhM">
                                 <rect key="frame" x="20" y="180" width="560" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label="firstName"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5K-U4-26Y">
                                 <rect key="frame" x="20" y="218" width="560" height="21"/>
@@ -185,11 +185,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1gc-r2-yEL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1gc-r2-yEL">
                                 <rect key="frame" x="20" y="247" width="560" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label="surName"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e31-jS-Kzr">
                                 <rect key="frame" x="20" y="285" width="560" height="21"/>
@@ -203,17 +203,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-it-wPM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-it-wPM">
                                 <rect key="frame" x="20" y="381" width="560" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label="password"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vl5-iE-FP9">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vl5-iE-FP9">
                                 <rect key="frame" x="20" y="448" width="560" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label="repeatPassword"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-MG-4wo">
                                 <rect key="frame" x="20" y="419" width="560" height="21"/>
@@ -221,14 +221,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="26g-ye-Ygg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="26g-ye-Ygg">
                                 <rect key="frame" x="20" y="314" width="560" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label="emailAddress"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Me-CX-8jC">
-                                <rect key="frame" x="25" y="486" width="37" height="30"/>
+                                <rect key="frame" x="25" y="486" width="555" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="test:" destination="NNJ-YQ-Wod" eventType="touchUpInside" id="fJE-cs-HRD"/>
@@ -246,12 +246,13 @@
                             <constraint firstItem="1gc-r2-yEL" firstAttribute="leading" secondItem="dzu-Wj-F3c" secondAttribute="leadingMargin" id="4vv-Jn-4DZ"/>
                             <constraint firstItem="hOa-ub-i9u" firstAttribute="top" secondItem="26g-ye-Ygg" secondAttribute="bottom" constant="8" id="6H7-3p-PiE"/>
                             <constraint firstItem="e31-jS-Kzr" firstAttribute="top" secondItem="1gc-r2-yEL" secondAttribute="bottom" constant="8" id="6OG-JP-4hO"/>
+                            <constraint firstItem="8Me-CX-8jC" firstAttribute="top" secondItem="Vl5-iE-FP9" secondAttribute="bottom" constant="8" id="8Vz-mB-MdZ"/>
                             <constraint firstItem="mhH-3J-voC" firstAttribute="top" secondItem="eC7-XQ-JNP" secondAttribute="bottom" constant="8" id="9Kg-fE-Dmk"/>
                             <constraint firstItem="eC7-XQ-JNP" firstAttribute="top" secondItem="ifk-cu-QOV" secondAttribute="bottom" constant="8" id="9UI-Em-a7z"/>
                             <constraint firstItem="jYF-it-wPM" firstAttribute="trailing" secondItem="dzu-Wj-F3c" secondAttribute="trailingMargin" id="A7b-Wc-rkS"/>
-                            <constraint firstItem="8Me-CX-8jC" firstAttribute="top" secondItem="q86-i4-JDk" secondAttribute="bottom" constant="422" id="Ae1-2G-lox"/>
                             <constraint firstItem="NmA-MG-4wo" firstAttribute="top" secondItem="jYF-it-wPM" secondAttribute="bottom" constant="8" id="CXd-8F-t7a"/>
                             <constraint firstItem="mhH-3J-voC" firstAttribute="top" secondItem="eC7-XQ-JNP" secondAttribute="bottom" constant="8" id="CaN-Wd-SRb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Me-CX-8jC" secondAttribute="trailing" id="Dwv-Ts-QEV"/>
                             <constraint firstItem="ifk-cu-QOV" firstAttribute="trailing" secondItem="dzu-Wj-F3c" secondAttribute="trailingMargin" id="E54-8o-gHJ"/>
                             <constraint firstItem="26g-ye-Ygg" firstAttribute="trailing" secondItem="dzu-Wj-F3c" secondAttribute="trailingMargin" id="G2b-b4-Tlt"/>
                             <constraint firstItem="jYF-it-wPM" firstAttribute="leading" secondItem="dzu-Wj-F3c" secondAttribute="leadingMargin" id="G4e-M5-qVf"/>
