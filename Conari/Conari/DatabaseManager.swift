@@ -16,26 +16,31 @@ class DatabaseManager {
     /** Singletone instance. */
     static let sharedManager = DatabaseManager()
     
-    func loginWithPHPScript(username: String, password: String) -> String? {
+    func loginWithPHPScript(username: String, password: String) -> (Bool, String?) {
         
         let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/Login.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username + "&password=" + password
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
+        var success: Bool = false
         var responseString: NSString?
         var successValue = 0
         var errorMessageValue = ""
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
-            guard error == nil && data != nil else {                                                          // check for fundamental networking error
-                print("error=\(error)")
+            guard error == nil && data != nil else {
+                // check for fundamental networking error
+                success = false
+                responseString = error?.localizedDescription
+                
                 return
             }
             
-            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
+                // check for http errors
+                success = false
+                responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
             }
             
             do {
@@ -61,6 +66,11 @@ class DatabaseManager {
         }
         task.resume()
         
-        return (responseString as? String)
+        let message: String? = (responseString as? String)
+        
+        //parsing
+        success = true
+        
+        return (success, message)
     }
 }
