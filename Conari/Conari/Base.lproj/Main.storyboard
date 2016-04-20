@@ -74,7 +74,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create new user"/>
                                 <connections>
-                                    <action selector="newUserPressed:" destination="Cs8-tZ-awG" eventType="touchUpInside" id="Xqq-dd-9oF"/>
                                     <segue destination="NNJ-YQ-Wod" kind="show" id="F99-cO-shF"/>
                                 </connections>
                             </button>
