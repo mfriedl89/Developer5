@@ -65,14 +65,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func loginCheck() {
         if (checkInput() == true) {
             DatabaseManager.sharedManager.loginWithPHPScript(userNameTextField.text!, password: passwordTextField.text!) { success, message in
-                print("success: \(success), message:\(message)")
                 if (success == false) {
                     self.showErrorMessage(message!)
                 }
             }
         }
     }
-    
     
     func checkInput() -> Bool {
 
@@ -96,22 +94,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func showErrorMessage(message: String) {
-        
-        print("showErrorMessage: \(message)")
-        
-        //create alert
-        let errorAlert = UIAlertController(title: "Error",
-                                           message: message,
-                                           preferredStyle: UIAlertControllerStyle.Alert)
-        
-        //make button
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-        
-        //add buttons
-        errorAlert.addAction(okAction)
-        
-        //display
-        self.presentViewController(errorAlert, animated: true, completion: nil)
+        dispatch_async(dispatch_get_main_queue(), {
+            //create alert
+            let errorAlert = UIAlertController(title: "Error",
+                                               message: message,
+                                               preferredStyle: UIAlertControllerStyle.Alert)
+            
+            //make button
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            
+            //add buttons
+            errorAlert.addAction(okAction)
+            
+            //display
+            self.presentViewController(errorAlert, animated: true, completion: nil)
+        })
     }
     
 }

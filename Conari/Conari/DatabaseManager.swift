@@ -16,6 +16,9 @@ class DatabaseManager {
     /** Singletone instance. */
     static let sharedManager = DatabaseManager()
     
+    var username: String = ""
+    var password: String = ""
+    
     func loginWithPHPScript(username: String, password: String, callback: (Bool, String?) -> ()) {
         
         let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/Login.php")!)
@@ -46,6 +49,8 @@ class DatabaseManager {
                 let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
                 if jsonData as! NSObject == 1 {
                     successValue = 1;
+                    self.username = username
+                    self.password = password
                     success = true
                 }
                 if let jsonErrorMessage = jsonData["error_message"] as? NSString {
@@ -60,27 +65,10 @@ class DatabaseManager {
                 print("error serializing JSON: \(error)")
             }
             
-            //responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            
-//            print("success \(success)")
-//            
-//            print("responseString = \(responseString)")
-            
             let message: String? = (responseString as? String)
             
             callback(success, message)
         })
         task.resume()
-    }
-    
-    func login(username: String, password: String) -> (Bool, String) {
-        var retValue:(Bool, String) = (false, "")
-        
-        loginWithPHPScript(username, password: password) { success, message in
-            print("login-success: \(success), login-message:\(message)")
-            retValue = (success, message!)
-        }
-        
-        return retValue
     }
 }
