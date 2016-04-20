@@ -10,8 +10,8 @@ import UIKit
 
 struct TutorialMetaData {
     var Title:String;
-    var category:String;
-    var duration:String;
+    var category:Int;
+    var duration:Int;
     var difficulty:Int;
 }
 
@@ -24,7 +24,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     var categoryPickerView : UIPickerView!
     var timePickerView : UIPickerView!
     
-    var current:TutorialMetaData = TutorialMetaData(Title: "",category: "",duration: "",difficulty: 0)
+    var current:TutorialMetaData = TutorialMetaData(Title: "",category: 0,duration: 0,difficulty: 0)
     
     
     var categories = ["Arts and Entertainment",
@@ -57,6 +57,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         
         DifficultyStepper_.maximumValue = 5
         DifficultyStepper_.minimumValue = 1
+        
+        current.duration = 5
         
         categoryPickerView = UIPickerView()
         categoryPickerView.delegate = self
@@ -139,11 +141,12 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == categoryPickerView{
            categoryTextField_.text = categories[row]
-            
+            current.category = row;
             categoryTextField_.selectedTextRange = nil;
             
         }else
         {
+            current.duration = row*5
             DurationTextField_.text = times[row] + " hh:mm"
             
             DurationTextField_.selectedTextRange = nil;
@@ -156,8 +159,6 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     func updateCurrentStruct()
     {
         current.Title = titleTextField_.text!
-        current.category = categoryTextField_.text!
-        current.duration = DurationTextField_.text!
         current.difficulty = Int(DifficultyStepper_.value)
     }
     
@@ -171,18 +172,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                 self.presentViewController(alert, animated: true, completion: nil)
                 return
             }
-            else if current.category.isEmpty {
-                let alert = UIAlertController(title: "Error", message: "Please select a Category", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
-                return
-            }
-            else if current.duration.isEmpty {
-                let alert = UIAlertController(title: "Error", message: "Please select a Duration", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
-                return
-            }
+
             
             let nextScene =  segue.destinationViewController as! NewTutorialDescriptonViewController
             nextScene.current = current

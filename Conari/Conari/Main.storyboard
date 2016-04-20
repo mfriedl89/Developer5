@@ -213,12 +213,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Z5M-iw-YEh">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="DuX-q5-3hc"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="DuX-q5-3hc">
+                            <connections>
+                                <action selector="SavePressed:" destination="1eL-Qf-eHn" id="FLO-Yx-E4A"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="2he-lz-D6F" kind="show" identifier="savesegue" id="Cwv-py-iE1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Teb-F1-o6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1200" y="816"/>
+            <point key="canvasLocation" x="1359" y="816"/>
         </scene>
         <!--Welcome Screen View Controller-->
         <scene sceneID="WZG-qI-2GJ">
@@ -551,6 +558,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Cwv-py-iE1"/>
         <segue reference="rYM-I2-WkG"/>
     </inferredMetricsTieBreakers>
 </document>

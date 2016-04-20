@@ -13,12 +13,13 @@ import AVFoundation
 
 class NewTutorialDescriptonViewController: UIViewController {
 
-    var current:TutorialMetaData = TutorialMetaData(Title: "",category: "",duration: "",difficulty: 0);
+    var current:TutorialMetaData = TutorialMetaData(Title: "",category: 0,duration: 0,difficulty: 0);
     
     var editor:RichEditorView?
     var keyman:KeyboardManager?
     
     let imagePicker = UIImagePickerController()
+    
     
 
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class NewTutorialDescriptonViewController: UIViewController {
         self.title = current.Title
         
         editor = RichEditorView(frame: self.view.bounds)
-        editor!.setHTML("<h1>My Awesome Editor</h1>Now I am editing in <em>style.</em>" )
+        editor!.setHTML("<h2>"+current.Title+"</h2>" )
         editor?.delegate = self
         self.view.addSubview(editor!)
         
@@ -68,15 +69,40 @@ class NewTutorialDescriptonViewController: UIViewController {
 
     
 
-    /*
+    @IBAction func SavePressed(sender: AnyObject) {
+        
+        DatabaseManager.sharedManager.CreateTutorial(current, content:(editor?.getHTML())!) { success, message in
+            print("upload-success: \(success), login-message:\(message)")
+            if success == true
+            {
+                
+                print("sucess");
+                dispatch_async(dispatch_get_main_queue(),{
+                               self.performSegueWithIdentifier("savesegue", sender: nil)
+                });
+                self.navigationController?.popToRootViewControllerAnimated(true);
+            }
+            else
+            {
+                let alert = UIAlertController(title: "Error", message: "An error Happend", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
+
+        
+    }
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+
+        
     }
-    */
     
     
 
@@ -97,7 +123,7 @@ extension NewTutorialDescriptonViewController: RichEditorDelegate {
     
     func richEditorDidLoad(editor: RichEditorView) { }
     
-    func richEditor(editor: RichEditorView, shouldInteractWithURL url: NSURL) -> Bool { return true }
+    func richEditor(editor: RichEditorView, shouldInteractWithURL url: NSURL) -> Bool { return false }
     
     func richEditor(editor: RichEditorView, handleCustomAction content: String) { }
     
@@ -124,7 +150,7 @@ extension NewTutorialDescriptonViewController: UIImagePickerControllerDelegate, 
     {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             //pickedImage.decreaseSize(<#T##sender: AnyObject?##AnyObject?#>)
-            let imageData = UIImagePNGRepresentation(pickedImage.resizeToWidth(300))
+            let imageData = UIImageJPEGRepresentation(pickedImage.resizeToWidth(200),0.5)
             let base64String = imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
             //print(base64String)
             editor?.insertImage("data:image/gif;base64,"+base64String, alt: "picture")
@@ -200,12 +226,7 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
         
     }
     
-    func richEditorToolbarInsertLink(toolbar: RichEditorToolbar) {
-        // Can only add links to selected text, so make sure there is a range selection first
-        if let hasSelection = toolbar.editor?.rangeSelectionExists() where hasSelection {
-            toolbar.editor?.insertLink("http://github.com/cjwirth/RichEditorView", title: "Github Link")
-        }
-    }
+
 }
 
 
