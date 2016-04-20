@@ -162,7 +162,7 @@ public class RichEditorView: UIView {
             webView.loadRequest(request)
         }
 
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "viewWasTapped")
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RichEditorView.viewWasTapped))
         tapGestureRecognizer.delegate = self
         addGestureRecognizer(tapGestureRecognizer)
     }
@@ -482,7 +482,7 @@ extension RichEditorView {
     private func escape(string: String) -> String {
         let unicode = string.unicodeScalars
         var newString = ""
-        for var i = unicode.startIndex; i < unicode.endIndex; i++ {
+        for var i = unicode.startIndex; i < unicode.endIndex; i = i.successor() {
             let char = unicode[i]
             if char.value < 9 || (char.value > 9 && char.value < 32) // < 32 == special characters in ASCII, 9 == horizontal tab in ASCII
                 || char.value == 39 { // 39 == ' in ASCII

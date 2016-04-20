@@ -29,6 +29,7 @@ class NewTutorialDescriptonViewController: UIViewController {
         editor = RichEditorView(frame: self.view.bounds)
         editor!.setHTML("<h2>"+current.Title+"</h2>" )
         editor?.delegate = self
+        editor?.accessibilityLabel = "texteditor"
         self.view.addSubview(editor!)
         
         keyman = KeyboardManager(view: self.view)

@@ -49,31 +49,19 @@ class MetadataUITest: XCTestCase {
         let duration = app.textFields["duration"]
         duration.tap()
         app.pickerWheels.element.adjustToPickerWheelValue("00:10")
-    
+        
+        app.buttons["Weiter"].tap()
+        
+        let texteditor = app.otherElements["texteditor"]
+        texteditor.tap()
+        texteditor.typeText("test")
+        
+        
+
+        app.buttons["Save"].tap()
         
         
         
-        
-        
-        
-        
-        /*let textFieldfirstName = app.textFields["firstName"]
-        textFieldfirstName.tap()
-        textFieldfirstName.typeText("Anton")
-        
-        let textFieldsurName = app.textFields["surName"]
-        textFieldsurName.tap()
-        textFieldsurName.typeText("Müller")
-        
-        let textFieldPassword = app.textFields["password"]
-        textFieldPassword.tap()
-        textFieldPassword.typeText("P@sswort1234")
-        
-        let textFieldRepeatPassword = app.textFields["repeatPassword"]
-        textFieldRepeatPassword.tap()
-        textFieldRepeatPassword.typeText("P@sswort1234")*/
-        
-        //app.buttons["Done"].tap()
         
         //Test has to go here, but currently the view isn't in his final position.
     }
