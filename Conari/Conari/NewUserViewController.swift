@@ -73,31 +73,24 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         let info : NSDictionary = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
         
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
-        
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height + UIApplication.sharedApplication().statusBarFrame.size.height * 2 + 32, 0.0)
+        // * 2 because bevor it was under top layout and + 8 because there are 8ptx constraints from the top
+        self.viewInScrollView.frame.size.height = view.frame.height
+        self.scrollView.contentSize.height = view.frame.height + UIApplication.sharedApplication().statusBarFrame.size.height * 2 + 32
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         
-//        var aRect : CGRect = self.view.frame
-//        aRect.size.height -= keyboardSize!.height
-//        if (activeField) != nil
-//        {
-//            if (!CGRectContainsPoint(aRect, activeField!.frame.origin))
-//            {
-//                self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
-//            }
-//        }
         
-        var scrollField: CGRect!
+        var aRect : CGRect = self.view.frame
+        aRect.size.height -= keyboardSize!.height
+        if (activeField) != nil
+        {
+            if (!CGRectContainsPoint(aRect, activeField!.frame.origin))
+            {
+                self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
+            }
+        }
         
-        scrollField = activeField!.frame;
-        
-        scrollField.origin.y += keyboardSize!.height;
-        
-        //self.scrollView.scrollRectToVisible(scrollField, animated: true)
-        
-        self.scrollView.contentOffset = CGPoint(x: viewInScrollView.center.x, y: scrollField.origin.y)
-                
     }
     
     
@@ -163,6 +156,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
     
     func checkInput(bool: Bool, textField: UITextField) {
         if(bool == false) {
