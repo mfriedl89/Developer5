@@ -164,6 +164,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2Ee-AR-JtT">
                                                 <rect key="frame" x="20" y="37" width="560" height="30"/>
                                                 <accessibility key="accessibilityConfiguration" label="desiredUsername"/>
+                                                <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
@@ -242,6 +243,7 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="VX2-rG-Ow8" secondAttribute="trailing" constant="20" id="2dd-H7-TN0"/>
                                             <constraint firstAttribute="trailing" secondItem="jTT-Pb-GUM" secondAttribute="trailing" constant="20" id="ANL-3W-LZ5"/>
@@ -285,6 +287,9 @@
                                             <constraint firstItem="v5K-3Q-hXy" firstAttribute="trailing" secondItem="2Ee-AR-JtT" secondAttribute="trailing" id="vjX-5Q-g5P"/>
                                             <constraint firstItem="jTT-Pb-GUM" firstAttribute="top" secondItem="Hoz-ic-mxY" secondAttribute="top" constant="142" id="yQu-CZ-bhG"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="UWA-9l-eQR" appends="YES" id="S8m-vd-sdi"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -327,6 +332,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSs-NA-dBw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UWA-9l-eQR">
+                    <connections>
+                        <action selector="screenClicked:" destination="NNJ-YQ-Wod" id="OK4-V4-akt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1789" y="19"/>
         </scene>

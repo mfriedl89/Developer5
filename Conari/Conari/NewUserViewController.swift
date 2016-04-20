@@ -9,7 +9,7 @@
 import UIKit
 
 
-class NewUserViewController: UIViewController, UITextFieldDelegate {
+class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var name: UITextField!
@@ -39,6 +39,8 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         password.delegate = self
         repeatedPassword.delegate = self
         
+        scrollView.scrollsToTop = true
+
         registerForKeyboardNotifications()
     }
     
@@ -70,6 +72,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     func keyboardWasShown(notification: NSNotification)
     {
         //Need to calculate keyboard exact size due to Apple suggestions
+        
         self.scrollView.scrollEnabled = true
         let info : NSDictionary = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
@@ -284,6 +287,9 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         return (password == repeated) ? true : false
     }
 
+    @IBAction func screenClicked(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
     
     @IBAction func test(sender: UIButton) {
         var error_counter = 0;
