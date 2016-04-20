@@ -23,6 +23,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var doneBtn: UIButton!
     
+    let invalidUser = "Username is not valid"
     var activeField: UITextField?
 
 
@@ -151,7 +152,18 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    
+    func invalidInput(textField: String, errors: Int, is_error: Bool) -> Int {
+        var number_of_errors = errors;
+        number_of_errors = number_of_errors + 1
+
+        if ((textField == "Username") && is_error)
+        {
+            let alert = UIAlertController(title: "Alert", message: "Enter a valid username.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        return number_of_errors
+    }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
@@ -161,6 +173,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     func checkInput(bool: Bool, textField: UITextField) {
         if(bool == false) {
             textField.backgroundColor = UIColor(red: 1, green: 0.498, blue: 0.498, alpha: 1.0)
+            
         }
         else {
             textField.backgroundColor = UIColor.whiteColor()
@@ -273,24 +286,32 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBAction func test(sender: UIButton) {
+        var error_counter = 0;
         
         var bool = checkingUsername(userName.text!)
         checkInput(bool, textField: userName)
+        error_counter = invalidInput("Username", errors: error_counter, is_error: bool)
+        
         
         bool = checkingNameAndSurname(name.text!)
         checkInput(bool, textField: name)
+        //error_counter = invalidInput("Firstname", errors: error_counter)
 
         bool = checkingNameAndSurname(surname.text!)
         checkInput(bool, textField: surname)
+       // error_counter = invalidInput("Surename", errors: error_counter)
         
         bool = checkEmailAddress(email.text!)
         checkInput(bool, textField: email)
+        //error_counter = invalidInput("Email", errors: error_counter)
         
         bool = checkPassword(password.text!)
         checkInput(bool, textField: password)
+       // error_counter = invalidInput("PasswordWrong", errors: error_counter)
         
         bool = checkRepeatedPassword(password.text!, repeated: repeatedPassword.text!)
         checkInput(bool, textField: repeatedPassword)
+        //error_counter = invalidInput("PasswordRepeat", errors: error_counter)
         
     }
     
