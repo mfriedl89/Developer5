@@ -18,8 +18,13 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var repeatedPassword: UITextField!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var viewInScrollView: UIView!
     
     @IBOutlet weak var doneBtn: UIButton!
+    
+    var activeField: UITextField?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +37,93 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         email.delegate = self
         password.delegate = self
         repeatedPassword.delegate = self
+        
+        registerForKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        deregisterFromKeyboardNotifications()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func registerForKeyboardNotifications()
+    {
+        //Adding notifies on keyboard appearing
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWasShown), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillBeHidden), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    
+    func deregisterFromKeyboardNotifications()
+    {
+        //Removing notifies on keyboard appearing
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWasShown(notification: NSNotification)
+    {
+        //Need to calculate keyboard exact size due to Apple suggestions
+        self.scrollView.scrollEnabled = true
+        let info : NSDictionary = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
+        
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+//        var aRect : CGRect = self.view.frame
+//        aRect.size.height -= keyboardSize!.height
+//        if (activeField) != nil
+//        {
+//            if (!CGRectContainsPoint(aRect, activeField!.frame.origin))
+//            {
+//                self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
+//            }
+//        }
+        
+        var scrollField: CGRect!
+        
+        scrollField = activeField!.frame;
+        
+        scrollField.origin.y += keyboardSize!.height;
+        
+        //self.scrollView.scrollRectToVisible(scrollField, animated: true)
+        
+        self.scrollView.contentOffset = CGPoint(x: viewInScrollView.center.x, y: scrollField.origin.y)
+                
+    }
+    
+    
+    func keyboardWillBeHidden(notification: NSNotification)
+    {
+        //Once keyboard disappears, restore original positions
+        let info : NSDictionary = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        self.view.endEditing(true)
+        self.scrollView.scrollEnabled = false
+        
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField)
+    {
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField)
+    {
+        activeField = nil
+    }
+    
     
     /*
      // MARK: - Navigation
@@ -71,6 +157,8 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
+    
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
