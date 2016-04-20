@@ -8,12 +8,12 @@ Login.php:
 	$password 	= $_POST['password'];
 
 FindTutorial.php: 
-	/*	Reveives: 		title 											*/
+	/*	Receives: 		title 											*/
 	/*  Returns Array: 	{[TutID,Title,Category,Difficulty,Duration]} 	*/
 	$title	= $_POST['title'];
 
 FindTutorialInCategory.php: 
-	/*	Reveives: 		title, category 								*/
+	/*	Receives: 		title, category 								*/
 	/*  Returns Array: 	{[TutID,Title,Category,Difficulty,Duration]} 	*/
 	$title   	= $_POST['title'];
 	$category   = $_POST['category'];
@@ -44,6 +44,23 @@ CreateUser.php:
 	$email 			= $_POST['email'];
 	
 	
-	
-	
-	
+Category: 
+(1,'Arts and Entertainment');
+(2,'Cars & Other Vehicles');
+(3,'Computers and Electronics');
+(4,'Conari');
+(5,'Education and Communications');
+(6,'Finance and Business');
+(7,'Food and Entertaining');
+(8,'Health');
+(9,'Hobbies and Crafts');
+(10,'Holidays and Traditions');
+(11,'Home and Garden');
+(12,'Personal Care and Style');
+(13,'Pets and Animals');
+(14,'Philosophy and Religion');
+(15,'Relationships');
+(16,'Sports and Fitness');
+(17,'Travel');
+(18,'Work World');
+(19,'Youth');
