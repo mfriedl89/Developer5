@@ -10,10 +10,13 @@ import XCTest
 @testable import Conari
 
 class ConariTests: XCTestCase {
+    var vc: NewUserViewController!
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+      
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: self.dynamicType))
+        vc = storyboard.instantiateViewControllerWithIdentifier("newUserStoryboard") as! NewUserViewController
     }
     
     override func tearDown() {
@@ -21,16 +24,50 @@ class ConariTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+   
+    
+    func testUsernamePass() {
+        let test_result = vc.checkingUsername("hans")
+        XCTAssert(test_result == true)
+    }
+    func testUsernameFail() {
+        let test_result = vc.checkingUsername("")
+        XCTAssert(test_result == false)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testNameAndSurenamePass() {
+        let test_result = vc.checkingNameAndSurname("fefe")
+        XCTAssert(test_result == true)
+    }
+    func testNameAndSurenameFail() {
+        let test_result = vc.checkingNameAndSurname("")
+        XCTAssert(test_result == false)
     }
     
+    func testEmailPass() {
+        let test_result = vc.checkEmailAddress("hans@gmail.com")
+        XCTAssert(test_result == true)
+    }
+    func testEmailFail() {
+        let test_result = vc.checkEmailAddress("hans.com")
+        XCTAssert(test_result == false)
+    }
+    
+    func testPasswordPass() {
+        let test_result = vc.checkPassword("jrsA1&Ettww%")
+        XCTAssert(test_result == true)
+    }
+    func testPasswordFail() {
+        let test_result = vc.checkPassword("eegaaasrE")
+        XCTAssert(test_result == false)
+    }
+    
+    func testRepeatedPasswordPass() {
+        let test_result = vc.checkRepeatedPassword("jrsA1&Ettww%", repeated: "jrsA1&Ettww%")
+        XCTAssert(test_result == true)
+    }
+    func testRepeatedPasswordFail() {
+        let test_result = vc.checkRepeatedPassword("jrsA1&Ettww%", repeated: "jrsA1&Rttww%")
+        XCTAssert(test_result == false)
+    }
 }

@@ -8,118 +8,6 @@
 
 import UIKit
 
-func checkInput(bool: Bool, textField: UITextField) {
-    if(bool == false) {
-        textField.backgroundColor = UIColor(red: 1, green: 0.498, blue: 0.498, alpha: 1.0)
-    }
-    else {
-        textField.backgroundColor = UIColor.whiteColor()
-    }
-}
-
-
-func checkingUsername(userName: String) -> Bool {
-    let trimmedStr = userName.stringByTrimmingCharactersInSet(
-        NSCharacterSet.whitespaceAndNewlineCharacterSet()
-    )
-    
-    if(trimmedStr.isEmpty) {
-        return false
-    }
-    
-    for Character in trimmedStr.characters {
-        if(Character == " ") {
-            return false
-        }
-    }
-    
-    return true
-}
-
-func checkingNameAndSurname(name: String) -> Bool {
-    let trimmedStr = name.stringByTrimmingCharactersInSet(
-        NSCharacterSet.whitespaceAndNewlineCharacterSet()
-    )
-    
-    if(trimmedStr.isEmpty) {
-        return false
-    }
-    
-    for Character in trimmedStr.characters {
-        if (!(Character >= "a" && Character <= "z") &&
-            !(Character >= "A" && Character <= "Z") &&
-            (Character != " ")) {
-            return false
-        }
-    }
-    
-    return true
-}
-
-
-//TODO: check if username isn`t used yet
-
-func checkEmailAddress(mail:String) -> Bool {
-        // println("validate calendar: \(testStr)")
-    let trimmedStr = mail.stringByTrimmingCharactersInSet(
-        NSCharacterSet.whitespaceAndNewlineCharacterSet()
-    )
-
-    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        
-    let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-    
-    return emailTest.evaluateWithObject(trimmedStr) ? true : false
-}
-
-func checkPassword(password:String) -> Bool {
-    
-    var lowLetterExists = false
-    var upperLetterExists = false
-    var specialLetterExists = false
-    var countExists = false
-    
-    let upperCaseLetterSet:NSCharacterSet = NSCharacterSet.uppercaseLetterCharacterSet()
-    let lowerCaseLetterSet:NSCharacterSet = NSCharacterSet.lowercaseLetterCharacterSet()
-    let specialCharacterSet:NSCharacterSet = NSCharacterSet.init(charactersInString: "!\"§$%&/()=?´`+*#'-_.:,;<>@")
-    let countCaseLetterSet:NSCharacterSet = NSCharacterSet.decimalDigitCharacterSet()
-    
-    if(password.characters.count < 8 || password.characters.count > 32) {
-        return false
-    }
-
-
-    for Character in password.utf16 {
-        if(lowerCaseLetterSet.characterIsMember(Character)) {
-            lowLetterExists = true
-        }
-        else if(upperCaseLetterSet.characterIsMember(Character)) {
-            upperLetterExists = true
-        }
-        else if(countCaseLetterSet.characterIsMember(Character)) {
-            countExists = true
-        }
-        else if(specialCharacterSet.characterIsMember(Character)) {
-            specialLetterExists = true
-        }
-    }
-    
-    if(lowLetterExists == true &&
-       upperLetterExists == true &&
-       specialLetterExists == true &&
-       countExists == true) {
-        return true
-    }
-    else {
-        return false
-    }
-    
-}
-
-func checkRepeatedPassword(password:String, repeated:String) -> Bool {
-
-    return (password == repeated) ? true : false
-}
 
 class NewUserViewController: UIViewController, UITextFieldDelegate {
     
@@ -187,6 +75,120 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    func checkInput(bool: Bool, textField: UITextField) {
+        if(bool == false) {
+            textField.backgroundColor = UIColor(red: 1, green: 0.498, blue: 0.498, alpha: 1.0)
+        }
+        else {
+            textField.backgroundColor = UIColor.whiteColor()
+        }
+    }
+    
+    
+    func checkingUsername(userName: String) -> Bool {
+        let trimmedStr = userName.stringByTrimmingCharactersInSet(
+            NSCharacterSet.whitespaceAndNewlineCharacterSet()
+        )
+        
+        if(trimmedStr.isEmpty) {
+            return false
+        }
+        
+        for Character in trimmedStr.characters {
+            if(Character == " ") {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    func checkingNameAndSurname(name: String) -> Bool {
+        let trimmedStr = name.stringByTrimmingCharactersInSet(
+            NSCharacterSet.whitespaceAndNewlineCharacterSet()
+        )
+        
+        if(trimmedStr.isEmpty) {
+            return false
+        }
+        
+        for Character in trimmedStr.characters {
+            if (!(Character >= "a" && Character <= "z") &&
+                !(Character >= "A" && Character <= "Z") &&
+                (Character != " ")) {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    
+    //TODO: check if username isn`t used yet
+    
+    func checkEmailAddress(mail:String) -> Bool {
+        // println("validate calendar: \(testStr)")
+        let trimmedStr = mail.stringByTrimmingCharactersInSet(
+            NSCharacterSet.whitespaceAndNewlineCharacterSet()
+        )
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        
+        return emailTest.evaluateWithObject(trimmedStr) ? true : false
+    }
+    
+    func checkPassword(password:String) -> Bool {
+        
+        var lowLetterExists = false
+        var upperLetterExists = false
+        var specialLetterExists = false
+        var countExists = false
+        
+        let upperCaseLetterSet:NSCharacterSet = NSCharacterSet.uppercaseLetterCharacterSet()
+        let lowerCaseLetterSet:NSCharacterSet = NSCharacterSet.lowercaseLetterCharacterSet()
+        let specialCharacterSet:NSCharacterSet = NSCharacterSet.init(charactersInString: "!\"§$%&/()=?´`+*#'-_.:,;<>@")
+        let countCaseLetterSet:NSCharacterSet = NSCharacterSet.decimalDigitCharacterSet()
+        
+        if(password.characters.count < 8 || password.characters.count > 32) {
+            return false
+        }
+        
+        
+        for Character in password.utf16 {
+            if(lowerCaseLetterSet.characterIsMember(Character)) {
+                lowLetterExists = true
+            }
+            else if(upperCaseLetterSet.characterIsMember(Character)) {
+                upperLetterExists = true
+            }
+            else if(countCaseLetterSet.characterIsMember(Character)) {
+                countExists = true
+            }
+            else if(specialCharacterSet.characterIsMember(Character)) {
+                specialLetterExists = true
+            }
+        }
+        
+        if(lowLetterExists == true &&
+            upperLetterExists == true &&
+            specialLetterExists == true &&
+            countExists == true) {
+            return true
+        }
+        else {
+            return false
+        }
+        
+    }
+    
+    func checkRepeatedPassword(password:String, repeated:String) -> Bool {
+        
+        return (password == repeated) ? true : false
+    }
+
     
     @IBAction func test(sender: UIButton) {
         
