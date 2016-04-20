@@ -8,6 +8,7 @@
 
 import UIKit
 import RichEditorView
+import AVFoundation
 
 
 class NewTutorialDescriptonViewController: UIViewController {
@@ -17,18 +18,26 @@ class NewTutorialDescriptonViewController: UIViewController {
     var editor:RichEditorView?
     var keyman:KeyboardManager?
     
+    let imagePicker = UIImagePickerController()
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = current.Title
         
         editor = RichEditorView(frame: self.view.bounds)
-        editor!.setHTML("<h1>My Awesome Editor</h1>Now I am editing in <em>style.</em><img src=\"data:image/gif;base64,R0lGODlhDwAPAKECAAAAzMzM/////wAAACwAAAAADwAPAAACIISPeQHsrZ5ModrLlN48CXF8m2iQ3YmmKqVlRtW4MLwWACH+H09wdGltaXplZCBieSBVbGVhZCBTbWFydFNhdmVyIQAAOw==\"alt=\"Base64 encoded image\" width=\"150\" height=\"150\"/>" )
+        editor!.setHTML("<h1>My Awesome Editor</h1>Now I am editing in <em>style.</em>" )
         editor?.delegate = self
         self.view.addSubview(editor!)
         
         keyman = KeyboardManager(view: self.view)
         keyman?.toolbar.delegate = self
         keyman?.toolbar.editor = editor
+        
+        imagePicker.delegate = self
+        
+        imagePicker.sourceType = .Camera
+
 
         
         
@@ -53,6 +62,10 @@ class NewTutorialDescriptonViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+
+
     
 
     /*
@@ -90,6 +103,42 @@ extension NewTutorialDescriptonViewController: RichEditorDelegate {
     
 }
 
+//http://stackoverflow.com/questions/29137488/how-do-i-resize-the-uiimage-to-reduce-upload-image-size
+extension UIImage {
+    func resizeToWidth(width:CGFloat)-> UIImage {
+        let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))))
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return result
+    }
+}
+
+extension NewTutorialDescriptonViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            //pickedImage.decreaseSize(<#T##sender: AnyObject?##AnyObject?#>)
+            let imageData = UIImagePNGRepresentation(pickedImage.resizeToWidth(300))
+            let base64String = imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+            //print(base64String)
+            editor?.insertImage("data:image/gif;base64,"+base64String, alt: "picture")
+        }
+        
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
 extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
     
     private func randomColor() -> UIColor {
@@ -117,7 +166,38 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
     }
     
     func richEditorToolbarInsertImage(toolbar: RichEditorToolbar) {
-        toolbar.editor?.insertImage("https://gravatar.com/avatar/696cf5da599733261059de06c4d1fe22", alt: "Gravatar")
+        
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        
+
+        let Camera = UIAlertAction(title: "Camera", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.imagePicker.sourceType = .Camera;
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        })
+        let Library = UIAlertAction(title: "Photo Library", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+           self.imagePicker.sourceType = .PhotoLibrary;
+           self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        
+        
+        
+        // 4
+        optionMenu.addAction(Camera)
+        optionMenu.addAction(Library)
+        optionMenu.addAction(cancel)
+        
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+        
+        
+        
+        
+        
     }
     
     func richEditorToolbarInsertLink(toolbar: RichEditorToolbar) {

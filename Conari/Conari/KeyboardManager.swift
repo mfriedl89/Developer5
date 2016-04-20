@@ -30,7 +30,6 @@ class KeyboardManager: NSObject {
         self.view = view
         toolbar = RichEditorToolbar(frame: CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: 44))
         toolbar.options = [
-            RichEditorOptions.Clear,
             RichEditorOptions.Undo, RichEditorOptions.Redo, RichEditorOptions.Bold, RichEditorOptions.Italic, RichEditorOptions.Underline,RichEditorOptions.Header(2),
             RichEditorOptions.OrderedList, RichEditorOptions.Image
         ]
