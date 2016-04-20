@@ -20,6 +20,7 @@
 		E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 		E0DBB9C01CBE4E66009D6520 /* Icon in Resources */ = {isa = PBXBuildFile; fileRef = E0DBB9BF1CBE4E66009D6520 /* Icon */; };
 		E0DBB9C81CBE5445009D6520 /* ConariUITestsLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBB9C71CBE5445009D6520 /* ConariUITestsLogin.swift */; };
+		E0F556841CC7CA830070F3FE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E0F556831CC7CA830070F3FE /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E0DBB9C51CBE5445009D6520 /* ConariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DBB9C71CBE5445009D6520 /* ConariUITestsLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariUITestsLogin.swift; sourceTree = "<group>"; };
 		E0DBB9C91CBE5445009D6520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0F556831CC7CA830070F3FE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		E06D7FAD1CBE221F003001BD = {
 			isa = PBXGroup;
 			children = (
+				E0F556831CC7CA830070F3FE /* .gitignore */,
 				E0DBB9BF1CBE4E66009D6520 /* Icon */,
 				E06D7FB81CBE2220003001BD /* Conari */,
 				E034AE771CC7C46B003D77FE /* ConariTests */,
@@ -298,6 +301,7 @@
 				E06D7FC41CBE2220003001BD /* LaunchScreen.storyboard in Resources */,
 				E0DBB9C01CBE4E66009D6520 /* Icon in Resources */,
 				E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */,
+				E0F556841CC7CA830070F3FE /* .gitignore in Resources */,
 				E06D7FBF1CBE2220003001BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
