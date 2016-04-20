@@ -34,8 +34,9 @@ class DatabaseManager {
             guard error == nil && data != nil else {
                 // check for fundamental networking error
                 success = false
-                responseString = error?.localizedDescription
-                
+                let message: String? = error?.localizedDescription
+                callback(success, message)
+
                 return
             }
             
