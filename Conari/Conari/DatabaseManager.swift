@@ -24,6 +24,8 @@ class DatabaseManager {
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
         var responseString: NSString?
+        var successValue = 0
+        var errorMessageValue = ""
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
             guard error == nil && data != nil else {                                                          // check for fundamental networking error
@@ -36,8 +38,26 @@ class DatabaseManager {
                 print("response = \(response)")
             }
             
+            do {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                if jsonData as! NSObject == 1 {
+                    successValue = 1
+                }
+                if let jsonErrorMessage = jsonData["error_message"] as? String {
+                    errorMessageValue = jsonErrorMessage
+                }
+                if let jsonSuccess = jsonData["success"] as? Int {
+                    successValue = jsonSuccess
+                }
+                
+            } catch {
+                print("error serializing JSON: \(error)")
+            }
+            
             responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString)")
+            //print("responseString = \(responseString)")
+
+            print("success: \(successValue), error message: \(errorMessageValue)")
         }
         task.resume()
         
