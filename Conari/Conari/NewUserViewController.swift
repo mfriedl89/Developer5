@@ -157,14 +157,47 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
     
     func invalidInput(textField: String, errors: Int, is_error: Bool) -> Int {
         var number_of_errors = errors;
-        number_of_errors = number_of_errors + 1
-
-        if ((textField == "Username") && is_error)
-        {
-            let alert = UIAlertController(title: "Alert", message: "Enter a valid username.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+        if (is_error == true){
+            number_of_errors = number_of_errors + 1
         }
+        
+        if (number_of_errors == 1)
+        {
+            
+            if ((textField == "Username") && (is_error == true))
+            {
+                let alert = UIAlertController(title: "Alert", message: "Enter a valid username.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else if ((textField == "Firstname") && (is_error == true)){
+                let alert = UIAlertController(title: "Alert", message: "Enter a valid first name.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else if ((textField == "Surname") && (is_error == true)){
+                let alert = UIAlertController(title: "Alert", message: "Enter a valid surname.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else if ((textField == "Email") && (is_error == true)){
+                let alert = UIAlertController(title: "Alert", message: "Enter a valid Email address.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else if ((textField == "PasswordWrong") && (is_error == true)){
+                let alert = UIAlertController(title: "Alert", message: "A password must contain one uppercase letter, one lowercase letter, one digit, one special character and is between 9 and 31 characters long.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else if ((textField == "PasswordRepeat") && (is_error == true)){
+                let alert = UIAlertController(title: "Alert", message: "Passwords are not the same.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
+        
+        
         return number_of_errors
     }
     
@@ -296,28 +329,28 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         
         var bool = checkingUsername(userName.text!)
         checkInput(bool, textField: userName)
-        error_counter = invalidInput("Username", errors: error_counter, is_error: bool)
+        error_counter = invalidInput("Username", errors: error_counter, is_error: !bool)
         
         
         bool = checkingNameAndSurname(name.text!)
         checkInput(bool, textField: name)
-        //error_counter = invalidInput("Firstname", errors: error_counter)
+        error_counter = invalidInput("Firstname", errors: error_counter, is_error: !bool)
 
         bool = checkingNameAndSurname(surname.text!)
         checkInput(bool, textField: surname)
-       // error_counter = invalidInput("Surename", errors: error_counter)
+        error_counter = invalidInput("Surname", errors: error_counter, is_error: !bool)
         
         bool = checkEmailAddress(email.text!)
         checkInput(bool, textField: email)
-        //error_counter = invalidInput("Email", errors: error_counter)
+        error_counter = invalidInput("Email", errors: error_counter, is_error: !bool)
         
         bool = checkPassword(password.text!)
         checkInput(bool, textField: password)
-       // error_counter = invalidInput("PasswordWrong", errors: error_counter)
+        error_counter = invalidInput("PasswordWrong", errors: error_counter, is_error: !bool)
         
         bool = checkRepeatedPassword(password.text!, repeated: repeatedPassword.text!)
         checkInput(bool, textField: repeatedPassword)
-        //error_counter = invalidInput("PasswordRepeat", errors: error_counter)
+        error_counter = invalidInput("PasswordRepeat", errors: error_counter, is_error: !bool)
         
     }
     
