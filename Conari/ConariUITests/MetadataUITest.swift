@@ -26,15 +26,38 @@ class MetadataUITest: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         
-        /*let app = XCUIApplication()
-        app.buttons["Login"].tap()
-        app.buttons["Create new user"].tap()
+        let app = XCUIApplication()
+        app.buttons["New Tutorial"].tap()
         
-        let textFieldUsername = app.textFields["desiredUsername"]
-        textFieldUsername.tap()
-        textFieldUsername.typeText("anton")
+        let title = app.textFields["title"]
+        title.tap()
+        title.typeText("Test123")
         
-        let textFieldfirstName = app.textFields["firstName"]
+        let category = app.textFields["category"]
+        category.tap()
+        
+        app.pickerWheels.element.adjustToPickerWheelValue("Youth")
+        
+        
+        //let stepper = app.steppers["stepper"]
+        //stepper.increment
+        
+        //app.steppers.element.incrementArrows.element.tap();
+        
+        //app.steppers.element.incrementArrows.element.tap()
+        
+        let duration = app.textFields["duration"]
+        duration.tap()
+        app.pickerWheels.element.adjustToPickerWheelValue("00:10")
+    
+        
+        
+        
+        
+        
+        
+        
+        /*let textFieldfirstName = app.textFields["firstName"]
         textFieldfirstName.tap()
         textFieldfirstName.typeText("Anton")
         
@@ -48,9 +71,9 @@ class MetadataUITest: XCTestCase {
         
         let textFieldRepeatPassword = app.textFields["repeatPassword"]
         textFieldRepeatPassword.tap()
-        textFieldRepeatPassword.typeText("P@sswort1234")
+        textFieldRepeatPassword.typeText("P@sswort1234")*/
         
-        app.buttons["Done"].tap()*/
+        //app.buttons["Done"].tap()
         
         //Test has to go here, but currently the view isn't in his final position.
     }

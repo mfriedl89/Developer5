@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct TutorialMetaData {
+    var Title:String;
+    var category:String;
+    var duration:String;
+    var difficulty:Int;
+}
+
 class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var titleTextField_: UITextField!
     @IBOutlet weak var difficultyLabel_: UILabel!
@@ -17,8 +24,32 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     var categoryPickerView : UIPickerView!
     var timePickerView : UIPickerView!
     
+    var current:TutorialMetaData = TutorialMetaData(Title: "",category: "",duration: "",difficulty: 0)
     
-    var categories = ["one", "two", "three", "seven", "fifteen"]
+    
+    var categories = ["Arts and Entertainment",
+                      "Cars & Other Vehicles'",
+                      "Computers and Electronics",
+                      "Conari",
+                      "Education and Communications",
+                      "Finance and Business",
+                      "Food and Entertaining",
+                      "Health",
+                      "Hobbies and Crafts",
+                      "Holidays and Traditions",
+                      "Home and Garden",
+                      "Personal Care and Style",
+                      "Pets and Animals",
+                      "Philosophy and Religion",
+                      "Relationships",
+                      "Sports and Fitness",
+                      "Travel",
+                      "Work World",
+                      "Youth"]
+    
+    
+
+
     var times: [String] = []
 
     override func viewDidLoad() {
@@ -49,6 +80,10 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,18 +96,23 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         switch DifficultyStepper_.value {
         case 5:
             difficultyLabel_.text = "very hard";
+            break;
         case 4:
             difficultyLabel_.text = "hard";
+            break;
         case 3:
             difficultyLabel_.text = "medium";
+            break;
         case 2:
             difficultyLabel_.text = "easy";
+            break;
         case 1:
             difficultyLabel_.text = "very easy";
+            break;
         default:
             return;
         }
-        
+        updateCurrentStruct();
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -85,6 +125,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         {
             return times.count
         }
+        
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == categoryPickerView{
@@ -93,6 +134,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         {
             return times[row]
         }
+        
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == categoryPickerView{
@@ -107,7 +149,46 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             DurationTextField_.selectedTextRange = nil;
         }
          self.view.endEditing(true)
+        updateCurrentStruct();
         //pickerView.hidden = true
+    }
+    
+    func updateCurrentStruct()
+    {
+        current.Title = titleTextField_.text!
+        current.category = categoryTextField_.text!
+        current.duration = DurationTextField_.text!
+        current.difficulty = Int(DifficultyStepper_.value)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "write_tutorial"
+        {
+            updateCurrentStruct();
+            if current.Title.isEmpty {
+                let alert = UIAlertController(title: "Error", message: "Please insert a Title", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                return
+            }
+            else if current.category.isEmpty {
+                let alert = UIAlertController(title: "Error", message: "Please select a Category", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                return
+            }
+            else if current.duration.isEmpty {
+                let alert = UIAlertController(title: "Error", message: "Please select a Duration", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                return
+            }
+            
+            let nextScene =  segue.destinationViewController as! NewTutorialDescriptonViewController
+            nextScene.current = current
+            return
+
+        }
     }
     
     
