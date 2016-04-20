@@ -49,13 +49,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         } else {
             passwordTextField.resignFirstResponder()
             
-            if (checkInput() == true) {
-                let response = DatabaseManager.sharedManager.loginWithPHPScript(userNameTextField.text!, password: passwordTextField.text!)
-                
-                if (response.0.boolValue == false) {
-                    showErrorMessage(response.1!)
-                }
-            }
+            loginCheck()
         }
         return true
     }
@@ -65,11 +59,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginPressed(sender: UIButton) {
+        loginCheck()
+    }
+    
+    func loginCheck() {
         if (checkInput() == true) {
-            let response = DatabaseManager.sharedManager.loginWithPHPScript(userNameTextField.text!, password: passwordTextField.text!)
-            
-            if (response.0.boolValue == false) {
-                showErrorMessage(response.1!)
+            DatabaseManager.sharedManager.loginWithPHPScript(userNameTextField.text!, password: passwordTextField.text!) { success, message in
+                print("success: \(success), message:\(message)")
+                if (success == false) {
+                    self.showErrorMessage(message!)
+                }
             }
         }
     }
@@ -97,6 +96,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func showErrorMessage(message: String) {
+        
+        print("showErrorMessage: \(message)")
         
         //create alert
         let errorAlert = UIAlertController(title: "Error",

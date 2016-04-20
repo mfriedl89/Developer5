@@ -16,7 +16,7 @@ class DatabaseManager {
     /** Singletone instance. */
     static let sharedManager = DatabaseManager()
     
-    func loginWithPHPScript(username: String, password: String) -> (Bool, String?) {
+    func loginWithPHPScript(username: String, password: String, callback: (Bool, String?) -> ()) {
         
         let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/Login.php")!)
         request.HTTPMethod = "POST"
@@ -26,9 +26,8 @@ class DatabaseManager {
         var success: Bool = false
         var responseString: NSString?
         var successValue = 0
-        var errorMessageValue = ""
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
+
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
             guard error == nil && data != nil else {
                 // check for fundamental networking error
                 success = false
@@ -46,31 +45,42 @@ class DatabaseManager {
             do {
                 let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
                 if jsonData as! NSObject == 1 {
-                    successValue = 1
+                    successValue = 1;
+                    success = true
                 }
-                if let jsonErrorMessage = jsonData["error_message"] as? String {
-                    errorMessageValue = jsonErrorMessage
+                if let jsonErrorMessage = jsonData["error_message"] as? NSString {
+                    responseString = jsonErrorMessage
                 }
                 if let jsonSuccess = jsonData["success"] as? Int {
                     successValue = jsonSuccess
+                    success = false
                 }
                 
             } catch {
                 print("error serializing JSON: \(error)")
             }
             
-            responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            //print("responseString = \(responseString)")
-
-            print("success: \(successValue), error message: \(errorMessageValue)")
-        }
+            //responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            
+//            print("success \(success)")
+//            
+//            print("responseString = \(responseString)")
+            
+            let message: String? = (responseString as? String)
+            
+            callback(success, message)
+        })
         task.resume()
+    }
+    
+    func login(username: String, password: String) -> (Bool, String) {
+        var retValue:(Bool, String) = (false, "")
         
-        let message: String? = (responseString as? String)
+        loginWithPHPScript(username, password: password) { success, message in
+            print("login-success: \(success), login-message:\(message)")
+            retValue = (success, message!)
+        }
         
-        //parsing
-        success = true
-        
-        return (success, message)
+        return retValue
     }
 }
