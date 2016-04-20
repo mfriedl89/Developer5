@@ -81,13 +81,15 @@ class NewTutorialDescriptonViewController: UIViewController {
                 dispatch_async(dispatch_get_main_queue(),{
                                self.performSegueWithIdentifier("savesegue", sender: nil)
                 });
-                self.navigationController?.popToRootViewControllerAnimated(true);
             }
             else
             {
-                let alert = UIAlertController(title: "Error", message: "An error Happend", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                dispatch_async(dispatch_get_main_queue(),{
+                    let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+
+                });
             }
         }
 
@@ -151,9 +153,8 @@ extension NewTutorialDescriptonViewController: UIImagePickerControllerDelegate, 
     {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             //pickedImage.decreaseSize(<#T##sender: AnyObject?##AnyObject?#>)
-            let imageData = UIImageJPEGRepresentation(pickedImage.resizeToWidth(200),0.5)
+            let imageData = UIImageJPEGRepresentation(pickedImage.resizeToWidth(200),0.3)
             let base64String = imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
-            //print(base64String)
             editor?.insertImage("data:image/gif;base64,"+base64String, alt: "picture")
         }
         

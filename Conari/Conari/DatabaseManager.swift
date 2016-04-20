@@ -48,11 +48,11 @@ class DatabaseManager {
     }
     
     
+    
+    
     func CreateTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
         
-
-        
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/Login.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/CreateTutorial.php")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
         postString += "username=" + username
@@ -62,7 +62,7 @@ class DatabaseManager {
         postString += "&difficulty=" + String(metadata.difficulty+1)
         postString += "&duration=" + String(metadata.duration)
         postString += "&text=" + content.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
-        
+
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
         var success: Bool = false
@@ -77,26 +77,26 @@ class DatabaseManager {
                 return
             }
             
+            //print("response = \(response)")
+            
+             responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            //print("responseString = \(responseString!)")
+            
             if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
                 // check for http errors
                 success = false
                 responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
+                let message: String? = (responseString as? String)
+                callback(success, message)
+            }else
+            {
+            
             }
             
-            do {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-                if jsonData as! NSObject == 1 {
-                    success = true
-                }
-                if let jsonErrorMessage = jsonData["error_message"] as? NSString {
-                    responseString = jsonErrorMessage
-                }
-                if let jsonSuccess = jsonData["success"] as? Int {
-                    success = false
-                }
-                
-            } catch {
-                print("error serializing JSON: \(error)")
+
+            if(responseString == "success")
+            {
+                success = true;
             }
 
             
@@ -106,5 +106,7 @@ class DatabaseManager {
         })
         task.resume()
     }
+
+    
     
 }
