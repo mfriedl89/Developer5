@@ -10,11 +10,13 @@ import UIKit
 
 class ViewFinishedTutorialViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.
+    let url = NSURL (string: "http://www.google.com");
+    let requestObj = NSURLRequest(URL: url!);
+    HTMLContent.loadRequest(requestObj);
+  }
 
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
@@ -26,6 +28,7 @@ class ViewFinishedTutorialViewController: UIViewController {
     }
     
 
+  @IBOutlet weak var HTMLContent: UIWebView!
     /*
     // MARK: - Navigation
 
