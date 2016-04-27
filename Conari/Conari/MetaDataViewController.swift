@@ -57,6 +57,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         
         DifficultyStepper_.maximumValue = 5
         DifficultyStepper_.minimumValue = 1
+        DifficultyStepper_.value = 1
+        difficultyLabel_.text = "very easy";
         
         current.duration = 5
         
