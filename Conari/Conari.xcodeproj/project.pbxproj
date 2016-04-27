@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A6528981CD0CB2A00E3F9DD /* ViewFinishedTutorialUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6528971CD0CB2A00E3F9DD /* ViewFinishedTutorialUITest.swift */; };
 		3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
 		3AFAC5D91CD0AA6C00D0C4C1 /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFAC5D81CD0AA6C00D0C4C1 /* ViewFinishedTutorialViewController.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
@@ -82,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A6528971CD0CB2A00E3F9DD /* ViewFinishedTutorialUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorialUITest.swift; sourceTree = "<group>"; };
 		3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		3AFAC5D81CD0AA6C00D0C4C1 /* ViewFinishedTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorialViewController.swift; sourceTree = "<group>"; };
 		AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				DA4B14A21CBE922200134193 /* NewUserUITest.swift */,
 				AEB03E051CC75CD900FFEA38 /* MetadataUITest.swift */,
 				E0DBB9C91CBE5445009D6520 /* Info.plist */,
+				3A6528971CD0CB2A00E3F9DD /* ViewFinishedTutorialUITest.swift */,
 			);
 			path = ConariUITests;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6528981CD0CB2A00E3F9DD /* ViewFinishedTutorialUITest.swift in Sources */,
 				E0DBB9C81CBE5445009D6520 /* ConariUITestsLogin.swift in Sources */,
 				DA4B14A31CBE922200134193 /* NewUserUITest.swift in Sources */,
 				AEB03E061CC75CD900FFEA38 /* MetadataUITest.swift in Sources */,
