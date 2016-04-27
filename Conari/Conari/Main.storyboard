@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Meta Data View Controller-->
+        <!--Tutorial-->
         <scene sceneID="3pD-uz-0B4">
             <objects>
                 <viewController id="yuD-Rl-uSD" customClass="MetaDataViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,26 +72,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZi-3d-lK6">
-                                <rect key="frame" x="533" y="309" width="47" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Weiter"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="321" y="259" width="59" height="30"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="1eL-Qf-eHn" kind="show" identifier="write_tutorial" id="ENA-4d-dTb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xnq-mX-ema" firstAttribute="top" secondItem="8mS-Tf-YNz" secondAttribute="bottom" constant="8" symbolic="YES" id="1Bz-NI-XE2"/>
-                            <constraint firstItem="tQf-dK-WGQ" firstAttribute="trailing" secondItem="FZi-3d-lK6" secondAttribute="trailing" id="1kw-t7-7JQ"/>
                             <constraint firstItem="qdA-ow-vqe" firstAttribute="top" secondItem="WJd-vL-CYr" secondAttribute="bottom" constant="12" id="2Uq-Js-KFl"/>
                             <constraint firstItem="Xnq-mX-ema" firstAttribute="trailing" secondItem="8tJ-G1-3PO" secondAttribute="trailing" id="8yy-QG-gyp"/>
                             <constraint firstItem="Xnq-mX-ema" firstAttribute="leading" secondItem="WJd-vL-CYr" secondAttribute="leading" id="9AG-4R-EYO"/>
-                            <constraint firstItem="FZi-3d-lK6" firstAttribute="top" secondItem="tQf-dK-WGQ" secondAttribute="bottom" constant="8" symbolic="YES" id="9D8-v3-o2p"/>
                             <constraint firstItem="8mS-Tf-YNz" firstAttribute="top" secondItem="9cl-m4-t0G" secondAttribute="bottom" constant="8" symbolic="YES" id="HUF-Yw-O5O"/>
                             <constraint firstItem="iwX-An-iSS" firstAttribute="leading" secondItem="9cl-m4-t0G" secondAttribute="leading" id="Khb-hd-0hh"/>
                             <constraint firstItem="8tJ-G1-3PO" firstAttribute="trailing" secondItem="tQf-dK-WGQ" secondAttribute="trailing" id="O0L-QM-HSf"/>
@@ -111,6 +98,13 @@
                             <constraint firstItem="4R6-YT-Req" firstAttribute="centerY" secondItem="8tJ-G1-3PO" secondAttribute="centerY" id="yAV-Aw-Ufn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Tutorial" id="KOA-RT-uJd">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="neY-8U-q3c">
+                            <connections>
+                                <segue destination="1eL-Qf-eHn" kind="show" identifier="write_tutorial" id="EUj-xx-R2u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="DifficultyStepper_" destination="8tJ-G1-3PO" id="Gj3-Nv-y8Y"/>
                         <outlet property="DurationTextField_" destination="tQf-dK-WGQ" id="6Xz-b7-EI9"/>
