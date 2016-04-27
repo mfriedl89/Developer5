@@ -14,7 +14,7 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var categoryTableView_: UITableView!
     
     var categories = ["Arts and Entertainment",
-                      "Cars & Other Vehicles'",
+                      "Cars & Other Vehicles",
                       "Computers and Electronics",
                       "Conari",
                       "Education and Communications",

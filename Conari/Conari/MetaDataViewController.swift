@@ -28,7 +28,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     
     var categories = ["Arts and Entertainment",
-                      "Cars & Other Vehicles'",
+                      "Cars & Other Vehicles",
                       "Computers and Electronics",
                       "Conari",
                       "Education and Communications",
