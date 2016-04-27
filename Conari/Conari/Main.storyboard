@@ -281,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5Z-FB-TsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444" y="-137"/>
+            <point key="canvasLocation" x="442" y="-137"/>
         </scene>
         <!--Login-->
         <scene sceneID="oFF-3P-3nK">
@@ -327,8 +327,9 @@
                                     <action selector="loginPressed:" destination="MDP-0C-mzj" eventType="touchUpInside" id="fT2-jn-hQ8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBW-zR-LTL">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBW-zR-LTL">
                                 <rect key="frame" x="20" y="550" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create new user"/>
                                 <connections>
                                     <segue destination="QeT-UG-jW0" kind="show" id="o2B-Dr-HR1"/>
@@ -367,7 +368,7 @@
             </objects>
             <point key="canvasLocation" x="1124" y="-137"/>
         </scene>
-        <!--New User View Controller-->
+        <!--Add new user-->
         <scene sceneID="RHQ-hq-LpA">
             <objects>
                 <viewController id="QeT-UG-jW0" customClass="NewUserViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
@@ -376,14 +377,14 @@
                         <viewControllerLayoutGuide type="bottom" id="LCO-Fb-8pP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YUO-oT-3DX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03a-MH-kYk">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GU6-TJ-xAJ">
-                                        <rect key="frame" x="0.0" y="17" width="600" height="583"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desired username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQY-e0-8XX">
                                                 <rect key="frame" x="20" y="8" width="560" height="21"/>
@@ -496,7 +497,7 @@
                                             <constraint firstItem="inf-MK-caC" firstAttribute="top" secondItem="io4-io-KRd" secondAttribute="bottom" constant="8" id="gYz-Bh-atM"/>
                                             <constraint firstItem="cUY-sn-RRR" firstAttribute="top" secondItem="nZu-fn-pCo" secondAttribute="bottom" constant="8" id="hPV-cO-ubw"/>
                                             <constraint firstItem="lG1-Ep-TUk" firstAttribute="top" secondItem="YxV-fB-ouF" secondAttribute="bottom" constant="8" id="ibz-M5-BaK"/>
-                                            <constraint firstAttribute="bottom" secondItem="p8s-2l-X5a" secondAttribute="bottom" constant="148" id="jiX-H5-7Zb"/>
+                                            <constraint firstAttribute="bottom" secondItem="p8s-2l-X5a" secondAttribute="bottom" constant="165" id="jiX-H5-7Zb"/>
                                             <constraint firstItem="Ry6-b4-dhv" firstAttribute="top" secondItem="X5Z-HW-17I" secondAttribute="bottom" constant="3" id="kiX-fw-VRV"/>
                                             <constraint firstItem="m6B-FF-GSz" firstAttribute="leading" secondItem="GU6-TJ-xAJ" secondAttribute="leading" constant="20" id="nT4-P8-YWH"/>
                                             <constraint firstItem="p8s-2l-X5a" firstAttribute="top" secondItem="cUY-sn-RRR" secondAttribute="bottom" constant="8" id="o4Z-5A-BQ4"/>
@@ -515,9 +516,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="GU6-TJ-xAJ" secondAttribute="trailing" id="4L1-gV-CQk"/>
-                                    <constraint firstAttribute="bottom" secondItem="GU6-TJ-xAJ" secondAttribute="bottom" id="FHc-hl-nYm"/>
-                                    <constraint firstItem="GU6-TJ-xAJ" firstAttribute="top" secondItem="03a-MH-kYk" secondAttribute="top" constant="17" id="Qqg-F0-ouJ"/>
-                                    <constraint firstItem="AQY-e0-8XX" firstAttribute="top" secondItem="03a-MH-kYk" secondAttribute="top" constant="25" id="V1n-em-b7I"/>
+                                    <constraint firstAttribute="bottom" secondItem="GU6-TJ-xAJ" secondAttribute="bottom" constant="-64" id="FHc-hl-nYm"/>
+                                    <constraint firstItem="GU6-TJ-xAJ" firstAttribute="top" secondItem="03a-MH-kYk" secondAttribute="top" id="Qqg-F0-ouJ"/>
+                                    <constraint firstItem="AQY-e0-8XX" firstAttribute="top" secondItem="03a-MH-kYk" secondAttribute="top" constant="8" id="V1n-em-b7I"/>
                                     <constraint firstItem="GU6-TJ-xAJ" firstAttribute="centerX" secondItem="03a-MH-kYk" secondAttribute="centerX" id="wQp-VV-7MJ"/>
                                     <constraint firstItem="GU6-TJ-xAJ" firstAttribute="leading" secondItem="03a-MH-kYk" secondAttribute="leading" id="xv2-pN-Te9"/>
                                 </constraints>
@@ -532,6 +533,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Add new user" id="hiy-Gc-44Q"/>
                     <connections>
                         <outlet property="doneBtn" destination="p8s-2l-X5a" id="8nW-zR-TTs"/>
                         <outlet property="email" destination="Ry6-b4-dhv" id="Spg-gH-G4V"/>
@@ -574,6 +576,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Cwv-py-iE1"/>
+        <segue reference="be9-FF-sxg"/>
     </inferredMetricsTieBreakers>
 </document>

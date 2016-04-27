@@ -23,9 +23,15 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
     
     @IBOutlet weak var doneBtn: UIButton!
     
-    let invalidUser = "Username is not valid"
+    let invalidUser = "Enter a valid username."
+    let invalidFirstName = "Enter a valid first name."
+    let invalidSurName = "Enter a valid surname."
+    let invalidEMail = "Enter a valid E-Mail address."
+    let invalidPassword = "A password must contain one uppercase letter, one lowercase letter, one digit, one special character and is between 9 and 31 characters long."
+    
     var activeField: UITextField?
 
+    var scrollInset : CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,10 +83,18 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         let info : NSDictionary = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
         
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height + UIApplication.sharedApplication().statusBarFrame.size.height * 2 + 32, 0.0)
-        // * 2 because bevor it was under top layout and + 8 because there are 8ptx constraints from the top
+        let doneBtnPos = doneBtn.frame.origin.y + doneBtn.frame.height/2
+        
+        if(doneBtnPos > view.frame.height - keyboardSize!.height) {
+            scrollInset =  keyboardSize!.height - (view.frame.height - doneBtnPos)
+        }
+        else {
+            scrollInset = keyboardSize!.height
+        }
+        
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, scrollInset, 0.0)
         self.viewInScrollView.frame.size.height = view.frame.height
-        self.scrollView.contentSize.height = view.frame.height + UIApplication.sharedApplication().statusBarFrame.size.height * 2 + 32
+        self.scrollView.contentSize.height = view.frame.height + UIApplication.sharedApplication().statusBarFrame.size.height
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         
@@ -103,11 +117,19 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         //Once keyboard disappears, restore original positions
         let info : NSDictionary = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+        
+        if(doneBtn.frame.origin.y + doneBtn.frame.height/2 > view.frame.height) {
+            scrollInset = 0
+        }
+        else {
+            scrollInset = keyboardSize!.height * -1
+        }
+        
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, scrollInset, 0.0)
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         self.view.endEditing(true)
-        self.scrollView.scrollEnabled = false
+        self.scrollView.scrollEnabled = true
         
     }
     
@@ -166,27 +188,27 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
             
             if ((textField == "Username") && (is_error == true))
             {
-                let alert = UIAlertController(title: "Alert", message: "Enter a valid username.", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Alert", message: invalidUser, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             else if ((textField == "Firstname") && (is_error == true)){
-                let alert = UIAlertController(title: "Alert", message: "Enter a valid first name.", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Alert", message: invalidFirstName, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             else if ((textField == "Surname") && (is_error == true)){
-                let alert = UIAlertController(title: "Alert", message: "Enter a valid surname.", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Alert", message: invalidSurName, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             else if ((textField == "Email") && (is_error == true)){
-                let alert = UIAlertController(title: "Alert", message: "Enter a valid Email address.", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Alert", message: invalidEMail, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             else if ((textField == "PasswordWrong") && (is_error == true)){
-                let alert = UIAlertController(title: "Alert", message: "A password must contain one uppercase letter, one lowercase letter, one digit, one special character and is between 9 and 31 characters long.", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Alert", message: invalidPassword, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
