@@ -482,8 +482,9 @@ extension RichEditorView {
     private func escape(string: String) -> String {
         let unicode = string.unicodeScalars
         var newString = ""
-        for var i = unicode.startIndex; i < unicode.endIndex; i = i.successor() {
-            let char = unicode[i]
+        //for var i = unicode.startIndex; i < unicode.endIndex; i = i.successor() {
+        //    let char = unicode[i]
+        for char in unicode{
             if char.value < 9 || (char.value > 9 && char.value < 32) // < 32 == special characters in ASCII, 9 == horizontal tab in ASCII
                 || char.value == 39 { // 39 == ' in ASCII
                 let escaped = char.escape(asASCII: true)
@@ -533,7 +534,8 @@ extension RichEditorView {
             // If there are any custom actions being called
             // We need to tell the delegate about it
             let actionPrefix = "action/"
-            let range = Range(start: actionPrefix.startIndex, end: actionPrefix.endIndex)
+            //let range = Range(start: actionPrefix.startIndex, end: actionPrefix.endIndex)
+            let range = actionPrefix.startIndex..<actionPrefix.endIndex
             let action = method.stringByReplacingCharactersInRange(range, withString: "")
             delegate?.richEditor?(self, handleCustomAction: action)
         }

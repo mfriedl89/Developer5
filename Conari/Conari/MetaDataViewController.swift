@@ -28,7 +28,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     
     var categories = ["Arts and Entertainment",
-                      "Cars & Other Vehicles'",
+                      "Cars & Other Vehicles",
                       "Computers and Electronics",
                       "Conari",
                       "Education and Communications",
@@ -57,6 +57,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         
         DifficultyStepper_.maximumValue = 5
         DifficultyStepper_.minimumValue = 1
+        DifficultyStepper_.value = 1
+        difficultyLabel_.text = "very easy";
         
         current.duration = 5
         
@@ -78,6 +80,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         DurationTextField_.text = times[1] + " hh:mm"
         DurationTextField_.selectedTextRange = nil;
         
+        titleTextField_.delegate = self
+        
         
         // Do any additional setup after loading the view.
     }
@@ -91,7 +95,18 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if (textField == titleTextField_) {
+            titleTextField_.resignFirstResponder()
+        }
+        
+        return true
+    }
     
     @IBAction func DifficultyValueChanged_(sender: AnyObject) {
         
