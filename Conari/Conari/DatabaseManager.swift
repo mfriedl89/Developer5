@@ -16,8 +16,8 @@ class DatabaseManager {
 
     /** Singletone instance. */
     static let sharedManager = DatabaseManager()
-    var username:String = "3"
-    var password:String = "3"
+    //var username:String = "3"
+    //var password:String = "3"
     
     var username: String = ""
     var password: String = ""

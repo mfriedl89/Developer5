@@ -263,6 +263,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Continue without login"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ0-Tw-fVV">
+                                <rect key="frame" x="209" y="387" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="xIj-V8-ate" kind="show" id="fKb-o6-4cP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -548,6 +555,24 @@
                 <navigationItem title="Login" id="pwC-ja-Hke"/>
             </objects>
             <point key="canvasLocation" x="-368" y="-137"/>
+        </scene>
+        <!--View Finished Tutorial View Controller-->
+        <scene sceneID="B3P-8w-jZp">
+            <objects>
+                <viewController id="xIj-V8-ate" customClass="ViewFinishedTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Hd-ug-cM0"/>
+                        <viewControllerLayoutGuide type="bottom" id="VC4-Hp-4OT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fIg-T3-jg1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jk1-65-Gea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-352" y="616"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
