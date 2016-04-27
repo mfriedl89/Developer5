@@ -26,7 +26,6 @@
 		E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 		E0DBB9C01CBE4E66009D6520 /* Icon in Resources */ = {isa = PBXBuildFile; fileRef = E0DBB9BF1CBE4E66009D6520 /* Icon */; };
 		E0DBB9C81CBE5445009D6520 /* ConariUITestsLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBB9C71CBE5445009D6520 /* ConariUITestsLogin.swift */; };
-		E0F556841CC7CA830070F3FE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E0F556831CC7CA830070F3FE /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +92,6 @@
 		DA4B14A21CBE922200134193 /* NewUserUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUITest.swift; sourceTree = "<group>"; };
 		E034AE681CC77348003D77FE /* LoginUnitConariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginUnitConariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E034AE6A1CC77348003D77FE /* ConariUnitTestsLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariUnitTestsLogin.swift; sourceTree = "<group>"; };
-		E034AE6C1CC77348003D77FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E034AE771CC7C46B003D77FE /* ConariTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConariTests; sourceTree = "<group>"; };
 		E06D7FB61CBE2220003001BD /* Conari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06D7FB91CBE2220003001BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 				E06D7FB81CBE2220003001BD /* Conari */,
 				E034AE771CC7C46B003D77FE /* ConariTests */,
 				E0DBB9C61CBE5445009D6520 /* ConariUITests */,
-				E034AE691CC77348003D77FE /* ConariUnitTests */,
 				E06D7FB71CBE2220003001BD /* Products */,
 				AE9217221CC7748D00A3391C /* RichEditorView.xcodeproj */,
 			);
@@ -221,7 +218,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				E034AE6E1CC77348003D77FE /* PBXTargetDependency */,
 			);
 			name = LoginUnitConariTests;
 			productName = LoginUnitConariTests;
