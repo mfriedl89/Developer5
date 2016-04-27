@@ -135,7 +135,64 @@ class DatabaseManager {
         })
         task.resume()
     }
-
+  
+  
+  
+  
+  
+    
+    func requestTutorialWith(tutorialID: String, callback: (Bool, String?) -> ()) -> AnyObject! {
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/RequestTutorial.php")!)
+        request.HTTPMethod = "POST"
+        let postString = "tutorialID" + tutorialID
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        var success: Bool = false
+        var responseString: NSString?
+        var successValue = 0
+        var jsonData: AnyObject
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
+            guard error == nil && data != nil else {
+                // check for fundamental networking error
+                success = false
+                let message: String? = error?.localizedDescription
+                callback(success, message)
+                
+                return
+            }
+            
+            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
+                // check for http errors
+                success = false
+                responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
+            }
+            
+            do {
+                jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                
+         
+                if let jsonErrorMessage = jsonData["error_message"] as? NSString {
+                    responseString = jsonErrorMessage
+                }
+                if let jsonSuccess = jsonData["success"] as? Int {
+                    successValue = jsonSuccess
+                    success = false
+                }
+                
+            } catch {
+                print("error serializing JSON: \(error)")
+            }
+            
+            let message: String? = (responseString as? String)
+            
+            callback(success, message)
+        })
+        task.resume()
+        
+        return jsonData
+    }
     
     
 }
