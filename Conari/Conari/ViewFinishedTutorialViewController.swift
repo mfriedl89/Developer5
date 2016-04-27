@@ -13,9 +13,9 @@ class ViewFinishedTutorialViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    let url = NSURL (string: "http://www.google.com");
-    let requestObj = NSURLRequest(URL: url!);
-    HTMLContent.loadRequest(requestObj);
+    //let url = NSURL (string: "http://www.google.com");
+    //let requestObj = NSURLRequest(URL: url!);
+    HTMLContent.loadHTMLString("<html><body><p>Hello!</p></body></html>", baseURL: nil)
   }
 
     override func viewWillAppear(animated: Bool) {
