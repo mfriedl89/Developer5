@@ -30,8 +30,9 @@ class NewTutorialDescriptonViewController: UIViewController {
         editor!.setHTML("<h2>"+current.Title+"</h2>" )
         editor?.delegate = self
         editor?.accessibilityLabel = "texteditor"
-        self.view.addSubview(editor!)
+        editor?.webView.becomeFirstResponder()
         
+        self.view.addSubview(editor!)
         keyman = KeyboardManager(view: self.view)
         keyman?.toolbar.delegate = self
         keyman?.toolbar.editor = editor

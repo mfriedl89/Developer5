@@ -29,9 +29,17 @@ class KeyboardManager: NSObject {
     init(view: UIView) {
         self.view = view
         toolbar = RichEditorToolbar(frame: CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: 44))
+        
+        let hideKeyboard = RichEditorOptionItem(image: UIImage(named: "clear"), title: "▽") { toolbar in
+            view.endEditing(true)
+            return
+        }
+        
+        
+        
         toolbar.options = [
-            RichEditorOptions.Undo, RichEditorOptions.Redo, RichEditorOptions.Bold, RichEditorOptions.Italic, RichEditorOptions.Underline,RichEditorOptions.Header(2),
-            RichEditorOptions.OrderedList, RichEditorOptions.Image
+            RichEditorOptions.Undo, RichEditorOptions.Bold, RichEditorOptions.Italic, RichEditorOptions.Underline,RichEditorOptions.Header(2),
+            RichEditorOptions.OrderedList, RichEditorOptions.Image,hideKeyboard
         ]
 
     }
