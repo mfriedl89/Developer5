@@ -303,10 +303,10 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
             }
         }
         
-        if(lowLetterExists == true &&
-            upperLetterExists == true &&
-            specialLetterExists == true &&
-            countExists == true) {
+        if(lowLetterExists &&
+           upperLetterExists &&
+           specialLetterExists &&
+           countExists) {
             return true
         }
         else {
@@ -331,7 +331,6 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         checkInput(bool, textField: userName)
         error_counter = invalidInput("Username", errors: error_counter, is_error: !bool)
         
-        
         bool = checkingNameAndSurname(name.text!)
         checkInput(bool, textField: name)
         error_counter = invalidInput("Firstname", errors: error_counter, is_error: !bool)
@@ -352,6 +351,32 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         checkInput(bool, textField: repeatedPassword)
         error_counter = invalidInput("PasswordRepeat", errors: error_counter, is_error: !bool)
         
+        if (error_counter == 0) {
+            DatabaseManager.sharedManager.CreateUser(userName.text!, password: password.text!, firstName: name.text!, surName: surname.text!, email: email.text!) { success, message in
+                if (success == false) {
+                    self.showErrorMessage(message!)
+                }
+            }
+        }
+        
+    }
+    
+    func showErrorMessage(message: String) {
+        dispatch_async(dispatch_get_main_queue(), {
+            //create alert
+            let errorAlert = UIAlertController(title: "Error",
+                message: message,
+                preferredStyle: UIAlertControllerStyle.Alert)
+            
+            //make button
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            
+            //add buttons
+            errorAlert.addAction(okAction)
+            
+            //display
+            self.presentViewController(errorAlert, animated: true, completion: nil)
+        })
     }
     
 }
