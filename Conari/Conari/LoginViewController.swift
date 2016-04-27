@@ -20,7 +20,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         userNameTextField.delegate = self
         passwordTextField.delegate = self
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -46,9 +45,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         if (textField == userNameTextField) {
             passwordTextField.becomeFirstResponder()
+            
         } else {
             passwordTextField.resignFirstResponder()
-            DatabaseManager.sharedManager.loginWithPHPScript(userNameTextField.text!, password: passwordTextField.text!)
+            
+            loginCheck()
         }
         return true
     }
@@ -58,9 +59,56 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginPressed(sender: UIButton) {
-        DatabaseManager.sharedManager.loginWithPHPScript(userNameTextField.text!, password: passwordTextField.text!)
+        loginCheck()
     }
     
-    @IBAction func newUserPressed(sender: UIButton) {
+    func loginCheck() {
+        if (checkInput() == true) {
+            DatabaseManager.sharedManager.loginWithPHPScript(userNameTextField.text!, password: passwordTextField.text!) { success, message in
+                if (success == false) {
+                    self.showErrorMessage(message!)
+                }
+            }
+        }
     }
+    
+    func checkInput() -> Bool {
+
+        var inputValid: Bool = true
+        
+        if (checkTextField(userNameTextField) == false) { inputValid = false }
+        if (checkTextField(passwordTextField) == false) { inputValid = false }
+        
+        return inputValid
+    }
+    
+    func checkTextField(textField: UITextField) -> Bool {
+        
+        if textField.text == "" {
+            textField.backgroundColor = UIColor(red: 1, green: 0.498, blue: 0.498, alpha: 1.0)
+            return false
+        }
+        
+        textField.backgroundColor = UIColor.clearColor()
+        return true
+    }
+    
+    func showErrorMessage(message: String) {
+        dispatch_async(dispatch_get_main_queue(), {
+            //create alert
+            let errorAlert = UIAlertController(title: "Error",
+                                               message: message,
+                                               preferredStyle: UIAlertControllerStyle.Alert)
+            
+            //make button
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            
+            //add buttons
+            errorAlert.addAction(okAction)
+            
+            //display
+            self.presentViewController(errorAlert, animated: true, completion: nil)
+        })
+    }
+    
 }
