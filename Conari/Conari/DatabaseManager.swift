@@ -171,13 +171,21 @@ class DatabaseManager {
             }
             do {
                 let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-
-                responseTutorial = Tutorial(
-                    title: jsonData[0] as! String,
-                    category: jsonData[1] as! Int,
-                    difficulty: jsonData[2] as! String,
-                    duration: jsonData[3] as! String,
-                    text: jsonData[4] as! String)
+                
+                if data!.length > 2  {
+                    responseTutorial = Tutorial(
+                        title: jsonData[0] as! String,
+                        category: jsonData[1] as! Int,
+                        difficulty: jsonData[2] as! String,
+                        duration: jsonData[3] as! String,
+                        text: jsonData[4] as! String)
+                }
+                if let jsonErrorMessage = jsonData["error_message"] as? NSString {
+                    responseString = jsonErrorMessage
+                }
+                if let jsonSuccess = jsonData["success"] as? Int {
+                    successValue = jsonSuccess
+                }
                 
             } catch {
                 print("error serializing JSON: \(error)")

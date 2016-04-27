@@ -14,7 +14,7 @@ class ViewFinishedTutorialViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    requestTutorial("32")
+    requestTutorial("323")
   }
 
     override func viewWillAppear(animated: Bool) {
@@ -42,7 +42,9 @@ class ViewFinishedTutorialViewController: UIViewController {
         DatabaseManager.sharedManager.requestTutorial(tutorialID) { tutorial, message in
             
             if (tutorial == nil) {
-                self.showErrorMessage(message!)
+                if message != nil {
+                    self.showErrorMessage(message!)
+                }
             }
             else {
                 self.HTMLContent.loadHTMLString(tutorial!.text, baseURL: nil)
