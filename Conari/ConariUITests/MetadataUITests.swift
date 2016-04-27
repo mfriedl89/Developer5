@@ -1,7 +1,7 @@
 
 import XCTest
 
-class MetadataUITest: XCTestCase {
+class MetadataUITests: XCTestCase {
     
     override func setUp() {
         super.setUp()
