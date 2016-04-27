@@ -15,6 +15,7 @@
 		AEB03E031CC75B5C00FFEA38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E011CC75B5C00FFEA38 /* Main.storyboard */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
 		AEB03E061CC75CD900FFEA38 /* MetadataUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E051CC75CD900FFEA38 /* MetadataUITest.swift */; };
+		AEF26F091CD0A0F300660777 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF26F081CD0A0F300660777 /* MainTutorialViewController.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		DA4B14A31CBE922200134193 /* NewUserUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B14A21CBE922200134193 /* NewUserUITest.swift */; };
 		E034AE6B1CC77348003D77FE /* ConariUnitTestsLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E034AE6A1CC77348003D77FE /* ConariUnitTestsLogin.swift */; };
@@ -26,7 +27,6 @@
 		E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 		E0DBB9C01CBE4E66009D6520 /* Icon in Resources */ = {isa = PBXBuildFile; fileRef = E0DBB9BF1CBE4E66009D6520 /* Icon */; };
 		E0DBB9C81CBE5445009D6520 /* ConariUITestsLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBB9C71CBE5445009D6520 /* ConariUITestsLogin.swift */; };
-		E0F556841CC7CA830070F3FE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E0F556831CC7CA830070F3FE /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,11 +89,11 @@
 		AEB03E011CC75B5C00FFEA38 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
 		AEB03E051CC75CD900FFEA38 /* MetadataUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataUITest.swift; sourceTree = "<group>"; };
+		AEF26F081CD0A0F300660777 /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		DA4B14A21CBE922200134193 /* NewUserUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUITest.swift; sourceTree = "<group>"; };
 		E034AE681CC77348003D77FE /* LoginUnitConariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginUnitConariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E034AE6A1CC77348003D77FE /* ConariUnitTestsLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariUnitTestsLogin.swift; sourceTree = "<group>"; };
-		E034AE6C1CC77348003D77FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E034AE771CC7C46B003D77FE /* ConariTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConariTests; sourceTree = "<group>"; };
 		E06D7FB61CBE2220003001BD /* Conari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06D7FB91CBE2220003001BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,7 +160,6 @@
 				E06D7FB81CBE2220003001BD /* Conari */,
 				E034AE771CC7C46B003D77FE /* ConariTests */,
 				E0DBB9C61CBE5445009D6520 /* ConariUITests */,
-				E034AE691CC77348003D77FE /* ConariUnitTests */,
 				E06D7FB71CBE2220003001BD /* Products */,
 				AE9217221CC7748D00A3391C /* RichEditorView.xcodeproj */,
 			);
@@ -192,6 +191,7 @@
 				E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */,
 				E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */,
 				AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */,
+				AEF26F081CD0A0F300660777 /* MainTutorialViewController.swift */,
 			);
 			path = Conari;
 			sourceTree = "<group>";
@@ -221,7 +221,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				E034AE6E1CC77348003D77FE /* PBXTargetDependency */,
 			);
 			name = LoginUnitConariTests;
 			productName = LoginUnitConariTests;
@@ -406,6 +405,7 @@
 			files = (
 				E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */,
 				DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */,
+				AEF26F091CD0A0F300660777 /* MainTutorialViewController.swift in Sources */,
 				3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */,
 				E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */,
 				AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */,

@@ -31,15 +31,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        if (segue.identifier ==  "show_main_view"){
+            let backItem = UIBarButtonItem()
+            backItem.title = "Logout"
+            navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+        }
+
+
      }
-     */
+ 
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
@@ -67,6 +74,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             DatabaseManager.sharedManager.loginWithPHPScript(userNameTextField.text!, password: passwordTextField.text!) { success, message in
                 if (success == false) {
                     self.showErrorMessage(message!)
+                }
+                else
+                {
+                    dispatch_async(dispatch_get_main_queue(),
+                                   {
+                                    self.performSegueWithIdentifier("show_main_view", sender: nil)
+                        
+                        })
+                    
                 }
             }
         }

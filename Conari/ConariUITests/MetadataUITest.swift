@@ -27,7 +27,29 @@ class MetadataUITest: XCTestCase {
         
         
         let app = XCUIApplication()
-        app.buttons["New Tutorial"].tap()
+        
+        let answerButton = app.buttons["Login"]
+        answerButton.tap()
+        
+        let textFieldUsername = app.textFields["username"]
+        let textFieldPassword = app.secureTextFields["password"]
+        XCTAssert(app.staticTexts["Username:"].exists)
+        XCTAssert(app.staticTexts["Password:"].exists)
+        
+        textFieldUsername.tap()
+        XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
+        textFieldUsername.typeText("3")
+        XCTAssertEqual(textFieldUsername.value as? String, "3")
+        app.buttons["Next:"].tap()
+        
+        XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
+        textFieldPassword.typeText("3")
+        app.buttons["Done"].tap()
+
+        
+        
+        
+        XCUIApplication().navigationBars["Conari"].buttons["Tutorial erstellen"].tap()
         
         let title = app.textFields["title"]
         title.tap()

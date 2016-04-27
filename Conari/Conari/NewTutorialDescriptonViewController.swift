@@ -38,8 +38,14 @@ class NewTutorialDescriptonViewController: UIViewController {
         keyman?.toolbar.editor = editor
         
         imagePicker.delegate = self
+        if(UIImagePickerController.isSourceTypeAvailable(.Camera))
+        {
+            imagePicker.sourceType = .Camera
+        }else
+        {
+            imagePicker.sourceType = .PhotoLibrary
+        }
         
-        imagePicker.sourceType = .Camera
 
 
         
@@ -195,19 +201,27 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
     }
     
     func richEditorToolbarInsertImage(toolbar: RichEditorToolbar) {
+
         
+
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
         
 
         let Camera = UIAlertAction(title: "Camera", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
-            self.imagePicker.sourceType = .Camera;
-            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            if(UIImagePickerController.isSourceTypeAvailable(.Camera))
+            {
+                self.imagePicker.sourceType = .Camera;
+                self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            }
         })
         let Library = UIAlertAction(title: "Photo Library", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
-           self.imagePicker.sourceType = .PhotoLibrary;
-           self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
+            {
+                self.imagePicker.sourceType = .PhotoLibrary;
+                self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            }
         })
         
         let cancel = UIAlertAction(title: "Cancel", style: .Default, handler: {
@@ -217,8 +231,15 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
         
         
         // 4
-        optionMenu.addAction(Camera)
-        optionMenu.addAction(Library)
+        if(UIImagePickerController.isSourceTypeAvailable(.Camera))
+        {
+            optionMenu.addAction(Camera)
+        }
+        if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
+        {
+            optionMenu.addAction(Library)
+        }
+        
         optionMenu.addAction(cancel)
         
         self.presentViewController(optionMenu, animated: true, completion: nil)
