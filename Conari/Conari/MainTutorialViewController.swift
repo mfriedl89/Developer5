@@ -91,11 +91,9 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.categoryTableView_.dequeueReusableCellWithIdentifier("category_cell_")! as UITableViewCell
+        let cell:UITableViewCell = self.categoryTableView_.dequeueReusableCellWithIdentifier("category_cell")! as UITableViewCell
         
-        if let label = cell.textLabel{
-            label.text = self.categories[indexPath.row]
-        }
+        cell.textLabel?.text = self.categories[indexPath.row]
         
         return cell
     }
