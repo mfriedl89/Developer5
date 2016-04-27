@@ -29,7 +29,7 @@ class DatabaseManager {
         
         var success: Bool = false
         var responseString: NSString?
-        var successValue = 0
+        //var successValue = 0
 
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
             guard error == nil && data != nil else {
@@ -50,7 +50,7 @@ class DatabaseManager {
             do {
                 let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
                 if jsonData as! NSObject == 1 {
-                    successValue = 1;
+                    //successValue = 1;
                     self.username = username
                     self.password = password
                     success = true
@@ -58,8 +58,8 @@ class DatabaseManager {
                 if let jsonErrorMessage = jsonData["error_message"] as? NSString {
                     responseString = jsonErrorMessage
                 }
-                if let jsonSuccess = jsonData["success"] as? Int {
-                    successValue = jsonSuccess
+                if (jsonData["success"] != nil) {
+                    //successValue = jsonSuccess
                     success = false
                 }
                 
