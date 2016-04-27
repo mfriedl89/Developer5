@@ -215,7 +215,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create new user"/>
                                 <connections>
-                                    <action selector="newUserPressed:" destination="MDP-0C-mzj" eventType="touchUpInside" id="FQN-21-4Jp"/>
                                     <segue destination="YJq-ll-pSc" kind="show" id="CVH-T3-o4C">
                                         <nil key="action"/>
                                     </segue>
