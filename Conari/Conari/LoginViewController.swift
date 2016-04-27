@@ -43,8 +43,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             backItem.title = "Logout"
             navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
         }
-
-
      }
  
     

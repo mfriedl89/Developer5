@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var CreateTutorialButton_: UIBarButtonItem!
     @IBOutlet weak var SearchField_: UITextField!
     @IBOutlet weak var categoryTableView_: UITableView!
@@ -43,6 +43,8 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
             CreateTutorialButton_.enabled = false
         }
         
+        SearchField_.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -65,6 +67,19 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if (textField == SearchField_) {
+            SearchField_.resignFirstResponder()
+        }
+        
+        return true
     }
     
 

@@ -78,6 +78,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         DurationTextField_.text = times[1] + " hh:mm"
         DurationTextField_.selectedTextRange = nil;
         
+        titleTextField_.delegate = self
+        
         
         // Do any additional setup after loading the view.
     }
@@ -91,7 +93,18 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if (textField == titleTextField_) {
+            titleTextField_.resignFirstResponder()
+        }
+        
+        return true
+    }
     
     @IBAction func DifficultyValueChanged_(sender: AnyObject) {
         
