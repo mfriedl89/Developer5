@@ -8,6 +8,14 @@
 
 import Foundation
 
+struct Tutorial {
+    var title:String
+    var category:Int
+    var difficulty: Int
+    var duration: Int
+    var text: String
+}
+
 
 /**
  This file will act as our Database manager.
@@ -139,58 +147,51 @@ class DatabaseManager {
   
   
     
-    func requestTutorialWith(tutorialID: String, callback: (Bool, String?) -> ()) -> AnyObject! {
+    func requestTutorial(tutorialID: Int, callback: (Tutorial?, String?) -> ()){
         
         let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/RequestTutorial.php")!)
         request.HTTPMethod = "POST"
-        let postString = "tutorialID" + tutorialID
+        let postString = "tutorialID=32"// + String(tutorialID)
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        var success: Bool = false
+
+        var jsonString: String = ""
         var responseString: NSString?
         var successValue = 0
-        var jsonData: AnyObject
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
             guard error == nil && data != nil else {
                 // check for fundamental networking error
-                success = false
+
                 let message: String? = error?.localizedDescription
-                callback(success, message)
-                
+                callback(nil, message)
+                print("error:  \(message)");
                 return
             }
             
+
             if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
                 // check for http errors
-                success = false
                 responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
             }
-            
             do {
-                jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
                 
-         
-                if let jsonErrorMessage = jsonData["error_message"] as? NSString {
-                    responseString = jsonErrorMessage
-                }
-                if let jsonSuccess = jsonData["success"] as? Int {
-                    successValue = jsonSuccess
-                    success = false
-                }
+                var retVal = Tutorial(title: jsonData[0], category: jsonData[1], difficulty: jsonData[2], duration: jsonData[3], text: jsonData[4])
+                    callback(retVal, message)
+
+                print("jsonString:  \(jsonData)");
                 
             } catch {
                 print("error serializing JSON: \(error)")
             }
             
+            
             let message: String? = (responseString as? String)
             
-            callback(success, message)
+            callback(nil, message)
+            
         })
         task.resume()
-        
-        return jsonData
     }
-    
     
 }

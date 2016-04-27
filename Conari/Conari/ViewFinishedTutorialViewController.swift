@@ -15,7 +15,9 @@ class ViewFinishedTutorialViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
     //let url = NSURL (string: "http://www.google.com");
     //let requestObj = NSURLRequest(URL: url!);
-    HTMLContent.loadHTMLString("<html><body><p>Hello!</p></body></html>", baseURL: nil)
+    
+    
+    requestTutorial()
   }
 
     override func viewWillAppear(animated: Bool) {
@@ -38,5 +40,41 @@ class ViewFinishedTutorialViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func requestTutorial(){
+        DatabaseManager.sharedManager.requestTutorial(32) { tutorial, message in
+            
+            if (tutorial == nil){
+                self.showErrorMessage(message!)
+            }
+            else{
+                self.HTMLContent.loadHTMLString(tutorial!.text, baseURL: nil)
+
+            }
+
+            
+
+        }
+    }
+    
+    
+    func showErrorMessage(message: String) {
+        dispatch_async(dispatch_get_main_queue(), {
+            //create alert
+            let errorAlert = UIAlertController(title: "Error",
+                message: message,
+                preferredStyle: UIAlertControllerStyle.Alert)
+            
+            //make button
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            
+            //add buttons
+            errorAlert.addAction(okAction)
+            
+            //display
+            self.presentViewController(errorAlert, animated: true, completion: nil)
+        })
+    }
+
 
 }
