@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>LoginUnitConariTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>E034AE671CC77348003D77FE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E06A91C31CD0D1F7006209E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
