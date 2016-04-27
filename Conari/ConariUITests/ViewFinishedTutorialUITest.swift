@@ -32,7 +32,7 @@ class ViewFinishedTutorialUITest: XCTestCase {
         let app = XCUIApplication()
         
         //go to view controller
-        app.buttons["Button"].tap()
+        app.buttons["ViewTutorial"].tap()
         
         //check Label
         XCTAssertTrue(app.staticTexts["tutorialNameLabel"].exists, "Label for tutorial name doesn't exist")

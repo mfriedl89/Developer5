@@ -1,5 +1,5 @@
 //
-//  NewUserUITest.swift
+//  NewUserUITests.swift
 //  Conari
 //
 //  Created by Paul Krassnig on 13.04.16.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class NewUserUITest: XCTestCase {
+class NewUserUITests: XCTestCase {
     
     override func setUp() {
         super.setUp()

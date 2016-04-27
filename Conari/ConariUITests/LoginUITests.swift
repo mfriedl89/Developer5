@@ -8,7 +8,7 @@
 
 import XCTest
 
-class ConariUITests: XCTestCase {
+class LoginUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

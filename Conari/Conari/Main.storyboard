@@ -263,11 +263,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Continue without login"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ0-Tw-fVV">
-                                <rect key="frame" x="209" y="387" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69L-fK-zDd">
+                                <rect key="frame" x="135" y="407" width="84" height="30"/>
+                                <state key="normal" title="ViewTutorial"/>
                                 <connections>
-                                    <segue destination="xIj-V8-ate" kind="show" id="fKb-o6-4cP"/>
+                                    <segue destination="owY-sm-bac" kind="show" id="8Rm-hB-1V0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -557,53 +557,53 @@
             <point key="canvasLocation" x="-368" y="-137"/>
         </scene>
         <!--Tutorial View-->
-        <scene sceneID="B3P-8w-jZp">
+        <scene sceneID="qbf-EK-Feb">
             <objects>
-                <viewController title="Tutorial View" id="xIj-V8-ate" customClass="ViewFinishedTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Tutorial View" id="owY-sm-bac" customClass="ViewFinishedTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3Hd-ug-cM0"/>
-                        <viewControllerLayoutGuide type="bottom" id="VC4-Hp-4OT"/>
+                        <viewControllerLayoutGuide type="top" id="Tvr-cg-qPG"/>
+                        <viewControllerLayoutGuide type="bottom" id="mGG-Z5-Aor"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fIg-T3-jg1">
+                    <view key="view" contentMode="scaleToFill" id="6oV-2K-mAx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mra-S2-B44">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfr-Ll-UPR">
                                 <rect key="frame" x="20" y="28" width="560" height="28"/>
                                 <accessibility key="accessibilityConfiguration" label="tutorialNameLabel"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mx8-rD-z6N">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUs-ZW-as6">
                                 <rect key="frame" x="225" y="64" width="151" height="30"/>
                                 <accessibility key="accessibilityConfiguration" identifier="additionalInformationButton"/>
                                 <state key="normal" title="Additional Information"/>
                             </button>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajc-fC-K9W">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMl-yR-gCc">
                                 <rect key="frame" x="20" y="102" width="560" height="478"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ajc-fC-K9W" firstAttribute="trailing" secondItem="mra-S2-B44" secondAttribute="trailing" id="1d9-A1-OwK"/>
-                            <constraint firstItem="ajc-fC-K9W" firstAttribute="top" secondItem="Mx8-rD-z6N" secondAttribute="bottom" constant="8" symbolic="YES" id="5Kc-qv-g2b"/>
-                            <constraint firstItem="Mx8-rD-z6N" firstAttribute="centerX" secondItem="mra-S2-B44" secondAttribute="centerX" id="II3-WR-pLD"/>
-                            <constraint firstItem="Mx8-rD-z6N" firstAttribute="top" secondItem="mra-S2-B44" secondAttribute="bottom" constant="8" id="LG2-2c-eGb"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="mra-S2-B44" secondAttribute="leading" id="SMj-yd-enI"/>
-                            <constraint firstItem="ajc-fC-K9W" firstAttribute="leading" secondItem="mra-S2-B44" secondAttribute="leading" id="UHT-SY-1rQ"/>
-                            <constraint firstAttribute="bottom" secondItem="ajc-fC-K9W" secondAttribute="bottom" constant="20" symbolic="YES" id="You-4h-MgC"/>
-                            <constraint firstItem="mra-S2-B44" firstAttribute="top" secondItem="3Hd-ug-cM0" secondAttribute="bottom" constant="8" id="euW-Ty-99s"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mra-S2-B44" secondAttribute="trailing" id="hi4-zX-LBh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mra-S2-B44" secondAttribute="trailing" id="k72-II-8XG"/>
+                            <constraint firstItem="RMl-yR-gCc" firstAttribute="leading" secondItem="Pfr-Ll-UPR" secondAttribute="leading" id="8MT-oO-saF"/>
+                            <constraint firstItem="RMl-yR-gCc" firstAttribute="trailing" secondItem="Pfr-Ll-UPR" secondAttribute="trailing" id="B24-Zt-gP2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pfr-Ll-UPR" secondAttribute="trailing" id="EBf-SK-xOf"/>
+                            <constraint firstItem="TUs-ZW-as6" firstAttribute="top" secondItem="Pfr-Ll-UPR" secondAttribute="bottom" constant="8" id="Ije-hV-PBI"/>
+                            <constraint firstAttribute="bottom" secondItem="RMl-yR-gCc" secondAttribute="bottom" constant="20" symbolic="YES" id="WTZ-76-NLo"/>
+                            <constraint firstItem="Pfr-Ll-UPR" firstAttribute="top" secondItem="Tvr-cg-qPG" secondAttribute="bottom" constant="8" id="Xie-9d-2Ez"/>
+                            <constraint firstItem="TUs-ZW-as6" firstAttribute="centerX" secondItem="Pfr-Ll-UPR" secondAttribute="centerX" id="aQe-ku-L3p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pfr-Ll-UPR" secondAttribute="trailing" id="i70-iW-XiK"/>
+                            <constraint firstItem="RMl-yR-gCc" firstAttribute="top" secondItem="TUs-ZW-as6" secondAttribute="bottom" constant="8" symbolic="YES" id="ozx-Ss-wq6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Pfr-Ll-UPR" secondAttribute="leading" id="vNh-pB-PJd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="HTMLContent" destination="ajc-fC-K9W" id="Ulz-as-vBx"/>
+                        <outlet property="HTMLContent" destination="RMl-yR-gCc" id="dM6-II-i6c"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jk1-65-Gea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aA2-uj-ED4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-352" y="616"/>
         </scene>
