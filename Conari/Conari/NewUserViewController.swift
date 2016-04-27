@@ -375,19 +375,31 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         
         if (error_counter == 0) {
             DatabaseManager.sharedManager.CreateUser(userName.text!, password: password.text!, firstName: name.text!, surName: surname.text!, email: email.text!) { success, message in
-                if (success == false) {
-                    self.showErrorMessage(message!)
-                }
+                
+                self.showMessage(message!, username: self.userName.text!)
             }
+            
         }
         
     }
     
-    func showErrorMessage(message: String) {
+    func showMessage(message: String, username: String) {
         dispatch_async(dispatch_get_main_queue(), {
+            var title = ""
+            var msg = ""
+            
             //create alert
-            let errorAlert = UIAlertController(title: "Error",
-                message: message,
+            if(message == "true") {
+                title = "Success"
+                msg = "Created user: \(username)"
+            }
+            else {
+                title = "Error"
+                msg = message
+            }
+            
+            let errorAlert = UIAlertController(title: title,
+                message: msg,
                 preferredStyle: UIAlertControllerStyle.Alert)
             
             //make button

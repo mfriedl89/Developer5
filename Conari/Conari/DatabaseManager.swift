@@ -177,13 +177,6 @@ class DatabaseManager {
                 
             }
             
-            
-            if(responseString == "success")
-            {
-                success = true;
-            }
-            
-            
             let message: String? = (responseString as? String)
             
             callback(success, message)
