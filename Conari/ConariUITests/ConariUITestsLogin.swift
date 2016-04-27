@@ -37,6 +37,8 @@ class ConariUITests: XCTestCase {
         let answerButton = app.buttons["Login"]
         answerButton.tap()
         
+        sleep(1);
+        
         let textFieldUsername = app.textFields["username"]
         let textFieldPassword = app.secureTextFields["password"]
         XCTAssert(app.staticTexts["Username:"].exists)

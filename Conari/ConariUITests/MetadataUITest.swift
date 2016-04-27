@@ -27,12 +27,15 @@ class MetadataUITest: XCTestCase {
         
         
         let app = XCUIApplication()
-        
+        sleep(1);
         let answerButton = app.buttons["Login"]
         answerButton.tap()
         
         let textFieldUsername = app.textFields["username"]
         let textFieldPassword = app.secureTextFields["password"]
+        
+        sleep(1);
+        
         XCTAssert(app.staticTexts["Username:"].exists)
         XCTAssert(app.staticTexts["Password:"].exists)
         
@@ -40,50 +43,55 @@ class MetadataUITest: XCTestCase {
         XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
         textFieldUsername.typeText("3")
         XCTAssertEqual(textFieldUsername.value as? String, "3")
-        app.buttons["Next:"].tap()
         
+        textFieldPassword.tap()
         XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
         textFieldPassword.typeText("3")
-        app.buttons["Done"].tap()
-
         
+        app.buttons["Login"].tap()
         
+  
+        app.navigationBars["Conari"].buttons["Tutorial erstellen"].tap()
+        app.textFields["title"].tap()
+        app.textFields["title"].typeText("test")
+        XCTAssertEqual(app.textFields["title"].value as? String, "test")
         
-        XCUIApplication().navigationBars["Conari"].buttons["Tutorial erstellen"].tap()
+        let incrementButton = app.steppers.buttons["Increment"]
+        incrementButton.tap()
+        incrementButton.tap()
         
-        let title = app.textFields["title"]
-        title.tap()
-        title.typeText("Test123")
+        app.textFields["category"].tap()
         
-        let category = app.textFields["category"]
-        category.tap()
-        
-        app.pickerWheels.element.adjustToPickerWheelValue("Youth")
-        
-        
-        //let stepper = app.steppers["stepper"]
-        //stepper.increment
-        
-        //app.steppers.element.incrementArrows.element.tap();
-        
-        //app.steppers.element.incrementArrows.element.tap()
-        
-        let duration = app.textFields["duration"]
-        duration.tap()
-        app.pickerWheels.element.adjustToPickerWheelValue("00:10")
-        
+        app.pickerWheels["Arts and Entertainment"].tap()
+        app.textFields["duration"].tap()
+        app.pickerWheels["00:00"].tap()
         app.buttons["Weiter"].tap()
         
-        let texteditor = app.otherElements["texteditor"]
-        texteditor.tap()
-        texteditor.typeText("test")
+        let element = app.otherElements["texteditor"].childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
+        element.tap()
+        
+        let returnButton = app.buttons["Return"]
+        returnButton.tap()
+        
+        let element2 = element.childrenMatchingType(.Other).element
+        element2.childrenMatchingType(.TextField).element
+        element2.childrenMatchingType(.TextField).element
+        returnButton.tap()
+        element2.childrenMatchingType(.TextField).element
+        app.toolbars.containingType(.Button, identifier:"Ordered List").childrenMatchingType(.Button).elementBoundByIndex(6).tap()
+        app.sheets.collectionViews.buttons["Photo Library"].tap()
+        app.tables.buttons["Moments"].tap()
+        app.collectionViews["PhotosGridView"].cells["Photo, Landscape, March 13, 2011, 1:17 AM"].tap()
+        sleep(1)
+        app.buttons["Save"].tap()
+        //app.navigationBars["Test"].buttons["Save"].tap()
+        
+        
         
         
 
-        app.buttons["Save"].tap()
-        
-        
-        
+
+
         
         //Test has to go here, but currently the view isn't in his final position.
     }
