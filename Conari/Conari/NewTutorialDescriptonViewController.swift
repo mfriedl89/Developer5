@@ -86,7 +86,16 @@ class NewTutorialDescriptonViewController: UIViewController {
                 
                 print("sucess");
                 dispatch_async(dispatch_get_main_queue(),{
-                               self.performSegueWithIdentifier("savesegue", sender: nil)
+                    
+                    
+                    for viewcontoller in (self.navigationController?.viewControllers)!
+                    {
+                        if(viewcontoller.isKindOfClass(MainTutorialViewController))
+                        {
+                            self.navigationController?.popToViewController(viewcontoller, animated: true);
+                        }
+                    }
+                    
                 });
             }
             else
