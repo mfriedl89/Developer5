@@ -10,6 +10,7 @@
 		3A6528C81CD0DB2E00E3F9DD /* LoginUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6528C71CD0DB2E00E3F9DD /* LoginUnitTests.swift */; };
 		3A6528CD1CD0DF8300E3F9DD /* ViewFinishedTutorialUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6528CC1CD0DF8300E3F9DD /* ViewFinishedTutorialUITest.swift */; };
 		3A6528D01CD0DFB200E3F9DD /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6528CF1CD0DFB200E3F9DD /* ViewFinishedTutorialViewController.swift */; };
+		3A6528DA1CD0F4DC00E3F9DD /* ViewFinishedTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6528D91CD0F4DC00E3F9DD /* ViewFinishedTutorial.swift */; };
 		3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		AE9217211CC7704E00A3391C /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
@@ -87,6 +88,7 @@
 		3A6528C71CD0DB2E00E3F9DD /* LoginUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUnitTests.swift; sourceTree = "<group>"; };
 		3A6528CC1CD0DF8300E3F9DD /* ViewFinishedTutorialUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorialUITest.swift; sourceTree = "<group>"; };
 		3A6528CF1CD0DFB200E3F9DD /* ViewFinishedTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorialViewController.swift; sourceTree = "<group>"; };
+		3A6528D91CD0F4DC00E3F9DD /* ViewFinishedTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorial.swift; sourceTree = "<group>"; };
 		3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTutorialDescriptonViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				3A6528C71CD0DB2E00E3F9DD /* LoginUnitTests.swift */,
+				3A6528D91CD0F4DC00E3F9DD /* ViewFinishedTutorial.swift */,
 				3A6528BF1CD0DABF00E3F9DD /* Info.plist */,
 			);
 			path = ConariUnitTests;
@@ -368,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6528DA1CD0F4DC00E3F9DD /* ViewFinishedTutorial.swift in Sources */,
 				3A6528C81CD0DB2E00E3F9DD /* LoginUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

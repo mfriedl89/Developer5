@@ -13,11 +13,8 @@ class ViewFinishedTutorialViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    //let url = NSURL (string: "http://www.google.com");
-    //let requestObj = NSURLRequest(URL: url!);
     
-    
-    requestTutorial()
+    requestTutorial("32")
   }
 
     override func viewWillAppear(animated: Bool) {
@@ -41,19 +38,15 @@ class ViewFinishedTutorialViewController: UIViewController {
     }
     */
     
-    func requestTutorial(){
-        DatabaseManager.sharedManager.requestTutorial(32) { tutorial, message in
+    func requestTutorial(tutorialID: String){
+        DatabaseManager.sharedManager.requestTutorial(tutorialID) { tutorial, message in
             
-            if (tutorial == nil){
+            if (tutorial == nil) {
                 self.showErrorMessage(message!)
             }
-            else{
+            else {
                 self.HTMLContent.loadHTMLString(tutorial!.text, baseURL: nil)
-
             }
-
-            
-
         }
     }
     
@@ -75,6 +68,4 @@ class ViewFinishedTutorialViewController: UIViewController {
             self.presentViewController(errorAlert, animated: true, completion: nil)
         })
     }
-
-
 }

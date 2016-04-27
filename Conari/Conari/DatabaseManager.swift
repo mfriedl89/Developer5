@@ -8,14 +8,14 @@
 
 import Foundation
 
+
 struct Tutorial {
-    var title:String
-    var category:Int
-    var difficulty: Int
-    var duration: Int
+    var title: String
+    var category: Int
+    var difficulty: String
+    var duration: String
     var text: String
 }
-
 
 /**
  This file will act as our Database manager.
@@ -83,8 +83,6 @@ class DatabaseManager {
     }
     
     
-    
-    
     func CreateTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
         
         let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/CreateTutorial.php")!)
@@ -141,30 +139,28 @@ class DatabaseManager {
         })
         task.resume()
     }
-  
-  
-  
-  
-  
     
-    func requestTutorial(tutorialID: Int, callback: (Tutorial?, String?) -> ()){
+    
+    func requestTutorial(tutorialID: String, callback: (Tutorial?, String?) -> ()){
         
         let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/RequestTutorial.php")!)
         request.HTTPMethod = "POST"
-        let postString = "tutorialID=32"// + String(tutorialID)
+        let postString = "tutorialID=" + tutorialID
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
 
         var jsonString: String = ""
         var responseString: NSString?
         var successValue = 0
         
+        var responseTutorial: Tutorial? = nil
+        
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
             guard error == nil && data != nil else {
                 // check for fundamental networking error
-
                 let message: String? = error?.localizedDescription
+                
                 callback(nil, message)
-                print("error:  \(message)");
+                
                 return
             }
             
@@ -175,11 +171,13 @@ class DatabaseManager {
             }
             do {
                 let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-                
-                var retVal = Tutorial(title: jsonData[0], category: jsonData[1], difficulty: jsonData[2], duration: jsonData[3], text: jsonData[4])
-                    callback(retVal, message)
 
-                print("jsonString:  \(jsonData)");
+                responseTutorial = Tutorial(
+                    title: jsonData[0] as! String,
+                    category: jsonData[1] as! Int,
+                    difficulty: jsonData[2] as! String,
+                    duration: jsonData[3] as! String,
+                    text: jsonData[4] as! String)
                 
             } catch {
                 print("error serializing JSON: \(error)")
@@ -188,7 +186,7 @@ class DatabaseManager {
             
             let message: String? = (responseString as? String)
             
-            callback(nil, message)
+            callback(responseTutorial, message)
             
         })
         task.resume()
