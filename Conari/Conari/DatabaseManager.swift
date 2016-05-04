@@ -77,7 +77,7 @@ class DatabaseManager {
     
     
     
-    func CreateTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
+     func CreateTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
         
         let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/CreateTutorial.php")!)
         request.HTTPMethod = "POST"
