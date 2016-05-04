@@ -9,7 +9,6 @@
 import UIKit
 
 class MainTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
-    @IBOutlet weak var CreateTutorialButton_: UIBarButtonItem!
     @IBOutlet weak var SearchField_: UITextField!
     @IBOutlet weak var categoryTableView_: UITableView!
     
@@ -35,13 +34,6 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(DatabaseManager.sharedManager.username != "" && DatabaseManager.sharedManager.password != "")
-        {
-            CreateTutorialButton_.enabled = true
-        }else
-        {
-            CreateTutorialButton_.enabled = false
-        }
         
         SearchField_.delegate = self
         
