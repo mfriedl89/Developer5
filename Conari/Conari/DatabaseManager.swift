@@ -17,6 +17,24 @@ struct Tutorial {
     var text: String
 }
 
+class Tutorial_item {
+    
+    var id          : Int
+    var title       : String
+    var category    : Int
+    var difficulty  : String
+    var duration    : String
+    
+    init(tut_id: Int, tut_title: String, tut_category : Int, tut_difficulty : String, tut_duration : String ){
+        self.id     = tut_id
+        self.title  = tut_title
+        self.category   = tut_category
+        self.difficulty = tut_difficulty
+        self.duration   = tut_duration
+    }
+    
+}
+
 /**
  This file will act as our Database manager.
  */
@@ -250,5 +268,100 @@ class DatabaseManager {
             
         })
         task.resume()
-    }    
+    }
+    
+    func findTutorialByCategory(tutorial_title: String, tutorial_category: Int , completionHandler: (response: [Tutorial_item]) -> Void) -> Void {
+        
+        /*
+         
+         FindTutorialInCategory.php:
+         /*	 Reveives:          title, category 								*/
+         /*  Returns Array: 	[[TutID,Title,Category,Difficulty,Duration]] 	*/
+         $title   	= $_POST['title'];
+         $category   = $_POST['category'];
+         
+         */
+        
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/FindTutorialInCategory.php")!)
+        
+        request.HTTPMethod = "POST"
+        
+        let allowedCharacters = NSCharacterSet.URLQueryAllowedCharacterSet().mutableCopy() as! NSMutableCharacterSet
+        allowedCharacters.removeCharactersInString("+/=")
+        
+        var postString:String = ""
+        if tutorial_title != "" {
+            postString += "title=" + tutorial_title.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)! as String!
+        }
+        
+        postString += "&category=" + String(tutorial_category)
+        
+        //print(postString)
+        
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        //var responseString: NSString?
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
+            guard error == nil && data != nil else {                                                          // check for fundamental networking error
+                print("error=\(error)")
+                return
+            }
+            
+            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+        
+            
+            var tutorial_array = [Tutorial_item]()
+            
+            do {
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                //print(json)
+                
+                
+                for anItem in json as! [Dictionary<String, AnyObject>] {
+                    let title = anItem["title"] as! String
+                    let difficulty = anItem["difficulty"] as! String
+                    let duration = anItem["duration"] as! String
+                    let category = anItem["category"] as! Int
+                    let id = anItem["id"] as! Int
+                    
+                    
+                    
+                    tutorial_array.append(Tutorial_item(tut_id: id, tut_title: title, tut_category: category, tut_difficulty: difficulty, tut_duration: duration))
+                    // do something with personName and personID
+                }
+                
+                /*if let tutorials = json["tutorials"] as? [[String : AnyObject]] {
+                    for tut in tutorials {
+                        if let id = tut["TutID"] as? String {
+                            if let title = tut["Title"] as? String {
+                                if let cat = tut["Category"] as? String {
+                                    if let diff = tut["Difficulty"] as? String {
+                                        if let dur = tut["Duration"] as? String {
+                                            tutorial_array.append(Tutorial_item(tut_id: id, tut_title: title, tut_category: cat, tut_difficulty: diff, tut_duration: dur))
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }*/
+            } catch {
+                print("error serializing JSON: \(error)")
+                tutorial_array.removeAll()
+            }
+            
+            
+            completionHandler(response: tutorial_array)
+            
+            
+        }
+        task.resume()
+    }
+
+    
 }
