@@ -160,17 +160,46 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ONv-SA-rBT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ONv-SA-rBT">
                                 <rect key="frame" x="20" y="101" width="560" height="479"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="category_cell" id="b3V-bb-hNe">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TutorialTableViewCell" rowHeight="65" id="b3V-bb-hNe" customClass="TutorialTableViewCell" customModule="Conari" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b3V-bb-hNe" id="F4R-KD-Dv7">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peH-rI-UJY">
+                                                    <rect key="frame" x="17" y="37" width="535" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="zda-DV-j3o"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V2-d7-fqm">
+                                                    <rect key="frame" x="8" y="8" width="544" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3V2-d7-fqm" firstAttribute="trailing" secondItem="F4R-KD-Dv7" secondAttribute="trailingMargin" id="IoK-GL-tnB"/>
+                                                <constraint firstItem="peH-rI-UJY" firstAttribute="top" secondItem="3V2-d7-fqm" secondAttribute="bottom" constant="8" symbolic="YES" id="Sxl-4I-xht"/>
+                                                <constraint firstItem="peH-rI-UJY" firstAttribute="leading" secondItem="F4R-KD-Dv7" secondAttribute="leadingMargin" constant="9" id="Xmc-bf-Ozo"/>
+                                                <constraint firstItem="3V2-d7-fqm" firstAttribute="trailing" secondItem="peH-rI-UJY" secondAttribute="trailing" id="ebr-CO-pSi"/>
+                                                <constraint firstItem="3V2-d7-fqm" firstAttribute="leading" secondItem="F4R-KD-Dv7" secondAttribute="leadingMargin" id="pDE-sX-V2L"/>
+                                                <constraint firstItem="3V2-d7-fqm" firstAttribute="top" secondItem="F4R-KD-Dv7" secondAttribute="topMargin" id="qBF-lm-1SK"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tutorialDetailTextLabel" destination="peH-rI-UJY" id="tmq-Ud-335"/>
+                                            <outlet property="tutorialTitleLabel" destination="3V2-d7-fqm" id="JPA-ht-vKO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -191,12 +220,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="categoryTableView" destination="ONv-SA-rBT" id="j26-Vi-k7F"/>
+                        <outlet property="tutorialsTableView" destination="ONv-SA-rBT" id="PEa-NA-4SO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5IJ-ES-bb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2174" y="816"/>
+            <point key="canvasLocation" x="444" y="-845"/>
         </scene>
         <!--Welcome Screen View Controller-->
         <scene sceneID="WZG-qI-2GJ">
@@ -234,7 +263,7 @@
                                     <segue destination="y1j-Ah-LpW" kind="show" id="X42-Vz-655"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czc-jf-qby">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czc-jf-qby">
                                 <rect key="frame" x="448" y="204" width="132" height="30"/>
                                 <state key="normal" title="Test Admin Tutorial"/>
                                 <connections>
@@ -249,6 +278,8 @@
                             <constraint firstItem="3eh-B9-Wkb" firstAttribute="trailing" secondItem="RGn-0Y-j53" secondAttribute="trailing" id="Bu5-9e-Z5g"/>
                             <constraint firstItem="2h8-6Y-5Nx" firstAttribute="leading" secondItem="3eh-B9-Wkb" secondAttribute="leading" id="H2a-u9-lzP"/>
                             <constraint firstItem="3eh-B9-Wkb" firstAttribute="leading" secondItem="RGn-0Y-j53" secondAttribute="leading" id="Pxt-dS-GTQ"/>
+                            <constraint firstItem="Czc-jf-qby" firstAttribute="trailing" secondItem="RGn-0Y-j53" secondAttribute="trailing" id="Z6D-H2-ku9"/>
+                            <constraint firstItem="Czc-jf-qby" firstAttribute="top" secondItem="RGn-0Y-j53" secondAttribute="bottom" constant="8" symbolic="YES" id="b7P-pW-9kI"/>
                             <constraint firstItem="2h8-6Y-5Nx" firstAttribute="top" secondItem="mpT-tW-tcD" secondAttribute="bottom" constant="8" symbolic="YES" id="gB7-ko-Bvv"/>
                             <constraint firstItem="3eh-B9-Wkb" firstAttribute="top" secondItem="2h8-6Y-5Nx" secondAttribute="bottom" constant="8" symbolic="YES" id="vv4-Z1-okk"/>
                             <constraint firstItem="RGn-0Y-j53" firstAttribute="top" secondItem="3eh-B9-Wkb" secondAttribute="bottom" constant="8" symbolic="YES" id="wxq-5X-2Eb"/>
@@ -637,6 +668,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="X42-Vz-655"/>
+        <segue reference="BNH-7m-V8n"/>
     </inferredMetricsTieBreakers>
 </document>
