@@ -22,7 +22,7 @@ class DatabaseManager {
     
     func loginWithPHPScript(username: String, password: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/Login.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/Login.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username + "&password=" + password
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -79,7 +79,7 @@ class DatabaseManager {
     
     func CreateTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/CreateTutorial.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/CreateTutorial.php")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
         postString += "username=" + username
@@ -138,7 +138,7 @@ class DatabaseManager {
     
     func CreateUser(username: String, password: String, firstName: String, surName: String, email: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/CreateUser.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/CreateUser.php")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
         postString += "username=" + username
