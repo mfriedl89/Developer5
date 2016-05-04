@@ -139,11 +139,11 @@ class DatabaseManager {
     }
     
     
-    func requestTutorial(tutorialID: String, callback: (Tutorial?, String?) -> ()){
+    func requestTutorial(tutorialID: Int, callback: (Tutorial?, String?) -> ()){
         
         let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/RequestTutorial.php")!)
         request.HTTPMethod = "POST"
-        let postString = "tutorialID=" + tutorialID
+        let postString = "tutorialID=" + String(tutorialID)
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
 
         var jsonString: String = ""

@@ -9,15 +9,17 @@
 import UIKit
 
 class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
-
+    
+  var TutorialID = 57
+  
     
   override func viewDidLoad() {
     super.viewDidLoad()
     loadIndicator.startAnimating()
     loadIndicator.transform=CGAffineTransformMakeScale(1.5, 1.5)
     // Do any additional setup after loading the view, typically from a nib.
-    
-    requestTutorial("57")
+    self.automaticallyAdjustsScrollViewInsets = false
+    requestTutorial(TutorialID)
   }
 
     override func viewWillAppear(animated: Bool) {
@@ -30,7 +32,6 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
     }
     
     
-    @IBOutlet weak var tutorialTitle: UILabel!
     
     @IBOutlet weak var HTMLContent: UIWebView!
     /*
@@ -49,17 +50,25 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
   
   
   
-    func requestTutorial(tutorialID: String){
+    func requestTutorial(tutorialID: Int){
         DatabaseManager.sharedManager.requestTutorial(tutorialID) { tutorial, message in
             
             if (tutorial == nil) {
                 if message != nil {
                     self.showErrorMessage(message!)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.title = "Error"
+                        self.loadIndicator.stopAnimating()
+                        self.loadingLabel.hidden = true
+                    })
+                   
                 }
             }
             else {
-                dispatch_async(dispatch_get_main_queue(), {self.tutorialTitle.text = tutorial!.title
-                self.HTMLContent.loadHTMLString(tutorial!.text, baseURL: nil)})
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.title = tutorial!.title
+                    self.HTMLContent.loadHTMLString(tutorial!.text, baseURL: nil)
+                })
             }
         }
     }
@@ -67,6 +76,7 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(webView: UIWebView) {
         loadIndicator.stopAnimating()
         loadingLabel.hidden = true
+        //webView.scrollView.contentOffset = CGPointMake(0, 0);
     }
     
     func showErrorMessage(message: String) {
