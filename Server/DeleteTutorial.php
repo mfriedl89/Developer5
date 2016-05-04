@@ -62,7 +62,7 @@ if($_POST) {
 
 function deleteTutorial(&$mysqli, &$TutTitle){
 
-	if ($stmt = $mysqli->prepare("DELETE FROM Tutorial WHERE Title='?'")) {
+	if ($stmt = $mysqli->prepare("DELETE FROM Tutorial WHERE Title = ?")) {
 
 		/* bind parameters for query (security) */
 		$stmt->bind_param("s", $TutTitle);

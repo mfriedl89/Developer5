@@ -31,7 +31,34 @@ function validUser(&$mysqli,&$username,&$password){
 		return true;
 	}
 	
-	return true;
+	return false;
+}
+
+function tutorialExists(&$mysqli, &$tutTitle) {
+
+	$exists = 0;
+	if ($stmt = $mysqli->prepare("SELECT Title FROM Tutorial WHERE Title = ?")) {
+
+		/* bind parameters for markers */
+		$stmt->bind_param("s", $tutTitle);
+
+		/* execute query */
+		$stmt->execute();
+
+		/* bind result variables */
+		$stmt->bind_result($exists);
+		
+		$stmt->fetch();
+		
+		/* close statement */
+		$stmt->close();
+	}
+	
+	if($exists){
+		return true;
+	}
+	
+	return false;
 }
 
 ?>
