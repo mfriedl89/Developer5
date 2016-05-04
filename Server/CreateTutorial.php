@@ -10,7 +10,7 @@
 */
 
 // Include utils
-require('utils.php');
+require 'utils.php';
 
 header('Content-type: application/json');
 
