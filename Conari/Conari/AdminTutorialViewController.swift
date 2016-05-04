@@ -111,7 +111,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
             
             self.tutorialIndexPath = indexPath
             
-            //            let planetToDelete = tableView[indexPath.row]
+            //            let tutorialToDelete = tableView[indexPath.row]
             
             self.confirmDelete(cell.tutorialTitleLabel.text!)
         }
@@ -163,8 +163,8 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     func confirmDelete(tutorial: String) {
         let alert = UIAlertController(title: "Delete Tutorial", message: "Are you sure you want to permanently delete \(tutorial)?", preferredStyle: .ActionSheet)
         
-        let DeleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: handleDeletePlanet)
-        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: cancelDeletePlanet)
+        let DeleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: handleDeleteTutorial)
+        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: cancelDeleteTutorial)
         
         alert.addAction(DeleteAction)
         alert.addAction(CancelAction)
@@ -176,22 +176,41 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func handleDeletePlanet(alertAction: UIAlertAction!) -> Void {
+    func handleDeleteTutorial(alertAction: UIAlertAction!) -> Void {
+        
         if let indexPath = tutorialIndexPath {
             tutorialsTableView.beginUpdates()
-            
-            tutorials.removeAtIndex(indexPath.row)
-            
-            // Note that indexPath is wrapped in an array:  [indexPath]
-            tutorialsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            let tutTitle = tutorials[indexPath.row]
+            print("want to delete tutorial with title " + tutorials[indexPath.row])
+
+            DatabaseManager.sharedManager.DeleteTutorial(tutTitle) { success, message in
+                print("upload-success: \(success), login-message:\(message)")
+                if success == true
+                {
+                    
+                    print("success");
+                    self.tutorials.removeAtIndex(indexPath.row)
+                    self.tutorialsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                }
+                else
+                {
+                    dispatch_async(dispatch_get_main_queue(),{
+                        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                        
+                    });
+                }
+            }
             
             tutorialIndexPath = nil
             
             tutorialsTableView.endUpdates()
         }
+        
     }
     
-    func cancelDeletePlanet(alertAction: UIAlertAction!) {
+    func cancelDeleteTutorial(alertAction: UIAlertAction!) {
         tutorialIndexPath = nil
     }
 }
