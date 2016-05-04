@@ -88,8 +88,9 @@ class DatabaseManager {
         postString += "&category=" + String(metadata.category+1)
         postString += "&difficulty=" + String(metadata.difficulty+1)
         postString += "&duration=" + String(metadata.duration)
-        postString += "&text=" + content.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
-
+        let allowedCharacters = NSCharacterSet.URLQueryAllowedCharacterSet().mutableCopy() as! NSMutableCharacterSet
+        allowedCharacters.removeCharactersInString("+/=")
+        postString += "&text=" + content.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)! as String!
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
         var success: Bool = false

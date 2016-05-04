@@ -170,7 +170,7 @@ extension NewTutorialDescriptonViewController: UIImagePickerControllerDelegate, 
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             //pickedImage.decreaseSize(<#T##sender: AnyObject?##AnyObject?#>)
             let imageData = UIImageJPEGRepresentation(pickedImage.resizeToWidth(200),0.3)
-            let base64String = imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+            let base64String = imageData!.base64EncodedStringWithOptions([])
             editor?.insertImage("data:image/gif;base64,"+base64String, alt: "picture")
         }
         
