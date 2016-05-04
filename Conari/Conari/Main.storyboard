@@ -142,6 +142,62 @@
             </objects>
             <point key="canvasLocation" x="1359" y="816"/>
         </scene>
+        <!--Admin Tutorial View Controller-->
+        <scene sceneID="re1-2C-Pnt">
+            <objects>
+                <viewController id="l4H-wY-0nS" customClass="AdminTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GTl-2A-aSX"/>
+                        <viewControllerLayoutGuide type="bottom" id="jIG-xE-oG8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="63x-Ka-zh7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial administration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pph-vp-kc8">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ONv-SA-rBT">
+                                <rect key="frame" x="20" y="101" width="560" height="479"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="category_cell" id="b3V-bb-hNe">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b3V-bb-hNe" id="F4R-KD-Dv7">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="l4H-wY-0nS" id="LST-aj-P1a"/>
+                                    <outlet property="delegate" destination="l4H-wY-0nS" id="WyR-OK-s9T"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pph-vp-kc8" firstAttribute="leading" secondItem="ONv-SA-rBT" secondAttribute="leading" id="0zC-Is-G7J"/>
+                            <constraint firstItem="pph-vp-kc8" firstAttribute="trailing" secondItem="ONv-SA-rBT" secondAttribute="trailing" id="5Tn-jt-uv5"/>
+                            <constraint firstItem="pph-vp-kc8" firstAttribute="top" secondItem="GTl-2A-aSX" secondAttribute="bottom" constant="8" symbolic="YES" id="BTg-gy-ZCK"/>
+                            <constraint firstItem="pph-vp-kc8" firstAttribute="leading" secondItem="63x-Ka-zh7" secondAttribute="leadingMargin" id="MWs-5c-EC2"/>
+                            <constraint firstAttribute="bottom" secondItem="ONv-SA-rBT" secondAttribute="bottom" constant="20" symbolic="YES" id="btD-Zs-o7d"/>
+                            <constraint firstItem="ONv-SA-rBT" firstAttribute="top" secondItem="pph-vp-kc8" secondAttribute="bottom" constant="8" symbolic="YES" id="cT5-Qh-mLg"/>
+                            <constraint firstItem="pph-vp-kc8" firstAttribute="trailing" secondItem="63x-Ka-zh7" secondAttribute="trailingMargin" id="uxt-uP-R3m"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryTableView" destination="ONv-SA-rBT" id="j26-Vi-k7F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5IJ-ES-bb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2174" y="816"/>
+        </scene>
         <!--Welcome Screen View Controller-->
         <scene sceneID="WZG-qI-2GJ">
             <objects>
@@ -176,6 +232,13 @@
                                 <state key="normal" title="Continue without login"/>
                                 <connections>
                                     <segue destination="y1j-Ah-LpW" kind="show" id="X42-Vz-655"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czc-jf-qby">
+                                <rect key="frame" x="448" y="204" width="132" height="30"/>
+                                <state key="normal" title="Test Admin Tutorial"/>
+                                <connections>
+                                    <segue destination="l4H-wY-0nS" kind="show" id="NlD-1m-aTC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -574,6 +637,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BNH-7m-V8n"/>
+        <segue reference="X42-Vz-655"/>
     </inferredMetricsTieBreakers>
 </document>
