@@ -31,7 +31,7 @@ if($_POST) {
 			/* Load config file for connection */
 			$config = parse_ini_file("junk/config.ini");
 
-			$mysqli = new mysqli('sql04.sprit.org', $config['db_user'], $config['db_password'], $config['db_name']);
+			$mysqli = new mysqli('localhost', $config['db_user'], $config['db_password'], $config['db_name']);
 			mysqli_query($mysqli, "SET NAMES 'utf8'");
 			
 			/* check connection */

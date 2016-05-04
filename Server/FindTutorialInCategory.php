@@ -15,7 +15,7 @@ if($_POST) {
 			$config = parse_ini_file("junk/config.ini");
 
 
-			$mysqli = new mysqli('sql04.sprit.org', $config['db_user'], $config['db_password'], $config['db_name']);
+			$mysqli = new mysqli('localhost', $config['db_user'], $config['db_password'], $config['db_name']);
 
 			
 
