@@ -9,7 +9,7 @@ if($_POST) {
 	$title   	= $_POST['title'];
 	$category   = $_POST['category'];
 
-	if($title) {
+	if(1) {
 
 			/* Load config file for connection */
 			$config = parse_ini_file("junk/config.ini");
@@ -23,12 +23,19 @@ if($_POST) {
 				error_log("Connect failed: " . mysqli_connect_error());
 				echo '{"success":0,"error_message":"' . mysqli_connect_error() . '"}';
 			} else {
-
+      if($title){
       $query = 	"SELECT TutID,Title,Category,Difficulty,Duration FROM Tutorial WHERE Title LIKE ?";
-
       if ($category) {
         $query .= " AND Category = ".$category;
       }
+      }else
+      {
+      	$query = 	"SELECT TutID,Title,Category,Difficulty,Duration FROM Tutorial";
+      	if ($category) {
+       		 $query .= " WHERE Category = ".$category;
+    	  }
+      }
+      
 
       $title = "%$title%";
 
