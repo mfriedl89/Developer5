@@ -263,13 +263,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Continue without login"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69L-fK-zDd">
-                                <rect key="frame" x="135" y="407" width="84" height="30"/>
-                                <state key="normal" title="ViewTutorial"/>
-                                <connections>
-                                    <segue destination="owY-sm-bac" kind="show" id="8Rm-hB-1V0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
