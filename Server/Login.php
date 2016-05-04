@@ -29,8 +29,11 @@ if($_POST) {
 				/* Check login*/
 				if ($stmt = $mysqli->prepare("SELECT UserID FROM USER WHERE Username = ? AND Password = ?")) {
 
+					// Build SHA512 value of password (bcrypt would be better, but this should be enough)
+					$password_hashed =  hash('sha512', $password);
+
 					/* bind parameters for markers */
-					$stmt->bind_param("ss", $username, $password);
+					$stmt->bind_param("ss", $username, $password_hashed);
 
 					/* execute query */
 					$stmt->execute();
