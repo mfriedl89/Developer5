@@ -1,15 +1,15 @@
 //
-//  ConariTests.swift
-//  ConariTests
+//  RichEditorViewTests.swift
+//  RichEditorViewTests
 //
-//  Created by Markus Friedl on 13.04.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created by Caesar Wirth on 4/7/15.
+//
 //
 
+import UIKit
 import XCTest
-@testable import Conari
 
-class ConariTests: XCTestCase {
+class RichEditorViewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,12 +23,12 @@ class ConariTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(true, "Pass")
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
     }
