@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A029B381CDA0EB400B59414 /* ViewAdditionalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A029B371CDA0EB400B59414 /* ViewAdditionalInformationTableViewController.swift */; };
+		3A029B3B1CDA2D8000B59414 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A029B3A1CDA2D8000B59414 /* Constants.swift */; };
 		3A6528C81CD0DB2E00E3F9DD /* LoginUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6528C71CD0DB2E00E3F9DD /* LoginUnitTests.swift */; };
 		3A6528CD1CD0DF8300E3F9DD /* ViewFinishedTutorialUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6528CC1CD0DF8300E3F9DD /* ViewFinishedTutorialUITest.swift */; };
 		3A6528D01CD0DFB200E3F9DD /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6528CF1CD0DFB200E3F9DD /* ViewFinishedTutorialViewController.swift */; };
@@ -83,6 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A029B371CDA0EB400B59414 /* ViewAdditionalInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdditionalInformationTableViewController.swift; sourceTree = "<group>"; };
+		3A029B3A1CDA2D8000B59414 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3A6528BB1CD0DABF00E3F9DD /* ConariUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6528BF1CD0DABF00E3F9DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A6528C71CD0DB2E00E3F9DD /* LoginUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUnitTests.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				E06D7FB91CBE2220003001BD /* AppDelegate.swift */,
 				E06D7FC01CBE2220003001BD /* Assets.xcassets */,
 				AEB03E011CC75B5C00FFEA38 /* Main.storyboard */,
+				3A029B371CDA0EB400B59414 /* ViewAdditionalInformationTableViewController.swift */,
 				AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */,
 				AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */,
 				E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */,
@@ -196,6 +201,7 @@
 				3A6528CF1CD0DFB200E3F9DD /* ViewFinishedTutorialViewController.swift */,
 				E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */,
 				AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */,
+				3A029B3A1CDA2D8000B59414 /* Constants.swift */,
 			);
 			path = Conari;
 			sourceTree = "<group>";
@@ -381,7 +387,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A6528D01CD0DFB200E3F9DD /* ViewFinishedTutorialViewController.swift in Sources */,
+				3A029B3B1CDA2D8000B59414 /* Constants.swift in Sources */,
 				E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */,
+				3A029B381CDA0EB400B59414 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */,
 				3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */,
 				E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 struct TutorialMetaData {
     var Title:String;
     var category:Int;
@@ -27,6 +28,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     var current:TutorialMetaData = TutorialMetaData(Title: "",category: 0,duration: 0,difficulty: 0)
     
     
+    
+    /*
     var categories = ["Arts and Entertainment",
                       "Cars & Other Vehicles'",
                       "Computers and Electronics",
@@ -46,7 +49,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                       "Travel",
                       "Work World",
                       "Youth"]
-    
+    */
     
 
 
@@ -97,20 +100,16 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         
         switch DifficultyStepper_.value {
         case 5:
-            difficultyLabel_.text = "very hard";
-            break;
+            difficultyLabel_.text = difficulty["5"]
         case 4:
-            difficultyLabel_.text = "hard";
-            break;
+            difficultyLabel_.text = "hard"
         case 3:
-            difficultyLabel_.text = "medium";
-            break;
+            difficultyLabel_.text = "medium"
         case 2:
-            difficultyLabel_.text = "easy";
-            break;
+            difficultyLabel_.text = "easy"
         case 1:
-            difficultyLabel_.text = "very easy";
-            break;
+            difficultyLabel_.text = "very easy"
+            
         default:
             return;
         }

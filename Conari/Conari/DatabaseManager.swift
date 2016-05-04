@@ -9,14 +9,6 @@
 import Foundation
 
 
-struct Tutorial {
-    var title: String
-    var category: Int
-    var difficulty: String
-    var duration: String
-    var text: String
-}
-
 /**
  This file will act as our Database manager.
  */
