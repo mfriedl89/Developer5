@@ -22,7 +22,7 @@ class DatabaseManager {
     
     func loginWithPHPScript(username: String, password: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/Login.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/Login.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username + "&password=" + password
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
