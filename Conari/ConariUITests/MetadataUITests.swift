@@ -88,6 +88,9 @@ class MetadataUITests: XCTestCase {
         
  
         
+        
+        
+        
         //Test has to go here, but currently the view isn't in his final position.
         
         

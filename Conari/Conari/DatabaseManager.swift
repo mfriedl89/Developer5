@@ -77,7 +77,7 @@ class DatabaseManager {
     
     
     
-    func CreateTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
+     func CreateTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
         
         let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/CreateTutorial.php")!)
         request.HTTPMethod = "POST"
@@ -183,6 +183,11 @@ class DatabaseManager {
             callback(success, message)
         })
         task.resume()
+    }
+    
+    
+    func getUserName() -> String {
+        return username
     }
 
     
