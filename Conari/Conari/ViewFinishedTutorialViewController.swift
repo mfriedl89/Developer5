@@ -14,7 +14,7 @@ class ViewFinishedTutorialViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    requestTutorial("323")
+    requestTutorial("32")
   }
 
     override func viewWillAppear(animated: Bool) {

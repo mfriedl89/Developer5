@@ -121,14 +121,12 @@ class DatabaseManager {
                 responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
                 let message: String? = (responseString as? String)
                 callback(success, message)
-            }else
-            {
+            } else {
             
             }
             
 
-            if(responseString == "success")
-            {
+            if(responseString == "success") {
                 success = true;
             }
 
@@ -185,6 +183,10 @@ class DatabaseManager {
                 }
                 if let jsonSuccess = jsonData["success"] as? Int {
                     successValue = jsonSuccess
+                }
+                
+                else {
+                    responseString = "Tutorial not found!"
                 }
                 
             } catch {
