@@ -9,6 +9,9 @@
 
 */
 
+// Include utils
+require('utils.php');
+
 header('Content-type: application/json');
 
 
@@ -68,37 +71,6 @@ if($_POST) {
 	echo '{"success":-1,"error_message":"Invalid Data."}';
 }
 
-
-
-
-
-function validUser(&$mysqli,&$username,&$password){
-
-	$userValid = 0;
-	
-	if ($stmt = $mysqli->prepare("SELECT UserID FROM USER WHERE Username = ? AND Password = ?")) {
-
-		/* bind parameters for markers */
-		$stmt->bind_param("ss", $username, $password);
-
-		/* execute query */
-		$stmt->execute();
-
-		/* bind result variables */
-		$stmt->bind_result($userValid);
-		
-		$stmt->fetch();
-		
-		/* close statement */
-		$stmt->close();
-	}
-	
-	if($userValid){
-		return true;
-	}
-	
-	return true;
-}
 
 function validTutorialInformation(&$TutCategory, &$TutDifficulty, &$TutDuration){
 	if($TutCategory > 0 && $TutCategory < 20 &&
