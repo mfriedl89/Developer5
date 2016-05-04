@@ -677,7 +677,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="70" id="2CL-eO-69K" customClass="CategorySearchTableViewCell" customModule="Conari" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="70" id="2CL-eO-69K" customClass="CategorySearchTableViewCell" customModule="Conari" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2CL-eO-69K" id="MEH-Cj-u3T">
@@ -769,6 +769,7 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="zbX-ds-UnH" id="7zT-Nm-1ot"/>
                         <outlet property="table_View" destination="i47-fA-6I2" id="qTh-3K-h9C"/>
+                        <segue destination="owY-sm-bac" kind="show" identifier="show_tutorial" id="IaP-12-KNq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJP-Pi-NI9" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -62,9 +62,19 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
             screen_width = self.view.frame.width
             screen_height = self.view.frame.height
             
-            configureSearchController()
             
-            self.title = categories[selected_category]
+            if (text_search == "")
+            {
+                configureSearchController()
+                self.title = categories[selected_category]
+            }else
+            {
+                self.title = text_search
+            
+            }
+            
+            
+            
             
             DatabaseManager.sharedManager.findTutorialByCategory(text_search, tutorial_category: selected_category) { (response) in
                 
@@ -126,6 +136,12 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
         {
             return 70
         }
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("show_tutorial", sender: indexPath.row)
+        tableView.deselectRowAtIndexPath(indexPath, animated: false);
+    }
     
     
     
@@ -199,6 +215,15 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
                 //self.tableView.reloadData()
                 
             }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "show_tutorial"
+        {
+            let csvc = (segue.destinationViewController as! ViewFinishedTutorialViewController)
+            csvc.TutorialID = self.tutorial_array[(sender as! Int)].id
+            
         }
     }
 }
