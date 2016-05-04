@@ -378,7 +378,6 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
                 
                 self.showMessage(message!, username: self.userName.text!)
             }
-            
         }
         
     }
