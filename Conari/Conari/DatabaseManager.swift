@@ -183,6 +183,11 @@ class DatabaseManager {
         })
         task.resume()
     }
+    
+    
+    func getUserName() -> String {
+        return username
+    }
 
     
     

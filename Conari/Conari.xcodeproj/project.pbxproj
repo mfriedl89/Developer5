@@ -7,31 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A6528C81CD0DB2E00E3F9DD /* LoginUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6528C71CD0DB2E00E3F9DD /* LoginUnitTests.swift */; };
 		3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		AE9217211CC7704E00A3391C /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
 		AE92172B1CC774BE00A3391C /* RichEditorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9217281CC7748D00A3391C /* RichEditorView.framework */; };
 		AE92172C1CC774BE00A3391C /* RichEditorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE9217281CC7748D00A3391C /* RichEditorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
-		AEB03E031CC75B5C00FFEA38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E011CC75B5C00FFEA38 /* Main.storyboard */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
-		AEB03E061CC75CD900FFEA38 /* MetadataUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E051CC75CD900FFEA38 /* MetadataUITest.swift */; };
-		C04A47D71CC78A74006647BC /* (null) in Resources */ = {isa = PBXBuildFile; };
-		C04A47D81CC78A7E006647BC /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
-		C04A47D91CC78B44006647BC /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
+		AEB03E061CC75CD900FFEA38 /* MetadataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E051CC75CD900FFEA38 /* MetadataUITests.swift */; };
 		C04A47DA1CC78B45006647BC /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
-		C04A47DB1CC78B47006647BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
 		C04A47DC1CC78B48006647BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
 		C04A47DD1CC78B4B006647BC /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		C04A47DE1CC78B4D006647BC /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
-		C04A47DF1CC78B4E006647BC /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
-		C04A47E01CC78B50006647BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 		C04A47E11CC78B50006647BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		DA4B14A31CBE922200134193 /* NewUserUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B14A21CBE922200134193 /* NewUserUITest.swift */; };
+		DAE86E791CD9FFAD00F81CEE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */; };
 		DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
-		E034AE6B1CC77348003D77FE /* ConariUnitTestsLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E034AE6A1CC77348003D77FE /* ConariUnitTestsLogin.swift */; };
 		E034AE7B1CC7C4E5003D77FE /* ConariTests in Resources */ = {isa = PBXBuildFile; fileRef = E034AE771CC7C46B003D77FE /* ConariTests */; };
 		E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
 		E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC01CBE2220003001BD /* Assets.xcassets */; };
@@ -39,17 +31,10 @@
 		E07CFBFF1CBE2B97005BDFAA /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
 		E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 		E0DBB9C01CBE4E66009D6520 /* Icon in Resources */ = {isa = PBXBuildFile; fileRef = E0DBB9BF1CBE4E66009D6520 /* Icon */; };
-		E0DBB9C81CBE5445009D6520 /* ConariUITestsLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBB9C71CBE5445009D6520 /* ConariUITestsLogin.swift */; };
+		E0DBB9C81CBE5445009D6520 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBB9C71CBE5445009D6520 /* LoginUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3A6528C01CD0DABF00E3F9DD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E06D7FAE1CBE221F003001BD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E06D7FB51CBE221F003001BD;
-			remoteInfo = Conari;
-		};
 		AE9217271CC7748D00A3391C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE9217221CC7748D00A3391C /* RichEditorView.xcodeproj */;
@@ -103,14 +88,12 @@
 		AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTutorialDescriptonViewController.swift; sourceTree = "<group>"; };
 		AE9217221CC7748D00A3391C /* RichEditorView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RichEditorView.xcodeproj; path = RichEditorView/RichEditorView.xcodeproj; sourceTree = "<group>"; };
 		AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
-		AEB03E011CC75B5C00FFEA38 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
 		AEB03E051CC75CD900FFEA38 /* MetadataUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataUITests.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		DA4B14A21CBE922200134193 /* NewUserUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUITest.swift; sourceTree = "<group>"; };
+		DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E034AE681CC77348003D77FE /* LoginUnitConariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginUnitConariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E034AE6A1CC77348003D77FE /* ConariUnitTestsLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariUnitTestsLogin.swift; sourceTree = "<group>"; };
 		E034AE771CC7C46B003D77FE /* ConariTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConariTests; sourceTree = "<group>"; };
 		E06D7FB61CBE2220003001BD /* Conari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06D7FB91CBE2220003001BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,13 +110,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3A6528B81CD0DABF00E3F9DD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E06D7FB31CBE221F003001BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,6 +179,7 @@
 				AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */,
 				AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */,
 				DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */,
+				DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */,
 				E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */,
 				E06D7FC51CBE2220003001BD /* Info.plist */,
 				DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */,
@@ -217,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				E0DBB9C71CBE5445009D6520 /* LoginUITests.swift */,
-				DA4B14A21CBE922200134193 /* NewUserUITests.swift */,
+				DA4B14A21CBE922200134193 /* NewUserUITest.swift */,
 				AEB03E051CC75CD900FFEA38 /* MetadataUITests.swift */,
 				E0DBB9C91CBE5445009D6520 /* Info.plist */,
 			);
@@ -227,24 +204,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E034AE671CC77348003D77FE /* LoginUnitConariTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3A6528C21CD0DABF00E3F9DD /* Build configuration list for PBXNativeTarget "ConariUnitTests" */;
-			buildPhases = (
-				3A6528B71CD0DABF00E3F9DD /* Sources */,
-				3A6528B81CD0DABF00E3F9DD /* Frameworks */,
-				3A6528B91CD0DABF00E3F9DD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3A6528C11CD0DABF00E3F9DD /* PBXTargetDependency */,
-			);
-			name = ConariUnitTests;
-			productName = ConariUnitTests;
-			productReference = 3A6528BB1CD0DABF00E3F9DD /* ConariUnitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		E06D7FB51CBE221F003001BD /* Conari */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E06D7FD31CBE2220003001BD /* Build configuration list for PBXNativeTarget "Conari" */;
@@ -292,11 +251,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Markus Friedl";
 				TargetAttributes = {
-					3A6528BA1CD0DABF00E3F9DD = {
-						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = WF93CK26XS;
-						TestTargetID = E06D7FB51CBE221F003001BD;
-					};
 					E06D7FB51CBE221F003001BD = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -328,7 +282,6 @@
 			targets = (
 				E06D7FB51CBE221F003001BD /* Conari */,
 				E0DBB9C41CBE5445009D6520 /* ConariUITests */,
-				3A6528BA1CD0DABF00E3F9DD /* ConariUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -351,13 +304,6 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3A6528B91CD0DABF00E3F9DD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E06D7FB41CBE221F003001BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,14 +313,6 @@
 				E06D7FC41CBE2220003001BD /* LaunchScreen.storyboard in Resources */,
 				E0DBB9C01CBE4E66009D6520 /* Icon in Resources */,
 				E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E06D7FC81CBE2220003001BD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C04A47D71CC78A74006647BC /* (null) in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,19 +326,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3A6528B71CD0DABF00E3F9DD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3A6528C81CD0DB2E00E3F9DD /* LoginUnitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E06D7FB21CBE221F003001BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */,
+				DAE86E791CD9FFAD00F81CEE /* MenuViewController.swift in Sources */,
 				DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */,
 				AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */,
 				3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */,
@@ -412,42 +343,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E06D7FC61CBE2220003001BD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C04A47E01CC78B50006647BC /* LoginViewController.swift in Sources */,
-				C04A47DB1CC78B47006647BC /* AppDelegate.swift in Sources */,
-				C04A47D81CC78A7E006647BC /* NewUserViewController.swift in Sources */,
-				C04A47DF1CC78B4E006647BC /* WelcomeScreenViewController.swift in Sources */,
-				C04A47D91CC78B44006647BC /* DatabaseManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E0DBB9C11CBE5445009D6520 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C04A47E11CC78B50006647BC /* LoginViewController.swift in Sources */,
 				C04A47DC1CC78B48006647BC /* AppDelegate.swift in Sources */,
-				E0DBB9C81CBE5445009D6520 /* ConariUITestsLogin.swift in Sources */,
+				E0DBB9C81CBE5445009D6520 /* LoginUITests.swift in Sources */,
 				C04A47DD1CC78B4B006647BC /* NewUserViewController.swift in Sources */,
-				E0DBB9C81CBE5445009D6520 /* ConariUITestsLogin.swift in Sources */,
+				E0DBB9C81CBE5445009D6520 /* LoginUITests.swift in Sources */,
 				DA4B14A31CBE922200134193 /* NewUserUITest.swift in Sources */,
 				C04A47DA1CC78B45006647BC /* DatabaseManager.swift in Sources */,
 				C04A47DE1CC78B4D006647BC /* WelcomeScreenViewController.swift in Sources */,
-				AEB03E061CC75CD900FFEA38 /* MetadataUITest.swift in Sources */,
+				AEB03E061CC75CD900FFEA38 /* MetadataUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3A6528C11CD0DABF00E3F9DD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E06D7FB51CBE221F003001BD /* Conari */;
-			targetProxy = 3A6528C01CD0DABF00E3F9DD /* PBXContainerItemProxy */;
-		};
 		AE92172E1CC774BE00A3391C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RichEditorView;
@@ -472,30 +386,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3A6528C31CD0DABF00E3F9DD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ConariUnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.Conari.ConariUnitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conari.app/Conari";
-			};
-			name = Debug;
-		};
-		3A6528C41CD0DABF00E3F9DD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ConariUnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.Conari.ConariUnitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conari.app/Conari";
-			};
-			name = Release;
-		};
 		E06D7FD11CBE2220003001BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -636,15 +526,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A6528C21CD0DABF00E3F9DD /* Build configuration list for PBXNativeTarget "ConariUnitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3A6528C31CD0DABF00E3F9DD /* Debug */,
-				3A6528C41CD0DABF00E3F9DD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		E06D7FB11CBE221F003001BD /* Build configuration list for PBXProject "Conari" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
