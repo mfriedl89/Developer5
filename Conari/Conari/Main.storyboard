@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -583,24 +583,47 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMl-yR-gCc">
                                 <rect key="frame" x="20" y="102" width="560" height="478"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="owY-sm-bac" id="ai8-zM-daJ"/>
+                                </connections>
                             </webView>
+                            <activityIndicatorView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Eyd-K5-CH4">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OQ-dr-odD">
+                                <rect key="frame" x="263" y="324" width="75" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="SXI-Xw-Lwa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mGG-Z5-Aor" firstAttribute="top" secondItem="Eyd-K5-CH4" secondAttribute="bottom" constant="290" id="3vE-Ad-KeI"/>
                             <constraint firstItem="RMl-yR-gCc" firstAttribute="leading" secondItem="Pfr-Ll-UPR" secondAttribute="leading" id="8MT-oO-saF"/>
                             <constraint firstItem="RMl-yR-gCc" firstAttribute="trailing" secondItem="Pfr-Ll-UPR" secondAttribute="trailing" id="B24-Zt-gP2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pfr-Ll-UPR" secondAttribute="trailing" id="EBf-SK-xOf"/>
                             <constraint firstItem="TUs-ZW-as6" firstAttribute="top" secondItem="Pfr-Ll-UPR" secondAttribute="bottom" constant="8" id="Ije-hV-PBI"/>
                             <constraint firstAttribute="bottom" secondItem="RMl-yR-gCc" secondAttribute="bottom" constant="20" symbolic="YES" id="WTZ-76-NLo"/>
+                            <constraint firstItem="mGG-Z5-Aor" firstAttribute="top" secondItem="8OQ-dr-odD" secondAttribute="bottom" constant="255" id="Xff-pk-P6z"/>
                             <constraint firstItem="Pfr-Ll-UPR" firstAttribute="top" secondItem="Tvr-cg-qPG" secondAttribute="bottom" constant="8" id="Xie-9d-2Ez"/>
                             <constraint firstItem="TUs-ZW-as6" firstAttribute="centerX" secondItem="Pfr-Ll-UPR" secondAttribute="centerX" id="aQe-ku-L3p"/>
+                            <constraint firstItem="Eyd-K5-CH4" firstAttribute="centerX" secondItem="TUs-ZW-as6" secondAttribute="centerX" constant="-0.5" id="ct6-FW-yOj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pfr-Ll-UPR" secondAttribute="trailing" id="i70-iW-XiK"/>
+                            <constraint firstItem="8OQ-dr-odD" firstAttribute="top" secondItem="Eyd-K5-CH4" secondAttribute="bottom" constant="14" id="klq-Te-YSj"/>
+                            <constraint firstItem="8OQ-dr-odD" firstAttribute="centerX" secondItem="Eyd-K5-CH4" secondAttribute="centerX" id="myh-qU-WRl"/>
                             <constraint firstItem="RMl-yR-gCc" firstAttribute="top" secondItem="TUs-ZW-as6" secondAttribute="bottom" constant="8" symbolic="YES" id="ozx-Ss-wq6"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Pfr-Ll-UPR" secondAttribute="leading" id="vNh-pB-PJd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="HTMLContent" destination="RMl-yR-gCc" id="dM6-II-i6c"/>
+                        <outlet property="loadIndicator" destination="Eyd-K5-CH4" id="yGP-SG-ndr"/>
+                        <outlet property="loadingLabel" destination="8OQ-dr-odD" id="WWQ-FR-fLb"/>
+                        <outlet property="tutorialTitle" destination="Pfr-Ll-UPR" id="nvn-Rj-tzI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aA2-uj-ED4" userLabel="First Responder" sceneMemberID="firstResponder"/>

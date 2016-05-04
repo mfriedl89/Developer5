@@ -30,7 +30,7 @@ class DatabaseManager {
     
     func loginWithPHPScript(username: String, password: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/Login.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/Login.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username + "&password=" + password
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -85,7 +85,7 @@ class DatabaseManager {
     
     func CreateTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/CreateTutorial.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/CreateTutorial.php")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
         postString += "username=" + username
@@ -141,7 +141,7 @@ class DatabaseManager {
     
     func requestTutorial(tutorialID: String, callback: (Tutorial?, String?) -> ()){
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/RequestTutorial.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/RequestTutorial.php")!)
         request.HTTPMethod = "POST"
         let postString = "tutorialID=" + tutorialID
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -176,7 +176,7 @@ class DatabaseManager {
                         category: jsonData[1] as! Int,
                         difficulty: jsonData[2] as! String,
                         duration: jsonData[3] as! String,
-                        text: jsonData[4] as! String)
+                        text: (jsonData[4] as! String).stringByReplacingOccurrencesOfString("\\\"", withString: "\""))
                 }
                 if let jsonErrorMessage = jsonData["error_message"] as? NSString {
                     responseString = jsonErrorMessage

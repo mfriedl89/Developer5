@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ViewFinishedTutorialViewController: UIViewController {
+class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
 
+    
   override func viewDidLoad() {
     super.viewDidLoad()
+    loadIndicator.startAnimating()
+    loadIndicator.transform=CGAffineTransformMakeScale(1.5, 1.5)
     // Do any additional setup after loading the view, typically from a nib.
     
-    requestTutorial("32")
+    requestTutorial("57")
   }
 
     override func viewWillAppear(animated: Bool) {
@@ -26,8 +29,10 @@ class ViewFinishedTutorialViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-  @IBOutlet weak var HTMLContent: UIWebView!
+    
+    @IBOutlet weak var tutorialTitle: UILabel!
+    
+    @IBOutlet weak var HTMLContent: UIWebView!
     /*
     // MARK: - Navigation
 
@@ -38,6 +43,12 @@ class ViewFinishedTutorialViewController: UIViewController {
     }
     */
     
+    @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
+  
+    @IBOutlet weak var loadingLabel: UILabel!
+  
+  
+  
     func requestTutorial(tutorialID: String){
         DatabaseManager.sharedManager.requestTutorial(tutorialID) { tutorial, message in
             
@@ -47,11 +58,16 @@ class ViewFinishedTutorialViewController: UIViewController {
                 }
             }
             else {
-                self.HTMLContent.loadHTMLString(tutorial!.text, baseURL: nil)
+                dispatch_async(dispatch_get_main_queue(), {self.tutorialTitle.text = tutorial!.title
+                self.HTMLContent.loadHTMLString(tutorial!.text, baseURL: nil)})
             }
         }
     }
     
+    func webViewDidFinishLoad(webView: UIWebView) {
+        loadIndicator.stopAnimating()
+        loadingLabel.hidden = true
+    }
     
     func showErrorMessage(message: String) {
         dispatch_async(dispatch_get_main_queue(), {
