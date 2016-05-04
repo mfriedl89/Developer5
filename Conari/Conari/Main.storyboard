@@ -210,16 +210,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeM-0f-BRM">
-                                <rect key="frame" x="20" y="544" width="560" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Create new user"/>
-                                <connections>
-                                    <segue destination="YJq-ll-pSc" kind="show" id="CVH-T3-o4C">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOm-M1-Wne">
                                 <rect key="frame" x="20" y="72" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -252,22 +242,22 @@
                                     <action selector="loginPressed:" destination="MDP-0C-mzj" eventType="touchUpInside" id="fT2-jn-hQ8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBW-zR-LTL">
-                                <rect key="frame" x="20" y="550" width="560" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeM-0f-BRM">
+                                <rect key="frame" x="20" y="544" width="560" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create new user"/>
                                 <connections>
-                                    <segue destination="QeT-UG-jW0" kind="show" id="o2B-Dr-HR1"/>
+                                    <segue destination="QeT-UG-jW0" kind="show" id="kcR-Ad-TOH"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Cca-bq-Hfv" firstAttribute="trailing" secondItem="14g-AG-9xB" secondAttribute="trailing" id="01L-pi-oFo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YBW-zR-LTL" secondAttribute="trailing" id="495-df-KBy"/>
+                            <constraint firstItem="42R-Wi-ya7" firstAttribute="top" secondItem="aeM-0f-BRM" secondAttribute="bottom" constant="20" id="3EQ-UO-6SU"/>
                             <constraint firstItem="Cca-bq-Hfv" firstAttribute="top" secondItem="uOm-M1-Wne" secondAttribute="bottom" constant="8" symbolic="YES" id="B92-Wc-Yae"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aeM-0f-BRM" secondAttribute="trailing" id="EHn-3t-nE8"/>
                             <constraint firstItem="uOm-M1-Wne" firstAttribute="leading" secondItem="bHl-6b-GzC" secondAttribute="leadingMargin" id="FCx-Be-Dwz"/>
-                            <constraint firstItem="42R-Wi-ya7" firstAttribute="top" secondItem="YBW-zR-LTL" secondAttribute="bottom" constant="20" id="HUF-qV-Pr7"/>
                             <constraint firstItem="14g-AG-9xB" firstAttribute="trailing" secondItem="v6g-Bf-n9q" secondAttribute="trailing" id="OFQ-Qc-aE9"/>
                             <constraint firstItem="uOm-M1-Wne" firstAttribute="trailing" secondItem="bHl-6b-GzC" secondAttribute="trailingMargin" id="Qma-m3-70r"/>
                             <constraint firstItem="14g-AG-9xB" firstAttribute="top" secondItem="Cca-bq-Hfv" secondAttribute="bottom" constant="8" symbolic="YES" id="VWP-vA-Q8N"/>
@@ -276,9 +266,9 @@
                             <constraint firstItem="v6g-Bf-n9q" firstAttribute="leading" secondItem="2x9-dA-8kj" secondAttribute="leading" id="eha-cn-H7W"/>
                             <constraint firstItem="v6g-Bf-n9q" firstAttribute="trailing" secondItem="2x9-dA-8kj" secondAttribute="trailing" id="gZa-mq-p3G"/>
                             <constraint firstItem="14g-AG-9xB" firstAttribute="leading" secondItem="v6g-Bf-n9q" secondAttribute="leading" id="hjU-PX-8bT"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="aeM-0f-BRM" secondAttribute="leading" id="iB3-5Y-f67"/>
                             <constraint firstItem="uOm-M1-Wne" firstAttribute="trailing" secondItem="Cca-bq-Hfv" secondAttribute="trailing" id="iQ0-tt-KXS"/>
                             <constraint firstItem="Cca-bq-Hfv" firstAttribute="leading" secondItem="14g-AG-9xB" secondAttribute="leading" id="qxo-UC-lws"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="YBW-zR-LTL" secondAttribute="leading" id="t0l-Ma-Ulx"/>
                             <constraint firstItem="uOm-M1-Wne" firstAttribute="top" secondItem="Lrg-WR-fUW" secondAttribute="bottom" constant="8" symbolic="YES" id="vJ0-jt-SdE"/>
                             <constraint firstItem="2x9-dA-8kj" firstAttribute="top" secondItem="v6g-Bf-n9q" secondAttribute="bottom" constant="8" symbolic="YES" id="z9h-Dg-sHc"/>
                         </constraints>
@@ -356,7 +346,7 @@
                                         <rect key="frame" x="0.0" y="28" width="560" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QwL-xb-oOD" id="egA-9H-ibs">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="37"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="37.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -402,7 +392,7 @@
             </objects>
             <point key="canvasLocation" x="2205" y="-137"/>
         </scene>
-        <!--New User View Controller-->
+        <!--Add new user-->
         <scene sceneID="JeZ-Qe-aZ4">
             <objects>
                 <viewController id="QeT-UG-jW0" customClass="NewUserViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
