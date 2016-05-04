@@ -24,15 +24,17 @@ if($_POST) {
 				echo '{"success":0,"error_message":"' . mysqli_connect_error() . '"}';
 			} else {
 
-        $query = 	"SELECT TutID,Title,Category,Difficulty,Duration FROM Tutorial WHERE Title LIKE %$title%";
+      $query = 	"SELECT TutID,Title,Category,Difficulty,Duration FROM Tutorial WHERE Title LIKE ?";
 
-        if ($category) {
-          $query += "AND Category = " + $category;
-        }
+      if ($category) {
+        $query .= " AND Category = ".$category;
+      }
+
+      $title = "%$title%";
 
 				if ($stmt = $mysqli->prepare($query)) {
 
-					//$stmt->bind_param("ss",$title,$category);
+					$stmt->bind_param("s",$title);
 
 					/* execute query */
 					$stmt->execute();
@@ -44,11 +46,12 @@ if($_POST) {
 
 					/* fetch values */
 					while ( $stmt->fetch() ){
-            $foundTutorials[] = array('id' => $tID,
-                                      'title' => $tTitle,
-                                      'category' => $tCat,
-                                      'difficulty' => $tDif,
-                                      'duration' => $tDur);
+
+          $foundTutorials[] = array('id' => $tID,
+                                    'title' => $tTitle,
+                                    'category' => $tCat,
+                                    'difficulty' => $tDif,
+                                    'duration' => $tDur);
 
 						/*$foundTutorials[] = $tID;
 						$foundTutorials[] = $tTitle;
