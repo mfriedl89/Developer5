@@ -27,6 +27,10 @@
 		DAB71DF81CDA22DA00AB01FA /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
 		DAB71DFA1CDA230900AB01FA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		DAB71DFB1CDA231900AB01FA /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
+		DAB71E001CDA2BCE00AB01FA /* loupe.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB71DFF1CDA2BCE00AB01FA /* loupe.png */; };
+		DAB71E021CDA2CB600AB01FA /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB71E011CDA2CB600AB01FA /* plus.png */; };
+		DAB71E061CDA2F5400AB01FA /* manage.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB71E051CDA2F5400AB01FA /* manage.png */; };
+		DAB71E091CDA342500AB01FA /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB71E071CDA342500AB01FA /* user.png */; };
 		DAE86E791CD9FFAD00F81CEE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */; };
 		DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
 		E034AE7B1CC7C4E5003D77FE /* ConariTests in Resources */ = {isa = PBXBuildFile; fileRef = E034AE771CC7C46B003D77FE /* ConariTests */; };
@@ -98,6 +102,10 @@
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		DA280B9B1CDA11780005E80B /* MenuUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuUITests.swift; sourceTree = "<group>"; };
 		DA4B14A21CBE922200134193 /* NewUserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUITests.swift; sourceTree = "<group>"; };
+		DAB71DFF1CDA2BCE00AB01FA /* loupe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loupe.png; sourceTree = "<group>"; };
+		DAB71E011CDA2CB600AB01FA /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		DAB71E051CDA2F5400AB01FA /* manage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manage.png; sourceTree = "<group>"; };
+		DAB71E071CDA342500AB01FA /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E034AE771CC7C46B003D77FE /* ConariTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConariTests; sourceTree = "<group>"; };
@@ -152,6 +160,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DAB71DFD1CDA2BAF00AB01FA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DAB71E011CDA2CB600AB01FA /* plus.png */,
+				DAB71DFF1CDA2BCE00AB01FA /* loupe.png */,
+				DAB71E071CDA342500AB01FA /* user.png */,
+				DAB71E051CDA2F5400AB01FA /* manage.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		E06D7FAD1CBE221F003001BD = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +197,7 @@
 		E06D7FB81CBE2220003001BD /* Conari */ = {
 			isa = PBXGroup;
 			children = (
+				DAB71DFD1CDA2BAF00AB01FA /* Images */,
 				3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */,
 				E06D7FB91CBE2220003001BD /* AppDelegate.swift */,
 				E06D7FC01CBE2220003001BD /* Assets.xcassets */,
@@ -316,10 +336,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E034AE7B1CC7C4E5003D77FE /* ConariTests in Resources */,
+				DAB71E001CDA2BCE00AB01FA /* loupe.png in Resources */,
+				DAB71E091CDA342500AB01FA /* user.png in Resources */,
 				DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */,
 				E06D7FC41CBE2220003001BD /* LaunchScreen.storyboard in Resources */,
 				E0DBB9C01CBE4E66009D6520 /* Icon in Resources */,
 				E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */,
+				DAB71E061CDA2F5400AB01FA /* manage.png in Resources */,
+				DAB71E021CDA2CB600AB01FA /* plus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

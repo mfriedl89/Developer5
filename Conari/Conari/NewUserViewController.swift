@@ -379,7 +379,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
                 
                 self.showMessage(message!, username: self.userName.text!)
             }
-            self.navigationController?.popViewControllerAnimated(true)
+//            self.navigationController?.popViewControllerAnimated(true)
         }
         
     }
