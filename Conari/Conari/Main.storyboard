@@ -142,6 +142,91 @@
             </objects>
             <point key="canvasLocation" x="1359" y="816"/>
         </scene>
+        <!--Admin Tutorial View Controller-->
+        <scene sceneID="re1-2C-Pnt">
+            <objects>
+                <viewController id="l4H-wY-0nS" customClass="AdminTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GTl-2A-aSX"/>
+                        <viewControllerLayoutGuide type="bottom" id="jIG-xE-oG8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="63x-Ka-zh7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial administration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pph-vp-kc8">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ONv-SA-rBT">
+                                <rect key="frame" x="20" y="101" width="560" height="479"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TutorialTableViewCell" rowHeight="65" id="b3V-bb-hNe" customClass="TutorialTableViewCell" customModule="Conari" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b3V-bb-hNe" id="F4R-KD-Dv7">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peH-rI-UJY">
+                                                    <rect key="frame" x="17" y="37" width="535" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="zda-DV-j3o"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V2-d7-fqm">
+                                                    <rect key="frame" x="8" y="8" width="544" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3V2-d7-fqm" firstAttribute="trailing" secondItem="F4R-KD-Dv7" secondAttribute="trailingMargin" id="IoK-GL-tnB"/>
+                                                <constraint firstItem="peH-rI-UJY" firstAttribute="top" secondItem="3V2-d7-fqm" secondAttribute="bottom" constant="8" symbolic="YES" id="Sxl-4I-xht"/>
+                                                <constraint firstItem="peH-rI-UJY" firstAttribute="leading" secondItem="F4R-KD-Dv7" secondAttribute="leadingMargin" constant="9" id="Xmc-bf-Ozo"/>
+                                                <constraint firstItem="3V2-d7-fqm" firstAttribute="trailing" secondItem="peH-rI-UJY" secondAttribute="trailing" id="ebr-CO-pSi"/>
+                                                <constraint firstItem="3V2-d7-fqm" firstAttribute="leading" secondItem="F4R-KD-Dv7" secondAttribute="leadingMargin" id="pDE-sX-V2L"/>
+                                                <constraint firstItem="3V2-d7-fqm" firstAttribute="top" secondItem="F4R-KD-Dv7" secondAttribute="topMargin" id="qBF-lm-1SK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tutorialDetailTextLabel" destination="peH-rI-UJY" id="tmq-Ud-335"/>
+                                            <outlet property="tutorialTitleLabel" destination="3V2-d7-fqm" id="JPA-ht-vKO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="l4H-wY-0nS" id="LST-aj-P1a"/>
+                                    <outlet property="delegate" destination="l4H-wY-0nS" id="WyR-OK-s9T"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pph-vp-kc8" firstAttribute="leading" secondItem="ONv-SA-rBT" secondAttribute="leading" id="0zC-Is-G7J"/>
+                            <constraint firstItem="pph-vp-kc8" firstAttribute="trailing" secondItem="ONv-SA-rBT" secondAttribute="trailing" id="5Tn-jt-uv5"/>
+                            <constraint firstItem="pph-vp-kc8" firstAttribute="top" secondItem="GTl-2A-aSX" secondAttribute="bottom" constant="8" symbolic="YES" id="BTg-gy-ZCK"/>
+                            <constraint firstItem="pph-vp-kc8" firstAttribute="leading" secondItem="63x-Ka-zh7" secondAttribute="leadingMargin" id="MWs-5c-EC2"/>
+                            <constraint firstAttribute="bottom" secondItem="ONv-SA-rBT" secondAttribute="bottom" constant="20" symbolic="YES" id="btD-Zs-o7d"/>
+                            <constraint firstItem="ONv-SA-rBT" firstAttribute="top" secondItem="pph-vp-kc8" secondAttribute="bottom" constant="8" symbolic="YES" id="cT5-Qh-mLg"/>
+                            <constraint firstItem="pph-vp-kc8" firstAttribute="trailing" secondItem="63x-Ka-zh7" secondAttribute="trailingMargin" id="uxt-uP-R3m"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tutorialsTableView" destination="ONv-SA-rBT" id="PEa-NA-4SO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5IJ-ES-bb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="-845"/>
+        </scene>
         <!--Welcome Screen View Controller-->
         <scene sceneID="WZG-qI-2GJ">
             <objects>
