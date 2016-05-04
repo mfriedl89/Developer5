@@ -346,7 +346,7 @@
                                         <rect key="frame" x="0.0" y="28" width="560" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QwL-xb-oOD" id="egA-9H-ibs">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="37.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -597,6 +597,66 @@
                 <navigationItem title="Login" id="pwC-ja-Hke"/>
             </objects>
             <point key="canvasLocation" x="-368" y="-137"/>
+        </scene>
+        <!--Tutorial View-->
+        <scene sceneID="qbf-EK-Feb">
+            <objects>
+                <viewController title="Tutorial View" id="owY-sm-bac" customClass="ViewFinishedTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tvr-cg-qPG"/>
+                        <viewControllerLayoutGuide type="bottom" id="mGG-Z5-Aor"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6oV-2K-mAx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMl-yR-gCc">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="owY-sm-bac" id="ai8-zM-daJ"/>
+                                </connections>
+                            </webView>
+                            <activityIndicatorView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Eyd-K5-CH4">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OQ-dr-odD">
+                                <rect key="frame" x="263" y="324" width="75" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="SXI-Xw-Lwa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mGG-Z5-Aor" firstAttribute="top" secondItem="Eyd-K5-CH4" secondAttribute="bottom" constant="290" id="3vE-Ad-KeI"/>
+                            <constraint firstItem="RMl-yR-gCc" firstAttribute="trailing" secondItem="6oV-2K-mAx" secondAttribute="trailingMargin" id="APs-fV-MAE"/>
+                            <constraint firstItem="RMl-yR-gCc" firstAttribute="centerX" secondItem="8OQ-dr-odD" secondAttribute="centerX" id="AzC-RV-q7U"/>
+                            <constraint firstAttribute="bottom" secondItem="RMl-yR-gCc" secondAttribute="bottom" constant="20" symbolic="YES" id="WTZ-76-NLo"/>
+                            <constraint firstItem="mGG-Z5-Aor" firstAttribute="top" secondItem="8OQ-dr-odD" secondAttribute="bottom" constant="255" id="Xff-pk-P6z"/>
+                            <constraint firstItem="8OQ-dr-odD" firstAttribute="top" secondItem="Eyd-K5-CH4" secondAttribute="bottom" constant="14" id="klq-Te-YSj"/>
+                            <constraint firstItem="8OQ-dr-odD" firstAttribute="centerX" secondItem="Eyd-K5-CH4" secondAttribute="centerX" id="myh-qU-WRl"/>
+                            <constraint firstItem="RMl-yR-gCc" firstAttribute="centerY" secondItem="Eyd-K5-CH4" secondAttribute="centerY" id="wfO-Fo-W89"/>
+                            <constraint firstItem="RMl-yR-gCc" firstAttribute="leading" secondItem="6oV-2K-mAx" secondAttribute="leadingMargin" id="xme-Ng-uAe"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="6eU-Fu-Bem">
+                        <barButtonItem key="rightBarButtonItem" title="info" id="DyI-55-l2r"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="HTMLContent" destination="RMl-yR-gCc" id="dM6-II-i6c"/>
+                        <outlet property="loadIndicator" destination="Eyd-K5-CH4" id="yGP-SG-ndr"/>
+                        <outlet property="loadingLabel" destination="8OQ-dr-odD" id="WWQ-FR-fLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aA2-uj-ED4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-352" y="616"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
