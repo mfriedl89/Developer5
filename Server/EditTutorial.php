@@ -25,9 +25,9 @@ if($_POST) {
 	$TutText 		= $_POST['text'];
 	
 	if($username && $password &&
-		$TutTitle && $TutCategory &&
-		$TutDifficulty && $TutDuration &&
-		$TutText) {
+		$TutOldTitle && $TutNewTitle &&
+		$TutCategory && $TutDifficulty &&
+		$TutDuration && $TutText) {
 
 			/* Load config file for connection */
 			$config = parse_ini_file("junk/config.ini");
