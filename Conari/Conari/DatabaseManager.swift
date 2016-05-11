@@ -173,9 +173,11 @@ class DatabaseManager {
         postString += "&oldtitle=" + metadata.OldTitle.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
         postString += "&newtitle=" + metadata.Title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
         postString += "&category=" + String(metadata.category+1)
-        postString += "&difficulty=" + String(metadata.difficulty+1)
+        postString += "&difficulty=" + String(metadata.difficulty)
         postString += "&duration=" + String(metadata.duration)
         postString += "&text=" + content.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        
+        print(postString)
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         

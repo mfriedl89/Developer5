@@ -32,6 +32,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
                       "Youth"]
     
     @IBOutlet weak var tutorialsTableView: UITableView!
+    @IBOutlet weak var laodIndicator: UIActivityIndicatorView!
 
     var tutorialIndexPath: NSIndexPath? = nil
     var tutorial_array = [Tutorial_item]()
@@ -172,6 +173,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func handleDeleteTutorial(alertAction: UIAlertAction!) -> Void {
+        laodIndicator.startAnimating()
         
         if let indexPath = tutorialIndexPath {
             tutorialsTableView.beginUpdates()
@@ -201,6 +203,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
             
             tutorialsTableView.endUpdates()
         }
+        
         
     }
     
