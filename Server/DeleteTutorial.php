@@ -18,7 +18,7 @@ if($_POST) {
 	$password 		= $_POST['password']; // is a string of stop names seperated by ';'
 	$TutTitle 		= $_POST['title'];
 	
-	if($username && $password && $TutTitle {
+	if($username && $password && $TutTitle) {
 
 			/* Load config file for connection */
 			$config = parse_ini_file("junk/config.ini");
