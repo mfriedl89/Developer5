@@ -1,6 +1,6 @@
 //
-//  ConariTests.swift
-//  ConariTests
+//  NewUserUnitTests.swift
+//  NewUserUnitTests
 //
 //  Created by Markus Friedl on 13.04.16.
 //  Copyright © 2016 Markus Friedl. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Conari
 
-class ConariTests: XCTestCase {
+class NewUserUnitTests: XCTestCase {
     var vc: NewUserViewController!
     
     override func setUp() {
