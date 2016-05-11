@@ -398,7 +398,7 @@
         <!--Add new user-->
         <scene sceneID="JeZ-Qe-aZ4">
             <objects>
-                <viewController storyboardIdentifier="abc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QeT-UG-jW0" customClass="NewUserViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newUserStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QeT-UG-jW0" customClass="NewUserViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aCz-ZH-cQb"/>
                         <viewControllerLayoutGuide type="bottom" id="LCO-Fb-8pP"/>
