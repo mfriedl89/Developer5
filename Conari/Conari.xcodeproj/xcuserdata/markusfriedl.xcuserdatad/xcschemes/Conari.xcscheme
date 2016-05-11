@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Conari.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AEA97AA41CE3177900781C88"
+               BuildableName = "LoginUnitConariTests"
+               BlueprintName = "LoginUnitConariTests"
+               ReferencedContainer = "container:Conari.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
