@@ -84,7 +84,9 @@ function validTutorialInformation(&$TutCategory, &$TutDifficulty, &$TutDuration)
 
 function insertTutorial(&$mysqli,&$TutTitle, &$TutCategory, &$TutDifficulty, &$TutDuration, &$TutText, &$username){
 
-	if ($stmt = $mysqli->prepare("INSERT INTO Tutorial( Title, Category, Difficulty,Duration,Text,Author) VALUES (?,?,?,?,?,?)")) {
+	$tut_id = 0;
+
+	if ($stmt = $mysqli->prepare("INSERT INTO Tutorial(Title, Category, Difficulty, Duration, Text, Author) VALUES (?,?,?,?,?,?)")) {
 
 		/* bind parameters for query (security) */
 		$stmt->bind_param("ssssss", $TutTitle ,$TutCategory,$TutDifficulty,$TutDuration,$TutText,$username);
