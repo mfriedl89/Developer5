@@ -18,8 +18,10 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     var categoryPickerView : UIPickerView!
     var timePickerView : UIPickerView!
     
-    var oldTitle : String!
-    var oldCategory : String!
+    var oldTitle : String?
+    var oldCategory : String?
+    
+    var editTutorial : Tutorial?
     
     var current:TutorialMetaData = TutorialMetaData(OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
     
@@ -43,6 +45,12 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
                       "Work World",
                       "Youth"]
     
+    var difficultLabels = ["very easy",
+                           "easy",
+                           "medium",
+                           "hard",
+                           "very hard"]
+    
     var times: [String] = []
 
     
@@ -52,8 +60,8 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
         // Do any additional setup after loading the view.
         DifficultyStepper_.maximumValue = 5
         DifficultyStepper_.minimumValue = 1
-        DifficultyStepper_.value = 1
-        difficultyLabel_.text = "very easy";
+        DifficultyStepper_.value = Double(self.editTutorial!.difficulty)!
+        difficultyLabel_.text = self.difficultLabels[Int(self.editTutorial!.difficulty)! - 1];
         
         current.duration = 5
         
@@ -72,29 +80,45 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
         timePickerView = UIPickerView()
         timePickerView.delegate = self
         DurationTextField_.inputView = timePickerView
-        DurationTextField_.text = times[1] + " hh:mm"
+        DurationTextField_.text = times[0] + " hh:mm"
         DurationTextField_.selectedTextRange = nil
         
         titleTextField_.delegate = self
         
         // Set OldTitle of struct
-        self.current.OldTitle = self.oldTitle
+        self.current.OldTitle = self.oldTitle!
         
         // Set title field
-        self.titleTextField_.text = self.oldTitle
-        
+//        self.titleTextField_.text = self.oldTitle
+        self.titleTextField_.text = self.editTutorial!.title
+
         // Set category field
         self.categoryTextField_.text = self.oldCategory
         
+        let minute = Int(self.editTutorial!.duration)! % 60
+        let hour = Int(self.editTutorial!.duration)! / 60
+        self.DurationTextField_.text = String(format: "%02d:%02d",hour,minute) + " hh:mm"
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
+//        self.navigationController?.navigationBarHidden = false
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if (textField == titleTextField_) {
+            titleTextField_.resignFirstResponder()
+        }
+        return true
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // Maybe needed
@@ -148,6 +172,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == categoryPickerView{
             return categories.count
@@ -197,6 +222,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
             
             let nextScene =  segue.destinationViewController as! TutorialEditContentController
             nextScene.current = current
+            nextScene.currentText = editTutorial?.text
             return
         }
     }

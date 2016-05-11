@@ -82,7 +82,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
                     
                     self.tutorial_array = response
                     
-                    self.table_View.performSelectorOnMainThread(Selector("reloadData"), withObject: nil, waitUntilDone: true)
+                    self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
                     //self.table_View.reloadData()
                     
                     print("Tutorial Count: \(response.count)")
@@ -91,7 +91,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
                     
                     print("Tutorial not found")
                     self.tutorial_array.removeAll()
-                    self.table_View.performSelectorOnMainThread(Selector("reloadData"), withObject: nil, waitUntilDone: true)
+                    self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
                     print("Tutorial Count: \(self.tutorial_array.count)")
                     //self.table_View.reloadData()
                 }
@@ -197,7 +197,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
                     
                     self.tutorial_array = response
                     
-                    self.table_View.performSelectorOnMainThread(Selector("reloadData"), withObject: nil, waitUntilDone: true)
+                    self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
                     //self.table_View.reloadData()
                     
                     print("Tutorial Count: \(response.count)")
@@ -206,7 +206,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
                     
                     print("Tutorial not found")
                     self.tutorial_array.removeAll()
-                    self.table_View.performSelectorOnMainThread(Selector("reloadData"), withObject: nil, waitUntilDone: true)
+                    self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
                     print("Tutorial Count: \(self.tutorial_array.count)")
                     //self.table_View.reloadData()
                 }
