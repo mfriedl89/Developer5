@@ -50,51 +50,6 @@ class ViewFinishedTutorialUITest: XCTestCase {
       let cccNavigationBar = app.navigationBars["ccc"]
       XCTAssertTrue(cccNavigationBar.buttons["info"].exists, "Info Button doesn't exist")
       cccNavigationBar.childrenMatchingType(.Button).matchingIdentifier("Back").elementBoundByIndex(0).tap()
-      
-      
-      
-      
-      
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-        
-        //go to view controller
-        //app.buttons["ViewTutorial"].tap()
-        
-        //check Label
-        //XCTAssertTrue(app.staticTexts["tutorialNameLabel"].exists, "Label for tutorial name doesn't exist")
-        
-        //check WebView
-        //XCTAssertTrue(app.otherElements.containingType(.NavigationBar, identifier:"Tutorial View").childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.exists, "WebView doesn't exist")
-        
-        //check button
-        //let additionalInformationButton = app.buttons["additionalInformationButton"]
-        //XCTAssertTrue(additionalInformationButton.exists, "additionalInformationButton doesn't exist")
     }
     
 }

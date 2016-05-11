@@ -21,8 +21,8 @@ class ViewFinishedTutorial: XCTestCase {
         super.tearDown()
     }
     
-    func testRequestTutorial() {
-        let tutorialID = 60
+    func testRequestExistingTutorial() {
+        let tutorialID = 57
         
         // Declare our expectation
         let readyExpectation = expectationWithDescription("ready")
@@ -35,11 +35,37 @@ class ViewFinishedTutorial: XCTestCase {
         }
         
         // Loop until the expectation is fulfilled
-        waitForExpectationsWithTimeout(5, handler: { error in
+        waitForExpectationsWithTimeout(10, handler: { error in
             XCTAssertNil(error, "Error")
         })
     }
+  
+  
+  func testRequestMissingTutorial() {
+    let tutorialID = 2
     
+    // Declare our expectation
+    let readyExpectation = expectationWithDescription("ready")
+    
+    DatabaseManager.sharedManager.requestTutorial(tutorialID) { tutorial, message in
+      
+      
+      
+      
+      XCTAssert(message == "Tutorial not found!")
+      
+      readyExpectation.fulfill()
+    }
+    
+    // Loop until the expectation is fulfilled
+    waitForExpectationsWithTimeout(5, handler: { error in
+      XCTAssertNil(error, "Error")
+    })
+  }
+  
+  
+  
+  
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {
