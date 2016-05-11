@@ -17,40 +17,8 @@
 		AE9217211CC7704E00A3391C /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
 		AE92172B1CC774BE00A3391C /* RichEditorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9217281CC7748D00A3391C /* RichEditorView.framework */; };
 		AE92172C1CC774BE00A3391C /* RichEditorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE9217281CC7748D00A3391C /* RichEditorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AEA97AA81CE3177900781C88 /* ConariUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA97AA71CE3177900781C88 /* ConariUnitTests.swift */; };
-		AEA97AB91CE317A600781C88 /* LoginUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA97AB71CE317A600781C88 /* LoginUnitTests.swift */; };
-		AEA97ABA1CE317A600781C88 /* ViewFinishedTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA97AB81CE317A600781C88 /* ViewFinishedTutorial.swift */; };
-		AEA97ABC1CE317E600781C88 /* NewUserUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA97ABB1CE317E600781C88 /* NewUserUnitTests.swift */; };
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
-		C02D94781CE3281200A6E778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
-		C02D94791CE3281300A6E778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
-		C02D947A1CE3281700A6E778 /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
-		C02D947B1CE3281800A6E778 /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
-		C02D947C1CE3281A00A6E778 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
-		C02D947D1CE3281B00A6E778 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
-		C02D947E1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
-		C02D947F1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
-		C02D94801CE3282000A6E778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
-		C02D94811CE3282100A6E778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
-		C02D94821CE3282300A6E778 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
-		C02D94831CE3282300A6E778 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
-		C02D94841CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
-		C02D94851CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
-		C02D94861CE3282900A6E778 /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
-		C02D94871CE3282900A6E778 /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
-		C02D94881CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
-		C02D94891CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
-		C02D948A1CE3284500A6E778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */; };
-		C02D948B1CE3284600A6E778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */; };
-		C02D948C1CE3284B00A6E778 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
-		C02D948D1CE3284C00A6E778 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
-		C02D948E1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
-		C02D948F1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
-		C02D94901CE3285100A6E778 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
-		C02D94911CE3285100A6E778 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
-		C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
-		C02D94931CE3285400A6E778 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
 		E034AE7B1CC7C4E5003D77FE /* ConariTests in Resources */ = {isa = PBXBuildFile; fileRef = E034AE771CC7C46B003D77FE /* ConariTests */; };
@@ -86,13 +54,6 @@
 			remoteGlobalIDString = FBA6AAF81AD3EC9F00721644;
 			remoteInfo = RichEditorView;
 		};
-		AEA97AAA1CE3177900781C88 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E06D7FAE1CBE221F003001BD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E06D7FB51CBE221F003001BD;
-			remoteInfo = Conari;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,18 +82,7 @@
 		AE9217221CC7748D00A3391C /* RichEditorView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RichEditorView.xcodeproj; path = RichEditorView/RichEditorView.xcodeproj; sourceTree = "<group>"; };
 		AEA97A8B1CE316C800781C88 /* Conari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA97A971CE3176F00781C88 /* ConariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEA97A991CE3176F00781C88 /* ConariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariUITests.swift; sourceTree = "<group>"; };
-		AEA97A9B1CE3176F00781C88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEA97AA51CE3177900781C88 /* ConariUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEA97AA71CE3177900781C88 /* ConariUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariUnitTests.swift; sourceTree = "<group>"; };
-		AEA97AA91CE3177900781C88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AEA97AAF1CE3179C00781C88 /* LoginUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
-		AEA97AB01CE3179C00781C88 /* MetadataUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataUITests.swift; sourceTree = "<group>"; };
-		AEA97AB11CE3179C00781C88 /* NewUserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUITests.swift; sourceTree = "<group>"; };
-		AEA97AB21CE3179C00781C88 /* ViewFinishedTutorialUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorialUITest.swift; sourceTree = "<group>"; };
-		AEA97AB71CE317A600781C88 /* LoginUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUnitTests.swift; sourceTree = "<group>"; };
-		AEA97AB81CE317A600781C88 /* ViewFinishedTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorial.swift; sourceTree = "<group>"; };
-		AEA97ABB1CE317E600781C88 /* NewUserUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUnitTests.swift; sourceTree = "<group>"; };
 		AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
@@ -181,31 +131,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AEA97A981CE3176F00781C88 /* ConariUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AEA97AAF1CE3179C00781C88 /* LoginUITests.swift */,
-				AEA97AB01CE3179C00781C88 /* MetadataUITests.swift */,
-				AEA97AB11CE3179C00781C88 /* NewUserUITests.swift */,
-				AEA97AB21CE3179C00781C88 /* ViewFinishedTutorialUITest.swift */,
-				AEA97A991CE3176F00781C88 /* ConariUITests.swift */,
-				AEA97A9B1CE3176F00781C88 /* Info.plist */,
-			);
-			path = ConariUITests;
-			sourceTree = "<group>";
-		};
-		AEA97AA61CE3177900781C88 /* ConariUnitTests */ = {
-			isa = PBXGroup;
-			children = (
-				AEA97AB71CE317A600781C88 /* LoginUnitTests.swift */,
-				AEA97AB81CE317A600781C88 /* ViewFinishedTutorial.swift */,
-				AEA97AA71CE3177900781C88 /* ConariUnitTests.swift */,
-				AEA97ABB1CE317E600781C88 /* NewUserUnitTests.swift */,
-				AEA97AA91CE3177900781C88 /* Info.plist */,
-			);
-			path = ConariUnitTests;
-			sourceTree = "<group>";
-		};
 		E06D7FAD1CBE221F003001BD = {
 			isa = PBXGroup;
 			children = (
@@ -213,8 +138,6 @@
 				E0DBB9BF1CBE4E66009D6520 /* Icon */,
 				E06D7FB81CBE2220003001BD /* Conari */,
 				AE9217221CC7748D00A3391C /* RichEditorView.xcodeproj */,
-				AEA97A981CE3176F00781C88 /* ConariUITests */,
-				AEA97AA61CE3177900781C88 /* ConariUnitTests */,
 				AEA97A8C1CE316C800781C88 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -249,21 +172,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AEA97AA41CE3177900781C88 /* LoginUnitConariTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AEA97AAC1CE3177900781C88 /* Build configuration list for PBXNativeTarget "LoginUnitConariTests" */;
-			buildPhases = (
-				AEA97AA11CE3177900781C88 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AEA97AAB1CE3177900781C88 /* PBXTargetDependency */,
-			);
-			name = LoginUnitConariTests;
-			productName = LoginUnitConariTests;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		E06D7FB51CBE221F003001BD /* Conari */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E06D7FD31CBE2220003001BD /* Build configuration list for PBXNativeTarget "Conari" */;
@@ -293,10 +201,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Markus Friedl";
 				TargetAttributes = {
-					AEA97AA41CE3177900781C88 = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = E06D7FB51CBE221F003001BD;
-					};
 					E06D7FB51CBE221F003001BD = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -322,7 +226,6 @@
 			projectRoot = "";
 			targets = (
 				E06D7FB51CBE221F003001BD /* Conari */,
-				AEA97AA41CE3177900781C88 /* LoginUnitConariTests */,
 			);
 		};
 /* End PBXProject section */
@@ -345,24 +248,6 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AEA97A951CE3176F00781C88 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C02D94781CE3281200A6E778 /* Main.storyboard in Resources */,
-				C02D948A1CE3284500A6E778 /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEA97AA31CE3177900781C88 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C02D94791CE3281300A6E778 /* Main.storyboard in Resources */,
-				C02D948B1CE3284600A6E778 /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E06D7FB41CBE221F003001BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -378,53 +263,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AEA97A931CE3176F00781C88 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C02D94861CE3282900A6E778 /* CategorySearchViewController.swift in Sources */,
-				AEA97AB41CE3179C00781C88 /* MetadataUITests.swift in Sources */,
-				AEA97AB51CE3179C00781C88 /* NewUserUITests.swift in Sources */,
-				C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */,
-				C02D94821CE3282300A6E778 /* DatabaseManager.swift in Sources */,
-				AEA97A9A1CE3176F00781C88 /* ConariUITests.swift in Sources */,
-				C02D94841CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */,
-				C02D948C1CE3284B00A6E778 /* NewUserViewController.swift in Sources */,
-				C02D94801CE3282000A6E778 /* AppDelegate.swift in Sources */,
-				C02D948E1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */,
-				AEA97AB61CE3179C00781C88 /* ViewFinishedTutorialUITest.swift in Sources */,
-				C02D947A1CE3281700A6E778 /* NewTutorialDescriptonViewController.swift in Sources */,
-				C02D947C1CE3281A00A6E778 /* MainTutorialViewController.swift in Sources */,
-				C02D94901CE3285100A6E778 /* LoginViewController.swift in Sources */,
-				AEA97AB31CE3179C00781C88 /* LoginUITests.swift in Sources */,
-				C02D94881CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */,
-				C02D947E1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEA97AA11CE3177900781C88 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C02D94871CE3282900A6E778 /* CategorySearchViewController.swift in Sources */,
-				C02D948D1CE3284C00A6E778 /* NewUserViewController.swift in Sources */,
-				C02D94811CE3282100A6E778 /* AppDelegate.swift in Sources */,
-				C02D94911CE3285100A6E778 /* LoginViewController.swift in Sources */,
-				AEA97AA81CE3177900781C88 /* ConariUnitTests.swift in Sources */,
-				C02D94891CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */,
-				C02D948F1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */,
-				C02D947F1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */,
-				C02D947B1CE3281800A6E778 /* NewTutorialDescriptonViewController.swift in Sources */,
-				C02D947D1CE3281B00A6E778 /* MainTutorialViewController.swift in Sources */,
-				AEA97ABC1CE317E600781C88 /* NewUserUnitTests.swift in Sources */,
-				AEA97ABA1CE317A600781C88 /* ViewFinishedTutorial.swift in Sources */,
-				C02D94931CE3285400A6E778 /* KeyboardManager.swift in Sources */,
-				C02D94851CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */,
-				AEA97AB91CE317A600781C88 /* LoginUnitTests.swift in Sources */,
-				C02D94831CE3282300A6E778 /* DatabaseManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E06D7FB21CBE221F003001BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -456,11 +294,6 @@
 			name = RichEditorView;
 			targetProxy = AE92172D1CC774BE00A3391C /* PBXContainerItemProxy */;
 		};
-		AEA97AAB1CE3177900781C88 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E06D7FB51CBE221F003001BD /* Conari */;
-			targetProxy = AEA97AAA1CE3177900781C88 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -475,30 +308,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AEA97AAD1CE3177900781C88 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ConariUnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = stefanmitt.ConariUnitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conari.app/Conari";
-			};
-			name = Debug;
-		};
-		AEA97AAE1CE3177900781C88 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ConariUnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = stefanmitt.ConariUnitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conari.app/Conari";
-			};
-			name = Release;
-		};
 		E06D7FD11CBE2220003001BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -611,24 +420,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AEA97A9E1CE3176F00781C88 /* Build configuration list for PBXNativeTarget "ConariUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEA97A9F1CE3176F00781C88 /* Debug */,
-				AEA97AA01CE3176F00781C88 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AEA97AAC1CE3177900781C88 /* Build configuration list for PBXNativeTarget "ConariUnitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEA97AAD1CE3177900781C88 /* Debug */,
-				AEA97AAE1CE3177900781C88 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		E06D7FB11CBE221F003001BD /* Build configuration list for PBXProject "Conari" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
