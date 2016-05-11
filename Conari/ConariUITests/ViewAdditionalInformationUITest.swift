@@ -29,24 +29,22 @@ class ViewAdditionalInformationUITest: XCTestCase {
     }
     
     func testInformationFields() {
-      
-      
-      let app = XCUIApplication()
-      app.buttons["ViewTutorial"].tap()
-      app.navigationBars["ccc"].buttons["info"].tap()
-      
-      for cell in 0...4 {
-        XCTAssertTrue(app.tables.element.cells.elementBoundByIndex(UInt(cell)).exists)
-      }
-      
-      //check information fields
-      XCUIApplication().tables.staticTexts["Title"].tap()
-      //XCUIApplication().tables.staticTexts["Author"].tap()
-      XCUIApplication().tables.staticTexts["Category"].tap()
-      XCUIApplication().tables.staticTexts["Difficulty"].tap()
-      XCUIApplication().tables.staticTexts["Duration"].tap()
-      
-      
+        // navigate to view
+        let app = XCUIApplication()
+        app.buttons["ViewTutorial"].tap()
+        app.navigationBars["ccc"].buttons["info"].tap()
+        
+        // check if elements exist
+        for cell in 0...4 {
+            XCTAssertTrue(app.tables.element.cells.elementBoundByIndex(UInt(cell)).exists)
+        }
+        
+        // check information fields
+        XCUIApplication().tables.staticTexts["Title"].tap()
+        XCUIApplication().tables.staticTexts["Author"].tap()
+        XCUIApplication().tables.staticTexts["Category"].tap()
+        XCUIApplication().tables.staticTexts["Difficulty"].tap()
+        XCUIApplication().tables.staticTexts["Duration"].tap()
     }
     
 }

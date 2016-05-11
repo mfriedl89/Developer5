@@ -45,7 +45,7 @@ class ViewAdditionalInformationTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 5
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -59,14 +59,18 @@ class ViewAdditionalInformationTableViewController: UITableViewController {
             cell.detailTextLabel?.text = tutorial?.title
             
         case 1:
+            cell.textLabel?.text = "Author"
+            cell.detailTextLabel?.text = tutorial?.author
+            
+        case 2:
             cell.textLabel?.text = "Category"
             cell.detailTextLabel?.text = categories[(tutorial?.category)!]
             
-        case 2:
+        case 3:
             cell.textLabel?.text = "Difficulty"
             cell.detailTextLabel?.text = difficulty[(tutorial?.difficulty)!]
             
-        case 3:
+        case 4:
             cell.textLabel?.text = "Duration"
             
             let durationInSec: Int = Int((tutorial?.duration)!)! * 60

@@ -14,6 +14,7 @@ struct Tutorial {
     var difficulty: String
     var duration: String
     var text: String
+    var author: String
 }
 
 let categories = ["Arts and Entertainment",

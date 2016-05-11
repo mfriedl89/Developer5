@@ -168,7 +168,8 @@ class DatabaseManager {
                         category: jsonData[1] as! Int,
                         difficulty: jsonData[2] as! String,
                         duration: jsonData[3] as! String,
-                        text: (jsonData[4] as! String).stringByReplacingOccurrencesOfString("\\\"", withString: "\""))
+                        text: (jsonData[4] as! String).stringByReplacingOccurrencesOfString("\\\"", withString: "\""),
+                        author: jsonData[5] as! String)
                 }
                 if let jsonErrorMessage = jsonData["error_message"] as? NSString {
                     responseString = jsonErrorMessage

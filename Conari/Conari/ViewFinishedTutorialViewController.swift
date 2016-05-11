@@ -75,7 +75,8 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
                         category: (tutorial?.category)!,
                         difficulty: (tutorial?.difficulty)!,
                         duration: (tutorial?.duration)!,
-                        text: (tutorial?.text)!
+                        text: (tutorial?.text)!,
+                        author: (tutorial?.author)!
                     )
                 })
             }

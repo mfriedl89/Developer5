@@ -74,8 +74,7 @@ class ViewAdditionalInformationUnitTest: XCTestCase {
         XCTAssertEqual(tutorialAfterSegue?.category, myTutorial?.category)
         XCTAssertEqual(tutorialAfterSegue?.difficulty, myTutorial?.difficulty)
         XCTAssertEqual(tutorialAfterSegue?.duration, myTutorial?.duration)
-        
-        //add author
+        XCTAssertEqual(tutorialAfterSegue?.author, myTutorial?.author)
     }
     
     func testPerformanceExample() {
