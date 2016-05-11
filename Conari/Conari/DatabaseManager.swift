@@ -190,7 +190,7 @@ class DatabaseManager {
     
     func EditTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/EditTutorial.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/EditTutorial.php")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
         postString += "username=" + username
@@ -247,7 +247,7 @@ class DatabaseManager {
     
     func DeleteTutorial(title: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/DeleteTutorial")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/DeleteTutorial")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
         postString += "username=" + username
