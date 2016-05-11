@@ -17,7 +17,8 @@ header('Content-type: application/json');
 if($_POST) {
 	$username 		= $_POST['username'];
 	$password 		= $_POST['password']; // is a string of stop names seperated by ';'
-	$TutTitle 		= $_POST['title'];
+	$TutOldTitle	= $_POST['oldtitle'];
+	$TutNewTitle 	= $_POST['newtitle'];
 	$TutCategory 	= $_POST['category'];
 	$TutDifficulty 	= $_POST['difficulty'];
 	$TutDuration 	= $_POST['duration'];
@@ -41,10 +42,10 @@ if($_POST) {
 			} else {
 				
 				$editSuccessful = 0;
-				if(validUser($mysqli,$username, $password) && userOwnsTutorial($mysqli, $username, $TutTitle)) { 
+				if(validUser($mysqli,$username, $password) && userOwnsTutorial($mysqli, $username, $TutOldTitle)) { 
 					if(validTutorialInformation($TutCategory, $TutDifficulty, $TutDuration)){
 						
-						$editSuccessful = editTutorial($mysqli,$TutTitle, $TutCategory, $TutDifficulty, $TutDuration, $TutText);
+						$editSuccessful = editTutorial($mysqli, $TutOldTitle, $TutNewTitle, $TutCategory, $TutDifficulty, $TutDuration, $TutText);
 						
 						if ($editSuccessful) {
 					
@@ -81,9 +82,11 @@ function validTutorialInformation(&$TutCategory, &$TutDifficulty, &$TutDuration)
 	return false;
 }
 
-function editTutorial(&$mysqli,&$TutTitle, &$TutCategory, &$TutDifficulty, &$TutDuration, &$TutText){
+function editTutorial(&$mysqli, &$TutOldTitle, &$TutNewTitle, &$TutCategory, &$TutDifficulty, &$TutDuration, &$TutText){
 
-	// Check if such a tutorial exists and if the user is the actual owner
+	$tut_id = 0;
+
+	// Check if such a tutorial exists
 	if(tutorialExists($TutTitle) == false) {
 		return false;
 	}
@@ -91,7 +94,7 @@ function editTutorial(&$mysqli,&$TutTitle, &$TutCategory, &$TutDifficulty, &$Tut
 	if ($stmt = $mysqli->prepare("UPDATE Tutorial SET Title = ?, Category = ?, Difficulty = ?, Duration = ?, Text = ? WHERE Title = ?")) {
 
 		/* bind parameters for query (security) */
-		$stmt->bind_param("ssssss", $TutTitle ,$TutCategory,$TutDifficulty,$TutDuration,$TutText,$TutTitle);
+		$stmt->bind_param("ssssss", $TutNewTitle ,$TutCategory,$TutDifficulty,$TutDuration,$TutText,$TutOldTitle);
 
 		/* execute query */
 		$stmt->execute();
