@@ -69,15 +69,15 @@ function deleteTutorial(&$mysqli, &$TutTitle){
 
 		/* execute query */
 		$stmt->execute();
-	
-		/* get id of inserted object */
-		$tut_id = $stmt->insert_id;
 
 		/* close statement */
 		$stmt->close();
 	}
+	else {
+		return false;
+	}
 	
-	return $tut_id;
+	return true;
 }
 
 ?>
