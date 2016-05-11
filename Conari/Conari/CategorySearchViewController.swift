@@ -39,7 +39,14 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     var screen_height: CGFloat = 0
     
     var searchController: UISearchController!
-    
+  
+    deinit{
+    if let superView = searchController.view.superview
+    {
+      superView.removeFromSuperview()
+      }
+    }
+  
     
     var tutorial_array = [Tutorial_item]()
     
@@ -118,6 +125,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
             cell.label_difficulty?.text = tutorial_array[indexPath.row].difficulty
             cell.label_category?.text = categories[tutorial_array[indexPath.row].category]
             cell.label_duration.text = tutorial_array[indexPath.row].duration
+            cell.image_view.image = UIImage(named: "\(tutorial_array[indexPath.row].category-1)")
             
             return cell
         }
@@ -160,6 +168,8 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
         //self.search_bar_view.addSubview(searchController.searchBar)
         //self.search_bar_view.bringSubviewToFront(searchController.searchBar)
     }
+  
+  
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
        
