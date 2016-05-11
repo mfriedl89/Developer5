@@ -246,6 +246,9 @@ class DatabaseManager {
                         duration: jsonData[3] as! String,
                         text: (jsonData[4] as! String).stringByReplacingOccurrencesOfString("\\\"", withString: "\""))
                 }
+                else {
+                  responseString = "Tutorial not found!"
+                }
                 if let jsonErrorMessage = jsonData["error_message"] as? NSString {
                     responseString = jsonErrorMessage
                 }
@@ -253,9 +256,7 @@ class DatabaseManager {
                     //successValue = jsonSuccess
                 //}
                 
-                else {
-                    responseString = "Tutorial not found!"
-                }
+              
                 
             } catch {
                 print("error serializing JSON: \(error)")
