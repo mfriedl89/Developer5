@@ -44,6 +44,7 @@ class ViewAdditionalInformationUnitTest: XCTestCase {
     
     func testAdditionalInformation() {
         XCTAssertEqual(myTutorial?.title, "ccc")
+        XCTAssertEqual(myTutorial?.author, "frounz")
         XCTAssertEqual(categories[(myTutorial?.category)!], "Cars & Other Vehicles")
         XCTAssertEqual(difficulty[(myTutorial?.difficulty)!], "easy")
         XCTAssertEqual(myTutorial?.duration, "5")
