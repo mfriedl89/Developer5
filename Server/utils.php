@@ -62,7 +62,7 @@ function tutorialExists(&$mysqli, &$tutTitle) {
 }
 
 function userOwnsTutorial(&$mysqli, &$username, &$tutTitle) {
-	$tAuthor
+	
 	$exists = 0;
 	if ($stmt = $mysqli->prepare("SELECT TutID FROM Tutorial WHERE Author = ? AND Title = ?")) {
 
