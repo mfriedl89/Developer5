@@ -40,7 +40,6 @@ if($_POST) {
 						$foundUser[] = $user_email;
 						$foundUser[] = $user_firstname;
 						$foundUser[] = $user_surname;
-						
 					}
 
 					/* close statement */
