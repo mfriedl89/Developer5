@@ -403,13 +403,6 @@
                                     <segue destination="y1j-Ah-LpW" kind="show" id="X42-Vz-655"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czc-jf-qby">
-                                <rect key="frame" x="448" y="204" width="132" height="30"/>
-                                <state key="normal" title="Test Admin Tutorial"/>
-                                <connections>
-                                    <segue destination="l4H-wY-0nS" kind="show" id="NlD-1m-aTC"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -418,8 +411,6 @@
                             <constraint firstItem="3eh-B9-Wkb" firstAttribute="trailing" secondItem="RGn-0Y-j53" secondAttribute="trailing" id="Bu5-9e-Z5g"/>
                             <constraint firstItem="2h8-6Y-5Nx" firstAttribute="leading" secondItem="3eh-B9-Wkb" secondAttribute="leading" id="H2a-u9-lzP"/>
                             <constraint firstItem="3eh-B9-Wkb" firstAttribute="leading" secondItem="RGn-0Y-j53" secondAttribute="leading" id="Pxt-dS-GTQ"/>
-                            <constraint firstItem="Czc-jf-qby" firstAttribute="trailing" secondItem="RGn-0Y-j53" secondAttribute="trailing" id="Z6D-H2-ku9"/>
-                            <constraint firstItem="Czc-jf-qby" firstAttribute="top" secondItem="RGn-0Y-j53" secondAttribute="bottom" constant="8" symbolic="YES" id="b7P-pW-9kI"/>
                             <constraint firstItem="2h8-6Y-5Nx" firstAttribute="top" secondItem="mpT-tW-tcD" secondAttribute="bottom" constant="8" symbolic="YES" id="gB7-ko-Bvv"/>
                             <constraint firstItem="3eh-B9-Wkb" firstAttribute="top" secondItem="2h8-6Y-5Nx" secondAttribute="bottom" constant="8" symbolic="YES" id="vv4-Z1-okk"/>
                             <constraint firstItem="RGn-0Y-j53" firstAttribute="top" secondItem="3eh-B9-Wkb" secondAttribute="bottom" constant="8" symbolic="YES" id="wxq-5X-2Eb"/>
@@ -808,6 +799,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BNH-7m-V8n"/>
+        <segue reference="X42-Vz-655"/>
     </inferredMetricsTieBreakers>
 </document>

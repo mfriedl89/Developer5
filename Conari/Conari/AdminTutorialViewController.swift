@@ -138,30 +138,21 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
                     textField.placeholder = "Enter new tutorial name"
             })
             
-            let action = UIAlertAction(title: "Submit",
-                                       style: UIAlertActionStyle.Default,
-                                       handler: {[weak self]
-                                        (paramAction:UIAlertAction!) in
-                                        if let textFields = alertController?.textFields{
-                                            let theTextFields = textFields as [UITextField]
-                                            let enteredText = theTextFields[0].text
-                                            self!.tutorials[indexPath.row] = enteredText!
-                                            
-                                            
-//                                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                                self!.tutorialsTableView.reloadData()
-//                                            })
-                                        }
-                })
+            let action = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: {[weak self] (paramAction:UIAlertAction!) in
+                if let textFields = alertController?.textFields{
+                    let theTextFields = textFields as [UITextField]
+                    let enteredText = theTextFields[0].text
+                    self!.tutorials[indexPath.row] = enteredText!
+                    self!.tutorialsTableView.reloadData()
+                }
+            })
             
             alertController?.addAction(action)
             alertController?.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
                 alertController! .dismissViewControllerAnimated(true, completion: nil)
             }))
             
-            self.presentViewController(alertController!,
-                                       animated: true,
-                                       completion: nil)
+            self.presentViewController(alertController!, animated: true, completion: nil)
             
             tutorialIndexPath = nil
         }
