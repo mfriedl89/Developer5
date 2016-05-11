@@ -16,7 +16,7 @@ class ConariTests: XCTestCase {
         super.setUp()
       
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: self.dynamicType))
-        vc = storyboard.instantiateViewControllerWithIdentifier("newUserStoryboard") as! NewUserViewController
+        vc = storyboard.instantiateViewControllerWithIdentifier("abc") as! NewUserViewController
     }
     
     override func tearDown() {

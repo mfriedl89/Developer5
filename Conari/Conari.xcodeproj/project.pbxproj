@@ -26,6 +26,34 @@
 		AEA97ABC1CE317E600781C88 /* NewUserUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA97ABB1CE317E600781C88 /* NewUserUnitTests.swift */; };
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
+		C02D94781CE3281200A6E778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
+		C02D94791CE3281300A6E778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
+		C02D947A1CE3281700A6E778 /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
+		C02D947B1CE3281800A6E778 /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
+		C02D947C1CE3281A00A6E778 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
+		C02D947D1CE3281B00A6E778 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
+		C02D947E1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
+		C02D947F1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
+		C02D94801CE3282000A6E778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
+		C02D94811CE3282100A6E778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
+		C02D94821CE3282300A6E778 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
+		C02D94831CE3282300A6E778 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
+		C02D94841CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
+		C02D94851CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
+		C02D94861CE3282900A6E778 /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
+		C02D94871CE3282900A6E778 /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
+		C02D94881CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
+		C02D94891CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
+		C02D948A1CE3284500A6E778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */; };
+		C02D948B1CE3284600A6E778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */; };
+		C02D948C1CE3284B00A6E778 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
+		C02D948D1CE3284C00A6E778 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
+		C02D948E1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
+		C02D948F1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
+		C02D94901CE3285100A6E778 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
+		C02D94911CE3285100A6E778 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
+		C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
+		C02D94931CE3285400A6E778 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
 		E034AE7B1CC7C4E5003D77FE /* ConariTests in Resources */ = {isa = PBXBuildFile; fileRef = E034AE771CC7C46B003D77FE /* ConariTests */; };
@@ -361,6 +389,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02D94781CE3281200A6E778 /* Main.storyboard in Resources */,
+				C02D948A1CE3284500A6E778 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +398,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02D94791CE3281300A6E778 /* Main.storyboard in Resources */,
+				C02D948B1CE3284600A6E778 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,11 +422,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02D94861CE3282900A6E778 /* CategorySearchViewController.swift in Sources */,
 				AEA97AB41CE3179C00781C88 /* MetadataUITests.swift in Sources */,
 				AEA97AB51CE3179C00781C88 /* NewUserUITests.swift in Sources */,
+				C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */,
+				C02D94821CE3282300A6E778 /* DatabaseManager.swift in Sources */,
 				AEA97A9A1CE3176F00781C88 /* ConariUITests.swift in Sources */,
+				C02D94841CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */,
+				C02D948C1CE3284B00A6E778 /* NewUserViewController.swift in Sources */,
+				C02D94801CE3282000A6E778 /* AppDelegate.swift in Sources */,
+				C02D948E1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */,
 				AEA97AB61CE3179C00781C88 /* ViewFinishedTutorialUITest.swift in Sources */,
+				C02D947A1CE3281700A6E778 /* NewTutorialDescriptonViewController.swift in Sources */,
+				C02D947C1CE3281A00A6E778 /* MainTutorialViewController.swift in Sources */,
+				C02D94901CE3285100A6E778 /* LoginViewController.swift in Sources */,
 				AEA97AB31CE3179C00781C88 /* LoginUITests.swift in Sources */,
+				C02D94881CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */,
+				C02D947E1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,10 +446,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02D94871CE3282900A6E778 /* CategorySearchViewController.swift in Sources */,
+				C02D948D1CE3284C00A6E778 /* NewUserViewController.swift in Sources */,
+				C02D94811CE3282100A6E778 /* AppDelegate.swift in Sources */,
+				C02D94911CE3285100A6E778 /* LoginViewController.swift in Sources */,
 				AEA97AA81CE3177900781C88 /* ConariUnitTests.swift in Sources */,
+				C02D94891CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */,
+				C02D948F1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */,
+				C02D947F1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */,
+				C02D947B1CE3281800A6E778 /* NewTutorialDescriptonViewController.swift in Sources */,
+				C02D947D1CE3281B00A6E778 /* MainTutorialViewController.swift in Sources */,
 				AEA97ABC1CE317E600781C88 /* NewUserUnitTests.swift in Sources */,
 				AEA97ABA1CE317A600781C88 /* ViewFinishedTutorial.swift in Sources */,
+				C02D94931CE3285400A6E778 /* KeyboardManager.swift in Sources */,
+				C02D94851CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */,
 				AEA97AB91CE317A600781C88 /* LoginUnitTests.swift in Sources */,
+				C02D94831CE3282300A6E778 /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +681,7 @@
 				AEA97AA01CE3176F00781C88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEA97AAC1CE3177900781C88 /* Build configuration list for PBXNativeTarget "ConariUnitTests" */ = {
 			isa = XCConfigurationList;
@@ -633,6 +690,7 @@
 				AEA97AAE1CE3177900781C88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E06D7FB11CBE221F003001BD /* Build configuration list for PBXProject "Conari" */ = {
 			isa = XCConfigurationList;
