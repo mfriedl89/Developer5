@@ -45,7 +45,7 @@ if($_POST) {
 				if(validUser($mysqli,$username, $password)) { 
 					if(validTutorialInformation($TutCategory, $TutDifficulty, $TutDuration)){
 						
-						$insertSuccessful = insertTutorial($mysqli,$TutTitle, $TutCategory, $TutDifficulty, $TutDuration, $TutText);
+						$insertSuccessful = insertTutorial($mysqli,$TutTitle, $TutCategory, $TutDifficulty, $TutDuration, $TutText, $username);
 						
 						if ($insertSuccessful) {
 					
@@ -82,12 +82,12 @@ function validTutorialInformation(&$TutCategory, &$TutDifficulty, &$TutDuration)
 	return false;
 }
 
-function insertTutorial(&$mysqli,&$TutTitle, &$TutCategory, &$TutDifficulty, &$TutDuration, &$TutText){
+function insertTutorial(&$mysqli,&$TutTitle, &$TutCategory, &$TutDifficulty, &$TutDuration, &$TutText, &$username){
 
-	if ($stmt = $mysqli->prepare("INSERT INTO Tutorial( Title, Category, Difficulty,Duration,Text) VALUES (?,?,?,?,?)")) {
+	if ($stmt = $mysqli->prepare("INSERT INTO Tutorial( Title, Category, Difficulty,Duration,Text,Author) VALUES (?,?,?,?,?,?)")) {
 
 		/* bind parameters for query (security) */
-		$stmt->bind_param("sssss", $TutTitle ,$TutCategory,$TutDifficulty,$TutDuration,$TutText);
+		$stmt->bind_param("ssssss", $TutTitle ,$TutCategory,$TutDifficulty,$TutDuration,$TutText,$username);
 
 		/* execute query */
 		$stmt->execute();

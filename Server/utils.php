@@ -61,4 +61,31 @@ function tutorialExists(&$mysqli, &$tutTitle) {
 	return false;
 }
 
+function userOwnsTutorial(&$mysqli, &$username, &$tutTitle) {
+	$tAuthor
+	$exists = 0;
+	if ($stmt = $mysqli->prepare("SELECT TutID FROM Tutorial WHERE Author = ? AND Title = ?")) {
+
+		/* bind parameters for markers */
+		$stmt->bind_param("ss", $username, $tutTitle);
+
+		/* execute query */
+		$stmt->execute();
+
+		/* bind result variables */
+		$stmt->bind_result($exists);
+		
+		$stmt->fetch();
+		
+		/* close statement */
+		$stmt->close();
+	}
+	
+	if($exists){
+		return true;
+	}
+	
+	return false;
+}
+
 ?>

@@ -41,7 +41,7 @@ if($_POST) {
 			} else {
 				
 				$editSuccessful = 0;
-				if(validUser($mysqli,$username, $password)) { 
+				if(validUser($mysqli,$username, $password) && userOwnsTutorial($mysqli, $username, $TutTitle)) { 
 					if(validTutorialInformation($TutCategory, $TutDifficulty, $TutDuration)){
 						
 						$editSuccessful = editTutorial($mysqli,$TutTitle, $TutCategory, $TutDifficulty, $TutDuration, $TutText);
@@ -55,7 +55,7 @@ if($_POST) {
 						}
 					
 					}else{	echo "Tutorial Info not valid!";	}
-				}else{	echo "User not logged in!";	}
+				}else{	echo "User not logged in or not owner of tutorial!";	}
 				
 
 				$mysqli->close();

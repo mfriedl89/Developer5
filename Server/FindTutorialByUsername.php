@@ -24,7 +24,7 @@ if($_POST) {
 				echo '{"success":0,"error_message":"' . mysqli_connect_error() . '"}';
 			} else {
 				
-				if ($stmt = $mysqli->prepare("SELECT TutID,Title,Category,Difficulty,Duration FROM Tutorial WHERE Author=?")) {
+				if ($stmt = $mysqli->prepare("SELECT TutID,Title,Category,Difficulty,Duration,Author FROM Tutorial WHERE Author=?")) {
 				
 					$stmt->bind_param("s",$username);
 
@@ -32,7 +32,7 @@ if($_POST) {
 					$stmt->execute();
 
 					/* bind result variables */
-					$stmt->bind_result($tID,$tTitle,$tCat,$tDif,$tDur);
+					$stmt->bind_result($tID,$tTitle,$tCat,$tDif,$tDur,$tAuthor);
 					
 					$foundTutorials = array();
 					
@@ -43,7 +43,7 @@ if($_POST) {
 						$foundTutorials[] = $tCat;
 						$foundTutorials[] = $tDif;
 						$foundTutorials[] = $tDur;
-						
+						$foundTutorials[] = $tAuthor;						
 					}
 
 					/* close statement */
