@@ -88,17 +88,6 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let rename = UITableViewRowAction(style: .Normal, title: "Rename") { action, index in
-            print("rename button tapped")
-            
-            self.tutorialIndexPath = indexPath
-            
-            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-
-            self.renameTutorial()
-        }
-        rename.backgroundColor = UIColor.lightGrayColor()
-        
         let edit = UITableViewRowAction(style: .Normal, title: "Edit") { action, index in
             print("edit button tapped")
             //self.performSegueWithIdentifier("showEditOptions", sender: nil)
@@ -123,39 +112,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
             self.confirmDelete(cell.tutorialTitleLabel.text!)
         }
         
-        return [delete, edit, rename]
-    }
-    
-    func renameTutorial() {
-        if let indexPath = tutorialIndexPath {
-            var alertController:UIAlertController?
-            alertController = UIAlertController(title: "Change tutorial name",
-                                                message: tutorials[indexPath.row],
-                                                preferredStyle: .Alert)
-            
-            alertController!.addTextFieldWithConfigurationHandler(
-                {(textField: UITextField!) in
-                    textField.placeholder = "Enter new tutorial name"
-            })
-            
-            let action = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: {[weak self] (paramAction:UIAlertAction!) in
-                if let textFields = alertController?.textFields{
-                    let theTextFields = textFields as [UITextField]
-                    let enteredText = theTextFields[0].text
-                    self!.tutorials[indexPath.row] = enteredText!
-                    self!.tutorialsTableView.reloadData()
-                }
-            })
-            
-            alertController?.addAction(action)
-            alertController?.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
-                alertController! .dismissViewControllerAnimated(true, completion: nil)
-            }))
-            
-            self.presentViewController(alertController!, animated: true, completion: nil)
-            
-            tutorialIndexPath = nil
-        }
+        return [delete, edit]
     }
     
     func confirmDelete(tutorial: String) {
