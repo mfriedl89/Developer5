@@ -124,13 +124,36 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
         
         func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
             let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
+            let duration_hours = Int(tutorial_array[indexPath.row].duration)!/60
+            let duration_minutes = Int(tutorial_array[indexPath.row].duration)!%60
             
             //cell.textLabel?.text = "test"
             cell.label_title?.text = tutorial_array[indexPath.row].title
-            cell.label_difficulty?.text = tutorial_array[indexPath.row].difficulty
             cell.label_category?.text = categories[tutorial_array[indexPath.row].category]
-            cell.label_duration.text = tutorial_array[indexPath.row].duration
+          
+            cell.label_duration.text = String(format: "%02d:%02d", duration_hours,duration_minutes)
             cell.image_view.image = UIImage(named: "\(tutorial_array[indexPath.row].category-1)")
+          
+        switch Int(tutorial_array[indexPath.row].difficulty)! {
+          case 5:
+            cell.label_difficulty?.text = "very hard";
+            break;
+          case 4:
+            cell.label_difficulty?.text = "hard";
+            break;
+          case 3:
+            cell.label_difficulty?.text = "medium";
+            break;
+          case 2:
+            cell.label_difficulty?.text = "easy";
+            break;
+          case 1:
+            cell.label_difficulty?.text = "very easy";
+            break;
+          default:
+            break;
+          }
+
             
             return cell
         }
