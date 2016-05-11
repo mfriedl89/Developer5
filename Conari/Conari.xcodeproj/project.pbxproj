@@ -27,6 +27,7 @@
 		AEA97ABC1CE317E600781C88 /* NewUserUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA97ABB1CE317E600781C88 /* NewUserUnitTests.swift */; };
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
+		C0209D9E1CE376BA0058CF8B /* CategorySearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */; };
 		C02D94781CE3281200A6E778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
 		C02D94791CE3281300A6E778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
 		C02D947A1CE3281700A6E778 /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
@@ -143,6 +144,7 @@
 		AEA97ABB1CE317E600781C88 /* NewUserUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUnitTests.swift; sourceTree = "<group>"; };
 		AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
+		C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchUITests.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E034AE771CC7C46B003D77FE /* ConariTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConariTests; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				AEA97AB11CE3179C00781C88 /* NewUserUITests.swift */,
 				AEA97AB21CE3179C00781C88 /* ViewFinishedTutorialUITest.swift */,
 				AEA97A991CE3176F00781C88 /* ConariUITests.swift */,
+				C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */,
 				AEA97A9B1CE3176F00781C88 /* Info.plist */,
 			);
 			path = ConariUITests;
@@ -440,6 +443,7 @@
 				C02D947A1CE3281700A6E778 /* NewTutorialDescriptonViewController.swift in Sources */,
 				C02D947C1CE3281A00A6E778 /* MainTutorialViewController.swift in Sources */,
 				C02D94901CE3285100A6E778 /* LoginViewController.swift in Sources */,
+				C0209D9E1CE376BA0058CF8B /* CategorySearchUITests.swift in Sources */,
 				AEA97AB31CE3179C00781C88 /* LoginUITests.swift in Sources */,
 				C02D94881CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */,
 				C02D947E1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */,
