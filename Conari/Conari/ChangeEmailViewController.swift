@@ -19,17 +19,41 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   let checkEmailFalse = -1
   let repeatedEmailIsNotNew = -2
   
-//  var login_password_ = DatabaseManager.sharedManager.getUserPassword()
   var login_email_ = "irgendwos"
   var newUserFunc = NewUserViewController()
   
-
+  let username = DatabaseManager.sharedManager.getUserName()
+    
   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         new_email_textField.delegate = self
         repeat_new_email_textField.delegate = self
+        
+        DatabaseManager.sharedManager.getUserEmail(username) {success, message in
+            print("user: \(self.username), \(success), \(message)")
+                if success == true
+                {
+                    print("success");
+                    dispatch_async(dispatch_get_main_queue(),{
+                        
+                        
+                        for viewcontoller in (self.navigationController?.viewControllers)!
+                        {
+                            if(viewcontoller.isKindOfClass(MainTutorialViewController))
+                            {
+                                self.navigationController?.popToViewController(viewcontoller, animated: true);
+                            }
+                        }
+                        
+                    });
+                }
+                else
+                {
+                    print("else")
+                }
+            }
         
         // Do any additional setup after loading the view.
     }

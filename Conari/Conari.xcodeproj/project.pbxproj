@@ -24,6 +24,7 @@
 		DA280B9C1CDA11780005E80B /* MenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280B9B1CDA11780005E80B /* MenuUITests.swift */; };
 		DA4B14A31CBE922200134193 /* NewUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B14A21CBE922200134193 /* NewUserUITests.swift */; };
 		DA4FE7791CE33A2D00D2D44F /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FE7781CE33A2D00D2D44F /* ChangeEmailViewController.swift */; };
+		DA4FE77D1CE35ADC00D2D44F /* ChangeUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FE77C1CE35ADC00D2D44F /* ChangeUserNameViewController.swift */; };
 		DAA31A181CE316B300AD817A /* round_loupe.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA31A171CE316B300AD817A /* round_loupe.png */; };
 		DAA31A1C1CE317BD00AD817A /* round_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA31A1A1CE317BD00AD817A /* round_plus.png */; };
 		DAA31A1D1CE317BD00AD817A /* round_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA31A1B1CE317BD00AD817A /* round_edit.png */; };
@@ -108,6 +109,7 @@
 		DA280B9B1CDA11780005E80B /* MenuUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuUITests.swift; sourceTree = "<group>"; };
 		DA4B14A21CBE922200134193 /* NewUserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUITests.swift; sourceTree = "<group>"; };
 		DA4FE7781CE33A2D00D2D44F /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
+		DA4FE77C1CE35ADC00D2D44F /* ChangeUserNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeUserNameViewController.swift; sourceTree = "<group>"; };
 		DAA31A171CE316B300AD817A /* round_loupe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round_loupe.png; sourceTree = "<group>"; };
 		DAA31A1A1CE317BD00AD817A /* round_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round_plus.png; sourceTree = "<group>"; };
 		DAA31A1B1CE317BD00AD817A /* round_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round_edit.png; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */,
 				AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */,
 				DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */,
+				DA4FE77C1CE35ADC00D2D44F /* ChangeUserNameViewController.swift */,
 				DA4FE7781CE33A2D00D2D44F /* ChangeEmailViewController.swift */,
 				DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */,
 				E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */,
@@ -375,6 +378,7 @@
 			files = (
 				E0CB1BB81CD9D11F000B881D /* AdminTutorialViewController.swift in Sources */,
 				DA4FE7791CE33A2D00D2D44F /* ChangeEmailViewController.swift in Sources */,
+				DA4FE77D1CE35ADC00D2D44F /* ChangeUserNameViewController.swift in Sources */,
 				E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */,
 				DAE86E791CD9FFAD00F81CEE /* MenuViewController.swift in Sources */,
 				DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */,
