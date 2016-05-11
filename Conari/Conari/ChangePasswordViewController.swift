@@ -95,19 +95,8 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
                 if success == true
                 {
                     
-                    print("sucess");
-                    dispatch_async(dispatch_get_main_queue(),{
-                        
-                        
-                        for viewcontoller in (self.navigationController?.viewControllers)!
-                        {
-                            if(viewcontoller.isKindOfClass(MainTutorialViewController))
-                            {
-                                self.navigationController?.popToViewController(viewcontoller, animated: true);
-                            }
-                        }
-                        
-                    });
+                    print("success");
+                    
                 }
                 else
                 {
