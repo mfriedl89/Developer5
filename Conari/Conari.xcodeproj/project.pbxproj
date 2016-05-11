@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
+		AE3CF5DC1CE338A00080D7E5 /* SearchTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
 		AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
@@ -119,6 +120,7 @@
 
 /* Begin PBXFileReference section */
 		3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTutorialUITests.swift; sourceTree = "<group>"; };
 		AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchViewController.swift; sourceTree = "<group>"; };
 		AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		AEA97A981CE3176F00781C88 /* ConariUITests */ = {
 			isa = PBXGroup;
 			children = (
+				AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */,
 				AEA97AAF1CE3179C00781C88 /* LoginUITests.swift */,
 				AEA97AB01CE3179C00781C88 /* MetadataUITests.swift */,
 				AEA97AB11CE3179C00781C88 /* NewUserUITests.swift */,
@@ -427,6 +430,7 @@
 				AEA97AB51CE3179C00781C88 /* NewUserUITests.swift in Sources */,
 				C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */,
 				C02D94821CE3282300A6E778 /* DatabaseManager.swift in Sources */,
+				AE3CF5DC1CE338A00080D7E5 /* SearchTutorialUITests.swift in Sources */,
 				AEA97A9A1CE3176F00781C88 /* ConariUITests.swift in Sources */,
 				C02D94841CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */,
 				C02D948C1CE3284B00A6E778 /* NewUserViewController.swift in Sources */,
@@ -663,6 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
