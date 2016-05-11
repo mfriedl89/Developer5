@@ -20,6 +20,8 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
     let repeatedIsNotNew = -3
     
     var login_password_ = DatabaseManager.sharedManager.getUserPassword()
+    var username = DatabaseManager.sharedManager.getUserName()
+
     
     var newUserFunc = NewUserViewController()
     
@@ -86,6 +88,37 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
             let alert = UIAlertController(title: "Alert", message: "Please enter a valid Password", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+            break
+        case 0:
+            DatabaseManager.sharedManager.changeUserPassword(username, new_password: NewPasswordTextField.text!, old_password: OldPasswordTextField.text!) {success, message in
+                
+                if success == true
+                {
+                    
+                    print("sucess");
+                    dispatch_async(dispatch_get_main_queue(),{
+                        
+                        
+                        for viewcontoller in (self.navigationController?.viewControllers)!
+                        {
+                            if(viewcontoller.isKindOfClass(MainTutorialViewController))
+                            {
+                                self.navigationController?.popToViewController(viewcontoller, animated: true);
+                            }
+                        }
+                        
+                    });
+                }
+                else
+                {
+                    dispatch_async(dispatch_get_main_queue(),{
+                        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                        
+                    });
+                }
+            }
             break
         default: break
         }

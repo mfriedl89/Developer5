@@ -302,13 +302,14 @@ class DatabaseManager {
         task.resume()
     }
     
-    func changeUserPassword(username: String, old_password: String, new_password: String, callback: (Bool, String?) -> ()) {
+    func changeUserPassword(username: String, new_password: String, old_password: String, callback: (Bool, String?) -> ()) {
         
         let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/ChangePassword.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username +
-                         "&old_password=" + old_password +
-                         "&new_password" + new_password
+                         "&new_password" + new_password +
+                         "&old_password=" + old_password
+
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
