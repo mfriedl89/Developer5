@@ -31,31 +31,11 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
         new_email_textField.delegate = self
         repeat_new_email_textField.delegate = self
         
-        DatabaseManager.sharedManager.getUserEmail(username) {success, message in
-            print("user: \(self.username), \(success), \(message)")
-                if success == true
-                {
-                    print("success");
-                    dispatch_async(dispatch_get_main_queue(),{
+        DatabaseManager.sharedManager.requestUser(username) {User, message in
+            print("user: \(self.username), \(message)")
                         
-                        
-                        for viewcontoller in (self.navigationController?.viewControllers)!
-                        {
-                            if(viewcontoller.isKindOfClass(MainTutorialViewController))
-                            {
-                                self.navigationController?.popToViewController(viewcontoller, animated: true);
-                            }
-                        }
-                        
-                    });
-                }
-                else
-                {
-                    print("else")
-                }
-            }
+             };
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

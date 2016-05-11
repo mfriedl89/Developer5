@@ -9,6 +9,13 @@
 import Foundation
 
 
+struct User {
+    var email: String
+    var firstname: String
+    var surname: String
+}
+
+
 /**
  This file will act as our Database manager.
  */
@@ -360,58 +367,64 @@ class DatabaseManager {
     }
     
     
-    func getUserEmail(username: String, callback: (Bool, String?) -> ()) {
+    func requestUser(username: String, callback: (User?, String?) -> ()){
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/RequestUser.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/RequestUser.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username
-        
-        
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
-        var success: Bool = false
+        //var jsonString: String = ""
         var responseString: NSString?
         //var successValue = 0
+        
+        var responseUser: User? = nil
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
             guard error == nil && data != nil else {
                 // check for fundamental networking error
-                success = false
                 let message: String? = error?.localizedDescription
-                callback(success, message)
+                
+                callback(nil, message)
                 
                 return
             }
             
+            
             if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
                 // check for http errors
-                success = false
                 responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
             }
-            
             do {
                 let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-                if jsonData as! NSObject == 1 {
-                    //successValue = 1;
-                    success = true
+                
+                if data!.length > 2  {
+                    responseUser = User(
+                        email: jsonData[0] as! String,
+                        firstname: jsonData[1] as! String,
+                        surname: jsonData[2] as! String
+                    )
+                }
+                else {
+                    responseString = "User not found!"
                 }
                 if let jsonErrorMessage = jsonData["error_message"] as? NSString {
                     responseString = jsonErrorMessage
                 }
-                if (jsonData["success"] != nil) {
-                    //successValue = jsonSuccess
-                    success = false
-                }
+
+                
+                
                 
             } catch {
                 print("error serializing JSON: \(error)")
             }
             
+            
             let message: String? = (responseString as? String)
             
-            callback(success, message)
+            callback(responseUser, message)
+            
         })
         task.resume()
     }
-    
 }
