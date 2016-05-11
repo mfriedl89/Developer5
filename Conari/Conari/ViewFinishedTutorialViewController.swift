@@ -68,6 +68,8 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.title = tutorial!.title
                     self.HTMLContent.loadHTMLString(tutorial!.text, baseURL: nil)
+                    
+                    print("VIEW:", tutorial!.text)
                 })
             }
         }

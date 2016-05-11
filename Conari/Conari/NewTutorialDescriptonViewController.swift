@@ -13,7 +13,7 @@ import AVFoundation
 
 class NewTutorialDescriptonViewController: UIViewController {
 
-    var current:TutorialMetaData = TutorialMetaData(OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0);
+    var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0);
     
     var editor:RichEditorView?
     var keyman:KeyboardManager?

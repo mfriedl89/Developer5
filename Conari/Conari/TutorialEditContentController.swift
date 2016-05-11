@@ -12,7 +12,7 @@ import AVFoundation
 
 class TutorialEditContentController: UIViewController, RichEditorDelegate, RichEditorToolbarDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var current:TutorialMetaData = TutorialMetaData(OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0);
+    var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0);
     var currentText: String?
     
     var editor:RichEditorView?
@@ -31,8 +31,6 @@ class TutorialEditContentController: UIViewController, RichEditorDelegate, RichE
         editor?.delegate = self
         editor?.accessibilityLabel = "texteditor"
         editor?.webView.becomeFirstResponder()
-        
-        print(currentText)
         editor?.setHTML(currentText!)
         
         self.view.addSubview(editor!)
@@ -87,10 +85,9 @@ class TutorialEditContentController: UIViewController, RichEditorDelegate, RichE
                 print("sucess");
                 dispatch_async(dispatch_get_main_queue(),{
                     
-                    
                     for viewcontoller in (self.navigationController?.viewControllers)!
                     {
-                        if(viewcontoller.isKindOfClass(MainTutorialViewController))
+                        if(viewcontoller.isKindOfClass(AdminTutorialViewController))
                         {
                             self.navigationController?.popToViewController(viewcontoller, animated: true);
                         }

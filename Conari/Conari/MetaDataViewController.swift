@@ -9,6 +9,7 @@
 import UIKit
 
 struct TutorialMetaData {
+    var id:Int;
     var OldTitle:String;
     var Title:String;
     var category:Int;
@@ -25,7 +26,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     var categoryPickerView : UIPickerView!
     var timePickerView : UIPickerView!
     
-    var current:TutorialMetaData = TutorialMetaData(OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
+    var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
     
     
     var categories = ["Arts and Entertainment",

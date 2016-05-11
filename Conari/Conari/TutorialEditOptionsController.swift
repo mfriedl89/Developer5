@@ -22,8 +22,9 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     var oldCategory : String?
     
     var editTutorial : Tutorial?
+    var editTutorialText: String?
     
-    var current:TutorialMetaData = TutorialMetaData(OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
+    var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
     
     var categories = ["Arts and Entertainment",
                       "Cars & Other Vehicles",
@@ -222,7 +223,8 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
             
             let nextScene =  segue.destinationViewController as! TutorialEditContentController
             nextScene.current = current
-            nextScene.currentText = editTutorial?.text
+            nextScene.currentText = (editTutorial?.text)!.stringByReplacingOccurrencesOfString("\\\"", withString: "\"")
+
             return
         }
     }

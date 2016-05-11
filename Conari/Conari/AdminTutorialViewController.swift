@@ -42,6 +42,12 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+        
+        tutorialsTableView.reloadData()
         
         DatabaseManager.sharedManager.findTutorialByUsername(DatabaseManager.sharedManager.username) { (response) in
             
@@ -50,7 +56,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
                 self.tutorial_array = response
                 self.tutorialsTableView.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
                 //self.table_View.reloadData()
-                                
+                
             }else{
                 
                 print("Tutorial not found")
@@ -64,12 +70,6 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
             //self.tableView.reloadData()
             
         }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
-        
-        tutorialsTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,12 +118,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-//        let edit = UITableViewRowAction(style: .Normal, title: " Edit ") { action, index in
-//            print("edit button tapped")
-//            self.requestTutorial(self.tutorial_array[indexPath.row].id)
-//        }
-//        edit.backgroundColor = UIColor.orangeColor()
-        
+
         let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
             print("delete button tapped")
             
@@ -148,7 +143,6 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
             
             svc.oldTitle = tutorial?.title
             svc.oldCategory = self.categories[(tutorial?.category)!]
-            
             svc.editTutorial = tutorial
             
             self.navigationController?.pushViewController(svc, animated: true)
@@ -177,10 +171,10 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
         
         if let indexPath = tutorialIndexPath {
             tutorialsTableView.beginUpdates()
-            let tutTitle = tutorial_array[indexPath.row].title
+            let tutId = tutorial_array[indexPath.row].id
             print("want to delete tutorial with title " + tutorial_array[indexPath.row].title)
 
-            DatabaseManager.sharedManager.DeleteTutorial(tutTitle) { success, message in
+            DatabaseManager.sharedManager.DeleteTutorial(tutId) { success, message in
                 print("upload-success: \(success), login-message:\(message)")
                 if success == true
                 {

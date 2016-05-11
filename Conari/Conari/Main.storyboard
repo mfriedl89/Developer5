@@ -411,25 +411,16 @@
                                     <segue destination="y1j-Ah-LpW" kind="show" id="X42-Vz-655"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-UJ-WRT">
-                                <rect key="frame" x="534" y="204" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="l4H-wY-0nS" kind="show" id="eIc-a5-CWJ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2h8-6Y-5Nx" firstAttribute="leading" secondItem="3eh-B9-Wkb" secondAttribute="leading" id="6JV-NK-Vqb"/>
-                            <constraint firstItem="aZa-UJ-WRT" firstAttribute="top" secondItem="RGn-0Y-j53" secondAttribute="bottom" constant="8" symbolic="YES" id="AYr-N0-CHU"/>
                             <constraint firstItem="RGn-0Y-j53" firstAttribute="top" secondItem="3eh-B9-Wkb" secondAttribute="bottom" constant="8" symbolic="YES" id="BGP-Ct-iBf"/>
                             <constraint firstItem="2h8-6Y-5Nx" firstAttribute="leading" secondItem="qxb-Fc-Rcc" secondAttribute="leadingMargin" id="Iwi-q3-0lY"/>
                             <constraint firstItem="2h8-6Y-5Nx" firstAttribute="trailing" secondItem="qxb-Fc-Rcc" secondAttribute="trailingMargin" id="gZH-mE-vhJ"/>
                             <constraint firstItem="2h8-6Y-5Nx" firstAttribute="top" secondItem="mpT-tW-tcD" secondAttribute="bottom" constant="8" symbolic="YES" id="iU0-I2-sTy"/>
                             <constraint firstItem="2h8-6Y-5Nx" firstAttribute="trailing" secondItem="3eh-B9-Wkb" secondAttribute="trailing" id="mCy-QT-36J"/>
                             <constraint firstItem="3eh-B9-Wkb" firstAttribute="leading" secondItem="RGn-0Y-j53" secondAttribute="leading" id="n10-eI-pC4"/>
-                            <constraint firstItem="RGn-0Y-j53" firstAttribute="trailing" secondItem="aZa-UJ-WRT" secondAttribute="trailing" id="oXC-7t-vBD"/>
                             <constraint firstItem="3eh-B9-Wkb" firstAttribute="top" secondItem="2h8-6Y-5Nx" secondAttribute="bottom" constant="8" symbolic="YES" id="r25-rk-VWi"/>
                             <constraint firstItem="3eh-B9-Wkb" firstAttribute="trailing" secondItem="RGn-0Y-j53" secondAttribute="trailing" id="s3d-gJ-nv2"/>
                         </constraints>

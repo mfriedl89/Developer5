@@ -175,7 +175,11 @@ class DatabaseManager {
         postString += "&category=" + String(metadata.category+1)
         postString += "&difficulty=" + String(metadata.difficulty)
         postString += "&duration=" + String(metadata.duration)
-        postString += "&text=" + content.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        postString += "&tutid=" + String(metadata.id)
+        
+        let allowedCharacters = NSCharacterSet.URLQueryAllowedCharacterSet().mutableCopy() as! NSMutableCharacterSet
+        allowedCharacters.removeCharactersInString("+/=")
+        postString += "&text=" + content.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)! as String!
         
         print(postString)
         
@@ -223,7 +227,7 @@ class DatabaseManager {
         task.resume()
     }
     
-    func DeleteTutorial(title: String, callback: (Bool, String?) -> ()) {
+    func DeleteTutorial(id: Int, callback: (Bool, String?) -> ()) {
         
         let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/DeleteTutorial.php")!)
         request.HTTPMethod = "POST"
@@ -234,7 +238,7 @@ class DatabaseManager {
         postString += "username=anton"
         postString += "&password=Test1234@"
         
-        postString += "&title=" + title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        postString += "&tutid=" + String(id)
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
