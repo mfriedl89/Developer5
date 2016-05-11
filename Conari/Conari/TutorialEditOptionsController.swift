@@ -1,32 +1,27 @@
 //
-//  MetaDataViewController.swift
+//  TutorialEditOptionsController.swift
 //  Conari
 //
-//  Created by Stefan Mitterrutzner on 13/04/16.
+//  Created by Markus Schofnegger on 11/05/16.
 //  Copyright © 2016 Markus Friedl. All rights reserved.
 //
 
 import UIKit
 
-struct TutorialMetaData {
-    var OldTitle:String;
-    var Title:String;
-    var category:Int;
-    var duration:Int;
-    var difficulty:Int;
-}
-
-class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate {
+    @IBOutlet weak var categoryTextField_: UITextField!
+    @IBOutlet weak var DurationTextField_: UITextField!
     @IBOutlet weak var titleTextField_: UITextField!
     @IBOutlet weak var difficultyLabel_: UILabel!
-    @IBOutlet weak var categoryTextField_: UITextField!
     @IBOutlet weak var DifficultyStepper_: UIStepper!
-    @IBOutlet weak var DurationTextField_: UITextField!
+    
     var categoryPickerView : UIPickerView!
     var timePickerView : UIPickerView!
     
-    var current:TutorialMetaData = TutorialMetaData(OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
+    var oldTitle : String!
+    var oldCategory : String!
     
+    var current:TutorialMetaData = TutorialMetaData(OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
     
     var categories = ["Arts and Entertainment",
                       "Cars & Other Vehicles",
@@ -48,14 +43,13 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                       "Work World",
                       "Youth"]
     
-    
-
-
     var times: [String] = []
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
         DifficultyStepper_.maximumValue = 5
         DifficultyStepper_.minimumValue = 1
         DifficultyStepper_.value = 1
@@ -67,7 +61,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         categoryPickerView.delegate = self
         categoryTextField_.inputView = categoryPickerView
         categoryTextField_.text = categories[0]
-        categoryTextField_.selectedTextRange = nil;
+        categoryTextField_.selectedTextRange = nil
         
         for hour in 0...10 {
             for minute in 0...11 {
@@ -79,12 +73,19 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         timePickerView.delegate = self
         DurationTextField_.inputView = timePickerView
         DurationTextField_.text = times[1] + " hh:mm"
-        DurationTextField_.selectedTextRange = nil;
+        DurationTextField_.selectedTextRange = nil
         
         titleTextField_.delegate = self
         
+        // Set OldTitle of struct
+        self.current.OldTitle = self.oldTitle
         
-        // Do any additional setup after loading the view.
+        // Set title field
+        self.titleTextField_.text = self.oldTitle
+        
+        // Set category field
+        self.categoryTextField_.text = self.oldCategory
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -96,21 +97,32 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.view.endEditing(true)
+    // Maybe needed
+    func showErrorMessage(message: String) {
+        dispatch_async(dispatch_get_main_queue(), {
+            //create alert
+            let errorAlert = UIAlertController(title: "Error",
+                message: message,
+                preferredStyle: UIAlertControllerStyle.Alert)
+            
+            //make button
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            
+            //add buttons
+            errorAlert.addAction(okAction)
+            
+            //display
+            self.presentViewController(errorAlert, animated: true, completion: nil)
+        })
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
-        if (textField == titleTextField_) {
-            titleTextField_.resignFirstResponder()
-        }
-        
-        return true
+    func updateCurrentStruct()
+    {
+        current.Title = titleTextField_.text!
+        current.difficulty = Int(DifficultyStepper_.value)
     }
     
     @IBAction func DifficultyValueChanged_(sender: AnyObject) {
-        
         switch DifficultyStepper_.value {
         case 5:
             difficultyLabel_.text = "very hard";
@@ -156,7 +168,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == categoryPickerView{
-           categoryTextField_.text = categories[row]
+            categoryTextField_.text = categories[row]
             current.category = row;
             categoryTextField_.selectedTextRange = nil;
             
@@ -167,37 +179,26 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             
             DurationTextField_.selectedTextRange = nil;
         }
-         self.view.endEditing(true)
+        self.view.endEditing(true)
         updateCurrentStruct();
         //pickerView.hidden = true
     }
-    
-    func updateCurrentStruct()
-    {
-        current.Title = titleTextField_.text!
-        current.difficulty = Int(DifficultyStepper_.value)
-    }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "write_tutorial"
+        if segue.identifier == "edit_tutorial"
         {
             updateCurrentStruct();
             if current.Title.isEmpty {
-                let alert = UIAlertController(title: "Error", message: "Please insert a Title", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.showErrorMessage("Please insert a Title")
                 return
             }
-
             
-            let nextScene =  segue.destinationViewController as! NewTutorialDescriptonViewController
+            
+            let nextScene =  segue.destinationViewController as! TutorialEditContentController
             nextScene.current = current
             return
-
         }
     }
     
-    
-    
-
 }

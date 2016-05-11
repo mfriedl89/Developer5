@@ -101,6 +101,13 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
         
         let edit = UITableViewRowAction(style: .Normal, title: "Edit") { action, index in
             print("edit button tapped")
+            //self.performSegueWithIdentifier("showEditOptions", sender: nil)
+            let svc = self.storyboard?.instantiateViewControllerWithIdentifier("showEditOptions") as! TutorialEditOptionsController
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! TutorialTableViewCell
+            svc.oldTitle = cell.tutorialTitleLabel.text!
+            svc.oldCategory = cell.tutorialDetailTextLabel.text!
+            
+            self.navigationController?.pushViewController(svc, animated: true)
         }
         edit.backgroundColor = UIColor.orangeColor()
         
