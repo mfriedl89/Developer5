@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28AE0ADF1CE3077F004A6858 /* TutorialEditOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */; };
+		28AE0AE21CE3161B004A6858 /* TutorialEditContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */; };
 		3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		AE9217211CC7704E00A3391C /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
@@ -82,6 +84,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialEditOptionsController.swift; sourceTree = "<group>"; };
+		28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialEditContentController.swift; sourceTree = "<group>"; };
 		3A6528BB1CD0DABF00E3F9DD /* ConariUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6528BF1CD0DABF00E3F9DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A6528C71CD0DB2E00E3F9DD /* LoginUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUnitTests.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 				AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */,
 				E0CB1BB71CD9D11F000B881D /* AdminTutorialViewController.swift */,
 				E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */,
+				28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */,
+				28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */,
 			);
 			path = Conari;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AE0AE21CE3161B004A6858 /* TutorialEditContentController.swift in Sources */,
 				E0CB1BB81CD9D11F000B881D /* AdminTutorialViewController.swift in Sources */,
 				E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */,
 				DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */,
@@ -360,6 +367,7 @@
 				E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */,
 				E0DB5D721CD9F95E002D7C91 /* TutorialTableViewCell.swift in Sources */,
 				AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */,
+				28AE0ADF1CE3077F004A6858 /* TutorialEditOptionsController.swift in Sources */,
 				E07CFBFF1CBE2B97005BDFAA /* WelcomeScreenViewController.swift in Sources */,
 				AE9217211CC7704E00A3391C /* NewTutorialDescriptonViewController.swift in Sources */,
 				AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */,
