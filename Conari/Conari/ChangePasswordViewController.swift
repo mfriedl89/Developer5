@@ -90,7 +90,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
             self.presentViewController(alert, animated: true, completion: nil)
             break
         case 0:
-            DatabaseManager.sharedManager.changeUserPassword(username, new_password: NewPasswordTextField.text!, old_password: OldPasswordTextField.text!) {success, message in
+            DatabaseManager.sharedManager.changeUserPassword(username, new_password: NewPasswordTextField.text!, old_password: login_password_) {success, message in
                 
                 if success == true
                 {

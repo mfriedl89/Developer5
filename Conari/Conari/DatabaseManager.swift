@@ -307,7 +307,7 @@ class DatabaseManager {
         let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/ChangePassword.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username +
-                         "&new_password" + new_password +
+                         "&new_password=" + new_password +
                          "&old_password=" + old_password
 
         
