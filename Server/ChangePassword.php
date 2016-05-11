@@ -30,20 +30,14 @@ if($_POST) {
 			} else {
 				
 				$changeSuccessful = 0;
-				if( validUserInformation($username, $password, $firstName, $surName, $email)){
 				
-					$changeSuccessful = changePassword($mysqli,$username, $pw_new, $pw_old);
-				
-					if ($changeSuccessful) {
-						echo "true";
-					} else {	echo "User could not be saved";	}
-					
-				}else{	echo "An error occurred!";	}
+				$changeSuccessful = changePassword($mysqli,$username, $pw_new, $pw_old);
+			
+				if ($changeSuccessful) {
+					echo "true";
+				} else {	echo "Password could not be changed.";	}
 					
 				$mysqli->close();
-					
-				
-				
 				
 			}
 	} else {
