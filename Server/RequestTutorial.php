@@ -37,12 +37,12 @@ if($_POST) {
 					
 					/* fetch values */
 					while ( $stmt->fetch() ){
-						$foundTutorials[] = $tTitle;
+						$foundTutorials[] = utf8_encode($tTitle);
 						$foundTutorials[] = $tCat;
 						$foundTutorials[] = $tDif;
 						$foundTutorials[] = $tDur;
-						$foundTutorials[] = $tText;
-						$foundTutorials[] = $tAuthor;
+						$foundTutorials[] = utf8_encode($tText);
+						$foundTutorials[] = utf8_encode($tAuthor);
 					}
 
 					/* close statement */
