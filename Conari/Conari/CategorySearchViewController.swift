@@ -41,9 +41,12 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     var searchController: UISearchController!
   
     deinit{
-    if let superView = searchController.view.superview
-    {
-      superView.removeFromSuperview()
+      if let sc = searchController
+      {
+        if let superView = sc.view.superview
+        {
+          superView.removeFromSuperview()
+        }
       }
     }
   
@@ -103,8 +106,10 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
                     //self.table_View.reloadData()
                 }
                 
-                // Reload the tableview.
-                //self.tableView.reloadData()
+              dispatch_async(dispatch_get_main_queue(),
+                             {
+                              self.table_View.reloadData();
+              })
                 
             }
 
@@ -171,23 +176,104 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   
   
     
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-       
+    func searchBarTextDidEndEditing(searchBar: UISearchBar)
+    {
+      if searchBar.text != "" {
+        text_search = searchBar.text!
+      }
+      if(text_search != "")
+      {
+        searchBar.placeholder = text_search
+      }else
+      {
+        searchBar.placeholder = "Search here..."
+      }
+      DatabaseManager.sharedManager.findTutorialByCategory(text_search, tutorial_category: selected_category) { (response) in
+        
+        if(!response.isEmpty){
+          
+          self.tutorial_array = response
+          
+          self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
+          //self.table_View.reloadData()
+          
+          print("Tutorial Count: \(response.count)")
+          
+        }else{
+          
+          print("Tutorial not found")
+          self.tutorial_array.removeAll()
+          self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
+          print("Tutorial Count: \(self.tutorial_array.count)")
+          //self.table_View.reloadData()
+        }
+        
+        // Reload the tableview.
+        //self.tableView.reloadData()
+        
+        dispatch_async(dispatch_get_main_queue(),
+                       {
+                        self.table_View.reloadData();
+        })
+        
+      }
     }
 
     
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar)
+    {
+        searchBar.text = text_search
     }
     
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        table_View.reloadData()
+      
+      if searchBar.text != "" {
+        text_search = searchBar.text!
+      }
+      if(text_search != "")
+      {
+        searchBar.placeholder = text_search
+      }else
+      {
+        searchBar.placeholder = "Search here..."
+      }
+      
+      DatabaseManager.sharedManager.findTutorialByCategory(text_search, tutorial_category: selected_category) { (response) in
+        
+        if(!response.isEmpty){
+          
+          self.tutorial_array = response
+          
+          self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
+          //self.table_View.reloadData()
+          
+          print("Tutorial Count: \(response.count)")
+          
+        }else{
+          
+          print("Tutorial not found")
+          self.tutorial_array.removeAll()
+          self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
+          print("Tutorial Count: \(self.tutorial_array.count)")
+          //self.table_View.reloadData()
+        }
+        
+        // Reload the tableview.
+        //self.tableView.reloadData()
+        
+        dispatch_async(dispatch_get_main_queue(),
+                       {
+                        self.table_View.reloadData();
+        })
+        
+      }
+      
     }
-    
+  
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         table_View.reloadData()
-        
+      
         searchController.searchBar.resignFirstResponder()
     }
         
@@ -196,11 +282,19 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
 
         
     }
-    
+  
+  
+
+  
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         let searchString = searchController.searchBar.text
-        
-        if(searchString != ""){
+        text_search = searchString!
+
+      
+
+
+        //if(searchString == "")
+        //{
             DatabaseManager.sharedManager.findTutorialByCategory(searchString!, tutorial_category: selected_category) { (response) in
                 
                 if(!response.isEmpty){
@@ -221,11 +315,13 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
                     //self.table_View.reloadData()
                 }
                 
-                // Reload the tableview.
-                //self.tableView.reloadData()
+              dispatch_async(dispatch_get_main_queue(),
+                             {
+                              self.table_View.reloadData();
+              })
                 
             }
-        }
+        //}
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
