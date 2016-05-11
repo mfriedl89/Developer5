@@ -22,7 +22,7 @@ class ViewFinishedTutorial: XCTestCase {
     }
     
     func testRequestTutorial() {
-        let tutorialID = "32"
+        let tutorialID = 57
         
         // Declare our expectation
         let readyExpectation = expectationWithDescription("ready")
