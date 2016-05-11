@@ -56,13 +56,13 @@ function changePassword(&$mysqli,&$username, &$pw_new, &$pw_old){
 	if(validUser($mysqli, $username, $pw_old) == false)
 		return false;
 
-	if ($stmt = $mysqli->prepare("UPDATE USER WHERE Username=? SET Password=?")) {
+	if ($stmt = $mysqli->prepare("UPDATE USER SET Password=? WHERE Username=?")) {
 
 		// Build SHA512 value of password (bcrypt would be better, but this should be enough)
 		$password_hashed =  hash('sha512', $pw_new);
 
 		/* bind parameters for query (security) */
-		$stmt->bind_param("si", $username , $password_hashed);
+		$stmt->bind_param("is", $password_hashed , $username);
 
 		/* execute query */
 		$stmt->execute();
