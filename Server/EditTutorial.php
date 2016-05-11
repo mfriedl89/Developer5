@@ -42,11 +42,10 @@ if($_POST) {
 			} else {
 				
 				$editSuccessful = 0;
-				echo "1";
+				
 				if(validUser($mysqli,$username, $password) && userOwnsTutorial($mysqli, $username, $TutOldTitle)) {
-					echo "2";
-					if(validTutorialInformation($TutCategory, $TutDifficulty, $TutDuration)){
-						echo "3";
+					if(validTutorialInformation($TutCategory, $TutDifficulty, $TutDuration)) {
+
 						$editSuccessful = editTutorial($mysqli, $TutOldTitle, $TutNewTitle, $TutCategory, $TutDifficulty, $TutDuration, $TutText);
 						
 						if ($editSuccessful) {
@@ -86,13 +85,10 @@ function validTutorialInformation(&$TutCategory, &$TutDifficulty, &$TutDuration)
 
 function editTutorial(&$mysqli, &$TutOldTitle, &$TutNewTitle, &$TutCategory, &$TutDifficulty, &$TutDuration, &$TutText){
 
-	echo "4";
 	// Check if such a tutorial exists
-	if(tutorialExists($TutOldTitle) == false) {
+	if(tutorialExists($mysqli, $TutOldTitle) == false) {
 		return false;
 	}
-
-	echo "5";
 
 	if ($stmt = $mysqli->prepare("UPDATE Tutorial SET Title = ?, Category = ?, Difficulty = ?, Duration = ?, Text = ? WHERE Title = ?")) {
 
@@ -104,13 +100,10 @@ function editTutorial(&$mysqli, &$TutOldTitle, &$TutNewTitle, &$TutCategory, &$T
 
 		/* close statement */
 		$stmt->close();
-		echo "6";
 	}
 	else {
 		return false;
 	}
-
-	echo "7";
 	
 	return true;
 }

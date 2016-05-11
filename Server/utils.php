@@ -35,7 +35,7 @@ function validUser(&$mysqli,&$username,&$password){
 }
 
 function tutorialExists(&$mysqli, &$tutTitle) {
-	echo "8";
+
 	$exists = 0;
 	if ($stmt = $mysqli->prepare("SELECT Title FROM Tutorial WHERE Title = ?")) {
 
@@ -53,20 +53,16 @@ function tutorialExists(&$mysqli, &$tutTitle) {
 		/* close statement */
 		$stmt->close();
 	}
-
-	echo "9";
 	
 	if($exists){
 		return true;
 	}
-
-	echo "10";
 	
 	return false;
 }
 
 function userOwnsTutorial(&$mysqli, &$username, &$tutTitle) {
-	echo "11";
+
 	$exists = 0;
 	if ($stmt = $mysqli->prepare("SELECT TutID FROM Tutorial WHERE Author = ? AND Title = ?")) {
 
@@ -84,14 +80,10 @@ function userOwnsTutorial(&$mysqli, &$username, &$tutTitle) {
 		/* close statement */
 		$stmt->close();
 	}
-
-	echo "12";
 	
 	if($exists){
 		return true;
 	}
-
-	echo "13";
 	
 	return false;
 }
