@@ -8,15 +8,16 @@
 
 import UIKit
 
-class ChangePasswordViewController: UIViewController {
+class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var OldPasswordTextField: UITextField!
     @IBOutlet weak var NewPasswordTextField: UITextField!
     @IBOutlet weak var RepeatedPasswordTextField: UITextField!
+    @IBOutlet weak var DoneBtn: UIButton!
     
     let falsePassword = -1
-    let repeatedIsNotNew = -2
-    let checkPasswordFalse = -3
+    let checkPasswordFalse = -2
+    let repeatedIsNotNew = -3
     
     var login_password_ = DatabaseManager.sharedManager.getUserPassword()
     
@@ -24,6 +25,10 @@ class ChangePasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        OldPasswordTextField.delegate = self
+        NewPasswordTextField.delegate = self
+        RepeatedPasswordTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -31,6 +36,20 @@ class ChangePasswordViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if(textField == OldPasswordTextField) {
+            NewPasswordTextField.becomeFirstResponder()
+        }
+        else if(textField == NewPasswordTextField) {
+            RepeatedPasswordTextField.becomeFirstResponder()
+        }
+        else {
+            RepeatedPasswordTextField.resignFirstResponder()
+            DoneBtnClicked(DoneBtn)
+        }
+        return true
     }
     
     
@@ -49,8 +68,8 @@ class ChangePasswordViewController: UIViewController {
         
         
         newUserFunc.checkInput(oldPwd == login_password_, textField: OldPasswordTextField)
-        newUserFunc.checkInput(repeatedPwd == newPwd, textField: RepeatedPasswordTextField)
         newUserFunc.checkInput(newUserFunc.checkPassword(newPwd), textField: NewPasswordTextField)
+        newUserFunc.checkInput(repeatedPwd == newPwd, textField: RepeatedPasswordTextField)
         
         switch error {
         case falsePassword:

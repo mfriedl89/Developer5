@@ -302,4 +302,61 @@ class DatabaseManager {
         task.resume()
     }
     
+    func changeUserPassword(username: String, old_password: String, new_password: String, callback: (Bool, String?) -> ()) {
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/ChangePassword.php")!)
+        request.HTTPMethod = "POST"
+        let postString = "username=" + username +
+                         "&old_password=" + old_password +
+                         "&new_password" + new_password
+        
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        var success: Bool = false
+        var responseString: NSString?
+        //var successValue = 0
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
+            guard error == nil && data != nil else {
+                // check for fundamental networking error
+                success = false
+                let message: String? = error?.localizedDescription
+                callback(success, message)
+                
+                return
+            }
+            
+            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
+                // check for http errors
+                success = false
+                responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
+            }
+            
+            do {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                if jsonData as! NSObject == 1 {
+                    //successValue = 1;
+                    self.username = username
+                    self.password = new_password
+                    success = true
+                }
+                if let jsonErrorMessage = jsonData["error_message"] as? NSString {
+                    responseString = jsonErrorMessage
+                }
+                if (jsonData["success"] != nil) {
+                    //successValue = jsonSuccess
+                    success = false
+                }
+                
+            } catch {
+                print("error serializing JSON: \(error)")
+            }
+            
+            let message: String? = (responseString as? String)
+            
+            callback(success, message)
+        })
+        task.resume()
+    }
+    
 }

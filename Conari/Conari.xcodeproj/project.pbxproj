@@ -205,7 +205,6 @@
 			children = (
 				DAB71DFD1CDA2BAF00AB01FA /* Images */,
 				3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */,
-				DA1F8F7D1CE320CB00981C41 /* ChangePasswordViewController.swift */,
 				E06D7FB91CBE2220003001BD /* AppDelegate.swift */,
 				E06D7FC01CBE2220003001BD /* Assets.xcassets */,
 				AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */,
@@ -215,6 +214,7 @@
 				DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */,
 				E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */,
 				E06D7FC51CBE2220003001BD /* Info.plist */,
+				DA1F8F7D1CE320CB00981C41 /* ChangePasswordViewController.swift */,
 				DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */,
 				E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */,
 				E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */,
