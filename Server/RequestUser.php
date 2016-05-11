@@ -33,13 +33,13 @@ if($_POST) {
 					/* bind result variables */
 					$stmt->bind_result($user_email,$user_firstname,$user_surname);
 					
-					$foundUser = array();
+					$foundUsers = array();
 					
 					/* fetch values */
 					while ( $stmt->fetch() ){
-						$foundUser[] = $user_email;
-						$foundUser[] = $user_firstname;
-						$foundUser[] = $user_surname;
+						$foundUsers[] = array('email' => $user_email,
+	                        'firstname' => $user_firstname,
+	                        'surname' => $user_surname);
 					}
 
 					/* close statement */
