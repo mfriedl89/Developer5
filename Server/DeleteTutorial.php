@@ -16,7 +16,7 @@ header('Content-type: application/json');
 if($_POST) {
 	$username 		= $_POST['username'];
 	$password 		= $_POST['password']; // is a string of stop names seperated by ';'
-	$TutTitle 		= $_POST['title'];
+	$TutID 		= $_POST['tutid'];
 	
 	if($username && $password && $TutTitle) {
 
@@ -33,9 +33,9 @@ if($_POST) {
 			} else {
 				
 				$deleteSuccessful = 0;
-				if(validUser($mysqli,$username, $password)) {
+				if(validUser($mysqli,$username, $password) && userOwnsTutorial($mysqli, $username, $TutID)) {
 						
-					$deleteSuccessful = deleteTutorial($mysqli, $TutTitle);
+					$deleteSuccessful = deleteTutorial($mysqli, $TutID);
 					
 					if ($deleteSuccessful) {
 				
@@ -60,12 +60,12 @@ if($_POST) {
 	echo '{"success":-1,"error_message":"Invalid data."}';
 }
 
-function deleteTutorial(&$mysqli, &$TutTitle){
+function deleteTutorial(&$mysqli, &$TutID){
 
-	if ($stmt = $mysqli->prepare("DELETE FROM Tutorial WHERE Title = ?")) {
+	if ($stmt = $mysqli->prepare("DELETE FROM Tutorial WHERE TutID = ?")) {
 
 		/* bind parameters for query (security) */
-		$stmt->bind_param("s", $TutTitle);
+		$stmt->bind_param("i", $TutID);
 
 		/* execute query */
 		$stmt->execute();

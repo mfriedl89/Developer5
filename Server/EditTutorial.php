@@ -17,7 +17,7 @@ header('Content-type: application/json');
 if($_POST) {
 	$username 		= $_POST['username'];
 	$password 		= $_POST['password']; // is a string of stop names seperated by ';'
-	$TutOldTitle	= $_POST['oldtitle'];
+	$TutID			= $_POST['tutid'];
 	$TutNewTitle 	= $_POST['newtitle'];
 	$TutCategory 	= $_POST['category'];
 	$TutDifficulty 	= $_POST['difficulty'];
@@ -25,7 +25,7 @@ if($_POST) {
 	$TutText 		= $_POST['text'];
 	
 	if($username && $password &&
-		$TutOldTitle && $TutNewTitle &&
+		$TutId && $TutNewTitle &&
 		$TutCategory && $TutDifficulty &&
 		$TutDuration && $TutText) {
 
@@ -43,10 +43,10 @@ if($_POST) {
 				
 				$editSuccessful = 0;
 				
-				if(validUser($mysqli,$username, $password) && userOwnsTutorial($mysqli, $username, $TutOldTitle)) {
+				if(validUser($mysqli,$username, $password) && userOwnsTutorial($mysqli, $username, $TutID)) {
 					if(validTutorialInformation($TutCategory, $TutDifficulty, $TutDuration)) {
 
-						$editSuccessful = editTutorial($mysqli, $TutOldTitle, $TutNewTitle, $TutCategory, $TutDifficulty, $TutDuration, $TutText);
+						$editSuccessful = editTutorial($mysqli, $TutID, $TutNewTitle, $TutCategory, $TutDifficulty, $TutDuration, $TutText);
 						
 						if ($editSuccessful) {
 					
@@ -83,17 +83,17 @@ function validTutorialInformation(&$TutCategory, &$TutDifficulty, &$TutDuration)
 	return false;
 }
 
-function editTutorial(&$mysqli, &$TutOldTitle, &$TutNewTitle, &$TutCategory, &$TutDifficulty, &$TutDuration, &$TutText){
+function editTutorial(&$mysqli, &$TutID, &$TutNewTitle, &$TutCategory, &$TutDifficulty, &$TutDuration, &$TutText){
 
 	// Check if such a tutorial exists
-	if(tutorialExists($mysqli, $TutOldTitle) == false) {
+	if(tutorialExists($mysqli, $TutID) == false) {
 		return false;
 	}
 
-	if ($stmt = $mysqli->prepare("UPDATE Tutorial SET Title = ?, Category = ?, Difficulty = ?, Duration = ?, Text = ? WHERE Title = ?")) {
+	if ($stmt = $mysqli->prepare("UPDATE Tutorial SET Title = ?, Category = ?, Difficulty = ?, Duration = ?, Text = ? WHERE TutID = ?")) {
 
 		/* bind parameters for query (security) */
-		$stmt->bind_param("ssssss", $TutNewTitle ,$TutCategory,$TutDifficulty,$TutDuration,$TutText,$TutOldTitle);
+		$stmt->bind_param("sssssi", $TutNewTitle ,$TutCategory,$TutDifficulty,$TutDuration,$TutText,$TutID);
 
 		/* execute query */
 		$stmt->execute();

@@ -34,13 +34,13 @@ function validUser(&$mysqli,&$username,&$password){
 	return false;
 }
 
-function tutorialExists(&$mysqli, &$tutTitle) {
+function tutorialExists(&$mysqli, &$tutID) {
 
 	$exists = 0;
-	if ($stmt = $mysqli->prepare("SELECT Title FROM Tutorial WHERE Title = ?")) {
+	if ($stmt = $mysqli->prepare("SELECT Title FROM Tutorial WHERE TutID = ?")) {
 
 		/* bind parameters for markers */
-		$stmt->bind_param("s", $tutTitle);
+		$stmt->bind_param("i", $tutID);
 
 		/* execute query */
 		$stmt->execute();
@@ -61,13 +61,13 @@ function tutorialExists(&$mysqli, &$tutTitle) {
 	return false;
 }
 
-function userOwnsTutorial(&$mysqli, &$username, &$tutTitle) {
+function userOwnsTutorial(&$mysqli, &$username, &$tutID) {
 
 	$exists = 0;
-	if ($stmt = $mysqli->prepare("SELECT TutID FROM Tutorial WHERE Author = ? AND Title = ?")) {
+	if ($stmt = $mysqli->prepare("SELECT TutID FROM Tutorial WHERE Author = ? AND TutID = ?")) {
 
 		/* bind parameters for markers */
-		$stmt->bind_param("ss", $username, $tutTitle);
+		$stmt->bind_param("si", $username, $tutID);
 
 		/* execute query */
 		$stmt->execute();
