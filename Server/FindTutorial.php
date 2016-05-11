@@ -26,7 +26,7 @@ if($_POST) {
 			
 				$title = "%$title%";			
 				
-				if ($stmt = $mysqli->prepare("SELECT TutID,Title,Category,Difficulty,Duration FROM Tutorial WHERE Title LIKE ?")) {
+				if ($stmt = $mysqli->prepare("SELECT TutID,Title,Category,Difficulty,Duration,Author FROM Tutorial WHERE Title LIKE ?")) {
 				
 					$stmt->bind_param("s",$title);
 
@@ -34,18 +34,18 @@ if($_POST) {
 					$stmt->execute();
 
 					/* bind result variables */
-					$stmt->bind_result($tID,$tTitle,$tCat,$tDif,$tDur);
+					$stmt->bind_result($tID,$tTitle,$tCat,$tDif,$tDur,$tAuthor);
 					
 					$foundTutorials = array();
 					
 					/* fetch values */
 					while ( $stmt->fetch() ){
-						$foundTutorials[] = $tID;
-						$foundTutorials[] = $tTitle;
-						$foundTutorials[] = $tCat;
-						$foundTutorials[] = $tDif;
-						$foundTutorials[] = $tDur;
-						
+						$foundTutorials[] = array('id' => $tID,
+	                        'title' => $tTitle,
+	                        'category' => $tCat,
+	                        'difficulty' => $tDif,
+	                        'duration' => $tDur,
+	                        'author' => $tAuthor);
 					}
 
 					/* close statement */

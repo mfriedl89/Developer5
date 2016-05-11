@@ -38,12 +38,12 @@ if($_POST) {
 					
 					/* fetch values */
 					while ( $stmt->fetch() ){
-						$foundTutorials[] = $tID;
-						$foundTutorials[] = $tTitle;
-						$foundTutorials[] = $tCat;
-						$foundTutorials[] = $tDif;
-						$foundTutorials[] = $tDur;
-						$foundTutorials[] = $tAuthor;						
+						$foundTutorials[] = array('id' => $tID,
+	                        'title' => $tTitle,
+	                        'category' => $tCat,
+	                        'difficulty' => $tDif,
+	                        'duration' => $tDur,
+	                        'author' => $tAuthor);
 					}
 
 					/* close statement */
