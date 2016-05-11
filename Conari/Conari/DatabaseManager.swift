@@ -186,6 +186,10 @@ class DatabaseManager {
     func getUserName() -> String {
         return username
     }
+    
+    func getUserPassword() -> String {
+        return password
+    }
 
     
     func EditTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {

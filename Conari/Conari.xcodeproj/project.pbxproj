@@ -19,6 +19,7 @@
 		C04A47DD1CC78B4B006647BC /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		C04A47DE1CC78B4D006647BC /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
 		C04A47E11CC78B50006647BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
+		DA1F8F7E1CE320CB00981C41 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F8F7D1CE320CB00981C41 /* ChangePasswordViewController.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		DA280B9C1CDA11780005E80B /* MenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280B9B1CDA11780005E80B /* MenuUITests.swift */; };
 		DA4B14A31CBE922200134193 /* NewUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B14A21CBE922200134193 /* NewUserUITests.swift */; };
@@ -101,6 +102,7 @@
 		AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
 		AEB03E051CC75CD900FFEA38 /* MetadataUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataUITests.swift; sourceTree = "<group>"; };
+		DA1F8F7D1CE320CB00981C41 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		DA280B9B1CDA11780005E80B /* MenuUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuUITests.swift; sourceTree = "<group>"; };
 		DA4B14A21CBE922200134193 /* NewUserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUITests.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				DAB71DFD1CDA2BAF00AB01FA /* Images */,
 				3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */,
+				DA1F8F7D1CE320CB00981C41 /* ChangePasswordViewController.swift */,
 				E06D7FB91CBE2220003001BD /* AppDelegate.swift */,
 				E06D7FC01CBE2220003001BD /* Assets.xcassets */,
 				AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */,
@@ -373,6 +376,7 @@
 				DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */,
 				AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */,
 				3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */,
+				DA1F8F7E1CE320CB00981C41 /* ChangePasswordViewController.swift in Sources */,
 				E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */,
 				E0DB5D721CD9F95E002D7C91 /* TutorialTableViewCell.swift in Sources */,
 				AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */,

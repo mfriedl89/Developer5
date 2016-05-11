@@ -456,7 +456,7 @@
         <!--Change password-->
         <scene sceneID="lnT-wd-rqn">
             <objects>
-                <viewController id="kyL-VI-exj" sceneMemberID="viewController">
+                <viewController id="kyL-VI-exj" customClass="ChangePasswordViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9TW-1u-uXA"/>
                         <viewControllerLayoutGuide type="bottom" id="yWh-pd-zGa"/>
@@ -502,7 +502,7 @@
                                 <rect key="frame" x="20" y="285" width="560" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <segue destination="MKS-51-WXW" kind="show" id="Ywm-DI-adw"/>
+                                    <action selector="DoneBtnClicked:" destination="kyL-VI-exj" eventType="touchUpInside" id="TR1-wW-Kxc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -532,6 +532,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Change password" id="LLh-ez-s9z"/>
+                    <connections>
+                        <outlet property="NewPasswordTextField" destination="kLD-bC-Yv0" id="1wA-iz-Cfy"/>
+                        <outlet property="OldPasswordTextField" destination="AFZ-HS-b6E" id="EHQ-GF-gGe"/>
+                        <outlet property="RepeatedPasswordTextField" destination="ZHB-iX-art" id="zKO-IQ-fXj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvC-GP-LuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
