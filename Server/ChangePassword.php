@@ -6,6 +6,9 @@
 
 */
 
+// Include utils
+require 'utils.php';
+
 header('Content-type: application/json');
 
 
