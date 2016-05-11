@@ -84,10 +84,8 @@ function validTutorialInformation(&$TutCategory, &$TutDifficulty, &$TutDuration)
 
 function editTutorial(&$mysqli, &$TutOldTitle, &$TutNewTitle, &$TutCategory, &$TutDifficulty, &$TutDuration, &$TutText){
 
-	$tut_id = 0;
-
 	// Check if such a tutorial exists
-	if(tutorialExists($TutTitle) == false) {
+	if(tutorialExists($TutOldTitle) == false) {
 		return false;
 	}
 
@@ -98,15 +96,15 @@ function editTutorial(&$mysqli, &$TutOldTitle, &$TutNewTitle, &$TutCategory, &$T
 
 		/* execute query */
 		$stmt->execute();
-	
-		/* get id of inserted object */
-		$tut_id = $stmt->insert_id;
 
 		/* close statement */
 		$stmt->close();
 	}
+	else {
+		return false;
+	}
 	
-	return $tut_id;
+	return true;
 }
 
 ?>
