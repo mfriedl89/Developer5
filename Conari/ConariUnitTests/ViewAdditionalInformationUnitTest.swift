@@ -48,8 +48,6 @@ class ViewAdditionalInformationUnitTest: XCTestCase {
         XCTAssertEqual(categories[(myTutorial?.category)!], "Cars & Other Vehicles")
         XCTAssertEqual(difficulty[(myTutorial?.difficulty)!], "easy")
         XCTAssertEqual(myTutorial?.duration, "5")
-        
-        //add author
     }
     
     func testSegueForAdditionalInformation() {
