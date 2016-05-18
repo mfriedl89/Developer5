@@ -12,7 +12,7 @@ class CategorySearchUITests: XCTestCase {
   
   override func setUp() {
     super.setUp()
-
+    
     continueAfterFailure = false
     XCUIApplication().launch()
   }
@@ -32,7 +32,7 @@ class CategorySearchUITests: XCTestCase {
     XCTAssertTrue(tablesQuery.staticTexts["Cars & Other Vehicles"].exists, "Cars & Other Vehicles missing")
     XCTAssertTrue(tablesQuery.staticTexts["Computers and Electronics"].exists, "Computers and Electronics missing")
     XCTAssertTrue(tablesQuery.staticTexts["Education and Communications"].exists, "Education and Communications missing")
-
+    
     XCTAssertTrue(tablesQuery.staticTexts["Conari"].exists, "Conari missing")
     XCTAssertTrue(tablesQuery.staticTexts["Finance and Business"].exists, "Finance and Business missing")
     XCTAssertTrue(tablesQuery.staticTexts["Food and Entertaining"].exists, "Food and Entertaining missing")
