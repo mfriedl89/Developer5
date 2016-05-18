@@ -510,7 +510,6 @@ class DatabaseManager {
       }
       do {
         let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-        print("user[\(username)]: \(jsonData)")
         if data!.length > 2  {
             responseUser = User(
                 email: jsonData[0]["email"] as! String,

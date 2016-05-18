@@ -438,11 +438,13 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q0U-xb-SfB">
                                 <rect key="frame" x="20" y="168" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="newEmail"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jPX-7m-eNf">
                                 <rect key="frame" x="20" y="235" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="repeatedEmail"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                             </textField>
@@ -454,6 +456,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mv6-Ev-sqV">
                                 <rect key="frame" x="20" y="101" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="oldEmail"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="99h-80-e69"/>
                                 </constraints>
@@ -463,6 +466,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzM-D2-dzJ">
                                 <rect key="frame" x="20" y="273" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="DoneButton"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="Done_button_clicked:" destination="Y44-P4-gSb" eventType="touchUpInside" id="169-bW-XNe"/>
@@ -545,21 +549,25 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AFZ-HS-b6E">
                                 <rect key="frame" x="20" y="101" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="oldPassword"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kLD-bC-Yv0">
                                 <rect key="frame" x="20" y="168" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="newPassword"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZHB-iX-art">
                                 <rect key="frame" x="20" y="235" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="repeatedPassword"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nm-ne-lri">
                                 <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="DoneButton"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="DoneBtnClicked:" destination="kyL-VI-exj" eventType="touchUpInside" id="TR1-wW-Kxc"/>
