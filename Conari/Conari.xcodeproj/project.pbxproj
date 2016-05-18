@@ -809,6 +809,7 @@
 				E070D2BC1CEC9B6900665154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E070D2D41CEC9BB800665154 /* Build configuration list for PBXNativeTarget "ConariUnitTests" */ = {
 			isa = XCConfigurationList;
@@ -817,6 +818,7 @@
 				E070D2D61CEC9BB800665154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
