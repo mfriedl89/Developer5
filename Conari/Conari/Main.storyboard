@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -171,7 +171,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b3V-bb-hNe" id="F4R-KD-Dv7">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peH-rI-UJY">
@@ -568,7 +568,7 @@
                                     <constraint firstAttribute="height" constant="30" id="9TW-UO-adG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -790,8 +790,11 @@
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="754" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lP8-Ek-LIZ">
                                 <rect key="frame" x="61" y="217" width="493" height="30"/>
                                 <state key="normal" title="Create Video Tutorial"/>
+                                <connections>
+                                    <segue destination="yuD-Rl-uSD" kind="show" id="Hgh-4d-6le"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_plus.png" translatesAutoresizingMaskIntoConstraints="NO" id="wa1-xn-PvS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_videocam_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="wa1-xn-PvS">
                                 <rect key="frame" x="20" y="216" width="33" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="8OY-gA-zst"/>
@@ -1039,7 +1042,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QwL-xb-oOD" id="egA-9H-ibs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="37.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1367,7 +1370,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2CL-eO-69K" id="MEH-Cj-u3T">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW5-oX-Lpx">
@@ -1473,6 +1476,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_videocam_48pt" width="48" height="48"/>
         <image name="round_edit.png" width="615" height="605"/>
         <image name="round_loup" width="611" height="607"/>
         <image name="round_plus.png" width="617" height="606"/>
@@ -1480,6 +1484,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Vcy-HW-eWP"/>
+        <segue reference="Hgh-4d-6le"/>
         <segue reference="wtw-EX-eox"/>
     </inferredMetricsTieBreakers>
 </document>
