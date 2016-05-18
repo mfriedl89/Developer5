@@ -111,27 +111,14 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    }
-    
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-
-        let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
-            print("delete button tapped")
-            
+        if editingStyle == UITableViewCellEditingStyle.Delete {
             let cell = tableView.cellForRowAtIndexPath(indexPath) as! TutorialTableViewCell
-            
             self.tutorialIndexPath = indexPath
-            
-            //            let tutorialToDelete = tableView[indexPath.row]
-            
+
             self.confirmDelete(cell.tutorialTitleLabel.text!)
+
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
-        
-        return [delete]
     }
     
     func requestTutorial(tutorialID: Int){
@@ -167,7 +154,9 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func handleDeleteTutorial(alertAction: UIAlertAction!) -> Void {
-        laodIndicator.startAnimating()
+        self.laodIndicator.startAnimating()
+        self.laodIndicator.transform=CGAffineTransformMakeScale(1.5, 1.5)
+        self.laodIndicator.hidden = false
         
         if let indexPath = tutorialIndexPath {
             tutorialsTableView.beginUpdates()
@@ -181,6 +170,9 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
                     print("success");
                     self.tutorial_array.removeAtIndex(indexPath.row)
                     self.tutorialsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                    
+                    self.laodIndicator.stopAnimating()
+                    self.laodIndicator.hidden = true
                 }
                 else
                 {

@@ -46,10 +46,6 @@ class NewTutorialDescriptonViewController: UIViewController {
             imagePicker.sourceType = .PhotoLibrary
         }
         
-
-
-        
-        
         // Do any additional setup after loading the view.
     }
     
@@ -90,7 +86,7 @@ class NewTutorialDescriptonViewController: UIViewController {
                     
                     for viewcontoller in (self.navigationController?.viewControllers)!
                     {
-                        if(viewcontoller.isKindOfClass(MainTutorialViewController))
+                        if(viewcontoller.isKindOfClass(MenuViewController))
                         {
                             self.navigationController?.popToViewController(viewcontoller, animated: true);
                         }
