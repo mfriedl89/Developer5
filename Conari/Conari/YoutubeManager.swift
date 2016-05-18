@@ -22,36 +22,36 @@ class YoutubeManager {
   
   /** Singletone instance. */
   static let sharedManager = YoutubeManager()
-  let apiKey = "AIzaSyBkPodgj3cSzd8XYnzEnUBIsonzRx7QaZA"
-
+  var apiKey = "AIzaSyBkPodgj3cSzd8XYnzEnUBIsonzRx7QaZA"
+  var searchApiUrl = "https://www.googleapis.com/youtube/v3/search"
   
-  func searchVideoByTitle(title: String, completionHandler: (response: [YoutubeVideo]) -> Void) -> Void {
+  func searchVideoByTitle(title: String, completionHandler: (response: [YoutubeVideo], success:Bool, messagge:String) -> Void) -> Void {
     let e_title = title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
-    let urlString = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=\(e_title)&type=video&key=\(apiKey)"
+    let urlString = searchApiUrl+"?part=snippet&q=\(e_title)&type=video&key=\(apiKey)"
     //urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters()!
     
     // Create a NSURL object based on the above string.
     let targetURL = NSURL(string: urlString)
     let request = NSMutableURLRequest(URL: targetURL!)
+    var returnArray = [YoutubeVideo]()
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
         // check for fundamental networking error
-        print("error=\(error)")
+        completionHandler(response: returnArray, success: false, messagge: "error=\(error)")
+
         return
       }
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
-        print("statusCode should be 200, but is \(httpStatus.statusCode)")
-        print("response = \(response)")
+         completionHandler(response: returnArray, success: false, messagge: "response = \(response)")
         return
       }
       
       do {
         let resultsDict = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! Dictionary<NSObject, AnyObject>
         
-        var returnArray = [YoutubeVideo]()
+        
         
         // Get all search result items ("items" array).
         let items: Array<Dictionary<NSObject, AnyObject>> = resultsDict["items"] as! Array<Dictionary<NSObject, AnyObject>>
@@ -66,13 +66,13 @@ class YoutubeManager {
           returnArray.append(YoutubeVideo(title: title,thumbnail: thumbnail,videoId: videoid))
         
         }
-        completionHandler(response: returnArray)
+        completionHandler(response: returnArray, success: true, messagge: "")
 
         
         
         
       } catch {
-        print("error serializing JSON: \(error)")
+        completionHandler(response: returnArray, success: false, messagge: "error serializing JSON: \(error)")
       }
       
     })

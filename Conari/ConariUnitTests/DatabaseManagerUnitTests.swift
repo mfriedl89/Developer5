@@ -21,8 +21,8 @@ class DatabaseManagerUnitTests: XCTestCase {
   }
 
   func testloginWithPHPScript_suc() {
-    let username = "test"
-    let password = "Qwertzuiop123."
+    let username = "anton"
+    let password = "Test1234@"
     
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
