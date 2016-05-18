@@ -19,41 +19,60 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   let checkEmailFalse = -1
   let repeatedEmailIsNotNew = -2
   
-  var login_email_ = "irgendwos"
+  var login_email_ = ""
   var newUserFunc = NewUserViewController()
   
   let username = DatabaseManager.sharedManager.getUserName()
-    
+  let password = DatabaseManager.sharedManager.getUserPassword()
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-        new_email_textField.delegate = self
-        repeat_new_email_textField.delegate = self
-        
-        DatabaseManager.sharedManager.requestUser(username) {User, message in
-            print("user: \(self.username), \(message)")
-                        
-             };
-        
-    }
+    new_email_textField.delegate = self
+    repeat_new_email_textField.delegate = self
+    
+    DatabaseManager.sharedManager.requestUser(username) {User, message in
+          
+      if (User == nil) {
+        if message != nil {
+          self.showErrorMessage(message!)
+          
+          dispatch_async(dispatch_get_main_queue(), {
+              self.title = "Error"
+              //self.loadIndicator.stopAnimating()
+              //self.loadingLabel.hidden = true
+          })
+            
+        }
+      }
+      else {
+        dispatch_async(dispatch_get_main_queue(), {
+          self.login_email_ = User!.email
+          self.old_email.text = self.login_email_
+        })
+      }
+                  
+    };
+      
+      
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if(textField == new_email_textField) {
-            repeat_new_email_textField.becomeFirstResponder()
-        }
-        else {
-            repeat_new_email_textField.resignFirstResponder()
-            Done_button_clicked(Done_btn)
-        }
-        return true
-    }
-    
+  override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+      // Dispose of any resources that can be recreated.
+  }
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+      if(textField == new_email_textField) {
+          repeat_new_email_textField.becomeFirstResponder()
+      }
+      else {
+          repeat_new_email_textField.resignFirstResponder()
+          Done_button_clicked(Done_btn)
+      }
+      return true
+  }
+  
   
   func test (new_email:String, repeat_new_email:String) -> Bool {
  
@@ -82,6 +101,26 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       self.presentViewController(alert, animated: true, completion: nil)
       break
     case 0:
+      DatabaseManager.sharedManager.changeUserEmail(username, password: password, new_email: new_email_textField.text!) {success, message in
+        if success == true
+        {
+          dispatch_async(dispatch_get_main_queue(),{
+            let alert = UIAlertController(title: "Changed Email to: \(self.new_email_textField.text!)", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+          });
+        }
+        else
+        {
+          dispatch_async(dispatch_get_main_queue(),{
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+          });
+        }
+      }
       break
     default: break
     }
@@ -91,11 +130,27 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   }
   
   
-  
-  
   @IBAction func Done_button_clicked(sender: AnyObject) {
     test(new_email_textField.text!, repeat_new_email: repeat_new_email_textField.text!)
-
+  }
+  
+  
+  func showErrorMessage(message: String) {
+    dispatch_async(dispatch_get_main_queue(), {
+      //create alert
+      let errorAlert = UIAlertController(title: "Error",
+          message: message,
+          preferredStyle: UIAlertControllerStyle.Alert)
+      
+      //make button
+      let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+      
+      //add buttons
+      errorAlert.addAction(okAction)
+      
+      //display
+      self.presentViewController(errorAlert, animated: true, completion: nil)
+    })
   }
 
 

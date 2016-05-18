@@ -365,15 +365,71 @@ class DatabaseManager {
         })
         task.resume()
     }
+  
+  func changeUserEmail(username: String, password: String, new_email: String, callback: (Bool, String?) -> ()) {
+    
+    let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/ChangeMail.php")!)
+    request.HTTPMethod = "POST"
+    let postString = "username=" + username +
+                     "&password=" + password +
+                     "&new_email=" + new_email
     
     
-    func requestUser(username: String, callback: (User?, String?) -> ()){
+    request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+    
+    var success: Bool = false
+    var responseString: NSString?
+    //var successValue = 0
+    
+    let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
+      guard error == nil && data != nil else {
+        // check for fundamental networking error
+        success = false
+        let message: String? = error?.localizedDescription
+        callback(success, message)
         
+        return
+      }
+      
+      if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
+        // check for http errors
+        success = false
+        responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
+      }
+      
+      do {
+        let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+        if jsonData as! NSObject == 1 {
+          //successValue = 1;
+          success = true
+        }
+        if let jsonErrorMessage = jsonData["error_message"] as? NSString {
+          responseString = jsonErrorMessage
+        }
+        if (jsonData["success"] != nil) {
+          //successValue = jsonSuccess
+          success = false
+        }
+        
+      } catch {
+        print("error serializing JSON: \(error)")
+      }
+      
+      let message: String? = (responseString as? String)
+      
+      callback(success, message)
+    })
+    task.resume()
+  }
+  
+  
+    func requestUser(username: String, callback: (User?, String?) -> ()){
+      
         let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/RequestUser.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-        
+      
         //var jsonString: String = ""
         var responseString: NSString?
         //var successValue = 0
@@ -397,12 +453,11 @@ class DatabaseManager {
             }
             do {
                 let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-                
                 if data!.length > 2  {
                     responseUser = User(
-                        email: jsonData[0] as! String,
-                        firstname: jsonData[1] as! String,
-                        surname: jsonData[2] as! String
+                        email: jsonData[0]["email"] as! String,
+                        firstname: jsonData[0]["firstname"] as! String,
+                        surname: jsonData[0]["surname"] as! String
                     )
                 }
                 else {

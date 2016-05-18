@@ -52,7 +52,7 @@ class MenuUITests: XCTestCase {
 
         textFieldPassword.tap()
         XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
-        textFieldPassword.typeText("test1234@")
+        textFieldPassword.typeText("Test1234@")
         
         app.buttons["Login"].tap()
 

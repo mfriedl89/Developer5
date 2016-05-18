@@ -90,13 +90,15 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
             self.presentViewController(alert, animated: true, completion: nil)
             break
         case 0:
-            print("\(self.username), \(self.NewPasswordTextField.text!), \(self.login_password_)")
             DatabaseManager.sharedManager.changeUserPassword(username, new_password: NewPasswordTextField.text!, old_password: login_password_) {success, message in
                 if success == true
                 {
+                  dispatch_async(dispatch_get_main_queue(),{
+                    let alert = UIAlertController(title: "Changed Password", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
                     
-                    print("success");
-                    
+                  });
                 }
                 else
                 {
