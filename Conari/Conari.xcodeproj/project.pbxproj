@@ -40,6 +40,15 @@
 		E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
 		E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC01CBE2220003001BD /* Assets.xcassets */; };
 		E06D7FC41CBE2220003001BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */; };
+		E070D2B61CEC9B6900665154 /* ConariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2B51CEC9B6900665154 /* ConariUITests.swift */; };
+		E070D2C21CEC9B7A00665154 /* CategorySearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2BD1CEC9B7A00665154 /* CategorySearchUITests.swift */; };
+		E070D2C31CEC9B7A00665154 /* MenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2BE1CEC9B7A00665154 /* MenuUITests.swift */; };
+		E070D2C41CEC9B7A00665154 /* MetadataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2BF1CEC9B7A00665154 /* MetadataUITests.swift */; };
+		E070D2C51CEC9B7A00665154 /* SearchTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2C01CEC9B7A00665154 /* SearchTutorialUITests.swift */; };
+		E070D2C61CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2C11CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift */; };
+		E070D2D01CEC9BB800665154 /* ConariUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2CF1CEC9BB800665154 /* ConariUnitTests.swift */; };
+		E070D2D91CEC9BC600665154 /* DatabaseManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2D71CEC9BC600665154 /* DatabaseManagerUnitTests.swift */; };
+		E070D2DA1CEC9BC600665154 /* ViewFinishedTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2D81CEC9BC600665154 /* ViewFinishedTutorial.swift */; };
 		E07CFBFF1CBE2B97005BDFAA /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
 		E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 		E0CB1BB81CD9D11F000B881D /* AdminTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB1BB71CD9D11F000B881D /* AdminTutorialViewController.swift */; };
@@ -76,6 +85,20 @@
 			remoteGlobalIDString = E06D7FB51CBE221F003001BD;
 			remoteInfo = Conari;
 		};
+		E070D2B81CEC9B6900665154 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E06D7FAE1CBE221F003001BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E06D7FB51CBE221F003001BD;
+			remoteInfo = Conari;
+		};
+		E070D2D21CEC9BB800665154 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E06D7FAE1CBE221F003001BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E06D7FB51CBE221F003001BD;
+			remoteInfo = Conari;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,7 +120,6 @@
 		28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialEditContentController.swift; sourceTree = "<group>"; };
 		3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTutorialUITests.swift; sourceTree = "<group>"; };
-		AE3CF5E01CE368AB0080D7E5 /* DatabaseManagerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManagerUnitTests.swift; sourceTree = "<group>"; };
 		AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchViewController.swift; sourceTree = "<group>"; };
 		AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,8 +133,6 @@
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
 		C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchUITests.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
-		DA280B9B1CDA11780005E80B /* MenuUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuUITests.swift; sourceTree = "<group>"; };
-		DA4B14A21CBE922200134193 /* NewUserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUITests.swift; sourceTree = "<group>"; };
 		DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E0193BEF1CEC579B00577E06 /* loupe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loupe.png; sourceTree = "<group>"; };
@@ -122,13 +142,24 @@
 		E06D7FC01CBE2220003001BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E06D7FC31CBE2220003001BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E06D7FC51CBE2220003001BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E070D2B31CEC9B6900665154 /* ConariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E070D2B51CEC9B6900665154 /* ConariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariUITests.swift; sourceTree = "<group>"; };
+		E070D2B71CEC9B6900665154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E070D2BD1CEC9B7A00665154 /* CategorySearchUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchUITests.swift; sourceTree = "<group>"; };
+		E070D2BE1CEC9B7A00665154 /* MenuUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuUITests.swift; sourceTree = "<group>"; };
+		E070D2BF1CEC9B7A00665154 /* MetadataUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataUITests.swift; sourceTree = "<group>"; };
+		E070D2C01CEC9B7A00665154 /* SearchTutorialUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTutorialUITests.swift; sourceTree = "<group>"; };
+		E070D2C11CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorialUITest.swift; sourceTree = "<group>"; };
+		E070D2CD1CEC9BB800665154 /* ConariUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E070D2CF1CEC9BB800665154 /* ConariUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariUnitTests.swift; sourceTree = "<group>"; };
+		E070D2D11CEC9BB800665154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E070D2D71CEC9BC600665154 /* DatabaseManagerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManagerUnitTests.swift; sourceTree = "<group>"; };
+		E070D2D81CEC9BC600665154 /* ViewFinishedTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorial.swift; sourceTree = "<group>"; };
 		E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
 		E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E0CB1BB71CD9D11F000B881D /* AdminTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTutorialViewController.swift; sourceTree = "<group>"; };
 		E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialTableViewCell.swift; sourceTree = "<group>"; };
 		E0DBB9BF1CBE4E66009D6520 /* Icon */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icon; sourceTree = "<group>"; };
-		E0DBB9C71CBE5445009D6520 /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
-		E0DBB9C91CBE5445009D6520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0F556831CC7CA830070F3FE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +176,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE92172B1CC774BE00A3391C /* RichEditorView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E070D2B01CEC9B6900665154 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E070D2CA1CEC9BB800665154 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +212,8 @@
 				AEA97A971CE3176F00781C88 /* ConariUITests.xctest */,
 				AEA97AA51CE3177900781C88 /* ConariUnitTests.xctest */,
 				E0193BF51CEC57FD00577E06 /* ConariTests.xctest */,
+				E070D2B31CEC9B6900665154 /* ConariUITests.xctest */,
+				E070D2CD1CEC9BB800665154 /* ConariUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,22 +227,14 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		E0193BF61CEC57FD00577E06 /* ConariTests */ = {
-			isa = PBXGroup;
-			children = (
-				AE3CF5E01CE368AB0080D7E5 /* DatabaseManagerUnitTests.swift */,
-			);
-			path = ConariTests;
-			sourceTree = "<group>";
-		};
 		E06D7FAD1CBE221F003001BD = {
 			isa = PBXGroup;
 			children = (
 				E0F556831CC7CA830070F3FE /* .gitignore */,
 				E0DBB9BF1CBE4E66009D6520 /* Icon */,
 				E06D7FB81CBE2220003001BD /* Conari */,
-				E0DBB9C61CBE5445009D6520 /* ConariUITests */,
-				E0193BF61CEC57FD00577E06 /* ConariTests */,
+				E070D2B41CEC9B6900665154 /* ConariUITests */,
+				E070D2CE1CEC9BB800665154 /* ConariUnitTests */,
 				E06D7FB71CBE2220003001BD /* Products */,
 				AE9217221CC7748D00A3391C /* RichEditorView.xcodeproj */,
 				AEA97A8C1CE316C800781C88 /* Products */,
@@ -239,15 +278,29 @@
 			path = Conari;
 			sourceTree = "<group>";
 		};
-		E0DBB9C61CBE5445009D6520 /* ConariUITests */ = {
+		E070D2B41CEC9B6900665154 /* ConariUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E0DBB9C71CBE5445009D6520 /* LoginUITests.swift */,
-				DA4B14A21CBE922200134193 /* NewUserUITests.swift */,
-				DA280B9B1CDA11780005E80B /* MenuUITests.swift */,
-				E0DBB9C91CBE5445009D6520 /* Info.plist */,
+				E070D2BD1CEC9B7A00665154 /* CategorySearchUITests.swift */,
+				E070D2BE1CEC9B7A00665154 /* MenuUITests.swift */,
+				E070D2BF1CEC9B7A00665154 /* MetadataUITests.swift */,
+				E070D2C01CEC9B7A00665154 /* SearchTutorialUITests.swift */,
+				E070D2C11CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift */,
+				E070D2B51CEC9B6900665154 /* ConariUITests.swift */,
+				E070D2B71CEC9B6900665154 /* Info.plist */,
 			);
 			path = ConariUITests;
+			sourceTree = "<group>";
+		};
+		E070D2CE1CEC9BB800665154 /* ConariUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				E070D2D71CEC9BC600665154 /* DatabaseManagerUnitTests.swift */,
+				E070D2D81CEC9BC600665154 /* ViewFinishedTutorial.swift */,
+				E070D2CF1CEC9BB800665154 /* ConariUnitTests.swift */,
+				E070D2D11CEC9BB800665154 /* Info.plist */,
+			);
+			path = ConariUnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +343,42 @@
 			productReference = AEA97A8B1CE316C800781C88 /* Conari.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E070D2B21CEC9B6900665154 /* ConariUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E070D2BA1CEC9B6900665154 /* Build configuration list for PBXNativeTarget "ConariUITests" */;
+			buildPhases = (
+				E070D2AF1CEC9B6900665154 /* Sources */,
+				E070D2B01CEC9B6900665154 /* Frameworks */,
+				E070D2B11CEC9B6900665154 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E070D2B91CEC9B6900665154 /* PBXTargetDependency */,
+			);
+			name = ConariUITests;
+			productName = ConariUITests;
+			productReference = E070D2B31CEC9B6900665154 /* ConariUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E070D2CC1CEC9BB800665154 /* ConariUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E070D2D41CEC9BB800665154 /* Build configuration list for PBXNativeTarget "ConariUnitTests" */;
+			buildPhases = (
+				E070D2C91CEC9BB800665154 /* Sources */,
+				E070D2CA1CEC9BB800665154 /* Frameworks */,
+				E070D2CB1CEC9BB800665154 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E070D2D31CEC9BB800665154 /* PBXTargetDependency */,
+			);
+			name = ConariUnitTests;
+			productName = ConariUnitTests;
+			productReference = E070D2CD1CEC9BB800665154 /* ConariUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -306,6 +395,14 @@
 					};
 					E06D7FB51CBE221F003001BD = {
 						CreatedOnToolsVersion = 7.3;
+					};
+					E070D2B21CEC9B6900665154 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = E06D7FB51CBE221F003001BD;
+					};
+					E070D2CC1CEC9BB800665154 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = E06D7FB51CBE221F003001BD;
 					};
 				};
 			};
@@ -330,6 +427,8 @@
 			targets = (
 				E06D7FB51CBE221F003001BD /* Conari */,
 				E0193BF41CEC57FD00577E06 /* ConariTests */,
+				E070D2B21CEC9B6900665154 /* ConariUITests */,
+				E070D2CC1CEC9BB800665154 /* ConariUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -368,6 +467,20 @@
 				E06D7FC41CBE2220003001BD /* LaunchScreen.storyboard in Resources */,
 				E0DBB9C01CBE4E66009D6520 /* Icon in Resources */,
 				E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E070D2B11CEC9B6900665154 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E070D2CB1CEC9BB800665154 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +532,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E070D2AF1CEC9B6900665154 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E070D2C61CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift in Sources */,
+				E070D2B61CEC9B6900665154 /* ConariUITests.swift in Sources */,
+				E070D2C21CEC9B7A00665154 /* CategorySearchUITests.swift in Sources */,
+				E070D2C51CEC9B7A00665154 /* SearchTutorialUITests.swift in Sources */,
+				E070D2C41CEC9B7A00665154 /* MetadataUITests.swift in Sources */,
+				E070D2C31CEC9B7A00665154 /* MenuUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E070D2C91CEC9BB800665154 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E070D2D91CEC9BC600665154 /* DatabaseManagerUnitTests.swift in Sources */,
+				E070D2DA1CEC9BC600665154 /* ViewFinishedTutorial.swift in Sources */,
+				E070D2D01CEC9BB800665154 /* ConariUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -431,6 +567,16 @@
 			isa = PBXTargetDependency;
 			target = E06D7FB51CBE221F003001BD /* Conari */;
 			targetProxy = E0193BFA1CEC57FD00577E06 /* PBXContainerItemProxy */;
+		};
+		E070D2B91CEC9B6900665154 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E06D7FB51CBE221F003001BD /* Conari */;
+			targetProxy = E070D2B81CEC9B6900665154 /* PBXContainerItemProxy */;
+		};
+		E070D2D31CEC9BB800665154 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E06D7FB51CBE221F003001BD /* Conari */;
+			targetProxy = E070D2D21CEC9BB800665154 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -580,6 +726,52 @@
 			};
 			name = Release;
 		};
+		E070D2BB1CEC9B6900665154 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ConariUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Conari;
+			};
+			name = Debug;
+		};
+		E070D2BC1CEC9B6900665154 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ConariUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Conari;
+			};
+			name = Release;
+		};
+		E070D2D51CEC9BB800665154 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ConariUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conari.app/Conari";
+			};
+			name = Debug;
+		};
+		E070D2D61CEC9BB800665154 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ConariUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conari.app/Conari";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -609,6 +801,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E070D2BA1CEC9B6900665154 /* Build configuration list for PBXNativeTarget "ConariUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E070D2BB1CEC9B6900665154 /* Debug */,
+				E070D2BC1CEC9B6900665154 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E070D2D41CEC9BB800665154 /* Build configuration list for PBXNativeTarget "ConariUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E070D2D51CEC9BB800665154 /* Debug */,
+				E070D2D61CEC9BB800665154 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
