@@ -26,7 +26,6 @@ class ChangeUserNameViewController: UIViewController {
     super.viewDidLoad()
     
     username = DatabaseManager.sharedManager.getUserName()
-    print("menu: \(DatabaseManager.sharedManager.getUserName())")
   
     DatabaseManager.sharedManager.requestUser(username) {User, message in
       
