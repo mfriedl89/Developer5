@@ -11,7 +11,8 @@ import UIKit
 class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
     
   var TutorialID = 57
-  
+    
+    var myTutorial: Tutorial? = nil
     
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -68,6 +69,15 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.title = tutorial!.title
                     self.HTMLContent.loadHTMLString(tutorial!.text, baseURL: nil)
+                    
+                    self.myTutorial = Tutorial(
+                        title: (tutorial?.title)!,
+                        category: (tutorial?.category)!,
+                        difficulty: (tutorial?.difficulty)!,
+                        duration: (tutorial?.duration)!,
+                        text: (tutorial?.text)!,
+                        author: (tutorial?.author)!
+                    )
                 })
             }
         }
@@ -95,5 +105,19 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
             //display
             self.presentViewController(errorAlert, animated: true, completion: nil)
         })
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "viewAdditionalInformationSegue") {
+            let navController = segue.destinationViewController as! UINavigationController
+            
+            if let detailController = navController.topViewController as? ViewAdditionalInformationTableViewController {
+                
+                if myTutorial != nil {
+                    detailController.tutorial = myTutorial
+                }
+            }
+        }
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import Conari
 
 class YoutubeManagerUnitTests: XCTestCase {
   

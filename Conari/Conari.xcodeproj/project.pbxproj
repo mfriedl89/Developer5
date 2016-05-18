@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
-		735D91639CCA8D54895B3D9C /* Pods_ConariUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD01AD5D27290816153E6992 /* Pods_ConariUnitTests.framework */; };
-		99253660EF535546BA4C8495 /* Pods_ConariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7829F4FBAE2F2B5E9488A790 /* Pods_ConariUITests.framework */; };
-		AE0982EA1CEC95E900D8BB95 /* YoutubeManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0982E91CEC95E900D8BB95 /* YoutubeManagerUnitTests.swift */; };
+		8DFD0F8536C590546DCF2E50 /* Pods_ConariUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A0882D69AC066DD52D68C4 /* Pods_ConariUnitTests.framework */; };
+		973192A15CB126BC76DA4423 /* Pods_ConariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCAA8352BE4A8E10261259F /* Pods_ConariUITests.framework */; };
+		AE320EE11CEC9CA500C97F75 /* YoutubeManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE320EE01CEC9CA500C97F75 /* YoutubeManagerUnitTests.swift */; };
+		AE320EE31CEC9CED00C97F75 /* YoutubeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE320EE21CEC9CED00C97F75 /* YoutubeManager.swift */; };
+		AE320EE61CEC9D6400C97F75 /* YoutubeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE320EE21CEC9CED00C97F75 /* YoutubeManager.swift */; };
+		AE320EE71CEC9D6500C97F75 /* YoutubeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE320EE21CEC9CED00C97F75 /* YoutubeManager.swift */; };
 		AE3CF5DC1CE338A00080D7E5 /* SearchTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */; };
 		AE3CF5E11CE368AC0080D7E5 /* DatabaseManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CF5E01CE368AB0080D7E5 /* DatabaseManagerUnitTests.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
@@ -29,9 +32,7 @@
 		AEA97ABC1CE317E600781C88 /* NewUserUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA97ABB1CE317E600781C88 /* NewUserUnitTests.swift */; };
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
-		AEFD45AD1CEC4A3C00302E43 /* YoutubeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFD45AC1CEC4A3C00302E43 /* YoutubeManager.swift */; };
-		AEFD45AF1CEC50F500302E43 /* YoutubeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFD45AC1CEC4A3C00302E43 /* YoutubeManager.swift */; };
-		AEFD45B01CEC50F500302E43 /* YoutubeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFD45AC1CEC4A3C00302E43 /* YoutubeManager.swift */; };
+		AFA92375B781E09A62621F8F /* Pods_Conari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9FED7A000A426C65F9FFB3 /* Pods_Conari.framework */; };
 		C0209D9E1CE376BA0058CF8B /* CategorySearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */; };
 		C02D94781CE3281200A6E778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
 		C02D94791CE3281300A6E778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
@@ -61,7 +62,14 @@
 		C02D94911CE3285100A6E778 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 		C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		C02D94931CE3285400A6E778 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
-		D4C975F603E7363A93B1B9A9 /* Pods_Conari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D4E2AA12706E545C4678C0 /* Pods_Conari.framework */; };
+		C093C3931CEC8984007E5AE1 /* ViewAdditionalInformationUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C093C3921CEC8984007E5AE1 /* ViewAdditionalInformationUITest.swift */; };
+		C093C3961CEC8997007E5AE1 /* ViewAdditionalInformationUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C093C3951CEC8997007E5AE1 /* ViewAdditionalInformationUnitTest.swift */; };
+		C093C3971CEC8A34007E5AE1 /* ViewAdditionalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF639A1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift */; };
+		C093C3981CEC8A34007E5AE1 /* ViewAdditionalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF639A1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift */; };
+		C093C3991CEC8A3E007E5AE1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF63991CEC74980082EA3B /* Constants.swift */; };
+		C093C39A1CEC8A3E007E5AE1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF63991CEC74980082EA3B /* Constants.swift */; };
+		C0DF639B1CEC74980082EA3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF63991CEC74980082EA3B /* Constants.swift */; };
+		C0DF639C1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF639A1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
 		E034AE7B1CC7C4E5003D77FE /* ConariTests in Resources */ = {isa = PBXBuildFile; fileRef = E034AE771CC7C46B003D77FE /* ConariTests */; };
@@ -104,14 +112,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		20022039975BB85C8DD1CF74 /* Pods-ConariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		304BE634A670B8E8592987F2 /* Pods-Conari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conari.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conari/Pods-Conari.debug.xcconfig"; sourceTree = "<group>"; };
 		3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
-		42B8CD02D0422165D5577D22 /* Pods-ConariUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests.release.xcconfig"; sourceTree = "<group>"; };
-		662E2BC5C74CF3BA85626DE4 /* Pods-Conari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conari.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conari/Pods-Conari.debug.xcconfig"; sourceTree = "<group>"; };
-		6F7F015314A7C86A5B7ACA42 /* Pods-ConariUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUnitTests/Pods-ConariUnitTests.release.xcconfig"; sourceTree = "<group>"; };
-		7829F4FBAE2F2B5E9488A790 /* Pods_ConariUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConariUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB3079B8ADC74B4A71A8C1F8 /* Pods-Conari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conari.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conari/Pods-Conari.release.xcconfig"; sourceTree = "<group>"; };
-		AE0982E91CEC95E900D8BB95 /* YoutubeManagerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeManagerUnitTests.swift; sourceTree = "<group>"; };
+		3F6A690603EAA81D1848605C /* Pods-ConariUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7FCAA8352BE4A8E10261259F /* Pods_ConariUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConariUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE320EE01CEC9CA500C97F75 /* YoutubeManagerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeManagerUnitTests.swift; sourceTree = "<group>"; };
+		AE320EE21CEC9CED00C97F75 /* YoutubeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeManager.swift; sourceTree = "<group>"; };
 		AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTutorialUITests.swift; sourceTree = "<group>"; };
 		AE3CF5E01CE368AB0080D7E5 /* DatabaseManagerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManagerUnitTests.swift; sourceTree = "<group>"; };
 		AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
@@ -135,12 +141,17 @@
 		AEA97ABB1CE317E600781C88 /* NewUserUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUnitTests.swift; sourceTree = "<group>"; };
 		AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
-		AEFD45AC1CEC4A3C00302E43 /* YoutubeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeManager.swift; sourceTree = "<group>"; };
-		B5D4E2AA12706E545C4678C0 /* Pods_Conari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Conari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA9FED7A000A426C65F9FFB3 /* Pods_Conari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Conari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchUITests.swift; sourceTree = "<group>"; };
+		C093C3921CEC8984007E5AE1 /* ViewAdditionalInformationUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdditionalInformationUITest.swift; sourceTree = "<group>"; };
+		C093C3951CEC8997007E5AE1 /* ViewAdditionalInformationUnitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdditionalInformationUnitTest.swift; sourceTree = "<group>"; };
+		C0DF63991CEC74980082EA3B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C0DF639A1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdditionalInformationTableViewController.swift; sourceTree = "<group>"; };
+		C3A0882D69AC066DD52D68C4 /* Pods_ConariUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConariUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3B3703E320A96EF54337AE7 /* Pods-Conari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conari.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conari/Pods-Conari.release.xcconfig"; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		DEDAC3BF1A0094F235954981 /* Pods-ConariUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUnitTests/Pods-ConariUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD5D3228352BDCCEDBCE4514 /* Pods-ConariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E034AE771CC7C46B003D77FE /* ConariTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConariTests; sourceTree = "<group>"; };
 		E06D7FB91CBE2220003001BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E06D7FC01CBE2220003001BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,7 +161,8 @@
 		E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E0DBB9BF1CBE4E66009D6520 /* Icon */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icon; sourceTree = "<group>"; };
 		E0F556831CC7CA830070F3FE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		FD01AD5D27290816153E6992 /* Pods_ConariUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConariUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E227082E6F61EF22F4C472F9 /* Pods-ConariUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUnitTests/Pods-ConariUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8156A55B923735051A96A53 /* Pods-ConariUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUnitTests/Pods-ConariUnitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99253660EF535546BA4C8495 /* Pods_ConariUITests.framework in Frameworks */,
+				973192A15CB126BC76DA4423 /* Pods_ConariUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				735D91639CCA8D54895B3D9C /* Pods_ConariUnitTests.framework in Frameworks */,
+				8DFD0F8536C590546DCF2E50 /* Pods_ConariUnitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,32 +186,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4C975F603E7363A93B1B9A9 /* Pods_Conari.framework in Frameworks */,
+				AFA92375B781E09A62621F8F /* Pods_Conari.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3AE989DC2331AD2EB2BF8C3B /* Frameworks */ = {
+		89AF0744F9BB9EB8EDE6FA02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B5D4E2AA12706E545C4678C0 /* Pods_Conari.framework */,
-				7829F4FBAE2F2B5E9488A790 /* Pods_ConariUITests.framework */,
-				FD01AD5D27290816153E6992 /* Pods_ConariUnitTests.framework */,
+				BA9FED7A000A426C65F9FFB3 /* Pods_Conari.framework */,
+				7FCAA8352BE4A8E10261259F /* Pods_ConariUITests.framework */,
+				C3A0882D69AC066DD52D68C4 /* Pods_ConariUnitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		616F03DF6EB9299E52CE40F4 /* Pods */ = {
+		A9DDF99683162F7C9A0F5B33 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				662E2BC5C74CF3BA85626DE4 /* Pods-Conari.debug.xcconfig */,
-				AB3079B8ADC74B4A71A8C1F8 /* Pods-Conari.release.xcconfig */,
-				20022039975BB85C8DD1CF74 /* Pods-ConariUITests.debug.xcconfig */,
-				42B8CD02D0422165D5577D22 /* Pods-ConariUITests.release.xcconfig */,
-				DEDAC3BF1A0094F235954981 /* Pods-ConariUnitTests.debug.xcconfig */,
-				6F7F015314A7C86A5B7ACA42 /* Pods-ConariUnitTests.release.xcconfig */,
+				304BE634A670B8E8592987F2 /* Pods-Conari.debug.xcconfig */,
+				C3B3703E320A96EF54337AE7 /* Pods-Conari.release.xcconfig */,
+				DD5D3228352BDCCEDBCE4514 /* Pods-ConariUITests.debug.xcconfig */,
+				3F6A690603EAA81D1848605C /* Pods-ConariUITests.release.xcconfig */,
+				E227082E6F61EF22F4C472F9 /* Pods-ConariUnitTests.debug.xcconfig */,
+				F8156A55B923735051A96A53 /* Pods-ConariUnitTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -217,6 +229,7 @@
 		AEA97A981CE3176F00781C88 /* ConariUITests */ = {
 			isa = PBXGroup;
 			children = (
+				C093C3921CEC8984007E5AE1 /* ViewAdditionalInformationUITest.swift */,
 				AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */,
 				AEA97AAF1CE3179C00781C88 /* LoginUITests.swift */,
 				AEA97AB01CE3179C00781C88 /* MetadataUITests.swift */,
@@ -232,13 +245,14 @@
 		AEA97AA61CE3177900781C88 /* ConariUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				AE320EE01CEC9CA500C97F75 /* YoutubeManagerUnitTests.swift */,
+				C093C3951CEC8997007E5AE1 /* ViewAdditionalInformationUnitTest.swift */,
 				AEA97AB71CE317A600781C88 /* LoginUnitTests.swift */,
 				AEA97AB81CE317A600781C88 /* ViewFinishedTutorial.swift */,
 				AE3CF5E01CE368AB0080D7E5 /* DatabaseManagerUnitTests.swift */,
 				AEA97AA71CE3177900781C88 /* ConariUnitTests.swift */,
 				AEA97ABB1CE317E600781C88 /* NewUserUnitTests.swift */,
 				AEA97AA91CE3177900781C88 /* Info.plist */,
-				AE0982E91CEC95E900D8BB95 /* YoutubeManagerUnitTests.swift */,
 			);
 			path = ConariUnitTests;
 			sourceTree = "<group>";
@@ -252,16 +266,18 @@
 				AEA97A981CE3176F00781C88 /* ConariUITests */,
 				AEA97AA61CE3177900781C88 /* ConariUnitTests */,
 				AEA97A8C1CE316C800781C88 /* Products */,
-				616F03DF6EB9299E52CE40F4 /* Pods */,
-				3AE989DC2331AD2EB2BF8C3B /* Frameworks */,
+				A9DDF99683162F7C9A0F5B33 /* Pods */,
+				89AF0744F9BB9EB8EDE6FA02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E06D7FB81CBE2220003001BD /* Conari */ = {
 			isa = PBXGroup;
 			children = (
+				AE320EE21CEC9CED00C97F75 /* YoutubeManager.swift */,
+				C0DF63991CEC74980082EA3B /* Constants.swift */,
+				C0DF639A1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift */,
 				AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */,
-				AEFD45AC1CEC4A3C00302E43 /* YoutubeManager.swift */,
 				AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */,
 				AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */,
 				3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */,
@@ -288,11 +304,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEA97A9E1CE3176F00781C88 /* Build configuration list for PBXNativeTarget "ConariUITests" */;
 			buildPhases = (
-				C42CEFA51661B03EC440FC89 /* 📦 Check Pods Manifest.lock */,
+				3F06BBA6F2971FC916804839 /* 📦 Check Pods Manifest.lock */,
 				AEA97A931CE3176F00781C88 /* Sources */,
 				AEA97A941CE3176F00781C88 /* Frameworks */,
 				AEA97A951CE3176F00781C88 /* Resources */,
-				1C19B37F16CACC86BED189E4 /* 📦 Copy Pods Resources */,
+				C988A426B2ECC9D2A7146C91 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,12 +324,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEA97AAC1CE3177900781C88 /* Build configuration list for PBXNativeTarget "ConariUnitTests" */;
 			buildPhases = (
-				A3B9670482DD928BA448AB3F /* 📦 Check Pods Manifest.lock */,
+				CD86D65E2A6B6C8F4D2BD381 /* 📦 Check Pods Manifest.lock */,
 				AEA97AA11CE3177900781C88 /* Sources */,
 				AEA97AA21CE3177900781C88 /* Frameworks */,
 				AEA97AA31CE3177900781C88 /* Resources */,
-				FD5ED009C66AF53670312B0B /* 📦 Embed Pods Frameworks */,
-				E10DF41036BA85F5592A0BE2 /* 📦 Copy Pods Resources */,
+				3EE9FFFED858BD5C7C41CE53 /* 📦 Embed Pods Frameworks */,
+				01DFE400973C0677E66BAC4A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,13 +345,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E06D7FD31CBE2220003001BD /* Build configuration list for PBXNativeTarget "Conari" */;
 			buildPhases = (
-				A893767FCB6E5ACE32C8D2B1 /* 📦 Check Pods Manifest.lock */,
+				3024926CFAF6B39E1E2499B1 /* 📦 Check Pods Manifest.lock */,
 				E06D7FB21CBE221F003001BD /* Sources */,
 				E06D7FB31CBE221F003001BD /* Frameworks */,
 				E06D7FB41CBE221F003001BD /* Resources */,
 				AE92172F1CC774BE00A3391C /* Embed Frameworks */,
-				FB92FA92580547B3AD96EED7 /* 📦 Embed Pods Frameworks */,
-				6D0579B0AAC9B04DBC45BFC0 /* 📦 Copy Pods Resources */,
+				FFF72172164B4FBAB1BD3223 /* 📦 Embed Pods Frameworks */,
+				4C3F084C5DC3969BEC212EAF /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,82 +439,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C19B37F16CACC86BED189E4 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6D0579B0AAC9B04DBC45BFC0 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conari/Pods-Conari-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A3B9670482DD928BA448AB3F /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A893767FCB6E5ACE32C8D2B1 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C42CEFA51661B03EC440FC89 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E10DF41036BA85F5592A0BE2 /* 📦 Copy Pods Resources */ = {
+		01DFE400973C0677E66BAC4A /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -513,22 +454,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConariUnitTests/Pods-ConariUnitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FB92FA92580547B3AD96EED7 /* 📦 Embed Pods Frameworks */ = {
+		3024926CFAF6B39E1E2499B1 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conari/Pods-Conari-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FD5ED009C66AF53670312B0B /* 📦 Embed Pods Frameworks */ = {
+		3EE9FFFED858BD5C7C41CE53 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -543,6 +484,81 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConariUnitTests/Pods-ConariUnitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3F06BBA6F2971FC916804839 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4C3F084C5DC3969BEC212EAF /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conari/Pods-Conari-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C988A426B2ECC9D2A7146C91 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD86D65E2A6B6C8F4D2BD381 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FFF72172164B4FBAB1BD3223 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conari/Pods-Conari-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -551,17 +567,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C02D94861CE3282900A6E778 /* CategorySearchViewController.swift in Sources */,
+				C093C3991CEC8A3E007E5AE1 /* Constants.swift in Sources */,
 				AEA97AB41CE3179C00781C88 /* MetadataUITests.swift in Sources */,
 				AEA97AB51CE3179C00781C88 /* NewUserUITests.swift in Sources */,
+				C093C3971CEC8A34007E5AE1 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */,
 				C02D94821CE3282300A6E778 /* DatabaseManager.swift in Sources */,
 				AE3CF5DC1CE338A00080D7E5 /* SearchTutorialUITests.swift in Sources */,
+				AE320EE71CEC9D6500C97F75 /* YoutubeManager.swift in Sources */,
 				AEA97A9A1CE3176F00781C88 /* ConariUITests.swift in Sources */,
 				C02D94841CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */,
+				C093C3931CEC8984007E5AE1 /* ViewAdditionalInformationUITest.swift in Sources */,
 				C02D948C1CE3284B00A6E778 /* NewUserViewController.swift in Sources */,
 				C02D94801CE3282000A6E778 /* AppDelegate.swift in Sources */,
 				C02D948E1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */,
-				AEFD45B01CEC50F500302E43 /* YoutubeManager.swift in Sources */,
 				AEA97AB61CE3179C00781C88 /* ViewFinishedTutorialUITest.swift in Sources */,
 				C02D947A1CE3281700A6E778 /* NewTutorialDescriptonViewController.swift in Sources */,
 				C02D947C1CE3281A00A6E778 /* MainTutorialViewController.swift in Sources */,
@@ -581,9 +600,10 @@
 				C02D948D1CE3284C00A6E778 /* NewUserViewController.swift in Sources */,
 				C02D94811CE3282100A6E778 /* AppDelegate.swift in Sources */,
 				C02D94911CE3285100A6E778 /* LoginViewController.swift in Sources */,
+				C093C3981CEC8A34007E5AE1 /* ViewAdditionalInformationTableViewController.swift in Sources */,
+				AE320EE11CEC9CA500C97F75 /* YoutubeManagerUnitTests.swift in Sources */,
 				AEA97AA81CE3177900781C88 /* ConariUnitTests.swift in Sources */,
 				AE3CF5E11CE368AC0080D7E5 /* DatabaseManagerUnitTests.swift in Sources */,
-				AE0982EA1CEC95E900D8BB95 /* YoutubeManagerUnitTests.swift in Sources */,
 				C02D94891CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */,
 				C02D948F1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */,
 				C02D947F1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */,
@@ -592,10 +612,12 @@
 				AEA97ABC1CE317E600781C88 /* NewUserUnitTests.swift in Sources */,
 				AEA97ABA1CE317A600781C88 /* ViewFinishedTutorial.swift in Sources */,
 				C02D94931CE3285400A6E778 /* KeyboardManager.swift in Sources */,
+				C093C39A1CEC8A3E007E5AE1 /* Constants.swift in Sources */,
+				C093C3961CEC8997007E5AE1 /* ViewAdditionalInformationUnitTest.swift in Sources */,
 				C02D94851CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */,
-				AEFD45AF1CEC50F500302E43 /* YoutubeManager.swift in Sources */,
 				AEA97AB91CE317A600781C88 /* LoginUnitTests.swift in Sources */,
 				C02D94831CE3282300A6E778 /* DatabaseManager.swift in Sources */,
+				AE320EE61CEC9D6400C97F75 /* YoutubeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,16 +625,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEFD45AD1CEC4A3C00302E43 /* YoutubeManager.swift in Sources */,
 				E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */,
 				DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */,
 				AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */,
 				AE5416DE1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift in Sources */,
 				AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */,
 				AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */,
+				AE320EE31CEC9CED00C97F75 /* YoutubeManager.swift in Sources */,
 				3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */,
+				C0DF639B1CEC74980082EA3B /* Constants.swift in Sources */,
 				E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */,
 				AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */,
+				C0DF639C1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				E07CFBFF1CBE2B97005BDFAA /* WelcomeScreenViewController.swift in Sources */,
 				AE9217211CC7704E00A3391C /* NewTutorialDescriptonViewController.swift in Sources */,
 				AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */,
@@ -648,7 +672,7 @@
 /* Begin XCBuildConfiguration section */
 		AEA97A9F1CE3176F00781C88 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20022039975BB85C8DD1CF74 /* Pods-ConariUITests.debug.xcconfig */;
+			baseConfigurationReference = DD5D3228352BDCCEDBCE4514 /* Pods-ConariUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ConariUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -660,7 +684,7 @@
 		};
 		AEA97AA01CE3176F00781C88 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42B8CD02D0422165D5577D22 /* Pods-ConariUITests.release.xcconfig */;
+			baseConfigurationReference = 3F6A690603EAA81D1848605C /* Pods-ConariUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ConariUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -672,7 +696,7 @@
 		};
 		AEA97AAD1CE3177900781C88 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEDAC3BF1A0094F235954981 /* Pods-ConariUnitTests.debug.xcconfig */;
+			baseConfigurationReference = E227082E6F61EF22F4C472F9 /* Pods-ConariUnitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ConariUnitTests/Info.plist;
@@ -685,7 +709,7 @@
 		};
 		AEA97AAE1CE3177900781C88 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F7F015314A7C86A5B7ACA42 /* Pods-ConariUnitTests.release.xcconfig */;
+			baseConfigurationReference = F8156A55B923735051A96A53 /* Pods-ConariUnitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ConariUnitTests/Info.plist;
@@ -783,7 +807,7 @@
 		};
 		E06D7FD41CBE2220003001BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 662E2BC5C74CF3BA85626DE4 /* Pods-Conari.debug.xcconfig */;
+			baseConfigurationReference = 304BE634A670B8E8592987F2 /* Pods-Conari.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
@@ -796,7 +820,7 @@
 		};
 		E06D7FD51CBE2220003001BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB3079B8ADC74B4A71A8C1F8 /* Pods-Conari.release.xcconfig */;
+			baseConfigurationReference = C3B3703E320A96EF54337AE7 /* Pods-Conari.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

@@ -9,13 +9,14 @@
 import Foundation
 
 
-struct Tutorial {
+/*struct Tutorial {
     var title: String
     var category: Int
     var difficulty: String
     var duration: String
     var text: String
-}
+    var author: String
+}*/
 
 class Tutorial_item {
     
@@ -244,7 +245,8 @@ class DatabaseManager {
                         category: jsonData[1] as! Int,
                         difficulty: jsonData[2] as! String,
                         duration: jsonData[3] as! String,
-                        text: (jsonData[4] as! String).stringByReplacingOccurrencesOfString("\\\"", withString: "\""))
+                        text: (jsonData[4] as! String).stringByReplacingOccurrencesOfString("\\\"", withString: "\""),
+                        author: jsonData[5] as! String)
                 }
                 else {
                   responseString = "Tutorial not found!"

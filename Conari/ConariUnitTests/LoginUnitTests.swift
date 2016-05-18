@@ -34,8 +34,8 @@ class LoginUnitTests: XCTestCase {
     }
     
       func testLoginSuccessful() {
-        let username = "anton"
-        let password = "Test1234@"
+        let username = "homer"
+        let password = "Marge1234@"
         
         // Declare our expectation
         let readyExpectation = expectationWithDescription("ready")

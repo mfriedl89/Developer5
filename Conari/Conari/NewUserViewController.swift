@@ -377,6 +377,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
             DatabaseManager.sharedManager.CreateUser(userName.text!, password: password.text!, firstName: name.text!, surName: surname.text!, email: email.text!) { success, message in
                 
                 self.showMessage(message!, username: self.userName.text!)
+              
             }
             
         }
@@ -403,8 +404,8 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
                 preferredStyle: UIAlertControllerStyle.Alert)
             
             //make button
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-            
+          let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{(alert: UIAlertAction!) in self.navigationController?.popViewControllerAnimated(true)})
+          
             //add buttons
             errorAlert.addAction(okAction)
             
