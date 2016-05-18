@@ -290,19 +290,22 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   
     func reloadArrays()
     {
-      YoutubeManager.sharedManager.searchVideoByTitle(text_search, completionHandler: {
-        (response) in
-        if(response.isEmpty)
-        {
-          return
-        }
-        self.youtube_array.removeAll()
-        self.youtube_array = response
-        dispatch_async(dispatch_get_main_queue(),
+      if text_search != "" {
+        YoutubeManager.sharedManager.searchVideoByTitle(text_search, completionHandler: {
+          (response) in
+          if(response.isEmpty)
           {
-            self.table_View.reloadData();
+            return
+          }
+          self.youtube_array.removeAll()
+          self.youtube_array = response
+          dispatch_async(dispatch_get_main_queue(),
+            {
+              self.table_View.reloadData();
+          })
         })
-      })
+      }
+
       
       DatabaseManager.sharedManager.findTutorialByCategory(text_search, tutorial_category: selected_category) { (response) in
         

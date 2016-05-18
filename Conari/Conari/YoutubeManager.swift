@@ -26,8 +26,8 @@ class YoutubeManager {
 
   
   func searchVideoByTitle(title: String, completionHandler: (response: [YoutubeVideo]) -> Void) -> Void {
-    
-    var urlString = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=\(title)&type=video&key=\(apiKey)"
+    let e_title = title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+    let urlString = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=\(e_title)&type=video&key=\(apiKey)"
     //urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters()!
     
     // Create a NSURL object based on the above string.
