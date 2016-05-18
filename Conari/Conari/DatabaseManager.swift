@@ -387,6 +387,7 @@ class DatabaseManager {
                 
             } catch {
                 print("error serializing JSON: \(error)")
+                callback(nil, "\(error)")
             }
             
             
@@ -551,21 +552,7 @@ class DatabaseManager {
                     // do something with personName and personID
                 }
                 
-                /*if let tutorials = json["tutorials"] as? [[String : AnyObject]] {
-                    for tut in tutorials {
-                        if let id = tut["TutID"] as? String {
-                            if let title = tut["Title"] as? String {
-                                if let cat = tut["Category"] as? String {
-                                    if let diff = tut["Difficulty"] as? String {
-                                        if let dur = tut["Duration"] as? String {
-                                            tutorial_array.append(Tutorial_item(tut_id: id, tut_title: title, tut_category: cat, tut_difficulty: diff, tut_duration: dur))
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }*/
+
             } catch {
                 print("error serializing JSON: \(error)")
                 tutorial_array.removeAll()

@@ -10,6 +10,7 @@
 		28AE0ADF1CE3077F004A6858 /* TutorialEditOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */; };
 		28AE0AE21CE3161B004A6858 /* TutorialEditContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */; };
 		3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
+		AE3CF5DC1CE338A00080D7E5 /* SearchTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
 		AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
@@ -19,17 +20,23 @@
 		AE92172C1CC774BE00A3391C /* RichEditorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE9217281CC7748D00A3391C /* RichEditorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
+		C0209D9E1CE376BA0058CF8B /* CategorySearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */; };
+		C02D947A1CE3281700A6E778 /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
+		C02D947C1CE3281A00A6E778 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
+		C02D947E1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
+		C02D94801CE3282000A6E778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
+		C02D94821CE3282300A6E778 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
+		C02D94841CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
+		C02D94861CE3282900A6E778 /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
+		C02D94881CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
+		C02D948C1CE3284B00A6E778 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
+		C02D948E1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
+		C02D94901CE3285100A6E778 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
+		C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		DAE86E791CD9FFAD00F81CEE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */; };
 		DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
-		E0193BE91CEC575600577E06 /* database.png in Resources */ = {isa = PBXBuildFile; fileRef = E0193BE31CEC575600577E06 /* database.png */; };
-		E0193BEB1CEC575600577E06 /* manage.png in Resources */ = {isa = PBXBuildFile; fileRef = E0193BE51CEC575600577E06 /* manage.png */; };
-		E0193BEC1CEC575600577E06 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = E0193BE61CEC575600577E06 /* plus.png */; };
-		E0193BED1CEC575600577E06 /* user_pref.png in Resources */ = {isa = PBXBuildFile; fileRef = E0193BE71CEC575600577E06 /* user_pref.png */; };
-		E0193BEE1CEC575600577E06 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = E0193BE81CEC575600577E06 /* user.png */; };
-		E0193BF01CEC579B00577E06 /* loupe.png in Resources */ = {isa = PBXBuildFile; fileRef = E0193BEF1CEC579B00577E06 /* loupe.png */; };
 		E0193BFF1CEC5B0F00577E06 /* loupe.png in Resources */ = {isa = PBXBuildFile; fileRef = E0193BEF1CEC579B00577E06 /* loupe.png */; };
-		E034AE7B1CC7C4E5003D77FE /* ConariTests in Resources */ = {isa = PBXBuildFile; fileRef = E034AE771CC7C46B003D77FE /* ConariTests */; };
 		E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
 		E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC01CBE2220003001BD /* Assets.xcassets */; };
 		E06D7FC41CBE2220003001BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */; };
@@ -89,6 +96,8 @@
 		28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialEditOptionsController.swift; sourceTree = "<group>"; };
 		28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialEditContentController.swift; sourceTree = "<group>"; };
 		3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTutorialUITests.swift; sourceTree = "<group>"; };
+		AE3CF5E01CE368AB0080D7E5 /* DatabaseManagerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManagerUnitTests.swift; sourceTree = "<group>"; };
 		AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchViewController.swift; sourceTree = "<group>"; };
 		AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -100,21 +109,14 @@
 		AEA97AA51CE3177900781C88 /* ConariUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
+		C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchUITests.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		DA280B9B1CDA11780005E80B /* MenuUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuUITests.swift; sourceTree = "<group>"; };
 		DA4B14A21CBE922200134193 /* NewUserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUITests.swift; sourceTree = "<group>"; };
 		DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E0193BE31CEC575600577E06 /* database.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = database.png; sourceTree = "<group>"; };
-		E0193BE51CEC575600577E06 /* manage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manage.png; sourceTree = "<group>"; };
-		E0193BE61CEC575600577E06 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
-		E0193BE71CEC575600577E06 /* user_pref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_pref.png; sourceTree = "<group>"; };
-		E0193BE81CEC575600577E06 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		E0193BEF1CEC579B00577E06 /* loupe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loupe.png; sourceTree = "<group>"; };
 		E0193BF51CEC57FD00577E06 /* ConariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0193BF71CEC57FD00577E06 /* ConariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariTests.swift; sourceTree = "<group>"; };
-		E0193BF91CEC57FD00577E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E034AE771CC7C46B003D77FE /* ConariTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConariTests; sourceTree = "<group>"; };
 		E06D7FB61CBE2220003001BD /* Conari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06D7FB91CBE2220003001BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E06D7FC01CBE2220003001BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,12 +174,8 @@
 		E0193BE21CEC574700577E06 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E0193BEF1CEC579B00577E06 /* loupe.png */,
-				E0193BE31CEC575600577E06 /* database.png */,
-				E0193BE51CEC575600577E06 /* manage.png */,
-				E0193BE61CEC575600577E06 /* plus.png */,
-				E0193BE71CEC575600577E06 /* user_pref.png */,
-				E0193BE81CEC575600577E06 /* user.png */,
+				AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */,
+				C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -185,8 +183,7 @@
 		E0193BF61CEC57FD00577E06 /* ConariTests */ = {
 			isa = PBXGroup;
 			children = (
-				E0193BF71CEC57FD00577E06 /* ConariTests.swift */,
-				E0193BF91CEC57FD00577E06 /* Info.plist */,
+				AE3CF5E01CE368AB0080D7E5 /* DatabaseManagerUnitTests.swift */,
 			);
 			path = ConariTests;
 			sourceTree = "<group>";
@@ -367,16 +364,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E034AE7B1CC7C4E5003D77FE /* ConariTests in Resources */,
-				E0193BEB1CEC575600577E06 /* manage.png in Resources */,
-				E0193BED1CEC575600577E06 /* user_pref.png in Resources */,
-				E0193BF01CEC579B00577E06 /* loupe.png in Resources */,
-				E0193BE91CEC575600577E06 /* database.png in Resources */,
-				E0193BEC1CEC575600577E06 /* plus.png in Resources */,
 				DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */,
 				E06D7FC41CBE2220003001BD /* LaunchScreen.storyboard in Resources */,
 				E0DBB9C01CBE4E66009D6520 /* Icon in Resources */,
-				E0193BEE1CEC575600577E06 /* user.png in Resources */,
 				E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +378,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02D94861CE3282900A6E778 /* CategorySearchViewController.swift in Sources */,
+				C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */,
+				C02D94821CE3282300A6E778 /* DatabaseManager.swift in Sources */,
+				AE3CF5DC1CE338A00080D7E5 /* SearchTutorialUITests.swift in Sources */,
+				C02D94841CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */,
+				C02D948C1CE3284B00A6E778 /* NewUserViewController.swift in Sources */,
+				C02D94801CE3282000A6E778 /* AppDelegate.swift in Sources */,
+				C02D948E1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */,
+				C02D947A1CE3281700A6E778 /* NewTutorialDescriptonViewController.swift in Sources */,
+				C02D947C1CE3281A00A6E778 /* MainTutorialViewController.swift in Sources */,
+				C02D94901CE3285100A6E778 /* LoginViewController.swift in Sources */,
+				C0209D9E1CE376BA0058CF8B /* CategorySearchUITests.swift in Sources */,
+				C02D94881CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */,
+				C02D947E1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
