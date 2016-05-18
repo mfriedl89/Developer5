@@ -2,6 +2,9 @@
 
 // Contains various tests for the PHP functions
 
+// Make sure to clear $_POST (even if it shouldn't be populated)
+$_POST = array();
+
 require_once 'utils.php';
 require_once 'CreateTutorial.php';
 require_once 'EditTutorial.php';
@@ -10,9 +13,6 @@ require_once 'CreateUser.php';
 require_once 'ChangePassword.php';
 require_once 'ChangeMail.php';
 require_once 'ChangeName.php';
-
-// Make sure to clear $_POST (even if it shouldn't be populated)
-$_POST = array();
 
 function testPasswordFromDb($mysqli) {
 	if(!(getPasswordHashedFromDb($mysqli, "anton") != ""))
@@ -89,6 +89,8 @@ function echoWithNewline($message) {
 	echo $message . "<br/>";
 }
 
+echo "Loading MySQL config file";
+
 /* Load config file for connection */
 $config = parse_ini_file("junk/config.ini");
 
@@ -102,7 +104,7 @@ if (mysqli_connect_errno()) {
 } else {
 	
 	// Begin testing
-	echoWithNewline("Tests started");
+	echo "Tests started";
 
 	// Password from DB
 	if(testPasswordFromDb($mysqli) == true)
