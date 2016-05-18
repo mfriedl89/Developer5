@@ -120,6 +120,8 @@ function validUserInformation(&$username, &$password, &$firstName, &$surName, &$
 
 function insertUser(&$mysqli,&$username, &$password, &$firstName, &$surName, &$email){
 
+	$user_id = 0;
+
 	if ($stmt = $mysqli->prepare("INSERT INTO USER( Username, Password, FirstName, Surname, Email) VALUES (?,?,?,?,?)")) {
 
 		$options = [
@@ -134,13 +136,13 @@ function insertUser(&$mysqli,&$username, &$password, &$firstName, &$surName, &$e
 		$stmt->execute();
 	
 		/* get id of inserted object */
-		$tut_id = $stmt->insert_id;
+		$user_id = $stmt->insert_id;
 
 		/* close statement */
 		$stmt->close();
 	}
 	
-	return $tut_id;
+	return $user_id;
 }
 
 ?>

@@ -7,7 +7,7 @@
 */
 
 // Include utils
-require 'utils.php';
+require_once 'utils.php';
 
 header('Content-type: application/json');
 
@@ -16,7 +16,7 @@ if($_POST) {
 	$username 		= $_POST['username'];
 	$password 		= $_POST['password']; 
 	$new_firstname 	= $_POST['new_firstname'];
-	$new_surname 		= $_POST['new_surname'];
+	$new_surname 	= $_POST['new_surname'];
 	
 	if($username && $password &&
 		$new_firstname && $new_surname) {

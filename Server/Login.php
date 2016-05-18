@@ -5,7 +5,7 @@
 
 header('Content-type: application/json');
 
-require 'utils.php';
+require_once 'utils.php';
 
 
 if($_POST) {
