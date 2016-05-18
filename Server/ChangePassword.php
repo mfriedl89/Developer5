@@ -62,7 +62,7 @@ function changePassword(&$mysqli,&$username, &$pw_new, &$pw_old){
 		$password_hashed =  hash('sha512', $pw_new);
 
 		/* bind parameters for query (security) */
-		$stmt->bind_param("is", $password_hashed , $username);
+		$stmt->bind_param("ss", $password_hashed , $username);
 
 		/* execute query */
 		$stmt->execute();
