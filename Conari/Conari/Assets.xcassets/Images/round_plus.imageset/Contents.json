@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "loupe.png",
+      "filename" : "round_plus.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "loupe-1.png",
+      "filename" : "round_plus-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "loupe-2.png",
+      "filename" : "round_plus-2.png",
       "scale" : "3x"
     }
   ],
