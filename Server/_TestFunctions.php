@@ -18,22 +18,27 @@ require_once 'ChangeMail.php';
 require_once 'ChangeName.php';
 
 function testPasswordFromDb($mysqli) {
-	if(!(getPasswordHashedFromDb($mysqli, "anton") != ""))
+	$username = "anton";
+	if(!(getPasswordHashedFromDb($mysqli, $username) != ""))
 		return false;
-	if(!(getPasswordHashedFromDb($mysqli, "anto1") == ""))
+	if(!(getPasswordHashedFromDb($mysqli, $username) == ""))
 		return false;
-	if(!(getPasswordHashedFromDb($mysqli, "antom") == ""))
+	if(!(getPasswordHashedFromDb($mysqli, $username) == ""))
 		return false;
 
 	return true;
 }
 
 function testValidUser($mysqli) {
-	if(!(validUser($mysqli, "anton", "Test1234@") == true))
+	$username = "anton";
+	$username_false = "anto1";
+	$password = "Test1234@";
+	$password_false = "falsepw";
+	if(!(validUser($mysqli, $username, $password) == true))
 		return false;
-	if(!(validUser($mysqli, "anto1", "Test1234@") == false))
+	if(!(validUser($mysqli, $username_false, $password) == false))
 		return false;
-	if(!(validUser($mysqli, "anton", "Test1235@") == false))
+	if(!(validUser($mysqli, $username, $password_false) == false))
 		return false;
 
 	return true;
@@ -41,20 +46,29 @@ function testValidUser($mysqli) {
 
 function testTutorials($mysqli) {
 	// Create
-	$new_tut_id = insertTutorial($mysqli, "TestTitleFirstLast", "1", "1", "1", "This is the tutorial content.", "anton");
+	$tut_name = "TestTitleFirstLast";
+	$tut_category = "1";
+	$tut_difficulty = "1";
+	$tut_duration = "1";;
+	$tut_text = "This is the tutorial content.";
+	$tut_username = "anton";
+	$new_tut_id = insertTutorial($mysqli, $tut_name, $tut_category, $tut_difficulty, $tut_duration, $tut_text, $tut_username);
 	if(!($new_tut_id > 0))
 		return false;
 
 	// User owns tutorial
-	if(!(userOwnsTutorial($mysqli, "anton", 0) == false))
+	if(!(userOwnsTutorial($mysqli, $tut_username, 0) == false))
 		return false;
-	if(!(userOwnsTutorial($mysqli, "anton", $new_tut_id) == true))
+	if(!(userOwnsTutorial($mysqli, $tut_username, $new_tut_id) == true))
 		return false;
 
+	$tut_name_new = "TestTitleFirstLastNew";
+	$tut_text_new = "This is the new tutorial content";
+
 	// Edit
-	if(!(editTutorial($mysqli, 0, "TestTitleFirstLastNew", "1", "1", "1", "This is the new tutorial content") == false))
+	if(!(editTutorial($mysqli, 0, $tut_name_new, $tut_category, $tut_difficulty, $tut_duration, $tut_text_new) == false))
 		return false;
-	if(!(editTutorial($mysqli, $new_tut_id, "TestTitleFirstLastNew", "1", "1", "1", "This is the new tutorial content") == true))
+	if(!(editTutorial($mysqli, $new_tut_id, $tut_name_new, $tut_category, $tut_difficulty, $tut_duration, $tut_text_new) == true))
 		return false;
 
 	// Delete
@@ -67,22 +81,31 @@ function testTutorials($mysqli) {
 }
 
 function testUsers($mysqli) {
+	$username = "anton";
+	$password = "Test1234@";
+	$password_false = "falsepw";
+
 	// Change password
-	if(!(changePassword($mysqli, "anton", "falsepw", "Test1234@") == false))
+	if(!(changePassword($mysqli, $username, $password_false, $password) == false))
 		return false;
-	if(!(changePassword($mysqli, "anton", "Test1234@", "Test1234@") == true))
+	if(!(changePassword($mysqli, $username, $password, $password) == true))
 		return false;
+
+	$mail_new = "newmail@mail.com";
 
 	// Change mail
-	if(!(changeMail($mysqli, "anton", "falsepw", "newmail@mail.com") == false))
+	if(!(changeMail($mysqli, $username, $password_false, $mail_new) == false))
 		return false;
-	if(!(changeMail($mysqli, "anton", "Test1234@", "newmail@mail.com") == true))
+	if(!(changeMail($mysqli, $username, $password, $mail_new) == true))
 		return false;
 
+	$firstname_new = "NewFirstname";
+	$surname_new = "NewSurname";
+
 	// Change name
-	if(!(changeName($mysqli, "anton", "falsepw", "NewFirstname", "NewLastname") == false))
+	if(!(changeName($mysqli, $username, $password_false, $firstname_new, $surname_new) == false))
 		return false;
-	if(!(changeName($mysqli, "anton", "Test1234@", "NewFirstname", "NewLastname") == true))
+	if(!(changeName($mysqli, $username, $password, $firstname_new, $surname_new) == true))
 		return false;
 
 	return true;
