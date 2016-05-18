@@ -14,7 +14,7 @@ class ChangeUserNameViewController: UIViewController {
   @IBOutlet weak var SurNameTextField: UITextField!
   @IBOutlet weak var DoneBtn: UIButton!
 
-  let username = DatabaseManager.sharedManager.getUserName()
+  var username = ""
   let password = DatabaseManager.sharedManager.getUserPassword()
 
   var newUserFunc = NewUserViewController()
@@ -25,6 +25,8 @@ class ChangeUserNameViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    username = DatabaseManager.sharedManager.getUserName()
+    print("menu: \(DatabaseManager.sharedManager.getUserName())")
   
     DatabaseManager.sharedManager.requestUser(username) {User, message in
       

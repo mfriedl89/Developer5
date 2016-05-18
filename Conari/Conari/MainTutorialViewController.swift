@@ -50,8 +50,8 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
         if parent == nil {
             if(DatabaseManager.sharedManager.username != "" && DatabaseManager.sharedManager.password != "")
             {
-                DatabaseManager.sharedManager.username = ""
-                DatabaseManager.sharedManager.password = ""
+//                DatabaseManager.sharedManager.username = ""
+//                DatabaseManager.sharedManager.password = ""
             }
         }
     }
