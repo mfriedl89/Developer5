@@ -52,12 +52,12 @@ function testTutorials($mysqli) {
 	$tut_name = "TestTitleFirstLast";
 	$tut_category = "1";
 	$tut_difficulty = "1";
-	$tut_duration = "1";;
-	$tut_text = "This is the tutorial content.";
+	$tut_duration = "1";
+	$tut_text = "This is the tutorial content";
 	$tut_username = "anton";
 	$new_tut_id = insertTutorial($mysqli, $tut_name, $tut_category, $tut_difficulty, $tut_duration, $tut_text, $tut_username);
 	if(!($new_tut_id > 0)) {
-		echoWithNewline("$new_tut_id: " . $new_tut_id . " (should be 0)")
+		echoWithNewline("New tutorial ID should be >0");
 		return false;
 	}
 
