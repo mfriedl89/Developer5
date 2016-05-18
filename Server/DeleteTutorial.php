@@ -62,6 +62,10 @@ if($_POST) {
 
 function deleteTutorial(&$mysqli, &$TutID){
 
+	if(tutorialExists($mysqli, $TutID) == false) {
+		return false;
+	}
+
 	if ($stmt = $mysqli->prepare("DELETE FROM Tutorial WHERE TutID = ?")) {
 
 		/* bind parameters for query (security) */

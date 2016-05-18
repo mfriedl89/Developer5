@@ -74,7 +74,6 @@ if($_POST) {
 
 function editTutorial(&$mysqli, &$TutID, &$TutNewTitle, &$TutCategory, &$TutDifficulty, &$TutDuration, &$TutText){
 
-	// Check if such a tutorial exists
 	if(tutorialExists($mysqli, $TutID) == false) {
 		return false;
 	}

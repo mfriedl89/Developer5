@@ -105,11 +105,11 @@ function testUsers($mysqli) {
 	$password_false = "falsepw";
 
 	// Change password
-	if(!(changePassword($mysqli, $username, $password, $password) == false)) {
+	if(!(changePassword($mysqli, $username, $password, $password_false) == false)) {
 		echoWithNewline("It should not be possible to change password providing a false old password");
 		return false;
 	}
-	if(!(changePassword($mysqli, $username, $password, $password_false) == true)) {
+	if(!(changePassword($mysqli, $username, $password, $password) == true)) {
 		echoWithNewline("It should be possible to change password providing a correct old password");
 		return false;
 	}
