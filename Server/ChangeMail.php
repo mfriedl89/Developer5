@@ -14,11 +14,11 @@ header('Content-type: application/json');
 
 if($_POST) {
 	$username 		= $_POST['username'];
-	$pw_new 		= $_POST['password']; 
-	$pw_old 		= $_POST['new_email'];
+	$password 		= $_POST['password']; 
+	$new_email 		= $_POST['new_email'];
 	
-	if($username && $pw_new &&
-		$pw_old) {
+	if($username && $password &&
+		$new_email) {
 
 			/* Load config file for connection */
 			$config = parse_ini_file("junk/config.ini");
