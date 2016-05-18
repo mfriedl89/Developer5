@@ -122,8 +122,10 @@ function insertUser(&$mysqli,&$username, &$password, &$firstName, &$surName, &$e
 
 	if ($stmt = $mysqli->prepare("INSERT INTO USER( Username, Password, FirstName, Surname, Email) VALUES (?,?,?,?,?)")) {
 
-		// Build SHA512 value of password (bcrypt would be better, but this should be enough)
-		$password_hashed =  hash('sha512', $password);
+		$options = [
+    		'cost' => 12,
+		];
+		$password_hashed = password_hash($password, PASSWORD_BCRYPT, $options);
 
 		/* bind parameters for query (security) */
 		$stmt->bind_param("sssss", $username ,$password_hashed,$firstName,$surName,$email);

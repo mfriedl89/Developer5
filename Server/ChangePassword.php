@@ -58,8 +58,10 @@ function changePassword(&$mysqli,&$username, &$pw_new, &$pw_old){
 
 	if ($stmt = $mysqli->prepare("UPDATE USER SET Password=? WHERE Username=?")) {
 
-		// Build SHA512 value of password (bcrypt would be better, but this should be enough)
-		$password_hashed =  hash('sha512', $pw_new);
+		$options = [
+    		'cost' => 12,
+		];
+		$password_hashed = password_hash($pw_new, PASSWORD_BCRYPT, $options);
 
 		/* bind parameters for query (security) */
 		$stmt->bind_param("ss", $password_hashed , $username);
