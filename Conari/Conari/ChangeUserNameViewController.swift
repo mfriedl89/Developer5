@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChangeUserNameViewController: UIViewController {
+class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var FirstNameTextField: UITextField!
     @IBOutlet weak var SurNameTextField: UITextField!
@@ -24,6 +24,10 @@ class ChangeUserNameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FirstNameTextField.delegate = self
+        SurNameTextField.delegate = self
+
         
         username = DatabaseManager.sharedManager.getUserName()
         
@@ -51,6 +55,17 @@ class ChangeUserNameViewController: UIViewController {
         };
         
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if(textField == FirstNameTextField) {
+            SurNameTextField.becomeFirstResponder()
+        }
+        else {
+            SurNameTextField.resignFirstResponder()
+            doneBtnClicked(DoneBtn)
+        }
+        return true
     }
     
     override func didReceiveMemoryWarning() {
