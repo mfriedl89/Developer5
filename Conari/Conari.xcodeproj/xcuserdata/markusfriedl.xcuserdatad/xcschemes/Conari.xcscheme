@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Conari.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AEA97AA41CE3177900781C88"
+               BuildableName = "LoginUnitConariTests"
+               BlueprintName = "LoginUnitConariTests"
+               ReferencedContainer = "container:Conari.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -32,7 +46,17 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E06D7FC91CBE2220003001BD"
+               BlueprintIdentifier = "E070D2B21CEC9B6900665154"
+               BuildableName = "ConariUITests.xctest"
+               BlueprintName = "ConariUITests"
+               ReferencedContainer = "container:Conari.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E0193BF41CEC57FD00577E06"
                BuildableName = "ConariTests.xctest"
                BlueprintName = "ConariTests"
                ReferencedContainer = "container:Conari.xcodeproj">
@@ -42,9 +66,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E0DBB9C41CBE5445009D6520"
-               BuildableName = "ConariUITests.xctest"
-               BlueprintName = "ConariUITests"
+               BlueprintIdentifier = "E070D2CC1CEC9BB800665154"
+               BuildableName = "ConariUnitTests.xctest"
+               BlueprintName = "ConariUnitTests"
                ReferencedContainer = "container:Conari.xcodeproj">
             </BuildableReference>
          </TestableReference>

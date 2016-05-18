@@ -10,12 +10,8 @@ import UIKit
 
 class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var tutorialsTableView: UITableView!
-
-    var tutorialIndexPath: NSIndexPath? = nil
-
-    // For testing BEGIN
-    var tutorials = ["Arts and Entertainment",
+    var categories = ["All",
+                      "Arts and Entertainment",
                       "Cars & Other Vehicles",
                       "Computers and Electronics",
                       "Conari",
@@ -34,12 +30,46 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
                       "Travel",
                       "Work World",
                       "Youth"]
-    // For testing END
+    
+    @IBOutlet weak var tutorialsTableView: UITableView!
+    @IBOutlet weak var laodIndicator: UIActivityIndicatorView!
+
+    var tutorialIndexPath: NSIndexPath? = nil
+    var tutorial_array = [Tutorial_item]()
+    var editTutorial : Tutorial?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+        
+        tutorialsTableView.reloadData()
+        
+        DatabaseManager.sharedManager.findTutorialByUsername(DatabaseManager.sharedManager.username) { (response) in
+            
+            if(!response.isEmpty){
+                
+                self.tutorial_array = response
+                self.tutorialsTableView.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
+                //self.table_View.reloadData()
+                
+            }else{
+                
+                print("Tutorial not found")
+                self.tutorial_array.removeAll()
+                self.tutorialsTableView.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
+                print("Tutorial Count: \(self.tutorial_array.count)")
+                //self.table_View.reloadData()
+            }
+            
+            // Reload the tableview.
+            //self.tableView.reloadData()
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,91 +93,47 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tutorials.count
+        return tutorial_array.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "TutorialTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TutorialTableViewCell
         
-        cell.tutorialTitleLabel.text = tutorials[indexPath.row]
-        cell.tutorialDetailTextLabel.text = "Detailtext #" + String(indexPath.row)
+        cell.tutorialTitleLabel.text = tutorial_array[indexPath.row].title
+        cell.tutorialDetailTextLabel.text = categories[tutorial_array[indexPath.row].category]
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        self.requestTutorial(self.tutorial_array[indexPath.row].id)
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    }
-    
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let rename = UITableViewRowAction(style: .Normal, title: "Rename") { action, index in
-            print("rename button tapped")
-            
-            self.tutorialIndexPath = indexPath
-            
-            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-
-            self.renameTutorial()
-        }
-        rename.backgroundColor = UIColor.lightGrayColor()
-        
-        let edit = UITableViewRowAction(style: .Normal, title: "Edit") { action, index in
-            print("edit button tapped")
-        }
-        edit.backgroundColor = UIColor.orangeColor()
-        
-        let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
-            print("delete button tapped")
-            
+        if editingStyle == UITableViewCellEditingStyle.Delete {
             let cell = tableView.cellForRowAtIndexPath(indexPath) as! TutorialTableViewCell
-            
             self.tutorialIndexPath = indexPath
-            
-            //            let tutorialToDelete = tableView[indexPath.row]
-            
+
             self.confirmDelete(cell.tutorialTitleLabel.text!)
+
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
-        
-        return [delete, edit, rename]
     }
     
-    func renameTutorial() {
-        if let indexPath = tutorialIndexPath {
-            var alertController:UIAlertController?
-            alertController = UIAlertController(title: "Change tutorial name",
-                                                message: tutorials[indexPath.row],
-                                                preferredStyle: .Alert)
+    func requestTutorial(tutorialID: Int){
+        DatabaseManager.sharedManager.requestTutorial(tutorialID) { tutorial, message in
             
-            alertController!.addTextFieldWithConfigurationHandler(
-                {(textField: UITextField!) in
-                    textField.placeholder = "Enter new tutorial name"
+        dispatch_async(dispatch_get_main_queue(), {
+            let svc = self.storyboard?.instantiateViewControllerWithIdentifier("showEditOptions") as! TutorialEditOptionsController
+            //            let cell = tableView.cellForRowAtIndexPath(indexPath) as! TutorialTableViewCell
+            
+            svc.oldTitle = tutorial?.title
+            svc.oldCategory = self.categories[(tutorial?.category)!]
+            svc.editTutorial = tutorial
+            
+            self.navigationController?.pushViewController(svc, animated: true)
             })
-            
-            let action = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: {[weak self] (paramAction:UIAlertAction!) in
-                if let textFields = alertController?.textFields{
-                    let theTextFields = textFields as [UITextField]
-                    let enteredText = theTextFields[0].text
-                    self!.tutorials[indexPath.row] = enteredText!
-                    self!.tutorialsTableView.reloadData()
-                }
-            })
-            
-            alertController?.addAction(action)
-            alertController?.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
-                alertController! .dismissViewControllerAnimated(true, completion: nil)
-            }))
-            
-            self.presentViewController(alertController!, animated: true, completion: nil)
-            
-            tutorialIndexPath = nil
         }
     }
     
@@ -168,20 +154,25 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func handleDeleteTutorial(alertAction: UIAlertAction!) -> Void {
+        self.laodIndicator.startAnimating()
+        self.laodIndicator.transform=CGAffineTransformMakeScale(1.5, 1.5)
+        self.laodIndicator.hidden = false
         
         if let indexPath = tutorialIndexPath {
             tutorialsTableView.beginUpdates()
-            let tutTitle = tutorials[indexPath.row]
-            print("want to delete tutorial with title " + tutorials[indexPath.row])
+            let tutId = tutorial_array[indexPath.row].id
+            print("want to delete tutorial with title " + tutorial_array[indexPath.row].title)
 
-            DatabaseManager.sharedManager.DeleteTutorial(tutTitle) { success, message in
+            DatabaseManager.sharedManager.DeleteTutorial(tutId) { success, message in
                 print("upload-success: \(success), login-message:\(message)")
                 if success == true
                 {
-                    
                     print("success");
-                    self.tutorials.removeAtIndex(indexPath.row)
+                    self.tutorial_array.removeAtIndex(indexPath.row)
                     self.tutorialsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                    
+                    self.laodIndicator.stopAnimating()
+                    self.laodIndicator.hidden = true
                 }
                 else
                 {
@@ -198,6 +189,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
             
             tutorialsTableView.endUpdates()
         }
+        
         
     }
     
