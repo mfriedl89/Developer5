@@ -70,9 +70,6 @@ class NewUserUITests: XCTestCase {
         
         
         app.textFields["emailAddress"].tap()
-        app.textFields["emailAddress"]
-        app.textFields["emailAddress"]
-        app.textFields["emailAddress"]
         
         let textFieldEmail = app.textFields["emailAddress"]
         textFieldEmail.tap()
