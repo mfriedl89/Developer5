@@ -37,6 +37,16 @@ function validUser(&$mysqli,&$username,&$password){
 	
 }
 
+function validTutorialInformation(&$TutCategory, &$TutDifficulty, &$TutDuration){
+	if($TutCategory > 0 && $TutCategory < 20 &&
+		$TutDifficulty > 0 && $TutDifficulty < 6 &&
+		$TutDuration > 0 && $TutDuration < 2880){
+		return true;
+	}
+	
+	return false;
+}
+
 function tutorialExists(&$mysqli, &$tutID) {
 
 	$exists = 0;

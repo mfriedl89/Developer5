@@ -72,17 +72,6 @@ if($_POST) {
 	echo '{"success":-1,"error_message":"Invalid Data."}';
 }
 
-
-function validTutorialInformation(&$TutCategory, &$TutDifficulty, &$TutDuration){
-	if($TutCategory > 0 && $TutCategory < 20 &&
-		$TutDifficulty > 0 && $TutDifficulty < 6 &&
-		$TutDuration > 0 && $TutDuration < 2880){
-		return true;
-	}
-	
-	return false;
-}
-
 function editTutorial(&$mysqli, &$TutID, &$TutNewTitle, &$TutCategory, &$TutDifficulty, &$TutDuration, &$TutText){
 
 	// Check if such a tutorial exists
