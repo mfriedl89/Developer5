@@ -17,6 +17,10 @@ require_once 'ChangePassword.php';
 require_once 'ChangeMail.php';
 require_once 'ChangeName.php';
 
+function echoWithNewline($message) {
+	echo $message . "<br>";
+}
+
 function testPasswordFromDb($mysqli) {
 	$username = "anton";
 	$username_false = "anto1";
@@ -52,31 +56,45 @@ function testTutorials($mysqli) {
 	$tut_text = "This is the tutorial content.";
 	$tut_username = "anton";
 	$new_tut_id = insertTutorial($mysqli, $tut_name, $tut_category, $tut_difficulty, $tut_duration, $tut_text, $tut_username);
-	if(!($new_tut_id > 0))
+	if(!($new_tut_id > 0)) {
+		echoWithNewline("$new_tut_id: " . $new_tut_id . " (should be 0)")
 		return false;
+	}
 
 	$new_tut_id_false = 0;
 
 	// User owns tutorial
-	if(!(userOwnsTutorial($mysqli, $tut_username, $new_tut_id_false) == false))
+	if(!(userOwnsTutorial($mysqli, $tut_username, $new_tut_id_false) == false)) {
+		echoWithNewline("User " . $tut_username . " should not own tutorial with ID " . $new_tut_id_false);
 		return false;
-	if(!(userOwnsTutorial($mysqli, $tut_username, $new_tut_id) == true))
+	}
+	if(!(userOwnsTutorial($mysqli, $tut_username, $new_tut_id) == true)) {
+		echoWithNewline("User " . $tut_username . " should own tutorial with ID " . $new_tut_id);
 		return false;
+	}
 
 	$tut_name_new = "TestTitleFirstLastNew";
 	$tut_text_new = "This is the new tutorial content";
 
 	// Edit
-	if(!(editTutorial($mysqli, $new_tut_id_false, $tut_name_new, $tut_category, $tut_difficulty, $tut_duration, $tut_text_new) == false))
+	if(!(editTutorial($mysqli, $new_tut_id_false, $tut_name_new, $tut_category, $tut_difficulty, $tut_duration, $tut_text_new) == false)) {
+		echoWithNewline("It should not be possible to edit tutorial with ID " . $new_tut_id_false);
 		return false;
-	if(!(editTutorial($mysqli, $new_tut_id, $tut_name_new, $tut_category, $tut_difficulty, $tut_duration, $tut_text_new) == true))
+	}
+	if(!(editTutorial($mysqli, $new_tut_id, $tut_name_new, $tut_category, $tut_difficulty, $tut_duration, $tut_text_new) == true)) {
+		echoWithNewline("It should be possible to edit tutorial with ID " . $new_tut_id);
 		return false;
+	}
 
 	// Delete
-	if(!(deleteTutorial($mysqli, $new_tut_id_false) == false))
+	if(!(deleteTutorial($mysqli, $new_tut_id_false) == false)) {
+		echoWithNewline("It should not be possible to delete tutorial with ID " . $new_tut_id_false);
 		return false;
-	if(!(deleteTutorial($mysqli, $new_tut_id) == true))
+	}
+	if(!(deleteTutorial($mysqli, $new_tut_id) == true)) {
+		echoWithNewline("It should be possible to delete tutorial with ID " . $new_tut_id);
 		return false;
+	}
 
 	return true;
 }
@@ -87,33 +105,41 @@ function testUsers($mysqli) {
 	$password_false = "falsepw";
 
 	// Change password
-	if(!(changePassword($mysqli, $username, $password_false, $password) == false))
+	if(!(changePassword($mysqli, $username, $password, $password) == false)) {
+		echoWithNewline("It should not be possible to change password providing a false old password");
 		return false;
-	if(!(changePassword($mysqli, $username, $password, $password) == true))
+	}
+	if(!(changePassword($mysqli, $username, $password, $password_false) == true)) {
+		echoWithNewline("It should be possible to change password providing a correct old password");
 		return false;
+	}
 
 	$mail_new = "newmail@mail.com";
 
 	// Change mail
-	if(!(changeMail($mysqli, $username, $password_false, $mail_new) == false))
+	if(!(changeMail($mysqli, $username, $password_false, $mail_new) == false)) {
+		echoWithNewline("It should not be possible to change mail providing a false old password");
 		return false;
-	if(!(changeMail($mysqli, $username, $password, $mail_new) == true))
+	}
+	if(!(changeMail($mysqli, $username, $password, $mail_new) == true)) {
+		echoWithNewline("It should be possible to change mail providing a correct old password");
 		return false;
+	}
 
 	$firstname_new = "NewFirstname";
 	$surname_new = "NewSurname";
 
 	// Change name
-	if(!(changeName($mysqli, $username, $password_false, $firstname_new, $surname_new) == false))
+	if(!(changeName($mysqli, $username, $password_false, $firstname_new, $surname_new) == false)) {
+		echoWithNewline("It should not be possible to change names providing a false old password");
 		return false;
-	if(!(changeName($mysqli, $username, $password, $firstname_new, $surname_new) == true))
+	}
+	if(!(changeName($mysqli, $username, $password, $firstname_new, $surname_new) == true)) {
+		echoWithNewline("It should be possible to change names providing a correct old password");
 		return false;
+	}
 
 	return true;
-}
-
-function echoWithNewline($message) {
-	echo $message . "<br>";
 }
 
 echoWithNewline("Loading MySQL config file");
