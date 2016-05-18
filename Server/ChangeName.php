@@ -1,7 +1,7 @@
 <?php
 
 /*
-	Receives: user, password, firstname, surname
+	Receives: user, password, new_firstname, new_surname
 	Returns: true, else(= error)
 
 */
@@ -16,7 +16,7 @@ if($_POST) {
 	$username 		= $_POST['username'];
 	$password 		= $_POST['password']; 
 	$new_firstname 	= $_POST['new_firstname'];
-	$new_surname 		= $_POST['new_lastname'];
+	$new_surname 		= $_POST['new_surname'];
 	
 	if($username && $password &&
 		$new_firstname && $new_surname) {
