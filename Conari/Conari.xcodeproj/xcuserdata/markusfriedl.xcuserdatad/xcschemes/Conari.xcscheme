@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Conari.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AEA97AA41CE3177900781C88"
+               BuildableName = "LoginUnitConariTests"
+               BlueprintName = "LoginUnitConariTests"
+               ReferencedContainer = "container:Conari.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,7 +56,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E0193B791CEC4CA900577E06"
+               BlueprintIdentifier = "E0193BF41CEC57FD00577E06"
                BuildableName = "ConariTests.xctest"
                BlueprintName = "ConariTests"
                ReferencedContainer = "container:Conari.xcodeproj">
