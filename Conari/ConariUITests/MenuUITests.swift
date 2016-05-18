@@ -86,7 +86,7 @@ class MenuUITests: XCTestCase {
         app.buttons["Change First Name and Surname"].tap()
         app.navigationBars["Change Name"].buttons["Menu"].tap()
         app.buttons["Change Email"].tap()
-        app.navigationBars["Change Email address"].buttons["Menu"].tap()
+        app.navigationBars["Change Email"].buttons["Menu"].tap()
         app.buttons["Change password"].tap()
         app.navigationBars["Change password"].buttons["Menu"].tap()
         
@@ -114,7 +114,7 @@ class MenuUITests: XCTestCase {
         
         textFieldPassword.tap()
         XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
-        textFieldPassword.typeText("falsepw")
+        textFieldPassword.typeText("Test1234@")
         
         app.buttons["Login"].tap()
         
@@ -126,7 +126,7 @@ class MenuUITests: XCTestCase {
         app.textFields["Surname"].tap()
         app.textFields["Surname"].clearAndEnterText("Tester")
         
-        app.buttons["Done"].tap()
+        app.buttons["DoneButton"].tap()
         app.navigationBars["Change Name"].buttons["Menu"].tap()
         
         // changed Name
@@ -177,7 +177,7 @@ class MenuUITests: XCTestCase {
         app.textFields["repeatedEmail"].clearAndEnterText("test@anton.at")
         
         app.buttons["DoneButton"].tap()
-        app.navigationBars["Change Email address"].buttons["Menu"].tap()
+        app.navigationBars["Change Email"].buttons["Menu"].tap()
         
         // changed Email
         // now check it
@@ -189,8 +189,10 @@ class MenuUITests: XCTestCase {
         
         app.textFields["repeatedEmail"].tap()
         app.textFields["repeatedEmail"].clearAndEnterText("anton@test.at")
+
+        app.buttons["DoneButton"].tap()
         
-        app.navigationBars["Change Email address"].buttons["Menu"].tap()
+        app.navigationBars["Change Email"].buttons["Menu"].tap()
         
         
         app.buttons["Logout"].tap()
