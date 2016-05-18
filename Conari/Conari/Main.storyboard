@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -171,7 +171,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b3V-bb-hNe" id="F4R-KD-Dv7">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peH-rI-UJY">
@@ -574,7 +574,7 @@
                                     <constraint firstAttribute="height" constant="30" id="9TW-UO-adG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1034,7 +1034,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QwL-xb-oOD" id="egA-9H-ibs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="37.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1313,18 +1313,26 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihh-PQ-6sP" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                <rect key="frame" x="20" y="72" width="560" height="520"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ihh-PQ-6sP" firstAttribute="leading" secondItem="RMl-yR-gCc" secondAttribute="leading" id="4o4-IS-GmX"/>
                             <constraint firstItem="8OQ-dr-odD" firstAttribute="top" secondItem="Eyd-K5-CH4" secondAttribute="bottom" constant="14" id="5YR-KU-qic"/>
                             <constraint firstItem="RMl-yR-gCc" firstAttribute="centerX" secondItem="8OQ-dr-odD" secondAttribute="centerX" id="6i7-wB-BV8"/>
                             <constraint firstItem="RMl-yR-gCc" firstAttribute="top" secondItem="Tvr-cg-qPG" secondAttribute="bottom" constant="8" symbolic="YES" id="CAR-Bw-7U3"/>
                             <constraint firstItem="Eyd-K5-CH4" firstAttribute="centerY" secondItem="6oV-2K-mAx" secondAttribute="centerY" id="K5h-IB-dMp"/>
                             <constraint firstItem="Eyd-K5-CH4" firstAttribute="centerX" secondItem="8OQ-dr-odD" secondAttribute="centerX" id="OPz-Xn-rV1"/>
                             <constraint firstItem="mGG-Z5-Aor" firstAttribute="top" secondItem="8OQ-dr-odD" secondAttribute="bottom" constant="255" id="R4i-t7-Uen"/>
+                            <constraint firstItem="mGG-Z5-Aor" firstAttribute="top" secondItem="ihh-PQ-6sP" secondAttribute="bottom" constant="8" symbolic="YES" id="Toa-Fy-UoW"/>
                             <constraint firstAttribute="bottom" secondItem="RMl-yR-gCc" secondAttribute="bottom" constant="20" symbolic="YES" id="X3U-1P-6P0"/>
                             <constraint firstItem="RMl-yR-gCc" firstAttribute="leading" secondItem="6oV-2K-mAx" secondAttribute="leadingMargin" id="XBo-7l-EMB"/>
                             <constraint firstItem="RMl-yR-gCc" firstAttribute="trailing" secondItem="6oV-2K-mAx" secondAttribute="trailingMargin" id="fHn-aS-Qhp"/>
+                            <constraint firstItem="ihh-PQ-6sP" firstAttribute="top" secondItem="RMl-yR-gCc" secondAttribute="top" id="rab-XZ-5sH"/>
+                            <constraint firstItem="ihh-PQ-6sP" firstAttribute="trailing" secondItem="RMl-yR-gCc" secondAttribute="trailing" id="tOf-1Y-BA7"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -1336,6 +1344,7 @@
                         <outlet property="HTMLContent" destination="RMl-yR-gCc" id="dM6-II-i6c"/>
                         <outlet property="loadIndicator" destination="Eyd-K5-CH4" id="yGP-SG-ndr"/>
                         <outlet property="loadingLabel" destination="8OQ-dr-odD" id="WWQ-FR-fLb"/>
+                        <outlet property="videoPlayer" destination="ihh-PQ-6sP" id="hdz-QD-yXZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aA2-uj-ED4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1362,7 +1371,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2CL-eO-69K" id="MEH-Cj-u3T">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW5-oX-Lpx">
