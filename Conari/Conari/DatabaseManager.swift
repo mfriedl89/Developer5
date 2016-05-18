@@ -166,12 +166,11 @@ class DatabaseManager {
         var postString:String = ""
         postString += "username=" + username
         postString += "&password=" + password
-        postString += "&oldtitle=" + metadata.OldTitle.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        postString += "&tutid=" + String(metadata.id)
         postString += "&newtitle=" + metadata.Title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
         postString += "&category=" + String(metadata.category+1)
         postString += "&difficulty=" + String(metadata.difficulty)
         postString += "&duration=" + String(metadata.duration)
-        postString += "&tutid=" + String(metadata.id)
         
         let allowedCharacters = NSCharacterSet.URLQueryAllowedCharacterSet().mutableCopy() as! NSMutableCharacterSet
         allowedCharacters.removeCharactersInString("+/=")
