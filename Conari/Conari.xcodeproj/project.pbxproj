@@ -34,6 +34,10 @@
 		C02D94901CE3285100A6E778 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 		C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
+		DA7CDF171CEC9AE000D89BCF /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CDF161CEC9AE000D89BCF /* ChangeEmailViewController.swift */; };
+		DA7CDF1A1CEC9BAF00D89BCF /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CDF191CEC9BAF00D89BCF /* ChangePasswordViewController.swift */; };
+		DA7CDF1C1CEC9C4000D89BCF /* ChangeUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CDF1B1CEC9C4000D89BCF /* ChangeUserNameViewController.swift */; };
+		DA7CDF1E1CEC9F6E00D89BCF /* MenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CDF1D1CEC9F6E00D89BCF /* MenuUITests.swift */; };
 		DAE86E791CD9FFAD00F81CEE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */; };
 		DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
 		E0193BFF1CEC5B0F00577E06 /* loupe.png in Resources */ = {isa = PBXBuildFile; fileRef = E0193BEF1CEC579B00577E06 /* loupe.png */; };
@@ -111,8 +115,11 @@
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
 		C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchUITests.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
-		DA280B9B1CDA11780005E80B /* MenuUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuUITests.swift; sourceTree = "<group>"; };
 		DA4B14A21CBE922200134193 /* NewUserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUITests.swift; sourceTree = "<group>"; };
+		DA7CDF161CEC9AE000D89BCF /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
+		DA7CDF191CEC9BAF00D89BCF /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		DA7CDF1B1CEC9C4000D89BCF /* ChangeUserNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeUserNameViewController.swift; sourceTree = "<group>"; };
+		DA7CDF1D1CEC9F6E00D89BCF /* MenuUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuUITests.swift; sourceTree = "<group>"; };
 		DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E0193BEF1CEC579B00577E06 /* loupe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loupe.png; sourceTree = "<group>"; };
@@ -224,6 +231,9 @@
 				AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */,
 				AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */,
 				DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */,
+				DA7CDF1B1CEC9C4000D89BCF /* ChangeUserNameViewController.swift */,
+				DA7CDF191CEC9BAF00D89BCF /* ChangePasswordViewController.swift */,
+				DA7CDF161CEC9AE000D89BCF /* ChangeEmailViewController.swift */,
 				DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */,
 				E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */,
 				E06D7FC51CBE2220003001BD /* Info.plist */,
@@ -243,8 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				E0DBB9C71CBE5445009D6520 /* LoginUITests.swift */,
+				DA7CDF1D1CEC9F6E00D89BCF /* MenuUITests.swift */,
 				DA4B14A21CBE922200134193 /* NewUserUITests.swift */,
-				DA280B9B1CDA11780005E80B /* MenuUITests.swift */,
 				E0DBB9C91CBE5445009D6520 /* Info.plist */,
 			);
 			path = ConariUITests;
@@ -392,6 +402,7 @@
 				C0209D9E1CE376BA0058CF8B /* CategorySearchUITests.swift in Sources */,
 				C02D94881CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */,
 				C02D947E1CE3281D00A6E778 /* MetaDataViewController.swift in Sources */,
+				DA7CDF1E1CEC9F6E00D89BCF /* MenuUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,15 +412,18 @@
 			files = (
 				28AE0AE21CE3161B004A6858 /* TutorialEditContentController.swift in Sources */,
 				E0CB1BB81CD9D11F000B881D /* AdminTutorialViewController.swift in Sources */,
+				DA7CDF1C1CEC9C4000D89BCF /* ChangeUserNameViewController.swift in Sources */,
 				E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */,
 				DAE86E791CD9FFAD00F81CEE /* MenuViewController.swift in Sources */,
 				DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */,
+				DA7CDF1A1CEC9BAF00D89BCF /* ChangePasswordViewController.swift in Sources */,
 				AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */,
 				AE5416DE1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift in Sources */,
 				AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */,
 				AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */,
 				3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */,
 				E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */,
+				DA7CDF171CEC9AE000D89BCF /* ChangeEmailViewController.swift in Sources */,
 				E0DB5D721CD9F95E002D7C91 /* TutorialTableViewCell.swift in Sources */,
 				AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */,
 				28AE0ADF1CE3077F004A6858 /* TutorialEditOptionsController.swift in Sources */,
