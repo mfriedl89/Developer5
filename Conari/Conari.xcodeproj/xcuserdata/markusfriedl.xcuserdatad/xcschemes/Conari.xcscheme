@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E06D7FC91CBE2220003001BD"
-               BuildableName = "ConariTests.xctest"
-               BlueprintName = "ConariTests"
+               BlueprintIdentifier = "E0DBB9C41CBE5445009D6520"
+               BuildableName = "ConariUITests.xctest"
+               BlueprintName = "ConariUITests"
                ReferencedContainer = "container:Conari.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E0DBB9C41CBE5445009D6520"
-               BuildableName = "ConariUITests.xctest"
-               BlueprintName = "ConariUITests"
+               BlueprintIdentifier = "E0193B791CEC4CA900577E06"
+               BuildableName = "ConariTests.xctest"
+               BlueprintName = "ConariTests"
                ReferencedContainer = "container:Conari.xcodeproj">
             </BuildableReference>
          </TestableReference>
