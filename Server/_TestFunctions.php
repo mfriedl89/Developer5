@@ -17,6 +17,8 @@ require_once 'ChangePassword.php';
 require_once 'ChangeMail.php';
 require_once 'ChangeName.php';
 
+header('Content-Type: text/html; charset=utf-8');
+
 function echoWithNewline($message) {
 	echo $message . "<br>";
 }
@@ -155,8 +157,9 @@ if (mysqli_connect_errno()) {
 	error_log("Connect failed: " . mysqli_connect_error());
 	echo '{"success":0,"error_message":"' . mysqli_connect_error() . '"}';
 } else {
-	
-	// Begin testing
+
+	echoWithNewline("");
+	echoWithNewline("--- Ignore output above this line ---");
 	echoWithNewline("Tests started");
 
 	// Password from DB
