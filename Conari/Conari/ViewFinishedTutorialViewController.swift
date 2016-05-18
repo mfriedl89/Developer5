@@ -9,19 +9,39 @@
 import UIKit
 import YouTubePlayer
 
-class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
+class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, YouTubePlayerDelegate {
   
-  var TutorialID = 57
+  var TutorialID = 0
+  var content = ""
   
+  @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
+  @IBOutlet weak var loadingLabel: UILabel!
+  
+  @IBOutlet weak var HTMLContent: UIWebView!
+  @IBOutlet var videoPlayer: YouTubePlayerView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     loadIndicator.startAnimating()
     loadIndicator.transform=CGAffineTransformMakeScale(1.5, 1.5)
-    // Do any additional setup after loading the view, typically from a nib.
+    
     self.automaticallyAdjustsScrollViewInsets = false
+    
+    videoPlayer.hidden = true
+    videoPlayer.delegate = self
+    
     requestTutorial(TutorialID)
+    
+    //Unit Tests
+    //    let videoID = "Iumsqz6LMnM"
+    //    var input = YouTubeManager.sharedManager.identifier + videoID
+    //    var videoID = YouTubeManager.sharedManager.parseIdentifier(input)
+    //    XCTAssertsEqual(videoID, "Iumsqz6LMnM", "Parsing the identifier failed")
+    
+    //    input = "ConariYouTubeTutorial - apiKey: , videoID: Iumsqz6LMnM"
+    //    videoID = YouTubeManager.sharedManager.parseIdentifier(input)
+    //    XCTAssertNil(videoID, "The videoID should be nil")
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -33,34 +53,13 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
     // Dispose of any resources that can be recreated.
   }
   
-  
-  override func viewWillAppear(animated: Bool) {
-    self.navigationController?.navigationBarHidden = false
-  }
-  
-  @IBOutlet weak var HTMLContent: UIWebView!
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
-  @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
-  
-  @IBOutlet weak var loadingLabel: UILabel!
-  
-  
-  
-  func requestTutorial(tutorialID: Int){
+  func requestTutorial(tutorialID: Int) {
     DatabaseManager.sharedManager.requestTutorial(tutorialID) { tutorial, message in
       
       if (tutorial == nil) {
         if message != nil {
           self.showErrorMessage(message!)
+          
           dispatch_async(dispatch_get_main_queue(), {
             self.title = "Error"
             self.loadIndicator.stopAnimating()
@@ -72,11 +71,29 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
       else {
         dispatch_async(dispatch_get_main_queue(), {
           self.title = tutorial!.title
-          self.HTMLContent.loadHTMLString(tutorial!.text, baseURL: nil)
           
-          print("VIEW:", tutorial!.text)
+          self.content = tutorial!.text
+          self.setContent()
         })
       }
+    }
+  }
+  
+  func setContent() {
+    loadIndicator.stopAnimating()
+    loadingLabel.hidden = true
+    
+    let videoID = YouTubeManager.sharedManager.parseIdentifier(content)
+    
+    if videoID == nil {
+      HTMLContent.loadHTMLString(content, baseURL: nil)
+    }
+    else {
+      loadIndicator.stopAnimating()
+      loadingLabel.hidden = true
+      
+      videoPlayer.hidden = false
+      videoPlayer.loadVideoID(videoID!)
     }
   }
   
@@ -84,6 +101,20 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
     loadIndicator.stopAnimating()
     loadingLabel.hidden = true
     //webView.scrollView.contentOffset = CGPointMake(0, 0);
+  }
+  
+  func playerReady(videoPlayer: YouTubePlayerView) {
+    
+  }
+  
+  func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+    if (playerState == .Ended) {
+      videoPlayer.stop()
+    }
+  }
+  
+  func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
+    
   }
   
   func showErrorMessage(message: String) {
