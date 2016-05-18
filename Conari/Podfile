@@ -1,0 +1,19 @@
+platform :ios, '9.0'
+
+target 'Conari' do
+  use_frameworks!
+
+  # Pods for Conari
+  pod 'YouTubePlayer'
+
+  target 'ConariUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ConariUnitTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YouTubePlayer
 
 class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
   
@@ -15,6 +16,7 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     loadIndicator.startAnimating()
     loadIndicator.transform=CGAffineTransformMakeScale(1.5, 1.5)
     // Do any additional setup after loading the view, typically from a nib.
@@ -32,6 +34,9 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
   }
   
   
+  override func viewWillAppear(animated: Bool) {
+    self.navigationController?.navigationBarHidden = false
+  }
   
   @IBOutlet weak var HTMLContent: UIWebView!
   /*
