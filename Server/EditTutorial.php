@@ -25,7 +25,7 @@ if($_POST) {
 	$TutText 		= $_POST['text'];
 	
 	if($username && $password &&
-		$TutId && $TutNewTitle &&
+		$TutID && $TutNewTitle &&
 		$TutCategory && $TutDifficulty &&
 		$TutDuration && $TutText) {
 

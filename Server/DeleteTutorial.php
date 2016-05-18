@@ -16,9 +16,9 @@ header('Content-type: application/json');
 if($_POST) {
 	$username 		= $_POST['username'];
 	$password 		= $_POST['password']; // is a string of stop names seperated by ';'
-	$TutID 		= $_POST['tutid'];
+	$TutID 			= $_POST['tutid'];
 	
-	if($username && $password && $TutTitle) {
+	if($username && $password && $TutID) {
 
 			/* Load config file for connection */
 			$config = parse_ini_file("junk/config.ini");
