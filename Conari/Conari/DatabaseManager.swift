@@ -164,12 +164,8 @@ class DatabaseManager {
         let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/EditTutorial.php")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
-//        postString += "username=" + username
-//        postString += "&password=" + password
-        
-        postString += "username=anton"
-        postString += "&password=Test1234@"
-        
+        postString += "username=" + username
+        postString += "&password=" + password
         postString += "&oldtitle=" + metadata.OldTitle.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
         postString += "&newtitle=" + metadata.Title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
         postString += "&category=" + String(metadata.category+1)
@@ -232,12 +228,8 @@ class DatabaseManager {
         let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/DeleteTutorial")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
-        //        postString += "username=" + username
-        //        postString += "&password=" + password
-        
-        postString += "username=anton"
-        postString += "&password=Test1234@"
-        
+        postString += "username=" + username
+        postString += "&password=" + password
         postString += "&tutid=" + String(id)
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -420,11 +412,9 @@ class DatabaseManager {
         allowedCharacters.removeCharactersInString("+/=")
         
         var postString:String = ""
-//        if username != "" {
-//            postString += "username=" + username.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)! as String!
-//        }
-
-        postString += "username=anton"
+        if username != "" {
+            postString += "username=" + username.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)! as String!
+        }
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
