@@ -747,6 +747,44 @@
                                             <outlet property="label_title" destination="SGZ-Mc-ONH" id="beN-Zx-D27"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableYoutubeViewCell" rowHeight="100" id="C2h-fj-DzL" customClass="CategorySearchYoutubeTableViewCell" customModule="Conari" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="162" width="600" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C2h-fj-DzL" id="nz4-Sr-dkG">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k58-Kg-n1R">
+                                                    <rect key="frame" x="136" y="8" width="456" height="83"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="90" y="8" width="302" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cIS-eq-Xl7">
+                                                    <rect key="frame" x="8" y="8" width="120" height="83"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="Zwv-nv-ktx"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="k58-Kg-n1R" firstAttribute="leading" secondItem="cIS-eq-Xl7" secondAttribute="trailing" constant="8" symbolic="YES" id="AZQ-rC-oDa"/>
+                                                <constraint firstItem="cIS-eq-Xl7" firstAttribute="top" secondItem="nz4-Sr-dkG" secondAttribute="topMargin" id="AiP-e7-61T"/>
+                                                <constraint firstItem="cIS-eq-Xl7" firstAttribute="top" secondItem="k58-Kg-n1R" secondAttribute="top" id="TEk-wX-x6i"/>
+                                                <constraint firstItem="cIS-eq-Xl7" firstAttribute="bottom" secondItem="k58-Kg-n1R" secondAttribute="bottom" id="aKa-Zq-i6X"/>
+                                                <constraint firstItem="cIS-eq-Xl7" firstAttribute="bottom" secondItem="nz4-Sr-dkG" secondAttribute="bottomMargin" id="bdC-Ar-hgi"/>
+                                                <constraint firstItem="cIS-eq-Xl7" firstAttribute="leading" secondItem="nz4-Sr-dkG" secondAttribute="leadingMargin" id="sdF-cL-czK"/>
+                                                <constraint firstItem="k58-Kg-n1R" firstAttribute="trailing" secondItem="nz4-Sr-dkG" secondAttribute="trailingMargin" id="zdf-rr-IPC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="image_view" destination="cIS-eq-Xl7" id="PNx-e7-mb7"/>
+                                            <outlet property="label_title" destination="k58-Kg-n1R" id="c5y-Hn-ucR"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
