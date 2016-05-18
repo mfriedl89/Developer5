@@ -21,6 +21,7 @@
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
+		E0193B8C1CEC4D1300577E06 /* ConariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0193B8B1CEC4D1300577E06 /* ConariTests.swift */; };
 		E034AE7B1CC7C4E5003D77FE /* ConariTests in Resources */ = {isa = PBXBuildFile; fileRef = E034AE771CC7C46B003D77FE /* ConariTests */; };
 		E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
 		E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E06D7FC01CBE2220003001BD /* Assets.xcassets */; };
@@ -53,6 +54,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = FBA6AAF81AD3EC9F00721644;
 			remoteInfo = RichEditorView;
+		};
+		E0193B8E1CEC4D1300577E06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E06D7FAE1CBE221F003001BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E06D7FB51CBE221F003001BD;
+			remoteInfo = Conari;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -87,6 +95,9 @@
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E0193B891CEC4D1300577E06 /* ConariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0193B8B1CEC4D1300577E06 /* ConariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariTests.swift; sourceTree = "<group>"; };
+		E0193B8D1CEC4D1300577E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E034AE771CC7C46B003D77FE /* ConariTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConariTests; sourceTree = "<group>"; };
 		E06D7FB91CBE2220003001BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E06D7FC01CBE2220003001BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +112,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E0193B861CEC4D1300577E06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E06D7FB31CBE221F003001BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,8 +145,18 @@
 				AEA97A8B1CE316C800781C88 /* Conari.app */,
 				AEA97A971CE3176F00781C88 /* ConariUITests.xctest */,
 				AEA97AA51CE3177900781C88 /* ConariUnitTests.xctest */,
+				E0193B891CEC4D1300577E06 /* ConariTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E0193B8A1CEC4D1300577E06 /* ConariTests */ = {
+			isa = PBXGroup;
+			children = (
+				E0193B8B1CEC4D1300577E06 /* ConariTests.swift */,
+				E0193B8D1CEC4D1300577E06 /* Info.plist */,
+			);
+			path = ConariTests;
 			sourceTree = "<group>";
 		};
 		E06D7FAD1CBE221F003001BD = {
@@ -138,6 +166,7 @@
 				E0DBB9BF1CBE4E66009D6520 /* Icon */,
 				E06D7FB81CBE2220003001BD /* Conari */,
 				AE9217221CC7748D00A3391C /* RichEditorView.xcodeproj */,
+				E0193B8A1CEC4D1300577E06 /* ConariTests */,
 				AEA97A8C1CE316C800781C88 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,6 +201,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E0193B881CEC4D1300577E06 /* ConariTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0193B931CEC4D1400577E06 /* Build configuration list for PBXNativeTarget "ConariTests" */;
+			buildPhases = (
+				E0193B851CEC4D1300577E06 /* Sources */,
+				E0193B861CEC4D1300577E06 /* Frameworks */,
+				E0193B871CEC4D1300577E06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0193B8F1CEC4D1300577E06 /* PBXTargetDependency */,
+			);
+			name = ConariTests;
+			productName = ConariTests;
+			productReference = E0193B891CEC4D1300577E06 /* ConariTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E06D7FB51CBE221F003001BD /* Conari */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E06D7FD31CBE2220003001BD /* Build configuration list for PBXNativeTarget "Conari" */;
@@ -201,6 +248,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Markus Friedl";
 				TargetAttributes = {
+					E0193B881CEC4D1300577E06 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = E06D7FB51CBE221F003001BD;
+					};
 					E06D7FB51CBE221F003001BD = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -226,6 +277,7 @@
 			projectRoot = "";
 			targets = (
 				E06D7FB51CBE221F003001BD /* Conari */,
+				E0193B881CEC4D1300577E06 /* ConariTests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,6 +300,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E0193B871CEC4D1300577E06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E06D7FB41CBE221F003001BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,6 +322,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E0193B851CEC4D1300577E06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0193B8C1CEC4D1300577E06 /* ConariTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E06D7FB21CBE221F003001BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +361,11 @@
 			name = RichEditorView;
 			targetProxy = AE92172D1CC774BE00A3391C /* PBXContainerItemProxy */;
 		};
+		E0193B8F1CEC4D1300577E06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E06D7FB51CBE221F003001BD /* Conari */;
+			targetProxy = E0193B8E1CEC4D1300577E06 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -308,6 +380,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E0193B901CEC4D1400577E06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ConariTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conari.app/Conari";
+			};
+			name = Debug;
+		};
+		E0193B911CEC4D1400577E06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ConariTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conari.app/Conari";
+			};
+			name = Release;
+		};
 		E06D7FD11CBE2220003001BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -420,6 +516,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E0193B931CEC4D1400577E06 /* Build configuration list for PBXNativeTarget "ConariTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0193B901CEC4D1400577E06 /* Debug */,
+				E0193B911CEC4D1400577E06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E06D7FB11CBE221F003001BD /* Build configuration list for PBXProject "Conari" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
