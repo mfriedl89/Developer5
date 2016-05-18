@@ -1,5 +1,8 @@
 <?php
 
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+
 // Contains various tests for the PHP functions
 
 // Make sure to clear $_POST (even if it shouldn't be populated)
