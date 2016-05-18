@@ -293,7 +293,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       if text_search != "" {
         YoutubeManager.sharedManager.searchVideoByTitle(text_search, completionHandler: {
           (response,success,message ) in
-          if(success || response.isEmpty)
+          if(!success || response.isEmpty)
           {
             return
           }

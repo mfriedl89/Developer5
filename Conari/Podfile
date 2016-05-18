@@ -4,14 +4,17 @@
  use_frameworks!
 
 target 'Conari' do
+  pod "RichEditorView"
   pod 'SDWebImage', '~>3.7'
 end
 
 target 'ConariUITests' do
-
+  pod "RichEditorView"
+  pod 'SDWebImage', '~>3.7'
 end
 
 target 'ConariUnitTests' do
-
+  pod "RichEditorView"
+  pod 'SDWebImage', '~>3.7' 
 end
 

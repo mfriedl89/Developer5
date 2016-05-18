@@ -19,6 +19,16 @@ class DatabaseManagerUnitTests: XCTestCase {
       // Put teardown code here. This method is called after the invocation of each test method in the class.
       super.tearDown()
   }
+  
+  func tetTutorialInit()
+  {
+    let item = Tutorial_item(tut_id: 0, tut_title: "title", tut_category: 5, tut_difficulty: "hard", tut_duration: "00:00")
+    XCTAssertEqual(item.id, 0)
+    XCTAssertEqual(item.title, "title")
+    XCTAssertEqual(item.category, 5)
+    XCTAssertEqual(item.difficulty, "hard")
+    XCTAssertEqual(item.duration, "00:00")
+  }
 
   func testloginWithPHPScript_suc() {
     let username = "anton"
@@ -62,10 +72,10 @@ class DatabaseManagerUnitTests: XCTestCase {
   
   
 func testCreateTutorial() {
-    /*
-    let username = "test"
-    let password = "Qwertzuiop123."
-    
+  /*
+  let username = "anton"
+  let password = "Test1234@"
+  
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     
@@ -135,8 +145,8 @@ func testCreateTutorial() {
       XCTAssertNil(error, "Error")
     })
     
+  
     */
-    
 
     
     
