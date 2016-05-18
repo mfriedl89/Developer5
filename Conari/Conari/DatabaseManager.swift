@@ -15,6 +15,33 @@ struct User {
     var surname: String
 }
 
+struct Tutorial {
+  var title: String
+  var category: Int
+  var difficulty: String
+  var duration: String
+  var text: String
+}
+
+class Tutorial_item {
+  
+  var id          : Int
+  var title       : String
+  var category    : Int
+  var difficulty  : String
+  var duration    : String
+  var author      : String
+  
+  init(tut_id: Int, tut_title: String, tut_category : Int, tut_difficulty : String, tut_duration : String, tut_author : String){
+    self.id     = tut_id
+    self.title  = tut_title
+    self.category   = tut_category
+    self.difficulty = tut_difficulty
+    self.duration   = tut_duration
+    self.author     = tut_author
+  }
+  
+}
 
 /**
  This file will act as our Database manager.
@@ -139,10 +166,118 @@ class DatabaseManager {
         task.resume()
     }
     
+  func EditTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
     
+    let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/EditTutorial.php")!)
+    request.HTTPMethod = "POST"
+    var postString:String = ""
+    postString += "username=" + username
+    postString += "&password=" + password
+    postString += "&title=" + metadata.Title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+    postString += "&category=" + String(metadata.category+1)
+    postString += "&difficulty=" + String(metadata.difficulty+1)
+    postString += "&duration=" + String(metadata.duration)
+    postString += "&text=" + content.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
     
-    func CreateUser(username: String, password: String, firstName: String, surName: String, email: String, callback: (Bool, String?) -> ()) {
+    request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+    
+    var success: Bool = false
+    var responseString: NSString?
+    
+    let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
+      guard error == nil && data != nil else {
+        // check for fundamental networking error
+        success = false
+        responseString = error?.localizedDescription
         
+        return
+      }
+      
+      //print("response = \(response)")
+      
+      responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+      //print("responseString = \(responseString!)")
+      
+      if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
+        // check for http errors
+        success = false
+        responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
+        let message: String? = (responseString as? String)
+        callback(success, message)
+      }else
+      {
+        
+      }
+      
+      
+      if(responseString == "success")
+      {
+        success = true;
+      }
+      
+      
+      let message: String? = (responseString as? String)
+      
+      callback(success, message)
+    })
+    task.resume()
+  }
+  
+  func DeleteTutorial(title: String, callback: (Bool, String?) -> ()) {
+    
+    let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/DeleteTutorial")!)
+    request.HTTPMethod = "POST"
+    var postString:String = ""
+    postString += "username=" + username
+    postString += "&password=" + password
+    postString += "&title=" + title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+    
+    request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+    
+    var success: Bool = false
+    var responseString: NSString?
+    
+    let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
+      guard error == nil && data != nil else {
+        // check for fundamental networking error
+        success = false
+        responseString = error?.localizedDescription
+        
+        return
+      }
+      
+      //print("response = \(response)")
+      
+      responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+      //print("responseString = \(responseString!)")
+      
+      if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
+        // check for http errors
+        success = false
+        responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
+        let message: String? = (responseString as? String)
+        callback(success, message)
+      }else
+      {
+        
+      }
+      
+      
+      if(responseString == "success")
+      {
+        success = true;
+      }
+      
+      
+      let message: String? = (responseString as? String)
+      
+      callback(success, message)
+    })
+    task.resume()
+  }
+  
+    func CreateUser(username: String, password: String, firstName: String, surName: String, email: String, callback: (Bool, String?) -> ()) {
+      
         let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/CreateUser.php")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
@@ -199,115 +334,7 @@ class DatabaseManager {
     }
 
     
-    func EditTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
-        
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/EditTutorial.php")!)
-        request.HTTPMethod = "POST"
-        var postString:String = ""
-        postString += "username=" + username
-        postString += "&password=" + password
-        postString += "&title=" + metadata.Title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
-        postString += "&category=" + String(metadata.category+1)
-        postString += "&difficulty=" + String(metadata.difficulty+1)
-        postString += "&duration=" + String(metadata.duration)
-        postString += "&text=" + content.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
-        
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        var success: Bool = false
-        var responseString: NSString?
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
-            guard error == nil && data != nil else {
-                // check for fundamental networking error
-                success = false
-                responseString = error?.localizedDescription
-                
-                return
-            }
-            
-            //print("response = \(response)")
-            
-            responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            //print("responseString = \(responseString!)")
-            
-            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-                // check for http errors
-                success = false
-                responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
-                let message: String? = (responseString as? String)
-                callback(success, message)
-            }else
-            {
-                
-            }
-            
-            
-            if(responseString == "success")
-            {
-                success = true;
-            }
-            
-            
-            let message: String? = (responseString as? String)
-            
-            callback(success, message)
-        })
-        task.resume()
-    }
-    
-  func DeleteTutorial(title: String, callback: (Bool, String?) -> ()) {
-      
-    let request = NSMutableURLRequest(URL: NSURL(string: "https://citycommerce.net/DeleteTutorial")!)
-    request.HTTPMethod = "POST"
-    var postString:String = ""
-    postString += "username=" + username
-    postString += "&password=" + password
-    postString += "&title=" + title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
-    
-    request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-    
-    var success: Bool = false
-    var responseString: NSString?
-    
-    let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
-      guard error == nil && data != nil else {
-        // check for fundamental networking error
-        success = false
-        responseString = error?.localizedDescription
-        
-        return
-      }
-      
-      //print("response = \(response)")
-      
-      responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-      //print("responseString = \(responseString!)")
-      
-      if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
-        success = false
-        responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
-        let message: String? = (responseString as? String)
-        callback(success, message)
-      }else
-      {
-          
-      }
-      
-      
-      if(responseString == "success")
-      {
-        success = true;
-      }
-      
-      
-      let message: String? = (responseString as? String)
-      
-      callback(success, message)
-    })
-    task.resume()
-  }
+  
     
   func changeUserPassword(username: String, new_password: String, old_password: String, callback: (Bool, String?) -> ()) {
         
