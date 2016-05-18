@@ -67,4 +67,15 @@ class ViewFinishedTutorial: XCTestCase {
     }
   }
   
+  func testVideoTutorial() {
+    let videoID = "Iumsqz6LMnM"
+    var input = YouTubeManager.sharedManager.identifier + videoID
+    var videoIDParsed = YouTubeManager.sharedManager.parseIdentifier(input)
+    XCTAssertEqual(videoIDParsed, "Iumsqz6LMnM", "Parsing the identifier failed")
+    
+    input = "ConariYouTubeTutorial - apiKey: , videoID: Iumsqz6LMnM"
+    videoIDParsed = YouTubeManager.sharedManager.parseIdentifier(input)
+    XCTAssertNil(videoIDParsed, "The videoID should be nil")
+  }
+  
 }
