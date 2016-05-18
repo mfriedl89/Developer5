@@ -57,6 +57,14 @@
 		C02D94911CE3285100A6E778 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 		C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		C02D94931CE3285400A6E778 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
+		C093C3931CEC8984007E5AE1 /* ViewAdditionalInformationUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C093C3921CEC8984007E5AE1 /* ViewAdditionalInformationUITest.swift */; };
+		C093C3961CEC8997007E5AE1 /* ViewAdditionalInformationUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C093C3951CEC8997007E5AE1 /* ViewAdditionalInformationUnitTest.swift */; };
+		C093C3971CEC8A34007E5AE1 /* ViewAdditionalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF639A1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift */; };
+		C093C3981CEC8A34007E5AE1 /* ViewAdditionalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF639A1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift */; };
+		C093C3991CEC8A3E007E5AE1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF63991CEC74980082EA3B /* Constants.swift */; };
+		C093C39A1CEC8A3E007E5AE1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF63991CEC74980082EA3B /* Constants.swift */; };
+		C0DF639B1CEC74980082EA3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF63991CEC74980082EA3B /* Constants.swift */; };
+		C0DF639C1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF639A1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
 		DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
 		E034AE7B1CC7C4E5003D77FE /* ConariTests in Resources */ = {isa = PBXBuildFile; fileRef = E034AE771CC7C46B003D77FE /* ConariTests */; };
@@ -147,6 +155,10 @@
 		AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
 		C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchUITests.swift; sourceTree = "<group>"; };
+		C093C3921CEC8984007E5AE1 /* ViewAdditionalInformationUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdditionalInformationUITest.swift; sourceTree = "<group>"; };
+		C093C3951CEC8997007E5AE1 /* ViewAdditionalInformationUnitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdditionalInformationUnitTest.swift; sourceTree = "<group>"; };
+		C0DF63991CEC74980082EA3B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C0DF639A1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdditionalInformationTableViewController.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E034AE771CC7C46B003D77FE /* ConariTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConariTests; sourceTree = "<group>"; };
@@ -208,6 +220,7 @@
 		AEA97A981CE3176F00781C88 /* ConariUITests */ = {
 			isa = PBXGroup;
 			children = (
+				C093C3921CEC8984007E5AE1 /* ViewAdditionalInformationUITest.swift */,
 				AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */,
 				AEA97AAF1CE3179C00781C88 /* LoginUITests.swift */,
 				AEA97AB01CE3179C00781C88 /* MetadataUITests.swift */,
@@ -223,6 +236,7 @@
 		AEA97AA61CE3177900781C88 /* ConariUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				C093C3951CEC8997007E5AE1 /* ViewAdditionalInformationUnitTest.swift */,
 				AEA97AB71CE317A600781C88 /* LoginUnitTests.swift */,
 				AEA97AB81CE317A600781C88 /* ViewFinishedTutorial.swift */,
 				AE3CF5E01CE368AB0080D7E5 /* DatabaseManagerUnitTests.swift */,
@@ -249,6 +263,8 @@
 		E06D7FB81CBE2220003001BD /* Conari */ = {
 			isa = PBXGroup;
 			children = (
+				C0DF63991CEC74980082EA3B /* Constants.swift */,
+				C0DF639A1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift */,
 				AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */,
 				AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */,
 				AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */,
@@ -432,13 +448,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C02D94861CE3282900A6E778 /* CategorySearchViewController.swift in Sources */,
+				C093C3991CEC8A3E007E5AE1 /* Constants.swift in Sources */,
 				AEA97AB41CE3179C00781C88 /* MetadataUITests.swift in Sources */,
 				AEA97AB51CE3179C00781C88 /* NewUserUITests.swift in Sources */,
+				C093C3971CEC8A34007E5AE1 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				C02D94921CE3285300A6E778 /* KeyboardManager.swift in Sources */,
 				C02D94821CE3282300A6E778 /* DatabaseManager.swift in Sources */,
 				AE3CF5DC1CE338A00080D7E5 /* SearchTutorialUITests.swift in Sources */,
 				AEA97A9A1CE3176F00781C88 /* ConariUITests.swift in Sources */,
 				C02D94841CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */,
+				C093C3931CEC8984007E5AE1 /* ViewAdditionalInformationUITest.swift in Sources */,
 				C02D948C1CE3284B00A6E778 /* NewUserViewController.swift in Sources */,
 				C02D94801CE3282000A6E778 /* AppDelegate.swift in Sources */,
 				C02D948E1CE3284E00A6E778 /* WelcomeScreenViewController.swift in Sources */,
@@ -461,6 +480,7 @@
 				C02D948D1CE3284C00A6E778 /* NewUserViewController.swift in Sources */,
 				C02D94811CE3282100A6E778 /* AppDelegate.swift in Sources */,
 				C02D94911CE3285100A6E778 /* LoginViewController.swift in Sources */,
+				C093C3981CEC8A34007E5AE1 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				AEA97AA81CE3177900781C88 /* ConariUnitTests.swift in Sources */,
 				AE3CF5E11CE368AC0080D7E5 /* DatabaseManagerUnitTests.swift in Sources */,
 				C02D94891CE3282C00A6E778 /* ViewFinishedTutorialViewController.swift in Sources */,
@@ -471,6 +491,8 @@
 				AEA97ABC1CE317E600781C88 /* NewUserUnitTests.swift in Sources */,
 				AEA97ABA1CE317A600781C88 /* ViewFinishedTutorial.swift in Sources */,
 				C02D94931CE3285400A6E778 /* KeyboardManager.swift in Sources */,
+				C093C39A1CEC8A3E007E5AE1 /* Constants.swift in Sources */,
+				C093C3961CEC8997007E5AE1 /* ViewAdditionalInformationUnitTest.swift in Sources */,
 				C02D94851CE3282600A6E778 /* CategorySearchTableViewCell.swift in Sources */,
 				AEA97AB91CE317A600781C88 /* LoginUnitTests.swift in Sources */,
 				C02D94831CE3282300A6E778 /* DatabaseManager.swift in Sources */,
@@ -488,8 +510,10 @@
 				AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */,
 				AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */,
 				3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */,
+				C0DF639B1CEC74980082EA3B /* Constants.swift in Sources */,
 				E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */,
 				AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */,
+				C0DF639C1CEC74980082EA3B /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				E07CFBFF1CBE2B97005BDFAA /* WelcomeScreenViewController.swift in Sources */,
 				AE9217211CC7704E00A3391C /* NewTutorialDescriptonViewController.swift in Sources */,
 				AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */,
