@@ -25,45 +25,113 @@ class MetadataUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        
         let app = XCUIApplication()
-        app.buttons["New Tutorial"].tap()
+        sleep(1);
+        let answerButton = app.buttons["Login"]
+        answerButton.tap()
         
-        let title = app.textFields["title"]
-        title.tap()
-        title.typeText("Test123")
+        let textFieldUsername = app.textFields["username"]
+        let textFieldPassword = app.secureTextFields["password"]
         
-        let category = app.textFields["category"]
-        category.tap()
+        sleep(1);
         
-        app.pickerWheels.element.adjustToPickerWheelValue("Youth")
+        XCTAssert(app.staticTexts["Username:"].exists)
+        XCTAssert(app.staticTexts["Password:"].exists)
         
+        textFieldUsername.tap()
+        XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
+        textFieldUsername.typeText("3")
+        XCTAssertEqual(textFieldUsername.value as? String, "3")
         
-        //let stepper = app.steppers["stepper"]
-        //stepper.increment
+        textFieldPassword.tap()
+        XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
+        textFieldPassword.typeText("3")
         
-        //app.steppers.element.incrementArrows.element.tap();
+        app.buttons["Login"].tap()
         
-        //app.steppers.element.incrementArrows.element.tap()
+  
+        app.navigationBars["Conari"].buttons["Tutorial erstellen"].tap()
+        app.textFields["title"].tap()
+        app.textFields["title"].typeText("test")
+        XCTAssertEqual(app.textFields["title"].value as? String, "test")
+        app.buttons["Done"].tap()
         
-        let duration = app.textFields["duration"]
-        duration.tap()
-        app.pickerWheels.element.adjustToPickerWheelValue("00:10")
+        let incrementButton = app.steppers.buttons["Increment"]
+        incrementButton.tap()
+        incrementButton.tap()
         
+        app.textFields["category"].tap()
+        
+        app.pickerWheels["Arts and Entertainment"].tap()
+        app.textFields["duration"].tap()
+        app.pickerWheels["00:00"].tap()
         app.buttons["Weiter"].tap()
         
-        let texteditor = app.otherElements["texteditor"]
-        texteditor.tap()
-        texteditor.typeText("test")
+        let element = app.otherElements["texteditor"].childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
+        element.tap()
         
+        let returnButton = app.buttons["Return"]
+        returnButton.tap()
         
-
+        let element2 = element.childrenMatchingType(.Other).element
+        element2.childrenMatchingType(.TextField).element
+        element2.childrenMatchingType(.TextField).element
+        returnButton.tap()
+        element2.childrenMatchingType(.TextField).element
+        app.toolbars.containingType(.Button, identifier:"Ordered List").childrenMatchingType(.Button).elementBoundByIndex(6).tap()
+        app.sheets.collectionViews.buttons["Photo Library"].tap()
+        app.tables.buttons["Moments"].tap()
+        app.collectionViews["PhotosGridView"].cells["Photo, Landscape, March 13, 2011, 1:17 AM"].tap()
+        sleep(1)
         app.buttons["Save"].tap()
+        //app.navigationBars["Test"].buttons["Save"].tap()
+        
+ 
         
         
         
         
         //Test has to go here, but currently the view isn't in his final position.
+        
+        
+        /*
+        let app = XCUIApplication()
+        let loginButton = app.buttons["Login"]
+        loginButton.tap()
+        sleep(1)
+        app.textFields["username"].tap()
+        app.textFields["username"].typeText("3")
+
+        
+        let passwordSecureTextField = app.secureTextFields["password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.tap()
+        app.secureTextFields["password"].typeText("3")
+        loginButton.tap()
+        app.navigationBars["Conari"].buttons["Tutorial erstellen"].tap()
+        app.textFields["title"].tap()
+        app.textFields["title"].typeText("3")
+        
+        let incrementButton = app.steppers.buttons["Increment"]
+        incrementButton.tap()
+        incrementButton.tap()
+        
+        let categoryTextField = app.textFields["category"]
+        categoryTextField.tap()
+        categoryTextField.tap()
+        
+        let app2 = app
+        app2.pickerWheels["Arts and Entertainment"].tap()
+        app.textFields["duration"].tap()
+        app2.pickerWheels["00:00"].tap()
+        app.buttons["Weiter"].tap()
+        app.otherElements["texteditor"].childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.tap()
+        app.typeText("\r")
+        app.typeText("\r")
+        app.typeText("dsfasdfsadfsdfsf")
+        app.navigationBars["das"].buttons["Save"].tap()
+        */
+        
     }
     
 }

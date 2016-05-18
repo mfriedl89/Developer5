@@ -70,14 +70,7 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate {
                     self.title = tutorial!.title
                     self.HTMLContent.loadHTMLString(tutorial!.text, baseURL: nil)
                     
-                    self.myTutorial = Tutorial(
-                        title: (tutorial?.title)!,
-                        category: (tutorial?.category)!,
-                        difficulty: (tutorial?.difficulty)!,
-                        duration: (tutorial?.duration)!,
-                        text: (tutorial?.text)!,
-                        author: (tutorial?.author)!
-                    )
+                    print("VIEW:", tutorial!.text)
                 })
             }
         }

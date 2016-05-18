@@ -40,7 +40,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
      // Pass the selected object to the new view controller.
         if (segue.identifier ==  "show_main_view"){
             let backItem = UIBarButtonItem()
-            backItem.title = "Logout"
+//            backItem.title = "Logout"
             navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
         }
      }

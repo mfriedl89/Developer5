@@ -22,12 +22,13 @@ class DatabaseManagerUnitTests: XCTestCase {
   
   func tetTutorialInit()
   {
-    let item = Tutorial_item(tut_id: 0, tut_title: "title", tut_category: 5, tut_difficulty: "hard", tut_duration: "00:00")
+    let item = Tutorial_item(tut_id: 0, tut_title: "title", tut_category: 5, tut_difficulty: "hard", tut_duration: "00:00", tut_author: "author")
     XCTAssertEqual(item.id, 0)
     XCTAssertEqual(item.title, "title")
     XCTAssertEqual(item.category, 5)
     XCTAssertEqual(item.difficulty, "hard")
     XCTAssertEqual(item.duration, "00:00")
+    XCTAssertEqual(item.author, "author")
   }
 
   func testloginWithPHPScript_suc() {

@@ -2,7 +2,7 @@
 //  ConariUITests.swift
 //  ConariUITests
 //
-//  Created by Stefan Mitterrutzner on 11/05/16.
+//  Created by Markus Friedl on 18.05.16.
 //  Copyright © 2016 Markus Friedl. All rights reserved.
 //
 

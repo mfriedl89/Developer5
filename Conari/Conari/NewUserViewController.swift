@@ -48,6 +48,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         scrollView.scrollsToTop = true
 
         registerForKeyboardNotifications()
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -379,7 +380,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
                 self.showMessage(message!, username: self.userName.text!)
               
             }
-            
+//            self.navigationController?.popViewControllerAnimated(true)
         }
         
     }

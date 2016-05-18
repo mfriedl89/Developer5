@@ -68,7 +68,7 @@ class ViewAdditionalInformationTableViewController: UITableViewController {
             
         case 3:
             cell.textLabel?.text = "Difficulty"
-            cell.detailTextLabel?.text = difficulty[(tutorial?.difficulty)!]
+            cell.detailTextLabel?.text = difficultLabels[Int((tutorial?.difficulty)!)!]
             
         case 4:
             cell.textLabel?.text = "Duration"

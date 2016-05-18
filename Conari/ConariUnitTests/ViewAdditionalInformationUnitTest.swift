@@ -46,7 +46,7 @@ class ViewAdditionalInformationUnitTest: XCTestCase {
         XCTAssertEqual(myTutorial?.title, "ccc")
         XCTAssertEqual(myTutorial?.author, "anton")
         XCTAssertEqual(categories[(myTutorial?.category)!], "Cars & Other Vehicles")
-        XCTAssertEqual(difficulty[(myTutorial?.difficulty)!], "easy")
+        XCTAssertEqual(difficultLabels[Int((myTutorial?.difficulty)!)!], "medium")
         XCTAssertEqual(myTutorial?.duration, "5")
     }
   

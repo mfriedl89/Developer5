@@ -13,7 +13,7 @@ import AVFoundation
 
 class NewTutorialDescriptonViewController: UIViewController {
 
-    var current:TutorialMetaData = TutorialMetaData(Title: "",category: 0,duration: 0,difficulty: 0);
+    var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0);
     
     var editor:RichEditorView?
     var keyman:KeyboardManager?
@@ -45,10 +45,6 @@ class NewTutorialDescriptonViewController: UIViewController {
         {
             imagePicker.sourceType = .PhotoLibrary
         }
-        
-
-
-        
         
         // Do any additional setup after loading the view.
     }
@@ -90,7 +86,7 @@ class NewTutorialDescriptonViewController: UIViewController {
                     
                     for viewcontoller in (self.navigationController?.viewControllers)!
                     {
-                        if(viewcontoller.isKindOfClass(MainTutorialViewController))
+                        if(viewcontoller.isKindOfClass(MenuViewController))
                         {
                             self.navigationController?.popToViewController(viewcontoller, animated: true);
                         }
