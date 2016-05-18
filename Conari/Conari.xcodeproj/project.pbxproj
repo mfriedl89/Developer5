@@ -585,6 +585,7 @@
 				E0193BFE1CEC57FE00577E06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E06D7FB11CBE221F003001BD /* Build configuration list for PBXProject "Conari" */ = {
 			isa = XCConfigurationList;
