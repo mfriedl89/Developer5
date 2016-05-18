@@ -19,11 +19,10 @@ require_once 'ChangeName.php';
 
 function testPasswordFromDb($mysqli) {
 	$username = "anton";
+	$username_false = "anto1";
 	if(!(getPasswordHashedFromDb($mysqli, $username) != ""))
 		return false;
-	if(!(getPasswordHashedFromDb($mysqli, $username) == ""))
-		return false;
-	if(!(getPasswordHashedFromDb($mysqli, $username) == ""))
+	if(!(getPasswordHashedFromDb($mysqli, $username_false) == ""))
 		return false;
 
 	return true;
@@ -114,10 +113,10 @@ function testUsers($mysqli) {
 }
 
 function echoWithNewline($message) {
-	echo $message . "<br/>";
+	echo $message . "<br>";
 }
 
-echo "Loading MySQL config file";
+echoWithNewline("Loading MySQL config file");
 
 /* Load config file for connection */
 $config = parse_ini_file("junk/config.ini");
@@ -132,7 +131,7 @@ if (mysqli_connect_errno()) {
 } else {
 	
 	// Begin testing
-	echo "Tests started";
+	echoWithNewline("Tests started");
 
 	// Password from DB
 	if(testPasswordFromDb($mysqli) == true)
