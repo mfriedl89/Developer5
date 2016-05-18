@@ -56,8 +56,10 @@ function testTutorials($mysqli) {
 	if(!($new_tut_id > 0))
 		return false;
 
+	$new_tut_id_false = 0;
+
 	// User owns tutorial
-	if(!(userOwnsTutorial($mysqli, $tut_username, 0) == false))
+	if(!(userOwnsTutorial($mysqli, $tut_username, $new_tut_id_false) == false))
 		return false;
 	if(!(userOwnsTutorial($mysqli, $tut_username, $new_tut_id) == true))
 		return false;
@@ -66,13 +68,13 @@ function testTutorials($mysqli) {
 	$tut_text_new = "This is the new tutorial content";
 
 	// Edit
-	if(!(editTutorial($mysqli, 0, $tut_name_new, $tut_category, $tut_difficulty, $tut_duration, $tut_text_new) == false))
+	if(!(editTutorial($mysqli, $new_tut_id_false, $tut_name_new, $tut_category, $tut_difficulty, $tut_duration, $tut_text_new) == false))
 		return false;
 	if(!(editTutorial($mysqli, $new_tut_id, $tut_name_new, $tut_category, $tut_difficulty, $tut_duration, $tut_text_new) == true))
 		return false;
 
 	// Delete
-	if(!(deleteTutorial($mysqli, 0) == false))
+	if(!(deleteTutorial($mysqli, $new_tut_id_false) == false))
 		return false;
 	if(!(deleteTutorial($mysqli, $new_tut_id) == true))
 		return false;
