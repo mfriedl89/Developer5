@@ -58,19 +58,19 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   }
 
   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
   }
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {
-      if(textField == new_email_textField) {
-          repeat_new_email_textField.becomeFirstResponder()
-      }
-      else {
-          repeat_new_email_textField.resignFirstResponder()
-          Done_button_clicked(Done_btn)
-      }
-      return true
+    if(textField == new_email_textField) {
+      repeat_new_email_textField.becomeFirstResponder()
+    }
+    else {
+      repeat_new_email_textField.resignFirstResponder()
+      Done_button_clicked(Done_btn)
+    }
+    return true
   }
   
   
@@ -101,11 +101,11 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       self.presentViewController(alert, animated: true, completion: nil)
       break
     case 0:
-      DatabaseManager.sharedManager.changeUserEmail(username, password: password, new_email: new_email_textField.text!) {success, message in
+      DatabaseManager.sharedManager.changeUserEmail(username, password: password, new_email: new_email) {success, message in
         if success == true
         {
           dispatch_async(dispatch_get_main_queue(),{
-            let alert = UIAlertController(title: "Changed Email to: \(self.new_email_textField.text!)", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Changed Email to: \(new_email)", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
             
