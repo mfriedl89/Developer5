@@ -21,7 +21,9 @@ if($_POST) {
 			if (mysqli_connect_errno()) {
 				error_log("Connect failed: " . mysqli_connect_error());
 				echo '{"success":0,"error_message":"' . mysqli_connect_error() . '"}';
-			} else {			
+			} else {
+
+				$foundTutorials = array();		
 				
 				if ($stmt = $mysqli->prepare("SELECT Title,Category,Difficulty,Duration,Text,Author FROM Tutorial WHERE TutID = ?")) {
 				
@@ -33,7 +35,6 @@ if($_POST) {
 					/* bind result variables */
 					$stmt->bind_result($tTitle,$tCat,$tDif,$tDur,$tText,$tAuthor);
 					
-					$foundTutorials = array();
 					
 					/* fetch values */
 					while ( $stmt->fetch() ){

@@ -21,7 +21,9 @@ if($_POST) {
 			if (mysqli_connect_errno()) {
 				error_log("Connect failed: " . mysqli_connect_error());
 				echo '{"success":0,"error_message":"' . mysqli_connect_error() . '"}';
-			} else {			
+			} else {
+
+				$foundUsers = array();	
 				
 				if ($stmt = $mysqli->prepare("SELECT Email,FirstName,Surname FROM USER WHERE Username = ?")) {
 				
@@ -32,8 +34,6 @@ if($_POST) {
 
 					/* bind result variables */
 					$stmt->bind_result($user_email,$user_firstname,$user_surname);
-					
-					$foundUsers = array();
 					
 					/* fetch values */
 					while ( $stmt->fetch() ){
@@ -49,9 +49,8 @@ if($_POST) {
 				/* close connection */
 				$mysqli->close();
 				
-				$json_encoded_output = json_encode($foundUser);
+				$json_encoded_output = json_encode($foundUsers);
 				echo $json_encoded_output;
-				
 				
 			}
 	} else {
