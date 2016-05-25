@@ -43,7 +43,6 @@ class Tutorial_item {
   
 }
 
-
 var categories = ["Arts and Entertainment",
                   "Cars & Other Vehicles",
                   "Computers and Electronics",
