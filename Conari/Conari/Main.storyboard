@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -101,7 +101,7 @@
                     <navigationItem key="navigationItem" title="Tutorial" id="KOA-RT-uJd">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="neY-8U-q3c">
                             <connections>
-                                <segue destination="1eL-Qf-eHn" kind="show" identifier="write_tutorial" id="EUj-xx-R2u"/>
+                                <action selector="ClickNext:" destination="yuD-Rl-uSD" id="zhi-Cw-eeh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -112,11 +112,45 @@
                         <outlet property="categoryTextField_" destination="Xnq-mX-ema" id="l8N-sz-LSq"/>
                         <outlet property="difficultyLabel_" destination="4R6-YT-Req" id="xf5-Fk-0no"/>
                         <outlet property="titleTextField_" destination="9cl-m4-t0G" id="IcP-2L-O3f"/>
+                        <segue destination="1eL-Qf-eHn" kind="show" identifier="write_tutorial" id="WEP-B5-OCW"/>
+                        <segue destination="1Ma-1Z-nY4" kind="show" identifier="pick_video" id="3qx-rd-mQB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cY-31-CkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1917" y="632"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="sJn-sL-fAz">
+            <objects>
+                <viewController id="1Ma-1Z-nY4" customClass="VideoSelectorViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7EU-NQ-FZO"/>
+                        <viewControllerLayoutGuide type="bottom" id="gag-LA-D3T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VG6-SG-vQz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERT-4m-Eck">
+                                <rect key="frame" x="257" y="116" width="87" height="30"/>
+                                <state key="normal" title="Select Video"/>
+                                <connections>
+                                    <action selector="ClickSelectVideo:" destination="1Ma-1Z-nY4" eventType="touchUpInside" id="I97-fF-mCt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ERT-4m-Eck" firstAttribute="top" secondItem="7EU-NQ-FZO" secondAttribute="bottom" constant="52" id="IFj-ck-rjK"/>
+                            <constraint firstItem="ERT-4m-Eck" firstAttribute="centerX" secondItem="VG6-SG-vQz" secondAttribute="centerX" id="h23-Se-CTu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="xPp-LE-Vel"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54I-YQ-Ybr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2649" y="1366"/>
         </scene>
         <!--Title-->
         <scene sceneID="PHb-jA-IWN">
@@ -172,7 +206,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b3V-bb-hNe" id="F4R-KD-Dv7">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peH-rI-UJY">
@@ -1045,7 +1079,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QwL-xb-oOD" id="egA-9H-ibs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="37.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1373,7 +1407,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2CL-eO-69K" id="MEH-Cj-u3T">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW5-oX-Lpx">
