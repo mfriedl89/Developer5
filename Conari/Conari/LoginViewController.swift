@@ -68,7 +68,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   
   func loginCheck() {
     if (checkInput() == true) {
-      DatabaseManager.sharedManager.loginWithPHPScript(userNameTextField.text!, password: passwordTextField.text!) { success, message in
+      DatabaseManager.sharedManager.login(userNameTextField.text!, password: passwordTextField.text!) { success, message in
         if (success == false) {
           self.showErrorMessage(message!)
         }
@@ -84,7 +84,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   }
   
   func checkInput() -> Bool {
-    
     var inputValid: Bool = true
     
     if (checkTextField(userNameTextField) == false) { inputValid = false }
@@ -94,7 +93,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   }
   
   func checkTextField(textField: UITextField) -> Bool {
-    
     if textField.text == "" {
       textField.backgroundColor = UIColor(red: 1, green: 0.498, blue: 0.498, alpha: 1.0)
       return false

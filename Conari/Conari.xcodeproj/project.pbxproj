@@ -29,7 +29,6 @@
 		DA7CDF1C1CEC9C4000D89BCF /* ChangeUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CDF1B1CEC9C4000D89BCF /* ChangeUserNameViewController.swift */; };
 		DAE86E791CD9FFAD00F81CEE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */; };
 		DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
-		E0307A5E1CECA616007DB00F /* LoginUnitConariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0307A5A1CECA616007DB00F /* LoginUnitConariTests.swift */; };
 		E0307A5F1CECA616007DB00F /* LoginUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0307A5B1CECA616007DB00F /* LoginUnitTests.swift */; };
 		E0307A601CECA616007DB00F /* NewUserUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0307A5C1CECA616007DB00F /* NewUserUnitTests.swift */; };
 		E0307A611CECA616007DB00F /* ViewAdditionalInformationUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0307A5D1CECA616007DB00F /* ViewAdditionalInformationUnitTest.swift */; };
@@ -45,7 +44,6 @@
 		E070D2C41CEC9B7A00665154 /* MetadataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2BF1CEC9B7A00665154 /* MetadataUITests.swift */; };
 		E070D2C51CEC9B7A00665154 /* SearchTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2C01CEC9B7A00665154 /* SearchTutorialUITests.swift */; };
 		E070D2C61CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2C11CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift */; };
-		E070D2D01CEC9BB800665154 /* ConariUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2CF1CEC9BB800665154 /* ConariUnitTests.swift */; };
 		E070D2D91CEC9BC600665154 /* DatabaseManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2D71CEC9BC600665154 /* DatabaseManagerUnitTests.swift */; };
 		E070D2DA1CEC9BC600665154 /* ViewFinishedTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2D81CEC9BC600665154 /* ViewFinishedTutorial.swift */; };
 		E07CFBFF1CBE2B97005BDFAA /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
@@ -140,7 +138,6 @@
 		DA7CDF1B1CEC9C4000D89BCF /* ChangeUserNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeUserNameViewController.swift; sourceTree = "<group>"; };
 		DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E0307A5A1CECA616007DB00F /* LoginUnitConariTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUnitConariTests.swift; sourceTree = "<group>"; };
 		E0307A5B1CECA616007DB00F /* LoginUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUnitTests.swift; sourceTree = "<group>"; };
 		E0307A5C1CECA616007DB00F /* NewUserUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUnitTests.swift; sourceTree = "<group>"; };
 		E0307A5D1CECA616007DB00F /* ViewAdditionalInformationUnitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdditionalInformationUnitTest.swift; sourceTree = "<group>"; };
@@ -161,7 +158,6 @@
 		E070D2C01CEC9B7A00665154 /* SearchTutorialUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTutorialUITests.swift; sourceTree = "<group>"; };
 		E070D2C11CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorialUITest.swift; sourceTree = "<group>"; };
 		E070D2CD1CEC9BB800665154 /* ConariUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E070D2CF1CEC9BB800665154 /* ConariUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConariUnitTests.swift; sourceTree = "<group>"; };
 		E070D2D11CEC9BB800665154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E070D2D71CEC9BC600665154 /* DatabaseManagerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManagerUnitTests.swift; sourceTree = "<group>"; };
 		E070D2D81CEC9BC600665154 /* ViewFinishedTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorial.swift; sourceTree = "<group>"; };
@@ -332,13 +328,11 @@
 		E070D2CE1CEC9BB800665154 /* ConariUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				E0307A5A1CECA616007DB00F /* LoginUnitConariTests.swift */,
 				E0307A5B1CECA616007DB00F /* LoginUnitTests.swift */,
 				E0307A5C1CECA616007DB00F /* NewUserUnitTests.swift */,
 				E0307A5D1CECA616007DB00F /* ViewAdditionalInformationUnitTest.swift */,
 				E070D2D71CEC9BC600665154 /* DatabaseManagerUnitTests.swift */,
 				E070D2D81CEC9BC600665154 /* ViewFinishedTutorial.swift */,
-				E070D2CF1CEC9BB800665154 /* ConariUnitTests.swift */,
 				E070D2D11CEC9BB800665154 /* Info.plist */,
 			);
 			path = ConariUnitTests;
@@ -678,12 +672,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E070D2D91CEC9BC600665154 /* DatabaseManagerUnitTests.swift in Sources */,
-				E0307A5E1CECA616007DB00F /* LoginUnitConariTests.swift in Sources */,
 				E070D2DA1CEC9BC600665154 /* ViewFinishedTutorial.swift in Sources */,
 				E0307A611CECA616007DB00F /* ViewAdditionalInformationUnitTest.swift in Sources */,
 				E0307A601CECA616007DB00F /* NewUserUnitTests.swift in Sources */,
 				E0307A5F1CECA616007DB00F /* LoginUnitTests.swift in Sources */,
-				E070D2D01CEC9BB800665154 /* ConariUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

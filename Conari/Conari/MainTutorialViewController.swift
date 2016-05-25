@@ -48,10 +48,8 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
   override func willMoveToParentViewController(parent: UIViewController?) {
     super.willMoveToParentViewController(parent)
     if parent == nil {
-      if(DatabaseManager.sharedManager.username != "" && DatabaseManager.sharedManager.password != "")
-      {
-        //                DatabaseManager.sharedManager.username = ""
-        //                DatabaseManager.sharedManager.password = ""
+      if(DatabaseManager.sharedManager.username != "" && DatabaseManager.sharedManager.password != "") {
+        
       }
     }
   }
@@ -74,7 +72,6 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
     return true
   }
   
-  
   @IBAction func SearchButtonPressed(sender: AnyObject) {
     performSegueWithIdentifier("tutorial_list_search", sender: nil)
   }
@@ -92,28 +89,21 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    
     performSegueWithIdentifier("tutorial_list_category", sender: indexPath.row)
     tableView.deselectRowAtIndexPath(indexPath, animated: false)
   }
-  
-  
   
   // MARK: - Navigation
   
   // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "tutorial_list_category"
-    {
+    if segue.identifier == "tutorial_list_category" {
       let csvc = (segue.destinationViewController as! CategorySearchViewController)
-      csvc.selected_category = (sender as! Int)+1
+      csvc.selectedCategory = (sender as! Int)+1
       
-    }else if segue.identifier == "tutorial_list_search"
-    {
+    } else if segue.identifier == "tutorial_list_search" {
       let csvc = (segue.destinationViewController as! CategorySearchViewController)
-      csvc.text_search = SearchField_.text!
+      csvc.textSearch = SearchField_.text!
     }
   }
-  
-  
 }

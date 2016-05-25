@@ -21,18 +21,6 @@ class LoginUnitTests: XCTestCase {
     super.tearDown()
   }
   
-  func testExample() {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-  }
-  
-  func testPerformanceExample() {
-    // This is an example of a performance test case.
-    self.measureBlock {
-      // Put the code you want to measure the time of here.
-    }
-  }
-  
   func testLoginSuccessful() {
     let username = "anton"
     let password = "Test1234@"
@@ -40,7 +28,7 @@ class LoginUnitTests: XCTestCase {
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     
-    DatabaseManager.sharedManager.loginWithPHPScript(username, password: password) { success, message in
+    DatabaseManager.sharedManager.login(username, password: password) { success, message in
       XCTAssertTrue(success)
       XCTAssertNil(message, "message is nil")
       
@@ -60,7 +48,7 @@ class LoginUnitTests: XCTestCase {
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     
-    DatabaseManager.sharedManager.loginWithPHPScript(username, password: password) { success, message in
+    DatabaseManager.sharedManager.login(username, password: password) { success, message in
       XCTAssertFalse(success)
       XCTAssertNotNil(message, "message not nil")
       

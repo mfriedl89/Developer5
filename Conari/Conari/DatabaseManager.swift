@@ -55,7 +55,7 @@ class DatabaseManager {
   var username: String = ""
   var password: String = ""
   
-  func loginWithPHPScript(username: String, password: String, callback: (Bool, String?) -> ()) {
+  func login(username: String, password: String, callback: (Bool, String?) -> ()) {
     
     let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/Login.php")!)
     request.HTTPMethod = "POST"
@@ -64,7 +64,6 @@ class DatabaseManager {
     
     var success: Bool = false
     var responseString: NSString?
-    //var successValue = 0
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
@@ -85,7 +84,6 @@ class DatabaseManager {
       do {
         let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
         if jsonData as! NSObject == 1 {
-          //successValue = 1;
           self.username = username
           self.password = password
           success = true
@@ -94,7 +92,6 @@ class DatabaseManager {
           responseString = jsonErrorMessage
         }
         if (jsonData["success"] != nil) {
-          //successValue = jsonSuccess
           success = false
         }
         
@@ -109,7 +106,7 @@ class DatabaseManager {
     task.resume()
   }
   
-  func CreateTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
+  func createTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
     
     let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/CreateTutorial.php")!)
     request.HTTPMethod = "POST"
@@ -137,10 +134,7 @@ class DatabaseManager {
         return
       }
       
-      //print("response = \(response)")
-      
       responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-      //print("responseString = \(responseString!)")
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
         // check for http errors
@@ -148,17 +142,13 @@ class DatabaseManager {
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
         let message: String? = (responseString as? String)
         callback(success, message)
-      }else
-      {
+      } else {
         
       }
       
-      
-      if(responseString == "success")
-      {
+      if(responseString == "success") {
         success = true;
       }
-      
       
       let message: String? = (responseString as? String)
       
@@ -200,10 +190,7 @@ class DatabaseManager {
         return
       }
       
-      //print("response = \(response)")
-      
       responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-      //print("responseString = \(responseString!)")
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
         // check for http errors
@@ -211,17 +198,13 @@ class DatabaseManager {
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
         let message: String? = (responseString as? String)
         callback(success, message)
-      }else
-      {
+      } else {
         
       }
       
-      
-      if(responseString == "success")
-      {
+      if(responseString == "success") {
         success = true;
       }
-      
       
       let message: String? = (responseString as? String)
       
@@ -230,7 +213,7 @@ class DatabaseManager {
     task.resume()
   }
   
-  func DeleteTutorial(id: Int, callback: (Bool, String?) -> ()) {
+  func deleteTutorial(id: Int, callback: (Bool, String?) -> ()) {
     
     let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/DeleteTutorial")!)
     request.HTTPMethod = "POST"
@@ -253,10 +236,7 @@ class DatabaseManager {
         return
       }
       
-      //print("response = \(response)")
-      
       responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-      //print("responseString = \(responseString!)")
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
         // check for http errors
@@ -264,14 +244,11 @@ class DatabaseManager {
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
         let message: String? = (responseString as? String)
         callback(success, message)
-      }else
-      {
+      } else {
         
       }
       
-      
-      if(responseString == "success")
-      {
+      if(responseString == "success") {
         success = true;
       }
       
@@ -283,7 +260,7 @@ class DatabaseManager {
     task.resume()
   }
   
-  func CreateUser(username: String, password: String, firstName: String, surName: String, email: String, callback: (Bool, String?) -> ()) {
+  func createUser(username: String, password: String, firstName: String, surName: String, email: String, callback: (Bool, String?) -> ()) {
     
     let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/CreateUser.php")!)
     request.HTTPMethod = "POST"
@@ -319,8 +296,7 @@ class DatabaseManager {
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
         let message: String? = (responseString as? String)
         callback(success, message)
-      }else
-      {
+      } else {
         
       }
       
@@ -347,9 +323,7 @@ class DatabaseManager {
     let postString = "tutorialID=" + String(tutorialID)
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
-    //var jsonString: String = ""
     var responseString: NSString?
-    //var successValue = 0
     
     var responseTutorial: Tutorial? = nil
     
@@ -362,7 +336,6 @@ class DatabaseManager {
         
         return
       }
-      
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
         // check for http errors
@@ -387,18 +360,10 @@ class DatabaseManager {
         if let jsonErrorMessage = jsonData["error_message"] as? NSString {
           responseString = jsonErrorMessage
         }
-        //if let jsonSuccess = jsonData["success"] as? Int {
-        //successValue = jsonSuccess
-        //}
-        
-        
         
       } catch {
-        print("error serializing JSON: \(error)")
         callback(nil, "\(error)")
       }
-      
-      print("RequestTutorial: tutorialID:\(tutorialID), json[5]:\(responseTutorial?.id)")
       
       let message: String? = (responseString as? String)
       
@@ -409,17 +374,6 @@ class DatabaseManager {
   }
   
   func findTutorialByUsername(username: String, completionHandler: (response: [Tutorial_item]) -> Void) -> Void {
-    
-    /*
-     
-     FindTutorialInCategory.php:
-     /*	 Reveives:          title, category 								*/
-     /*  Returns Array: 	[[TutID,Title,Category,Difficulty,Duration]] 	*/
-     $title   	= $_POST['title'];
-     $category   = $_POST['category'];
-     
-     */
-    
     
     let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/FindTutorialByUsername.php")!)
     
@@ -435,8 +389,6 @@ class DatabaseManager {
     
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
-    //var responseString: NSString?
-    
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
       guard error == nil && data != nil else {                                                          // check for fundamental networking error
         print("error=\(error)")
@@ -448,12 +400,10 @@ class DatabaseManager {
         print("response = \(response)")
       }
       
-      var tutorial_array = [Tutorial_item]()
+      var tutorialArray = [Tutorial_item]()
       
       do {
         let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-        //print(json)
-        
         
         for anItem in json as! [Dictionary<String, AnyObject>] {
           let title = anItem["title"] as! String
@@ -463,50 +413,21 @@ class DatabaseManager {
           let id = anItem["id"] as! Int
           let author = anItem["author"] as! String
           
-          tutorial_array.append(Tutorial_item(tut_id: id, tut_title: title, tut_category: category, tut_difficulty: difficulty, tut_duration: duration, tut_author: author))
+          tutorialArray.append(Tutorial_item(tut_id: id, tut_title: title, tut_category: category, tut_difficulty: difficulty, tut_duration: duration, tut_author: author))
           // do something with personName and personID
         }
         
-        /*if let tutorials = json["tutorials"] as? [[String : AnyObject]] {
-         for tut in tutorials {
-         if let id = tut["TutID"] as? String {
-         if let title = tut["Title"] as? String {
-         if let cat = tut["Category"] as? String {
-         if let diff = tut["Difficulty"] as? String {
-         if let dur = tut["Duration"] as? String {
-         tutorial_array.append(Tutorial_item(tut_id: id, tut_title: title, tut_category: cat, tut_difficulty: diff, tut_duration: dur))
-         }
-         }
-         }
-         }
-         }
-         }
-         }*/
       } catch {
         print("error serializing JSON: \(error)")
-        tutorial_array.removeAll()
+        tutorialArray.removeAll()
       }
       
-      
-      completionHandler(response: tutorial_array)
-      
-      
+      completionHandler(response: tutorialArray)
     }
     task.resume()
   }
   
   func findTutorialByCategory(tutorial_title: String, tutorial_category: Int , completionHandler: (response: [Tutorial_item]) -> Void) -> Void {
-    
-    /*
-     
-     FindTutorialInCategory.php:
-     /*	 Reveives:          title, category 								*/
-     /*  Returns Array: 	[[TutID,Title,Category,Difficulty,Duration]] 	*/
-     $title   	= $_POST['title'];
-     $category   = $_POST['category'];
-     
-     */
-    
     
     let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/FindTutorialInCategory.php")!)
     
@@ -522,11 +443,8 @@ class DatabaseManager {
     
     postString += "&category=" + String(tutorial_category)
     
-    //print(postString)
-    
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
-    //var responseString: NSString?
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
       guard error == nil && data != nil else {                                                          // check for fundamental networking error
@@ -539,13 +457,10 @@ class DatabaseManager {
         print("response = \(response)")
       }
       
-      
-      var tutorial_array = [Tutorial_item]()
+      var tutorialArray = [Tutorial_item]()
       
       do {
         let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-        //print(json)
-        
         
         for anItem in json as! [Dictionary<String, AnyObject>] {
           let title = anItem["title"] as! String
@@ -555,19 +470,16 @@ class DatabaseManager {
           let id = anItem["id"] as! Int
           let author = anItem["author"] as! String
           
-          tutorial_array.append(Tutorial_item(tut_id: id, tut_title: title, tut_category: category, tut_difficulty: difficulty, tut_duration: duration, tut_author: author))
+          tutorialArray.append(Tutorial_item(tut_id: id, tut_title: title, tut_category: category, tut_difficulty: difficulty, tut_duration: duration, tut_author: author))
           // do something with personName and personID
         }
         
-        
       } catch {
         print("error serializing JSON: \(error)")
-        tutorial_array.removeAll()
+        tutorialArray.removeAll()
       }
       
-      
-      completionHandler(response: tutorial_array)
-      
+      completionHandler(response: tutorialArray)
       
     }
     task.resume()
@@ -582,12 +494,10 @@ class DatabaseManager {
       "&new_password=" + new_password +
       "&old_password=" + old_password
     
-    
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
     var success: Bool = false
     var responseString: NSString?
-    //var successValue = 0
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
@@ -608,7 +518,6 @@ class DatabaseManager {
       do {
         let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
         if jsonData as! NSObject == 1 {
-          //successValue = 1;
           self.password = new_password
           success = true
         }
@@ -616,7 +525,6 @@ class DatabaseManager {
           responseString = jsonErrorMessage
         }
         if (jsonData["success"] != nil) {
-          //successValue = jsonSuccess
           success = false
         }
         
@@ -639,12 +547,10 @@ class DatabaseManager {
       "&password=" + password +
       "&new_email=" + new_email
     
-    
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
     var success: Bool = false
     var responseString: NSString?
-    //var successValue = 0
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
@@ -665,14 +571,12 @@ class DatabaseManager {
       do {
         let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
         if jsonData as! NSObject == 1 {
-          //successValue = 1;
           success = true
         }
         if let jsonErrorMessage = jsonData["error_message"] as? NSString {
           responseString = jsonErrorMessage
         }
         if (jsonData["success"] != nil) {
-          //successValue = jsonSuccess
           success = false
         }
         
@@ -696,12 +600,10 @@ class DatabaseManager {
       "&new_firstname=" + new_firstname +
       "&new_surname=" + new_surname
     
-    
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
     var success: Bool = false
     var responseString: NSString?
-    //var successValue = 0
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
@@ -722,14 +624,12 @@ class DatabaseManager {
       do {
         let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
         if jsonData as! NSObject == 1 {
-          //successValue = 1;
           success = true
         }
         if let jsonErrorMessage = jsonData["error_message"] as? NSString {
           responseString = jsonErrorMessage
         }
         if (jsonData["success"] != nil) {
-          //successValue = jsonSuccess
           success = false
         }
         
@@ -752,10 +652,7 @@ class DatabaseManager {
     let postString = "username=" + username
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
-    //var jsonString: String = ""
     var responseString: NSString?
-    //var successValue = 0
-    
     var responseUser: User? = nil
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
@@ -767,7 +664,6 @@ class DatabaseManager {
         
         return
       }
-      
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
         // check for http errors

@@ -24,12 +24,11 @@ class NewUserUnitTests: XCTestCase {
     super.tearDown()
   }
   
-  
-  
   func testUsernamePass() {
     let test_result = vc.checkingUsername("hans")
     XCTAssert(test_result == true)
   }
+  
   func testUsernameFail() {
     let test_result = vc.checkingUsername("")
     XCTAssert(test_result == false)
@@ -39,6 +38,7 @@ class NewUserUnitTests: XCTestCase {
     let test_result = vc.checkingNameAndSurname("fefe")
     XCTAssert(test_result == true)
   }
+  
   func testNameAndSurenameFail() {
     let test_result = vc.checkingNameAndSurname("")
     XCTAssert(test_result == false)
@@ -48,6 +48,7 @@ class NewUserUnitTests: XCTestCase {
     let test_result = vc.checkEmailAddress("hans@gmail.com")
     XCTAssert(test_result == true)
   }
+  
   func testEmailFail() {
     let test_result = vc.checkEmailAddress("hans.com")
     XCTAssert(test_result == false)
@@ -57,6 +58,7 @@ class NewUserUnitTests: XCTestCase {
     let test_result = vc.checkPassword("jrsA1&Ettww%")
     XCTAssert(test_result == true)
   }
+  
   func testPasswordFail() {
     let test_result = vc.checkPassword("eegaaasrE")
     XCTAssert(test_result == false)
@@ -66,6 +68,7 @@ class NewUserUnitTests: XCTestCase {
     let test_result = vc.checkRepeatedPassword("jrsA1&Ettww%", repeated: "jrsA1&Ettww%")
     XCTAssert(test_result == true)
   }
+  
   func testRepeatedPasswordFail() {
     let test_result = vc.checkRepeatedPassword("jrsA1&Ettww%", repeated: "jrsA1&Rttww%")
     XCTAssert(test_result == false)

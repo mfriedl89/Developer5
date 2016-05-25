@@ -35,8 +35,6 @@ class KeyboardManager: NSObject {
       return
     }
     
-    
-    
     toolbar.options = [
       RichEditorOptions.Undo, RichEditorOptions.Bold, RichEditorOptions.Italic, RichEditorOptions.Underline,RichEditorOptions.Header(2),
       RichEditorOptions.OrderedList, RichEditorOptions.Image,hideKeyboard

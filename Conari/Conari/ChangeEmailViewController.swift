@@ -15,7 +15,6 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   @IBOutlet weak var repeat_new_email_textField: UITextField!
   @IBOutlet weak var Done_btn: UIButton!
   
-  
   let checkEmailFalse = -1
   let repeatedEmailIsNotNew = -2
   
@@ -73,9 +72,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
     return true
   }
   
-  
   func test (new_email:String, repeat_new_email:String) -> Bool {
-    
     var error = 0
     
     if(!newUserFunc.checkEmailAddress(new_email)) {
@@ -85,7 +82,6 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       error = repeatedEmailIsNotNew
     }
     
-    
     newUserFunc.checkInput(newUserFunc.checkEmailAddress(new_email), textField: new_email_textField)
     newUserFunc.checkInput(repeat_new_email == new_email, textField: repeat_new_email_textField)
     
@@ -94,12 +90,12 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       let alert = UIAlertController(title: "Alert", message: "Please enter a valid Email address", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
       self.presentViewController(alert, animated: true, completion: nil)
-      break
+      
     case repeatedEmailIsNotNew:
       let alert = UIAlertController(title: "Alert", message: "Repeated Email is not the same as New Email", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
       self.presentViewController(alert, animated: true, completion: nil)
-      break
+      
     case 0:
       DatabaseManager.sharedManager.changeUserEmail(username, password: password, new_email: new_email) {success, message in
         if success == true
@@ -121,19 +117,18 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
           });
         }
       }
+      
+    default:
       break
-    default: break
     }
     
     
     return true
   }
   
-  
   @IBAction func Done_button_clicked(sender: AnyObject) {
     test(new_email_textField.text!, repeat_new_email: repeat_new_email_textField.text!)
   }
-  
   
   func showErrorMessage(message: String) {
     dispatch_async(dispatch_get_main_queue(), {

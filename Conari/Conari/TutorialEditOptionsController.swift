@@ -55,7 +55,6 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
   
   var times: [String] = []
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -91,7 +90,6 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     self.current.OldTitle = self.oldTitle!
     
     // Set title field
-    //        self.titleTextField_.text = self.oldTitle
     self.titleTextField_.text = self.editTutorial!.title
     
     // Set category field
@@ -103,7 +101,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
   }
   
   override func viewWillAppear(animated: Bool) {
-    //        self.navigationController?.navigationBarHidden = false
+    
   }
   
   override func didReceiveMemoryWarning() {
@@ -142,8 +140,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     })
   }
   
-  func updateCurrentStruct()
-  {
+  func updateCurrentStruct() {
     current.Title = titleTextField_.text!
     current.difficulty = Int(DifficultyStepper_.value)
   }
@@ -152,22 +149,23 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     switch DifficultyStepper_.value {
     case 5:
       difficultyLabel_.text = "very hard";
-      break;
+      
     case 4:
       difficultyLabel_.text = "hard";
-      break;
+      
     case 3:
       difficultyLabel_.text = "medium";
-      break;
+      
     case 2:
       difficultyLabel_.text = "easy";
-      break;
+      
     case 1:
       difficultyLabel_.text = "very easy";
-      break;
+      
     default:
       return;
     }
+    
     updateCurrentStruct();
   }
   
@@ -178,8 +176,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
   func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     if pickerView == categoryPickerView{
       return categories.count
-    }else
-    {
+    } else {
       return times.count
     }
     
@@ -187,8 +184,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
   func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     if pickerView == categoryPickerView{
       return categories[row]
-    }else
-    {
+    } else {
       return times[row]
     }
     
@@ -199,8 +195,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
       current.category = row;
       categoryTextField_.selectedTextRange = nil;
       
-    }else
-    {
+    } else {
       current.duration = row*5
       DurationTextField_.text = times[row] + " hh:mm"
       
@@ -208,19 +203,16 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     }
     self.view.endEditing(true)
     updateCurrentStruct();
-    //pickerView.hidden = true
   }
   
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "edit_tutorial"
-    {
+    if segue.identifier == "edit_tutorial" {
       updateCurrentStruct();
       if current.Title.isEmpty {
         self.showErrorMessage("Please insert a Title")
         return
       }
-      
       
       let nextScene =  segue.destinationViewController as! TutorialEditContentController
       nextScene.current = current

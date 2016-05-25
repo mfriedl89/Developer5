@@ -51,24 +51,13 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     
     DatabaseManager.sharedManager.findTutorialByUsername(DatabaseManager.sharedManager.username) { (response) in
       
-      if(!response.isEmpty){
-        
+      if(!response.isEmpty) {
         self.tutorial_array = response
         self.tutorialsTableView.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
-        //self.table_View.reloadData()
-        
-      }else{
-        
-        print("Tutorial not found")
+      } else {
         self.tutorial_array.removeAll()
         self.tutorialsTableView.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
-        print("Tutorial Count: \(self.tutorial_array.count)")
-        //self.table_View.reloadData()
       }
-      
-      // Reload the tableview.
-      //self.tableView.reloadData()
-      
     }
   }
   
@@ -116,8 +105,6 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
       self.tutorialIndexPath = indexPath
       
       self.confirmDelete(cell.tutorialTitleLabel.text!)
-      
-      //            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
     }
   }
   
@@ -126,7 +113,6 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
       
       dispatch_async(dispatch_get_main_queue(), {
         let svc = self.storyboard?.instantiateViewControllerWithIdentifier("showEditOptions") as! TutorialEditOptionsController
-        //            let cell = tableView.cellForRowAtIndexPath(indexPath) as! TutorialTableViewCell
         
         svc.oldTitle = tutorial?.title
         svc.oldCategory = self.categories[(tutorial?.category)!]
@@ -164,10 +150,9 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
       let tutId = tutorial_array[indexPath.row].id
       print("want to delete tutorial with title " + tutorial_array[indexPath.row].title)
       
-      DatabaseManager.sharedManager.DeleteTutorial(tutId) { success, message in
+      DatabaseManager.sharedManager.deleteTutorial(tutId) { success, message in
         print("upload-success: \(success), login-message:\(message)")
-        if success == true
-        {
+        if success == true {
           print("success");
           dispatch_async(dispatch_get_main_queue(),{
             self.tutorial_array.removeAtIndex(indexPath.row)
@@ -176,9 +161,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
             self.laodIndicator.stopAnimating()
             self.laodIndicator.hidden = true
           });
-        }
-        else
-        {
+        } else {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
@@ -189,11 +172,8 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
       }
       
       tutorialIndexPath = nil
-      
       tutorialsTableView.endUpdates()
     }
-    
-    
   }
   
   func cancelDeleteTutorial(alertAction: UIAlertAction!) {
