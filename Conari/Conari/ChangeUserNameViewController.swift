@@ -87,11 +87,21 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
     case falseFirstname:
       let alert = UIAlertController(title: "Alert", message: "Please enter a valid Firstname", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+      
+      // Support display in iPad
+      alert.popoverPresentationController?.sourceView = self.view
+      alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
       self.presentViewController(alert, animated: true, completion: nil)
       
     case falseSurname:
       let alert = UIAlertController(title: "Alert", message: "Please enter a valid Surname", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+      
+      // Support display in iPad
+      alert.popoverPresentationController?.sourceView = self.view
+      alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
@@ -100,6 +110,11 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Changed Firstname/Surname to: \(new_firstname) \(new_surname)", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            
+            // Support display in iPad
+            alert.popoverPresentationController?.sourceView = self.view
+            alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -108,6 +123,11 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+            
+            // Support display in iPad
+            alert.popoverPresentationController?.sourceView = self.view
+            alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -137,6 +157,10 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
       //add buttons
       errorAlert.addAction(okAction)
       
+      // Support display in iPad
+      errorAlert.popoverPresentationController?.sourceView = self.view
+      errorAlert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
       //display
       self.presentViewController(errorAlert, animated: true, completion: nil)
     })

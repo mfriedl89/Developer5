@@ -117,7 +117,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       
       //add buttons
       errorAlert.addAction(okAction)
-      
+
+      // Support display in iPad
+      errorAlert.popoverPresentationController?.sourceView = self.view
+      errorAlert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
       //display
       self.presentViewController(errorAlert, animated: true, completion: nil)
     })

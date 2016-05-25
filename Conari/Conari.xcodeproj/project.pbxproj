@@ -72,6 +72,7 @@
 		E07CFBFF1CBE2B97005BDFAA /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */; };
 		E07CFC011CBE2CA0005BDFAA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */; };
 		E0A9EBD91CF5B71700069B86 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9EBD81CF5B71700069B86 /* AboutViewController.swift */; };
+		E0A9EBDB1CF5C01700069B86 /* EditTutorialUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9EBDA1CF5C01700069B86 /* EditTutorialUnitTests.swift */; };
 		E0CB1BB81CD9D11F000B881D /* AdminTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB1BB71CD9D11F000B881D /* AdminTutorialViewController.swift */; };
 		E0CC32EF1CF5AA480016987F /* EditTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC32EE1CF5AA480016987F /* EditTutorial.swift */; };
 		E0DB5D721CD9F95E002D7C91 /* TutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */; };
@@ -167,6 +168,7 @@
 		E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
 		E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E0A9EBD81CF5B71700069B86 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E0A9EBDA1CF5C01700069B86 /* EditTutorialUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTutorialUnitTests.swift; sourceTree = "<group>"; };
 		E0CB1BB71CD9D11F000B881D /* AdminTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTutorialViewController.swift; sourceTree = "<group>"; };
 		E0CC32EE1CF5AA480016987F /* EditTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTutorial.swift; sourceTree = "<group>"; };
 		E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialTableViewCell.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				E0307A5D1CECA616007DB00F /* ViewAdditionalInformationUnitTest.swift */,
 				E070D2D81CEC9BC600665154 /* ViewFinishedTutorial.swift */,
 				AE0B90891CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift */,
+				E0A9EBDA1CF5C01700069B86 /* EditTutorialUnitTests.swift */,
 			);
 			path = ConariUnitTests;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				E0307A601CECA616007DB00F /* NewUserUnitTests.swift in Sources */,
 				AE0B90951CF58AA600A1CCF3 /* MetaDataViewController.swift in Sources */,
 				AE0B909A1CF58AB900A1CCF3 /* ChangeEmailViewController.swift in Sources */,
+				E0A9EBDB1CF5C01700069B86 /* EditTutorialUnitTests.swift in Sources */,
 				AE0B90981CF58AB300A1CCF3 /* ChangeUserNameViewController.swift in Sources */,
 				AE0B90A31CF58AD800A1CCF3 /* TutorialEditOptionsController.swift in Sources */,
 				E0307A5F1CECA616007DB00F /* LoginUnitTests.swift in Sources */,
