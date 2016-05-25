@@ -40,12 +40,12 @@ class MetadataUITests: XCTestCase {
     
     textFieldUsername.tap()
     XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
-    textFieldUsername.typeText("3")
-    XCTAssertEqual(textFieldUsername.value as? String, "3")
+    textFieldUsername.typeText("anton")
+    XCTAssertEqual(textFieldUsername.value as? String, "anton")
     
     textFieldPassword.tap()
     XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
-    textFieldPassword.typeText("3")
+    textFieldPassword.typeText("Test1234@")
     
     app.buttons["Login"].tap()
     
