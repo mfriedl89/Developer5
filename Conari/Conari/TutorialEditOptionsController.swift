@@ -196,7 +196,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
       categoryTextField_.selectedTextRange = nil;
       
     } else {
-      current.duration = row*5
+      current.duration = row * 5
       DurationTextField_.text = times[row] + " hh:mm"
       
       DurationTextField_.selectedTextRange = nil;
