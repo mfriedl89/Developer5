@@ -26,31 +26,26 @@ class MetadataUITests: XCTestCase {
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
     let app = XCUIApplication()
-    sleep(1);
     let answerButton = app.buttons["Login"]
     answerButton.tap()
+    
+    sleep(1);
     
     let textFieldUsername = app.textFields["username"]
     let textFieldPassword = app.secureTextFields["password"]
     
-    sleep(1);
-    
-    XCTAssert(app.staticTexts["Username:"].exists)
-    XCTAssert(app.staticTexts["Password:"].exists)
-    
     textFieldUsername.tap()
     XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
-    textFieldUsername.typeText("3")
-    XCTAssertEqual(textFieldUsername.value as? String, "3")
+    textFieldUsername.typeText("anton")
+    XCTAssertEqual(textFieldUsername.value as? String, "anton")
     
     textFieldPassword.tap()
     XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
-    textFieldPassword.typeText("3")
+    textFieldPassword.typeText("Test1234@")
     
     app.buttons["Login"].tap()
     
-    
-    app.navigationBars["Conari"].buttons["Tutorial erstellen"].tap()
+    app.buttons["Create Text Tutorial"].tap()
     app.textFields["title"].tap()
     app.textFields["title"].typeText("test")
     XCTAssertEqual(app.textFields["title"].value as? String, "test")
@@ -65,7 +60,7 @@ class MetadataUITests: XCTestCase {
     app.pickerWheels["Arts and Entertainment"].tap()
     app.textFields["duration"].tap()
     app.pickerWheels["00:00"].tap()
-    app.buttons["Weiter"].tap()
+    app.buttons["Next"].tap()
     
     let element = app.otherElements["texteditor"].childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
     element.tap()
@@ -85,52 +80,6 @@ class MetadataUITests: XCTestCase {
     sleep(1)
     app.buttons["Save"].tap()
     //app.navigationBars["Test"].buttons["Save"].tap()
-    
-    
-    
-    
-    
-    
-    //Test has to go here, but currently the view isn't in his final position.
-    
-    
-    /*
-     let app = XCUIApplication()
-     let loginButton = app.buttons["Login"]
-     loginButton.tap()
-     sleep(1)
-     app.textFields["username"].tap()
-     app.textFields["username"].typeText("3")
-     
-     
-     let passwordSecureTextField = app.secureTextFields["password"]
-     passwordSecureTextField.tap()
-     passwordSecureTextField.tap()
-     app.secureTextFields["password"].typeText("3")
-     loginButton.tap()
-     app.navigationBars["Conari"].buttons["Tutorial erstellen"].tap()
-     app.textFields["title"].tap()
-     app.textFields["title"].typeText("3")
-     
-     let incrementButton = app.steppers.buttons["Increment"]
-     incrementButton.tap()
-     incrementButton.tap()
-     
-     let categoryTextField = app.textFields["category"]
-     categoryTextField.tap()
-     categoryTextField.tap()
-     
-     let app2 = app
-     app2.pickerWheels["Arts and Entertainment"].tap()
-     app.textFields["duration"].tap()
-     app2.pickerWheels["00:00"].tap()
-     app.buttons["Weiter"].tap()
-     app.otherElements["texteditor"].childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.tap()
-     app.typeText("\r")
-     app.typeText("\r")
-     app.typeText("dsfasdfsadfsdfsf")
-     app.navigationBars["das"].buttons["Save"].tap()
-     */
     
   }
   
