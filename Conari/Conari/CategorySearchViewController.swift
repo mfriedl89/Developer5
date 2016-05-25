@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 
 class CategorySearchViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SDWebImageManagerDelegate, UISearchDisplayDelegate, UISearchResultsUpdating  {
+  
   var categories = ["All",
                     "Arts and Entertainment",
                     "Cars & Other Vehicles",
@@ -30,16 +31,6 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
                     "Travel",
                     "Work World",
                     "Youth"]
-
-  
-    
-    var selected_category = 0
-    var text_search = ""
-    
-    var screen_width: CGFloat = 0
-    var screen_height: CGFloat = 0
-    
-    var searchController: UISearchController!
   
   var selectedCategory = 0
   var textSearch = ""
@@ -48,7 +39,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   var screenHeight: CGFloat = 0
   
   var searchController: UISearchController!
-  
+
   deinit {
     if let sc = searchController {
       if let superView = sc.view.superview {
@@ -57,8 +48,8 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     }
   }
   
-  var tutorial_array = [Tutorial_item]()
-  var youtube_array = [YoutubeVideo]()
+  var tutorialArray = [Tutorial_item]()
+  var youtubeArray = [YoutubeVideo]()
   
   @IBOutlet var table_View: UITableView!
   
@@ -68,16 +59,19 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.
     
     table_View.delegate = self
     table_View.dataSource = self
     
+    
     screenWidth = self.view.frame.width
     screenHeight = self.view.frame.height
     
+    
     if (textSearch == "") {
       configureSearchController()
-      self.title = categories[selectedCategory]
+      self.title = self.categories[selectedCategory]
     } else {
       self.title = textSearch
     }
@@ -94,100 +88,48 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     switch indexPath.section {
     case 0:
       let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
-      let duration_hours = Int(tutorial_array[indexPath.row].duration)!/60
-      let duration_minutes = Int(tutorial_array[indexPath.row].duration)!%60
+      let duration_hours = Int(tutorialArray[indexPath.row].duration)!/60
+      let duration_minutes = Int(tutorialArray[indexPath.row].duration)!%60
       
-      cell.label_title?.text = tutorial_array[indexPath.row].title
-      cell.label_category?.text = categories[tutorial_array[indexPath.row].category]
+      cell.label_title?.text = tutorialArray[indexPath.row].title
+      cell.label_category?.text = categories[tutorialArray[indexPath.row].category]
       
       cell.label_duration.text = String(format: "%02d:%02d", duration_hours,duration_minutes)
-      cell.image_view.image = UIImage(named: "\(tutorial_array[indexPath.row].category-1)")
+      cell.image_view.image = UIImage(named: "\(tutorialArray[indexPath.row].category-1)")
       
-      switch Int(tutorial_array[indexPath.row].difficulty)! {
+      switch Int(tutorialArray[indexPath.row].difficulty)! {
+      
       case 5:
         cell.label_difficulty?.text = "very hard";
-        
+      
       case 4:
         cell.label_difficulty?.text = "hard";
-        
+      
       case 3:
         cell.label_difficulty?.text = "medium";
-        
+      
       case 2:
         cell.label_difficulty?.text = "easy";
-        
-        
-        if (text_search == "")
-        {
-            configureSearchController()
-            self.title = self.categories[selected_category]
-        }
-        else
-        {
-            self.title = text_search
-        
-        }
-        
-        reloadArrays()
-    }
-
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-      switch indexPath.section {
-      case 0:
-        let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
-        let duration_hours = Int(tutorial_array[indexPath.row].duration)!/60
-        let duration_minutes = Int(tutorial_array[indexPath.row].duration)!%60
-        
-        cell.label_title?.text = tutorial_array[indexPath.row].title
-        cell.label_category?.text = categories[tutorial_array[indexPath.row].category]
-        
-        cell.label_duration.text = String(format: "%02d:%02d", duration_hours,duration_minutes)
-        cell.image_view.image = UIImage(named: "\(tutorial_array[indexPath.row].category-1)")
-        
-        switch Int(tutorial_array[indexPath.row].difficulty)! {
-        case 5:
-          cell.label_difficulty?.text = "very hard";
-          break;
-        case 4:
-          cell.label_difficulty?.text = "hard";
-          break;
-        case 3:
-          cell.label_difficulty?.text = "medium";
-          break;
-        case 2:
-          cell.label_difficulty?.text = "easy";
-          break;
-        case 1:
-          cell.label_difficulty?.text = "very easy";
-          break;
-        default:
-          break
-        }
-        return cell
+      
       case 1:
         cell.label_difficulty?.text = "very easy";
-        
+      
       default:
         break
       }
       return cell
-      
+    
     case 1:
       let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableYoutubeViewCell", forIndexPath: indexPath) as! CategorySearchYoutubeTableViewCell
-      cell.label_title?.text = youtube_array[indexPath.row].title
-      cell.imageView?.sd_setImageWithURL(NSURL(string:self.youtube_array[indexPath.row].thumbnail), placeholderImage: UIImage(), completed: {(image: UIImage?, error: NSError?, cacheType: SDImageCacheType!, imageURL: NSURL?) in
-        if let cellToUpdate = self.table_View?.cellForRowAtIndexPath(indexPath)
-        {
+      cell.label_title?.text = youtubeArray[indexPath.row].title
+      
+      cell.imageView?.sd_setImageWithURL(NSURL(string:self.youtubeArray[indexPath.row].thumbnail), placeholderImage: UIImage(), completed: {(image: UIImage?, error: NSError?, cacheType: SDImageCacheType!, imageURL: NSURL?) in
+        
+        if let cellToUpdate = self.table_View?.cellForRowAtIndexPath(indexPath) {
           cellToUpdate.setNeedsLayout()
         }
       })
+      
       return cell
       
     default:
@@ -195,17 +137,16 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       
     }
     return UITableViewCell()
-    
   }
   
   func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
     switch section {
     case 0:
-      return tutorial_array.count
+      return tutorialArray.count
       
     case 1:
-      return youtube_array.count
-      
+      return youtubeArray.count
+    
     default:
       return 0
     }
@@ -222,19 +163,19 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     switch section {
     case 0:
-      if tutorial_array.count == 0 {
+      if tutorialArray.count == 0 {
         return ""
       } else {
         return "Tutorials"
       }
-    
+      
     case 1:
-      if youtube_array.count == 0 {
+      if youtubeArray.count == 0 {
         return ""
       } else {
         return "Youtube"
       }
-    
+      
     default:
       return ""
     }
@@ -247,11 +188,10 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       
     case 1:
       break;
-      
+    
     default:
       return
     }
-    
     tableView.deselectRowAtIndexPath(indexPath, animated: false);
   }
   
@@ -304,6 +244,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   
   func searchBarSearchButtonClicked(searchBar: UISearchBar) {
     table_View.reloadData()
+    
     searchController.searchBar.resignFirstResponder()
   }
   
@@ -321,24 +262,25 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     if textSearch != "" {
       YouTubeManager.sharedManager.searchVideoByTitle(textSearch, completionHandler: {
         (response,success,message ) in
+        
         if(!success || response.isEmpty) {
           return
         }
-        self.youtube_array.removeAll()
-        self.youtube_array = response
+        
+        self.youtubeArray.removeAll()
+        self.youtubeArray = response
         dispatch_async(dispatch_get_main_queue(), {
-          self.table_View.reloadData();
+            self.table_View.reloadData();
         })
       })
     }
     
     DatabaseManager.sharedManager.findTutorialByCategory(textSearch, tutorial_category: selectedCategory) { (response) in
-      if(!response.isEmpty) {
-        self.tutorial_array = response
+      if(!response.isEmpty){
+        self.tutorialArray = response
         self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
-        
       } else {
-        self.tutorial_array.removeAll()
+        self.tutorialArray.removeAll()
         self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
       }
       
@@ -351,7 +293,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "show_tutorial" {
       let csvc = (segue.destinationViewController as! ViewFinishedTutorialViewController)
-      csvc.tutorialID = self.tutorial_array[(sender as! Int)].id
+      csvc.tutorialID = self.tutorialArray[(sender as! Int)].id
     }
   }
 }
