@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E06D7FB51CBE221F003001BD"
-               BuildableName = "Conari.app"
+               BuildableName = "Mr Tutor.app"
                BlueprintName = "Conari"
                ReferencedContainer = "container:Conari.xcodeproj">
             </BuildableReference>
@@ -63,7 +63,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E06D7FB51CBE221F003001BD"
-            BuildableName = "Conari.app"
+            BuildableName = "Mr Tutor.app"
             BlueprintName = "Conari"
             ReferencedContainer = "container:Conari.xcodeproj">
          </BuildableReference>
@@ -86,7 +86,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E06D7FB51CBE221F003001BD"
-            BuildableName = "Conari.app"
+            BuildableName = "Mr Tutor.app"
             BlueprintName = "Conari"
             ReferencedContainer = "container:Conari.xcodeproj">
          </BuildableReference>
@@ -105,7 +105,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E06D7FB51CBE221F003001BD"
-            BuildableName = "Conari.app"
+            BuildableName = "Mr Tutor.app"
             BlueprintName = "Conari"
             ReferencedContainer = "container:Conari.xcodeproj">
          </BuildableReference>

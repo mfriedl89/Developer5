@@ -22,6 +22,8 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
   @IBOutlet weak var HTMLContent: UIWebView!
   @IBOutlet var videoPlayer: YouTubePlayerView!
   
+  var infoBarButton = UIBarButtonItem()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -34,6 +36,12 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
     videoPlayer.delegate = self
     
     requestTutorial(tutorialID)
+    
+    // Info Button
+    let infoButton = UIButton(type: .InfoLight)
+    infoButton.addTarget(self, action: #selector(self.viewAdditionalInformation), forControlEvents: .TouchUpInside)
+    infoBarButton.customView = infoButton
+    navigationItem.rightBarButtonItem = infoBarButton
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -125,6 +133,11 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
       self.presentViewController(errorAlert, animated: true, completion: nil)
     })
   }
+  
+  func viewAdditionalInformation() {
+    performSegueWithIdentifier("viewAdditionalInformationSegue", sender: infoBarButton)
+  }
+  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
     if (segue.identifier == "viewAdditionalInformationSegue") {

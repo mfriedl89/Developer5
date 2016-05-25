@@ -60,7 +60,6 @@ class ViewFinishedTutorialUITest: XCTestCase {
     
     // Check if Buttons in header exist
     let cccNavigationBar = app.navigationBars.elementBoundByIndex(0)
-    XCTAssertTrue(cccNavigationBar.buttons["info"].exists, "Info Button doesn't exist")
     cccNavigationBar.childrenMatchingType(.Button).matchingIdentifier("Back").elementBoundByIndex(0).tap()
   }
   
