@@ -32,19 +32,23 @@ class ViewAdditionalInformationUITest: XCTestCase {
     // navigate to view
     
     
-    sleep(1);
+    sleep(1)
     
     let app = XCUIApplication()
     app.buttons["Continue without login"].tap()
     
-    sleep(1);
+    sleep(1)
     
     let tablesQuery = app.tables
     tablesQuery.staticTexts["Arts and Entertainment"].tap()
     
-    sleep(1);
+    sleep(1)
     
-    tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0).staticTexts["ccc"].tap()
+    //tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0).staticTexts["ccc"].tap()
+    app.tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(0).tap()
+    
+    sleep(1)
+    
     app.navigationBars.buttons["info"].tap()
     
     /*
