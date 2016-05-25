@@ -14,6 +14,8 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
   var tutorialID = 0
   var content = ""
   
+  var myTutorial: Tutorial_item? = nil
+  
   @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
   @IBOutlet weak var loadingLabel: UILabel!
   
@@ -123,4 +125,18 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
       self.presentViewController(errorAlert, animated: true, completion: nil)
     })
   }
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    if (segue.identifier == "viewAdditionalInformationSegue") {
+      let navController = segue.destinationViewController as! UINavigationController
+      
+      if let detailController = navController.topViewController as? ViewAdditionalInformationTableViewController {
+        
+        if myTutorial != nil {
+          detailController.tutorial = myTutorial
+        }
+      }
+    }
+  }
+
 }
