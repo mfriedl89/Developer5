@@ -76,7 +76,8 @@ class LoginUITests: XCTestCase {
     
     XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
     textFieldPassword.typeText("Test1234@")
-    app.buttons["Done"].tap()
+    
+    app.buttons["Login"].tap()
     
   }
   

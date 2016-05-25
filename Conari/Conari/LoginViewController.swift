@@ -24,6 +24,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   
   override func viewWillAppear(animated: Bool) {
     self.navigationController?.navigationBarHidden = false
+    
+    userNameTextField.text = ""
+    passwordTextField.text = ""
   }
   
   override func didReceiveMemoryWarning() {

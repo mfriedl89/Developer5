@@ -5,6 +5,8 @@ target 'Conari' do
 
   # Pods for Conari
   pod 'YouTubePlayer'
+  pod "RichEditorView"
+  pod 'SDWebImage', '~>3.7'
 
   target 'ConariUITests' do
     inherit! :search_paths

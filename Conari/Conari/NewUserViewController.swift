@@ -390,7 +390,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         preferredStyle: UIAlertControllerStyle.Alert)
       
       //make button
-      let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+      let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: self.okHandler)
       
       //add buttons
       errorAlert.addAction(okAction)
@@ -398,6 +398,19 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
       //display
       self.presentViewController(errorAlert, animated: true, completion: nil)
     })
+  }
+  
+  func okHandler(alertAction: UIAlertAction!) -> Void {
+    dispatch_async(dispatch_get_main_queue(),{
+      
+      for viewcontoller in (self.navigationController?.viewControllers)!
+      {
+        if(viewcontoller.isKindOfClass(LoginViewController))
+        {
+          self.navigationController?.popToViewController(viewcontoller, animated: true);
+        }
+      }
+    });
   }
   
 }

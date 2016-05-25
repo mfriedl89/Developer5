@@ -11,26 +11,7 @@ import UIKit
 class MainTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
   @IBOutlet weak var SearchField_: UITextField!
   @IBOutlet weak var categoryTableView_: UITableView!
-  
-  var categories = ["Arts and Entertainment",
-                    "Cars & Other Vehicles",
-                    "Computers and Electronics",
-                    "Conari",
-                    "Education and Communications",
-                    "Finance and Business",
-                    "Food and Entertaining",
-                    "Health",
-                    "Hobbies and Crafts",
-                    "Holidays and Traditions",
-                    "Home and Garden",
-                    "Personal Care and Style",
-                    "Pets and Animals",
-                    "Philosophy and Religion",
-                    "Relationships",
-                    "Sports and Fitness",
-                    "Travel",
-                    "Work World",
-                    "Youth"]
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -83,7 +64,7 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell:UITableViewCell = self.categoryTableView_.dequeueReusableCellWithIdentifier("category_cell")! as UITableViewCell
     
-    cell.textLabel?.text = self.categories[indexPath.row]
+    cell.textLabel?.text = categories[indexPath.row]
     
     return cell
   }
