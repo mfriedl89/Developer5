@@ -84,7 +84,7 @@ class NewUserUITests: XCTestCase {
     let textFieldRepeatPassword = app.secureTextFields["repeatPassword"]
     textFieldRepeatPassword.tap()
     textFieldRepeatPassword.typeText("P@sswort1234")
-    //app.buttons["Done"].tap()
+//    app.buttons["Done"].tap()
     
   }
 }
