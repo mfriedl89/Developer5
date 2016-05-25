@@ -170,6 +170,11 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       if current.Title.isEmpty {
         let alert = UIAlertController(title: "Error", message: "Please insert a Title", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
         self.presentViewController(alert, animated: true, completion: nil)
         return
       }

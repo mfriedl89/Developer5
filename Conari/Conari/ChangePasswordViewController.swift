@@ -73,16 +73,31 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
     case falsePassword:
       let alert = UIAlertController(title: "Alert", message: "False Password", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+      
+      // Support display in iPad
+      alert.popoverPresentationController?.sourceView = self.view
+      alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
       self.presentViewController(alert, animated: true, completion: nil)
       
     case repeatedIsNotNew:
       let alert = UIAlertController(title: "Alert", message: "Repeated Password is not the same as New Password", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+      
+      // Support display in iPad
+      alert.popoverPresentationController?.sourceView = self.view
+      alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
       self.presentViewController(alert, animated: true, completion: nil)
 
     case checkPasswordFalse:
       let alert = UIAlertController(title: "Alert", message: "Please enter a valid Password", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+      
+      // Support display in iPad
+      alert.popoverPresentationController?.sourceView = self.view
+      alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
@@ -91,6 +106,11 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Changed Password", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            
+            // Support display in iPad
+            alert.popoverPresentationController?.sourceView = self.view
+            alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -99,6 +119,11 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+            
+            // Support display in iPad
+            alert.popoverPresentationController?.sourceView = self.view
+            alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
             self.presentViewController(alert, animated: true, completion: nil)
             
           });

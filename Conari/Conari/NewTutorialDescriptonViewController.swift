@@ -81,6 +81,11 @@ class NewTutorialDescriptonViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue(),{
           let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
           alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+          
+          // Support display in iPad
+          alert.popoverPresentationController?.sourceView = self.view
+          alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
           self.presentViewController(alert, animated: true, completion: nil)
           
         });
@@ -181,6 +186,10 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
       if(UIImagePickerController.isSourceTypeAvailable(.Camera))
       {
         self.imagePicker.sourceType = .Camera;
+        // Support display in iPad
+        self.imagePicker.popoverPresentationController?.sourceView = self.view
+        self.imagePicker.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+        
         self.presentViewController(self.imagePicker, animated: true, completion: nil)
       }
     })
@@ -190,6 +199,11 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
       if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
       {
         self.imagePicker.sourceType = .PhotoLibrary;
+        
+        // Support display in iPad
+        self.imagePicker.popoverPresentationController?.sourceView = self.view
+        self.imagePicker.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+ 
         self.presentViewController(self.imagePicker, animated: true, completion: nil)
       }
     })
@@ -209,6 +223,10 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
     
     optionMenu.addAction(cancel)
     
+    // Support display in iPad
+    optionMenu.popoverPresentationController?.sourceView = self.view
+    optionMenu.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+ 
     self.presentViewController(optionMenu, animated: true, completion: nil)
   }
 }

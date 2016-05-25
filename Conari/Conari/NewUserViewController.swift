@@ -181,31 +181,61 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
       {
         let alert = UIAlertController(title: "Alert", message: invalidUser, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
         self.presentViewController(alert, animated: true, completion: nil)
       }
       else if ((textField == "Firstname") && (is_error == true)){
         let alert = UIAlertController(title: "Alert", message: invalidFirstName, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
         self.presentViewController(alert, animated: true, completion: nil)
       }
       else if ((textField == "Surname") && (is_error == true)){
         let alert = UIAlertController(title: "Alert", message: invalidSurName, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
         self.presentViewController(alert, animated: true, completion: nil)
       }
       else if ((textField == "Email") && (is_error == true)){
         let alert = UIAlertController(title: "Alert", message: invalidEMail, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
         self.presentViewController(alert, animated: true, completion: nil)
       }
       else if ((textField == "PasswordWrong") && (is_error == true)){
         let alert = UIAlertController(title: "Alert", message: invalidPassword, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
         self.presentViewController(alert, animated: true, completion: nil)
       }
       else if ((textField == "PasswordRepeat") && (is_error == true)){
         let alert = UIAlertController(title: "Alert", message: "Passwords are not the same.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
         self.presentViewController(alert, animated: true, completion: nil)
       }
     }
@@ -406,6 +436,10 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
       //add buttons
       errorAlert.addAction(okAction)
       
+      // Support display in iPad
+      errorAlert.popoverPresentationController?.sourceView = self.view
+      errorAlert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
       //display
       self.presentViewController(errorAlert, animated: true, completion: nil)
     })

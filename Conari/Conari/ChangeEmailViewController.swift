@@ -89,11 +89,21 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
     case checkEmailFalse:
       let alert = UIAlertController(title: "Alert", message: "Please enter a valid Email address", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+      
+      // Support display in iPad
+      alert.popoverPresentationController?.sourceView = self.view
+      alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
       self.presentViewController(alert, animated: true, completion: nil)
       
     case repeatedEmailIsNotNew:
       let alert = UIAlertController(title: "Alert", message: "Repeated Email is not the same as New Email", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+      
+      // Support display in iPad
+      alert.popoverPresentationController?.sourceView = self.view
+      alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
@@ -103,6 +113,11 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Changed Email to: \(new_email)", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            
+            // Support display in iPad
+            alert.popoverPresentationController?.sourceView = self.view
+            alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -112,6 +127,11 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+            
+            // Support display in iPad
+            alert.popoverPresentationController?.sourceView = self.view
+            alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -143,6 +163,10 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       //add buttons
       errorAlert.addAction(okAction)
       
+      // Support display in iPad
+      errorAlert.popoverPresentationController?.sourceView = self.view
+      errorAlert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
       //display
       self.presentViewController(errorAlert, animated: true, completion: nil)
     })
