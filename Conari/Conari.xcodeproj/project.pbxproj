@@ -76,7 +76,6 @@
 		E0CB1BB81CD9D11F000B881D /* AdminTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB1BB71CD9D11F000B881D /* AdminTutorialViewController.swift */; };
 		E0CC32EF1CF5AA480016987F /* EditTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC32EE1CF5AA480016987F /* EditTutorial.swift */; };
 		E0DB5D721CD9F95E002D7C91 /* TutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */; };
-		E0DBB9C01CBE4E66009D6520 /* Icon in Resources */ = {isa = PBXBuildFile; fileRef = E0DBB9BF1CBE4E66009D6520 /* Icon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +125,7 @@
 		AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchTableViewCell.swift; sourceTree = "<group>"; };
 		AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorialViewController.swift; sourceTree = "<group>"; };
 		AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTutorialDescriptonViewController.swift; sourceTree = "<group>"; };
-		AEA97A8B1CE316C800781C88 /* Conari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conari.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEA97A8B1CE316C800781C88 /* Mr Tutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Tutor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA97A971CE3176F00781C88 /* ConariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA97AA51CE3177900781C88 /* ConariUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +169,6 @@
 		E0CB1BB71CD9D11F000B881D /* AdminTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTutorialViewController.swift; sourceTree = "<group>"; };
 		E0CC32EE1CF5AA480016987F /* EditTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTutorial.swift; sourceTree = "<group>"; };
 		E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialTableViewCell.swift; sourceTree = "<group>"; };
-		E0DBB9BF1CBE4E66009D6520 /* Icon */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icon; sourceTree = "<group>"; };
 		E0F556831CC7CA830070F3FE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,7 +280,7 @@
 		AEA97A8C1CE316C800781C88 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEA97A8B1CE316C800781C88 /* Conari.app */,
+				AEA97A8B1CE316C800781C88 /* Mr Tutor.app */,
 				AEA97A971CE3176F00781C88 /* ConariUITests.xctest */,
 				AEA97AA51CE3177900781C88 /* ConariUnitTests.xctest */,
 				E070D2B31CEC9B6900665154 /* ConariUITests.xctest */,
@@ -295,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				E0F556831CC7CA830070F3FE /* .gitignore */,
-				E0DBB9BF1CBE4E66009D6520 /* Icon */,
 				E06D7FB81CBE2220003001BD /* Conari */,
 				E070D2B41CEC9B6900665154 /* ConariUITests */,
 				E070D2CE1CEC9BB800665154 /* ConariUnitTests */,
@@ -379,7 +376,7 @@
 			);
 			name = Conari;
 			productName = Conari;
-			productReference = AEA97A8B1CE316C800781C88 /* Conari.app */;
+			productReference = AEA97A8B1CE316C800781C88 /* Mr Tutor.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E070D2B21CEC9B6900665154 /* ConariUITests */ = {
@@ -474,7 +471,6 @@
 			files = (
 				DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */,
 				E06D7FC41CBE2220003001BD /* LaunchScreen.storyboard in Resources */,
-				E0DBB9C01CBE4E66009D6520 /* Icon in Resources */,
 				E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -826,7 +822,7 @@
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -842,7 +838,7 @@
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;

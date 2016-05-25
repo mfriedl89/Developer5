@@ -9,7 +9,7 @@
         <!--Tutorial-->
         <scene sceneID="3pD-uz-0B4">
             <objects>
-                <viewController id="yuD-Rl-uSD" customClass="MetaDataViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yuD-Rl-uSD" customClass="MetaDataViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ieu-6E-koL"/>
                         <viewControllerLayoutGuide type="bottom" id="tXN-pf-yjp"/>
@@ -120,7 +120,7 @@
         <!--Title-->
         <scene sceneID="PHb-jA-IWN">
             <objects>
-                <viewController id="1eL-Qf-eHn" customClass="NewTutorialDescriptonViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1eL-Qf-eHn" customClass="NewTutorialDescriptonViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CTR-C5-IP2"/>
                         <viewControllerLayoutGuide type="bottom" id="HPo-ms-afk"/>
@@ -145,7 +145,7 @@
         <!--My Tutorials-->
         <scene sceneID="re1-2C-Pnt">
             <objects>
-                <viewController id="l4H-wY-0nS" customClass="AdminTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="l4H-wY-0nS" customClass="AdminTutorialViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GTl-2A-aSX"/>
                         <viewControllerLayoutGuide type="bottom" id="jIG-xE-oG8"/>
@@ -167,7 +167,7 @@
                                 <rect key="frame" x="0.0" y="101" width="600" height="499"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TutorialTableViewCell" rowHeight="65" id="b3V-bb-hNe" customClass="TutorialTableViewCell" customModule="Conari" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TutorialTableViewCell" rowHeight="65" id="b3V-bb-hNe" customClass="TutorialTableViewCell" customModule="ConariUnitTests" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b3V-bb-hNe" id="F4R-KD-Dv7">
@@ -238,7 +238,7 @@
         <!--Edit Tutorial-->
         <scene sceneID="OaS-kl-1fD">
             <objects>
-                <viewController storyboardIdentifier="showEditOptions" title="Edit Tutorial" id="SAZ-ht-ZDi" customClass="TutorialEditOptionsController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showEditOptions" title="Edit Tutorial" id="SAZ-ht-ZDi" customClass="TutorialEditOptionsController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q8o-go-CcB"/>
                         <viewControllerLayoutGuide type="bottom" id="AeL-3l-XiN"/>
@@ -349,7 +349,7 @@
         <!--Edit Tutorial Content-->
         <scene sceneID="Upi-mw-L5X">
             <objects>
-                <viewController title="Edit Tutorial Content" id="Hgq-fb-frO" customClass="TutorialEditContentController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Tutorial Content" id="Hgq-fb-frO" customClass="TutorialEditContentController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wnh-Tc-0TI"/>
                         <viewControllerLayoutGuide type="bottom" id="1J8-cb-HQo"/>
@@ -376,7 +376,7 @@
         <!--Welcome Screen View Controller-->
         <scene sceneID="WZG-qI-2GJ">
             <objects>
-                <viewController id="2he-lz-D6F" customClass="WelcomeScreenViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2he-lz-D6F" customClass="WelcomeScreenViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mpT-tW-tcD"/>
                         <viewControllerLayoutGuide type="bottom" id="o9S-xP-WEn"/>
@@ -395,7 +395,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Conari" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h8-6Y-5Nx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Mr Tutor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h8-6Y-5Nx">
                                 <rect key="frame" x="20" y="72" width="560" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -446,7 +446,7 @@
         <!--Login-->
         <scene sceneID="oFF-3P-3nK">
             <objects>
-                <viewController id="MDP-0C-mzj" customClass="LoginViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MDP-0C-mzj" customClass="LoginViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lrg-WR-fUW"/>
                         <viewControllerLayoutGuide type="bottom" id="42R-Wi-ya7"/>
@@ -532,7 +532,7 @@
         <!--Change Email-->
         <scene sceneID="8Wa-LU-v3T">
             <objects>
-                <viewController id="5NY-U5-0e2" customClass="ChangeEmailViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5NY-U5-0e2" customClass="ChangeEmailViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jjQ-Jn-am8"/>
                         <viewControllerLayoutGuide type="bottom" id="dkR-bS-YrX"/>
@@ -633,7 +633,7 @@
         <!--Change password-->
         <scene sceneID="lnT-wd-rqn">
             <objects>
-                <viewController id="kyL-VI-exj" customClass="ChangePasswordViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kyL-VI-exj" customClass="ChangePasswordViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9TW-1u-uXA"/>
                         <viewControllerLayoutGuide type="bottom" id="yWh-pd-zGa"/>
@@ -728,7 +728,7 @@
         <!--Menu-->
         <scene sceneID="Obt-VF-tqW">
             <objects>
-                <viewController id="MKS-51-WXW" customClass="MenuViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MKS-51-WXW" customClass="MenuViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V8t-bK-0I0"/>
                         <viewControllerLayoutGuide type="bottom" id="bAU-7t-csm"/>
@@ -924,7 +924,7 @@
         <!--Change Name-->
         <scene sceneID="6Rc-XR-4BO">
             <objects>
-                <viewController id="i5Y-K4-p0t" customClass="ChangeUserNameViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="i5Y-K4-p0t" customClass="ChangeUserNameViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BM7-Uf-mOo"/>
                         <viewControllerLayoutGuide type="bottom" id="LNJ-iN-dHm"/>
@@ -997,10 +997,10 @@
             </objects>
             <point key="canvasLocation" x="1917" y="-825"/>
         </scene>
-        <!--Conari-->
+        <!--Mr Tutor-->
         <scene sceneID="Hhc-gc-l5x">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="y1j-Ah-LpW" customClass="MainTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="y1j-Ah-LpW" customClass="MainTutorialViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jak-mB-Lou"/>
                         <viewControllerLayoutGuide type="bottom" id="2lZ-fv-aIG"/>
@@ -1093,7 +1093,7 @@
                             <constraint firstItem="WWS-M3-wU7" firstAttribute="leading" secondItem="16C-Oq-uXB" secondAttribute="leading" id="uzQ-bQ-yJn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Conari" id="pCh-G7-OYf"/>
+                    <navigationItem key="navigationItem" title="Mr Tutor" id="pCh-G7-OYf"/>
                     <connections>
                         <outlet property="SearchField_" destination="WWS-M3-wU7" id="ihV-ry-Bg5"/>
                         <outlet property="categoryTableView_" destination="sUa-9F-PAD" id="t1Z-cl-JF9"/>
@@ -1108,7 +1108,7 @@
         <!--Add new user-->
         <scene sceneID="JeZ-Qe-aZ4">
             <objects>
-                <viewController storyboardIdentifier="newUserStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QeT-UG-jW0" customClass="NewUserViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newUserStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QeT-UG-jW0" customClass="NewUserViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aCz-ZH-cQb"/>
                         <viewControllerLayoutGuide type="bottom" id="LCO-Fb-8pP"/>
@@ -1316,7 +1316,7 @@
         <!--Tutorial View-->
         <scene sceneID="qbf-EK-Feb">
             <objects>
-                <viewController title="Tutorial View" id="owY-sm-bac" customClass="ViewFinishedTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Tutorial View" id="owY-sm-bac" customClass="ViewFinishedTutorialViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tvr-cg-qPG"/>
                         <viewControllerLayoutGuide type="bottom" id="mGG-Z5-Aor"/>
@@ -1389,7 +1389,7 @@
         <!--Category Search View Controller-->
         <scene sceneID="8z7-mM-iYW">
             <objects>
-                <viewController id="qBc-j5-MFp" customClass="CategorySearchViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qBc-j5-MFp" customClass="CategorySearchViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CYH-eX-A51"/>
                         <viewControllerLayoutGuide type="bottom" id="IzJ-f0-jFK"/>
@@ -1402,7 +1402,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="70" id="U5I-Ss-McX" userLabel="searchTableView" customClass="CategorySearchTableViewCell" customModule="Conari" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="70" id="U5I-Ss-McX" userLabel="searchTableView" customClass="CategorySearchTableViewCell" customModule="ConariUnitTests" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U5I-Ss-McX" id="V1p-8W-TiN">
@@ -1477,7 +1477,7 @@
                                             <outlet property="label_title" destination="Q6e-LI-rHV" id="DkX-2d-tV0"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableYoutubeViewCell" rowHeight="100" id="Uny-xH-Das" customClass="CategorySearchYoutubeTableViewCell" customModule="Conari" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableYoutubeViewCell" rowHeight="100" id="Uny-xH-Das" customClass="CategorySearchYoutubeTableViewCell" customModule="ConariUnitTests" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="162" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uny-xH-Das" id="67Q-Mv-oWI">
@@ -1555,7 +1555,7 @@
         <!--About-->
         <scene sceneID="gHV-f2-9e5">
             <objects>
-                <viewController id="455-y7-Qlj" customClass="AboutViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="455-y7-Qlj" customClass="AboutViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m94-YK-Lux"/>
                         <viewControllerLayoutGuide type="bottom" id="anf-M1-TQM"/>
@@ -1722,7 +1722,7 @@
         <!--Additional Information-->
         <scene sceneID="u0V-xo-wd7">
             <objects>
-                <tableViewController storyboardIdentifier="ViewAdditionalInformationTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O1f-zc-nu8" customClass="ViewAdditionalInformationTableViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ViewAdditionalInformationTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O1f-zc-nu8" customClass="ViewAdditionalInformationTableViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="c2D-I5-nCe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
