@@ -23,8 +23,9 @@ class CategorySearchUITests: XCTestCase {
   
   
   func testAllCategories() {
+    sleep(1);
     XCUIApplication().buttons["Continue without login"].tap()
-     sleep(1);
+    sleep(1);
     let tablesQuery = XCUIApplication().tables
     XCTAssertTrue(tablesQuery.staticTexts["Arts and Entertainment"].exists, "Arts and Entertainment missing")
     XCTAssertTrue(tablesQuery.staticTexts["Cars & Other Vehicles"].exists, "Cars & Other Vehicles missing")
@@ -52,21 +53,20 @@ class CategorySearchUITests: XCTestCase {
   }
   
 func testTableCell() {
-  
+   
+  sleep(1);
   XCUIApplication().buttons["Continue without login"].tap()
   sleep(1);
   
   let tablesQuery = XCUIApplication().tables
   tablesQuery.staticTexts["Arts and Entertainment"].tap()
     
-  XCTAssertTrue(tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0)
-    .staticTexts["tutorialTitle"].exists)
-  XCTAssertTrue(tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0)
-    .staticTexts["tutorialCategory"].exists)
-  XCTAssertTrue(tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0)
-    .staticTexts["tutorialDifficulty"].exists)
-  XCTAssertTrue(tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0)
-    .staticTexts["tutorialDuration"].exists)
+  sleep(1);
+    
+    XCTAssertTrue(XCUIApplication().tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(0).exists)
+    XCTAssertTrue(XCUIApplication().tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(1).exists)
+    XCTAssertTrue(XCUIApplication().tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(2).exists)
+    XCTAssertTrue(XCUIApplication().tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(3).exists)
     
 
     
