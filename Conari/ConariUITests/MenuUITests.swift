@@ -65,8 +65,6 @@ class MenuUITests: XCTestCase {
     
     let textFieldUsername = app.textFields["username"]
     let textFieldPassword = app.secureTextFields["password"]
-    XCTAssert(app.staticTexts["Username:"].exists)
-    XCTAssert(app.staticTexts["Password:"].exists)
     
     textFieldUsername.tap()
     XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
@@ -129,7 +127,8 @@ class MenuUITests: XCTestCase {
     app.textFields["Surname"].tap()
     app.textFields["Surname"].clearAndEnterText("Tester")
     
-    app.buttons["DoneBtn"].tap()
+    app.buttons["Save"].tap()
+    
     app.navigationBars["Change Name"].buttons["Menu"].tap()
     
     // changed Name
@@ -272,5 +271,5 @@ class MenuUITests: XCTestCase {
     
     app.buttons["Logout"].tap()
   }
-
+  
 }

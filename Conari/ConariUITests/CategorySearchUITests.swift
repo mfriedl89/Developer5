@@ -23,11 +23,9 @@ class CategorySearchUITests: XCTestCase {
   
   
   func testAllCategories() {
-    
-    let app = XCUIApplication()
-    app.buttons["Continue without login"].tap()
-    
-    let tablesQuery = app.tables
+    XCUIApplication().buttons["Continue without login"].tap()
+     sleep(1);
+    let tablesQuery = XCUIApplication().tables
     XCTAssertTrue(tablesQuery.staticTexts["Arts and Entertainment"].exists, "Arts and Entertainment missing")
     XCTAssertTrue(tablesQuery.staticTexts["Cars & Other Vehicles"].exists, "Cars & Other Vehicles missing")
     XCTAssertTrue(tablesQuery.staticTexts["Computers and Electronics"].exists, "Computers and Electronics missing")
@@ -48,7 +46,39 @@ class CategorySearchUITests: XCTestCase {
     XCTAssertTrue(tablesQuery.staticTexts["Travel"].exists, "Travel missing")
     XCTAssertTrue(tablesQuery.staticTexts["Work World"].exists, "Work World missing")
     XCTAssertTrue(tablesQuery.staticTexts["Youth"].exists, "Youth missing")
+ 
     
+    
+  }
+  
+func testTableCell() {
+  
+  XCUIApplication().buttons["Continue without login"].tap()
+  sleep(1);
+  
+  let tablesQuery = XCUIApplication().tables
+  tablesQuery.staticTexts["Arts and Entertainment"].tap()
+    
+  XCTAssertTrue(tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0)
+    .staticTexts["tutorialTitle"].exists)
+  XCTAssertTrue(tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0)
+    .staticTexts["tutorialCategory"].exists)
+  XCTAssertTrue(tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0)
+    .staticTexts["tutorialDifficulty"].exists)
+  XCTAssertTrue(tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0)
+    .staticTexts["tutorialDuration"].exists)
+    
+
+    
+    
+    //let tableCell = CategorySearchTableViewCell()
+    
+    //tableCell.
+    
+    //XCTAssert(app.staticTexts["Test"].exists)
+    //XCTAssert(app.staticTexts["Arts and Entertainment"].exists)
+    //XCTAssert(app.staticTexts["easy"].exists)
+    //XCTAssert(app.staticTexts["00:05"].exists)
   }
   
 }
