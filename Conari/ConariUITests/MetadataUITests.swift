@@ -33,28 +33,29 @@ class MetadataUITests: XCTestCase {
     let textFieldUsername = app.textFields["username"]
     let textFieldPassword = app.secureTextFields["password"]
     
-    sleep(1);
-    
     XCTAssert(app.staticTexts["Username:"].exists)
     XCTAssert(app.staticTexts["Password:"].exists)
     
     textFieldUsername.tap()
     XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
-    textFieldUsername.typeText("3")
-    XCTAssertEqual(textFieldUsername.value as? String, "3")
+    textFieldUsername.typeText("anton")
+    XCTAssertEqual(textFieldUsername.value as? String, "anton")
     
     textFieldPassword.tap()
     XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
-    textFieldPassword.typeText("3")
+    textFieldPassword.typeText("Test1234@")
     
     app.buttons["Login"].tap()
     
+    sleep(1);
     
-    app.navigationBars["Conari"].buttons["Tutorial erstellen"].tap()
+    app.buttons["Create Text Tutorial"].tap()
     app.textFields["title"].tap()
     app.textFields["title"].typeText("test")
     XCTAssertEqual(app.textFields["title"].value as? String, "test")
     app.buttons["Done"].tap()
+    
+    sleep(1);
     
     let incrementButton = app.steppers.buttons["Increment"]
     incrementButton.tap()
@@ -65,13 +66,16 @@ class MetadataUITests: XCTestCase {
     app.pickerWheels["Arts and Entertainment"].tap()
     app.textFields["duration"].tap()
     app.pickerWheels["00:00"].tap()
-    app.buttons["Weiter"].tap()
+    app.buttons["Next"].tap()
+    
+    sleep(1);
     
     let element = app.otherElements["texteditor"].childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
     element.tap()
     
     let returnButton = app.buttons["Return"]
     returnButton.tap()
+    sleep(1);
     
     let element2 = element.childrenMatchingType(.Other).element
     element2.childrenMatchingType(.TextField).element
@@ -84,6 +88,7 @@ class MetadataUITests: XCTestCase {
     app.collectionViews["PhotosGridView"].cells["Photo, Landscape, March 13, 2011, 1:17 AM"].tap()
     sleep(1)
     app.buttons["Save"].tap()
+    sleep(1);
     //app.navigationBars["Test"].buttons["Save"].tap()
     
     
