@@ -288,6 +288,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E0193BE21CEC574700577E06 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		E06D7FAD1CBE221F003001BD = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +323,7 @@
 			children = (
 				E06D7FB91CBE2220003001BD /* AppDelegate.swift */,
 				E06D7FC01CBE2220003001BD /* Assets.xcassets */,
+				E0193BE21CEC574700577E06 /* Images */,
 				E06D7FC51CBE2220003001BD /* Info.plist */,
 				3A877DD91CF5B52600BD0377 /* Manager */,
 				3A877DD61CF5B4E000BD0377 /* Screens */,
