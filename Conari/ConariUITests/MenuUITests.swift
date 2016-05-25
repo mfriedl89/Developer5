@@ -91,7 +91,7 @@ class MenuUITests: XCTestCase {
         sleep(1)
         app.buttons["Menu"].tap()
         sleep(1)
-        app.buttons["Change First Name and Surname"].tap()
+        app.buttons["Change Name"].tap()
         sleep(1)
         app.navigationBars["Change Name"].buttons["Menu"].tap()
         sleep(1)
@@ -179,7 +179,7 @@ func testName() {
     
     app.buttons["Login"].tap()
     
-    app.buttons["Change First Name and Surname"].tap()
+    app.buttons["Change Name"].tap()
     
     app.textFields["Firstname"].tap()
     app.textFields["Firstname"].clearAndEnterText("Paul")
@@ -198,7 +198,7 @@ func testName() {
     // changed Name
     // now check it
     
-    app.buttons["Change First Name and Surname"].tap()
+    app.buttons["Change Name"].tap()
     
     sleep(1)
     
@@ -239,7 +239,7 @@ func testChangeFalseFirstName() {
     
     app.buttons["Login"].tap()
     
-    app.buttons["Change First Name and Surname"].tap()
+    app.buttons["Change Name"].tap()
     
     app.textFields["Firstname"].tap()
     app.textFields["Firstname"].clearAndEnterText("Paul!!!")
@@ -258,7 +258,7 @@ func testChangeFalseFirstName() {
     // changed Name
     // now check it
     
-    app.buttons["Change First Name and Surname"].tap()
+    app.buttons["Change Name"].tap()
     
     sleep(1)
     
@@ -298,7 +298,7 @@ func testChangeFalseSurName() {
     
     app.buttons["Login"].tap()
     
-    app.buttons["Change First Name and Surname"].tap()
+    app.buttons["Change Name"].tap()
     
     app.textFields["Firstname"].tap()
     app.textFields["Firstname"].clearAndEnterText("Paul")
@@ -317,7 +317,7 @@ func testChangeFalseSurName() {
     // changed Name
     // now check it
     
-    app.buttons["Change First Name and Surname"].tap()
+    app.buttons["Change Name"].tap()
     
     sleep(1)
     
