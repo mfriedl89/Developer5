@@ -540,8 +540,8 @@ class DatabaseManager {
     if tutorial_title != "" {
       postString += "title=" + tutorial_title.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)! as String!
     }
-    
     postString += "&category=" + String(tutorial_category)
+    
     
     //print(postString)
     
