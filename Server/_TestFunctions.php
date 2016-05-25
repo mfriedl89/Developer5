@@ -24,7 +24,7 @@ function echoWithNewline($message) {
 }
 
 function testPasswordFromDb($mysqli) {
-	$username = "anton";
+	$username = "NewTestUser";
 	$username_false = "anto1";
 	if(!(getPasswordHashedFromDb($mysqli, $username) != ""))
 		return false;
@@ -35,8 +35,8 @@ function testPasswordFromDb($mysqli) {
 }
 
 function testValidUser($mysqli) {
-	$username = "anton";
-	$username_false = "anto1";
+	$username = "TestUser";
+	$username_false = "UserDoesNotExist";
 	$password = "Test1234@";
 	$password_false = "falsepw";
 	if(!(validUser($mysqli, $username, $password) == true))
@@ -56,7 +56,7 @@ function testTutorials($mysqli) {
 	$tut_difficulty = "1";
 	$tut_duration = "1";
 	$tut_text = "This is the tutorial content";
-	$tut_username = "anton";
+	$tut_username = "TestUser";
 	$new_tut_id = insertTutorial($mysqli, $tut_name, $tut_category, $tut_difficulty, $tut_duration, $tut_text, $tut_username);
 	if(!($new_tut_id > 0)) {
 		echoWithNewline("New tutorial ID should be >0");
@@ -102,7 +102,7 @@ function testTutorials($mysqli) {
 }
 
 function testUsers($mysqli) {
-	$username = "anton";
+	$username = "TestUser";
 	$password = "Test1234@";
 	$password_false = "falsepw";
 
