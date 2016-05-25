@@ -1,14 +1,14 @@
 //
-//  ConariUnitTests.swift
-//  ConariUnitTests
+//  LoginUnitConariTests.swift
+//  LoginUnitConariTests
 //
-//  Created by Markus Friedl on 18.05.16.
+//  Created by Markus Friedl on 20.04.16.
 //  Copyright © 2016 Markus Friedl. All rights reserved.
 //
 
 import XCTest
 
-class ConariUnitTests: XCTestCase {
+class LoginUnitConariTests: XCTestCase {
   
   override func setUp() {
     super.setUp()

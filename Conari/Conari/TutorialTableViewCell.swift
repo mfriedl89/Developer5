@@ -9,19 +9,19 @@
 import UIKit
 
 class TutorialTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var tutorialTitleLabel: UILabel!
-    @IBOutlet weak var tutorialDetailTextLabel: UILabel!
+  
+  @IBOutlet weak var tutorialTitleLabel: UILabel!
+  @IBOutlet weak var tutorialDetailTextLabel: UILabel!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    // Initialization code
+  }
+  
+  override func setSelected(selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    // Configure the view for the selected state
+  }
+  
 }
