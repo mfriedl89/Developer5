@@ -1,14 +1,14 @@
 //
-//  WelcomeScreenViewController.swift
+//  AboutViewController.swift
 //  Conari
 //
-//  Created by Markus Friedl on 13.04.16.
+//  Created by Markus Friedl on 25.05.16.
 //  Copyright © 2016 Markus Friedl. All rights reserved.
 //
 
 import UIKit
 
-class WelcomeScreenViewController: UIViewController {
+class AboutViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -16,13 +16,13 @@ class WelcomeScreenViewController: UIViewController {
     // Do any additional setup after loading the view.
   }
   
+  override func viewWillAppear(animated: Bool) {
+    self.navigationController?.navigationBarHidden = false
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
-  }
-  
-  override func viewWillAppear(animated: Bool) {
-    self.navigationController?.navigationBarHidden = true
   }
   
   

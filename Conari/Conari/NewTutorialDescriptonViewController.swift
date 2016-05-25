@@ -20,8 +20,6 @@ class NewTutorialDescriptonViewController: UIViewController {
   
   let imagePicker = UIImagePickerController()
   
-  
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = current.Title
@@ -38,15 +36,11 @@ class NewTutorialDescriptonViewController: UIViewController {
     keyman?.toolbar.editor = editor
     
     imagePicker.delegate = self
-    if(UIImagePickerController.isSourceTypeAvailable(.Camera))
-    {
+    if(UIImagePickerController.isSourceTypeAvailable(.Camera)) {
       imagePicker.sourceType = .Camera
-    }else
-    {
+    } else {
       imagePicker.sourceType = .PhotoLibrary
     }
-    
-    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -68,24 +62,14 @@ class NewTutorialDescriptonViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  
-  
-  
-  
-  
   @IBAction func SavePressed(sender: AnyObject) {
     
-    DatabaseManager.sharedManager.CreateTutorial(current, content:(editor?.getHTML())!) { success, message in
+    DatabaseManager.sharedManager.createTutorial(current, content:(editor?.getHTML())!) { success, message in
       print("upload-success: \(success), login-message:\(message)")
-      if success == true
-      {
-        
-        print("sucess");
+      if success == true {
         dispatch_async(dispatch_get_main_queue(),{
           
-          
-          for viewcontoller in (self.navigationController?.viewControllers)!
-          {
+          for viewcontoller in (self.navigationController?.viewControllers)! {
             if(viewcontoller.isKindOfClass(MenuViewController))
             {
               self.navigationController?.popToViewController(viewcontoller, animated: true);
@@ -93,9 +77,7 @@ class NewTutorialDescriptonViewController: UIViewController {
           }
           
         });
-      }
-      else
-      {
+      } else {
         dispatch_async(dispatch_get_main_queue(),{
           let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
           alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
@@ -104,10 +86,7 @@ class NewTutorialDescriptonViewController: UIViewController {
         });
       }
     }
-    
-    
   }
-  
   
   // MARK: - Navigation
   
@@ -115,22 +94,14 @@ class NewTutorialDescriptonViewController: UIViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
-    
-    
   }
-  
-  
-  
-  
 }
 
 extension NewTutorialDescriptonViewController: RichEditorDelegate {
   
   func richEditor(editor: RichEditorView, heightDidChange height: Int) { }
   
-  func richEditor(editor: RichEditorView, contentDidChange content: String) {
-    
-  }
+  func richEditor(editor: RichEditorView, contentDidChange content: String) { }
   
   func richEditorTookFocus(editor: RichEditorView) { }
   
@@ -158,18 +129,14 @@ extension UIImage {
   }
 }
 
-extension NewTutorialDescriptonViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate
-{
+extension NewTutorialDescriptonViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
-  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
-  {
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
     if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-      //pickedImage.decreaseSize(<#T##sender: AnyObject?##AnyObject?#>)
       let imageData = UIImageJPEGRepresentation(pickedImage.resizeToWidth(200),0.3)
       let base64String = imageData!.base64EncodedStringWithOptions([])
       editor?.insertImage("data:image/gif;base64,"+base64String, alt: "picture")
     }
-    
     
     dismissViewControllerAnimated(true, completion: nil)
   }
@@ -207,10 +174,7 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
   
   func richEditorToolbarInsertImage(toolbar: RichEditorToolbar) {
     
-    
-    
     let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
-    
     
     let Camera = UIAlertAction(title: "Camera", style: .Default, handler: {
       (alert: UIAlertAction!) -> Void in
@@ -220,6 +184,7 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
         self.presentViewController(self.imagePicker, animated: true, completion: nil)
       }
     })
+    
     let Library = UIAlertAction(title: "Photo Library", style: .Default, handler: {
       (alert: UIAlertAction!) -> Void in
       if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
@@ -233,29 +198,17 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
       (alert: UIAlertAction!) -> Void in
     })
     
-    
-    
     // 4
-    if(UIImagePickerController.isSourceTypeAvailable(.Camera))
-    {
+    if(UIImagePickerController.isSourceTypeAvailable(.Camera)) {
       optionMenu.addAction(Camera)
     }
-    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
-    {
+    
+    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary)) {
       optionMenu.addAction(Library)
     }
     
     optionMenu.addAction(cancel)
     
     self.presentViewController(optionMenu, animated: true, completion: nil)
-    
-    
-    
-    
-    
   }
-  
-  
 }
-
-

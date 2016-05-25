@@ -11,7 +11,7 @@ import YouTubePlayer
 
 class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, YouTubePlayerDelegate {
   
-  var TutorialID = 0
+  var tutorialID = 0
   var content = ""
   
   @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
@@ -31,7 +31,7 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
     videoPlayer.hidden = true
     videoPlayer.delegate = self
     
-    requestTutorial(TutorialID)
+    requestTutorial(tutorialID)
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -90,7 +90,6 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
   func webViewDidFinishLoad(webView: UIWebView) {
     loadIndicator.stopAnimating()
     loadingLabel.hidden = true
-    //webView.scrollView.contentOffset = CGPointMake(0, 0);
   }
   
   func playerReady(videoPlayer: YouTubePlayerView) {

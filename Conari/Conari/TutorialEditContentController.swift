@@ -40,11 +40,9 @@ class TutorialEditContentController: UIViewController {
     keyman?.toolbar.editor = editor
     
     imagePicker.delegate = self
-    if(UIImagePickerController.isSourceTypeAvailable(.Camera))
-    {
+    if(UIImagePickerController.isSourceTypeAvailable(.Camera)) {
       imagePicker.sourceType = .Camera
-    }else
-    {
+    } else {
       imagePicker.sourceType = .PhotoLibrary
     }
     
@@ -103,8 +101,7 @@ class TutorialEditContentController: UIViewController {
           }
         });
       }
-      else
-      {
+      else {
         dispatch_async(dispatch_get_main_queue(),{
           let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
           alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
@@ -120,9 +117,7 @@ extension TutorialEditContentController: RichEditorDelegate {
   
   func richEditor(editor: RichEditorView, heightDidChange height: Int) { }
   
-  func richEditor(editor: RichEditorView, contentDidChange content: String) {
-    
-  }
+  func richEditor(editor: RichEditorView, contentDidChange content: String) { }
   
   func richEditorTookFocus(editor: RichEditorView) { }
   
@@ -150,11 +145,8 @@ extension UIImage {
   }
 }
 
-extension TutorialEditContentController: UIImagePickerControllerDelegate, UINavigationControllerDelegate
-{
-  
-  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
-  {
+extension TutorialEditContentController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
     if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
       //pickedImage.decreaseSize(<#T##sender: AnyObject?##AnyObject?#>)
       let imageData = UIImageJPEGRepresentation(pickedImage.resizeToWidth(200),0.3)
@@ -171,7 +163,6 @@ extension TutorialEditContentController: UIImagePickerControllerDelegate, UINavi
 }
 
 extension TutorialEditContentController: RichEditorToolbarDelegate {
-  
   private func randomColor() -> UIColor {
     let colors = [
       UIColor.redColor(),
@@ -221,12 +212,10 @@ extension TutorialEditContentController: RichEditorToolbarDelegate {
     })
     
     // 4
-    if(UIImagePickerController.isSourceTypeAvailable(.Camera))
-    {
+    if(UIImagePickerController.isSourceTypeAvailable(.Camera)) {
       optionMenu.addAction(Camera)
     }
-    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
-    {
+    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary)) {
       optionMenu.addAction(Library)
     }
     

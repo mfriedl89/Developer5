@@ -9,12 +9,12 @@
 import UIKit
 
 struct TutorialMetaData {
-  var id:Int;
-  var OldTitle:String;
-  var Title:String;
-  var category:Int;
-  var duration:Int;
-  var difficulty:Int;
+  var id: Int;
+  var OldTitle: String;
+  var Title: String;
+  var category: Int;
+  var duration: Int;
+  var difficulty: Int;
 }
 
 class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
@@ -27,7 +27,6 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   var timePickerView : UIPickerView!
   
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
-  
   
   var categories = ["Arts and Entertainment",
                     "Cars & Other Vehicles",
@@ -48,9 +47,6 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                     "Travel",
                     "Work World",
                     "Youth"]
-  
-  
-  
   
   var times: [String] = []
   
@@ -83,9 +79,6 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     DurationTextField_.selectedTextRange = nil;
     
     titleTextField_.delegate = self
-    
-    
-    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -115,19 +108,14 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     switch DifficultyStepper_.value {
     case 5:
       difficultyLabel_.text = "very hard";
-      break;
     case 4:
       difficultyLabel_.text = "hard";
-      break;
     case 3:
       difficultyLabel_.text = "medium";
-      break;
     case 2:
       difficultyLabel_.text = "easy";
-      break;
     case 1:
       difficultyLabel_.text = "very easy";
-      break;
     default:
       return;
     }
@@ -137,44 +125,40 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
     return 1
   }
+  
   func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     if pickerView == categoryPickerView{
       return categories.count
-    }else
-    {
+    } else {
       return times.count
     }
-    
   }
+  
   func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     if pickerView == categoryPickerView{
       return categories[row]
-    }else
-    {
+    } else {
       return times[row]
     }
-    
   }
+  
   func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if pickerView == categoryPickerView{
       categoryTextField_.text = categories[row]
       current.category = row;
       categoryTextField_.selectedTextRange = nil;
-      
-    }else
-    {
+    } else {
       current.duration = row*5
       DurationTextField_.text = times[row] + " hh:mm"
       
       DurationTextField_.selectedTextRange = nil;
     }
+    
     self.view.endEditing(true)
-    updateCurrentStruct();
-    //pickerView.hidden = true
+    updateCurrentStruct()
   }
   
-  func updateCurrentStruct()
-  {
+  func updateCurrentStruct() {
     current.Title = titleTextField_.text!
     current.difficulty = Int(DifficultyStepper_.value)
   }
@@ -190,15 +174,9 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         return
       }
       
-      
       let nextScene =  segue.destinationViewController as! NewTutorialDescriptonViewController
       nextScene.current = current
       return
-      
     }
   }
-  
-  
-  
-  
 }

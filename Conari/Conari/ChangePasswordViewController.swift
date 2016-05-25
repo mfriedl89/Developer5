@@ -22,7 +22,6 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
   var login_password_ = DatabaseManager.sharedManager.getUserPassword()
   var username = DatabaseManager.sharedManager.getUserName()
   
-  
   var newUserFunc = NewUserViewController()
   
   override func viewDidLoad() {
@@ -31,8 +30,6 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
     OldPasswordTextField.delegate = self
     NewPasswordTextField.delegate = self
     RepeatedPasswordTextField.delegate = self
-    
-    // Do any additional setup after loading the view.
   }
   
   override func didReceiveMemoryWarning() {
@@ -68,7 +65,6 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
       error = repeatedIsNotNew
     }
     
-    
     newUserFunc.checkInput(oldPwd == login_password_, textField: OldPasswordTextField)
     newUserFunc.checkInput(newUserFunc.checkPassword(newPwd), textField: NewPasswordTextField)
     newUserFunc.checkInput(repeatedPwd == newPwd, textField: RepeatedPasswordTextField)
@@ -78,21 +74,20 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
       let alert = UIAlertController(title: "Alert", message: "False Password", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
       self.presentViewController(alert, animated: true, completion: nil)
-      break
+      
     case repeatedIsNotNew:
       let alert = UIAlertController(title: "Alert", message: "Repeated Password is not the same as New Password", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
       self.presentViewController(alert, animated: true, completion: nil)
-      break
+
     case checkPasswordFalse:
       let alert = UIAlertController(title: "Alert", message: "Please enter a valid Password", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
       self.presentViewController(alert, animated: true, completion: nil)
-      break
+      
     case 0:
       DatabaseManager.sharedManager.changeUserPassword(username, new_password: NewPasswordTextField.text!, old_password: login_password_) {success, message in
-        if success == true
-        {
+        if success == true {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Changed Password", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
@@ -100,8 +95,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
             
           });
         }
-        else
-        {
+        else {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
@@ -111,16 +105,14 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         }
       }
       break
-    default: break
+    default:
+      break
     }
-    
     
     return error
   }
   
-  
   @IBAction func DoneBtnClicked(sender: AnyObject) {
     changePassword(OldPasswordTextField.text!, newPwd: NewPasswordTextField.text!, repeatedPwd: RepeatedPasswordTextField.text!)
   }
-  
 }

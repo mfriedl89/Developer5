@@ -171,6 +171,8 @@ func testName() {
     textFieldUsername.typeText("anton")
     XCTAssertEqual(textFieldUsername.value as? String, "anton")
     
+    sleep(1)
+    
     textFieldPassword.tap()
     XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
     textFieldPassword.typeText("Test1234@")

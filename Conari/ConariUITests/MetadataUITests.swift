@@ -72,7 +72,8 @@ class MetadataUITests: XCTestCase {
     app.pickerWheels["Arts and Entertainment"].tap()
     app.textFields["duration"].tap()
     app.pickerWheels["00:00"].tap()
-    app.buttons["Next"].tap()
+    app.navigationBars["Tutorial"].buttons["Next"].tap()
+
     
     sleep(1);
     
@@ -97,7 +98,7 @@ class MetadataUITests: XCTestCase {
     app.tables.buttons["Moments"].tap()
     app.collectionViews["PhotosGridView"].cells["Photo, Landscape, March 13, 2011, 1:17 AM"].tap()
     sleep(1)
-    app.buttons["Save"].tap()
+    app.navigationBars["test"].buttons["Save"].tap()
     //app.navigationBars["Test"].buttons["Save"].tap()
     
   }
