@@ -271,7 +271,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     func reloadArrays()
     {
       if text_search != "" {
-        YoutubeManager.sharedManager.searchVideoByTitle(text_search, completionHandler: {
+        YouTubeManager.sharedManager.searchVideoByTitle(text_search, completionHandler: {
           (response,success,message ) in
           if(!success || response.isEmpty)
           {
@@ -284,6 +284,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
               self.table_View.reloadData();
           })
         })
+
       }
 
       

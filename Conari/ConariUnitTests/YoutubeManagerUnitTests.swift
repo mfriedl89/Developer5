@@ -17,7 +17,7 @@ class YoutubeManagerUnitTests: XCTestCase {
   
   override func tearDown() {
     // Put teardown code here. This method isvarlled after the invocation of each test method in the class.
-    super.tearDown()
+   super.tearDown()
   }
   
   func testsearchVideoByTitle() {
@@ -26,7 +26,7 @@ class YoutubeManagerUnitTests: XCTestCase {
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     
-    YoutubeManager.sharedManager.searchVideoByTitle(title, completionHandler: {response,success,message in
+    YouTubeManager.sharedManager.searchVideoByTitle(title, completionHandler: {response,success,message in
       XCTAssertTrue(success)
       XCTAssertEqual(message, "")
       XCTAssertGreaterThan(response.count, 0)
@@ -49,7 +49,7 @@ class YoutubeManagerUnitTests: XCTestCase {
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     
-    YoutubeManager.sharedManager.searchVideoByTitle(title+" "+title2, completionHandler: {response,success,message in
+    YouTubeManager.sharedManager.searchVideoByTitle(title+" "+title2, completionHandler: {response,success,message in
       XCTAssertTrue(success)
       XCTAssertEqual(message, "")
       XCTAssertGreaterThan(response.count, 0)
@@ -71,9 +71,9 @@ class YoutubeManagerUnitTests: XCTestCase {
     
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
-    YoutubeManager.sharedManager.searchApiUrl = "https://www.googleapis.com/youtube/v99/search"
+    YouTubeManager.sharedManager.searchApiUrl = "https://www.googleapis.com/youtube/v99/search"
     
-    YoutubeManager.sharedManager.searchVideoByTitle(title, completionHandler: {response,success,message in
+    YouTubeManager.sharedManager.searchVideoByTitle(title, completionHandler: {response,success,message in
       XCTAssertFalse(success);
       XCTAssertNotEqual(message, "");
       readyExpectation.fulfill()
@@ -92,9 +92,9 @@ class YoutubeManagerUnitTests: XCTestCase {
     
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
-    YoutubeManager.sharedManager.searchApiUrl = "https://www.google.de"
+    YouTubeManager.sharedManager.searchApiUrl = "https://www.google.de"
     
-    YoutubeManager.sharedManager.searchVideoByTitle(title, completionHandler: {response,success,message in
+    YouTubeManager.sharedManager.searchVideoByTitle(title, completionHandler: {response,success,message in
       XCTAssertFalse(success);
       XCTAssertNotEqual(message, "");
       readyExpectation.fulfill()
@@ -115,9 +115,9 @@ class YoutubeManagerUnitTests: XCTestCase {
     
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
-    YoutubeManager.sharedManager.apiKey = "123"
+    YouTubeManager.sharedManager.apiKey = "123"
     
-    YoutubeManager.sharedManager.searchVideoByTitle(title, completionHandler: {response,success,message in
+    YouTubeManager.sharedManager.searchVideoByTitle(title, completionHandler: {response,success,message in
       XCTAssertFalse(success);
       XCTAssertNotEqual(message, "");
       readyExpectation.fulfill()
@@ -136,9 +136,9 @@ class YoutubeManagerUnitTests: XCTestCase {
     
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
-    YoutubeManager.sharedManager.searchApiUrl = "1"
+    YouTubeManager.sharedManager.searchApiUrl = "1"
     
-    YoutubeManager.sharedManager.searchVideoByTitle(title, completionHandler: {response,success,message in
+    YouTubeManager.sharedManager.searchVideoByTitle(title, completionHandler: {response,success,message in
       XCTAssertFalse(success);
       XCTAssertNotEqual(message, "");
       readyExpectation.fulfill()
