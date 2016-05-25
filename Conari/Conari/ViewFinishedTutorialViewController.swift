@@ -32,16 +32,6 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
     videoPlayer.delegate = self
     
     requestTutorial(TutorialID)
-    
-    //Unit Tests
-    //    let videoID = "Iumsqz6LMnM"
-    //    var input = YouTubeManager.sharedManager.identifier + videoID
-    //    var videoID = YouTubeManager.sharedManager.parseIdentifier(input)
-    //    XCTAssertsEqual(videoID, "Iumsqz6LMnM", "Parsing the identifier failed")
-    
-    //    input = "ConariYouTubeTutorial - apiKey: , videoID: Iumsqz6LMnM"
-    //    videoID = YouTubeManager.sharedManager.parseIdentifier(input)
-    //    XCTAssertNil(videoID, "The videoID should be nil")
   }
   
   override func viewWillAppear(animated: Bool) {
