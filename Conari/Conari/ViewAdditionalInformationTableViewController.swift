@@ -10,7 +10,7 @@ import UIKit
 
 class ViewAdditionalInformationTableViewController: UITableViewController {
 
-    var tutorial: Tutorial_item? = nil
+  var tutorial: Tutorial_item? = nil
   
   var difficultLabels = ["very easy",
                          "easy",

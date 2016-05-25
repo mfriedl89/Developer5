@@ -83,7 +83,7 @@ class MenuUITests: XCTestCase {
     
     app.buttons["Search Tutorials"].tap()
     sleep(1)
-    app.navigationBars["Conari"].buttons["Menu"].tap()
+    app.navigationBars["Mr Tutor"].buttons["Menu"].tap()
     sleep(1)
     app.buttons["Create Text Tutorial"].tap()
     sleep(1)
@@ -93,7 +93,7 @@ class MenuUITests: XCTestCase {
     sleep(1)
     app.buttons["Menu"].tap()
     sleep(1)
-    app.buttons["Change First Name and Surname"].tap()
+    app.buttons["Change Name"].tap()
     sleep(1)
     app.navigationBars["Change Name"].buttons["Menu"].tap()
     sleep(1)
@@ -135,7 +135,7 @@ class MenuUITests: XCTestCase {
     
     app.buttons["Login"].tap()
     
-    app.buttons["Change First Name and Surname"].tap()
+    app.buttons["Change Name"].tap()
     
     app.textFields["Firstname"].tap()
     app.textFields["Firstname"].clearAndEnterText("Paul")
@@ -154,7 +154,7 @@ class MenuUITests: XCTestCase {
     // changed Name
     // now check it
     
-    app.buttons["Change First Name and Surname"].tap()
+    app.buttons["Change Name"].tap()
     
     sleep(1)
     
