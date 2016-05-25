@@ -33,6 +33,8 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
   
   var scrollInset : CGFloat = 0
   
+  var success:Bool = false
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -365,6 +367,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
       DatabaseManager.sharedManager.createUser(userName.text!, password: password.text!, firstName: name.text!, surName: surname.text!, email: email.text!) { success, message in
         
         self.showMessage(message!, username: self.userName.text!)
+        
       }
     }
     
@@ -377,10 +380,18 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
       
       //create alert
       if(message == "true") {
+        self.success = true
         title = "Success"
         msg = "Created user: \(username)"
+        self.userName.text = ""
+        self.name.text = ""
+        self.surname.text = ""
+        self.email.text = ""
+        self.password.text = ""
+        self.repeatedPassword.text = ""
       }
       else {
+        self.success = false
         title = "Error"
         msg = message
       }
@@ -402,14 +413,17 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
   
   func okHandler(alertAction: UIAlertAction!) -> Void {
     dispatch_async(dispatch_get_main_queue(),{
-      
-      for viewcontoller in (self.navigationController?.viewControllers)!
+      if(self.success)
       {
-        if(viewcontoller.isKindOfClass(LoginViewController))
+        for viewcontoller in (self.navigationController?.viewControllers)!
         {
-          self.navigationController?.popToViewController(viewcontoller, animated: true);
+          if(viewcontoller.isKindOfClass(LoginViewController))
+          {
+            self.navigationController?.popToViewController(viewcontoller, animated: true);
+          }
         }
       }
+      
     });
   }
   

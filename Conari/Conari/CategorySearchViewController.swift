@@ -10,6 +10,36 @@ import UIKit
 import SDWebImage
 
 class CategorySearchViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SDWebImageManagerDelegate, UISearchDisplayDelegate, UISearchResultsUpdating  {
+  var categories = ["All",
+                    "Arts and Entertainment",
+                    "Cars & Other Vehicles",
+                    "Computers and Electronics",
+                    "Conari",
+                    "Education and Communications",
+                    "Finance and Business",
+                    "Food and Entertaining",
+                    "Health",
+                    "Hobbies and Crafts",
+                    "Holidays and Traditions",
+                    "Home and Garden",
+                    "Personal Care and Style",
+                    "Pets and Animals",
+                    "Philosophy and Religion",
+                    "Relationships",
+                    "Sports and Fitness",
+                    "Travel",
+                    "Work World",
+                    "Youth"]
+
+  
+    
+    var selected_category = 0
+    var text_search = ""
+    
+    var screen_width: CGFloat = 0
+    var screen_height: CGFloat = 0
+    
+    var searchController: UISearchController!
   
   var selectedCategory = 0
   var textSearch = ""
@@ -86,6 +116,61 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       case 2:
         cell.label_difficulty?.text = "easy";
         
+        
+        if (text_search == "")
+        {
+            configureSearchController()
+            self.title = self.categories[selected_category]
+        }
+        else
+        {
+            self.title = text_search
+        
+        }
+        
+        reloadArrays()
+    }
+
+
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+      switch indexPath.section {
+      case 0:
+        let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
+        let duration_hours = Int(tutorial_array[indexPath.row].duration)!/60
+        let duration_minutes = Int(tutorial_array[indexPath.row].duration)!%60
+        
+        cell.label_title?.text = tutorial_array[indexPath.row].title
+        cell.label_category?.text = categories[tutorial_array[indexPath.row].category]
+        
+        cell.label_duration.text = String(format: "%02d:%02d", duration_hours,duration_minutes)
+        cell.image_view.image = UIImage(named: "\(tutorial_array[indexPath.row].category-1)")
+        
+        switch Int(tutorial_array[indexPath.row].difficulty)! {
+        case 5:
+          cell.label_difficulty?.text = "very hard";
+          break;
+        case 4:
+          cell.label_difficulty?.text = "hard";
+          break;
+        case 3:
+          cell.label_difficulty?.text = "medium";
+          break;
+        case 2:
+          cell.label_difficulty?.text = "easy";
+          break;
+        case 1:
+          cell.label_difficulty?.text = "very easy";
+          break;
+        default:
+          break
+        }
+        return cell
       case 1:
         cell.label_difficulty?.text = "very easy";
         
