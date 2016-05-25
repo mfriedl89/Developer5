@@ -120,7 +120,6 @@
 		8AB1A2D53EAE75A37FDCA2F3 /* Pods_Conari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Conari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B7229AD6B89D8005E15FC5 /* Pods-ConariUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUnitTests/Pods-ConariUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE0B90891CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeManagerUnitTests.swift; sourceTree = "<group>"; };
-		AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTutorialUITests.swift; sourceTree = "<group>"; };
 		AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchViewController.swift; sourceTree = "<group>"; };
 		AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -132,7 +131,6 @@
 		AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
 		B453908F5D025818C6740170 /* Pods_ConariUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConariUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchUITests.swift; sourceTree = "<group>"; };
 		CC19B1584554AE041ABD6DB2 /* Pods-Conari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conari.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conari/Pods-Conari.release.xcconfig"; sourceTree = "<group>"; };
 		D94F1562B0D9C25DE3227B36 /* Pods-ConariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
@@ -293,8 +291,6 @@
 		E0193BE21CEC574700577E06 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				AE3CF5DB1CE338A00080D7E5 /* SearchTutorialUITests.swift */,
-				C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */,
 			);
 			name = Images;
 			sourceTree = "<group>";
