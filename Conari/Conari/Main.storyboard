@@ -139,14 +139,26 @@
                                     <action selector="ClickSelectVideo:" destination="1Ma-1Z-nY4" eventType="touchUpInside" id="I97-fF-mCt"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0QT-uL-6u9">
+                                <rect key="frame" x="180" y="170" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="OPm-nf-VTw"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0QT-uL-6u9" firstAttribute="top" secondItem="ERT-4m-Eck" secondAttribute="bottom" constant="24" id="6k1-tI-aEZ"/>
                             <constraint firstItem="ERT-4m-Eck" firstAttribute="top" secondItem="7EU-NQ-FZO" secondAttribute="bottom" constant="52" id="IFj-ck-rjK"/>
+                            <constraint firstItem="0QT-uL-6u9" firstAttribute="centerX" secondItem="ERT-4m-Eck" secondAttribute="centerX" id="bdS-6e-7Ek"/>
                             <constraint firstItem="ERT-4m-Eck" firstAttribute="centerX" secondItem="VG6-SG-vQz" secondAttribute="centerX" id="h23-Se-CTu"/>
+                            <constraint firstItem="gag-LA-D3T" firstAttribute="top" secondItem="0QT-uL-6u9" secondAttribute="bottom" constant="302" id="svf-O2-iya"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="xPp-LE-Vel"/>
+                    <connections>
+                        <outlet property="VideoThumbnail" destination="0QT-uL-6u9" id="Vf6-aZ-gpM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54I-YQ-Ybr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

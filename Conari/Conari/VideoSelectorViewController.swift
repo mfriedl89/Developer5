@@ -19,6 +19,8 @@ class VideoSelectorViewController: UIViewController, UIImagePickerControllerDele
   
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0);
  
+  @IBOutlet weak var VideoThumbnail: UIImageView!
+  
   @IBAction func ClickSelectVideo(sender: AnyObject) {
     
     imagePicker.allowsEditing = false
@@ -43,6 +45,26 @@ class VideoSelectorViewController: UIViewController, UIImagePickerControllerDele
     
     print(pickedVideoURL.absoluteString)
     dismissViewControllerAnimated(true, completion: nil)
+    
+    
+    var asset:AVAsset = AVAsset(URL: pickedVideoURL)
+    var assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+    var time: CMTime = asset.duration
+    time.value = 0
+    
+    var imageRef: CGImage?
+    do
+    {
+      imageRef =  try assetImgGenerate.copyCGImageAtTime(time, actualTime: nil)
+    }
+    catch
+    {
+      print(error)
+    }
+  
+    var frameImg : UIImage = UIImage(CGImage: imageRef!)
+    
+    VideoThumbnail.image = frameImg
   }
 
   
