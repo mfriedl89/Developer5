@@ -181,6 +181,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     }
     
   }
+  
   func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     if pickerView == categoryPickerView{
       return categories[row]
@@ -189,6 +190,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     }
     
   }
+  
   func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if pickerView == categoryPickerView{
       categoryTextField_.text = categories[row]
@@ -204,7 +206,6 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     self.view.endEditing(true)
     updateCurrentStruct();
   }
-  
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "edit_tutorial" {
