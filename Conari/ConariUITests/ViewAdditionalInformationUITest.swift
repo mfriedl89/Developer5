@@ -31,7 +31,6 @@ class ViewAdditionalInformationUITest: XCTestCase {
   func testInformationFields() {
     // navigate to view
     
-    
     sleep(1)
     
     let app = XCUIApplication()
@@ -49,7 +48,7 @@ class ViewAdditionalInformationUITest: XCTestCase {
     
     sleep(1)
     
-    app.navigationBars.buttons["info"].tap()
+    app.navigationBars["ccc"].buttons["More Info"].tap()
     
     /*
     sleep(1);
