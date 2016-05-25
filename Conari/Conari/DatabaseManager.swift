@@ -21,6 +21,7 @@ struct Tutorial {
   var difficulty: String
   var duration: String
   var text: String
+  var id: String
 }
 
 class Tutorial_item {
@@ -376,7 +377,9 @@ class DatabaseManager {
             category: jsonData[1] as! Int,
             difficulty: jsonData[2] as! String,
             duration: jsonData[3] as! String,
-            text: (jsonData[4] as! String).stringByReplacingOccurrencesOfString("\\\"", withString: "\""))
+            text: (jsonData[4] as! String).stringByReplacingOccurrencesOfString("\\\"", withString: "\""),
+            id: String(tutorialID)
+          )
         }
         else {
           responseString = "Tutorial not found!"
@@ -395,6 +398,7 @@ class DatabaseManager {
         callback(nil, "\(error)")
       }
       
+      print("RequestTutorial: tutorialID:\(tutorialID), json[5]:\(responseTutorial?.id)")
       
       let message: String? = (responseString as? String)
       

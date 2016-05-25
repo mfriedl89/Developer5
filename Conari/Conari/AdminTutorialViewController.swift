@@ -131,6 +131,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
         svc.oldTitle = tutorial?.title
         svc.oldCategory = self.categories[(tutorial?.category)!]
         svc.editTutorial = tutorial
+        svc.editTutorialId = String(tutorialID)
         
         self.navigationController?.pushViewController(svc, animated: true)
       })
@@ -168,11 +169,13 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
         if success == true
         {
           print("success");
-          self.tutorial_array.removeAtIndex(indexPath.row)
-          self.tutorialsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+          dispatch_async(dispatch_get_main_queue(),{
+            self.tutorial_array.removeAtIndex(indexPath.row)
+            self.tutorialsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
           
-          self.laodIndicator.stopAnimating()
-          self.laodIndicator.hidden = true
+            self.laodIndicator.stopAnimating()
+            self.laodIndicator.hidden = true
+          });
         }
         else
         {
