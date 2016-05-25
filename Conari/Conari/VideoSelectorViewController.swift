@@ -41,10 +41,8 @@ class VideoSelectorViewController: UIViewController, UIImagePickerControllerDele
   {
     let pickedVideoURL = info[UIImagePickerControllerReferenceURL] as! NSURL
     
-    let alert = UIAlertController(title: "Error", message: pickedVideoURL.absoluteString, preferredStyle: UIAlertControllerStyle.Alert)
-    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-    self.presentViewController(alert, animated: true, completion: nil)
-    return
+    print(pickedVideoURL.absoluteString)
+    dismissViewControllerAnimated(true, completion: nil)
   }
 
   
