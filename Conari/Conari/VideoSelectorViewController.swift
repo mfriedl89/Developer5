@@ -49,6 +49,7 @@ class VideoSelectorViewController: UIViewController, UIImagePickerControllerDele
     
     var asset:AVAsset = AVAsset(URL: pickedVideoURL)
     var assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+    assetImgGenerate.appliesPreferredTrackTransform = true
     var time: CMTime = asset.duration
     time.value = 0
     
