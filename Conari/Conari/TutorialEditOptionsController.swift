@@ -23,6 +23,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
   
   var editTutorial : Tutorial?
   var editTutorialText: String?
+  var editTutorialId: String?
   
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
   
@@ -224,6 +225,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
       let nextScene =  segue.destinationViewController as! TutorialEditContentController
       nextScene.current = current
       nextScene.currentText = (editTutorial?.text)!.stringByReplacingOccurrencesOfString("\\\"", withString: "\"")
+      nextScene.currentId = self.editTutorialId
       
       return
     }

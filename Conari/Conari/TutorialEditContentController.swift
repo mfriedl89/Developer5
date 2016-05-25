@@ -14,6 +14,7 @@ class TutorialEditContentController: UIViewController {
   
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0);
   var currentText: String?
+  var currentId: String?
   
   var editor:RichEditorView?
   var keyman:KeyboardManager?
@@ -82,7 +83,9 @@ class TutorialEditContentController: UIViewController {
       self.presentViewController(errorAlert, animated: true, completion: nil)
     })
   }
+  
   @IBAction func savePressed(sender: AnyObject) {
+    current.id = Int(self.currentId!)!
     DatabaseManager.sharedManager.EditTutorial(current, content:(editor?.getHTML())!) { success, message in
       print("upload-success: \(success), login-message:\(message)")
       if success == true
@@ -98,7 +101,6 @@ class TutorialEditContentController: UIViewController {
               self.navigationController?.popToViewController(viewcontoller, animated: true);
             }
           }
-          
         });
       }
       else
