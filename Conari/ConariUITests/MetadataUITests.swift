@@ -49,8 +49,7 @@ class MetadataUITests: XCTestCase {
     
     app.buttons["Login"].tap()
     
-    
-    app.navigationBars["Conari"].buttons["Tutorial erstellen"].tap()
+    app.buttons["Create Text Tutorial"].tap()
     app.textFields["title"].tap()
     app.textFields["title"].typeText("test")
     XCTAssertEqual(app.textFields["title"].value as? String, "test")
@@ -65,7 +64,7 @@ class MetadataUITests: XCTestCase {
     app.pickerWheels["Arts and Entertainment"].tap()
     app.textFields["duration"].tap()
     app.pickerWheels["00:00"].tap()
-    app.buttons["Weiter"].tap()
+    app.navigationBars["Tutorial"].buttons["Next"].tap()
     
     let element = app.otherElements["texteditor"].childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
     element.tap()
@@ -83,17 +82,11 @@ class MetadataUITests: XCTestCase {
     app.tables.buttons["Moments"].tap()
     app.collectionViews["PhotosGridView"].cells["Photo, Landscape, March 13, 2011, 1:17 AM"].tap()
     sleep(1)
-    app.buttons["Save"].tap()
+    app.navigationBars["test"].buttons["Save"].tap()
     //app.navigationBars["Test"].buttons["Save"].tap()
     
-    
-    
-    
-    
-    
     //Test has to go here, but currently the view isn't in his final position.
-    
-    
+  
     /*
      let app = XCUIApplication()
      let loginButton = app.buttons["Login"]
