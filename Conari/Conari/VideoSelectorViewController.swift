@@ -36,6 +36,45 @@ class VideoSelectorViewController: UIViewController, UIImagePickerControllerDele
   }
   
   
+  func imagePickerController(picker: UIImagePickerController,
+      didFinishPickingMediaWithInfo info: [String : AnyObject])
+  {
+    let pickedVideoURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+    
+    let alert = UIAlertController(title: "Error", message: pickedVideoURL.absoluteString, preferredStyle: UIAlertControllerStyle.Alert)
+    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+    self.presentViewController(alert, animated: true, completion: nil)
+    return
+  }
+
+  
+ /* func postVideoToYouTube(token: String, callback: Bool -> Void){
+    
+    let headers = ["Authorization": "Bearer \(token)"]
+    let urlYoutube = "https://www.googleapis.com/upload/youtube/v3/videos?part=id"
+    
+    let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
+    let videodata: NSData = NSData.dataWithContentsOfMappedFile(path!)! as! NSData
+    upload(
+      .POST,
+      urlYoutube,
+      headers: headers,
+      multipartFormData: { multipartFormData in
+        multipartFormData.appendBodyPart(data: videodata, name: "video", fileName: "video.mp4", mimeType: "application/octet-stream")
+      },
+      encodingCompletion: { encodingResult in
+        switch encodingResult {
+        case .Success(let upload, _, _):
+          upload.responseJSON { request, response, error in
+            print(response)
+            callback(true)
+          }
+        case .Failure(_):
+          callback(false)
+        }
+    })
+  }*/
+  
 }
 
 
