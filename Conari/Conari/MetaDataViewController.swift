@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MobileCoreServices
+import AVFoundation
 
 struct TutorialMetaData {
   var id:Int;
@@ -17,14 +19,28 @@ struct TutorialMetaData {
   var difficulty:Int;
 }
 
-class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  
+  var categoryPickerView : UIPickerView!
+  var timePickerView : UIPickerView!
+  let videoPicker = UIImagePickerController()
+  
   @IBOutlet weak var titleTextField_: UITextField!
   @IBOutlet weak var difficultyLabel_: UILabel!
   @IBOutlet weak var categoryTextField_: UITextField!
   @IBOutlet weak var DifficultyStepper_: UIStepper!
   @IBOutlet weak var DurationTextField_: UITextField!
-  var categoryPickerView : UIPickerView!
-  var timePickerView : UIPickerView!
+  @IBOutlet weak var SelectVideoButton: UIButton!
+  @IBOutlet weak var VideoThumbnail: UIImageView!
+  @IBOutlet weak var NextButton: UIBarButtonItem!
+  
+  @IBAction func ClickSelectVideoButton(sender: AnyObject)
+  {
+    videoPicker.allowsEditing = false
+    videoPicker.sourceType = .PhotoLibrary
+    videoPicker.mediaTypes = [kUTTypeMovie as String]
+    presentViewController(videoPicker, animated: true, completion: nil)
+  }
   
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
   
@@ -55,8 +71,6 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     if (TextOrVideo == 0)
     {
       performSegueWithIdentifier("write_tutorial", sender: nil)
-    }else{
-      performSegueWithIdentifier("pick_video", sender: nil)
     }
   }
   var TextOrVideo: Int = 0
@@ -66,12 +80,17 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    videoPicker.delegate = self
+
     
     if TextOrVideo == 1 {
       TutorialTitle.title = "Video Tutorial"
+      NextButton.title = "Upload"
     }
     else{
       TutorialTitle.title = "Text Tutorial"
+      SelectVideoButton.hidden = true
+      VideoThumbnail.hidden = true
     }
     
     
@@ -223,6 +242,64 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   }
   
   
+  
+  func imagePickerController(picker: UIImagePickerController,
+                             didFinishPickingMediaWithInfo info: [String : AnyObject])
+  {
+    let pickedVideoURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+    
+    print(pickedVideoURL.absoluteString)
+    dismissViewControllerAnimated(true, completion: nil)
+    
+    
+    let asset:AVAsset = AVAsset(URL: pickedVideoURL)
+    let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+    assetImgGenerate.appliesPreferredTrackTransform = true
+    var time: CMTime = asset.duration
+    time.value = 0
+    
+    var imageRef: CGImage?
+    do
+    {
+      imageRef =  try assetImgGenerate.copyCGImageAtTime(time, actualTime: nil)
+    }
+    catch
+    {
+      print(error)
+    }
+    
+    let frameImg : UIImage = UIImage(CGImage: imageRef!)
+    
+    VideoThumbnail.image = frameImg
+  }
+
+  
+  /* func postVideoToYouTube(token: String, callback: Bool -> Void){
+   
+   let headers = ["Authorization": "Bearer \(token)"]
+   let urlYoutube = "https://www.googleapis.com/upload/youtube/v3/videos?part=id"
+   
+   let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
+   let videodata: NSData = NSData.dataWithContentsOfMappedFile(path!)! as! NSData
+   upload(
+   .POST,
+   urlYoutube,
+   headers: headers,
+   multipartFormData: { multipartFormData in
+   multipartFormData.appendBodyPart(data: videodata, name: "video", fileName: "video.mp4", mimeType: "application/octet-stream")
+   },
+   encodingCompletion: { encodingResult in
+   switch encodingResult {
+   case .Success(let upload, _, _):
+   upload.responseJSON { request, response, error in
+   print(response)
+   callback(true)
+   }
+   case .Failure(_):
+   callback(false)
+   }
+   })
+   }*/
   
   
 }

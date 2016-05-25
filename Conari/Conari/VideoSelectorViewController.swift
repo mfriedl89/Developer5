@@ -35,6 +35,7 @@ class VideoSelectorViewController: UIViewController, UIImagePickerControllerDele
     super.viewDidLoad()
     self.title = current.Title
     imagePicker.delegate = self
+    
   }
   
   
@@ -47,8 +48,8 @@ class VideoSelectorViewController: UIViewController, UIImagePickerControllerDele
     dismissViewControllerAnimated(true, completion: nil)
     
     
-    var asset:AVAsset = AVAsset(URL: pickedVideoURL)
-    var assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+    let asset:AVAsset = AVAsset(URL: pickedVideoURL)
+    let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
     assetImgGenerate.appliesPreferredTrackTransform = true
     var time: CMTime = asset.duration
     time.value = 0
@@ -63,7 +64,7 @@ class VideoSelectorViewController: UIViewController, UIImagePickerControllerDele
       print(error)
     }
   
-    var frameImg : UIImage = UIImage(CGImage: imageRef!)
+    let frameImg : UIImage = UIImage(CGImage: imageRef!)
     
     VideoThumbnail.image = frameImg
   }

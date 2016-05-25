@@ -19,6 +19,7 @@
 		AE92172C1CC774BE00A3391C /* RichEditorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE9217281CC7748D00A3391C /* RichEditorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
+		C057BBE81CF5DB1800148AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C057BBE71CF5DB1800148AFD /* Main.storyboard */; };
 		C0C5C7D11CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */; };
 		C0C5C7D21CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */; };
 		C0C5C7D31CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */; };
@@ -27,7 +28,6 @@
 		DA7CDF1A1CEC9BAF00D89BCF /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CDF191CEC9BAF00D89BCF /* ChangePasswordViewController.swift */; };
 		DA7CDF1C1CEC9C4000D89BCF /* ChangeUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CDF1B1CEC9C4000D89BCF /* ChangeUserNameViewController.swift */; };
 		DAE86E791CD9FFAD00F81CEE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */; };
-		DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
 		E0307A5E1CECA616007DB00F /* LoginUnitConariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0307A5A1CECA616007DB00F /* LoginUnitConariTests.swift */; };
 		E0307A5F1CECA616007DB00F /* LoginUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0307A5B1CECA616007DB00F /* LoginUnitTests.swift */; };
 		E0307A601CECA616007DB00F /* NewUserUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0307A5C1CECA616007DB00F /* NewUserUnitTests.swift */; };
@@ -123,13 +123,13 @@
 		AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
 		C050BAC41CE3702C005DAF16 /* CategorySearchUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchUITests.swift; sourceTree = "<group>"; };
+		C057BBE71CF5DB1800148AFD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSelectorViewController.swift; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		DA7CDF161CEC9AE000D89BCF /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		DA7CDF191CEC9BAF00D89BCF /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		DA7CDF1B1CEC9C4000D89BCF /* ChangeUserNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeUserNameViewController.swift; sourceTree = "<group>"; };
 		DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E0307A5A1CECA616007DB00F /* LoginUnitConariTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUnitConariTests.swift; sourceTree = "<group>"; };
 		E0307A5B1CECA616007DB00F /* LoginUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUnitTests.swift; sourceTree = "<group>"; };
 		E0307A5C1CECA616007DB00F /* NewUserUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserUnitTests.swift; sourceTree = "<group>"; };
@@ -255,11 +255,11 @@
 				AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */,
 				AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */,
 				C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */,
-				DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */,
 				DA7CDF1B1CEC9C4000D89BCF /* ChangeUserNameViewController.swift */,
 				DA7CDF191CEC9BAF00D89BCF /* ChangePasswordViewController.swift */,
 				DA7CDF161CEC9AE000D89BCF /* ChangeEmailViewController.swift */,
 				DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */,
+				C057BBE71CF5DB1800148AFD /* Main.storyboard */,
 				E06D7FC21CBE2220003001BD /* LaunchScreen.storyboard */,
 				E06D7FC51CBE2220003001BD /* Info.plist */,
 				DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */,
@@ -435,10 +435,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE8F6B21CD0FBF60081EA84 /* Main.storyboard in Resources */,
 				E06D7FC41CBE2220003001BD /* LaunchScreen.storyboard in Resources */,
 				E0DBB9C01CBE4E66009D6520 /* Icon in Resources */,
 				E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */,
+				C057BBE81CF5DB1800148AFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
