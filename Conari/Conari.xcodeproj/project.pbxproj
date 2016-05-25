@@ -11,6 +11,8 @@
 		28AE0AE21CE3161B004A6858 /* TutorialEditContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */; };
 		3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */; };
 		3ADC68B51CECB0630035539B /* YouTubeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADC68B41CECB0630035539B /* YouTubeManager.swift */; };
+		3AE79A7E1CF5D6940083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBED90F1CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift */; };
+		3AE79A7F1CF5D6950083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBED90F1CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift */; };
 		721B266BA0722231E3031E89 /* Pods_Conari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB1A2D53EAE75A37FDCA2F3 /* Pods_Conari.framework */; };
 		AE0B908A1CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B90891CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift */; };
 		AE0B908B1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADC68B41CECB0630035539B /* YouTubeManager.swift */; };
@@ -215,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				E0A9EBD81CF5B71700069B86 /* AboutViewController.swift */,
-				AEBED90F1CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift */,
 				E0CB1BB71CD9D11F000B881D /* AdminTutorialViewController.swift */,
 				AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */,
 				DA7CDF161CEC9AE000D89BCF /* ChangeEmailViewController.swift */,
@@ -229,6 +230,7 @@
 				DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */,
 				28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */,
 				28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */,
+				AEBED90F1CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift */,
 				AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */,
 				E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */,
 			);
@@ -657,6 +659,7 @@
 				E0CC32EF1CF5AA480016987F /* EditTutorial.swift in Sources */,
 				E0307A681CECA621007DB00F /* ViewAdditionalInformationUITest.swift in Sources */,
 				E070D2B61CEC9B6900665154 /* ConariUITests.swift in Sources */,
+				3AE79A7F1CF5D6950083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				E070D2C21CEC9B7A00665154 /* CategorySearchUITests.swift in Sources */,
 				E070D2C51CEC9B7A00665154 /* SearchTutorialUITests.swift in Sources */,
 				E070D2C41CEC9B7A00665154 /* MetadataUITests.swift in Sources */,
@@ -679,6 +682,7 @@
 				AE0B90991CF58AB600A1CCF3 /* ChangePasswordViewController.swift in Sources */,
 				AE0B90A11CF58AD200A1CCF3 /* AdminTutorialViewController.swift in Sources */,
 				AE0B90961CF58AA900A1CCF3 /* MainTutorialViewController.swift in Sources */,
+				3AE79A7E1CF5D6940083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				AE0B909D1CF58AC600A1CCF3 /* NewUserViewController.swift in Sources */,
 				AE0B908B1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */,
 				E070D2DA1CEC9BC600665154 /* ViewFinishedTutorial.swift in Sources */,
