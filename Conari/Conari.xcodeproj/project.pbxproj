@@ -840,6 +840,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D94F1562B0D9C25DE3227B36 /* Pods-ConariUITests.debug.xcconfig */;
 			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = ConariUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUITests;
@@ -852,6 +853,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A388D1C7857AE080A3158E4 /* Pods-ConariUITests.release.xcconfig */;
 			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = ConariUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUITests;
