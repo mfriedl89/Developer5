@@ -14,11 +14,15 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
   var tutorialID = 0
   var content = ""
   
+  var myTutorial: Tutorial_item? = nil
+  
   @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
   @IBOutlet weak var loadingLabel: UILabel!
   
   @IBOutlet weak var HTMLContent: UIWebView!
   @IBOutlet var videoPlayer: YouTubePlayerView!
+  
+  var infoBarButton = UIBarButtonItem()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,6 +36,12 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
     videoPlayer.delegate = self
     
     requestTutorial(tutorialID)
+    
+    // Info Button
+    let infoButton = UIButton(type: .InfoLight)
+    infoButton.addTarget(self, action: #selector(self.viewAdditionalInformation), forControlEvents: .TouchUpInside)
+    infoBarButton.customView = infoButton
+    navigationItem.rightBarButtonItem = infoBarButton
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -127,4 +137,23 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
       self.presentViewController(errorAlert, animated: true, completion: nil)
     })
   }
+  
+  func viewAdditionalInformation() {
+    performSegueWithIdentifier("viewAdditionalInformationSegue", sender: infoBarButton)
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    if (segue.identifier == "viewAdditionalInformationSegue") {
+      let navController = segue.destinationViewController as! UINavigationController
+      
+      if let detailController = navController.topViewController as? ViewAdditionalInformationTableViewController {
+        
+        if myTutorial != nil {
+          detailController.tutorial = myTutorial
+        }
+      }
+    }
+  }
+
 }

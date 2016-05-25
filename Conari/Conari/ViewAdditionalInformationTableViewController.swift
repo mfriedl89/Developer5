@@ -10,8 +10,14 @@ import UIKit
 
 class ViewAdditionalInformationTableViewController: UITableViewController {
 
-    var tutorial: Tutorial? = nil
-    
+    var tutorial: Tutorial_item? = nil
+  
+  var difficultLabels = ["very easy",
+                         "easy",
+                         "medium",
+                         "hard",
+                         "very hard"]
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,11 +70,11 @@ class ViewAdditionalInformationTableViewController: UITableViewController {
             
         case 2:
             cell.textLabel?.text = "Category"
-            cell.detailTextLabel?.text = categories[(tutorial?.category)!]
+            cell.detailTextLabel?.text = categories[(tutorial?.category)!-1]
             
         case 3:
             cell.textLabel?.text = "Difficulty"
-            cell.detailTextLabel?.text = difficultLabels[Int((tutorial?.difficulty)!)!]
+            cell.detailTextLabel?.text = self.difficultLabels[Int((tutorial?.difficulty)!)!-1]
             
         case 4:
             cell.textLabel?.text = "Duration"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -9,7 +9,7 @@
         <!--Tutorial-->
         <scene sceneID="3pD-uz-0B4">
             <objects>
-                <viewController id="yuD-Rl-uSD" customClass="MetaDataViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yuD-Rl-uSD" customClass="MetaDataViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ieu-6E-koL"/>
                         <viewControllerLayoutGuide type="bottom" id="tXN-pf-yjp"/>
@@ -120,7 +120,7 @@
         <!--Title-->
         <scene sceneID="PHb-jA-IWN">
             <objects>
-                <viewController id="1eL-Qf-eHn" customClass="NewTutorialDescriptonViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1eL-Qf-eHn" customClass="NewTutorialDescriptonViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CTR-C5-IP2"/>
                         <viewControllerLayoutGuide type="bottom" id="HPo-ms-afk"/>
@@ -145,7 +145,7 @@
         <!--My Tutorials-->
         <scene sceneID="re1-2C-Pnt">
             <objects>
-                <viewController id="l4H-wY-0nS" customClass="AdminTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="l4H-wY-0nS" customClass="AdminTutorialViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GTl-2A-aSX"/>
                         <viewControllerLayoutGuide type="bottom" id="jIG-xE-oG8"/>
@@ -167,11 +167,11 @@
                                 <rect key="frame" x="0.0" y="101" width="600" height="499"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TutorialTableViewCell" rowHeight="65" id="b3V-bb-hNe" customClass="TutorialTableViewCell" customModule="Conari" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TutorialTableViewCell" rowHeight="65" id="b3V-bb-hNe" customClass="TutorialTableViewCell" customModule="ConariUnitTests" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b3V-bb-hNe" id="F4R-KD-Dv7">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peH-rI-UJY">
@@ -238,7 +238,7 @@
         <!--Edit Tutorial-->
         <scene sceneID="OaS-kl-1fD">
             <objects>
-                <viewController storyboardIdentifier="showEditOptions" title="Edit Tutorial" id="SAZ-ht-ZDi" customClass="TutorialEditOptionsController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showEditOptions" title="Edit Tutorial" id="SAZ-ht-ZDi" customClass="TutorialEditOptionsController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q8o-go-CcB"/>
                         <viewControllerLayoutGuide type="bottom" id="AeL-3l-XiN"/>
@@ -349,7 +349,7 @@
         <!--Edit Tutorial Content-->
         <scene sceneID="Upi-mw-L5X">
             <objects>
-                <viewController title="Edit Tutorial Content" id="Hgq-fb-frO" customClass="TutorialEditContentController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Tutorial Content" id="Hgq-fb-frO" customClass="TutorialEditContentController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wnh-Tc-0TI"/>
                         <viewControllerLayoutGuide type="bottom" id="1J8-cb-HQo"/>
@@ -376,7 +376,7 @@
         <!--Welcome Screen View Controller-->
         <scene sceneID="WZG-qI-2GJ">
             <objects>
-                <viewController id="2he-lz-D6F" customClass="WelcomeScreenViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2he-lz-D6F" customClass="WelcomeScreenViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mpT-tW-tcD"/>
                         <viewControllerLayoutGuide type="bottom" id="o9S-xP-WEn"/>
@@ -395,7 +395,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Conari" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h8-6Y-5Nx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Mr Tutor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h8-6Y-5Nx">
                                 <rect key="frame" x="20" y="72" width="560" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -446,7 +446,7 @@
         <!--Login-->
         <scene sceneID="oFF-3P-3nK">
             <objects>
-                <viewController id="MDP-0C-mzj" customClass="LoginViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MDP-0C-mzj" customClass="LoginViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lrg-WR-fUW"/>
                         <viewControllerLayoutGuide type="bottom" id="42R-Wi-ya7"/>
@@ -532,7 +532,7 @@
         <!--Change Email-->
         <scene sceneID="8Wa-LU-v3T">
             <objects>
-                <viewController id="5NY-U5-0e2" customClass="ChangeEmailViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5NY-U5-0e2" customClass="ChangeEmailViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jjQ-Jn-am8"/>
                         <viewControllerLayoutGuide type="bottom" id="dkR-bS-YrX"/>
@@ -633,7 +633,7 @@
         <!--Change password-->
         <scene sceneID="lnT-wd-rqn">
             <objects>
-                <viewController id="kyL-VI-exj" customClass="ChangePasswordViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kyL-VI-exj" customClass="ChangePasswordViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9TW-1u-uXA"/>
                         <viewControllerLayoutGuide type="bottom" id="yWh-pd-zGa"/>
@@ -728,7 +728,7 @@
         <!--Menu-->
         <scene sceneID="Obt-VF-tqW">
             <objects>
-                <viewController id="MKS-51-WXW" customClass="MenuViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MKS-51-WXW" customClass="MenuViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V8t-bK-0I0"/>
                         <viewControllerLayoutGuide type="bottom" id="bAU-7t-csm"/>
@@ -789,23 +789,21 @@
                                     <segue destination="l4H-wY-0nS" kind="show" id="oqj-Mq-sEP"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_loup" translatesAutoresizingMaskIntoConstraints="NO" id="F3y-cm-lPe">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_loup" translatesAutoresizingMaskIntoConstraints="NO" id="F3y-cm-lPe">
                                 <rect key="frame" x="20" y="142" width="33" height="31"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="O9K-ju-VkA"/>
                                     <constraint firstAttribute="width" constant="33" id="pwb-wP-CXZ"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="WoZ-aP-tIc" appends="YES" id="NcW-ms-Q44"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="T5s-OY-Aid">
                                 <rect key="frame" x="553" y="72" width="26" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="26" id="QTi-If-aBW"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_plus.png" translatesAutoresizingMaskIntoConstraints="NO" id="dm8-OL-cjf">
-                                <rect key="frame" x="20" y="186" width="33" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="IgC-z7-kue"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorials" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzA-Jk-8rt">
@@ -823,11 +821,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_edit.png" translatesAutoresizingMaskIntoConstraints="NO" id="UJl-Rk-O5w">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_edit.png" translatesAutoresizingMaskIntoConstraints="NO" id="UJl-Rk-O5w">
                                 <rect key="frame" x="20" y="230" width="33" height="31"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="eCd-33-tGv"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="QSi-r7-ibh" appends="YES" id="ZD9-wA-lC4"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoZ-Qp-onZ">
                                 <rect key="frame" x="20" y="544" width="561" height="36"/>
@@ -848,6 +850,16 @@
                                     <segue destination="kyL-VI-exj" kind="show" id="TkK-QP-uQQ"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_plus.png" translatesAutoresizingMaskIntoConstraints="NO" id="dm8-OL-cjf">
+                                <rect key="frame" x="20" y="186" width="33" height="31"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="IgC-z7-kue"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Aia-X1-9mz" appends="YES" id="Qya-Fy-2tj"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -918,13 +930,28 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8DS-i3-mAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WoZ-aP-tIc" userLabel="ShowSearchTutorials">
+                    <connections>
+                        <segue destination="y1j-Ah-LpW" kind="show" id="0mh-2F-llz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Aia-X1-9mz" userLabel="ShowCreateTextTutorials">
+                    <connections>
+                        <segue destination="yuD-Rl-uSD" kind="show" id="Ox3-zL-yGU"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="QSi-r7-ibh" userLabel="ShowManageTutorials">
+                    <connections>
+                        <segue destination="l4H-wY-0nS" kind="show" id="I3a-Pt-zy7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1917" y="-137"/>
         </scene>
         <!--Change Name-->
         <scene sceneID="6Rc-XR-4BO">
             <objects>
-                <viewController id="i5Y-K4-p0t" customClass="ChangeUserNameViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="i5Y-K4-p0t" customClass="ChangeUserNameViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BM7-Uf-mOo"/>
                         <viewControllerLayoutGuide type="bottom" id="LNJ-iN-dHm"/>
@@ -997,10 +1024,10 @@
             </objects>
             <point key="canvasLocation" x="1917" y="-825"/>
         </scene>
-        <!--Conari-->
+        <!--Mr Tutor-->
         <scene sceneID="Hhc-gc-l5x">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="y1j-Ah-LpW" customClass="MainTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="y1j-Ah-LpW" customClass="MainTutorialViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jak-mB-Lou"/>
                         <viewControllerLayoutGuide type="bottom" id="2lZ-fv-aIG"/>
@@ -1063,7 +1090,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QwL-xb-oOD" id="egA-9H-ibs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="37.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1093,7 +1120,7 @@
                             <constraint firstItem="WWS-M3-wU7" firstAttribute="leading" secondItem="16C-Oq-uXB" secondAttribute="leading" id="uzQ-bQ-yJn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Conari" id="pCh-G7-OYf"/>
+                    <navigationItem key="navigationItem" title="Mr Tutor" id="pCh-G7-OYf"/>
                     <connections>
                         <outlet property="SearchField_" destination="WWS-M3-wU7" id="ihV-ry-Bg5"/>
                         <outlet property="categoryTableView_" destination="sUa-9F-PAD" id="t1Z-cl-JF9"/>
@@ -1108,7 +1135,7 @@
         <!--Add new user-->
         <scene sceneID="JeZ-Qe-aZ4">
             <objects>
-                <viewController storyboardIdentifier="newUserStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QeT-UG-jW0" customClass="NewUserViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newUserStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QeT-UG-jW0" customClass="NewUserViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aCz-ZH-cQb"/>
                         <viewControllerLayoutGuide type="bottom" id="LCO-Fb-8pP"/>
@@ -1316,7 +1343,7 @@
         <!--Tutorial View-->
         <scene sceneID="qbf-EK-Feb">
             <objects>
-                <viewController title="Tutorial View" id="owY-sm-bac" customClass="ViewFinishedTutorialViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Tutorial View" id="owY-sm-bac" customClass="ViewFinishedTutorialViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tvr-cg-qPG"/>
                         <viewControllerLayoutGuide type="bottom" id="mGG-Z5-Aor"/>
@@ -1367,15 +1394,14 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="6eU-Fu-Bem">
-                        <barButtonItem key="rightBarButtonItem" title="info" id="DyI-55-l2r"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="6eU-Fu-Bem"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="HTMLContent" destination="RMl-yR-gCc" id="dM6-II-i6c"/>
                         <outlet property="loadIndicator" destination="Eyd-K5-CH4" id="yGP-SG-ndr"/>
                         <outlet property="loadingLabel" destination="8OQ-dr-odD" id="WWQ-FR-fLb"/>
                         <outlet property="videoPlayer" destination="ihh-PQ-6sP" id="hdz-QD-yXZ"/>
+                        <segue destination="aYR-vy-rs5" kind="presentation" identifier="viewAdditionalInformationSegue" id="xg2-Mx-MfT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aA2-uj-ED4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1385,7 +1411,7 @@
         <!--Category Search View Controller-->
         <scene sceneID="8z7-mM-iYW">
             <objects>
-                <viewController id="qBc-j5-MFp" customClass="CategorySearchViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qBc-j5-MFp" customClass="CategorySearchViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CYH-eX-A51"/>
                         <viewControllerLayoutGuide type="bottom" id="IzJ-f0-jFK"/>
@@ -1398,15 +1424,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="70" id="2CL-eO-69K" customClass="CategorySearchTableViewCell" customModule="Conari" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="70" id="U5I-Ss-McX" userLabel="searchTableView" customClass="CategorySearchTableViewCell" customModule="ConariUnitTests" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2CL-eO-69K" id="MEH-Cj-u3T">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U5I-Ss-McX" id="V1p-8W-TiN">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW5-oX-Lpx">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aS-dj-uV5">
                                                     <rect key="frame" x="550" y="8" width="42" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" label="tutorialDifficulty"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1414,8 +1441,9 @@
                                                         <rect key="frame" x="315" y="8" width="77" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGZ-Mc-ONH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6e-LI-rHV">
                                                     <rect key="frame" x="81" y="8" width="461" height="23"/>
+                                                    <accessibility key="accessibilityConfiguration" label="tutorialTitle"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1423,20 +1451,22 @@
                                                         <rect key="frame" x="90" y="8" width="302" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itw-nh-pNz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mT9-H6-GMq">
                                                     <rect key="frame" x="81" y="42" width="461" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" label="tutorialCategory"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MAd-qs-Wa1">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uwW-ci-yHa">
                                                     <rect key="frame" x="8" y="0.0" width="65" height="65"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="DRt-7F-uIB"/>
+                                                        <constraint firstAttribute="width" constant="65" id="K7S-zf-5TQ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkT-q4-gfl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFs-B0-BFc">
                                                     <rect key="frame" x="550" y="40" width="42" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" label="tutorialDuration"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1446,27 +1476,65 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Itw-nh-pNz" firstAttribute="leading" secondItem="MAd-qs-Wa1" secondAttribute="trailing" constant="8" id="7oJ-uu-0tk"/>
-                                                <constraint firstItem="Itw-nh-pNz" firstAttribute="top" secondItem="SGZ-Mc-ONH" secondAttribute="bottom" constant="11" id="AZn-q4-AYn"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="MAd-qs-Wa1" secondAttribute="bottom" constant="-4" id="McV-mL-AMy"/>
-                                                <constraint firstItem="SGZ-Mc-ONH" firstAttribute="top" secondItem="MEH-Cj-u3T" secondAttribute="topMargin" id="Tgo-7B-jEN"/>
-                                                <constraint firstItem="eW5-oX-Lpx" firstAttribute="leading" secondItem="SGZ-Mc-ONH" secondAttribute="trailing" constant="8" id="Wc3-8r-3kD"/>
-                                                <constraint firstItem="MAd-qs-Wa1" firstAttribute="leading" secondItem="MEH-Cj-u3T" secondAttribute="leadingMargin" id="c74-T5-1MV"/>
-                                                <constraint firstItem="eW5-oX-Lpx" firstAttribute="trailing" secondItem="MEH-Cj-u3T" secondAttribute="trailingMargin" id="e3k-TW-soS"/>
-                                                <constraint firstItem="NkT-q4-gfl" firstAttribute="top" secondItem="eW5-oX-Lpx" secondAttribute="bottom" constant="11" id="er2-uE-Kn5"/>
-                                                <constraint firstItem="NkT-q4-gfl" firstAttribute="leading" secondItem="Itw-nh-pNz" secondAttribute="trailing" constant="8" id="psb-Z5-vT9"/>
-                                                <constraint firstItem="SGZ-Mc-ONH" firstAttribute="leading" secondItem="MAd-qs-Wa1" secondAttribute="trailing" constant="8" id="t53-j9-Xef"/>
-                                                <constraint firstItem="NkT-q4-gfl" firstAttribute="trailing" secondItem="MEH-Cj-u3T" secondAttribute="trailingMargin" id="t6r-CY-Csh"/>
-                                                <constraint firstItem="eW5-oX-Lpx" firstAttribute="top" secondItem="MEH-Cj-u3T" secondAttribute="topMargin" id="xFX-xf-SNH"/>
-                                                <constraint firstItem="MAd-qs-Wa1" firstAttribute="top" secondItem="MEH-Cj-u3T" secondAttribute="topMargin" constant="-8" id="yXf-zW-4ol"/>
+                                                <constraint firstItem="9aS-dj-uV5" firstAttribute="leading" secondItem="Q6e-LI-rHV" secondAttribute="trailing" constant="8" id="5vz-IV-fGk"/>
+                                                <constraint firstItem="YFs-B0-BFc" firstAttribute="top" secondItem="9aS-dj-uV5" secondAttribute="bottom" constant="11" id="9yq-PQ-kWd"/>
+                                                <constraint firstItem="mT9-H6-GMq" firstAttribute="top" secondItem="Q6e-LI-rHV" secondAttribute="bottom" constant="11" id="Bqh-2o-NNq"/>
+                                                <constraint firstItem="mT9-H6-GMq" firstAttribute="leading" secondItem="uwW-ci-yHa" secondAttribute="trailing" constant="8" id="DgF-fU-WcP"/>
+                                                <constraint firstItem="uwW-ci-yHa" firstAttribute="top" secondItem="V1p-8W-TiN" secondAttribute="topMargin" constant="-8" id="Oky-cP-U1V"/>
+                                                <constraint firstItem="9aS-dj-uV5" firstAttribute="trailing" secondItem="V1p-8W-TiN" secondAttribute="trailingMargin" id="Usw-gQ-WMV"/>
+                                                <constraint firstItem="YFs-B0-BFc" firstAttribute="trailing" secondItem="V1p-8W-TiN" secondAttribute="trailingMargin" id="Y3s-bv-NFD"/>
+                                                <constraint firstItem="Q6e-LI-rHV" firstAttribute="leading" secondItem="uwW-ci-yHa" secondAttribute="trailing" constant="8" id="YQ8-BU-OFD"/>
+                                                <constraint firstItem="9aS-dj-uV5" firstAttribute="top" secondItem="V1p-8W-TiN" secondAttribute="topMargin" id="bRW-KA-UYs"/>
+                                                <constraint firstItem="YFs-B0-BFc" firstAttribute="leading" secondItem="mT9-H6-GMq" secondAttribute="trailing" constant="8" id="exe-mz-dbd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="uwW-ci-yHa" secondAttribute="bottom" constant="-4" id="ivn-rh-9rq"/>
+                                                <constraint firstItem="Q6e-LI-rHV" firstAttribute="top" secondItem="V1p-8W-TiN" secondAttribute="topMargin" id="jDw-cW-4BE"/>
+                                                <constraint firstItem="uwW-ci-yHa" firstAttribute="leading" secondItem="V1p-8W-TiN" secondAttribute="leadingMargin" id="jJm-ws-xcp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="image_view" destination="MAd-qs-Wa1" id="HC8-f1-XrI"/>
-                                            <outlet property="label_category" destination="Itw-nh-pNz" id="hhf-hm-l6e"/>
-                                            <outlet property="label_difficulty" destination="eW5-oX-Lpx" id="K1q-iv-Io4"/>
-                                            <outlet property="label_duration" destination="NkT-q4-gfl" id="wZC-Xa-R6o"/>
-                                            <outlet property="label_title" destination="SGZ-Mc-ONH" id="beN-Zx-D27"/>
+                                            <outlet property="image_view" destination="uwW-ci-yHa" id="wwZ-bU-D2u"/>
+                                            <outlet property="label_category" destination="mT9-H6-GMq" id="Q65-o9-Twk"/>
+                                            <outlet property="label_difficulty" destination="9aS-dj-uV5" id="K8Y-mt-XCQ"/>
+                                            <outlet property="label_duration" destination="YFs-B0-BFc" id="oWE-MX-clT"/>
+                                            <outlet property="label_title" destination="Q6e-LI-rHV" id="DkX-2d-tV0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableYoutubeViewCell" rowHeight="100" id="Uny-xH-Das" customClass="CategorySearchYoutubeTableViewCell" customModule="ConariUnitTests" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="162" width="600" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uny-xH-Das" id="67Q-Mv-oWI">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cek-JV-cbN">
+                                                    <rect key="frame" x="136" y="8" width="456" height="83"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="90" y="8" width="302" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="smo-Qv-Vrm">
+                                                    <rect key="frame" x="8" y="8" width="120" height="83"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="oVe-hX-YnR"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="smo-Qv-Vrm" firstAttribute="bottom" secondItem="cek-JV-cbN" secondAttribute="bottom" id="84F-rM-7oO"/>
+                                                <constraint firstItem="smo-Qv-Vrm" firstAttribute="top" secondItem="67Q-Mv-oWI" secondAttribute="topMargin" id="OKw-7D-Yn0"/>
+                                                <constraint firstItem="smo-Qv-Vrm" firstAttribute="top" secondItem="cek-JV-cbN" secondAttribute="top" id="e5K-8g-pgu"/>
+                                                <constraint firstItem="cek-JV-cbN" firstAttribute="trailing" secondItem="67Q-Mv-oWI" secondAttribute="trailingMargin" id="i05-bq-E1y"/>
+                                                <constraint firstItem="smo-Qv-Vrm" firstAttribute="leading" secondItem="67Q-Mv-oWI" secondAttribute="leadingMargin" id="r9I-g2-IN8"/>
+                                                <constraint firstItem="smo-Qv-Vrm" firstAttribute="bottom" secondItem="67Q-Mv-oWI" secondAttribute="bottomMargin" id="tX1-Vn-4Jx"/>
+                                                <constraint firstItem="cek-JV-cbN" firstAttribute="leading" secondItem="smo-Qv-Vrm" secondAttribute="trailing" constant="8" symbolic="YES" id="uW1-nU-wbF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="image_view" destination="smo-Qv-Vrm" id="Xx0-Cc-Zse"/>
+                                            <outlet property="label_title" destination="cek-JV-cbN" id="iFp-Jw-Mta"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1509,7 +1577,7 @@
         <!--About-->
         <scene sceneID="gHV-f2-9e5">
             <objects>
-                <viewController id="455-y7-Qlj" customClass="AboutViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="455-y7-Qlj" customClass="AboutViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m94-YK-Lux"/>
                         <viewControllerLayoutGuide type="bottom" id="anf-M1-TQM"/>
@@ -1673,6 +1741,76 @@
             </objects>
             <point key="canvasLocation" x="442" y="632"/>
         </scene>
+        <!--Additional Information-->
+        <scene sceneID="u0V-xo-wd7">
+            <objects>
+                <tableViewController storyboardIdentifier="ViewAdditionalInformationTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O1f-zc-nu8" customClass="ViewAdditionalInformationTableViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="c2D-I5-nCe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="NV9-Zl-N3q" detailTextLabel="fet-go-87k" style="IBUITableViewCellStyleValue1" id="dvn-GP-ToG">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dvn-GP-ToG" id="I88-re-XmQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NV9-Zl-N3q">
+                                            <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fet-go-87k">
+                                            <rect key="frame" x="543.5" y="12" width="41.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="O1f-zc-nu8" id="DLm-cg-ss7"/>
+                            <outlet property="delegate" destination="O1f-zc-nu8" id="hNc-AH-gaa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Additional Information" id="cJW-9u-T5f">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="SAk-rK-h4a">
+                            <connections>
+                                <action selector="doneTapped:" destination="O1f-zc-nu8" id="rmb-5s-AW7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iro-Ft-xem" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4296" y="1462"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YcK-Uc-hWn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aYR-vy-rs5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="6cn-58-0hQ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mC2-md-cht">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O1f-zc-nu8" kind="relationship" relationship="rootViewController" id="Zgh-sm-Dhr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NZk-48-Inn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4296" y="694"/>
+        </scene>
     </scenes>
     <resources>
         <image name="round_edit.png" width="615" height="605"/>
@@ -1681,7 +1819,9 @@
         <image name="user" width="594" height="617"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X42-Vz-655"/>
+        <segue reference="Ox3-zL-yGU"/>
+        <segue reference="oqj-Mq-sEP"/>
+        <segue reference="Vcy-HW-eWP"/>
         <segue reference="wtw-EX-eox"/>
     </inferredMetricsTieBreakers>
 </document>

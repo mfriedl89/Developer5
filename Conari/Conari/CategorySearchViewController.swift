@@ -294,6 +294,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     if segue.identifier == "show_tutorial" {
       let csvc = (segue.destinationViewController as! ViewFinishedTutorialViewController)
       csvc.tutorialID = self.tutorialArray[(sender as! Int)].id
+      csvc.myTutorial = self.tutorialArray[(sender as! Int)]
     }
   }
 }
