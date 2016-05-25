@@ -28,7 +28,7 @@ class DatabaseManagerUnitTests: XCTestCase {
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     
-    DatabaseManager.sharedManager.loginWithPHPScript(username, password: password) { success, message in
+    DatabaseManager.sharedManager.login(username, password: password) { success, message in
       XCTAssertTrue(success)
       XCTAssertNil(message, "message is nil")
       
@@ -48,7 +48,7 @@ class DatabaseManagerUnitTests: XCTestCase {
     // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     
-    DatabaseManager.sharedManager.loginWithPHPScript(username, password: password) { success, message in
+    DatabaseManager.sharedManager.login(username, password: password) { success, message in
       
       XCTAssertFalse(success)
       
@@ -138,10 +138,6 @@ class DatabaseManagerUnitTests: XCTestCase {
      
      */
     
-    
-    
-    
-    
   }
   
   func testCreateUser() {
@@ -152,8 +148,7 @@ class DatabaseManagerUnitTests: XCTestCase {
     
   }
   
-  func testfindTutorialByCategory()
-  {
+  func testfindTutorialByCategory() {
     
   }
   

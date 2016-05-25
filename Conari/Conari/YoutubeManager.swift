@@ -42,7 +42,6 @@ class YouTubeManager {
   func searchVideoByTitle(title: String, completionHandler: (response: [YoutubeVideo], success:Bool, messagge:String) -> Void) -> Void {
     let e_title = title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
     let urlString = searchApiUrl+"?part=snippet&q=\(e_title)&type=video&key=\(apiKey)"
-    //urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters()!
     
     // Create a NSURL object based on the above string.
     let targetURL = NSURL(string: urlString)

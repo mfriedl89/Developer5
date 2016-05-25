@@ -38,8 +38,6 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
-    
     userName.delegate = self
     name.delegate = self
     surname.delegate = self
@@ -50,7 +48,6 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
     scrollView.scrollsToTop = true
     
     registerForKeyboardNotifications()
-    
   }
   
   override func viewWillDisappear(animated: Bool) {
@@ -63,23 +60,20 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
   }
   
   
-  func registerForKeyboardNotifications()
-  {
+  func registerForKeyboardNotifications() {
     //Adding notifies on keyboard appearing
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWasShown), name: UIKeyboardWillShowNotification, object: nil)
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillBeHidden), name: UIKeyboardWillHideNotification, object: nil)
   }
   
   
-  func deregisterFromKeyboardNotifications()
-  {
+  func deregisterFromKeyboardNotifications() {
     //Removing notifies on keyboard appearing
     NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
     NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
   }
   
-  func keyboardWasShown(notification: NSNotification)
-  {
+  func keyboardWasShown(notification: NSNotification) {
     //Need to calculate keyboard exact size due to Apple suggestions
     
     self.scrollView.scrollEnabled = true
@@ -104,10 +98,8 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
     
     var aRect : CGRect = self.view.frame
     aRect.size.height -= keyboardSize!.height
-    if (activeField) != nil
-    {
-      if (!CGRectContainsPoint(aRect, activeField!.frame.origin))
-      {
+    if (activeField) != nil {
+      if (!CGRectContainsPoint(aRect, activeField!.frame.origin)) {
         self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
       }
     }
@@ -115,8 +107,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
   }
   
   
-  func keyboardWillBeHidden(notification: NSNotification)
-  {
+  func keyboardWillBeHidden(notification: NSNotification) {
     //Once keyboard disappears, restore original positions
     let info : NSDictionary = notification.userInfo!
     let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
@@ -136,13 +127,11 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
     
   }
   
-  func textFieldDidBeginEditing(textField: UITextField)
-  {
+  func textFieldDidBeginEditing(textField: UITextField) {
     activeField = textField
   }
   
-  func textFieldDidEndEditing(textField: UITextField)
-  {
+  func textFieldDidEndEditing(textField: UITextField) {
     activeField = nil
   }
   
@@ -186,8 +175,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
       number_of_errors = number_of_errors + 1
     }
     
-    if (number_of_errors == 1)
-    {
+    if (number_of_errors == 1) {
       
       if ((textField == "Username") && (is_error == true))
       {
@@ -341,7 +329,6 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
   }
   
   func checkRepeatedPassword(password:String, repeated:String) -> Bool {
-    
     return (password == repeated) ? true : false
   }
   
@@ -377,12 +364,11 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
     error_counter = invalidInput("PasswordRepeat", errors: error_counter, is_error: !bool)
     
     if (error_counter == 0) {
-      DatabaseManager.sharedManager.CreateUser(userName.text!, password: password.text!, firstName: name.text!, surName: surname.text!, email: email.text!) { success, message in
+      DatabaseManager.sharedManager.createUser(userName.text!, password: password.text!, firstName: name.text!, surName: surname.text!, email: email.text!) { success, message in
         
         self.showMessage(message!, username: self.userName.text!)
         
       }
-      //            self.navigationController?.popViewControllerAnimated(true)
     }
     
   }

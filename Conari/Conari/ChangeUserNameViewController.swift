@@ -28,27 +28,23 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
     FirstNameTextField.delegate = self
     SurNameTextField.delegate = self
     
-    
     username = DatabaseManager.sharedManager.getUserName()
     
-    DatabaseManager.sharedManager.requestUser(username) {User, message in
-      
-      if (User == nil) {
+    DatabaseManager.sharedManager.requestUser(username) {user, message in
+      if (user == nil) {
         if message != nil {
           self.showErrorMessage(message!)
           
           dispatch_async(dispatch_get_main_queue(), {
             self.title = "Error"
-            //self.loadIndicator.stopAnimating()
-            //self.loadingLabel.hidden = true
           })
           
         }
       }
       else {
         dispatch_async(dispatch_get_main_queue(), {
-          self.FirstNameTextField.text = User!.firstname
-          self.SurNameTextField.text! = User!.surname
+          self.FirstNameTextField.text = user!.firstname
+          self.SurNameTextField.text! = user!.surname
         })
       }
       
@@ -74,7 +70,6 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   }
   
   func test (new_firstname:String, new_surname:String) -> Bool {
-    
     var error = 0
     
     if(!newUserFunc.checkingNameAndSurname(new_firstname)) {
@@ -93,16 +88,15 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
       let alert = UIAlertController(title: "Alert", message: "Please enter a valid Firstname", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
       self.presentViewController(alert, animated: true, completion: nil)
-      break
+      
     case falseSurname:
       let alert = UIAlertController(title: "Alert", message: "Please enter a valid Surname", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
       self.presentViewController(alert, animated: true, completion: nil)
-      break
+      
     case 0:
       DatabaseManager.sharedManager.changeUserFirstAndSurname(username, password: password, new_firstname: new_firstname, new_surname: new_surname) {success, message in
-        if success == true
-        {
+        if success == true {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Changed Firstname/Surname to: \(new_firstname) \(new_surname)", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
@@ -110,8 +104,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
             
           });
         }
-        else
-        {
+        else {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
@@ -120,10 +113,9 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
           });
         }
       }
+    default:
       break
-    default: break
     }
-    
     
     return true
   }
@@ -149,6 +141,4 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
       self.presentViewController(errorAlert, animated: true, completion: nil)
     })
   }
-  
-  
 }
