@@ -22,11 +22,23 @@ class MenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+  @IBAction func ClickTextTutorial(sender: AnyObject) {
+    TextOrVideo = 0
+  }
+  @IBAction func ClickVideoTutorial(sender: AnyObject) {
+    TextOrVideo = 1
+  }
+  
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+  
+  var TextOrVideo: Int = 0
+  
+ 
+  
     @IBAction func LogoutKlicked(sender: UIButton) {
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -40,5 +52,10 @@ class MenuViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let destinationVC = segue.destinationViewController as! MetaDataViewController
+    destinationVC.TextOrVideo = TextOrVideo
+  }
 
 }

@@ -49,13 +49,23 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                       "Work World",
                       "Youth"]
     
-    
+  @IBOutlet weak var TutorialTitle: UINavigationItem!
+  
+  var TextOrVideo: Int = 0
 
 
     var times: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      if TextOrVideo == 1 {
+        TutorialTitle.title = "Video Tutorial"
+      }
+      else{
+        TutorialTitle.title = "Text Tutorial"
+        }
+      
         
         DifficultyStepper_.maximumValue = 5
         DifficultyStepper_.minimumValue = 1
