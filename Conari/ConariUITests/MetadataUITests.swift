@@ -25,11 +25,16 @@ class MetadataUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1);
+    
     let app = XCUIApplication()
     let answerButton = app.buttons["Login"]
     answerButton.tap()
     
     sleep(1);
+    
+    XCTAssert(app.staticTexts["Username:"].exists)
+    XCTAssert(app.staticTexts["Password:"].exists)
     
     let textFieldUsername = app.textFields["username"]
     let textFieldPassword = app.secureTextFields["password"]
@@ -45,11 +50,18 @@ class MetadataUITests: XCTestCase {
     
     app.buttons["Login"].tap()
     
+    sleep(1);
+
     app.buttons["Create Text Tutorial"].tap()
+    
+    sleep(1);
+    
     app.textFields["title"].tap()
     app.textFields["title"].typeText("test")
     XCTAssertEqual(app.textFields["title"].value as? String, "test")
     app.buttons["Done"].tap()
+    
+    sleep(1);
     
     let incrementButton = app.steppers.buttons["Increment"]
     incrementButton.tap()
@@ -62,18 +74,25 @@ class MetadataUITests: XCTestCase {
     app.pickerWheels["00:00"].tap()
     app.buttons["Next"].tap()
     
+    sleep(1);
+    
     let element = app.otherElements["texteditor"].childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
     element.tap()
     
+    sleep(1);
+    
     let returnButton = app.buttons["Return"]
     returnButton.tap()
+    sleep(1);
     
     let element2 = element.childrenMatchingType(.Other).element
     element2.childrenMatchingType(.TextField).element
     element2.childrenMatchingType(.TextField).element
     returnButton.tap()
+    sleep(1);
     element2.childrenMatchingType(.TextField).element
     app.toolbars.containingType(.Button, identifier:"Ordered List").childrenMatchingType(.Button).elementBoundByIndex(6).tap()
+    sleep(1);
     app.sheets.collectionViews.buttons["Photo Library"].tap()
     app.tables.buttons["Moments"].tap()
     app.collectionViews["PhotosGridView"].cells["Photo, Landscape, March 13, 2011, 1:17 AM"].tap()
