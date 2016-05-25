@@ -55,6 +55,7 @@ class MenuUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1);
     
     let app = XCUIApplication()
     let answerButton = app.buttons["Login"]
@@ -96,6 +97,7 @@ class MenuUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1);
     
     let app = XCUIApplication()
     let answerButton = app.buttons["Login"]
@@ -147,6 +149,7 @@ class MenuUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1);
     
     let app = XCUIApplication()
     let answerButton = app.buttons["Login"]
@@ -202,6 +205,7 @@ class MenuUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1);
     
     let app = XCUIApplication()
     let answerButton = app.buttons["Login"]
@@ -223,7 +227,11 @@ class MenuUITests: XCTestCase {
     
     app.buttons["Login"].tap()
     
+    sleep(1);
+    
     app.buttons["Change password"].tap()
+    
+    sleep(1);
     
     app.secureTextFields["oldPassword"].tap()
     app.secureTextFields["oldPassword"].clearAndEnterText("Test1234@")
@@ -235,10 +243,15 @@ class MenuUITests: XCTestCase {
     app.secureTextFields["repeatedPassword"].clearAndEnterText("Test1235@")
     
     app.buttons["DoneButton"].tap()
+    
+    sleep(1);
+    
     app.navigationBars["Change password"].buttons["Menu"].tap()
     
     // changed Password
     // now check it
+    
+    sleep(1);
     
     app.buttons["Change password"].tap()
     
@@ -252,8 +265,9 @@ class MenuUITests: XCTestCase {
     app.secureTextFields["repeatedPassword"].clearAndEnterText("Test1234@")
     
     app.buttons["DoneButton"].tap()
+    sleep(1);
     app.navigationBars["Change password"].buttons["Menu"].tap()
-    
+    sleep(1);
     
     app.buttons["Logout"].tap()
   }
