@@ -20,23 +20,11 @@ class EditTutorialUnitTests: XCTestCase {
     super.tearDown()
   }
   
-  func testExample() {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-  }
-  
-  func testPerformanceExample() {
-    // This is an example of a performance test case.
-    self.measureBlock {
-      // Put the code you want to measure the time of here.
-    }
-  }
-  
   func testEditTutorial() {
     let tutorial = TutorialMetaData(id: 0, OldTitle: "", Title: "", category: 1, duration: 1, difficulty: 1)
     
     DatabaseManager.sharedManager.EditTutorial(tutorial, content: "TEST", callback: { success, message in
-      XCTAssertEqual(message, "Errorrrrr")
+      XCTAssertEqual(message, "Error")
     })
   }
   
