@@ -55,22 +55,23 @@ class MenuUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1)
     
     let app = XCUIApplication()
     let answerButton = app.buttons["Login"]
     answerButton.tap()
     
-    sleep(1);
+    sleep(1)
     
     let textFieldUsername = app.textFields["username"]
     let textFieldPassword = app.secureTextFields["password"]
-    XCTAssert(app.staticTexts["Username:"].exists)
-    XCTAssert(app.staticTexts["Password:"].exists)
     
     textFieldUsername.tap()
     XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
     textFieldUsername.typeText("anton")
     XCTAssertEqual(textFieldUsername.value as? String, "anton")
+    
+    sleep(1)
     
     textFieldPassword.tap()
     XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
@@ -78,18 +79,32 @@ class MenuUITests: XCTestCase {
     
     app.buttons["Login"].tap()
     
+    sleep(1)
+    
     app.buttons["Search Tutorials"].tap()
+    sleep(1)
     app.navigationBars["Conari"].buttons["Menu"].tap()
+    sleep(1)
     app.buttons["Create Text Tutorial"].tap()
+    sleep(1)
     app.navigationBars["Tutorial"].buttons["Menu"].tap()
+    sleep(1)
     app.buttons["Manage Tutorials"].tap()
+    sleep(1)
     app.buttons["Menu"].tap()
+    sleep(1)
     app.buttons["Change First Name and Surname"].tap()
+    sleep(1)
     app.navigationBars["Change Name"].buttons["Menu"].tap()
+    sleep(1)
     app.buttons["Change Email"].tap()
+    sleep(1)
     app.navigationBars["Change Email"].buttons["Menu"].tap()
+    sleep(1)
     app.buttons["Change password"].tap()
+    sleep(1)
     app.navigationBars["Change password"].buttons["Menu"].tap()
+    sleep(1)
     
     app.buttons["Logout"].tap()
   }
@@ -98,12 +113,13 @@ class MenuUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1)
     
     let app = XCUIApplication()
     let answerButton = app.buttons["Login"]
     answerButton.tap()
     
-    sleep(1);
+    sleep(1)
     
     let textFieldUsername = app.textFields["username"]
     let textFieldPassword = app.secureTextFields["password"]
@@ -127,19 +143,27 @@ class MenuUITests: XCTestCase {
     app.textFields["Surname"].tap()
     app.textFields["Surname"].clearAndEnterText("Tester")
     
-    app.buttons["DoneBtn"].tap()
+    app.buttons["Done"].tap()
+    
+    sleep(1)
+    
     app.navigationBars["Change Name"].buttons["Menu"].tap()
+    
+    sleep(1)
     
     // changed Name
     // now check it
     
     app.buttons["Change First Name and Surname"].tap()
     
+    sleep(1)
+    
     XCTAssertEqual(app.textFields["Firstname"].value as? String, "Paul")
     XCTAssertEqual(app.textFields["Surname"].value as? String, "Tester")
     
     app.navigationBars["Change Name"].buttons["Menu"].tap()
     
+    sleep(1)
     
     app.buttons["Logout"].tap()
   }
@@ -148,6 +172,7 @@ class MenuUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1);
     
     let app = XCUIApplication()
     let answerButton = app.buttons["Login"]
@@ -203,6 +228,7 @@ class MenuUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1);
     
     let app = XCUIApplication()
     let answerButton = app.buttons["Login"]
@@ -224,7 +250,11 @@ class MenuUITests: XCTestCase {
     
     app.buttons["Login"].tap()
     
+    sleep(1);
+    
     app.buttons["Change password"].tap()
+    
+    sleep(1);
     
     app.secureTextFields["oldPassword"].tap()
     app.secureTextFields["oldPassword"].clearAndEnterText("Test1234@")
@@ -236,10 +266,15 @@ class MenuUITests: XCTestCase {
     app.secureTextFields["repeatedPassword"].clearAndEnterText("Test1235@")
     
     app.buttons["DoneButton"].tap()
+    
+    sleep(1);
+    
     app.navigationBars["Change password"].buttons["Menu"].tap()
     
     // changed Password
     // now check it
+    
+    sleep(1);
     
     app.buttons["Change password"].tap()
     
@@ -253,10 +288,11 @@ class MenuUITests: XCTestCase {
     app.secureTextFields["repeatedPassword"].clearAndEnterText("Test1234@")
     
     app.buttons["DoneButton"].tap()
+    sleep(1);
     app.navigationBars["Change password"].buttons["Menu"].tap()
-    
+    sleep(1);
     
     app.buttons["Logout"].tap()
   }
-
+  
 }

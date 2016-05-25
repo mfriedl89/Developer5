@@ -23,11 +23,10 @@ class CategorySearchUITests: XCTestCase {
   
   
   func testAllCategories() {
-    
-    let app = XCUIApplication()
-    app.buttons["Continue without login"].tap()
-    
-    let tablesQuery = app.tables
+    sleep(1);
+    XCUIApplication().buttons["Continue without login"].tap()
+    sleep(1);
+    let tablesQuery = XCUIApplication().tables
     XCTAssertTrue(tablesQuery.staticTexts["Arts and Entertainment"].exists, "Arts and Entertainment missing")
     XCTAssertTrue(tablesQuery.staticTexts["Cars & Other Vehicles"].exists, "Cars & Other Vehicles missing")
     XCTAssertTrue(tablesQuery.staticTexts["Computers and Electronics"].exists, "Computers and Electronics missing")
@@ -48,7 +47,38 @@ class CategorySearchUITests: XCTestCase {
     XCTAssertTrue(tablesQuery.staticTexts["Travel"].exists, "Travel missing")
     XCTAssertTrue(tablesQuery.staticTexts["Work World"].exists, "Work World missing")
     XCTAssertTrue(tablesQuery.staticTexts["Youth"].exists, "Youth missing")
+ 
     
+    
+  }
+  
+func testTableCell() {
+   
+  sleep(1);
+  XCUIApplication().buttons["Continue without login"].tap()
+  sleep(1);
+  
+  let tablesQuery = XCUIApplication().tables
+  tablesQuery.staticTexts["Arts and Entertainment"].tap()
+    
+  sleep(1);
+    
+    XCTAssertTrue(XCUIApplication().tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(0).exists)
+    XCTAssertTrue(XCUIApplication().tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(1).exists)
+    XCTAssertTrue(XCUIApplication().tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(2).exists)
+    XCTAssertTrue(XCUIApplication().tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(3).exists)
+    
+
+    
+    
+    //let tableCell = CategorySearchTableViewCell()
+    
+    //tableCell.
+    
+    //XCTAssert(app.staticTexts["Test"].exists)
+    //XCTAssert(app.staticTexts["Arts and Entertainment"].exists)
+    //XCTAssert(app.staticTexts["easy"].exists)
+    //XCTAssert(app.staticTexts["00:05"].exists)
   }
   
 }

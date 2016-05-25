@@ -32,10 +32,10 @@ class NewUserUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1);
     
     let app = XCUIApplication()
     app.buttons["Login"].tap()
-    //sleep(1)
     let exists = NSPredicate(format: "exists == true")
     
     // wait until next page appears before clicking the "Create new user" button.
@@ -44,6 +44,8 @@ class NewUserUITests: XCTestCase {
     waitForExpectationsWithTimeout(5, handler: nil)
     
     app.buttons["Create new user"].tap()
+    
+    sleep(1);
     
     XCTAssert(app.staticTexts["Desired username:"].exists)
     XCTAssert(app.staticTexts["First name:"].exists)

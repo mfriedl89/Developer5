@@ -32,10 +32,10 @@ class LoginUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1);
     
     let app = XCUIApplication()
-    let answerButton = app.buttons["Login"]
-    answerButton.tap()
+    app.buttons["Login"].tap()
     
     sleep(1);
     
@@ -60,6 +60,8 @@ class LoginUITests: XCTestCase {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
+    sleep(1);
+    
     let app = XCUIApplication()
     let answerButton = app.buttons["Login"]
     answerButton.tap()
@@ -77,7 +79,8 @@ class LoginUITests: XCTestCase {
     
     XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
     textFieldPassword.typeText("Test1234@")
-    app.buttons["Done"].tap()
+    
+    app.buttons["Login"].tap()
     
   }
   

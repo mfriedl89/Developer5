@@ -29,25 +29,37 @@ class ViewFinishedTutorialUITest: XCTestCase {
   }
   
   func testIfElementsExist() {
+    
+    sleep(1)
+    
     let app = XCUIApplication()
     
     
     // Navigate to a tutorial
     app.buttons["Continue without login"].tap()
+    
+    sleep(1)
+    
     let tablesQuery = app.tables
     tablesQuery.staticTexts["Arts and Entertainment"].tap()
-    tablesQuery.cells.containingType(.StaticText, identifier:"ccc").staticTexts["Arts and Entertainment"].tap()
+    
+    app.tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(0).tap()
+    
+    //sleep(1);
     
     //Check if activity Indicator shows up
-    let inProgressActivityIndicator = app.activityIndicators["In progress"]
-    inProgressActivityIndicator.tap()
+    //let inProgressActivityIndicator = app.activityIndicators["In progress"]
+    //inProgressActivityIndicator.tap()
+    
+    sleep(1)
     
     // Check if Webview Exists by clicking on the image inside it.
     app.images["picture"].tap()
     
+    sleep(1)
     
     // Check if Buttons in header exist
-    let cccNavigationBar = app.navigationBars["ccc"]
+    let cccNavigationBar = app.navigationBars.elementBoundByIndex(0)
     XCTAssertTrue(cccNavigationBar.buttons["info"].exists, "Info Button doesn't exist")
     cccNavigationBar.childrenMatchingType(.Button).matchingIdentifier("Back").elementBoundByIndex(0).tap()
   }

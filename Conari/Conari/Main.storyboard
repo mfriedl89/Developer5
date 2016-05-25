@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1108,7 +1108,7 @@
         <!--Add new user-->
         <scene sceneID="JeZ-Qe-aZ4">
             <objects>
-                <viewController id="QeT-UG-jW0" customClass="NewUserViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newUserStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QeT-UG-jW0" customClass="NewUserViewController" customModule="Conari" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aCz-ZH-cQb"/>
                         <viewControllerLayoutGuide type="bottom" id="LCO-Fb-8pP"/>
@@ -1685,7 +1685,7 @@
         <image name="user" width="594" height="617"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vcy-HW-eWP"/>
+        <segue reference="X42-Vz-655"/>
         <segue reference="wtw-EX-eox"/>
     </inferredMetricsTieBreakers>
 </document>

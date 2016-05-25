@@ -44,6 +44,27 @@ class Tutorial_item {
   
 }
 
+
+var categories = ["Arts and Entertainment",
+                  "Cars & Other Vehicles",
+                  "Computers and Electronics",
+                  "Conari",
+                  "Education and Communications",
+                  "Finance and Business",
+                  "Food and Entertaining",
+                  "Health",
+                  "Hobbies and Crafts",
+                  "Holidays and Traditions",
+                  "Home and Garden",
+                  "Personal Care and Style",
+                  "Pets and Animals",
+                  "Philosophy and Religion",
+                  "Relationships",
+                  "Sports and Fitness",
+                  "Travel",
+                  "Work World",
+                  "Youth"]
+
 /**
  This file will act as our Database manager.
  */
@@ -519,8 +540,8 @@ class DatabaseManager {
     if tutorial_title != "" {
       postString += "title=" + tutorial_title.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)! as String!
     }
-    
     postString += "&category=" + String(tutorial_category)
+    
     
     //print(postString)
     
