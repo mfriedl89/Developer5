@@ -65,6 +65,8 @@ class YouTubeManager {
       do {
         let resultsDict = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! Dictionary<NSObject, AnyObject>
         
+        
+        
         // Get all search result items ("items" array).
         let items: Array<Dictionary<NSObject, AnyObject>> = resultsDict["items"] as! Array<Dictionary<NSObject, AnyObject>>
         for item in items
@@ -80,11 +82,17 @@ class YouTubeManager {
         }
         completionHandler(response: returnArray, success: true, messagge: "")
         
+        
+        
+        
       } catch {
         completionHandler(response: returnArray, success: false, messagge: "error serializing JSON: \(error)")
       }
       
     })
     task.resume()
+    
+    
   }
+  
 }
