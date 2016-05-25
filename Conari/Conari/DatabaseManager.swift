@@ -306,10 +306,7 @@ class DatabaseManager {
         return
       }
       
-      //print("response = \(response)")
-      
       responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-      //print("responseString = \(responseString!)")
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
         // check for http errors

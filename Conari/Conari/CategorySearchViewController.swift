@@ -38,7 +38,6 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
     
     table_View.delegate = self
     table_View.dataSource = self
@@ -143,12 +142,14 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       } else {
         return "Tutorials"
       }
+    
     case 1:
       if youtube_array.count == 0 {
         return ""
       } else {
         return "Youtube"
       }
+    
     default:
       return ""
     }
@@ -182,7 +183,6 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     searchController.searchBar.placeholder = "Search here..."
     searchController.searchBar.delegate = self
     searchController.searchBar.sizeToFit()
-    //searchController.searchBar.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 50)
     
     // Place the search bar view to the tableview headerview.
     table_View.tableHeaderView = searchController.searchBar
@@ -266,7 +266,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "show_tutorial" {
       let csvc = (segue.destinationViewController as! ViewFinishedTutorialViewController)
-      csvc.TutorialID = self.tutorial_array[(sender as! Int)].id
+      csvc.tutorialID = self.tutorial_array[(sender as! Int)].id
     }
   }
 }

@@ -90,7 +90,6 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
   func webViewDidFinishLoad(webView: UIWebView) {
     loadIndicator.stopAnimating()
     loadingLabel.hidden = true
-    //webView.scrollView.contentOffset = CGPointMake(0, 0);
   }
   
   func playerReady(videoPlayer: YouTubePlayerView) {
