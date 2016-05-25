@@ -51,211 +51,211 @@ class MenuUITests: XCTestCase {
     super.tearDown()
   }
   
+  func testMenu() {
+    // Use recording to get started writing UI tests.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    
+    let app = XCUIApplication()
+    let answerButton = app.buttons["Login"]
+    answerButton.tap()
+    
+    sleep(1);
+    
+    let textFieldUsername = app.textFields["username"]
+    let textFieldPassword = app.secureTextFields["password"]
+    
+    textFieldUsername.tap()
+    XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
+    textFieldUsername.typeText("anton")
+    XCTAssertEqual(textFieldUsername.value as? String, "anton")
+    
+    textFieldPassword.tap()
+    XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
+    textFieldPassword.typeText("Test1234@")
+    
+    app.buttons["Login"].tap()
+    
+    app.buttons["Search Tutorials"].tap()
+    app.navigationBars["Conari"].buttons["Menu"].tap()
+    app.buttons["Create Text Tutorial"].tap()
+    app.navigationBars["Tutorial"].buttons["Menu"].tap()
+    app.buttons["Manage Tutorials"].tap()
+    app.buttons["Menu"].tap()
+    app.buttons["Change First Name and Surname"].tap()
+    app.navigationBars["Change Name"].buttons["Menu"].tap()
+    app.buttons["Change Email"].tap()
+    app.navigationBars["Change Email"].buttons["Menu"].tap()
+    app.buttons["Change password"].tap()
+    app.navigationBars["Change password"].buttons["Menu"].tap()
+    
+    app.buttons["Logout"].tap()
+  }
   
-     func testMenu() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        
-        let app = XCUIApplication()
-        let answerButton = app.buttons["Login"]
-        answerButton.tap()
-        
-        sleep(1);
-        
-        let textFieldUsername = app.textFields["username"]
-        let textFieldPassword = app.secureTextFields["password"]
-        
-        textFieldUsername.tap()
-        XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
-        textFieldUsername.typeText("anton")
-        XCTAssertEqual(textFieldUsername.value as? String, "anton")
-        
-        textFieldPassword.tap()
-        XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
-        textFieldPassword.typeText("Test1234@")
-        
-        app.buttons["Login"].tap()
-        
-        app.buttons["Search Tutorials"].tap()
-        app.navigationBars["Conari"].buttons["Menu"].tap()
-        app.buttons["Create Tutorial"].tap()
-        app.navigationBars["Tutorial"].buttons["Menu"].tap()
-        app.buttons["Manage Tutorials"].tap()
-        app.buttons["Menu"].tap()
-        app.buttons["Change First Name and Surname"].tap()
-        app.navigationBars["Change Name"].buttons["Menu"].tap()
-        app.buttons["Change Email"].tap()
-        app.navigationBars["Change Email"].buttons["Menu"].tap()
-        app.buttons["Change password"].tap()
-        app.navigationBars["Change password"].buttons["Menu"].tap()
-        
-        app.buttons["Logout"].tap()
-    }
+  func testChangeName() {
+    // Use recording to get started writing UI tests.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
     
-    func testChangeName() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        
-        let app = XCUIApplication()
-        let answerButton = app.buttons["Login"]
-        answerButton.tap()
-        
-        sleep(1);
-        
-        let textFieldUsername = app.textFields["username"]
-        let textFieldPassword = app.secureTextFields["password"]
-        
-        textFieldUsername.tap()
-        XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
-        textFieldUsername.typeText("anton")
-        XCTAssertEqual(textFieldUsername.value as? String, "anton")
-        
-        textFieldPassword.tap()
-        XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
-        textFieldPassword.typeText("Test1234@")
-        
-        app.buttons["Login"].tap()
-        
-        app.buttons["Change First Name and Surname"].tap()
-        
-        app.textFields["Firstname"].tap()
-        app.textFields["Firstname"].clearAndEnterText("Paul")
-        
-        app.textFields["Surname"].tap()
-        app.textFields["Surname"].clearAndEnterText("Tester")
-        
-        app.buttons["DoneButton"].tap()
-        app.navigationBars["Change Name"].buttons["Menu"].tap()
-        
-        // changed Name
-        // now check it
-        
-        app.buttons["Change First Name and Surname"].tap()
-        
-        XCTAssertEqual(app.textFields["Firstname"].value as? String, "Paul")
-        XCTAssertEqual(app.textFields["Surname"].value as? String, "Tester")
-        
-        app.navigationBars["Change Name"].buttons["Menu"].tap()
-        
-        
-        app.buttons["Logout"].tap()
-    }
     
-    func testChangeMail() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        
-        let app = XCUIApplication()
-        let answerButton = app.buttons["Login"]
-        answerButton.tap()
-        
-        sleep(1);
-        
-        let textFieldUsername = app.textFields["username"]
-        let textFieldPassword = app.secureTextFields["password"]
-        
-        textFieldUsername.tap()
-        XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
-        textFieldUsername.typeText("anton")
-        XCTAssertEqual(textFieldUsername.value as? String, "anton")
-        
-        textFieldPassword.tap()
-        XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
-        textFieldPassword.typeText("Test1234@")
-        
-        app.buttons["Login"].tap()
-        
-        app.buttons["Change Email"].tap()
-        
-        app.textFields["newEmail"].tap()
-        app.textFields["newEmail"].clearAndEnterText("test@anton.at")
-        
-        app.textFields["repeatedEmail"].tap()
-        app.textFields["repeatedEmail"].clearAndEnterText("test@anton.at")
-        
-        app.buttons["DoneButton"].tap()
-        app.navigationBars["Change Email"].buttons["Menu"].tap()
-        
-        // changed Email
-        // now check it
-        
-        app.buttons["Change Email"].tap()
-        
-        app.textFields["newEmail"].tap()
-        app.textFields["newEmail"].clearAndEnterText("anton@test.at")
-        
-        app.textFields["repeatedEmail"].tap()
-        app.textFields["repeatedEmail"].clearAndEnterText("anton@test.at")
-
-        app.buttons["DoneButton"].tap()
-        
-        app.navigationBars["Change Email"].buttons["Menu"].tap()
-        
-        
-        app.buttons["Logout"].tap()
-    }
+    let app = XCUIApplication()
+    let answerButton = app.buttons["Login"]
+    answerButton.tap()
     
-    func testChangePassword() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        
-        let app = XCUIApplication()
-        let answerButton = app.buttons["Login"]
-        answerButton.tap()
-        
-        sleep(1);
-        
-        let textFieldUsername = app.textFields["username"]
-        let textFieldPassword = app.secureTextFields["password"]
-        
-        textFieldUsername.tap()
-        XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
-        textFieldUsername.typeText("anton")
-        XCTAssertEqual(textFieldUsername.value as? String, "anton")
-        
-        textFieldPassword.tap()
-        XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
-        textFieldPassword.typeText("Test1234@")
-        
-        app.buttons["Login"].tap()
-        
-        app.buttons["Change password"].tap()
-        
-        app.secureTextFields["oldPassword"].tap()
-        app.secureTextFields["oldPassword"].clearAndEnterText("Test1234@")
-        
-        app.secureTextFields["newPassword"].tap()
-        app.secureTextFields["newPassword"].clearAndEnterText("Test1235@")
-        
-        app.secureTextFields["repeatedPassword"].tap()
-        app.secureTextFields["repeatedPassword"].clearAndEnterText("Test1235@")
-        
-        app.buttons["DoneButton"].tap()
-        app.navigationBars["Change password"].buttons["Menu"].tap()
-        
-        // changed Password
-        // now check it
-        
-        app.buttons["Change password"].tap()
-        
-        app.secureTextFields["oldPassword"].tap()
-        app.secureTextFields["oldPassword"].clearAndEnterText("Test1235@")
-        
-        app.secureTextFields["newPassword"].tap()
-        app.secureTextFields["newPassword"].clearAndEnterText("Test1234@")
-        
-        app.secureTextFields["repeatedPassword"].tap()
-        app.secureTextFields["repeatedPassword"].clearAndEnterText("Test1234@")
-        
-        app.buttons["DoneButton"].tap()
-        app.navigationBars["Change password"].buttons["Menu"].tap()
-        
-        
-        app.buttons["Logout"].tap()
-    }
+    sleep(1);
+    
+    let textFieldUsername = app.textFields["username"]
+    let textFieldPassword = app.secureTextFields["password"]
+    
+    textFieldUsername.tap()
+    XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
+    textFieldUsername.typeText("anton")
+    XCTAssertEqual(textFieldUsername.value as? String, "anton")
+    
+    textFieldPassword.tap()
+    XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
+    textFieldPassword.typeText("Test1234@")
+    
+    app.buttons["Login"].tap()
+    
+    app.buttons["Change First Name and Surname"].tap()
+    
+    app.textFields["Firstname"].tap()
+    app.textFields["Firstname"].clearAndEnterText("Paul")
+    
+    app.textFields["Surname"].tap()
+    app.textFields["Surname"].clearAndEnterText("Tester")
+    
+    app.buttons["Save"].tap()
+    
+    app.navigationBars["Change Name"].buttons["Menu"].tap()
+    
+    // changed Name
+    // now check it
+    
+    app.buttons["Change First Name and Surname"].tap()
+    
+    XCTAssertEqual(app.textFields["Firstname"].value as? String, "Paul")
+    XCTAssertEqual(app.textFields["Surname"].value as? String, "Tester")
+    
+    app.navigationBars["Change Name"].buttons["Menu"].tap()
+    
+    
+    app.buttons["Logout"].tap()
+  }
+  
+  func testChangeMail() {
+    // Use recording to get started writing UI tests.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    
+    let app = XCUIApplication()
+    let answerButton = app.buttons["Login"]
+    answerButton.tap()
+    
+    sleep(1);
+    
+    let textFieldUsername = app.textFields["username"]
+    let textFieldPassword = app.secureTextFields["password"]
+    
+    textFieldUsername.tap()
+    XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
+    textFieldUsername.typeText("anton")
+    XCTAssertEqual(textFieldUsername.value as? String, "anton")
+    
+    textFieldPassword.tap()
+    XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
+    textFieldPassword.typeText("Test1234@")
+    
+    app.buttons["Login"].tap()
+    
+    app.buttons["Change Email"].tap()
+    
+    app.textFields["newEmail"].tap()
+    app.textFields["newEmail"].clearAndEnterText("test@anton.at")
+    
+    app.textFields["repeatedEmail"].tap()
+    app.textFields["repeatedEmail"].clearAndEnterText("test@anton.at")
+    
+    app.buttons["DoneButton"].tap()
+    app.navigationBars["Change Email"].buttons["Menu"].tap()
+    
+    // changed Email
+    // now check it
+    
+    app.buttons["Change Email"].tap()
+    
+    app.textFields["newEmail"].tap()
+    app.textFields["newEmail"].clearAndEnterText("anton@test.at")
+    
+    app.textFields["repeatedEmail"].tap()
+    app.textFields["repeatedEmail"].clearAndEnterText("anton@test.at")
+    
+    app.buttons["DoneButton"].tap()
+    
+    app.navigationBars["Change Email"].buttons["Menu"].tap()
+    
+    
+    app.buttons["Logout"].tap()
+  }
+  
+  func testChangePassword() {
+    // Use recording to get started writing UI tests.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    
+    let app = XCUIApplication()
+    let answerButton = app.buttons["Login"]
+    answerButton.tap()
+    
+    sleep(1);
+    
+    let textFieldUsername = app.textFields["username"]
+    let textFieldPassword = app.secureTextFields["password"]
+    
+    textFieldUsername.tap()
+    XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
+    textFieldUsername.typeText("anton")
+    XCTAssertEqual(textFieldUsername.value as? String, "anton")
+    
+    textFieldPassword.tap()
+    XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
+    textFieldPassword.typeText("Test1234@")
+    
+    app.buttons["Login"].tap()
+    
+    app.buttons["Change password"].tap()
+    
+    app.secureTextFields["oldPassword"].tap()
+    app.secureTextFields["oldPassword"].clearAndEnterText("Test1234@")
+    
+    app.secureTextFields["newPassword"].tap()
+    app.secureTextFields["newPassword"].clearAndEnterText("Test1235@")
+    
+    app.secureTextFields["repeatedPassword"].tap()
+    app.secureTextFields["repeatedPassword"].clearAndEnterText("Test1235@")
+    
+    app.buttons["DoneButton"].tap()
+    app.navigationBars["Change password"].buttons["Menu"].tap()
+    
+    // changed Password
+    // now check it
+    
+    app.buttons["Change password"].tap()
+    
+    app.secureTextFields["oldPassword"].tap()
+    app.secureTextFields["oldPassword"].clearAndEnterText("Test1235@")
+    
+    app.secureTextFields["newPassword"].tap()
+    app.secureTextFields["newPassword"].clearAndEnterText("Test1234@")
+    
+    app.secureTextFields["repeatedPassword"].tap()
+    app.secureTextFields["repeatedPassword"].clearAndEnterText("Test1234@")
+    
+    app.buttons["DoneButton"].tap()
+    app.navigationBars["Change password"].buttons["Menu"].tap()
+    
+    
+    app.buttons["Logout"].tap()
+  }
   
 }
