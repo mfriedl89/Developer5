@@ -40,14 +40,14 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(animated: Bool) {
     self.navigationController?.navigationBarHidden = false
     
     tutorialsTableView.reloadData()
+    
+    handleNetworkError()
     
     DatabaseManager.sharedManager.findTutorialByUsername(DatabaseManager.sharedManager.username) { (response) in
       

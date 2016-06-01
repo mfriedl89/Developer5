@@ -107,6 +107,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   
   override func viewWillAppear(animated: Bool) {
     self.navigationController?.navigationBarHidden = false
+    
+    handleNetworkError()
   }
   
   override func didReceiveMemoryWarning() {
