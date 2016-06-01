@@ -9,6 +9,7 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
+import AVKit
 
 struct TutorialMetaData {
   var id: Int;
@@ -236,29 +237,38 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   {
     let pickedVideoURL = info[UIImagePickerControllerMediaURL] as! NSURL
     
-    print(pickedVideoURL.absoluteString)
     dismissViewControllerAnimated(true, completion: nil)
     
     
-    let asset:AVAsset = AVAsset(URL: pickedVideoURL)
-    let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
-    assetImgGenerate.appliesPreferredTrackTransform = true
-    var time: CMTime = asset.duration
-    time.value = 0
+//    let asset:AVAsset = AVAsset(URL: pickedVideoURL)
+//    let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+//    assetImgGenerate.appliesPreferredTrackTransform = true
+//    var time: CMTime = asset.duration
+//    time.value = 0
+//    
+//    var imageRef: CGImage?
+//    do
+//    {
+//      imageRef =  try assetImgGenerate.copyCGImageAtTime(time, actualTime: nil)
+//    }
+//    catch
+//    {
+//      print(error)
+//    }
+//    r
+//    let frameImg : UIImage = UIImage(CGImage: imageRef!)
+//    
+//    VideoThumbnail.image = frameImg
     
-    var imageRef: CGImage?
-    do
-    {
-      imageRef =  try assetImgGenerate.copyCGImageAtTime(time, actualTime: nil)
-    }
-    catch
-    {
-      print(error)
-    }
-    
-    let frameImg : UIImage = UIImage(CGImage: imageRef!)
-    
-    VideoThumbnail.image = frameImg
+    let player = AVPlayer(URL: pickedVideoURL)
+    let playerController = AVPlayerViewController()
+    playerController.player = player
+    playerController.showsPlaybackControls = false
+    playerController.view.frame = VideoThumbnail.frame
+    playerController.view.layer.zPosition = 1;
+    self.view.addSubview(playerController.view);
+    player.play()
+
   }
 
   
