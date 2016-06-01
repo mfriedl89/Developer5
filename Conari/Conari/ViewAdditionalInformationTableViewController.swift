@@ -21,6 +21,7 @@ class ViewAdditionalInformationTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = Constants.viewBackgroundColor
+    navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
   }
   
   override func viewWillAppear(animated: Bool) {

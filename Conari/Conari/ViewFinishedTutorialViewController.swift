@@ -41,6 +41,8 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
     // Info Button
     let infoButton = UIButton(type: .InfoLight)
     infoButton.addTarget(self, action: #selector(self.viewAdditionalInformation), forControlEvents: .TouchUpInside)
+    infoButton.tintColor = UIColor.whiteColor()
+    
     infoBarButton.customView = infoButton
     navigationItem.rightBarButtonItem = infoBarButton
   }
@@ -74,7 +76,7 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
         dispatch_async(dispatch_get_main_queue(), {
           self.title = tutorial!.title
           
-          self.content = tutorial!.text
+          self.content = "<style>body{color: white}</sytle>" + tutorial!.text
           self.setContent()
         })
       }
