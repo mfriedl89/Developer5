@@ -138,10 +138,54 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   }
       
   @IBAction func ClickSelectVideoButton(sender: UIButton) {
-    videoPicker.allowsEditing = true
-    videoPicker.sourceType = .PhotoLibrary
-    videoPicker.mediaTypes = [kUTTypeMovie as String]
-    presentViewController(videoPicker, animated: true, completion: nil)
+    let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+    
+    let Camera = UIAlertAction(title: "Camera", style: .Default, handler: {
+      (alert: UIAlertAction!) -> Void in
+      if(UIImagePickerController.isSourceTypeAvailable(.Camera))
+      {
+        self.videoPicker.allowsEditing = true
+        self.videoPicker.sourceType = .Camera
+        self.videoPicker.mediaTypes = [kUTTypeMovie as String]
+        self.presentViewController(self.videoPicker, animated: true, completion: nil)
+
+      }
+    })
+    
+    let Library = UIAlertAction(title: "Photo Library", style: .Default, handler: {
+      (alert: UIAlertAction!) -> Void in
+      if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
+      {
+        self.videoPicker.allowsEditing = true
+        self.videoPicker.sourceType = .PhotoLibrary
+        self.videoPicker.mediaTypes = [kUTTypeMovie as String]
+        self.presentViewController(self.videoPicker, animated: true, completion: nil)
+
+      }
+    })
+    
+    let cancel = UIAlertAction(title: "Cancel", style: .Default, handler: {
+      (alert: UIAlertAction!) -> Void in
+    })
+    
+    // 4
+    if(UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+      optionMenu.addAction(Camera)
+    }
+    
+    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary)) {
+      optionMenu.addAction(Library)
+    }
+    
+    optionMenu.addAction(cancel)
+    
+    // Support display in iPad
+    optionMenu.popoverPresentationController?.sourceView = self.view
+    optionMenu.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+    
+    self.presentViewController(optionMenu, animated: true, completion: nil)
+    
+    
   }
   
   @IBAction func DifficultyValueChanged_(sender: AnyObject) {
@@ -226,6 +270,9 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       }
 //    else
 //    {
+    
+    
+    
 //      let nextScene =  segue.destinationViewController as! VideoSelectorViewController
 //      nextScene.current = current
 //      return
