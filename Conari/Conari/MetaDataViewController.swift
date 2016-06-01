@@ -242,7 +242,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   func imagePickerController(picker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String : AnyObject])
   {
-    pickedVideoURL = info[UIImagePickerControllerReferenceURL] as? NSURL
+    pickedVideoURL = info[UIImagePickerControllerMediaURL] as? NSURL
     
     dismissViewControllerAnimated(true, completion: nil)
     
@@ -270,16 +270,16 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   
   func postVideoToYouTube(){
     
+    let urlYoutube = "http://uploads.gdata.youtube.com/feeds/api/users/default/uploads"
+  
     let headers = ["Authorization": "Bearer \(channelID)"]
-    let urlYoutube = "https://www.googleapis.com/upload/youtube/v3/videos?part=id"
-    
     let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
     
     print("VideoUrl:\(pickedVideoURL)")
     var videodata: NSData?
     
     do {
-      videodata = try NSData(contentsOfFile: (pickedVideoURL!.filePathURL?.path!)!, options: .DataReadingMappedIfSafe)
+      videodata = try NSData(contentsOfFile: (pickedVideoURL!.relativePath!), options: .DataReadingMappedAlways)
     } catch {
       print(error)
     }

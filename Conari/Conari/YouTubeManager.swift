@@ -96,13 +96,17 @@ class YouTubeManager {
   func uploadRequest(uploadUrl: String, data: NSData)
   {
     print("uploadRequest")
-
-    let url:NSURL = NSURL(string: uploadUrl)!
+    
+    let url = NSURL(string: uploadUrl)!
     let session = NSURLSession.sharedSession()
     
     let request = NSMutableURLRequest(URL: url)
     request.HTTPMethod = "POST"
     request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+    
+    let body = NSMutableData()
+    
+    request.HTTPBody = body
     
     let task = session.uploadTaskWithRequest(request, fromData: data, completionHandler:
       {(data, response, error) in
