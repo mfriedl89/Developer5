@@ -21,5 +21,7 @@ extension AppDelegate {
     
     UITextField.appearance().textColor = UIColor.blackColor()
     UITextField.appearance().tintColor = UIColor.blackColor()
+    UIWebView.appearance().opaque = false
+    UIWebView.appearance().backgroundColor = UIColor.clearColor()
   }
 }
