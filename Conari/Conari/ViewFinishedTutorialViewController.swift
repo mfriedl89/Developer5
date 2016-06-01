@@ -76,7 +76,7 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
         dispatch_async(dispatch_get_main_queue(), {
           self.title = tutorial!.title
           
-          self.content = "<style>body{color: white}</sytle>" + tutorial!.text
+          self.content = Constants.cssTextColor + tutorial!.text
           self.setContent()
         })
       }
