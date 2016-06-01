@@ -17,21 +17,27 @@ extension AppDelegate {
     UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: Constants.navigationBarTextColor]
     UINavigationBar.appearance().barStyle = UIBarStyle.BlackTranslucent
     
-    //
+    //Others
     UIButton.appearance().tintColor = Constants.buttonColor
     UILabel.appearance().textColor = Constants.labelColor
     
+    // Text Field
     UITextField.appearance().textColor = UIColor.blackColor()
     UITextField.appearance().tintColor = UIColor.blackColor()
+    
+    // Web View
     UIWebView.appearance().opaque = false
     UIWebView.appearance().backgroundColor = UIColor.clearColor()
     
+    //Table View
+    UITableView.appearance().backgroundColor = Constants.viewBackgroundColor
+    
     UITableViewCell.appearance().backgroundColor = Constants.viewBackgroundColor
+    UITableViewCell.appearance().textLabel?.textColor = Constants.labelColor
+    
     let cellBackgroundView = UIView()
     cellBackgroundView.backgroundColor = Constants.navigationBarBackgroundColor
     UITableViewCell.appearance().selectedBackgroundView = cellBackgroundView
-    
-    
 }
 
 }

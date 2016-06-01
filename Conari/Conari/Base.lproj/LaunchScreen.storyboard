@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -19,27 +19,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr Tutor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbl-Ab-P72">
-                                <rect key="frame" x="20" y="276" width="560" height="48"/>
+                                <rect key="frame" x="20" y="65" width="560" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="wxj-SK-j9i"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer5 @ TU Graz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aow-3h-EN4">
                                 <rect key="frame" x="20" y="562" width="560" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon83.5x83.5.png" translatesAutoresizingMaskIntoConstraints="NO" id="B1n-is-YUw">
+                                <rect key="frame" x="85" y="145" width="430" height="309"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.45098039215686275" green="0.23921568627450979" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Xbl-Ab-P72" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="2HM-9M-RjH"/>
-                            <constraint firstItem="Xbl-Ab-P72" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="6pu-vj-BYS"/>
+                            <constraint firstItem="Xbl-Ab-P72" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="2AG-zr-2sN"/>
+                            <constraint firstItem="B1n-is-YUw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4Rn-wr-Ojc"/>
+                            <constraint firstItem="B1n-is-YUw" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="65" id="6pe-Lv-bDt"/>
+                            <constraint firstItem="Xbl-Ab-P72" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="6w8-6Z-MDF"/>
                             <constraint firstItem="Xbl-Ab-P72" firstAttribute="trailing" secondItem="Aow-3h-EN4" secondAttribute="trailing" id="7TT-L6-JfT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Aow-3h-EN4" secondAttribute="trailing" id="Fra-SD-H7e"/>
-                            <constraint firstAttribute="bottom" secondItem="Aow-3h-EN4" secondAttribute="bottom" constant="20" symbolic="YES" id="SnQ-Kz-3va"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Aow-3h-EN4" secondAttribute="leading" id="Uyc-rd-aSt"/>
-                            <constraint firstItem="Xbl-Ab-P72" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="VL2-Ik-Rcx"/>
+                            <constraint firstItem="B1n-is-YUw" firstAttribute="top" secondItem="Xbl-Ab-P72" secondAttribute="bottom" constant="32" id="LqJ-Uq-lX0"/>
+                            <constraint firstItem="Xbl-Ab-P72" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="45" id="jJc-hu-Syx"/>
+                            <constraint firstAttribute="bottom" secondItem="Aow-3h-EN4" secondAttribute="bottom" constant="20" symbolic="YES" id="ozV-CS-gDj"/>
+                            <constraint firstItem="Xbl-Ab-P72" firstAttribute="centerX" secondItem="B1n-is-YUw" secondAttribute="centerX" id="vVc-kG-kOo"/>
+                            <constraint firstItem="Xbl-Ab-P72" firstAttribute="leading" secondItem="Aow-3h-EN4" secondAttribute="leading" id="vhO-pL-eTv"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -48,4 +57,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppIcon83.5x83.5.png" width="2691" height="2358"/>
+    </resources>
 </document>
