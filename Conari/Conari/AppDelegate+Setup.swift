@@ -23,5 +23,13 @@ extension AppDelegate {
     UITextField.appearance().tintColor = UIColor.blackColor()
     UIWebView.appearance().opaque = false
     UIWebView.appearance().backgroundColor = UIColor.clearColor()
-  }
+    
+    UITableViewCell.appearance().backgroundColor = Constants.viewBackgroundColor
+    let cellBackgroundView = UIView()
+    cellBackgroundView.backgroundColor = Constants.navigationBarBackgroundColor
+    UITableViewCell.appearance().selectedBackgroundView = cellBackgroundView
+    
+    
+}
+
 }
