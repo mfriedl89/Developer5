@@ -242,11 +242,9 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   func imagePickerController(picker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String : AnyObject])
   {
-    pickedVideoURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+    pickedVideoURL = info[UIImagePickerControllerReferenceURL] as? NSURL
     
-    print(pickedVideoURL!.absoluteString)
     dismissViewControllerAnimated(true, completion: nil)
-    
     
     let asset:AVAsset = AVAsset(URL: pickedVideoURL!)
     let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
@@ -276,12 +274,19 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     let urlYoutube = "https://www.googleapis.com/upload/youtube/v3/videos?part=id"
     
     let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
-    let videodata: NSData = NSData(contentsOfURL: pickedVideoURL!)!
     
-    print(urlYoutube)
+    print("VideoUrl:\(pickedVideoURL)")
+    var videodata: NSData?
     
+    do {
+      videodata = try NSData(contentsOfFile: (pickedVideoURL!.filePathURL?.path!)!, options: .DataReadingMappedIfSafe)
+    } catch {
+      print(error)
+    }
+    
+    print("VideoUrl:\(pickedVideoURL)")
 
-    YouTubeManager.sharedManager.uploadRequest(urlYoutube, data: videodata)
+    YouTubeManager.sharedManager.uploadRequest(urlYoutube, data: videodata!)
     
     //    upload(
 //      .POST,

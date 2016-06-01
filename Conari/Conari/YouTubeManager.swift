@@ -95,6 +95,8 @@ class YouTubeManager {
   
   func uploadRequest(uploadUrl: String, data: NSData)
   {
+    print("uploadRequest")
+
     let url:NSURL = NSURL(string: uploadUrl)!
     let session = NSURLSession.sharedSession()
     
