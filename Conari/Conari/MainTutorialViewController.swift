@@ -23,6 +23,8 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
   
   override func viewWillAppear(animated: Bool) {
     self.navigationController?.navigationBarHidden = false
+    
+    handleNetworkError()
   }
   
   

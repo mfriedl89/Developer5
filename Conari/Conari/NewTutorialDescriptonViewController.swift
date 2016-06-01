@@ -45,6 +45,7 @@ class NewTutorialDescriptonViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     keyman?.beginMonitoring()
+    handleNetworkError()
   }
   
   override func viewWillDisappear(animated: Bool) {

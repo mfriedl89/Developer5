@@ -56,6 +56,10 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
     
   }
   
+  override func viewWillAppear(animated: Bool) {
+    handleNetworkError()
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -149,28 +153,5 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   @IBAction func Done_button_clicked(sender: AnyObject) {
     test(new_email_textField.text!, repeat_new_email: repeat_new_email_textField.text!)
   }
-  
-  func showErrorMessage(message: String) {
-    dispatch_async(dispatch_get_main_queue(), {
-      //create alert
-      let errorAlert = UIAlertController(title: "Error",
-        message: message,
-        preferredStyle: UIAlertControllerStyle.Alert)
-      
-      //make button
-      let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-      
-      //add buttons
-      errorAlert.addAction(okAction)
-      
-      // Support display in iPad
-      errorAlert.popoverPresentationController?.sourceView = self.view
-      errorAlert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
-      //display
-      self.presentViewController(errorAlert, animated: true, completion: nil)
-    })
-  }
-  
   
 }
