@@ -1,0 +1,1 @@
+ic_videocam_48pt.imageset von https://design.google.com/icons/

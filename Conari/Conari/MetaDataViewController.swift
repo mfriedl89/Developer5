@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MobileCoreServices
+import AVFoundation
 
 struct TutorialMetaData {
   var id: Int;
@@ -17,41 +19,61 @@ struct TutorialMetaData {
   var difficulty: Int;
 }
 
-class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  
   @IBOutlet weak var titleTextField_: UITextField!
   @IBOutlet weak var difficultyLabel_: UILabel!
   @IBOutlet weak var categoryTextField_: UITextField!
   @IBOutlet weak var DifficultyStepper_: UIStepper!
   @IBOutlet weak var DurationTextField_: UITextField!
+  
+  @IBOutlet weak var SelectVideoButton: UIButton!
+  @IBOutlet weak var VideoThumbnail: UIImageView!
+  @IBOutlet weak var NextButton: UIBarButtonItem!
+  @IBOutlet weak var TutorialTitle: UINavigationItem!
+
+  var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
+
   var categoryPickerView : UIPickerView!
   var timePickerView : UIPickerView!
-  
-  var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
-  
+  let videoPicker = UIImagePickerController()
+    
   var categories = ["Arts and Entertainment",
-                    "Cars & Other Vehicles",
-                    "Computers and Electronics",
-                    "Conari",
-                    "Education and Communications",
-                    "Finance and Business",
-                    "Food and Entertaining",
-                    "Health",
-                    "Hobbies and Crafts",
-                    "Holidays and Traditions",
-                    "Home and Garden",
-                    "Personal Care and Style",
-                    "Pets and Animals",
-                    "Philosophy and Religion",
-                    "Relationships",
-                    "Sports and Fitness",
-                    "Travel",
-                    "Work World",
-                    "Youth"]
+                  "Cars & Other Vehicles",
+                  "Computers and Electronics",
+                  "Conari",
+                  "Education and Communications",
+                  "Finance and Business",
+                  "Food and Entertaining",
+                  "Health",
+                  "Hobbies and Crafts",
+                  "Holidays and Traditions",
+                  "Home and Garden",
+                  "Personal Care and Style",
+                  "Pets and Animals",
+                  "Philosophy and Religion",
+                  "Relationships",
+                  "Sports and Fitness",
+                  "Travel",
+                  "Work World",
+                  "Youth"]
   
   var times: [String] = []
   
+  var TextOrVideo: Int?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+        
+    if TextOrVideo == 1 {
+      TutorialTitle.title = "Video Tutorial"
+      NextButton.title = "Upload"
+    }
+    else{
+      TutorialTitle.title = "Text Tutorial"
+      SelectVideoButton.hidden = true
+      VideoThumbnail.hidden = true
+    }
     
     DifficultyStepper_.maximumValue = 5
     DifficultyStepper_.minimumValue = 1
@@ -79,6 +101,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     DurationTextField_.selectedTextRange = nil;
     
     titleTextField_.delegate = self
+    
+    videoPicker.delegate = self
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -101,6 +125,20 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
     
     return true
+  }
+    
+  @IBAction func ClickNext(sender: AnyObject) {
+    if (TextOrVideo == 0)
+    {
+      performSegueWithIdentifier("write_tutorial", sender: nil)
+    }
+  }
+      
+  @IBAction func ClickSelectVideoButton(sender: UIButton) {
+    videoPicker.allowsEditing = false
+    videoPicker.sourceType = .PhotoLibrary
+    videoPicker.mediaTypes = [kUTTypeMovie as String]
+    presentViewController(videoPicker, animated: true, completion: nil)
   }
   
   @IBAction func DifficultyValueChanged_(sender: AnyObject) {
@@ -164,24 +202,89 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    updateCurrentStruct();
+    if current.Title.isEmpty {
+      let alert = UIAlertController(title: "Error", message: "Please insert a Title", preferredStyle: UIAlertControllerStyle.Alert)
+      alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+      
+      // Support display in iPad
+      alert.popoverPresentationController?.sourceView = self.view
+      alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
+      self.presentViewController(alert, animated: true, completion: nil)
+      return
+    }
+    
     if segue.identifier == "write_tutorial"
     {
-      updateCurrentStruct();
-      if current.Title.isEmpty {
-        let alert = UIAlertController(title: "Error", message: "Please insert a Title", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-        
-        // Support display in iPad
-        alert.popoverPresentationController?.sourceView = self.view
-        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
-        self.presentViewController(alert, animated: true, completion: nil)
-        return
-      }
-      
       let nextScene =  segue.destinationViewController as! NewTutorialDescriptonViewController
       nextScene.current = current
       return
     }
+    else
+    {
+      let nextScene =  segue.destinationViewController as! VideoSelectorViewController
+      nextScene.current = current
+      return
+    }
   }
+  
+  func imagePickerController(picker: UIImagePickerController,
+                             didFinishPickingMediaWithInfo info: [String : AnyObject])
+  {
+    let pickedVideoURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+    
+    print(pickedVideoURL.absoluteString)
+    dismissViewControllerAnimated(true, completion: nil)
+    
+    
+    let asset:AVAsset = AVAsset(URL: pickedVideoURL)
+    let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+    assetImgGenerate.appliesPreferredTrackTransform = true
+    var time: CMTime = asset.duration
+    time.value = 0
+    
+    var imageRef: CGImage?
+    do
+    {
+      imageRef =  try assetImgGenerate.copyCGImageAtTime(time, actualTime: nil)
+    }
+    catch
+    {
+      print(error)
+    }
+    
+    let frameImg : UIImage = UIImage(CGImage: imageRef!)
+    
+    VideoThumbnail.image = frameImg
+  }
+
+  
+  /* func postVideoToYouTube(token: String, callback: Bool -> Void){
+   
+   let headers = ["Authorization": "Bearer \(token)"]
+   let urlYoutube = "https://www.googleapis.com/upload/youtube/v3/videos?part=id"
+   
+   let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
+   let videodata: NSData = NSData.dataWithContentsOfMappedFile(path!)! as! NSData
+   upload(
+   .POST,
+   urlYoutube,
+   headers: headers,
+   multipartFormData: { multipartFormData in
+   multipartFormData.appendBodyPart(data: videodata, name: "video", fileName: "video.mp4", mimeType: "application/octet-stream")
+   },
+   encodingCompletion: { encodingResult in
+   switch encodingResult {
+   case .Success(let upload, _, _):
+   upload.responseJSON { request, response, error in
+   print(response)
+   callback(true)
+   }
+   case .Failure(_):
+   callback(false)
+   }
+   })
+   }*/
+  
 }
