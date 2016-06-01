@@ -37,6 +37,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     userName.delegate = self
     name.delegate = self

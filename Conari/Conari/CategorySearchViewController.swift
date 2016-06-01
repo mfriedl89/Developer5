@@ -61,7 +61,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     table_View.delegate = self
     table_View.dataSource = self

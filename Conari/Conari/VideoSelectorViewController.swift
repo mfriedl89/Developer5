@@ -30,12 +30,12 @@ class VideoSelectorViewController: UIViewController, UIImagePickerControllerDele
     
   }
   
-  override func viewDidLoad()
-  {
+  override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
+    
     self.title = current.Title
     imagePicker.delegate = self
-    
   }
   
   

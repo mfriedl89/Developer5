@@ -26,6 +26,7 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     loadIndicator.startAnimating()
     loadIndicator.transform=CGAffineTransformMakeScale(1.5, 1.5)

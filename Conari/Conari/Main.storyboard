@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -523,7 +523,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2h8-6Y-5Nx" firstAttribute="leading" secondItem="3eh-B9-Wkb" secondAttribute="leading" id="6JV-NK-Vqb"/>
                             <constraint firstAttribute="bottom" secondItem="DAY-fX-DeU" secondAttribute="bottom" constant="20" symbolic="YES" id="7of-zu-bRL"/>
@@ -1933,8 +1933,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oqj-Mq-sEP"/>
-        <segue reference="Vcy-HW-eWP"/>
-        <segue reference="L1z-8i-Uil"/>
+        <segue reference="X42-Vz-655"/>
         <segue reference="wtw-EX-eox"/>
+        <segue reference="L1z-8i-Uil"/>
     </inferredMetricsTieBreakers>
 </document>
