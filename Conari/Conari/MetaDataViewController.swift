@@ -263,9 +263,11 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     let player = AVPlayer(URL: pickedVideoURL)
     let playerController = AVPlayerViewController()
     playerController.player = player
-    playerController.showsPlaybackControls = false
+    playerController.showsPlaybackControls = true
     playerController.view.frame = VideoThumbnail.frame
     playerController.view.layer.zPosition = 1;
+    
+    self.addChildViewController(playerController);
     self.view.addSubview(playerController.view);
     player.play()
 
