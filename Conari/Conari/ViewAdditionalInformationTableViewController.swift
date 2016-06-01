@@ -21,6 +21,19 @@ class ViewAdditionalInformationTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = Constants.viewBackgroundColor
+    let cellBackgroundView = UIView()
+    cellBackgroundView.backgroundColor = Constants.viewBackgroundColor
+    var cells = [UITableViewCell]()
+    for i in 0...(self.tableView.numberOfSections - 1) {
+        for j in 0...(self.tableView.numberOfRowsInSection(i) - 1) {
+            if let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: j, inSection: i)) {
+                cells.append(cell)
+            }
+        }
+    }
+    for cell in cells {
+        cell.selectedBackgroundView = cellBackgroundView
+    }
     navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
   }
   
