@@ -9,6 +9,7 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
+import AVKit
 
 struct TutorialMetaData {
   var id: Int;
@@ -137,10 +138,54 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   }
       
   @IBAction func ClickSelectVideoButton(sender: UIButton) {
-    videoPicker.allowsEditing = false
-    videoPicker.sourceType = .PhotoLibrary
-    videoPicker.mediaTypes = [kUTTypeMovie as String]
-    presentViewController(videoPicker, animated: true, completion: nil)
+    let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+    
+    let Camera = UIAlertAction(title: "Camera", style: .Default, handler: {
+      (alert: UIAlertAction!) -> Void in
+      if(UIImagePickerController.isSourceTypeAvailable(.Camera))
+      {
+        self.videoPicker.allowsEditing = true
+        self.videoPicker.sourceType = .Camera
+        self.videoPicker.mediaTypes = [kUTTypeMovie as String]
+        self.presentViewController(self.videoPicker, animated: true, completion: nil)
+
+      }
+    })
+    
+    let Library = UIAlertAction(title: "Photo Library", style: .Default, handler: {
+      (alert: UIAlertAction!) -> Void in
+      if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
+      {
+        self.videoPicker.allowsEditing = true
+        self.videoPicker.sourceType = .PhotoLibrary
+        self.videoPicker.mediaTypes = [kUTTypeMovie as String]
+        self.presentViewController(self.videoPicker, animated: true, completion: nil)
+
+      }
+    })
+    
+    let cancel = UIAlertAction(title: "Cancel", style: .Default, handler: {
+      (alert: UIAlertAction!) -> Void in
+    })
+    
+    // 4
+    if(UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+      optionMenu.addAction(Camera)
+    }
+    
+    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary)) {
+      optionMenu.addAction(Library)
+    }
+    
+    optionMenu.addAction(cancel)
+    
+    // Support display in iPad
+    optionMenu.popoverPresentationController?.sourceView = self.view
+    optionMenu.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+    
+    self.presentViewController(optionMenu, animated: true, completion: nil)
+    
+    
   }
   
   @IBAction func DifficultyValueChanged_(sender: AnyObject) {
@@ -222,43 +267,57 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       let nextScene =  segue.destinationViewController as! NewTutorialDescriptonViewController
       nextScene.current = current
       return
-    }
-    else
-    {
-      let nextScene =  segue.destinationViewController as! VideoSelectorViewController
-      nextScene.current = current
-      return
-    }
+      }
+//    else
+//    {
+    
+    
+    
+//      let nextScene =  segue.destinationViewController as! VideoSelectorViewController
+//      nextScene.current = current
+//      return
+//    }
   }
   
   func imagePickerController(picker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String : AnyObject])
   {
-    let pickedVideoURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+    let pickedVideoURL = info[UIImagePickerControllerMediaURL] as! NSURL
     
-    print(pickedVideoURL.absoluteString)
     dismissViewControllerAnimated(true, completion: nil)
     
     
-    let asset:AVAsset = AVAsset(URL: pickedVideoURL)
-    let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
-    assetImgGenerate.appliesPreferredTrackTransform = true
-    var time: CMTime = asset.duration
-    time.value = 0
+//    let asset:AVAsset = AVAsset(URL: pickedVideoURL)
+//    let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+//    assetImgGenerate.appliesPreferredTrackTransform = true
+//    var time: CMTime = asset.duration
+//    time.value = 0
+//    
+//    var imageRef: CGImage?
+//    do
+//    {
+//      imageRef =  try assetImgGenerate.copyCGImageAtTime(time, actualTime: nil)
+//    }
+//    catch
+//    {
+//      print(error)
+//    }
+//    r
+//    let frameImg : UIImage = UIImage(CGImage: imageRef!)
+//    
+//    VideoThumbnail.image = frameImg
     
-    var imageRef: CGImage?
-    do
-    {
-      imageRef =  try assetImgGenerate.copyCGImageAtTime(time, actualTime: nil)
-    }
-    catch
-    {
-      print(error)
-    }
+    let player = AVPlayer(URL: pickedVideoURL)
+    let playerController = AVPlayerViewController()
+    playerController.player = player
+    playerController.showsPlaybackControls = true
+    playerController.view.frame = VideoThumbnail.frame
+    playerController.view.layer.zPosition = 1;
     
-    let frameImg : UIImage = UIImage(CGImage: imageRef!)
-    
-    VideoThumbnail.image = frameImg
+    self.addChildViewController(playerController);
+    self.view.addSubview(playerController.view);
+    player.play()
+
   }
 
   

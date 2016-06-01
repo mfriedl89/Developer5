@@ -1028,7 +1028,18 @@
                             <constraint firstItem="IYq-OD-fu4" firstAttribute="leading" secondItem="Ha9-v8-5iK" secondAttribute="leadingMargin" constant="-1" id="zbm-BA-WDJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Menu" id="sWH-LZ-mj0"/>
+                    <navigationItem key="navigationItem" title="Menu" id="sWH-LZ-mj0">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Msu-I0-P83">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zpw-pH-5eU">
+                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="LogoutKlicked:" destination="MKS-51-WXW" eventType="touchUpInside" id="DRy-T3-Qcg"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="userNameLabel" destination="F4g-Yy-hdE" id="8zz-fB-kbR"/>
                     </connections>

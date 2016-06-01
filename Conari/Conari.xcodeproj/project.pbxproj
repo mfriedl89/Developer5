@@ -64,6 +64,11 @@
 		AE0B90A31CF58AD800A1CCF3 /* TutorialEditOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */; };
 		AE0B90A41CF58ADB00A1CCF3 /* TutorialEditContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
+		AE45805E1CFEFCF100063DD9 /* UIViewController+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532F1CFEC7D400720019 /* UIViewController+ErrorHandling.swift */; };
+		AE45805F1CFEFCFD00063DD9 /* UIViewController+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532F1CFEC7D400720019 /* UIViewController+ErrorHandling.swift */; };
+		AE4580601CFEFD1600063DD9 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532D1CFEC7C400720019 /* UIViewController+Alert.swift */; };
+		AE4580611CFEFD1600063DD9 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532D1CFEC7C400720019 /* UIViewController+Alert.swift */; };
+		AE4580621CFEFD4500063DD9 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A794ABE1CFED468003E4FB8 /* Reach.swift */; };
 		AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
 		AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
 		AE5416DE1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
@@ -71,9 +76,6 @@
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
 		AEBED9101CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBED90F1CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift */; };
-		C0C5C7D11CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */; };
-		C0C5C7D21CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */; };
-		C0C5C7D31CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */; };
 		C4EF8381F892173DC53394BC /* Pods_ConariUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365C22D7441321CD72F4A174 /* Pods_ConariUnitTests.framework */; };
 		D50B0622819E37209DCB289F /* Pods_ConariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B453908F5D025818C6740170 /* Pods_ConariUITests.framework */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
@@ -165,7 +167,6 @@
 		AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaDataViewController.swift; sourceTree = "<group>"; };
 		AEBED90F1CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdditionalInformationTableViewController.swift; sourceTree = "<group>"; };
 		B453908F5D025818C6740170 /* Pods_ConariUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConariUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSelectorViewController.swift; sourceTree = "<group>"; };
 		CC19B1584554AE041ABD6DB2 /* Pods-Conari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conari.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conari/Pods-Conari.release.xcconfig"; sourceTree = "<group>"; };
 		D94F1562B0D9C25DE3227B36 /* Pods-ConariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
@@ -280,7 +281,6 @@
 				DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */,
 				28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */,
 				28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */,
-				C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */,
 				AEBED90F1CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift */,
 				AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */,
 				E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */,
@@ -686,7 +686,6 @@
 				DAE86E791CD9FFAD00F81CEE /* MenuViewController.swift in Sources */,
 				DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */,
 				DA7CDF1A1CEC9BAF00D89BCF /* ChangePasswordViewController.swift in Sources */,
-				C0C5C7D11CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */,
 				AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */,
 				AE5416DE1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift in Sources */,
 				AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */,
@@ -712,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AE79A8A1CF5D9090083A630 /* MetaDataViewController.swift in Sources */,
+				AE4580621CFEFD4500063DD9 /* Reach.swift in Sources */,
 				3AE79A931CF5D9180083A630 /* CategorySearchTableViewCell.swift in Sources */,
 				3AE79A831CF5D9090083A630 /* CategorySearchViewController.swift in Sources */,
 				3AE79A921CF5D9100083A630 /* KeyboardManager.swift in Sources */,
@@ -731,10 +731,12 @@
 				E0307A681CECA621007DB00F /* ViewAdditionalInformationUITest.swift in Sources */,
 				3AE79A8D1CF5D9090083A630 /* TutorialEditContentController.swift in Sources */,
 				E070D2B61CEC9B6900665154 /* ConariUITests.swift in Sources */,
+				AE4580601CFEFD1600063DD9 /* UIViewController+Alert.swift in Sources */,
 				3AE79A7F1CF5D6950083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				E070D2C21CEC9B7A00665154 /* CategorySearchUITests.swift in Sources */,
 				E070D2C51CEC9B7A00665154 /* SearchTutorialUITests.swift in Sources */,
 				3AE79A8C1CF5D9090083A630 /* NewUserViewController.swift in Sources */,
+				AE45805E1CFEFCF100063DD9 /* UIViewController+ErrorHandling.swift in Sources */,
 				3AE79A891CF5D9090083A630 /* MenuViewController.swift in Sources */,
 				3AE79A861CF5D9090083A630 /* ChangeUserNameViewController.swift in Sources */,
 				3AE79A821CF5D9090083A630 /* AdminTutorialViewController.swift in Sources */,
@@ -743,7 +745,6 @@
 				E070D2C31CEC9B7A00665154 /* MenuUITests.swift in Sources */,
 				3AE79A901CF5D9090083A630 /* WelcomeScreenViewController.swift in Sources */,
 				AE0B908C1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */,
-				C0C5C7D21CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,7 +765,6 @@
 				3AE79A7E1CF5D6940083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				AE0B909D1CF58AC600A1CCF3 /* NewUserViewController.swift in Sources */,
 				AE0B908B1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */,
-				C0C5C7D31CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */,
 				E070D2DA1CEC9BC600665154 /* ViewFinishedTutorial.swift in Sources */,
 				AE0B909F1CF58ACC00A1CCF3 /* LoginViewController.swift in Sources */,
 				AE0B909B1CF58ABD00A1CCF3 /* MenuViewController.swift in Sources */,
@@ -775,9 +775,11 @@
 				AE0B90A41CF58ADB00A1CCF3 /* TutorialEditContentController.swift in Sources */,
 				E0307A601CECA616007DB00F /* NewUserUnitTests.swift in Sources */,
 				AE0B90951CF58AA600A1CCF3 /* MetaDataViewController.swift in Sources */,
+				AE4580611CFEFD1600063DD9 /* UIViewController+Alert.swift in Sources */,
 				AE0B909A1CF58AB900A1CCF3 /* ChangeEmailViewController.swift in Sources */,
 				E0A9EBDB1CF5C01700069B86 /* EditTutorialUnitTests.swift in Sources */,
 				AE0B90981CF58AB300A1CCF3 /* ChangeUserNameViewController.swift in Sources */,
+				AE45805F1CFEFCFD00063DD9 /* UIViewController+ErrorHandling.swift in Sources */,
 				AE0B90A31CF58AD800A1CCF3 /* TutorialEditOptionsController.swift in Sources */,
 				3AE79A911CF5D90B0083A630 /* AboutViewController.swift in Sources */,
 				E0307A5F1CECA616007DB00F /* LoginUnitTests.swift in Sources */,
@@ -907,7 +909,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari;
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari01;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
@@ -923,7 +925,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari;
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari01;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
