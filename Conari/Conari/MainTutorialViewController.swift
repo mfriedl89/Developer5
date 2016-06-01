@@ -15,6 +15,7 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     SearchField_.delegate = self
     

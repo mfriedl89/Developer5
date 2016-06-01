@@ -64,6 +64,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
         
     if TextOrVideo == 1 {
       TutorialTitle.title = "Video Tutorial"

@@ -23,8 +23,8 @@ class TutorialEditContentController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
-    // Do any additional setup after loading the view.
     self.title = current.Title
     
     editor = RichEditorView(frame: self.view.bounds)

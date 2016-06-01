@@ -24,6 +24,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     FirstNameTextField.delegate = self
     SurNameTextField.delegate = self

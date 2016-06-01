@@ -7,40 +7,21 @@
 //
 
 import Foundation
+import UIKit
 
-struct Tutorial {
-    var title: String
-    var category: Int
-    var difficulty: String
-    var duration: String
-    var text: String
-    var author: String
+/**
+ Global constants class of the project.
+ */
+class Constants {
+  
+  // MARK: - Appearance Colors
+  
+  static let navigationBarBackgroundColor = UIColor(red: 0.25, green: 0.04, blue: 0.40, alpha: 1.00)
+  static let navigationBarTextColor = UIColor.whiteColor()
+  
+  static let buttonColor = UIColor(red: 0.00, green: 0.90, blue: 0.69, alpha: 1.00)
+  static let labelColor = UIColor.whiteColor()
+  
+  static let viewBackgroundColor = UIColor(red: 0.45, green: 0.24, blue: 0.81, alpha: 1.00)
+  
 }
-
-let categories = ["Arts and Entertainment",
-                  "Cars & Other Vehicles",
-                  "Computers and Electronics",
-                  "Conari",
-                  "Education and Communications",
-                  "Finance and Business",
-                  "Food and Entertaining",
-                  "Health",
-                  "Hobbies and Crafts",
-                  "Holidays and Traditions",
-                  "Home and Garden",
-                  "Personal Care and Style",
-                  "Pets and Animals",
-                  "Philosophy and Religion",
-                  "Relationships",
-                  "Sports and Fitness",
-                  "Travel",
-                  "Work World",
-                  "Youth"]
-
-let difficulty: [String : String] = [
-    "1" : "very easy",
-    "2" : "easy",
-    "3" : "medium",
-    "4" : "hard",
-    "5" : "very hard"
-]

@@ -26,6 +26,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     new_email_textField.delegate = self
     repeat_new_email_textField.delegate = self
