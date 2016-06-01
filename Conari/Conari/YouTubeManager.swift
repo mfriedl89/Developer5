@@ -91,8 +91,30 @@ class YouTubeManager {
       
     })
     task.resume()
-    
-    
   }
   
+  func uploadRequest(uploadUrl: String, data: NSData)
+  {
+    let url:NSURL = NSURL(string: uploadUrl)!
+    let session = NSURLSession.sharedSession()
+    
+    let request = NSMutableURLRequest(URL: url)
+    request.HTTPMethod = "POST"
+    request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+    
+    let task = session.uploadTaskWithRequest(request, fromData: data, completionHandler:
+      {(data, response, error) in
+        
+        guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+          print("error")
+          return
+        }
+        
+        let dataString = String(data: data!, encoding: NSUTF8StringEncoding)
+        print(dataString)
+      }
+    );
+    
+    task.resume()
+  }
 }

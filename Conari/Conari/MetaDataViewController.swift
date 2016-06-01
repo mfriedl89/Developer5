@@ -31,32 +31,37 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   @IBOutlet weak var VideoThumbnail: UIImageView!
   @IBOutlet weak var NextButton: UIBarButtonItem!
   @IBOutlet weak var TutorialTitle: UINavigationItem!
-
+  
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
-
+  
   var categoryPickerView : UIPickerView!
   var timePickerView : UIPickerView!
   let videoPicker = UIImagePickerController()
-    
+  
+  var apiKey = "AIzaSyBkPodgj3cSzd8XYnzEnUBIsonzRx7QaZA"
+  var channelID = "UCTwXFSPFmBofWhl71T85WNQ"
+  
+  var pickedVideoURL: NSURL?
+  
   var categories = ["Arts and Entertainment",
-                  "Cars & Other Vehicles",
-                  "Computers and Electronics",
-                  "Conari",
-                  "Education and Communications",
-                  "Finance and Business",
-                  "Food and Entertaining",
-                  "Health",
-                  "Hobbies and Crafts",
-                  "Holidays and Traditions",
-                  "Home and Garden",
-                  "Personal Care and Style",
-                  "Pets and Animals",
-                  "Philosophy and Religion",
-                  "Relationships",
-                  "Sports and Fitness",
-                  "Travel",
-                  "Work World",
-                  "Youth"]
+                    "Cars & Other Vehicles",
+                    "Computers and Electronics",
+                    "Conari",
+                    "Education and Communications",
+                    "Finance and Business",
+                    "Food and Entertaining",
+                    "Health",
+                    "Hobbies and Crafts",
+                    "Holidays and Traditions",
+                    "Home and Garden",
+                    "Personal Care and Style",
+                    "Pets and Animals",
+                    "Philosophy and Religion",
+                    "Relationships",
+                    "Sports and Fitness",
+                    "Travel",
+                    "Work World",
+                    "Youth"]
   
   var times: [String] = []
   
@@ -64,7 +69,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   
   override func viewDidLoad() {
     super.viewDidLoad()
-        
+    
     if TextOrVideo == 1 {
       TutorialTitle.title = "Video Tutorial"
       NextButton.title = "Upload"
@@ -128,14 +133,17 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     return true
   }
-    
+  
   @IBAction func ClickNext(sender: AnyObject) {
     if (TextOrVideo == 0)
     {
       performSegueWithIdentifier("write_tutorial", sender: nil)
     }
+    else {
+      postVideoToYouTube()
+    }
   }
-      
+  
   @IBAction func ClickSelectVideoButton(sender: UIButton) {
     videoPicker.allowsEditing = false
     videoPicker.sourceType = .PhotoLibrary
@@ -212,7 +220,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       return
     }
@@ -234,13 +242,13 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   func imagePickerController(picker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String : AnyObject])
   {
-    let pickedVideoURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+    pickedVideoURL = info[UIImagePickerControllerReferenceURL] as! NSURL
     
-    print(pickedVideoURL.absoluteString)
+    print(pickedVideoURL!.absoluteString)
     dismissViewControllerAnimated(true, completion: nil)
     
     
-    let asset:AVAsset = AVAsset(URL: pickedVideoURL)
+    let asset:AVAsset = AVAsset(URL: pickedVideoURL!)
     let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
     assetImgGenerate.appliesPreferredTrackTransform = true
     var time: CMTime = asset.duration
@@ -260,33 +268,39 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     VideoThumbnail.image = frameImg
   }
-
   
-  /* func postVideoToYouTube(token: String, callback: Bool -> Void){
-   
-   let headers = ["Authorization": "Bearer \(token)"]
-   let urlYoutube = "https://www.googleapis.com/upload/youtube/v3/videos?part=id"
-   
-   let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
-   let videodata: NSData = NSData.dataWithContentsOfMappedFile(path!)! as! NSData
-   upload(
-   .POST,
-   urlYoutube,
-   headers: headers,
-   multipartFormData: { multipartFormData in
-   multipartFormData.appendBodyPart(data: videodata, name: "video", fileName: "video.mp4", mimeType: "application/octet-stream")
-   },
-   encodingCompletion: { encodingResult in
-   switch encodingResult {
-   case .Success(let upload, _, _):
-   upload.responseJSON { request, response, error in
-   print(response)
-   callback(true)
-   }
-   case .Failure(_):
-   callback(false)
-   }
-   })
-   }*/
+  
+  func postVideoToYouTube(){
+    
+    let headers = ["Authorization": "Bearer \(channelID)"]
+    let urlYoutube = "https://www.googleapis.com/upload/youtube/v3/videos?part=id"
+    
+    let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
+    let videodata: NSData = NSData(contentsOfURL: pickedVideoURL!)!
+    
+    print(urlYoutube)
+    
+
+    YouTubeManager.sharedManager.uploadRequest(urlYoutube, data: videodata)
+    
+    //    upload(
+//      .POST,
+//      urlYoutube,
+//      headers: headers,
+//      multipartFormData: { multipartFormData in
+//        multipartFormData.appendBodyPart(data: videodata, name: "video", fileName: "video.mp4", mimeType: "application/octet-stream")
+//      },
+//      encodingCompletion: { encodingResult in
+//        switch encodingResult {
+//        case .Success(let upload, _, _):
+//          upload.responseJSON { request, response, error in
+//            print(response)
+//            callback(true)
+//          }
+//        case .Failure(_):
+//          callback(false)
+//        }
+//    })
+  }
   
 }
