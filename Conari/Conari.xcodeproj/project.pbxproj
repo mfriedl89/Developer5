@@ -921,7 +921,7 @@
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = ConariUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = Conari;
@@ -934,7 +934,7 @@
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = ConariUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = Conari;
