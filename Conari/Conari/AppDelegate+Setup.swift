@@ -29,12 +29,15 @@ extension AppDelegate {
     UIWebView.appearance().opaque = false
     UIWebView.appearance().backgroundColor = UIColor.clearColor()
     
+    //Table View
+    UITableView.appearance().backgroundColor = Constants.viewBackgroundColor
+    
     UITableViewCell.appearance().backgroundColor = Constants.viewBackgroundColor
+    UITableViewCell.appearance().textLabel?.textColor = Constants.labelColor
+    
     let cellBackgroundView = UIView()
     cellBackgroundView.backgroundColor = Constants.navigationBarBackgroundColor
     UITableViewCell.appearance().selectedBackgroundView = cellBackgroundView
-    
-    
 }
 
 }
