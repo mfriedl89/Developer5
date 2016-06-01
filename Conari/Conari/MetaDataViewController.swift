@@ -137,7 +137,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   }
       
   @IBAction func ClickSelectVideoButton(sender: UIButton) {
-    videoPicker.allowsEditing = false
+    videoPicker.allowsEditing = true
     videoPicker.sourceType = .PhotoLibrary
     videoPicker.mediaTypes = [kUTTypeMovie as String]
     presentViewController(videoPicker, animated: true, completion: nil)
@@ -222,19 +222,19 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       let nextScene =  segue.destinationViewController as! NewTutorialDescriptonViewController
       nextScene.current = current
       return
-    }
-    else
-    {
-      let nextScene =  segue.destinationViewController as! VideoSelectorViewController
-      nextScene.current = current
-      return
-    }
+      }
+//    else
+//    {
+//      let nextScene =  segue.destinationViewController as! VideoSelectorViewController
+//      nextScene.current = current
+//      return
+//    }
   }
   
   func imagePickerController(picker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String : AnyObject])
   {
-    let pickedVideoURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+    let pickedVideoURL = info[UIImagePickerControllerMediaURL] as! NSURL
     
     print(pickedVideoURL.absoluteString)
     dismissViewControllerAnimated(true, completion: nil)
