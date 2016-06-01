@@ -50,6 +50,7 @@ class TutorialEditContentController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     self.navigationController?.navigationBarHidden = false
+    handleNetworkError()
     
     keyman?.beginMonitoring()
   }
@@ -61,29 +62,6 @@ class TutorialEditContentController: UIViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
-  }
-  
-  // Maybe needed
-  func showErrorMessage(message: String) {
-    dispatch_async(dispatch_get_main_queue(), {
-      //create alert
-      let errorAlert = UIAlertController(title: "Error",
-        message: message,
-        preferredStyle: UIAlertControllerStyle.Alert)
-      
-      //make button
-      let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-      
-      //add buttons
-      errorAlert.addAction(okAction)
-      
-      // Support display in iPad
-      errorAlert.popoverPresentationController?.sourceView = self.view
-      errorAlert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
-      //display
-      self.presentViewController(errorAlert, animated: true, completion: nil)
-    })
   }
   
   @IBAction func savePressed(sender: AnyObject) {

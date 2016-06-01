@@ -55,6 +55,8 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   
   override func viewWillAppear(animated: Bool) {
     self.navigationController?.navigationBarHidden = false
+    
+    handleNetworkError()
   }
   
   override func viewDidLoad() {

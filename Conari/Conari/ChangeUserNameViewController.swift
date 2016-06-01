@@ -53,6 +53,10 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
     // Do any additional setup after loading the view.
   }
   
+  override func viewWillAppear(animated: Bool) {
+    handleNetworkError()
+  }
+  
   func textFieldShouldReturn(textField: UITextField) -> Bool {
     if(textField == FirstNameTextField) {
       SurNameTextField.becomeFirstResponder()
@@ -144,25 +148,4 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
     test(FirstNameTextField.text!, new_surname: SurNameTextField.text!)
   }
   
-  func showErrorMessage(message: String) {
-    dispatch_async(dispatch_get_main_queue(), {
-      //create alert
-      let errorAlert = UIAlertController(title: "Error",
-        message: message,
-        preferredStyle: UIAlertControllerStyle.Alert)
-      
-      //make button
-      let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-      
-      //add buttons
-      errorAlert.addAction(okAction)
-      
-      // Support display in iPad
-      errorAlert.popoverPresentationController?.sourceView = self.view
-      errorAlert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
-      //display
-      self.presentViewController(errorAlert, animated: true, completion: nil)
-    })
-  }
 }
