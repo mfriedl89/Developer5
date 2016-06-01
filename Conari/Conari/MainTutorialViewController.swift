@@ -11,7 +11,7 @@ import UIKit
 class MainTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
   @IBOutlet weak var SearchField_: UITextField!
   @IBOutlet weak var categoryTableView_: UITableView!
-
+    @IBOutlet weak var searchBtn: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -48,11 +48,12 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
     
     if (textField == SearchField_) {
       SearchField_.resignFirstResponder()
+        SearchButtonPressed(searchBtn)
     }
     
     return true
   }
-  
+    
   @IBAction func SearchButtonPressed(sender: AnyObject) {
     performSegueWithIdentifier("tutorial_list_search", sender: nil)
   }
