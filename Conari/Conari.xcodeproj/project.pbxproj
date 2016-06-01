@@ -488,7 +488,7 @@
 				TargetAttributes = {
 					E06D7FB51CBE221F003001BD = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = NC8S588S83;
+						DevelopmentTeam = SYXK862M8H;
 					};
 					E070D2B21CEC9B6900665154 = {
 						CreatedOnToolsVersion = 7.3;
@@ -909,7 +909,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari01;
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
@@ -925,7 +925,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari01;
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
