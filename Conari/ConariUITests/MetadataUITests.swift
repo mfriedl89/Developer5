@@ -68,11 +68,11 @@ class MetadataUITests: XCTestCase {
     incrementButton.tap()
     
     app.textFields["category"].tap()
-    
-    app.pickerWheels["Arts and Entertainment"].tap()
+    app.pickerWheels["Arts and Entertainment"].adjustToPickerWheelValue("Conari")
     app.textFields["duration"].tap()
-    app.pickerWheels["00:00"].tap()
-    app.navigationBars["Tutorial"].buttons["Next"].tap()
+    app.pickerWheels["00:00"].adjustToPickerWheelValue("00:10")
+    
+    app.navigationBars["Text Tutorial"].buttons["Next"].tap()
 
     
     sleep(1);

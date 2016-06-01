@@ -71,6 +71,14 @@
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
 		AEBED9101CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBED90F1CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift */; };
+		C090C97C1CFEFDE600B9D39A /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532D1CFEC7C400720019 /* UIViewController+Alert.swift */; };
+		C090C97D1CFEFDE700B9D39A /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532D1CFEC7C400720019 /* UIViewController+Alert.swift */; };
+		C090C97E1CFEFDE900B9D39A /* UIViewController+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532F1CFEC7D400720019 /* UIViewController+ErrorHandling.swift */; };
+		C090C97F1CFEFDEA00B9D39A /* UIViewController+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532F1CFEC7D400720019 /* UIViewController+ErrorHandling.swift */; };
+		C090C9801CFEFEE700B9D39A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
+		C090C9811CFEFEFD00B9D39A /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A794ABE1CFED468003E4FB8 /* Reach.swift */; };
+		C090C9821CFEFEFD00B9D39A /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A794ABE1CFED468003E4FB8 /* Reach.swift */; };
+		C090C9831CFF003F00B9D39A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE8F6B11CD0FBF60081EA84 /* Main.storyboard */; };
 		C0C5C7D11CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */; };
 		C0C5C7D21CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */; };
 		C0C5C7D31CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5C7D01CF596E700BFEAC1 /* VideoSelectorViewController.swift */; };
@@ -535,6 +543,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C090C9831CFF003F00B9D39A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,13 +723,16 @@
 				3AE79A8A1CF5D9090083A630 /* MetaDataViewController.swift in Sources */,
 				3AE79A931CF5D9180083A630 /* CategorySearchTableViewCell.swift in Sources */,
 				3AE79A831CF5D9090083A630 /* CategorySearchViewController.swift in Sources */,
+				C090C97C1CFEFDE600B9D39A /* UIViewController+Alert.swift in Sources */,
 				3AE79A921CF5D9100083A630 /* KeyboardManager.swift in Sources */,
 				3AE79A8E1CF5D9090083A630 /* TutorialEditOptionsController.swift in Sources */,
 				E0307A661CECA621007DB00F /* LoginUITests.swift in Sources */,
 				E0307A671CECA621007DB00F /* NewUserUITests.swift in Sources */,
 				3AE79A8B1CF5D9090083A630 /* NewTutorialDescriptonViewController.swift in Sources */,
 				3AE79A851CF5D9090083A630 /* ChangePasswordViewController.swift in Sources */,
+				C090C97E1CFEFDE900B9D39A /* UIViewController+ErrorHandling.swift in Sources */,
 				3AE79A8F1CF5D9090083A630 /* ViewFinishedTutorialViewController.swift in Sources */,
+				C090C9801CFEFEE700B9D39A /* AppDelegate.swift in Sources */,
 				3AE79A801CF5D8EE0083A630 /* DatabaseManager.swift in Sources */,
 				3AE79A881CF5D9090083A630 /* MainTutorialViewController.swift in Sources */,
 				E070D2C61CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift in Sources */,
@@ -734,6 +746,7 @@
 				3AE79A7F1CF5D6950083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				E070D2C21CEC9B7A00665154 /* CategorySearchUITests.swift in Sources */,
 				E070D2C51CEC9B7A00665154 /* SearchTutorialUITests.swift in Sources */,
+				C090C9811CFEFEFD00B9D39A /* Reach.swift in Sources */,
 				3AE79A8C1CF5D9090083A630 /* NewUserViewController.swift in Sources */,
 				3AE79A891CF5D9090083A630 /* MenuViewController.swift in Sources */,
 				3AE79A861CF5D9090083A630 /* ChangeUserNameViewController.swift in Sources */,
@@ -758,11 +771,13 @@
 				AE0B90A21CF58AD500A1CCF3 /* TutorialTableViewCell.swift in Sources */,
 				AE0B90941CF58AA400A1CCF3 /* AppDelegate.swift in Sources */,
 				AE0B909E1CF58AC900A1CCF3 /* WelcomeScreenViewController.swift in Sources */,
+				C090C9821CFEFEFD00B9D39A /* Reach.swift in Sources */,
 				AE0B90991CF58AB600A1CCF3 /* ChangePasswordViewController.swift in Sources */,
 				AE0B90A11CF58AD200A1CCF3 /* AdminTutorialViewController.swift in Sources */,
 				AE0B90961CF58AA900A1CCF3 /* MainTutorialViewController.swift in Sources */,
 				3AE79A7E1CF5D6940083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				AE0B909D1CF58AC600A1CCF3 /* NewUserViewController.swift in Sources */,
+				C090C97F1CFEFDEA00B9D39A /* UIViewController+ErrorHandling.swift in Sources */,
 				AE0B908B1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */,
 				C0C5C7D31CF596E700BFEAC1 /* VideoSelectorViewController.swift in Sources */,
 				E070D2DA1CEC9BC600665154 /* ViewFinishedTutorial.swift in Sources */,
@@ -774,6 +789,7 @@
 				AE0B90A01CF58ACF00A1CCF3 /* KeyboardManager.swift in Sources */,
 				AE0B90A41CF58ADB00A1CCF3 /* TutorialEditContentController.swift in Sources */,
 				E0307A601CECA616007DB00F /* NewUserUnitTests.swift in Sources */,
+				C090C97D1CFEFDE700B9D39A /* UIViewController+Alert.swift in Sources */,
 				AE0B90951CF58AA600A1CCF3 /* MetaDataViewController.swift in Sources */,
 				AE0B909A1CF58AB900A1CCF3 /* ChangeEmailViewController.swift in Sources */,
 				E0A9EBDB1CF5C01700069B86 /* EditTutorialUnitTests.swift in Sources */,
