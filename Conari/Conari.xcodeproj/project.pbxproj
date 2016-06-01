@@ -64,6 +64,11 @@
 		AE0B90A31CF58AD800A1CCF3 /* TutorialEditOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */; };
 		AE0B90A41CF58ADB00A1CCF3 /* TutorialEditContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
+		AE45805E1CFEFCF100063DD9 /* UIViewController+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532F1CFEC7D400720019 /* UIViewController+ErrorHandling.swift */; };
+		AE45805F1CFEFCFD00063DD9 /* UIViewController+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532F1CFEC7D400720019 /* UIViewController+ErrorHandling.swift */; };
+		AE4580601CFEFD1600063DD9 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532D1CFEC7C400720019 /* UIViewController+Alert.swift */; };
+		AE4580611CFEFD1600063DD9 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532D1CFEC7C400720019 /* UIViewController+Alert.swift */; };
+		AE4580621CFEFD4500063DD9 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A794ABE1CFED468003E4FB8 /* Reach.swift */; };
 		AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
 		AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
 		AE5416DE1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
@@ -706,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AE79A8A1CF5D9090083A630 /* MetaDataViewController.swift in Sources */,
+				AE4580621CFEFD4500063DD9 /* Reach.swift in Sources */,
 				3AE79A931CF5D9180083A630 /* CategorySearchTableViewCell.swift in Sources */,
 				3AE79A831CF5D9090083A630 /* CategorySearchViewController.swift in Sources */,
 				3AE79A921CF5D9100083A630 /* KeyboardManager.swift in Sources */,
@@ -725,10 +731,12 @@
 				E0307A681CECA621007DB00F /* ViewAdditionalInformationUITest.swift in Sources */,
 				3AE79A8D1CF5D9090083A630 /* TutorialEditContentController.swift in Sources */,
 				E070D2B61CEC9B6900665154 /* ConariUITests.swift in Sources */,
+				AE4580601CFEFD1600063DD9 /* UIViewController+Alert.swift in Sources */,
 				3AE79A7F1CF5D6950083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				E070D2C21CEC9B7A00665154 /* CategorySearchUITests.swift in Sources */,
 				E070D2C51CEC9B7A00665154 /* SearchTutorialUITests.swift in Sources */,
 				3AE79A8C1CF5D9090083A630 /* NewUserViewController.swift in Sources */,
+				AE45805E1CFEFCF100063DD9 /* UIViewController+ErrorHandling.swift in Sources */,
 				3AE79A891CF5D9090083A630 /* MenuViewController.swift in Sources */,
 				3AE79A861CF5D9090083A630 /* ChangeUserNameViewController.swift in Sources */,
 				3AE79A821CF5D9090083A630 /* AdminTutorialViewController.swift in Sources */,
@@ -767,9 +775,11 @@
 				AE0B90A41CF58ADB00A1CCF3 /* TutorialEditContentController.swift in Sources */,
 				E0307A601CECA616007DB00F /* NewUserUnitTests.swift in Sources */,
 				AE0B90951CF58AA600A1CCF3 /* MetaDataViewController.swift in Sources */,
+				AE4580611CFEFD1600063DD9 /* UIViewController+Alert.swift in Sources */,
 				AE0B909A1CF58AB900A1CCF3 /* ChangeEmailViewController.swift in Sources */,
 				E0A9EBDB1CF5C01700069B86 /* EditTutorialUnitTests.swift in Sources */,
 				AE0B90981CF58AB300A1CCF3 /* ChangeUserNameViewController.swift in Sources */,
+				AE45805F1CFEFCFD00063DD9 /* UIViewController+ErrorHandling.swift in Sources */,
 				AE0B90A31CF58AD800A1CCF3 /* TutorialEditOptionsController.swift in Sources */,
 				3AE79A911CF5D90B0083A630 /* AboutViewController.swift in Sources */,
 				E0307A5F1CECA616007DB00F /* LoginUnitTests.swift in Sources */,
