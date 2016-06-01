@@ -907,7 +907,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari1;
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
@@ -923,7 +923,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari1;
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
