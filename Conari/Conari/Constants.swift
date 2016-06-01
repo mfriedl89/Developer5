@@ -22,6 +22,9 @@ class Constants {
   static let buttonColor = UIColor(red: 0.00, green: 0.90, blue: 0.69, alpha: 1.00)
   static let labelColor = UIColor.whiteColor()
   
-  static let viewBackgroundColor = UIColor(red: 0.45, green: 0.24, blue: 0.81, alpha: 1.00)
+  static let viewBackgroundColor = UIColor(red:0.49, green:0.00, blue:0.78, alpha:1.00)
+  static let contentBackgroundColor = UIColor(red: 0.45, green: 0.24, blue: 0.81, alpha: 1.00)
+  
+  static let cssTextColor = "<style>body{color: white;}</style>"
   
 }
