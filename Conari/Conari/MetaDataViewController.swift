@@ -231,12 +231,6 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       nextScene.current = current
       return
     }
-    else
-    {
-      let nextScene =  segue.destinationViewController as! VideoSelectorViewController
-      nextScene.current = current
-      return
-    }
   }
   
   func imagePickerController(picker: UIImagePickerController,
