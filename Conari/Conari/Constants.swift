@@ -20,7 +20,7 @@ class Constants {
 
   static let navigationBarTextColor = UIColor.whiteColor()
   
-  static let buttonColor = UIColor(red:0.57, green:0.10, blue:0.75, alpha:1.0)
+  static let buttonColor = UIColor(red:0.55, green:0.18, blue:0.84, alpha:1.0)
 
   static let labelColor = UIColor.blackColor()
   

@@ -50,7 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   }
   
   override func viewWillAppear(animated: Bool) {
-//    self.navigationController?.navigationBarHidden = false
+    self.navigationController?.navigationBarHidden = true
     
     userNameTextField.text = ""
     passwordTextField.text = ""

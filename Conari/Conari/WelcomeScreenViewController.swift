@@ -37,6 +37,8 @@ class WelcomeScreenViewController: UIViewController {
     
     self.AboutBtn.tintColor = UIColor.whiteColor()
     Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: self.AboutBtn)
+    
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "LaunchscreenBackground"), forBarMetrics: UIBarMetrics.Default)
 
   }
   

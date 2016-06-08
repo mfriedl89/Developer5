@@ -18,8 +18,8 @@ extension AppDelegate {
     UINavigationBar.appearance().barStyle = UIBarStyle.BlackTranslucent
     
     // Text Field
-    UITextField.appearance().textColor = UIColor.whiteColor()
-    UITextField.appearance().tintColor = UIColor.whiteColor()
+    UITextField.appearance().textColor = UIColor.blackColor()
+    UITextField.appearance().tintColor = UIColor.blackColor()
     
     
     // Web View
