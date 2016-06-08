@@ -94,13 +94,13 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     switch indexPath.section {
     case 0:
       let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
-      let duration_hours = Int(tutorialArray[indexPath.row].duration)!/60
-      let duration_minutes = Int(tutorialArray[indexPath.row].duration)!%60
+      let durationHours = Int(tutorialArray[indexPath.row].duration)!/60
+      let durationMinutes = Int(tutorialArray[indexPath.row].duration)!%60
       
       cell.label_title?.text = tutorialArray[indexPath.row].title
       cell.label_category?.text = categories[tutorialArray[indexPath.row].category]
       
-      cell.label_duration.text = String(format: "%02d:%02d", duration_hours,duration_minutes)
+      cell.label_duration.text = String(format: "%02d:%02d", durationHours,durationMinutes)
       cell.image_view.image = UIImage(named: "\(tutorialArray[indexPath.row].category-1)")
       
       switch Int(tutorialArray[indexPath.row].difficulty)! {
