@@ -18,8 +18,8 @@ extension AppDelegate {
     UINavigationBar.appearance().barStyle = UIBarStyle.BlackTranslucent
     
     // Text Field
-    UITextField.appearance().textColor = UIColor.blackColor()
-    UITextField.appearance().tintColor = UIColor.blackColor()
+    UITextField.appearance().textColor = UIColor.whiteColor()
+    UITextField.appearance().tintColor = UIColor.whiteColor()
     
     
     // Web View
@@ -33,13 +33,13 @@ extension AppDelegate {
     UITableViewCell.appearance().textLabel?.textColor = Constants.labelColor
     
     let cellBackgroundView = UIView()
-    cellBackgroundView.backgroundColor = Constants.navigationBarBackgroundColor
+    cellBackgroundView.backgroundColor = UIColor(red: 0.78, green: 0.78, blue: 0.78, alpha: 1.0)
     UITableViewCell.appearance().selectedBackgroundView = cellBackgroundView
     
     //Others
     UIButton.appearance().tintColor = Constants.buttonColor
     UILabel.appearance().textColor = Constants.labelColor
     UIStepper.appearance().tintColor = Constants.buttonColor
-}
-
+  }
+  
 }

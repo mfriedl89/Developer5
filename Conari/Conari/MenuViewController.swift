@@ -25,6 +25,8 @@ class MenuViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     handleNetworkError()
+    
+    self.navigationController?.navigationBarHidden = false
   }
   
   override func didReceiveMemoryWarning() {

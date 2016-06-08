@@ -19,12 +19,7 @@ class WelcomeScreenViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
-    let gradient: CAGradientLayer = CAGradientLayer()
-    gradient.frame = self.view.bounds
-    gradient.colors = [Constants.welcomeScreenBackgroundLila.CGColor, Constants.welcomeScreenBackgroundBlue.CGColor]
-    self.view.layer.insertSublayer(gradient, atIndex: 0)
-    
+    Constants.setGradientColor(self.view)
     
     self.WelcomeLabel.textColor = UIColor.whiteColor()
     self.MrTutorLabel.textColor = UIColor.whiteColor()
@@ -41,6 +36,7 @@ class WelcomeScreenViewController: UIViewController {
     Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: self.ContinueBtn)
     
     self.AboutBtn.tintColor = UIColor.whiteColor()
+    Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: self.AboutBtn)
 
   }
   
