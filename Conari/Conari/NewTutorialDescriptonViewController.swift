@@ -13,6 +13,8 @@ import AVFoundation
 
 class NewTutorialDescriptonViewController: UIViewController {
   
+  // MARK: - Members
+  
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0);
   
   var editor:RichEditorView?
@@ -86,7 +88,7 @@ class NewTutorialDescriptonViewController: UIViewController {
           // Support display in iPad
           alert.popoverPresentationController?.sourceView = self.view
           alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+          
           self.presentViewController(alert, animated: true, completion: nil)
           
         });
@@ -204,7 +206,7 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
         // Support display in iPad
         self.imagePicker.popoverPresentationController?.sourceView = self.view
         self.imagePicker.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
- 
+        
         self.presentViewController(self.imagePicker, animated: true, completion: nil)
       }
     })
@@ -227,7 +229,7 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
     // Support display in iPad
     optionMenu.popoverPresentationController?.sourceView = self.view
     optionMenu.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
- 
+    
     self.presentViewController(optionMenu, animated: true, completion: nil)
   }
 }

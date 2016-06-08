@@ -11,17 +11,7 @@ import UIKit
 
 class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
   
-  @IBOutlet weak var userName: UITextField!
-  @IBOutlet weak var name: UITextField!
-  @IBOutlet weak var surname: UITextField!
-  @IBOutlet weak var email: UITextField!
-  @IBOutlet weak var password: UITextField!
-  @IBOutlet weak var repeatedPassword: UITextField!
-  
-  @IBOutlet weak var scrollView: UIScrollView!
-  @IBOutlet weak var viewInScrollView: UIView!
-  
-  @IBOutlet weak var doneBtn: UIButton!
+  // MARK: - Members
   
   let invalidUser = "Enter a valid username."
   let invalidFirstName = "Enter a valid first name."
@@ -34,6 +24,20 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
   var scrollInset : CGFloat = 0
   
   var success:Bool = false
+  
+  // MARK: - Outlets
+  
+  @IBOutlet weak var userName: UITextField!
+  @IBOutlet weak var name: UITextField!
+  @IBOutlet weak var surname: UITextField!
+  @IBOutlet weak var email: UITextField!
+  @IBOutlet weak var password: UITextField!
+  @IBOutlet weak var repeatedPassword: UITextField!
+  
+  @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var viewInScrollView: UIView!
+  
+  @IBOutlet weak var doneBtn: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -185,7 +189,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         // Support display in iPad
         alert.popoverPresentationController?.sourceView = self.view
         alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+        
         self.presentViewController(alert, animated: true, completion: nil)
       }
       else if ((textField == "Firstname") && (is_error == true)){
@@ -195,7 +199,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         // Support display in iPad
         alert.popoverPresentationController?.sourceView = self.view
         alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+        
         self.presentViewController(alert, animated: true, completion: nil)
       }
       else if ((textField == "Surname") && (is_error == true)){
@@ -205,17 +209,17 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         // Support display in iPad
         alert.popoverPresentationController?.sourceView = self.view
         alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+        
         self.presentViewController(alert, animated: true, completion: nil)
       }
       else if ((textField == "Email") && (is_error == true)){
         let alert = UIAlertController(title: "Alert", message: invalidEMail, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-
+        
         // Support display in iPad
         alert.popoverPresentationController?.sourceView = self.view
         alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+        
         self.presentViewController(alert, animated: true, completion: nil)
       }
       else if ((textField == "PasswordWrong") && (is_error == true)){
@@ -225,7 +229,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         // Support display in iPad
         alert.popoverPresentationController?.sourceView = self.view
         alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+        
         self.presentViewController(alert, animated: true, completion: nil)
       }
       else if ((textField == "PasswordRepeat") && (is_error == true)){
@@ -235,7 +239,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
         // Support display in iPad
         alert.popoverPresentationController?.sourceView = self.view
         alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+        
         self.presentViewController(alert, animated: true, completion: nil)
       }
     }
@@ -439,7 +443,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
       // Support display in iPad
       errorAlert.popoverPresentationController?.sourceView = self.view
       errorAlert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       //display
       self.presentViewController(errorAlert, animated: true, completion: nil)
     })
