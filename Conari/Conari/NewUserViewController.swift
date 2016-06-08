@@ -53,6 +53,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
   override func viewWillDisappear(animated: Bool)
   {
     deregisterFromKeyboardNotifications()
+    self.navigationController?.navigationBarHidden = true
   }
   
   

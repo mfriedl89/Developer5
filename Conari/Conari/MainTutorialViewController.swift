@@ -18,6 +18,7 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = UIColor.whiteColor()
     
     SearchField_.delegate = self
     
@@ -71,6 +72,7 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
     let cell:UITableViewCell = self.categoryTableView_.dequeueReusableCellWithIdentifier("category_cell")! as UITableViewCell
     
     cell.textLabel?.text = categories[indexPath.row]
+    cell.textLabel?.textColor = Constants.lightBackgroundColor
     
     return cell
   }

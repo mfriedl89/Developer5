@@ -28,6 +28,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     FirstNameTextField.delegate = self
     SurNameTextField.delegate = self
@@ -59,6 +60,8 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   
   override func viewWillAppear(animated: Bool) {
     handleNetworkError()
+    
+    self.navigationController?.navigationBarHidden = false
   }
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {

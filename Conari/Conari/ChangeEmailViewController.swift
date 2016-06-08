@@ -30,6 +30,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     new_email_textField.delegate = self
     repeat_new_email_textField.delegate = self
@@ -62,6 +63,8 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   
   override func viewWillAppear(animated: Bool) {
     handleNetworkError()
+    
+    self.navigationController?.navigationBarHidden = false
   }
   
   override func didReceiveMemoryWarning() {
