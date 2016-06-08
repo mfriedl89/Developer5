@@ -9,7 +9,6 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
-import AVKit
 
 struct TutorialMetaData {
   var id: Int;
@@ -32,32 +31,37 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   @IBOutlet weak var VideoThumbnail: UIImageView!
   @IBOutlet weak var NextButton: UIBarButtonItem!
   @IBOutlet weak var TutorialTitle: UINavigationItem!
-
+  
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
-
+  
   var categoryPickerView : UIPickerView!
   var timePickerView : UIPickerView!
   let videoPicker = UIImagePickerController()
-    
+  
+  var apiKey = "AIzaSyBkPodgj3cSzd8XYnzEnUBIsonzRx7QaZA"
+  var channelID = "UCTwXFSPFmBofWhl71T85WNQ"
+  
+  var pickedVideoURL: NSURL?
+  
   var categories = ["Arts and Entertainment",
-                  "Cars & Other Vehicles",
-                  "Computers and Electronics",
-                  "Conari",
-                  "Education and Communications",
-                  "Finance and Business",
-                  "Food and Entertaining",
-                  "Health",
-                  "Hobbies and Crafts",
-                  "Holidays and Traditions",
-                  "Home and Garden",
-                  "Personal Care and Style",
-                  "Pets and Animals",
-                  "Philosophy and Religion",
-                  "Relationships",
-                  "Sports and Fitness",
-                  "Travel",
-                  "Work World",
-                  "Youth"]
+                    "Cars & Other Vehicles",
+                    "Computers and Electronics",
+                    "Conari",
+                    "Education and Communications",
+                    "Finance and Business",
+                    "Food and Entertaining",
+                    "Health",
+                    "Hobbies and Crafts",
+                    "Holidays and Traditions",
+                    "Home and Garden",
+                    "Personal Care and Style",
+                    "Pets and Animals",
+                    "Philosophy and Religion",
+                    "Relationships",
+                    "Sports and Fitness",
+                    "Travel",
+                    "Work World",
+                    "Youth"]
   
   var times: [String] = []
   
@@ -65,7 +69,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   
   override func viewDidLoad() {
     super.viewDidLoad()
-        
+    
     if TextOrVideo == 1 {
       TutorialTitle.title = "Video Tutorial"
       NextButton.title = "Upload"
@@ -129,63 +133,22 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     return true
   }
-    
+  
   @IBAction func ClickNext(sender: AnyObject) {
     if (TextOrVideo == 0)
     {
       performSegueWithIdentifier("write_tutorial", sender: nil)
     }
+    else {
+      postVideoToYouTube()
+    }
   }
-      
+  
   @IBAction func ClickSelectVideoButton(sender: UIButton) {
-    let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
-    
-    let Camera = UIAlertAction(title: "Camera", style: .Default, handler: {
-      (alert: UIAlertAction!) -> Void in
-      if(UIImagePickerController.isSourceTypeAvailable(.Camera))
-      {
-        self.videoPicker.allowsEditing = true
-        self.videoPicker.sourceType = .Camera
-        self.videoPicker.mediaTypes = [kUTTypeMovie as String]
-        self.presentViewController(self.videoPicker, animated: true, completion: nil)
-
-      }
-    })
-    
-    let Library = UIAlertAction(title: "Photo Library", style: .Default, handler: {
-      (alert: UIAlertAction!) -> Void in
-      if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
-      {
-        self.videoPicker.allowsEditing = true
-        self.videoPicker.sourceType = .PhotoLibrary
-        self.videoPicker.mediaTypes = [kUTTypeMovie as String]
-        self.presentViewController(self.videoPicker, animated: true, completion: nil)
-
-      }
-    })
-    
-    let cancel = UIAlertAction(title: "Cancel", style: .Default, handler: {
-      (alert: UIAlertAction!) -> Void in
-    })
-    
-    // 4
-    if(UIImagePickerController.isSourceTypeAvailable(.Camera)) {
-      optionMenu.addAction(Camera)
-    }
-    
-    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary)) {
-      optionMenu.addAction(Library)
-    }
-    
-    optionMenu.addAction(cancel)
-    
-    // Support display in iPad
-    optionMenu.popoverPresentationController?.sourceView = self.view
-    optionMenu.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-    
-    self.presentViewController(optionMenu, animated: true, completion: nil)
-    
-    
+    videoPicker.allowsEditing = false
+    videoPicker.sourceType = .PhotoLibrary
+    videoPicker.mediaTypes = [kUTTypeMovie as String]
+    presentViewController(videoPicker, animated: true, completion: nil)
   }
   
   @IBAction func DifficultyValueChanged_(sender: AnyObject) {
@@ -257,7 +220,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       return
     }
@@ -267,85 +230,102 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       let nextScene =  segue.destinationViewController as! NewTutorialDescriptonViewController
       nextScene.current = current
       return
-      }
-//    else
-//    {
-    
-    
-    
-//      let nextScene =  segue.destinationViewController as! VideoSelectorViewController
-//      nextScene.current = current
-//      return
-//    }
+    }
+    else
+    {
+      let nextScene =  segue.destinationViewController as! VideoSelectorViewController
+      nextScene.current = current
+      return
+    }
   }
   
   func imagePickerController(picker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String : AnyObject])
   {
-    let pickedVideoURL = info[UIImagePickerControllerMediaURL] as! NSURL
+    pickedVideoURL = info[UIImagePickerControllerMediaURL] as? NSURL
     
     dismissViewControllerAnimated(true, completion: nil)
     
+    let asset:AVAsset = AVAsset(URL: pickedVideoURL!)
+    let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+    assetImgGenerate.appliesPreferredTrackTransform = true
+    var time: CMTime = asset.duration
+    time.value = 0
     
-//    let asset:AVAsset = AVAsset(URL: pickedVideoURL)
-//    let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
-//    assetImgGenerate.appliesPreferredTrackTransform = true
-//    var time: CMTime = asset.duration
-//    time.value = 0
-//    
-//    var imageRef: CGImage?
-//    do
-//    {
-//      imageRef =  try assetImgGenerate.copyCGImageAtTime(time, actualTime: nil)
-//    }
-//    catch
-//    {
-//      print(error)
-//    }
-//    r
-//    let frameImg : UIImage = UIImage(CGImage: imageRef!)
-//    
-//    VideoThumbnail.image = frameImg
+    var imageRef: CGImage?
+    do
+    {
+      imageRef =  try assetImgGenerate.copyCGImageAtTime(time, actualTime: nil)
+    }
+    catch
+    {
+      print(error)
+    }
     
-    let player = AVPlayer(URL: pickedVideoURL)
-    let playerController = AVPlayerViewController()
-    playerController.player = player
-    playerController.showsPlaybackControls = true
-    playerController.view.frame = VideoThumbnail.frame
-    playerController.view.layer.zPosition = 1;
+    let frameImg : UIImage = UIImage(CGImage: imageRef!)
     
-    self.addChildViewController(playerController);
-    self.view.addSubview(playerController.view);
-    player.play()
-
+    VideoThumbnail.image = frameImg
   }
-
   
-  /* func postVideoToYouTube(token: String, callback: Bool -> Void){
-   
-   let headers = ["Authorization": "Bearer \(token)"]
-   let urlYoutube = "https://www.googleapis.com/upload/youtube/v3/videos?part=id"
-   
-   let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
-   let videodata: NSData = NSData.dataWithContentsOfMappedFile(path!)! as! NSData
-   upload(
-   .POST,
-   urlYoutube,
-   headers: headers,
-   multipartFormData: { multipartFormData in
-   multipartFormData.appendBodyPart(data: videodata, name: "video", fileName: "video.mp4", mimeType: "application/octet-stream")
-   },
-   encodingCompletion: { encodingResult in
-   switch encodingResult {
-   case .Success(let upload, _, _):
-   upload.responseJSON { request, response, error in
-   print(response)
-   callback(true)
-   }
-   case .Failure(_):
-   callback(false)
-   }
-   })
-   }*/
+  
+  func postVideoToYouTube(){
+    
+    let urlYoutube = "http://uploads.gdata.youtube.com/feeds/api/users/default/uploads"
+    
+    //let headers = ["Authorization": "Bearer \(channelID)"]
+    //let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
+    
+    print("VideoUrl:\(pickedVideoURL)")
+    var videodata: NSData?
+    
+    do {
+      videodata = try NSData(contentsOfFile: (pickedVideoURL!.relativePath!), options: .DataReadingMappedAlways)
+    } catch {
+      print(error)
+    }
+    
+    print("VideoUrl:\(pickedVideoURL)")
+    
+    YouTubeManager.sharedManager.postVideoToYouTube(urlYoutube, videoData: videodata!, title: titleTextField_.text!, callback: {(identifier_final, success) in
+      
+      if(success == false) {
+        //self.showErrorMessage("An error occurred while trying to upload a video.")
+        print("An error occurred while trying to upload a video.")
+        return
+      }
+      
+      self.updateCurrentStruct();
+      DatabaseManager.sharedManager.createTutorial(self.current, content:identifier_final) { success, message in
+        print("upload-success: \(success), login-message:\(message)")
+        if success == true {
+          dispatch_async(dispatch_get_main_queue(),{
+            
+            for viewcontoller in (self.navigationController?.viewControllers)! {
+              if(viewcontoller.isKindOfClass(MenuViewController))
+              {
+                self.navigationController?.popToViewController(viewcontoller, animated: true);
+              }
+            }
+            
+          });
+        } else {
+          dispatch_async(dispatch_get_main_queue(),{
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+            
+            // Support display in iPad
+            alert.popoverPresentationController?.sourceView = self.view
+            alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+          });
+        }
+      }
+      
+      
+    })
+    
+  }
   
 }
