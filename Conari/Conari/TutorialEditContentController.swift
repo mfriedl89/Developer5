@@ -226,7 +226,7 @@ extension TutorialEditContentController: RichEditorToolbarDelegate
         // Support display in iPad
         self.imagePicker.popoverPresentationController?.sourceView = self.view
         self.imagePicker.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+        
         self.presentViewController(self.imagePicker, animated: true, completion: nil)
       }
     })
@@ -236,11 +236,11 @@ extension TutorialEditContentController: RichEditorToolbarDelegate
       if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
       {
         self.imagePicker.sourceType = .PhotoLibrary;
-
+        
         // Support display in iPad
         self.imagePicker.popoverPresentationController?.sourceView = self.view
         self.imagePicker.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+        
         self.presentViewController(self.imagePicker, animated: true, completion: nil)
       }
     })
@@ -264,7 +264,7 @@ extension TutorialEditContentController: RichEditorToolbarDelegate
     // Support display in iPad
     optionMenu.popoverPresentationController?.sourceView = self.view
     optionMenu.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+    
     self.presentViewController(optionMenu, animated: true, completion: nil)
   }
 }

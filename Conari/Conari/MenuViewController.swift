@@ -10,16 +10,18 @@ import UIKit
 
 class MenuViewController: UIViewController {
   
+  // MARK: - Outlets
+  
   @IBOutlet weak var userNameLabel: UILabel!
   
   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      self.navigationItem.hidesBackButton = true
-      
-      userNameLabel.text = DatabaseManager.sharedManager.getUserName()
-          
-      // Do any additional setup after loading the view.
+    super.viewDidLoad()
+    
+    self.navigationItem.hidesBackButton = true
+    
+    userNameLabel.text = DatabaseManager.sharedManager.getUserName()
+    
+    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -27,12 +29,12 @@ class MenuViewController: UIViewController {
   }
   
   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
   }
-
+  
   @IBAction func LogoutKlicked(sender: UIButton) {
-      self.navigationController?.popViewControllerAnimated(true)
+    self.navigationController?.popViewControllerAnimated(true)
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
