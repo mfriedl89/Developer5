@@ -10,10 +10,7 @@ import UIKit
 
 class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
   
-  @IBOutlet weak var OldPasswordTextField: UITextField!
-  @IBOutlet weak var NewPasswordTextField: UITextField!
-  @IBOutlet weak var RepeatedPasswordTextField: UITextField!
-  @IBOutlet weak var DoneBtn: UIButton!
+  // MARK: - Members
   
   let falsePassword = -1
   let checkPasswordFalse = -2
@@ -23,6 +20,13 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
   var username = DatabaseManager.sharedManager.getUserName()
   
   var newUserFunc = NewUserViewController()
+  
+  // MARK: - Outlets
+  
+  @IBOutlet weak var OldPasswordTextField: UITextField!
+  @IBOutlet weak var NewPasswordTextField: UITextField!
+  @IBOutlet weak var RepeatedPasswordTextField: UITextField!
+  @IBOutlet weak var DoneBtn: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -81,7 +85,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case repeatedIsNotNew:
@@ -91,9 +95,9 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
-
+      
     case checkPasswordFalse:
       let alert = UIAlertController(title: "Alert", message: "Please enter a valid Password", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
@@ -101,7 +105,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
@@ -114,7 +118,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -127,7 +131,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });

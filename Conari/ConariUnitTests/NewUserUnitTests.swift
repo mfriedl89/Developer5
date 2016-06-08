@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import Conari
 
 class NewUserUnitTests: XCTestCase {
   var vc: NewUserViewController!

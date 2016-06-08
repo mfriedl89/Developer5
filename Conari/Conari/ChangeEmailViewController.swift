@@ -10,10 +10,7 @@ import UIKit
 
 class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   
-  @IBOutlet weak var old_email: UILabel!
-  @IBOutlet weak var new_email_textField: UITextField!
-  @IBOutlet weak var repeat_new_email_textField: UITextField!
-  @IBOutlet weak var Done_btn: UIButton!
+  // MARK: - Members
   
   let checkEmailFalse = -1
   let repeatedEmailIsNotNew = -2
@@ -23,6 +20,13 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   
   let username = DatabaseManager.sharedManager.getUserName()
   let password = DatabaseManager.sharedManager.getUserPassword()
+  
+  // MARK: - Outlets
+  
+  @IBOutlet weak var old_email: UILabel!
+  @IBOutlet weak var new_email_textField: UITextField!
+  @IBOutlet weak var repeat_new_email_textField: UITextField!
+  @IBOutlet weak var Done_btn: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -97,7 +101,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case repeatedEmailIsNotNew:
@@ -107,7 +111,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
@@ -121,7 +125,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -135,7 +139,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });

@@ -10,6 +10,8 @@ import UIKit
 
 class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
+  // MARK: - Members
+  
   var categories = ["All",
                     "Arts and Entertainment",
                     "Cars & Other Vehicles",
@@ -31,12 +33,14 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
                     "Work World",
                     "Youth"]
   
-  @IBOutlet weak var tutorialsTableView: UITableView!
-  @IBOutlet weak var laodIndicator: UIActivityIndicatorView!
-  
   var tutorialIndexPath: NSIndexPath? = nil
   var tutorial_array = [Tutorial_item]()
   var editTutorial : Tutorial?
+  
+  // MARK: - Outlets
+  
+  @IBOutlet weak var tutorialsTableView: UITableView!
+  @IBOutlet weak var laodIndicator: UIActivityIndicatorView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -108,7 +112,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     }
   }
   
-  func requestTutorial(tutorialID: Int){
+  func requestTutorial(tutorialID: Int) {
     DatabaseManager.sharedManager.requestTutorial(tutorialID) { tutorial, message in
       
       dispatch_async(dispatch_get_main_queue(), {
@@ -157,7 +161,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
           dispatch_async(dispatch_get_main_queue(),{
             self.tutorial_array.removeAtIndex(indexPath.row)
             self.tutorialsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-          
+            
             self.laodIndicator.stopAnimating()
             self.laodIndicator.hidden = true
           });
@@ -165,11 +169,11 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
- 
+            
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
