@@ -73,10 +73,12 @@ class DatabaseManager {
     
     var username: String = ""
     var password: String = ""
+  
+    var baseUrl = "http://wullschi.com/"
     
     func login(username: String, password: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/Login.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"conari/Login.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username + "&password=" + password
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -126,8 +128,8 @@ class DatabaseManager {
     }
     
     func createTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
-        
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/CreateTutorial.php")!)
+      
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/CreateTutorial.php")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
         postString += "username=" + username
@@ -178,7 +180,7 @@ class DatabaseManager {
     
     func EditTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/EditTutorial.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/EditTutorial.php")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
         postString += "username=" + username
@@ -234,7 +236,7 @@ class DatabaseManager {
     
     func deleteTutorial(id: Int, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/DeleteTutorial")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/DeleteTutorial")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
         postString += "username=" + username
@@ -281,7 +283,7 @@ class DatabaseManager {
     
     func createUser(username: String, password: String, firstName: String, surName: String, email: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/CreateUser.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/CreateUser.php")!)
         request.HTTPMethod = "POST"
         var postString:String = ""
         postString += "username=" + username
@@ -334,7 +336,7 @@ class DatabaseManager {
     
     func requestTutorial(tutorialID: Int, callback: (Tutorial?, String?) -> ()){
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/RequestTutorial.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/RequestTutorial.php")!)
         request.HTTPMethod = "POST"
         let postString = "tutorialID=" + String(tutorialID)
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -391,7 +393,7 @@ class DatabaseManager {
     
     func findTutorialByUsername(username: String, completionHandler: (response: [Tutorial_item]) -> Void) -> Void {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/FindTutorialByUsername.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/FindTutorialByUsername.php")!)
         
         request.HTTPMethod = "POST"
         
@@ -445,7 +447,7 @@ class DatabaseManager {
     
     func findTutorialByCategory(tutorial_title: String, tutorial_category: Int , completionHandler: (response: [Tutorial_item]) -> Void) -> Void {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/FindTutorialInCategory.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/FindTutorialInCategory.php")!)
         
         request.HTTPMethod = "POST"
         
@@ -503,7 +505,7 @@ class DatabaseManager {
     
     func changeUserPassword(username: String, new_password: String, old_password: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/ChangePassword.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/ChangePassword.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username +
             "&new_password=" + new_password +
@@ -556,7 +558,7 @@ class DatabaseManager {
     
     func changeUserEmail(username: String, password: String, new_email: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/ChangeMail.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/ChangeMail.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username +
             "&password=" + password +
@@ -608,7 +610,7 @@ class DatabaseManager {
     
     func changeUserFirstAndSurname(username: String, password: String, new_firstname: String, new_surname: String, callback: (Bool, String?) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/ChangeName.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/ChangeName.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username +
             "&password=" + password +
@@ -662,7 +664,7 @@ class DatabaseManager {
     
     func requestUser(username: String, callback: (User?, String?) -> ()){
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/RequestUser.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/RequestUser.php")!)
         request.HTTPMethod = "POST"
         let postString = "username=" + username
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -714,7 +716,7 @@ class DatabaseManager {
     
     func getAccessToken(callback: (String?) -> ()){
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/GetToken.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/GetToken.php")!)
         request.HTTPMethod = "GET"
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in

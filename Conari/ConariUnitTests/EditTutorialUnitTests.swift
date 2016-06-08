@@ -20,11 +20,11 @@ class EditTutorialUnitTests: XCTestCase {
     super.tearDown()
   }
   
-  func testEditTutorial() {
+  func testEditTutorial_fail_no_login() {
     let tutorial = TutorialMetaData(id: 0, OldTitle: "", Title: "", category: 1, duration: 1, difficulty: 1)
     
     DatabaseManager.sharedManager.EditTutorial(tutorial, content: "TEST", callback: { success, message in
-      XCTAssertEqual(message, "Error")
+      XCTAssertFalse(success)
     })
   }
   

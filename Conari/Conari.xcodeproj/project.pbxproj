@@ -67,6 +67,8 @@
 		AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
 		AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
 		AE5416DE1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
+		AE6DD6991D08510000B08232 /* CreateTutorialUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DD6981D08510000B08232 /* CreateTutorialUnitTests.swift */; };
+		AE6DD69A1D08551A00B08232 /* SearchTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2C01CEC9B7A00665154 /* SearchTutorialUITests.swift */; };
 		AE9217211CC7704E00A3391C /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
@@ -98,7 +100,6 @@
 		E070D2C21CEC9B7A00665154 /* CategorySearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2BD1CEC9B7A00665154 /* CategorySearchUITests.swift */; };
 		E070D2C31CEC9B7A00665154 /* MenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2BE1CEC9B7A00665154 /* MenuUITests.swift */; };
 		E070D2C41CEC9B7A00665154 /* MetadataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2BF1CEC9B7A00665154 /* MetadataUITests.swift */; };
-		E070D2C51CEC9B7A00665154 /* SearchTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2C01CEC9B7A00665154 /* SearchTutorialUITests.swift */; };
 		E070D2C61CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2C11CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift */; };
 		E070D2D91CEC9BC600665154 /* DatabaseManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2D71CEC9BC600665154 /* DatabaseManagerUnitTests.swift */; };
 		E070D2DA1CEC9BC600665154 /* ViewFinishedTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070D2D81CEC9BC600665154 /* ViewFinishedTutorial.swift */; };
@@ -160,6 +161,7 @@
 		AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchViewController.swift; sourceTree = "<group>"; };
 		AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchTableViewCell.swift; sourceTree = "<group>"; };
 		AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorialViewController.swift; sourceTree = "<group>"; };
+		AE6DD6981D08510000B08232 /* CreateTutorialUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTutorialUnitTests.swift; sourceTree = "<group>"; };
 		AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTutorialDescriptonViewController.swift; sourceTree = "<group>"; };
 		AEA97A8B1CE316C800781C88 /* Mr Tutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Tutor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA97A971CE3176F00781C88 /* ConariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,16 +276,16 @@
 				DA7CDF161CEC9AE000D89BCF /* ChangeEmailViewController.swift */,
 				DA7CDF191CEC9BAF00D89BCF /* ChangePasswordViewController.swift */,
 				DA7CDF1B1CEC9C4000D89BCF /* ChangeUserNameViewController.swift */,
+				AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */,
 				E07CFC001CBE2CA0005BDFAA /* LoginViewController.swift */,
 				AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */,
 				DAE86E781CD9FFAD00F81CEE /* MenuViewController.swift */,
 				AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */,
-				AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */,
 				DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */,
 				28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */,
 				28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */,
-				AEBED90F1CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift */,
 				AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */,
+				AEBED90F1CF5C194008E28E3 /* ViewAdditionalInformationTableViewController.swift */,
 				E07CFBFE1CBE2B97005BDFAA /* WelcomeScreenViewController.swift */,
 			);
 			name = "View Controller";
@@ -292,6 +294,7 @@
 		3A877DD81CF5B51700BD0377 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E070D2B41CEC9B6900665154 /* ConariUITests */,
 				AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */,
 				E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */,
 			);
@@ -348,9 +351,7 @@
 			children = (
 				E0F556831CC7CA830070F3FE /* .gitignore */,
 				E06D7FB81CBE2220003001BD /* Conari */,
-				E070D2B41CEC9B6900665154 /* ConariUITests */,
 				E070D2CE1CEC9BB800665154 /* ConariUnitTests */,
-				E06D7FB71CBE2220003001BD /* Products */,
 				AEA97A8C1CE316C800781C88 /* Products */,
 				5A83CBE7122AF573D4E5759C /* Pods */,
 				6F65AB9F30210B2DC3B5B0F8 /* Frameworks */,
@@ -363,6 +364,7 @@
 				E06D7FB61CBE2220003001BD /* Conari.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E06D7FB81CBE2220003001BD /* Conari */ = {
@@ -395,19 +397,21 @@
 				E070D2C11CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift */,
 			);
 			path = ConariUITests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		E070D2CE1CEC9BB800665154 /* ConariUnitTests */ = {
 			isa = PBXGroup;
 			children = (
 				E070D2D11CEC9BB800665154 /* Info.plist */,
 				E070D2D71CEC9BC600665154 /* DatabaseManagerUnitTests.swift */,
+				AE6DD6981D08510000B08232 /* CreateTutorialUnitTests.swift */,
 				E0307A5B1CECA616007DB00F /* LoginUnitTests.swift */,
 				E0307A5C1CECA616007DB00F /* NewUserUnitTests.swift */,
 				E0307A5D1CECA616007DB00F /* ViewAdditionalInformationUnitTest.swift */,
-				E070D2D81CEC9BC600665154 /* ViewFinishedTutorial.swift */,
 				AE0B90891CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift */,
+				E070D2D81CEC9BC600665154 /* ViewFinishedTutorial.swift */,
 				E0A9EBDA1CF5C01700069B86 /* EditTutorialUnitTests.swift */,
+				E06D7FB71CBE2220003001BD /* Products */,
 			);
 			path = ConariUnitTests;
 			sourceTree = "<group>";
@@ -735,10 +739,10 @@
 				E070D2B61CEC9B6900665154 /* ConariUITests.swift in Sources */,
 				3AE79A7F1CF5D6950083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				E070D2C21CEC9B7A00665154 /* CategorySearchUITests.swift in Sources */,
-				E070D2C51CEC9B7A00665154 /* SearchTutorialUITests.swift in Sources */,
 				3AE79A8C1CF5D9090083A630 /* NewUserViewController.swift in Sources */,
 				3AE79A891CF5D9090083A630 /* MenuViewController.swift in Sources */,
 				3AE79A861CF5D9090083A630 /* ChangeUserNameViewController.swift in Sources */,
+				AE6DD69A1D08551A00B08232 /* SearchTutorialUITests.swift in Sources */,
 				3AE79A821CF5D9090083A630 /* AdminTutorialViewController.swift in Sources */,
 				3AE79A811CF5D9090083A630 /* AboutViewController.swift in Sources */,
 				E070D2C41CEC9B7A00665154 /* MetadataUITests.swift in Sources */,
@@ -766,6 +770,7 @@
 				3AE79A7E1CF5D6940083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				AE0B909D1CF58AC600A1CCF3 /* NewUserViewController.swift in Sources */,
 				AE0B908B1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */,
+				AE6DD6991D08510000B08232 /* CreateTutorialUnitTests.swift in Sources */,
 				E070D2DA1CEC9BC600665154 /* ViewFinishedTutorial.swift in Sources */,
 				AE0B909F1CF58ACC00A1CCF3 /* LoginViewController.swift in Sources */,
 				AE0B909B1CF58ABD00A1CCF3 /* MenuViewController.swift in Sources */,
