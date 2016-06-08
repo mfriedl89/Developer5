@@ -94,7 +94,7 @@ class YouTubeManager {
     task.resume()
   }
   
-  func postVideoToYouTube(uploadUrl: String, videoData: NSData, title: String){
+  func postVideoToYouTube(uploadUrl: String, videoData: NSData, title: String, callback: (String, Bool) -> ()){
     
     //let headers = ["Authorization": "Bearer \(token)"]
     DatabaseManager.sharedManager.getAccessToken({access_token in
@@ -119,10 +119,25 @@ class YouTubeManager {
           case .Success(let upload, _, _):
             upload.responseJSON { response in
               print(response)
+              
+              do {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments)
+                
+                let video_id = jsonData["id"] as! String
+                let identifier_final = self.identifier + video_id
+                print(identifier_final)
+                callback(identifier_final, true)
+                
+              } catch {
+                print("error serializing JSON: \(error)")
+                callback("", false)
+              }
+              
               print("Success")
             }
           case .Failure(_):
             print("Failure")
+            callback("", false)
           }
       })
       

@@ -271,7 +271,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   func postVideoToYouTube(){
     
     let urlYoutube = "http://uploads.gdata.youtube.com/feeds/api/users/default/uploads"
-  
+    
     //let headers = ["Authorization": "Bearer \(channelID)"]
     //let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
     
@@ -285,8 +285,46 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
     
     print("VideoUrl:\(pickedVideoURL)")
-
-    YouTubeManager.sharedManager.postVideoToYouTube(urlYoutube, videoData: videodata!, title: titleTextField_.text!)
+    
+    YouTubeManager.sharedManager.postVideoToYouTube(urlYoutube, videoData: videodata!, title: titleTextField_.text!, callback: {(identifier_final, success) in
+      
+      if(success == false) {
+        //self.showErrorMessage("An error occurred while trying to upload a video.")
+        print("An error occurred while trying to upload a video.")
+        return
+      }
+      
+      self.updateCurrentStruct();
+      DatabaseManager.sharedManager.createTutorial(self.current, content:identifier_final) { success, message in
+        print("upload-success: \(success), login-message:\(message)")
+        if success == true {
+          dispatch_async(dispatch_get_main_queue(),{
+            
+            for viewcontoller in (self.navigationController?.viewControllers)! {
+              if(viewcontoller.isKindOfClass(MenuViewController))
+              {
+                self.navigationController?.popToViewController(viewcontoller, animated: true);
+              }
+            }
+            
+          });
+        } else {
+          dispatch_async(dispatch_get_main_queue(),{
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+            
+            // Support display in iPad
+            alert.popoverPresentationController?.sourceView = self.view
+            alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+          });
+        }
+      }
+      
+      
+    })
     
   }
   
