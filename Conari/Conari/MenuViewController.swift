@@ -32,6 +32,21 @@ class MenuViewController: UIViewController {
     
     Constants.setGradientColor(self.view)
     
+    self.SearchTutBtn.tintColor = UIColor.whiteColor()
+    self.CreateTutBtn.tintColor = UIColor.whiteColor()
+    self.CreateVidTut.tintColor = UIColor.whiteColor()
+    self.ManageTut.tintColor = UIColor.whiteColor()
+    
+    self.ChangeNameBtn.tintColor = UIColor.whiteColor()
+    self.ChangeEmailBtn.tintColor = UIColor.whiteColor()
+    self.ChangePasswordBtn.tintColor = UIColor.whiteColor()
+    self.LogoutBtn.tintColor = UIColor.whiteColor()
+    
+    Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: SearchTutBtn)
+    Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: CreateTutBtn)
+    Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: CreateVidTut)
+    Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: ManageTut)
+
     // Do any additional setup after loading the view.
   }
   
