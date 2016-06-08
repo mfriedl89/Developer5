@@ -20,18 +20,29 @@ class Constants {
 
   static let navigationBarTextColor = UIColor.whiteColor()
   
-  //static let buttonColor = UIColor(red: 0.00, green: 0.90, blue: 0.69, alpha: 1.00)
-//  static let buttonColor = UIColor.yellowColor()
   static let buttonColor = UIColor(red:0.57, green:0.10, blue:0.75, alpha:1.0)
 
-//  static let labelColor = UIColor.whiteColor()
   static let labelColor = UIColor.blackColor()
-
   
-//  static let viewBackgroundColor = UIColor(red:0.49, green:0.00, blue:0.78, alpha:1.00)
-  static let viewBackgroundColor = UIColor(red:1, green:1, blue:1, alpha:1)
+  static let viewBackgroundColor = UIColor.whiteColor()
+  
   static let contentBackgroundColor = UIColor(red: 0.45, green: 0.24, blue: 0.81, alpha: 1.00)
   
-//  static let cssTextColor = "<style>body{color: white;}</style>"
+  static let welcomeScreenBackgroundLila = UIColor(red:0.55, green:0.18, blue:0.84, alpha:1.0)
+  
+  static let welcomeScreenBackgroundBlue = UIColor(red:0.37, green:0.53, blue:0.92, alpha:1.0)
+
   static let cssTextColor = "<style>body{color: black;}</style>"
+  
+  
+  static func setRadiusWithColor(color: UIColor, forButton: UIButton) -> Void {
+    let cornerRadius : CGFloat = 15
+    let borderWith : CGFloat = 1
+    let borderColor = color.CGColor
+    
+    forButton.layer.cornerRadius = cornerRadius
+    forButton.layer.borderWidth = borderWith
+    forButton.layer.borderColor = borderColor
+    
+  }
 }

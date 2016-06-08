@@ -19,29 +19,28 @@ class WelcomeScreenViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.view.backgroundColor = UIColor(red: 0.25, green: 0.04, blue: 0.40, alpha: 1.00)
+    
+    let gradient: CAGradientLayer = CAGradientLayer()
+    gradient.frame = self.view.bounds
+    gradient.colors = [Constants.welcomeScreenBackgroundLila.CGColor, Constants.welcomeScreenBackgroundBlue.CGColor]
+    self.view.layer.insertSublayer(gradient, atIndex: 0)
+    
     
     self.WelcomeLabel.textColor = UIColor.whiteColor()
     self.MrTutorLabel.textColor = UIColor.whiteColor()
+
     
     self.LoginBtn.backgroundColor = UIColor.whiteColor()
     self.ContinueBtn.backgroundColor = UIColor.whiteColor()
-    
+
     self.LoginBtn.tintColor = UIColor.blackColor()
     self.ContinueBtn.tintColor = UIColor.blackColor()
-    self.AboutBtn.tintColor = UIColor.whiteColor()
-    
-    let cornerRadius : CGFloat = 15
-    let borderWith : CGFloat = 1
-    let borderColor = UIColor.whiteColor().CGColor
 
-    self.LoginBtn.layer.cornerRadius = cornerRadius
-    self.LoginBtn.layer.borderWidth = borderWith
-    self.LoginBtn.layer.borderColor = borderColor
+    Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: self.LoginBtn)
     
-    self.ContinueBtn.layer.cornerRadius = cornerRadius
-    self.ContinueBtn.layer.borderWidth = borderWith
-    self.ContinueBtn.layer.borderColor = borderColor
+    Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: self.ContinueBtn)
+    
+    self.AboutBtn.tintColor = UIColor.whiteColor()
 
   }
   
