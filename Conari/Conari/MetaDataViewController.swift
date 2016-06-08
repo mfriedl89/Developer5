@@ -38,9 +38,6 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   var timePickerView : UIPickerView!
   let videoPicker = UIImagePickerController()
   
-  var apiKey = "AIzaSyBkPodgj3cSzd8XYnzEnUBIsonzRx7QaZA"
-  var channelID = "UCTwXFSPFmBofWhl71T85WNQ"
-  
   var pickedVideoURL: NSURL?
   
   var categories = ["Arts and Entertainment",
@@ -140,7 +137,9 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       performSegueWithIdentifier("write_tutorial", sender: nil)
     }
     else {
-      postVideoToYouTube()
+      if pickedVideoURL != nil {
+        postVideoToYouTube()
+      }
     }
   }
   
