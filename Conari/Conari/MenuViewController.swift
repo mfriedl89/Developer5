@@ -1,9 +1,9 @@
 //
 //  MenuViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by Paul Krassnig on 04.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 04.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,6 @@ import UIKit
 class MenuViewController: UIViewController {
   
   // MARK: - Outlets
-  
   @IBOutlet weak var userNameLabel: UILabel!
   
   @IBOutlet weak var SearchTutBtn: UIButton!

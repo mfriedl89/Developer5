@@ -1,9 +1,9 @@
 //
 //  MainTutorialViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by Stefan Mitterrutzner on 27/04/16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 27.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
