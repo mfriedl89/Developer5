@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 struct YoutubeVideo {
   var title: String
@@ -91,8 +92,57 @@ class YouTubeManager {
       
     })
     task.resume()
+  }
+  
+  func postVideoToYouTube(uploadUrl: String, videoData: NSData, title: String, callback: (String, Bool) -> ()){
     
-    
+    //let headers = ["Authorization": "Bearer \(token)"]
+    DatabaseManager.sharedManager.getAccessToken({access_token in
+      
+      print(access_token!)
+      
+      if(access_token == "Error") {
+        return
+      }
+      
+      let headers = ["Authorization": "Bearer \(access_token!)"]
+      upload(
+        .POST,
+        "https://www.googleapis.com/upload/youtube/v3/videos?part=snippet",
+        headers: headers,
+        multipartFormData: { multipartFormData in
+          multipartFormData.appendBodyPart(data:"{'snippet':{'title' : '\(title)', 'description': 'This video was uploaded using Mr Tutor.'}}".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name: "snippet", mimeType: "application/json")
+          multipartFormData.appendBodyPart(data: videoData, name: "video", fileName: "sample.mp4", mimeType: "application/octet-stream")
+        },
+        encodingCompletion: { encodingResult in
+          switch encodingResult {
+          case .Success(let upload, _, _):
+            upload.responseJSON { response in
+              print(response)
+              
+              do {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments)
+                
+                let video_id = jsonData["id"] as! String
+                let identifier_final = self.identifier + video_id
+                print(identifier_final)
+                callback(identifier_final, true)
+                
+              } catch {
+                print("error serializing JSON: \(error)")
+                callback("", false)
+              }
+              
+              print("Success")
+            }
+          case .Failure(_):
+            print("Failure")
+            callback("", false)
+          }
+      })
+      
+      
+    })
   }
   
 }
