@@ -53,7 +53,15 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
   
   override func viewWillDisappear(animated: Bool) {
     deregisterFromKeyboardNotifications()
+    self.navigationController?.navigationBarHidden = true
   }
+  
+  override func viewWillAppear(animated: Bool) {
+    deregisterFromKeyboardNotifications()
+    self.navigationController?.navigationBarHidden = false
+  }
+  
+
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()

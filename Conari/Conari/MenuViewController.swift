@@ -29,6 +29,12 @@ class MenuViewController: UIViewController {
     self.navigationController?.navigationBarHidden = false
   }
   
+  override func viewWillDisappear(animated: Bool) {
+    handleNetworkError()
+    
+    self.navigationController?.navigationBarHidden = true
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.

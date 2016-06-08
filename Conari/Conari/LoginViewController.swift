@@ -133,6 +133,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   }
   
   @IBAction func ClosePressed(sender: AnyObject) {
-    self.dismissViewControllerAnimated(true, completion: {});
+    self.navigationController?.popViewControllerAnimated(true)
   }
 }
