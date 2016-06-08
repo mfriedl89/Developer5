@@ -45,6 +45,9 @@ class NewUserViewController: UIViewController, UITextFieldDelegate, UIGestureRec
     repeatedPassword.delegate = self
     scrollView.scrollsToTop = true
     registerForKeyboardNotifications()
+    
+    self.navigationController?.navigationBarHidden = false
+
   }
   
   
