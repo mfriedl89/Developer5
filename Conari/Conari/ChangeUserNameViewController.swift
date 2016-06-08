@@ -1,18 +1,16 @@
 //
 //  ChangeUserNameViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by Paul Krassnig on 11.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 11.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
 
 class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   
-  @IBOutlet weak var FirstNameTextField: UITextField!
-  @IBOutlet weak var SurNameTextField: UITextField!
-  @IBOutlet weak var DoneBtn: UIButton!
+  // MARK: - Members
   
   var username = ""
   let password = DatabaseManager.sharedManager.getUserPassword()
@@ -22,8 +20,15 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   let falseFirstname = 1
   let falseSurname = 2
   
+  // MARK: - Outlets
+  
+  @IBOutlet weak var FirstNameTextField: UITextField!
+  @IBOutlet weak var SurNameTextField: UITextField!
+  @IBOutlet weak var DoneBtn: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     FirstNameTextField.delegate = self
     SurNameTextField.delegate = self
@@ -55,6 +60,8 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   
   override func viewWillAppear(animated: Bool) {
     handleNetworkError()
+    
+    self.navigationController?.navigationBarHidden = false
   }
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -95,7 +102,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case falseSurname:
@@ -105,11 +112,11 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
-      DatabaseManager.sharedManager.changeUserFirstAndSurname(username, password: password, new_firstname: new_firstname, new_surname: new_surname) {success, message in
+      DatabaseManager.sharedManager.changeUserFirstAndSurname(username, password: password, newFirstname: new_firstname, newSurname: new_surname) {success, message in
         if success == true {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Changed Firstname/Surname to: \(new_firstname) \(new_surname)", message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -118,7 +125,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -131,7 +138,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });

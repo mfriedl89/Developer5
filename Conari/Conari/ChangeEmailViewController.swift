@@ -1,31 +1,36 @@
 //
 //  ChangeEmailViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by Paul Krassnig on 11.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 11.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
 
 class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   
-  @IBOutlet weak var old_email: UILabel!
-  @IBOutlet weak var new_email_textField: UITextField!
-  @IBOutlet weak var repeat_new_email_textField: UITextField!
-  @IBOutlet weak var Done_btn: UIButton!
+  // MARK: - Members
   
   let checkEmailFalse = -1
   let repeatedEmailIsNotNew = -2
   
-  var login_email_ = ""
+  var loginEmail = ""
   var newUserFunc = NewUserViewController()
   
   let username = DatabaseManager.sharedManager.getUserName()
   let password = DatabaseManager.sharedManager.getUserPassword()
   
+  // MARK: - Outlets
+  
+  @IBOutlet weak var old_email: UILabel!
+  @IBOutlet weak var new_email_textField: UITextField!
+  @IBOutlet weak var repeat_new_email_textField: UITextField!
+  @IBOutlet weak var Done_btn: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     new_email_textField.delegate = self
     repeat_new_email_textField.delegate = self
@@ -46,8 +51,8 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       }
       else {
         dispatch_async(dispatch_get_main_queue(), {
-          self.login_email_ = User!.email
-          self.old_email.text = self.login_email_
+          self.loginEmail = User!.email
+          self.old_email.text = self.loginEmail
         })
       }
       
@@ -58,6 +63,8 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   
   override func viewWillAppear(animated: Bool) {
     handleNetworkError()
+    
+    self.navigationController?.navigationBarHidden = false
   }
   
   override func didReceiveMemoryWarning() {
@@ -97,7 +104,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case repeatedEmailIsNotNew:
@@ -107,11 +114,11 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
-      DatabaseManager.sharedManager.changeUserEmail(username, password: password, new_email: new_email) {success, message in
+      DatabaseManager.sharedManager.changeUserEmail(username, password: password, newEmail: new_email) {success, message in
         if success == true
         {
           dispatch_async(dispatch_get_main_queue(),{
@@ -121,7 +128,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -135,7 +142,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });

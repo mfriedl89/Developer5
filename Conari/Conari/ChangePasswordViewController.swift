@@ -1,31 +1,36 @@
 //
 //  ChangePasswordViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by Paul Krassnig on 11.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 11.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
 
 class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
   
-  @IBOutlet weak var OldPasswordTextField: UITextField!
-  @IBOutlet weak var NewPasswordTextField: UITextField!
-  @IBOutlet weak var RepeatedPasswordTextField: UITextField!
-  @IBOutlet weak var DoneBtn: UIButton!
+  // MARK: - Members
   
   let falsePassword = -1
   let checkPasswordFalse = -2
   let repeatedIsNotNew = -3
   
-  var login_password_ = DatabaseManager.sharedManager.getUserPassword()
+  var loginPassword = DatabaseManager.sharedManager.getUserPassword()
   var username = DatabaseManager.sharedManager.getUserName()
   
   var newUserFunc = NewUserViewController()
   
+  // MARK: - Outlets
+  
+  @IBOutlet weak var OldPasswordTextField: UITextField!
+  @IBOutlet weak var NewPasswordTextField: UITextField!
+  @IBOutlet weak var RepeatedPasswordTextField: UITextField!
+  @IBOutlet weak var DoneBtn: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     OldPasswordTextField.delegate = self
     NewPasswordTextField.delegate = self
@@ -34,6 +39,8 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
   
   override func viewWillAppear(animated: Bool) {
     handleNetworkError()
+    
+    self.navigationController?.navigationBarHidden = false
   }
   
   override func didReceiveMemoryWarning() {
@@ -59,7 +66,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
   func changePassword(oldPwd: String, newPwd: String, repeatedPwd: String) -> NSInteger {
     var error = 0
     
-    if(oldPwd != login_password_) {
+    if(oldPwd != loginPassword) {
       error = falsePassword
     }
     else if(!newUserFunc.checkPassword(newPwd)) {
@@ -69,7 +76,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
       error = repeatedIsNotNew
     }
     
-    newUserFunc.checkInput(oldPwd == login_password_, textField: OldPasswordTextField)
+    newUserFunc.checkInput(oldPwd == loginPassword, textField: OldPasswordTextField)
     newUserFunc.checkInput(newUserFunc.checkPassword(newPwd), textField: NewPasswordTextField)
     newUserFunc.checkInput(repeatedPwd == newPwd, textField: RepeatedPasswordTextField)
     
@@ -81,7 +88,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case repeatedIsNotNew:
@@ -91,9 +98,9 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
-
+      
     case checkPasswordFalse:
       let alert = UIAlertController(title: "Alert", message: "Please enter a valid Password", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
@@ -101,11 +108,11 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
-      DatabaseManager.sharedManager.changeUserPassword(username, new_password: NewPasswordTextField.text!, old_password: login_password_) {success, message in
+      DatabaseManager.sharedManager.changeUserPassword(username, newPassword: NewPasswordTextField.text!, oldPassword: loginPassword) {success, message in
         if success == true {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Changed Password", message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -114,7 +121,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -127,7 +134,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });

@@ -1,15 +1,17 @@
 //
 //  CategorySearchViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by ST R W on 20.04.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 20.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
 import SDWebImage
 
 class CategorySearchViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SDWebImageManagerDelegate, UISearchDisplayDelegate, UISearchResultsUpdating  {
+  
+  // MARK: - Members
   
   var categories = ["All",
                     "Arts and Entertainment",
@@ -39,7 +41,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   var screenHeight: CGFloat = 0
   
   var searchController: UISearchController!
-
+  
   deinit {
     if let sc = searchController {
       if let superView = sc.view.superview {
@@ -48,8 +50,10 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     }
   }
   
-  var tutorialArray = [Tutorial_item]()
+  var tutorialArray = [TutorialItem]()
   var youtubeArray = [YoutubeVideo]()
+  
+  // MARK: - Outlets
   
   @IBOutlet var table_View: UITableView!
   
@@ -61,7 +65,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     table_View.delegate = self
     table_View.dataSource = self
@@ -90,37 +94,37 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     switch indexPath.section {
     case 0:
       let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
-      let duration_hours = Int(tutorialArray[indexPath.row].duration)!/60
-      let duration_minutes = Int(tutorialArray[indexPath.row].duration)!%60
+      let durationHours = Int(tutorialArray[indexPath.row].duration)!/60
+      let durationMinutes = Int(tutorialArray[indexPath.row].duration)!%60
       
       cell.label_title?.text = tutorialArray[indexPath.row].title
       cell.label_category?.text = categories[tutorialArray[indexPath.row].category]
       
-      cell.label_duration.text = String(format: "%02d:%02d", duration_hours,duration_minutes)
+      cell.label_duration.text = String(format: "%02d:%02d", durationHours,durationMinutes)
       cell.image_view.image = UIImage(named: "\(tutorialArray[indexPath.row].category-1)")
       
       switch Int(tutorialArray[indexPath.row].difficulty)! {
-      
+        
       case 5:
         cell.label_difficulty?.text = "very hard";
-      
+        
       case 4:
         cell.label_difficulty?.text = "hard";
-      
+        
       case 3:
         cell.label_difficulty?.text = "medium";
-      
+        
       case 2:
         cell.label_difficulty?.text = "easy";
-      
+        
       case 1:
         cell.label_difficulty?.text = "very easy";
-      
+        
       default:
         break
       }
       return cell
-    
+      
     case 1:
       let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableYoutubeViewCell", forIndexPath: indexPath) as! CategorySearchYoutubeTableViewCell
       cell.label_title?.text = youtubeArray[indexPath.row].title
@@ -148,7 +152,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       
     case 1:
       return youtubeArray.count
-    
+      
     default:
       return 0
     }
@@ -190,7 +194,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       
     case 1:
       break;
-    
+      
     default:
       return
     }
@@ -272,12 +276,12 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
         self.youtubeArray.removeAll()
         self.youtubeArray = response
         dispatch_async(dispatch_get_main_queue(), {
-            self.table_View.reloadData();
+          self.table_View.reloadData();
         })
       })
     }
     
-    DatabaseManager.sharedManager.findTutorialByCategory(textSearch, tutorial_category: selectedCategory) { (response) in
+    DatabaseManager.sharedManager.findTutorialByCategory(textSearch, tutorialCategory: selectedCategory) { (response) in
       if(!response.isEmpty){
         self.tutorialArray = response
         self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)

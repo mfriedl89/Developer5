@@ -1,9 +1,9 @@
 //
-//  NewTutorialDescriptonViewController.swift
-//  Conari
+//  NewTutorialDescriptionViewController.swift
+//  Mr Tutor
 //
-//  Created by Stefan Mitterrutzner on 20/04/16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 20.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
@@ -12,6 +12,8 @@ import AVFoundation
 
 
 class NewTutorialDescriptonViewController: UIViewController {
+  
+  // MARK: - Members
   
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0);
   
@@ -22,6 +24,8 @@ class NewTutorialDescriptonViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
+    
     self.title = current.Title
     
     editor = RichEditorView(frame: self.view.bounds)
@@ -86,7 +90,7 @@ class NewTutorialDescriptonViewController: UIViewController {
           // Support display in iPad
           alert.popoverPresentationController?.sourceView = self.view
           alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+          
           self.presentViewController(alert, animated: true, completion: nil)
           
         });
@@ -204,7 +208,7 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
         // Support display in iPad
         self.imagePicker.popoverPresentationController?.sourceView = self.view
         self.imagePicker.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
- 
+        
         self.presentViewController(self.imagePicker, animated: true, completion: nil)
       }
     })
@@ -227,7 +231,7 @@ extension NewTutorialDescriptonViewController: RichEditorToolbarDelegate {
     // Support display in iPad
     optionMenu.popoverPresentationController?.sourceView = self.view
     optionMenu.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
- 
+    
     self.presentViewController(optionMenu, animated: true, completion: nil)
   }
 }

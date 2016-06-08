@@ -1,38 +1,53 @@
 //
 //  MenuViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by Paul Krassnig on 04.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 04.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
 
 class MenuViewController: UIViewController {
   
+  // MARK: - Outlets
   @IBOutlet weak var userNameLabel: UILabel!
   
+  @IBOutlet weak var SearchTutBtn: UIButton!
+  @IBOutlet weak var CreateTutBtn: UIButton!
+  @IBOutlet weak var CreateVidTut: UIButton!
+  @IBOutlet weak var ManageTut: UIButton!
+  
+  @IBOutlet weak var ChangeNameBtn: UIButton!
+  @IBOutlet weak var ChangeEmailBtn: UIButton!
+  @IBOutlet weak var ChangePasswordBtn: UIButton!
+  @IBOutlet weak var LogoutBtn: UIButton!
+  
   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      self.navigationItem.hidesBackButton = true
-      
-      userNameLabel.text = DatabaseManager.sharedManager.getUserName()
-          
-      // Do any additional setup after loading the view.
+    super.viewDidLoad()
+    
+    self.navigationItem.hidesBackButton = true
+    
+    userNameLabel.text = DatabaseManager.sharedManager.getUserName()
+    
+    Constants.setGradientColor(self.view)
+    
+    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(animated: Bool) {
     handleNetworkError()
+    
+    self.navigationController?.navigationBarHidden = true
+  }
+    
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
   }
   
-  override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-  }
-
   @IBAction func LogoutKlicked(sender: UIButton) {
-      self.navigationController?.popViewControllerAnimated(true)
+    self.navigationController?.popViewControllerAnimated(true)
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

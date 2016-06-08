@@ -1,9 +1,9 @@
 //
 //  MetaDataViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by Stefan Mitterrutzner on 13/04/16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 13.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
@@ -21,16 +21,7 @@ struct TutorialMetaData {
 
 class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
-  @IBOutlet weak var titleTextField_: UITextField!
-  @IBOutlet weak var difficultyLabel_: UILabel!
-  @IBOutlet weak var categoryTextField_: UITextField!
-  @IBOutlet weak var DifficultyStepper_: UIStepper!
-  @IBOutlet weak var DurationTextField_: UITextField!
-  
-  @IBOutlet weak var SelectVideoButton: UIButton!
-  @IBOutlet weak var VideoThumbnail: UIImageView!
-  @IBOutlet weak var NextButton: UIBarButtonItem!
-  @IBOutlet weak var TutorialTitle: UINavigationItem!
+  // MARK: - Members
   
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
   
@@ -64,9 +55,23 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   
   var TextOrVideo: Int?
   
+  // MARK: - Outlets
+  
+  @IBOutlet weak var titleTextField_: UITextField!
+  @IBOutlet weak var difficultyLabel_: UILabel!
+  @IBOutlet weak var categoryTextField_: UITextField!
+  @IBOutlet weak var DifficultyStepper_: UIStepper!
+  @IBOutlet weak var DurationTextField_: UITextField!
+  
+  @IBOutlet weak var SelectVideoButton: UIButton!
+  @IBOutlet weak var VideoThumbnail: UIImageView!
+  @IBOutlet weak var NextButton: UIBarButtonItem!
+  @IBOutlet weak var TutorialTitle: UINavigationItem!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    self.view.backgroundColor = Constants.viewBackgroundColor
+        
     if TextOrVideo == 1 {
       TutorialTitle.title = "Video Tutorial"
       NextButton.title = "Upload"

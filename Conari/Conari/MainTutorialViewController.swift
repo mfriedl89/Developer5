@@ -1,20 +1,24 @@
 //
 //  MainTutorialViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by Stefan Mitterrutzner on 27/04/16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 27.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
 
 class MainTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+  
+  // MARK: - Outlets
+  
   @IBOutlet weak var SearchField_: UITextField!
   @IBOutlet weak var categoryTableView_: UITableView!
-    @IBOutlet weak var searchBtn: UIButton!
+  @IBOutlet weak var searchBtn: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = UIColor.whiteColor()
     
     SearchField_.delegate = self
     
@@ -50,12 +54,12 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
     
     if (textField == SearchField_) {
       SearchField_.resignFirstResponder()
-        SearchButtonPressed(searchBtn)
+      SearchButtonPressed(searchBtn)
     }
     
     return true
   }
-    
+  
   @IBAction func SearchButtonPressed(sender: AnyObject) {
     performSegueWithIdentifier("tutorial_list_search", sender: nil)
   }
@@ -68,6 +72,7 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
     let cell:UITableViewCell = self.categoryTableView_.dequeueReusableCellWithIdentifier("category_cell")! as UITableViewCell
     
     cell.textLabel?.text = categories[indexPath.row]
+    cell.textLabel?.textColor = Constants.lightBackgroundColor
     
     return cell
   }

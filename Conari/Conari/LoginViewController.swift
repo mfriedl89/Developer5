@@ -1,20 +1,47 @@
 //
 //  LoginViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by Markus Friedl on 13.04.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 13.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
   
+  @IBOutlet weak var CloseBtn: UIButton!
+  @IBOutlet weak var UsernameLabel: UILabel!
+  @IBOutlet weak var PasswordLabel: UILabel!
   @IBOutlet weak var userNameTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
+  @IBOutlet weak var LoginBtn: UIButton!
+  @IBOutlet weak var CreateNewUserBtn: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    self.view.backgroundColor = Constants.viewBackgroundColor
+    
+    self.UsernameLabel.textColor = UIColor.whiteColor()
+    self.PasswordLabel.textColor = UIColor.whiteColor()
+    
+    Constants.setGradientColor(self.view)
+    
+    Constants.setTextFieldForLogin(self.userNameTextField)
+
+    Constants.setTextFieldForLogin(self.passwordTextField)
+    
+    
+    self.CloseBtn.tintColor = UIColor.whiteColor()
+    Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: self.CloseBtn)
+    
+    self.LoginBtn.backgroundColor = UIColor.whiteColor()
+    self.LoginBtn.tintColor = UIColor.blackColor()
+    Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: self.LoginBtn)
+    
+    self.CreateNewUserBtn.tintColor = UIColor.whiteColor()
+    Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: self.CreateNewUserBtn)
     
     // Do any additional setup after loading the view.
     
@@ -23,7 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   }
   
   override func viewWillAppear(animated: Bool) {
-    self.navigationController?.navigationBarHidden = false
+    self.navigationController?.navigationBarHidden = true
     
     userNameTextField.text = ""
     passwordTextField.text = ""
@@ -103,5 +130,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     textField.backgroundColor = UIColor.clearColor()
     return true
+  }
+  
+  @IBAction func ClosePressed(sender: AnyObject) {
+    self.navigationController?.popViewControllerAnimated(true)
   }
 }
