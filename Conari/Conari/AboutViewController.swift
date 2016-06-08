@@ -8,10 +8,14 @@
 
 import UIKit
 
-class AboutViewController: UIViewController
-{
-  override func viewWillAppear(animated: Bool)
-  {
+class AboutViewController: UIViewController {
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
+  }
+  
+  override func viewWillAppear(animated: Bool) {
     self.navigationController?.navigationBarHidden = false
   }
 }

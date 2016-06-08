@@ -44,6 +44,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
   }
   
   override func viewWillAppear(animated: Bool) {

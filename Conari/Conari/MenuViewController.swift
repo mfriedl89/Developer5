@@ -13,6 +13,16 @@ class MenuViewController: UIViewController {
   // MARK: - Outlets
   @IBOutlet weak var userNameLabel: UILabel!
   
+  @IBOutlet weak var SearchTutBtn: UIButton!
+  @IBOutlet weak var CreateTutBtn: UIButton!
+  @IBOutlet weak var CreateVidTut: UIButton!
+  @IBOutlet weak var ManageTut: UIButton!
+  
+  @IBOutlet weak var ChangeNameBtn: UIButton!
+  @IBOutlet weak var ChangeEmailBtn: UIButton!
+  @IBOutlet weak var ChangePasswordBtn: UIButton!
+  @IBOutlet weak var LogoutBtn: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -20,13 +30,17 @@ class MenuViewController: UIViewController {
     
     userNameLabel.text = DatabaseManager.sharedManager.getUserName()
     
+    Constants.setGradientColor(self.view)
+    
     // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(animated: Bool) {
     handleNetworkError()
+    
+    self.navigationController?.navigationBarHidden = true
   }
-  
+    
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.

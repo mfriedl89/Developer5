@@ -30,6 +30,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     OldPasswordTextField.delegate = self
     NewPasswordTextField.delegate = self
@@ -38,6 +39,8 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
   
   override func viewWillAppear(animated: Bool) {
     handleNetworkError()
+    
+    self.navigationController?.navigationBarHidden = false
   }
   
   override func didReceiveMemoryWarning() {

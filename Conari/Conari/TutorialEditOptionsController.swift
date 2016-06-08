@@ -65,8 +65,8 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
-    // Do any additional setup after loading the view.
     difficultyStepper.maximumValue = 5
     difficultyStepper.minimumValue = 1
     difficultyStepper.value = Double(self.editTutorial!.difficulty)!

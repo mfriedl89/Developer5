@@ -28,6 +28,8 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
+    
     loadIndicator.startAnimating()
     loadIndicator.transform=CGAffineTransformMakeScale(1.5, 1.5)
     self.automaticallyAdjustsScrollViewInsets = false
@@ -40,6 +42,8 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
     // Info Button
     let infoButton = UIButton(type: .InfoLight)
     infoButton.addTarget(self, action: #selector(self.viewAdditionalInformation), forControlEvents: .TouchUpInside)
+    infoButton.tintColor = UIColor.whiteColor()
+    
     infoBarButton.customView = infoButton
     navigationItem.rightBarButtonItem = infoBarButton
   }
@@ -87,7 +91,8 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
       {
         dispatch_async(dispatch_get_main_queue(), {
           self.title = tutorial!.title
-          self.content = tutorial!.text
+          
+          self.content = Constants.cssTextColor + tutorial!.text
           self.setContent()
         })
       }
