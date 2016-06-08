@@ -41,8 +41,8 @@ class YouTubeManager {
   }
   
   func searchVideoByTitle(title: String, completionHandler: (response: [YoutubeVideo], success:Bool, messagge:String) -> Void) -> Void {
-    let e_title = title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
-    let urlString = searchApiUrl+"?part=snippet&q=\(e_title)&type=video&key=\(apiKey)"
+    let eTitle = title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+    let urlString = searchApiUrl+"?part=snippet&q=\(eTitle)&type=video&key=\(apiKey)"
     //urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters()!
     
     // Create a NSURL object based on the above string.
@@ -96,15 +96,13 @@ class YouTubeManager {
   
   func postVideoToYouTube(uploadUrl: String, videoData: NSData, title: String, callback: (String, Bool) -> ()){
     
-    DatabaseManager.sharedManager.getAccessToken({access_token in
+    DatabaseManager.sharedManager.getAccessToken({accessToken in
       
-      print(access_token!)
-      
-      if(access_token == "Error") {
+      if(accessToken == "Error") {
         return
       }
       
-      let headers = ["Authorization": "Bearer \(access_token!)"]
+      let headers = ["Authorization": "Bearer \(accessToken!)"]
       upload(
         .POST,
         "https://www.googleapis.com/upload/youtube/v3/videos?part=snippet",
@@ -117,15 +115,13 @@ class YouTubeManager {
           switch encodingResult {
           case .Success(let upload, _, _):
             upload.responseJSON { response in
-              print(response)
               
               do {
                 let jsonData = try NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments)
                 
-                let video_id = jsonData["id"] as! String
-                let identifier_final = self.identifier + video_id
-                print(identifier_final)
-                callback(identifier_final, true)
+                let videoID = jsonData["id"] as! String
+                let identifierFinal = self.identifier + videoID
+                callback(identifierFinal, true)
                 
               } catch {
                 print("error serializing JSON: \(error)")

@@ -115,7 +115,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
-      DatabaseManager.sharedManager.changeUserEmail(username, password: password, new_email: new_email) {success, message in
+      DatabaseManager.sharedManager.changeUserEmail(username, password: password, newEmail: new_email) {success, message in
         if success == true
         {
           dispatch_async(dispatch_get_main_queue(),{

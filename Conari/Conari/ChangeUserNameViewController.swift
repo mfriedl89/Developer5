@@ -113,7 +113,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
-      DatabaseManager.sharedManager.changeUserFirstAndSurname(username, password: password, new_firstname: new_firstname, new_surname: new_surname) {success, message in
+      DatabaseManager.sharedManager.changeUserFirstAndSurname(username, password: password, newFirstname: new_firstname, newSurname: new_surname) {success, message in
         if success == true {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Changed Firstname/Surname to: \(new_firstname) \(new_surname)", message: message, preferredStyle: UIAlertControllerStyle.Alert)

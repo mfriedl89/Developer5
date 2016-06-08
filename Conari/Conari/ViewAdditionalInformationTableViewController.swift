@@ -13,7 +13,7 @@ class ViewAdditionalInformationTableViewController: UITableViewController
 {
   
   // MARK: - Members
-  var tutorial: Tutorial_item? = nil
+  var tutorial: TutorialItem? = nil
   var difficultLabels = ["very easy",
                          "easy",
                          "medium",

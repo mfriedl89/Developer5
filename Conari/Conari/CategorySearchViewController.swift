@@ -50,7 +50,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     }
   }
   
-  var tutorialArray = [Tutorial_item]()
+  var tutorialArray = [TutorialItem]()
   var youtubeArray = [YoutubeVideo]()
   
   // MARK: - Outlets
@@ -281,7 +281,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       })
     }
     
-    DatabaseManager.sharedManager.findTutorialByCategory(textSearch, tutorial_category: selectedCategory) { (response) in
+    DatabaseManager.sharedManager.findTutorialByCategory(textSearch, tutorialCategory: selectedCategory) { (response) in
       if(!response.isEmpty){
         self.tutorialArray = response
         self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)

@@ -76,7 +76,7 @@ class TutorialEditContentController: UIViewController
   @IBAction func savePressed(sender: AnyObject)
   {
     current.id = Int(self.currentID!)!
-    DatabaseManager.sharedManager.EditTutorial(current, content:(editor?.getHTML())!) { success, message in
+    DatabaseManager.sharedManager.editTutorial(current, content:(editor?.getHTML())!) { success, message in
       print("upload-success: \(success), login-message:\(message)")
       
       if success == true

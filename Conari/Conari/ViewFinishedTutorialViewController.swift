@@ -14,7 +14,7 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
   // MARK: - Members
   var tutorialID = 0
   var content = ""
-  var myTutorial: Tutorial_item? = nil
+  var myTutorial: TutorialItem? = nil
   var infoBarButton = UIBarButtonItem()
   
   // MARK: - Outlets

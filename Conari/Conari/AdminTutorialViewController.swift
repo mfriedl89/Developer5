@@ -34,7 +34,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
                     "Youth"]
   
   var tutorialIndexPath: NSIndexPath? = nil
-  var tutorialArray = [Tutorial_item]()
+  var tutorialArray = [TutorialItem]()
   var editTutorial : Tutorial?
   
   // MARK: - Outlets
