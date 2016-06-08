@@ -272,8 +272,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     let urlYoutube = "http://uploads.gdata.youtube.com/feeds/api/users/default/uploads"
   
-    let headers = ["Authorization": "Bearer \(channelID)"]
-    let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
+    //let headers = ["Authorization": "Bearer \(channelID)"]
+    //let path = NSBundle.mainBundle().pathForResource("video", ofType: "mp4")
     
     print("VideoUrl:\(pickedVideoURL)")
     var videodata: NSData?
@@ -286,7 +286,9 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     print("VideoUrl:\(pickedVideoURL)")
 
-    YouTubeManager.sharedManager.uploadRequest(urlYoutube, data: videodata!)
+    YouTubeManager.sharedManager.postVideoToYouTube(urlYoutube, videoData: videodata!)
+
+    
     
     //    upload(
 //      .POST,

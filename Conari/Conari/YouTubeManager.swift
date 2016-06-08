@@ -93,58 +93,85 @@ class YouTubeManager {
     })
     task.resume()
   }
-  
-  //  func uploadRequest(uploadUrl: String, data: NSData)
-  //  {
-  //    print("uploadRequest")
-  //
-  //    let url = NSURL(string: uploadUrl)!
-  //    let session = NSURLSession.sharedSession()
-  //
-  //    let request = NSMutableURLRequest(URL: url)
-  //    request.HTTPMethod = "POST"
-  //    request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
-  //
-  //    let body = NSMutableData()
-  //
-  //    request.HTTPBody = body
-  //
-  //    let task = session.uploadTaskWithRequest(request, fromData: data, completionHandler:
-  //      {(data, response, error) in
-  //
-  //        guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-  //          print("error")
-  //          return
-  //        }
-  //
-  //        let dataString = String(data: data!, encoding: NSUTF8StringEncoding)
-  //        print(dataString)
-  //      }
-  //    );
-  //
-  //    task.resume()
-  //  }
-  
-  func uploadRequest(uploadUrl: String, data: NSData) {
-    // Set up your URL
-    let youtubeApi = "https://www.googleapis.com/youtube/v3/videos?part=contentDetails%2C+snippet%2C+statistics&id=AKiiekaEHhI&key={" + self.apiKey + "}"
-    let url = NSURL(string: youtubeApi)
     
-    // Create your request
-    let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
-      do {
-        if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? [String : AnyObject] {
-          
-          print("Response from YouTube: \(jsonResult)")
-        }
-      }
-      catch {
-        print("json error: \(error)")
-      }
-      
-    })
-    
-    // Start the request
-    task.resume()
-  }
+    func postVideoToYouTube(uploadUrl: String, videoData: NSData){
+        
+        //let headers = ["Authorization": "Bearer \(token)"]
+        let headers = ["Authorization": "Bearer token"]
+        
+        //let path = NSBundle.mainBundle().pathForResource("sample", ofType: "mp4")
+        //let videodata: NSData = NSData.dataWithContentsOfMappedFile(path!)! as! NSData
+        upload(
+            .POST,
+            "https://www.googleapis.com/upload/youtube/v3/videos?part=id",
+            headers: headers,
+            multipartFormData: { multipartFormData in
+                multipartFormData.appendBodyPart(data: videoData, name: "video", fileName: "sample.mp4", mimeType: "application/octet-stream")
+            },
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .Success(let upload, _, _):
+                    upload.responseJSON { response in
+                        print(response)
+                        print("Success")
+                    }
+                case .Failure(_):
+                    print("Failure")
+                }
+        })
+    }
+  
+//    func uploadRequest(uploadUrl: String, data: NSData)
+//    {
+//      print("uploadRequest")
+//  
+//      let url = NSURL(string: uploadUrl)!
+//      let session = NSURLSession.sharedSession()
+//  
+//      let request = NSMutableURLRequest(URL: url)
+//      request.HTTPMethod = "POST"
+//      request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+//  
+//      let body = NSMutableData()
+//  
+//      request.HTTPBody = body
+//  
+//      let task = session.uploadTaskWithRequest(request, fromData: data, completionHandler:
+//        {(data, response, error) in
+//  
+//          guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+//            print("error")
+//            return
+//          }
+//  
+//          let dataString = String(data: data!, encoding: NSUTF8StringEncoding)
+//          print("datastring: " + dataString!)
+//        }
+//      );
+//  
+//      task.resume()
+//    }
+  
+//  func uploadRequest(uploadUrl: String, data: NSData) {
+//    // Set up your URL
+//    let youtubeApi = "https://www.googleapis.com/youtube/v3/videos?part=contentDetails%2C+snippet%2C+statistics&id=AKiiekaEHhI&key={" + self.apiKey + "}"
+//    let url = NSURL(string: youtubeApi)
+//    
+//    // Create your request
+//    let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
+//      do {
+//        if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? [String : AnyObject] {
+//          
+//          print("Response from YouTube: \(jsonResult)")
+//        }
+//      }
+//      catch {
+//        print("json error: \(error)")
+//      }
+//      
+//    })
+//    
+//    // Start the request
+//    task.resume()
+//  }
 }
