@@ -244,7 +244,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
       let nextScene =  segue.destinationViewController as! TutorialEditContentController
       nextScene.current = current
       nextScene.currentText = (editTutorial?.text)!.stringByReplacingOccurrencesOfString("\\\"", withString: "\"")
-      nextScene.currentId = self.editTutorialId
+      nextScene.currentID = self.editTutorialId
       
       return
     }
