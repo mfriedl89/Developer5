@@ -44,9 +44,7 @@ if (mysqli_connect_errno()) {
 } else {
 
 	$refresh_token = getRefreshToken($mysqli);
-	echo $refresh_token . ";";
-	//$client_id = "234918812842.apps.googleusercontent.com";
-	//client_id=234918812842-5jlqchqd5oc53tvq4s3l754ah1vhvglc.apps.googleusercontent.com&client_secret=ElQiVGifufIdwIBF5T609ZVN&refresh_token=1/1nfHW0Q1BZAmb7YBeD4XiLZJF2p-P9BFNa4WWPDKZUU&grant_type=refresh_token
+
 	$client_id = "234918812842-5jlqchqd5oc53tvq4s3l754ah1vhvglc.apps.googleusercontent.com";
 	$client_secret = "ElQiVGifufIdwIBF5T609ZVN";
 
@@ -67,10 +65,13 @@ if (mysqli_connect_errno()) {
 	$context  = stream_context_create($options);
 	$result = file_get_contents($url, false, $context);
 	if ($result === FALSE) {
-		echo "Result is false;";
+		echo "Error";
 	}
-
-	var_dump($result);
+	else {
+		$json_decoded = json_decode($result, true);
+		$access_token = $json_decoded['access_token'];
+		echo $access_token;
+	}
 		
 	$mysqli->close();
 	
