@@ -45,15 +45,16 @@ if (mysqli_connect_errno()) {
 
 	$refresh_token = getRefreshToken($mysqli);
 	echo $refresh_token . ";";
-	//$client_id = "407408718192.apps.googleusercontent.com";
-	$client_id = "234918812842-4n27kb9iq6rd4pv4l50n2scdamvhj65v.apps.googleusercontent.com";
-	$client_secret = "MkO43eEJFnEY3KRDJVYwOvg9";
+	//$client_id = "234918812842.apps.googleusercontent.com";
+	//client_id=234918812842-5jlqchqd5oc53tvq4s3l754ah1vhvglc.apps.googleusercontent.com&client_secret=ElQiVGifufIdwIBF5T609ZVN&refresh_token=1/1nfHW0Q1BZAmb7YBeD4XiLZJF2p-P9BFNa4WWPDKZUU&grant_type=refresh_token
+	$client_id = "234918812842-5jlqchqd5oc53tvq4s3l754ah1vhvglc.apps.googleusercontent.com";
+	$client_secret = "ElQiVGifufIdwIBF5T609ZVN";
 
-	$url = 'http://www.googleapis.com/oauth2/v3/token';
+	$url = 'https://accounts.google.com/o/oauth2/token';
 	$data = array('client_secret' => $client_secret,
-	              'grant_type' => 'refresh_token',
-	              'refresh_token' => $refresh_token,
-	              'client_id' => $client_id);
+		'grant_type' => 'refresh_token',
+		'refresh_token' => $refresh_token,
+		'client_id' => $client_id);
 
 	$options = array(
 	    'http' => array(
