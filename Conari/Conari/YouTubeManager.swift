@@ -96,7 +96,6 @@ class YouTubeManager {
   
   func postVideoToYouTube(uploadUrl: String, videoData: NSData, title: String, callback: (String, Bool) -> ()){
     
-    //let headers = ["Authorization": "Bearer \(token)"]
     DatabaseManager.sharedManager.getAccessToken({access_token in
       
       print(access_token!)
