@@ -134,7 +134,7 @@ class DatabaseManager {
         postString += "&password=" + password
         postString += "&title=" + metadata.Title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
         postString += "&category=" + String(metadata.category+1)
-        postString += "&difficulty=" + String(metadata.difficulty+1)
+        postString += "&difficulty=" + String(metadata.difficulty)
         postString += "&duration=" + String(metadata.duration)
         let allowedCharacters = NSCharacterSet.URLQueryAllowedCharacterSet().mutableCopy() as! NSMutableCharacterSet
         allowedCharacters.removeCharactersInString("+/=")
