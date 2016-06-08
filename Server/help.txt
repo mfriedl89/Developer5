@@ -1,10 +1,10 @@
 
-Files on https://citycommerce.net/
+Files on http://www.wullschi.com/conari/
 
 
 TEST-user
-name:test
-pass:Qwertzuiop123.
+name:conari
+pass:Conari123-
 
 Login.php:
 	/*	Receives: 	username, password		*/
