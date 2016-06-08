@@ -11,6 +11,8 @@ import SDWebImage
 
 class CategorySearchViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SDWebImageManagerDelegate, UISearchDisplayDelegate, UISearchResultsUpdating  {
   
+  // MARK: - Members
+  
   var categories = ["All",
                     "Arts and Entertainment",
                     "Cars & Other Vehicles",
@@ -39,7 +41,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   var screenHeight: CGFloat = 0
   
   var searchController: UISearchController!
-
+  
   deinit {
     if let sc = searchController {
       if let superView = sc.view.superview {
@@ -50,6 +52,8 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   
   var tutorialArray = [Tutorial_item]()
   var youtubeArray = [YoutubeVideo]()
+  
+  // MARK: - Outlets
   
   @IBOutlet var table_View: UITableView!
   
@@ -100,27 +104,27 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       cell.image_view.image = UIImage(named: "\(tutorialArray[indexPath.row].category-1)")
       
       switch Int(tutorialArray[indexPath.row].difficulty)! {
-      
+        
       case 5:
         cell.label_difficulty?.text = "very hard";
-      
+        
       case 4:
         cell.label_difficulty?.text = "hard";
-      
+        
       case 3:
         cell.label_difficulty?.text = "medium";
-      
+        
       case 2:
         cell.label_difficulty?.text = "easy";
-      
+        
       case 1:
         cell.label_difficulty?.text = "very easy";
-      
+        
       default:
         break
       }
       return cell
-    
+      
     case 1:
       let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableYoutubeViewCell", forIndexPath: indexPath) as! CategorySearchYoutubeTableViewCell
       cell.label_title?.text = youtubeArray[indexPath.row].title
@@ -148,7 +152,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       
     case 1:
       return youtubeArray.count
-    
+      
     default:
       return 0
     }
@@ -190,7 +194,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       
     case 1:
       break;
-    
+      
     default:
       return
     }
@@ -272,7 +276,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
         self.youtubeArray.removeAll()
         self.youtubeArray = response
         dispatch_async(dispatch_get_main_queue(), {
-            self.table_View.reloadData();
+          self.table_View.reloadData();
         })
       })
     }

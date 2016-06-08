@@ -10,9 +10,7 @@ import UIKit
 
 class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   
-  @IBOutlet weak var FirstNameTextField: UITextField!
-  @IBOutlet weak var SurNameTextField: UITextField!
-  @IBOutlet weak var DoneBtn: UIButton!
+  // MARK: - Members
   
   var username = ""
   let password = DatabaseManager.sharedManager.getUserPassword()
@@ -21,6 +19,12 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   
   let falseFirstname = 1
   let falseSurname = 2
+  
+  // MARK: - Outlets
+  
+  @IBOutlet weak var FirstNameTextField: UITextField!
+  @IBOutlet weak var SurNameTextField: UITextField!
+  @IBOutlet weak var DoneBtn: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -95,7 +99,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case falseSurname:
@@ -105,7 +109,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
@@ -118,7 +122,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -131,7 +135,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
