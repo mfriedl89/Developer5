@@ -1754,8 +1754,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icons: ©TukTuk Design ©Chameleon Design" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0u-In-5Rm">
-                                <rect key="frame" x="14" y="576" width="566" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icons: ©TukTuk Design, Chameleon Design, Vittorio Maria Vecchi, Ainsley Wagoner, Rafael Martins, Vytautas Alech" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0u-In-5Rm">
+                                <rect key="frame" x="20" y="560" width="560" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1799,14 +1799,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer5 @ TU Graz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQo-8O-y1t">
-                                <rect key="frame" x="20" y="72" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDh-9T-Lfs">
-                                <rect key="frame" x="20" y="261" width="560" height="307"/>
+                                <rect key="frame" x="20" y="261" width="560" height="291"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paul Krassnig" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2L-gV-MiG">
                                         <rect key="frame" x="0.0" y="145" width="560" height="21"/>
@@ -1886,6 +1880,12 @@
                                     <constraint firstAttribute="bottom" secondItem="J9p-7h-9LQ" secondAttribute="bottom" constant="83" id="uk7-bc-uwu"/>
                                 </constraints>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer5 @ TU Graz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQo-8O-y1t">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1905,7 +1905,7 @@
                             <constraint firstItem="cDh-9T-Lfs" firstAttribute="trailing" secondItem="z0u-In-5Rm" secondAttribute="trailing" id="b3W-v7-c22"/>
                             <constraint firstItem="wtp-RX-ueY" firstAttribute="leading" secondItem="QbE-p0-cAt" secondAttribute="leading" id="b6C-vV-CUt"/>
                             <constraint firstItem="fqN-66-G4h" firstAttribute="leading" secondItem="wtp-RX-ueY" secondAttribute="leading" id="dPQ-29-m9S"/>
-                            <constraint firstItem="z0u-In-5Rm" firstAttribute="leading" secondItem="Odf-G4-PB8" secondAttribute="leadingMargin" constant="-6" id="ds9-wX-Ngf"/>
+                            <constraint firstItem="z0u-In-5Rm" firstAttribute="leading" secondItem="Odf-G4-PB8" secondAttribute="leadingMargin" id="ds9-wX-Ngf"/>
                             <constraint firstItem="fQo-8O-y1t" firstAttribute="trailing" secondItem="Odf-G4-PB8" secondAttribute="trailingMargin" id="eLx-Id-X1X"/>
                             <constraint firstItem="anf-M1-TQM" firstAttribute="top" secondItem="z0u-In-5Rm" secondAttribute="bottom" constant="8" symbolic="YES" id="kKh-z1-Elt"/>
                             <constraint firstItem="sDU-XD-JPv" firstAttribute="leading" secondItem="fqN-66-G4h" secondAttribute="leading" id="mbj-RU-w7e"/>
