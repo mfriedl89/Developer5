@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		28AE0ADF1CE3077F004A6858 /* TutorialEditOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */; };
 		28AE0AE21CE3161B004A6858 /* TutorialEditContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */; };
+		3A2035B41D0800500022C807 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A794ABE1CFED468003E4FB8 /* Reach.swift */; };
 		3A3D532E1CFEC7C400720019 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532D1CFEC7C400720019 /* UIViewController+Alert.swift */; };
 		3A3D53301CFEC7D400720019 /* UIViewController+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532F1CFEC7D400720019 /* UIViewController+ErrorHandling.swift */; };
 		3A794ABF1CFED468003E4FB8 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A794ABE1CFED468003E4FB8 /* Reach.swift */; };
@@ -535,7 +536,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C090C9831CFF003F00B9D39A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,7 +715,6 @@
 				AE4580621CFEFD4500063DD9 /* Reach.swift in Sources */,
 				3AE79A931CF5D9180083A630 /* CategorySearchTableViewCell.swift in Sources */,
 				3AE79A831CF5D9090083A630 /* CategorySearchViewController.swift in Sources */,
-				C090C97C1CFEFDE600B9D39A /* UIViewController+Alert.swift in Sources */,
 				3AE79A921CF5D9100083A630 /* KeyboardManager.swift in Sources */,
 				3AE79A8E1CF5D9090083A630 /* TutorialEditOptionsController.swift in Sources */,
 				E0307A661CECA621007DB00F /* LoginUITests.swift in Sources */,
@@ -723,7 +722,6 @@
 				3AE79A8B1CF5D9090083A630 /* NewTutorialDescriptonViewController.swift in Sources */,
 				3AE79A851CF5D9090083A630 /* ChangePasswordViewController.swift in Sources */,
 				3AE79A8F1CF5D9090083A630 /* ViewFinishedTutorialViewController.swift in Sources */,
-				C090C9801CFEFEE700B9D39A /* AppDelegate.swift in Sources */,
 				3AE79A801CF5D8EE0083A630 /* DatabaseManager.swift in Sources */,
 				3AE79A881CF5D9090083A630 /* MainTutorialViewController.swift in Sources */,
 				E070D2C61CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift in Sources */,
@@ -762,7 +760,6 @@
 				AE0B90A21CF58AD500A1CCF3 /* TutorialTableViewCell.swift in Sources */,
 				AE0B90941CF58AA400A1CCF3 /* AppDelegate.swift in Sources */,
 				AE0B909E1CF58AC900A1CCF3 /* WelcomeScreenViewController.swift in Sources */,
-				C090C9821CFEFEFD00B9D39A /* Reach.swift in Sources */,
 				AE0B90991CF58AB600A1CCF3 /* ChangePasswordViewController.swift in Sources */,
 				AE0B90A11CF58AD200A1CCF3 /* AdminTutorialViewController.swift in Sources */,
 				AE0B90961CF58AA900A1CCF3 /* MainTutorialViewController.swift in Sources */,
@@ -778,7 +775,6 @@
 				AE0B90A01CF58ACF00A1CCF3 /* KeyboardManager.swift in Sources */,
 				AE0B90A41CF58ADB00A1CCF3 /* TutorialEditContentController.swift in Sources */,
 				E0307A601CECA616007DB00F /* NewUserUnitTests.swift in Sources */,
-				C090C97D1CFEFDE700B9D39A /* UIViewController+Alert.swift in Sources */,
 				AE0B90951CF58AA600A1CCF3 /* MetaDataViewController.swift in Sources */,
 				AE4580611CFEFD1600063DD9 /* UIViewController+Alert.swift in Sources */,
 				AE0B909A1CF58AB900A1CCF3 /* ChangeEmailViewController.swift in Sources */,
@@ -788,6 +784,7 @@
 				AE0B90A31CF58AD800A1CCF3 /* TutorialEditOptionsController.swift in Sources */,
 				3AE79A911CF5D90B0083A630 /* AboutViewController.swift in Sources */,
 				E0307A5F1CECA616007DB00F /* LoginUnitTests.swift in Sources */,
+				3A2035B41D0800500022C807 /* Reach.swift in Sources */,
 				AE0B908F1CF58A9500A1CCF3 /* ViewFinishedTutorialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
