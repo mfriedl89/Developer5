@@ -15,7 +15,7 @@ function getRefreshToken(&$mysqli) {
 
 		/* bind parameters for markers */
 		$id = 1;
-		$stmt->bind_param("?", $id);
+		$stmt->bind_param("i", $id);
 
 		/* execute query */
 		$stmt->execute();
