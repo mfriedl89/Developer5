@@ -1,66 +1,74 @@
 //
-//  ViewAdditionalInformationTableViewController.swift
-//  Conari
+//  WelcomeScreenViewController.swift
+//  Mr Tutor
 //
-//  Created by Philipp Preiner on 04.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 04.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
+
 
 import UIKit
 
-class ViewAdditionalInformationTableViewController: UITableViewController {
+class ViewAdditionalInformationTableViewController: UITableViewController
+{
   
+  // MARK: - Members
   var tutorial: Tutorial_item? = nil
-  
   var difficultLabels = ["very easy",
                          "easy",
                          "medium",
                          "hard",
                          "very hard"]
   
-  override func viewDidLoad() {
+  
+  // MARK: - Methods
+  override func viewDidLoad()
+  {
     super.viewDidLoad()
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    
   }
   
-  override func viewWillAppear(animated: Bool) {
+  
+  
+  
+  override func viewWillAppear(animated: Bool)
+  {
     self.navigationController?.navigationBarHidden = false
     handleNetworkError()
   }
+
   
-  @IBAction func doneTapped(sender: UIBarButtonItem) {
+  
+  
+  @IBAction func doneTapped(sender: UIBarButtonItem)
+  {
     self.dismissViewControllerAnimated(true, completion: nil)
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
   
-  // MARK: - Table view data source
   
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
+  
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+  {
     return 1
   }
   
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of rows
+  
+  
+  
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+  {
     return 5
   }
   
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  
+  
+  
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+  {
     let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-    
-    // Configure the cell...
-    
-    switch indexPath.row {
+
+    switch indexPath.row
+    {
     case 0:
       cell.textLabel?.text = "Title"
       cell.detailTextLabel?.text = tutorial?.title
@@ -79,16 +87,12 @@ class ViewAdditionalInformationTableViewController: UITableViewController {
       
     case 4:
       cell.textLabel?.text = "Duration"
-      
       let durationInSec: Int = Int((tutorial?.duration)!)! * 60
       let duration: String = String( (durationInSec / 3600) ) + " : " + String( ((durationInSec % 3600) / 60) )
-      
       let dateFormatter = NSDateFormatter()
       dateFormatter.dateFormat = "HH:mm"
-      
       let date = dateFormatter.dateFromString(duration)
       let dateString = dateFormatter.stringFromDate(date!)
-      
       cell.detailTextLabel?.text = dateString
       
     default:
