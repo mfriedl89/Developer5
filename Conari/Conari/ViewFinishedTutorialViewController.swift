@@ -24,7 +24,7 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
   @IBOutlet weak var htmlContent: UIWebView!
   
   
-
+  // MARK: - Methods
   override func viewDidLoad()
   {
     super.viewDidLoad()

@@ -1,9 +1,9 @@
 //
 //  AboutViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by Markus Friedl on 25.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 25.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit

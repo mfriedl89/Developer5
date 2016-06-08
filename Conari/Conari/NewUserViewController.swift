@@ -1,9 +1,9 @@
 //
 //  NewUserViewController.swift
-//  Conari
+//  Mr Tutor
 //
-//  Created by Paul Krassnig on 13.04.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 13.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
