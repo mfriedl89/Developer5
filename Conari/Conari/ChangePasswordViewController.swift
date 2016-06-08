@@ -16,7 +16,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
   let checkPasswordFalse = -2
   let repeatedIsNotNew = -3
   
-  var login_password_ = DatabaseManager.sharedManager.getUserPassword()
+  var loginPassword = DatabaseManager.sharedManager.getUserPassword()
   var username = DatabaseManager.sharedManager.getUserName()
   
   var newUserFunc = NewUserViewController()
@@ -63,7 +63,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
   func changePassword(oldPwd: String, newPwd: String, repeatedPwd: String) -> NSInteger {
     var error = 0
     
-    if(oldPwd != login_password_) {
+    if(oldPwd != loginPassword) {
       error = falsePassword
     }
     else if(!newUserFunc.checkPassword(newPwd)) {
@@ -73,7 +73,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
       error = repeatedIsNotNew
     }
     
-    newUserFunc.checkInput(oldPwd == login_password_, textField: OldPasswordTextField)
+    newUserFunc.checkInput(oldPwd == loginPassword, textField: OldPasswordTextField)
     newUserFunc.checkInput(newUserFunc.checkPassword(newPwd), textField: NewPasswordTextField)
     newUserFunc.checkInput(repeatedPwd == newPwd, textField: RepeatedPasswordTextField)
     
@@ -109,7 +109,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
-      DatabaseManager.sharedManager.changeUserPassword(username, new_password: NewPasswordTextField.text!, old_password: login_password_) {success, message in
+      DatabaseManager.sharedManager.changeUserPassword(username, new_password: NewPasswordTextField.text!, old_password: loginPassword) {success, message in
         if success == true {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Changed Password", message: message, preferredStyle: UIAlertControllerStyle.Alert)

@@ -15,7 +15,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   let checkEmailFalse = -1
   let repeatedEmailIsNotNew = -2
   
-  var login_email_ = ""
+  var loginEmail = ""
   var newUserFunc = NewUserViewController()
   
   let username = DatabaseManager.sharedManager.getUserName()
@@ -50,8 +50,8 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
       }
       else {
         dispatch_async(dispatch_get_main_queue(), {
-          self.login_email_ = User!.email
-          self.old_email.text = self.login_email_
+          self.loginEmail = User!.email
+          self.old_email.text = self.loginEmail
         })
       }
       
