@@ -286,28 +286,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     print("VideoUrl:\(pickedVideoURL)")
 
-    YouTubeManager.sharedManager.postVideoToYouTube(urlYoutube, videoData: videodata!)
-
+    YouTubeManager.sharedManager.postVideoToYouTube(urlYoutube, videoData: videodata!, title: titleTextField_.text!)
     
-    
-    //    upload(
-//      .POST,
-//      urlYoutube,
-//      headers: headers,
-//      multipartFormData: { multipartFormData in
-//        multipartFormData.appendBodyPart(data: videodata, name: "video", fileName: "video.mp4", mimeType: "application/octet-stream")
-//      },
-//      encodingCompletion: { encodingResult in
-//        switch encodingResult {
-//        case .Success(let upload, _, _):
-//          upload.responseJSON { request, response, error in
-//            print(response)
-//            callback(true)
-//          }
-//        case .Failure(_):
-//          callback(false)
-//        }
-//    })
   }
   
 }
