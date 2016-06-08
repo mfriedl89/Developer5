@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iqP-5l-LlT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -488,7 +488,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eh-B9-Wkb">
-                                <rect key="frame" x="20" y="116" width="560" height="36"/>
+                                <rect key="frame" x="20" y="282" width="560" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
@@ -497,24 +497,30 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Mr Tutor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h8-6Y-5Nx">
-                                <rect key="frame" x="20" y="72" width="560" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h8-6Y-5Nx">
+                                <rect key="frame" x="19" y="209" width="560" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGn-0Y-j53">
-                                <rect key="frame" x="20" y="160" width="560" height="36"/>
+                                <rect key="frame" x="20" y="326" width="560" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Continue without login"/>
                                 <connections>
                                     <segue destination="y1j-Ah-LpW" kind="show" id="X42-Vz-655"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Mr Tutor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1h-mV-kvb">
+                                <rect key="frame" x="20" y="253" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAY-fX-DeU">
-                                <rect key="frame" x="19" y="551" width="561" height="29"/>
+                                <rect key="frame" x="20" y="551" width="560" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="wbq-Gk-6rB"/>
+                                    <constraint firstAttribute="height" constant="29" id="Twa-gA-eg5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="About"/>
@@ -525,21 +531,31 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="2h8-6Y-5Nx" firstAttribute="leading" secondItem="3eh-B9-Wkb" secondAttribute="leading" id="6JV-NK-Vqb"/>
-                            <constraint firstAttribute="bottom" secondItem="DAY-fX-DeU" secondAttribute="bottom" constant="20" symbolic="YES" id="7of-zu-bRL"/>
-                            <constraint firstItem="DAY-fX-DeU" firstAttribute="centerX" secondItem="RGn-0Y-j53" secondAttribute="centerX" id="8Fm-Mm-gac"/>
-                            <constraint firstItem="RGn-0Y-j53" firstAttribute="top" secondItem="3eh-B9-Wkb" secondAttribute="bottom" constant="8" symbolic="YES" id="BGP-Ct-iBf"/>
-                            <constraint firstItem="DAY-fX-DeU" firstAttribute="trailing" secondItem="RGn-0Y-j53" secondAttribute="trailing" id="E0I-7B-kyT"/>
-                            <constraint firstItem="2h8-6Y-5Nx" firstAttribute="leading" secondItem="qxb-Fc-Rcc" secondAttribute="leadingMargin" id="Iwi-q3-0lY"/>
-                            <constraint firstItem="2h8-6Y-5Nx" firstAttribute="trailing" secondItem="qxb-Fc-Rcc" secondAttribute="trailingMargin" id="gZH-mE-vhJ"/>
-                            <constraint firstItem="2h8-6Y-5Nx" firstAttribute="top" secondItem="mpT-tW-tcD" secondAttribute="bottom" constant="8" symbolic="YES" id="iU0-I2-sTy"/>
-                            <constraint firstItem="2h8-6Y-5Nx" firstAttribute="trailing" secondItem="3eh-B9-Wkb" secondAttribute="trailing" id="mCy-QT-36J"/>
-                            <constraint firstItem="3eh-B9-Wkb" firstAttribute="leading" secondItem="RGn-0Y-j53" secondAttribute="leading" id="n10-eI-pC4"/>
-                            <constraint firstItem="3eh-B9-Wkb" firstAttribute="top" secondItem="2h8-6Y-5Nx" secondAttribute="bottom" constant="8" symbolic="YES" id="r25-rk-VWi"/>
-                            <constraint firstItem="3eh-B9-Wkb" firstAttribute="trailing" secondItem="RGn-0Y-j53" secondAttribute="trailing" id="s3d-gJ-nv2"/>
+                            <constraint firstItem="RGn-0Y-j53" firstAttribute="leading" secondItem="qxb-Fc-Rcc" secondAttribute="leadingMargin" id="0YK-hU-5iP"/>
+                            <constraint firstItem="DAY-fX-DeU" firstAttribute="leading" secondItem="RGn-0Y-j53" secondAttribute="leading" id="7UL-gY-ruH"/>
+                            <constraint firstItem="a1h-mV-kvb" firstAttribute="top" secondItem="2h8-6Y-5Nx" secondAttribute="bottom" constant="8" id="Anw-h9-oaB"/>
+                            <constraint firstItem="3eh-B9-Wkb" firstAttribute="trailing" secondItem="qxb-Fc-Rcc" secondAttribute="trailingMargin" id="C9Y-9n-fde"/>
+                            <constraint firstItem="DAY-fX-DeU" firstAttribute="trailing" secondItem="RGn-0Y-j53" secondAttribute="trailing" id="CvW-3V-ls1"/>
+                            <constraint firstAttribute="bottom" secondItem="DAY-fX-DeU" secondAttribute="bottom" constant="20" symbolic="YES" id="LzH-nH-fsc"/>
+                            <constraint firstItem="2h8-6Y-5Nx" firstAttribute="top" secondItem="mpT-tW-tcD" secondAttribute="bottom" constant="145" id="Ous-Vw-Mgf"/>
+                            <constraint firstItem="a1h-mV-kvb" firstAttribute="trailing" secondItem="qxb-Fc-Rcc" secondAttribute="trailingMargin" id="Q07-AK-sqa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2h8-6Y-5Nx" secondAttribute="trailing" constant="1" id="Vn3-3S-Y1w"/>
+                            <constraint firstItem="3eh-B9-Wkb" firstAttribute="leading" secondItem="qxb-Fc-Rcc" secondAttribute="leadingMargin" id="YmH-fL-doy"/>
+                            <constraint firstItem="RGn-0Y-j53" firstAttribute="top" secondItem="3eh-B9-Wkb" secondAttribute="bottom" constant="8" id="abi-pN-lHI"/>
+                            <constraint firstItem="2h8-6Y-5Nx" firstAttribute="leading" secondItem="qxb-Fc-Rcc" secondAttribute="leadingMargin" constant="-1" id="btG-MY-Sn7"/>
+                            <constraint firstItem="a1h-mV-kvb" firstAttribute="leading" secondItem="qxb-Fc-Rcc" secondAttribute="leadingMargin" id="cJM-OI-pus"/>
+                            <constraint firstItem="RGn-0Y-j53" firstAttribute="trailing" secondItem="qxb-Fc-Rcc" secondAttribute="trailingMargin" id="tU0-w6-Siw"/>
+                            <constraint firstItem="3eh-B9-Wkb" firstAttribute="top" secondItem="a1h-mV-kvb" secondAttribute="bottom" constant="8" id="wKg-fC-RHs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YM6-Zi-DVs"/>
+                    <connections>
+                        <outlet property="AboutBtn" destination="DAY-fX-DeU" id="a0I-hc-wkK"/>
+                        <outlet property="ContinueBtn" destination="RGn-0Y-j53" id="4Ak-ui-LnL"/>
+                        <outlet property="LoginBtn" destination="3eh-B9-Wkb" id="EBj-ji-cGN"/>
+                        <outlet property="MrTutorLabel" destination="a1h-mV-kvb" id="8jJ-w4-6W2"/>
+                        <outlet property="WelcomeLabel" destination="2h8-6Y-5Nx" id="rEk-dB-hmt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5Z-FB-TsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
