@@ -157,7 +157,11 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   }
   
   func numberOfSectionsInTableView(tableView:UITableView) -> Int {
-    return 2
+    if textSearch != "" {
+      return 2
+    } else {
+      return 1
+    }
   }
   
   func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath)->CGFloat {
@@ -165,23 +169,27 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   }
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    switch section {
-    case 0:
-      if tutorialArray.count == 0 {
+    if textSearch != "" {
+      switch section {
+      case 0:
+        if tutorialArray.count == 0 {
+          return ""
+        } else {
+          return "Tutorials"
+        }
+        
+      case 1:
+        if youtubeArray.count == 0 {
+          return ""
+        } else {
+          return "YouTube"
+        }
+        
+      default:
         return ""
-      } else {
-        return "Tutorials"
       }
-      
-    case 1:
-      if youtubeArray.count == 0 {
-        return ""
-      } else {
-        return "YouTube"
-      }
-      
-    default:
-      return ""
+    } else {
+      return nil
     }
   }
   
