@@ -73,11 +73,4 @@ class ViewFinishedTutorial: XCTestCase {
     XCTAssertEqual(videoIDParsed, "Iumsqz6LMnM", "Parsing the identifier failed")
   }
   
-  func testInvalidAPIKey() {
-    let videoID = "Iumsqz6LMnM"
-    let input = "ConariYouTubeTutorial - apiKey: , videoID: " + videoID
-    let videoIDParsed = YouTubeManager.sharedManager.parseIdentifier(input)
-    XCTAssertNil(videoIDParsed, "Invalid API key should return nil")
-  }
-  
 }
