@@ -304,7 +304,9 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   
   
   func postVideoToYouTube(){
-    
+
+    showLoadingAlert()
+
     let urlYoutube = "http://uploads.gdata.youtube.com/feeds/api/users/default/uploads"
     
     print("VideoUrl:\(pickedVideoURL)")
@@ -338,6 +340,9 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
               if(viewcontoller.isKindOfClass(MenuViewController))
               {
                 self.NextButton.enabled = true
+                
+                self.dismissViewControllerAnimated(false, completion: nil)
+                
                 self.navigationController?.popToViewController(viewcontoller, animated: true);
               }
             }
@@ -345,6 +350,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
           });
         } else {
           dispatch_async(dispatch_get_main_queue(),{
+
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
             
@@ -353,15 +359,29 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
             
             self.NextButton.enabled = true
-            self.presentViewController(alert, animated: true, completion: nil)
             
+            self.dismissViewControllerAnimated(false, completion: nil)
+
+            self.presentViewController(alert, animated: true, completion: nil)
           });
         }
       }
       
       
     })
+  }
+ 
+  func showLoadingAlert() {
+    let alert = UIAlertController(title: nil, message: "Uploading video...", preferredStyle: .Alert)
     
+    alert.view.tintColor = UIColor.blackColor()
+    let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(10, 5, 50, 50)) as UIActivityIndicatorView
+    loadingIndicator.hidesWhenStopped = true
+    loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+    loadingIndicator.startAnimating();
+    
+    alert.view.addSubview(loadingIndicator)
+    presentViewController(alert, animated: true, completion: nil)
   }
   
 }
