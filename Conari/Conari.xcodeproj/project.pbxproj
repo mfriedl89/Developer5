@@ -70,6 +70,7 @@
 		AE0B90A31CF58AD800A1CCF3 /* TutorialEditOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */; };
 		AE0B90A41CF58ADB00A1CCF3 /* TutorialEditContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
+		AE5028041D11693D0012490C /* AcknowledgementsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5028031D11693D0012490C /* AcknowledgementsUITests.swift */; };
 		AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
 		AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
 		AE5416DE1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
@@ -176,6 +177,7 @@
 		95B7229AD6B89D8005E15FC5 /* Pods-ConariUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUnitTests/Pods-ConariUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE0B90891CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeManagerUnitTests.swift; sourceTree = "<group>"; };
 		AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		AE5028031D11693D0012490C /* AcknowledgementsUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcknowledgementsUITests.swift; sourceTree = "<group>"; };
 		AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchViewController.swift; sourceTree = "<group>"; };
 		AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchTableViewCell.swift; sourceTree = "<group>"; };
 		AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorialViewController.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				E070D2B71CEC9B6900665154 /* Info.plist */,
 				E070D2BD1CEC9B7A00665154 /* CategorySearchUITests.swift */,
 				E070D2B51CEC9B6900665154 /* ConariUITests.swift */,
+				AE5028031D11693D0012490C /* AcknowledgementsUITests.swift */,
 				E0CC32EE1CF5AA480016987F /* EditTutorial.swift */,
 				E0307A631CECA621007DB00F /* LoginUITests.swift */,
 				E070D2BE1CEC9B7A00665154 /* MenuUITests.swift */,
@@ -782,6 +785,7 @@
 				E070D2C61CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift in Sources */,
 				3AE79A941CF5D9180083A630 /* TutorialTableViewCell.swift in Sources */,
 				E0CC32EF1CF5AA480016987F /* EditTutorial.swift in Sources */,
+				AE5028041D11693D0012490C /* AcknowledgementsUITests.swift in Sources */,
 				3AE79A841CF5D9090083A630 /* ChangeEmailViewController.swift in Sources */,
 				3AE79A871CF5D9090083A630 /* LoginViewController.swift in Sources */,
 				E0307A681CECA621007DB00F /* ViewAdditionalInformationUITest.swift in Sources */,
