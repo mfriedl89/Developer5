@@ -8,8 +8,10 @@
 
 import UIKit
 import SDWebImage
+import YouTubePlayer
 
-class CategorySearchViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SDWebImageManagerDelegate, UISearchDisplayDelegate, UISearchResultsUpdating  {
+class CategorySearchViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SDWebImageManagerDelegate, UISearchDisplayDelegate, UISearchResultsUpdating,YouTubePlayerDelegate
+{
   
   // MARK: - Members
   
@@ -41,6 +43,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   var screenHeight: CGFloat = 0
   
   var searchController: UISearchController!
+  
   
   deinit {
     if let sc = searchController {
@@ -188,6 +191,19 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       self.performSegueWithIdentifier("show_tutorial", sender: indexPath.row)
       
     case 1:
+      if(indexPath.row < youtubeArray.count)
+      {
+        let height = self.navigationController!.navigationBar.frame.height
+        let youtubevc = UIViewController();
+        let videoPlayer = YouTubePlayerView(frame: self.view.frame)
+        videoPlayer.delegate = self
+        videoPlayer.loadVideoID(youtubeArray[indexPath.row].videoId)
+        //self.showViewController(videoPlayer, sender: nil);
+        youtubevc.navigationController?.navigationBarHidden = false
+        youtubevc.view.addSubview(videoPlayer);
+        self.navigationController?.pushViewController(youtubevc, animated: true)
+        //self.view.addSubview(videoPlayer)
+      }
       break;
       
     default:
@@ -302,4 +318,30 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       csvc.myTutorial = self.tutorialArray[(sender as! Int)]
     }
   }
+  
+  func playerReady(videoPlayer: YouTubePlayerView)
+  {
+    videoPlayer.play()
+  }
+  
+  
+  
+  
+  func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState)
+  {
+    if (playerState == .Ended) {
+      videoPlayer.stop()
+    }
+  }
+  
+  
+  
+  
+  func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality)
+  {
+    
+  }
+
+  
+
 }
