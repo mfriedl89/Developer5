@@ -38,10 +38,6 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
     }
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
-  
   override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
     self.view.endEditing(true)
   }

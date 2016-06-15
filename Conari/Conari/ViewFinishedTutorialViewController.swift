@@ -58,15 +58,6 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
   
   
   
-  
-  override func didReceiveMemoryWarning()
-  {
-    super.didReceiveMemoryWarning()
-  }
-  
-  
-  
-  
   func requestTutorial(tutorialID: Int)
   {
     DatabaseManager.sharedManager.requestTutorial(tutorialID) { tutorial, message in

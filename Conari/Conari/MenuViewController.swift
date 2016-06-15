@@ -53,10 +53,6 @@ class MenuViewController: UIViewController {
     
     self.navigationController?.navigationBarHidden = true
   }
-    
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
   
   @IBAction func LogoutKlicked(sender: UIButton) {
     self.navigationController?.popViewControllerAnimated(true)

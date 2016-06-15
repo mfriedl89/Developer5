@@ -55,11 +55,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     passwordTextField.text = ""
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
-  
-  
   // MARK: - Navigation
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

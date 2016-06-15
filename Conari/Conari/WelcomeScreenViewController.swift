@@ -44,12 +44,6 @@ class WelcomeScreenViewController: UIViewController
   }
   
   
-  override func didReceiveMemoryWarning()
-  {
-    super.didReceiveMemoryWarning()
-  }
-  
-  
   override func viewWillAppear(animated: Bool)
   {
     self.navigationController?.navigationBarHidden = true
