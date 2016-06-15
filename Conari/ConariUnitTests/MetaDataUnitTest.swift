@@ -1,6 +1,6 @@
 //
-//  ChangePasswordViewController.swift
-//  Mr Tutor
+//  MetaDataViUnitTest.swift
+//  TutorialCloud
 //
 //  Created on 15.06.16.
 //  Copyright © 2016 Developer5. All rights reserved.
