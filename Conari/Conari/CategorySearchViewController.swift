@@ -60,6 +60,8 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   
   @IBOutlet var table_View: UITableView!
   
+  // MARK: - Lifecycle
+  
   override func viewWillAppear(animated: Bool) {
     self.navigationController?.navigationBarHidden = false
     
@@ -87,6 +89,8 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     
     reloadArrays()
   }
+  
+  // MARK: - Table View
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     switch indexPath.section {
@@ -225,7 +229,9 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     cell.imageView?.image = nil
   }
   
-  func configureSearchController() {
+  // MARK: - Helper
+  
+  private func configureSearchController() {
     // Initialize and perform a minimum configuration to the search controller.
     searchController = UISearchController(searchResultsController: nil)
     searchController.searchResultsUpdater = self
@@ -319,6 +325,8 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     }
   }
   
+  // MARK: - Navigation
+  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "show_tutorial" {
       let csvc = (segue.destinationViewController as! ViewFinishedTutorialViewController)
@@ -327,29 +335,19 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     }
   }
   
-  func playerReady(videoPlayer: YouTubePlayerView)
-  {
+  // MARK: - Delegate Protocols
+  
+  func playerReady(videoPlayer: YouTubePlayerView) {
     videoPlayer.play()
   }
   
-  
-  
-  
-  func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState)
-  {
+  func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
     if (playerState == .Ended) {
       videoPlayer.stop()
     }
   }
   
-  
-  
-  
-  func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality)
-  {
+  func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
     
   }
-
-  
-
 }
