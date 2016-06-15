@@ -55,11 +55,6 @@ class MenuViewController: UIViewController {
     
     self.navigationController?.navigationBarHidden = true
   }
-    
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
   
   @IBAction func LogoutKlicked(sender: UIButton) {
     self.navigationController?.popViewControllerAnimated(true)

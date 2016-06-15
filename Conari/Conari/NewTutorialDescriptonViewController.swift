@@ -61,12 +61,6 @@ class NewTutorialDescriptonViewController: UIViewController {
     self.view.endEditing(true)
   }
   
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
   @IBAction func SavePressed(sender: AnyObject) {
     
     DatabaseManager.sharedManager.createTutorial(current, content:(editor?.getHTML())!) { success, message in

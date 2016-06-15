@@ -59,16 +59,6 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
   
   
   
-  
-  override func didReceiveMemoryWarning()
-  {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  
-  
-  
   func requestTutorial(tutorialID: Int)
   {
     DatabaseManager.sharedManager.requestTutorial(tutorialID) { tutorial, message in

@@ -43,11 +43,6 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
     self.navigationController?.navigationBarHidden = false
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
   func textFieldShouldReturn(textField: UITextField) -> Bool {
     if(textField == OldPasswordTextField) {
       NewPasswordTextField.becomeFirstResponder()
