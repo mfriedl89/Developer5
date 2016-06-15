@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0N4-dx-Xpd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0N4-dx-Xpd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1848,16 +1848,18 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0u-In-5Rm">
-                                        <rect key="frame" x="0.0" y="445" width="560" height="47"/>
-                                        <string key="text">Icons: ©TukTuk Design, Vittorio Maria Vecchi, Ainsley Wagoner, Rafael Martins, Vytautas Alech Frameworks used in this app: Alamofire, RichEditorView, SDWebImage, YouTubePlayer</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnp-Y0-vFY">
+                                        <rect key="frame" x="213" y="445" width="135" height="30"/>
+                                        <state key="normal" title="Acknowledgements"/>
+                                        <connections>
+                                            <segue destination="fQl-Ud-fd6" kind="show" id="lzX-aC-nRW"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wnp-Y0-vFY" secondAttribute="bottom" constant="33" id="24N-YQ-qgv"/>
                                     <constraint firstItem="fQo-8O-y1t" firstAttribute="leading" secondItem="hW2-1g-Z2Y" secondAttribute="leading" id="24b-M1-YgV"/>
+                                    <constraint firstItem="wnp-Y0-vFY" firstAttribute="top" secondItem="J9p-7h-9LQ" secondAttribute="bottom" constant="37" id="2sX-w3-TYI"/>
                                     <constraint firstItem="c2L-gV-MiG" firstAttribute="leading" secondItem="tO1-Ug-Qgv" secondAttribute="leading" id="4Wd-QG-eXd"/>
                                     <constraint firstItem="CVy-Pm-1SB" firstAttribute="leading" secondItem="7bk-Ou-wVk" secondAttribute="leading" id="4gd-Rb-xYB"/>
                                     <constraint firstItem="wtp-RX-ueY" firstAttribute="leading" secondItem="QbE-p0-cAt" secondAttribute="leading" id="8oD-zT-gml"/>
@@ -1867,24 +1869,21 @@
                                     <constraint firstItem="7bk-Ou-wVk" firstAttribute="trailing" secondItem="7gz-Aw-Uyh" secondAttribute="trailing" id="FVj-ch-R6y"/>
                                     <constraint firstItem="7gz-Aw-Uyh" firstAttribute="trailing" secondItem="N4e-eX-gME" secondAttribute="trailing" id="Fja-CF-5db"/>
                                     <constraint firstItem="hW2-1g-Z2Y" firstAttribute="trailing" secondItem="sDU-XD-JPv" secondAttribute="trailing" id="GUV-Uw-vfr"/>
-                                    <constraint firstItem="z0u-In-5Rm" firstAttribute="top" secondItem="J9p-7h-9LQ" secondAttribute="bottom" constant="37" id="HYo-82-XCE"/>
                                     <constraint firstItem="QbE-p0-cAt" firstAttribute="top" secondItem="wtp-RX-ueY" secondAttribute="bottom" constant="14" id="HpZ-yA-HM3"/>
-                                    <constraint firstItem="J9p-7h-9LQ" firstAttribute="trailing" secondItem="z0u-In-5Rm" secondAttribute="trailing" id="HxK-Ln-HXb"/>
                                     <constraint firstItem="N4e-eX-gME" firstAttribute="top" secondItem="7gz-Aw-Uyh" secondAttribute="bottom" constant="8" symbolic="YES" id="JYn-p7-FZv"/>
                                     <constraint firstItem="QbE-p0-cAt" firstAttribute="leading" secondItem="uGN-2l-A1t" secondAttribute="leading" id="Li6-4P-NcQ"/>
                                     <constraint firstItem="hW2-1g-Z2Y" firstAttribute="top" secondItem="fQo-8O-y1t" secondAttribute="bottom" constant="8" symbolic="YES" id="OQf-pC-v2g"/>
                                     <constraint firstItem="sDU-XD-JPv" firstAttribute="top" secondItem="hW2-1g-Z2Y" secondAttribute="bottom" constant="8" symbolic="YES" id="PZr-EL-oWW"/>
                                     <constraint firstItem="fqN-66-G4h" firstAttribute="leading" secondItem="wtp-RX-ueY" secondAttribute="leading" id="Q9i-Ob-3Uh"/>
                                     <constraint firstItem="fQo-8O-y1t" firstAttribute="trailing" secondItem="hW2-1g-Z2Y" secondAttribute="trailing" id="QeS-5a-XI7"/>
-                                    <constraint firstAttribute="bottom" secondItem="z0u-In-5Rm" secondAttribute="bottom" id="Qi5-o9-pDf"/>
                                     <constraint firstItem="hW2-1g-Z2Y" firstAttribute="leading" secondItem="sDU-XD-JPv" secondAttribute="leading" id="Usf-si-vdG"/>
                                     <constraint firstItem="tO1-Ug-Qgv" firstAttribute="trailing" secondItem="J9p-7h-9LQ" secondAttribute="trailing" id="VGh-gG-bfw"/>
+                                    <constraint firstItem="wnp-Y0-vFY" firstAttribute="centerX" secondItem="J9p-7h-9LQ" secondAttribute="centerX" id="aIW-hF-ge7"/>
                                     <constraint firstItem="7bk-Ou-wVk" firstAttribute="leading" secondItem="7gz-Aw-Uyh" secondAttribute="leading" id="amI-Xl-MLe"/>
                                     <constraint firstItem="7gz-Aw-Uyh" firstAttribute="top" secondItem="7bk-Ou-wVk" secondAttribute="bottom" constant="8" symbolic="YES" id="b4U-h0-CpJ"/>
                                     <constraint firstItem="fQo-8O-y1t" firstAttribute="centerX" secondItem="cDh-9T-Lfs" secondAttribute="centerX" id="bVv-rt-QB0"/>
                                     <constraint firstItem="fqN-66-G4h" firstAttribute="trailing" secondItem="wtp-RX-ueY" secondAttribute="trailing" id="bzH-Sd-B65"/>
                                     <constraint firstItem="N4e-eX-gME" firstAttribute="leading" secondItem="c2L-gV-MiG" secondAttribute="leading" id="cQo-nG-XM9"/>
-                                    <constraint firstItem="J9p-7h-9LQ" firstAttribute="leading" secondItem="z0u-In-5Rm" secondAttribute="leading" id="dux-4f-ucg"/>
                                     <constraint firstItem="uGN-2l-A1t" firstAttribute="trailing" secondItem="CVy-Pm-1SB" secondAttribute="trailing" id="eAH-Fn-QUG"/>
                                     <constraint firstItem="tO1-Ug-Qgv" firstAttribute="leading" secondItem="J9p-7h-9LQ" secondAttribute="leading" id="een-EC-7O7"/>
                                     <constraint firstItem="tO1-Ug-Qgv" firstAttribute="top" secondItem="c2L-gV-MiG" secondAttribute="bottom" constant="8" symbolic="YES" id="f0p-ht-HJy"/>
@@ -1921,6 +1920,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44D-2n-8AZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="442" y="632"/>
+        </scene>
+        <!--Acknowledgements View Controller-->
+        <scene sceneID="8vU-6k-yFU">
+            <objects>
+                <viewController id="fQl-Ud-fd6" customClass="AcknowledgementsViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uOv-kS-aoX"/>
+                        <viewControllerLayoutGuide type="bottom" id="MT8-fo-t7A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lAr-2x-JDr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOV-DD-VDr">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tOV-DD-VDr" firstAttribute="leading" secondItem="lAr-2x-JDr" secondAttribute="leading" id="1tA-1G-XY5"/>
+                            <constraint firstItem="tOV-DD-VDr" firstAttribute="top" secondItem="uOv-kS-aoX" secondAttribute="bottom" id="2sJ-U3-pN0"/>
+                            <constraint firstAttribute="trailing" secondItem="tOV-DD-VDr" secondAttribute="trailing" id="fdL-Oe-nCZ"/>
+                            <constraint firstItem="tOV-DD-VDr" firstAttribute="bottom" secondItem="MT8-fo-t7A" secondAttribute="top" id="rlf-hS-MII"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="WebView" destination="tOV-DD-VDr" id="qnL-eL-DCj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHm-o6-9yM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="442" y="1341"/>
         </scene>
         <!--Additional Information-->
         <scene sceneID="u0V-xo-wd7">
