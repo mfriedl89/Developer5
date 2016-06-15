@@ -70,6 +70,8 @@
 		AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
 		AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
 		AE5416DE1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
+		AE5AF45A1D11299500BDB411 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2C1CFEFDBD002F5D3A /* Constants.swift */; };
+		AE5AF45B1D112A8200BDB411 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2C1CFEFDBD002F5D3A /* Constants.swift */; };
 		AE6DD69C1D0859B200B08232 /* CreateTutorialUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DD69B1D0859B200B08232 /* CreateTutorialUnitTests.swift */; };
 		AE9217211CC7704E00A3391C /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
@@ -518,7 +520,7 @@
 				TargetAttributes = {
 					E06D7FB51CBE221F003001BD = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = NC8S588S83;
+						DevelopmentTeam = SYXK862M8H;
 					};
 					E070D2B21CEC9B6900665154 = {
 						CreatedOnToolsVersion = 7.3;
@@ -777,6 +779,7 @@
 				AEE9A5001D08361300E4E3F7 /* Reach.swift in Sources */,
 				3AE79A901CF5D9090083A630 /* WelcomeScreenViewController.swift in Sources */,
 				AE0B908C1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */,
+				AE5AF45B1D112A8200BDB411 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +822,7 @@
 				E0307A5F1CECA616007DB00F /* LoginUnitTests.swift in Sources */,
 				AEE9A4FF1D08361200E4E3F7 /* Reach.swift in Sources */,
 				AE0B908F1CF58A9500A1CCF3 /* ViewFinishedTutorialViewController.swift in Sources */,
+				AE5AF45A1D11299500BDB411 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,7 +948,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari1;
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari2;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
@@ -960,7 +964,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari1;
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari2;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
