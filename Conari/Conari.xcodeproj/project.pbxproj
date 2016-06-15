@@ -41,7 +41,6 @@
 		3AE79A941CF5D9180083A630 /* TutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */; };
 		3AEF13861D1141DD00579E77 /* Acknowledgements.html in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF13851D1141DD00579E77 /* Acknowledgements.html */; };
 		3AEF13881D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF13871D1142AB00579E77 /* AcknowledgementsViewController.swift */; };
-		3AEF13891D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF13871D1142AB00579E77 /* AcknowledgementsViewController.swift */; };
 		3AEF138A1D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF13871D1142AB00579E77 /* AcknowledgementsViewController.swift */; };
 		3AF2DFBA1D085B1300DE2C72 /* AboutUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2DFB91D085B1300DE2C72 /* AboutUnitTests.swift */; };
 		721B266BA0722231E3031E89 /* Pods_Conari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB1A2D53EAE75A37FDCA2F3 /* Pods_Conari.framework */; };
@@ -70,7 +69,6 @@
 		AE0B90A21CF58AD500A1CCF3 /* TutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */; };
 		AE0B90A31CF58AD800A1CCF3 /* TutorialEditOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */; };
 		AE0B90A41CF58ADB00A1CCF3 /* TutorialEditContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */; };
-		AE228CA31D1134B3002D5F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
 		AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
@@ -1034,7 +1032,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mr Tutor.app/Mr Tutor";
 			};
 			name = Debug;
 		};
@@ -1048,7 +1045,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mr Tutor.app/Mr Tutor";
 			};
 			name = Release;
 		};
