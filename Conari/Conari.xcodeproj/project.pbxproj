@@ -39,6 +39,10 @@
 		3AE79A921CF5D9100083A630 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		3AE79A931CF5D9180083A630 /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
 		3AE79A941CF5D9180083A630 /* TutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */; };
+		3AEF13861D1141DD00579E77 /* Acknowledgements.html in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF13851D1141DD00579E77 /* Acknowledgements.html */; };
+		3AEF13881D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF13871D1142AB00579E77 /* AcknowledgementsViewController.swift */; };
+		3AEF13891D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF13871D1142AB00579E77 /* AcknowledgementsViewController.swift */; };
+		3AEF138A1D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF13871D1142AB00579E77 /* AcknowledgementsViewController.swift */; };
 		3AF2DFBA1D085B1300DE2C72 /* AboutUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2DFB91D085B1300DE2C72 /* AboutUnitTests.swift */; };
 		721B266BA0722231E3031E89 /* Pods_Conari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB1A2D53EAE75A37FDCA2F3 /* Pods_Conari.framework */; };
 		AE0B908A1CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B90891CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift */; };
@@ -66,6 +70,7 @@
 		AE0B90A21CF58AD500A1CCF3 /* TutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */; };
 		AE0B90A31CF58AD800A1CCF3 /* TutorialEditOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0ADE1CE3077F004A6858 /* TutorialEditOptionsController.swift */; };
 		AE0B90A41CF58ADB00A1CCF3 /* TutorialEditContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE0AE11CE3161B004A6858 /* TutorialEditContentController.swift */; };
+		AE228CA31D1134B3002D5F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
 		AE3E044D1CC779B60010C7EA /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
 		AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
@@ -161,6 +166,8 @@
 		3A794ABE1CFED468003E4FB8 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		3ADC68B41CECB0630035539B /* YouTubeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeManager.swift; sourceTree = "<group>"; };
+		3AEF13851D1141DD00579E77 /* Acknowledgements.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Acknowledgements.html; sourceTree = "<group>"; };
+		3AEF13871D1142AB00579E77 /* AcknowledgementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcknowledgementsViewController.swift; sourceTree = "<group>"; };
 		3AF2DFB91D085B1300DE2C72 /* AboutUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUnitTests.swift; sourceTree = "<group>"; };
 		53ECBBADE63CEEA4A7F36BD6 /* Pods-Conari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conari.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conari/Pods-Conari.debug.xcconfig"; sourceTree = "<group>"; };
 		7A388D1C7857AE080A3158E4 /* Pods-ConariUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -280,6 +287,7 @@
 		3A794ABD1CFED44F003E4FB8 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				3AEF13851D1141DD00579E77 /* Acknowledgements.html */,
 				3A794ABE1CFED468003E4FB8 /* Reach.swift */,
 			);
 			name = Others;
@@ -300,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				E0A9EBD81CF5B71700069B86 /* AboutViewController.swift */,
+				3AEF13871D1142AB00579E77 /* AcknowledgementsViewController.swift */,
 				E0CB1BB71CD9D11F000B881D /* AdminTutorialViewController.swift */,
 				AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */,
 				DA7CDF161CEC9AE000D89BCF /* ChangeEmailViewController.swift */,
@@ -452,13 +461,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E06D7FD31CBE2220003001BD /* Build configuration list for PBXNativeTarget "Conari" */;
 			buildPhases = (
-				4C9ECD3A22770D5FB9F1436E /* 📦 Check Pods Manifest.lock */,
+				4C9ECD3A22770D5FB9F1436E /* [CP] Check Pods Manifest.lock */,
 				E06D7FB21CBE221F003001BD /* Sources */,
 				E06D7FB31CBE221F003001BD /* Frameworks */,
 				E06D7FB41CBE221F003001BD /* Resources */,
 				AE92172F1CC774BE00A3391C /* Embed Frameworks */,
-				1087AB4E2BB85BDF66AA1C3E /* 📦 Embed Pods Frameworks */,
-				38BAAD232FA2A270DA8B6C1A /* 📦 Copy Pods Resources */,
+				1087AB4E2BB85BDF66AA1C3E /* [CP] Embed Pods Frameworks */,
+				38BAAD232FA2A270DA8B6C1A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -473,11 +482,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E070D2BA1CEC9B6900665154 /* Build configuration list for PBXNativeTarget "ConariUITests" */;
 			buildPhases = (
-				0614485A25B8E42D69EE3121 /* 📦 Check Pods Manifest.lock */,
+				0614485A25B8E42D69EE3121 /* [CP] Check Pods Manifest.lock */,
 				E070D2AF1CEC9B6900665154 /* Sources */,
 				E070D2B01CEC9B6900665154 /* Frameworks */,
 				E070D2B11CEC9B6900665154 /* Resources */,
-				7ABEED90C9E5E0A0CE2ACE54 /* 📦 Copy Pods Resources */,
+				7ABEED90C9E5E0A0CE2ACE54 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -493,12 +502,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E070D2D41CEC9BB800665154 /* Build configuration list for PBXNativeTarget "ConariUnitTests" */;
 			buildPhases = (
-				0527F229F70713C8F5DA9DC2 /* 📦 Check Pods Manifest.lock */,
+				0527F229F70713C8F5DA9DC2 /* [CP] Check Pods Manifest.lock */,
 				E070D2C91CEC9BB800665154 /* Sources */,
 				E070D2CA1CEC9BB800665154 /* Frameworks */,
 				E070D2CB1CEC9BB800665154 /* Resources */,
-				7DE081ACFFD2EE4B2FD8EBB8 /* 📦 Embed Pods Frameworks */,
-				5858B68030D0099C5A32A0DB /* 📦 Copy Pods Resources */,
+				7DE081ACFFD2EE4B2FD8EBB8 /* [CP] Embed Pods Frameworks */,
+				5858B68030D0099C5A32A0DB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -562,6 +571,7 @@
 				DADD371B1CFED592007CE0C8 /* Main.storyboard in Resources */,
 				E06D7FC41CBE2220003001BD /* LaunchScreen.storyboard in Resources */,
 				E06D7FC11CBE2220003001BD /* Assets.xcassets in Resources */,
+				3AEF13861D1141DD00579E77 /* Acknowledgements.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,14 +594,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0527F229F70713C8F5DA9DC2 /* 📦 Check Pods Manifest.lock */ = {
+		0527F229F70713C8F5DA9DC2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,14 +609,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		0614485A25B8E42D69EE3121 /* 📦 Check Pods Manifest.lock */ = {
+		0614485A25B8E42D69EE3121 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,14 +624,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		1087AB4E2BB85BDF66AA1C3E /* 📦 Embed Pods Frameworks */ = {
+		1087AB4E2BB85BDF66AA1C3E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,14 +639,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conari/Pods-Conari-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		38BAAD232FA2A270DA8B6C1A /* 📦 Copy Pods Resources */ = {
+		38BAAD232FA2A270DA8B6C1A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,14 +654,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Conari/Pods-Conari-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4C9ECD3A22770D5FB9F1436E /* 📦 Check Pods Manifest.lock */ = {
+		4C9ECD3A22770D5FB9F1436E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,14 +669,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5858B68030D0099C5A32A0DB /* 📦 Copy Pods Resources */ = {
+		5858B68030D0099C5A32A0DB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,14 +684,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConariUnitTests/Pods-ConariUnitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7ABEED90C9E5E0A0CE2ACE54 /* 📦 Copy Pods Resources */ = {
+		7ABEED90C9E5E0A0CE2ACE54 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,14 +699,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7DE081ACFFD2EE4B2FD8EBB8 /* 📦 Embed Pods Frameworks */ = {
+		7DE081ACFFD2EE4B2FD8EBB8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,6 +738,7 @@
 				3ABEABA71CBE95E60058BC29 /* DatabaseManager.swift in Sources */,
 				E06D7FBA1CBE2220003001BD /* AppDelegate.swift in Sources */,
 				DA7CDF171CEC9AE000D89BCF /* ChangeEmailViewController.swift in Sources */,
+				3AEF13881D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */,
 				3A3D532E1CFEC7C400720019 /* UIViewController+Alert.swift in Sources */,
 				3ADC68B51CECB0630035539B /* YouTubeManager.swift in Sources */,
 				3A4ACA301CFEFE12002F5D3A /* AppDelegate+Setup.swift in Sources */,
@@ -748,6 +759,7 @@
 			files = (
 				3AE79A8A1CF5D9090083A630 /* MetaDataViewController.swift in Sources */,
 				3AE79A931CF5D9180083A630 /* CategorySearchTableViewCell.swift in Sources */,
+				AE228CA31D1134B3002D5F81 /* AppDelegate.swift in Sources */,
 				3AE79A831CF5D9090083A630 /* CategorySearchViewController.swift in Sources */,
 				AEE9A4FE1D08360C00E4E3F7 /* UIViewController+Alert.swift in Sources */,
 				3AE79A921CF5D9100083A630 /* KeyboardManager.swift in Sources */,
@@ -756,6 +768,7 @@
 				E0307A671CECA621007DB00F /* NewUserUITests.swift in Sources */,
 				3AE79A8B1CF5D9090083A630 /* NewTutorialDescriptonViewController.swift in Sources */,
 				3AE79A851CF5D9090083A630 /* ChangePasswordViewController.swift in Sources */,
+				3AEF13891D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */,
 				3AE79A8F1CF5D9090083A630 /* ViewFinishedTutorialViewController.swift in Sources */,
 				C0E348A31D112F69002BD7BA /* AppDelegate+Setup.swift in Sources */,
 				3AE79A801CF5D8EE0083A630 /* DatabaseManager.swift in Sources */,
@@ -793,6 +806,7 @@
 				AE0B90911CF58A9C00A1CCF3 /* CategorySearchViewController.swift in Sources */,
 				AE0B90921CF58A9E00A1CCF3 /* CategorySearchTableViewCell.swift in Sources */,
 				3AF2DFBA1D085B1300DE2C72 /* AboutUnitTests.swift in Sources */,
+				3AEF138A1D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */,
 				AE0B90931CF58AA100A1CCF3 /* DatabaseManager.swift in Sources */,
 				E070D2D91CEC9BC600665154 /* DatabaseManagerUnitTests.swift in Sources */,
 				AE0B90A21CF58AD500A1CCF3 /* TutorialTableViewCell.swift in Sources */,
@@ -951,8 +965,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = Conari/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari12;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
@@ -967,8 +981,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = Conari/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari12;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1007,7 +1021,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = ConariUnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mr Tutor.app/Mr Tutor";
@@ -1021,7 +1035,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = ConariUnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Developer5.ConariUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mr Tutor.app/Mr Tutor";

@@ -8,8 +8,10 @@
 
 import UIKit
 import SDWebImage
+import YouTubePlayer
 
-class CategorySearchViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SDWebImageManagerDelegate, UISearchDisplayDelegate, UISearchResultsUpdating  {
+class CategorySearchViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SDWebImageManagerDelegate, UISearchDisplayDelegate, UISearchResultsUpdating,YouTubePlayerDelegate
+{
   
   // MARK: - Members
   
@@ -41,6 +43,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   var screenHeight: CGFloat = 0
   
   var searchController: UISearchController!
+  
   
   deinit {
     if let sc = searchController {
@@ -85,12 +88,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     reloadArrays()
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     switch indexPath.section {
     case 0:
       let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
@@ -179,7 +177,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       if youtubeArray.count == 0 {
         return ""
       } else {
-        return "Youtube"
+        return "YouTube"
       }
       
     default:
@@ -193,6 +191,19 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       self.performSegueWithIdentifier("show_tutorial", sender: indexPath.row)
       
     case 1:
+      if(indexPath.row < youtubeArray.count)
+      {
+        let height = self.navigationController!.navigationBar.frame.height
+        let youtubevc = UIViewController();
+        let videoPlayer = YouTubePlayerView(frame: self.view.frame)
+        videoPlayer.delegate = self
+        videoPlayer.loadVideoID(youtubeArray[indexPath.row].videoId)
+        //self.showViewController(videoPlayer, sender: nil);
+        youtubevc.navigationController?.navigationBarHidden = false
+        youtubevc.view.addSubview(videoPlayer);
+        self.navigationController?.pushViewController(youtubevc, animated: true)
+        //self.view.addSubview(videoPlayer)
+      }
       break;
       
     default:
@@ -274,7 +285,10 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
         }
         
         self.youtubeArray.removeAll()
+        
         self.youtubeArray = response
+        self.youtubeArray.sortInPlace({ $0.title < $1.title })
+        
         dispatch_async(dispatch_get_main_queue(), {
           self.table_View.reloadData();
         })
@@ -282,9 +296,10 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     }
     
     DatabaseManager.sharedManager.findTutorialByCategory(textSearch, tutorialCategory: selectedCategory) { (response) in
-      if(!response.isEmpty){
+      if(!response.isEmpty) {
         self.tutorialArray = response
-        self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
+        self.tutorialArray.sortInPlace({ $0.title.lowercaseString  < $1.title.lowercaseString })
+        
       } else {
         self.tutorialArray.removeAll()
         self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
@@ -303,4 +318,30 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       csvc.myTutorial = self.tutorialArray[(sender as! Int)]
     }
   }
+  
+  func playerReady(videoPlayer: YouTubePlayerView)
+  {
+    videoPlayer.play()
+  }
+  
+  
+  
+  
+  func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState)
+  {
+    if (playerState == .Ended) {
+      videoPlayer.stop()
+    }
+  }
+  
+  
+  
+  
+  func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality)
+  {
+    
+  }
+
+  
+
 }
