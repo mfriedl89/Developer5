@@ -1,6 +1,6 @@
 //
 //  CategorySearchUITests.swift
-//  Conari
+//  Tutorialcloud
 //
 //  Created by Benjamin Wullschleger on 11.05.16.
 //  Copyright © 2016 Markus Friedl. All rights reserved.
