@@ -715,24 +715,51 @@ class DatabaseManager {
   
   func getAccessToken(callback: (String?) -> ()){
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/GetToken.php")!)
-    request.HTTPMethod = "GET"
+    /* Remark (Security)
+     Storing the data inside here is not secure, but still better than requesting it from a custom request.
+     Two possibilities:
+     1. Storing all data here
+     2. Storing all data on an external server and only requesting the access token from this server
+     Option 1 was chosen based on the assumption that decompiling the app should be more difficult than just
+     monitoring the request and getting the access token (which allows the attacker to do anything with our
+     YouTube account). The disadvantage is that an attacker gets everything after a successful decompilation
+     and not only the access token.
+    */
+    
+    let client_secret = "ElQiVGifufIdwIBF5T609ZVN"
+    let grant_type = "refresh_token"
+    let refresh_token = "1/1nfHW0Q1BZAmb7YBeD4XiLZJF2p-P9BFNa4WWPDKZUU"
+    let client_id = "234918812842-5jlqchqd5oc53tvq4s3l754ah1vhvglc.apps.googleusercontent.com"
+    
+    let request = NSMutableURLRequest(URL: NSURL(string: "https://accounts.google.com/o/oauth2/token")!)
+    request.HTTPMethod = "POST"
+    let postString = "client_secret=" + client_secret +
+        "&grant_type=" + grant_type +
+        "&refresh_token=" + refresh_token +
+        "&client_id=" + client_id
+    request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
-      guard error == nil && data != nil else {
-        callback("Error")
+        guard error == nil && data != nil else {
+            callback("Error")
+            return
+        }
+        if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
+            callback("Error")
+            return
+        }
+        do {
+            let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            let accessToken = jsonData["access_token"]! as? String
+            callback(accessToken)
+            
+        } catch {
+            callback("Error")
+        }
         return
-      }
-      
-      if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        callback("Error")
-        return
-      }
-      let datastring = String(data: data!, encoding: NSUTF8StringEncoding)
-      callback(datastring)
-      return
-      
+        
     })
     task.resume()
+    
   }
 }
