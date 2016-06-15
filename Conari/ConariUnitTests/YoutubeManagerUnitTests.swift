@@ -12,18 +12,15 @@ class YoutubeManagerUnitTests: XCTestCase {
   
   override func setUp() {
     super.setUp()
-    // Put setup code here. This method is called before the invocation of each test method in the class.
   }
   
   override func tearDown() {
-    // Put teardown code here. This method isvarlled after the invocation of each test method in the class.
    super.tearDown()
   }
   
   func testsearchVideoByTitle() {
     let title = "test"
     
-    // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     
     YouTubeManager.sharedManager.searchVideoByTitle(title, completionHandler: {response,success,message in
@@ -34,8 +31,6 @@ class YoutubeManagerUnitTests: XCTestCase {
       readyExpectation.fulfill()
     })
     
-    
-    // Loop until the expectation is fulfilled
     waitForExpectationsWithTimeout(5, handler: { error in
       XCTAssertNil(error, "Error")
     })
@@ -46,7 +41,6 @@ class YoutubeManagerUnitTests: XCTestCase {
     let title = "test"
     let title2 = "ä"
     
-    // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     
     YouTubeManager.sharedManager.searchVideoByTitle(title+" "+title2, completionHandler: {response,success,message in
@@ -58,8 +52,6 @@ class YoutubeManagerUnitTests: XCTestCase {
       readyExpectation.fulfill()
     })
     
-    
-    // Loop until the expectation is fulfilled
     waitForExpectationsWithTimeout(5, handler: { error in
       XCTAssertNil(error, "Error")
     })
@@ -69,7 +61,6 @@ class YoutubeManagerUnitTests: XCTestCase {
   func testYoutubeSearchwithwrongurl() {
     let title = "test"
     
-    // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     YouTubeManager.sharedManager.searchApiUrl = "https://www.googleapis.com/youtube/v99/search"
     
@@ -79,8 +70,6 @@ class YoutubeManagerUnitTests: XCTestCase {
       readyExpectation.fulfill()
     })
     
-    
-    // Loop until the expectation is fulfilled
     waitForExpectationsWithTimeout(15, handler: { error in
       XCTAssertNil(error, "Error")
     })
@@ -90,7 +79,6 @@ class YoutubeManagerUnitTests: XCTestCase {
   func testYoutubeSearchwithwronghost() {
     let title = "test"
     
-    // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     YouTubeManager.sharedManager.searchApiUrl = "https://www.google.de"
     
@@ -100,8 +88,6 @@ class YoutubeManagerUnitTests: XCTestCase {
       readyExpectation.fulfill()
     })
     
-    
-    // Loop until the expectation is fulfilled
     waitForExpectationsWithTimeout(15, handler: { error in
       XCTAssertNil(error, "Error")
     })
@@ -113,7 +99,6 @@ class YoutubeManagerUnitTests: XCTestCase {
   func testYoutubeSearchwithwrongapikey() {
     let title = "test"
     
-    // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     YouTubeManager.sharedManager.apiKey = "123"
     
@@ -123,8 +108,6 @@ class YoutubeManagerUnitTests: XCTestCase {
       readyExpectation.fulfill()
     })
     
-    
-    // Loop until the expectation is fulfilled
     waitForExpectationsWithTimeout(15, handler: { error in
       XCTAssertNil(error, "Error")
     })
@@ -134,7 +117,6 @@ class YoutubeManagerUnitTests: XCTestCase {
   func testYoutubeSearchwithInvalidurl() {
     let title = "test"
     
-    // Declare our expectation
     let readyExpectation = expectationWithDescription("ready")
     YouTubeManager.sharedManager.searchApiUrl = "1"
     
@@ -144,8 +126,6 @@ class YoutubeManagerUnitTests: XCTestCase {
       readyExpectation.fulfill()
     })
     
-    
-    // Loop until the expectation is fulfilled
     waitForExpectationsWithTimeout(15, handler: { error in
       XCTAssertNil(error, "Error")
     })

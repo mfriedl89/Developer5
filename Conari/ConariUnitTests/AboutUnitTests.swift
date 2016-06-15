@@ -28,7 +28,6 @@ class AboutUnitTests: XCTestCase {
   func testExample() {
     viewController!.viewWillAppear(false)
     XCTAssertNil(viewController!.navigationController?.navigationBarHidden)
-    //XCTAssertFalse(viewController!.navigationController!.navigationBarHidden)
   }
   
 }

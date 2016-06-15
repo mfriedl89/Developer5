@@ -11,9 +11,6 @@ import UIKit
 
 extension UIViewController {
   
-  /**
-   This method checks for internet connection and handles the possible error.
-   */
   func handleNetworkError() {
     let connectionStatus = Reach().connectionStatus()
     

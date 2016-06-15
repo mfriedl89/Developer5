@@ -150,19 +150,15 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     } else {
       let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
       
-      // Fetch and Sort Keys
       let keys = alphabetizedTutorials.keys.sort({ (a, b) -> Bool in
         a.lowercaseString < b.lowercaseString
       })
       
-      // Fetch for Section
       let key = keys[indexPath.section]
       
       if let tutorialsForSection = alphabetizedTutorials[key] {
-        // Fetch
         let currentTutorial = tutorialsForSection[indexPath.row]
         
-        // Configure Cell
         let durationHours = Int(currentTutorial.duration)!/60
         let durationMinutes = Int(currentTutorial.duration)!%60
         
@@ -214,12 +210,10 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     } else {
       let keys = alphabetizedTutorials.keys
       
-      // Sort Keys
       let sortedKeys = keys.sort({ (a, b) -> Bool in
         a.lowercaseString < b.lowercaseString
       })
       
-      // Fetch
       let key = sortedKeys[section]
       
       if let alphabetizedTutorials = alphabetizedTutorials[key] {
@@ -263,12 +257,6 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
         return ""
       }
     } else {
-//      // Fetch and Sort Keys
-//      let keys = alphabetizedTutorials.keys.sort({ (a, b) -> Bool in
-//        a.lowercaseString < b.lowercaseString
-//      })
-//      
-//      return keys[section]
       return nil
     }
   }
@@ -287,11 +275,9 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
           let videoPlayer = YouTubePlayerView(frame: self.view.frame)
           videoPlayer.delegate = self
           videoPlayer.loadVideoID(youtubeArray[indexPath.row].videoId)
-          //self.showViewController(videoPlayer, sender: nil);
           youtubevc.navigationController?.navigationBarHidden = false
           youtubevc.view.addSubview(videoPlayer);
           self.navigationController?.pushViewController(youtubevc, animated: true)
-          //self.view.addSubview(videoPlayer)
         }
         break;
         
@@ -300,16 +286,13 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       }
       tableView.deselectRowAtIndexPath(indexPath, animated: false);
     } else {
-      // Fetch and Sort Keys
       let keys = alphabetizedTutorials.keys.sort({ (a, b) -> Bool in
         a.lowercaseString < b.lowercaseString
       })
       
-      // Fetch for Section
       let key = keys[indexPath.section]
       
       if let tutorialsForSection = alphabetizedTutorials[key] {
-        // Fetch
         let currentTutorial = tutorialsForSection[indexPath.row]
       
         self.performSegueWithIdentifier("show_tutorial", sender: currentTutorial)
@@ -326,7 +309,6 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     if textSearch != "" {
       return nil
     } else {
-      // Fetch and Sort Keys
       let keys = alphabetizedTutorials.keys.sort({ (a, b) -> Bool in
         a.lowercaseString < b.lowercaseString
       })
@@ -338,7 +320,6 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   // MARK: - Helper
   
   private func configureSearchController() {
-    // Initialize and perform a minimum configuration to the search controller.
     searchController = UISearchController(searchResultsController: nil)
     searchController.searchResultsUpdater = self
     searchController.dimsBackgroundDuringPresentation = true
@@ -346,7 +327,6 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     searchController.searchBar.delegate = self
     searchController.searchBar.sizeToFit()
     
-    // Place the search bar view to the tableview headerview.
     table_View.tableHeaderView = searchController.searchBar
   }
   

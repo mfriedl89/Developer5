@@ -43,8 +43,6 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
           
           dispatch_async(dispatch_get_main_queue(), {
             self.title = "Error"
-            //self.loadIndicator.stopAnimating()
-            //self.loadingLabel.hidden = true
           })
           
         }
@@ -69,7 +67,6 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {

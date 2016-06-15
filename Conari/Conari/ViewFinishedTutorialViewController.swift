@@ -39,7 +39,6 @@ class ViewFinishedTutorialViewController: UIViewController, UIWebViewDelegate, Y
     
     requestTutorial(tutorialID)
     
-    // Info Button
     let infoButton = UIButton(type: .InfoLight)
     infoButton.addTarget(self, action: #selector(self.viewAdditionalInformation), forControlEvents: .TouchUpInside)
     infoButton.tintColor = UIColor.whiteColor()
