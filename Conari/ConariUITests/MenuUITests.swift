@@ -83,7 +83,7 @@ class MenuUITests: XCTestCase {
     
     app.buttons["Search Tutorials"].tap()
     sleep(1)
-    app.navigationBars["Mr Tutor"].buttons["Menu"].tap()
+    app.navigationBars["Tutorialcloud"].buttons["Menu"].tap()
     sleep(1)
     app.buttons["Create Text Tutorial"].tap()
     sleep(1)
