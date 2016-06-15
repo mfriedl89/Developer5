@@ -1,0 +1,71 @@
+
+Files on http://www.wullschi.com/conari/
+
+
+TEST-user
+name:conari
+pass:Conari123-
+
+Login.php:
+	/*	Receives: 	username, password		*/
+	/*	Returns: 	true or "success":-1	*/
+	$username  	= $_POST['username'];
+	$password 	= $_POST['password'];
+
+FindTutorial.php:
+	/*	Receives: 		title 											*/
+	/*  Returns Array: 	{[TutID,Title,Category,Difficulty,Duration]} 	*/
+	$title	= $_POST['title'];
+
+FindTutorialInCategory.php:
+	/*	Receives: 		title, category 								*/
+	/*  Returns Array: 	{[TutID,Title,Category,Difficulty,Duration]} 	*/
+	$title   	= $_POST['title'];
+	$category   = $_POST['category'];
+
+RequestTutorial.php:
+	/*	Receives: 		username,password + tutorialID 					*/
+	/*  Returns Array: 	{[Title,Category,Difficulty,Duration,Text]} 	*/
+	$tutorialID	= $_POST['tutorialID'];
+
+CreateTutorial.php:
+	/*	Receives: 	Tutorial info							*/
+	/*	Returns: 	true or "success":-1 + error_message	*/
+	$username 		= $_POST['username'];
+	$password 		= $_POST['password'];
+	$TutTitle 		= $_POST['title'];
+	$TutCategory 	= $_POST['category'];		// from 1 to 19
+	$TutDifficulty 	= $_POST['difficulty'];		// from 1 to 5
+	$TutDuration 	= $_POST['duration'];		// in minutes
+	$TutText 		= $_POST['text'];
+
+CreateUser.php:
+	/*	Receives:	UserInfo								*/
+	/*	Returns: 	true or "success":-1 + error_message	*/
+	$username 		= $_POST['username'];
+	$password 		= $_POST['password'];
+	$firstName 		= $_POST['firstName'];
+	$surName 		= $_POST['surName'];
+	$email 			= $_POST['email'];
+
+
+Category:
+(1,'Arts and Entertainment');
+(2,'Cars & Other Vehicles');
+(3,'Computers and Electronics');
+(4,'Conari');
+(5,'Education and Communications');
+(6,'Finance and Business');
+(7,'Food and Entertaining');
+(8,'Health');
+(9,'Hobbies and Crafts');
+(10,'Holidays and Traditions');
+(11,'Home and Garden');
+(12,'Personal Care and Style');
+(13,'Pets and Animals');
+(14,'Philosophy and Religion');
+(15,'Relationships');
+(16,'Sports and Fitness');
+(17,'Travel');
+(18,'Work World');
+(19,'Youth');
