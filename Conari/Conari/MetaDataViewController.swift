@@ -92,9 +92,22 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     categoryPickerView = UIPickerView()
     categoryPickerView.delegate = self
+    
+    let toolBar = UIToolbar()
+    toolBar.barStyle = UIBarStyle.Default
+    toolBar.translucent = true
+    toolBar.sizeToFit()
+    
+    let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MetaDataViewController.donePicker))
+    let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+    
+    toolBar.setItems([spaceButton, spaceButton, doneButton], animated: false)
+    toolBar.userInteractionEnabled = true
+    
     categoryTextField_.inputView = categoryPickerView
     categoryTextField_.text = categories[0]
     categoryTextField_.selectedTextRange = nil;
+    categoryTextField_.inputAccessoryView = toolBar
     
     for hour in 0...10 {
       for minute in 0...11 {
@@ -107,7 +120,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     DurationTextField_.inputView = timePickerView
     DurationTextField_.text = times[1] + " hh:mm"
     DurationTextField_.selectedTextRange = nil;
-    
+    DurationTextField_.inputAccessoryView = toolBar
     titleTextField_.delegate = self
     
     videoPicker.delegate = self
@@ -250,8 +263,12 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       DurationTextField_.selectedTextRange = nil;
     }
     
-    self.view.endEditing(true)
+//    self.view.endEditing(true)
     updateCurrentStruct()
+  }
+  
+  func donePicker() {
+        self.view.endEditing(true)
   }
   
   func updateCurrentStruct() {
