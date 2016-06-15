@@ -169,8 +169,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
   }
   
-  @IBAction func ClickSelectVideoButton(sender: UIButton) {
-    
+  @IBAction func ClickSelectVideoButton(sender: UIButton)
+  {
     let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
     
     let Camera = UIAlertAction(title: "Camera", style: .Default, handler: {
@@ -202,11 +202,13 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     })
     
     // 4
-    if(UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+    if(UIImagePickerController.isSourceTypeAvailable(.Camera))
+    {
       optionMenu.addAction(Camera)
     }
     
-    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary)) {
+    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
+    {
       optionMenu.addAction(Library)
     }
     
@@ -323,13 +325,12 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   func imagePickerController(picker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String : AnyObject])
   {
-    self.pickedVideoURL = info[UIImagePickerControllerMediaURL] as? NSURL
+    let pickedVideoURL = info[UIImagePickerControllerMediaURL] as! NSURL
     
     dismissViewControllerAnimated(true, completion: nil)
-
-    VideoThumbnail.image = nil
     
-    let player = AVPlayer(URL: self.pickedVideoURL!)
+    let player = AVPlayer(URL: pickedVideoURL)
+
     let playerController = AVPlayerViewController()
     playerController.player = player
     playerController.showsPlaybackControls = true

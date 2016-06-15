@@ -48,7 +48,7 @@ class ViewAdditionalInformationUITest: XCTestCase {
     
     sleep(1)
     
-    app.navigationBars["ccc"].buttons["More Info"].tap()
+    app.navigationBars.buttons["More Info"].tap()
     
     /*
     sleep(1);

@@ -39,7 +39,7 @@ class SearchTutorialUITests: XCTestCase {
     answerButton.tap()
     
     sleep(1)
-    let element = app.otherElements.containingType(.NavigationBar, identifier:"Mr Tutor").childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
+    let element = app.otherElements.containingType(.NavigationBar, identifier:"Tutorialcloud").childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
     
     let textField = element.childrenMatchingType(.TextField).element
     textField.tap()

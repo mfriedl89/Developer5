@@ -78,6 +78,54 @@ class MetaDataUnitTests: XCTestCase {
     XCTAssert(vc.current.Title == "Test Tutorial")
     XCTAssert(vc.current.difficulty == 4)
   }
+  
+  func testStringCategoryPickerView()
+  {
+    var category: String
+    vc.viewDidLoad();
+    category = vc.pickerView(vc.categoryPickerView, titleForRow: 0, forComponent: 1)!
+    XCTAssert(category == "Arts and Entertainment")
+  }
+  
+  func testStringTimePickerView()
+  {
+    var category: String
+    vc.viewDidLoad();
+    category = vc.pickerView(vc.timePickerView, titleForRow: 0, forComponent: 1)!
+    XCTAssert(category == "00:00")
+  }
+  
+  func testDifficultyValueChanged()
+  {
+    vc.viewDidLoad();
+    vc.DifficultyStepper_.value = 3
+    vc.DifficultyValueChanged_(0)
+    
+    XCTAssert(vc.difficultyLabel_.text == "medium")
+  }
+  
+  func testVariousCategoryPickerView()
+  {
+    vc.viewDidLoad();
+    vc.pickerView(vc.categoryPickerView, didSelectRow: 0, inComponent: 1)
+    
+    XCTAssert(vc.categoryTextField_.text == "Arts and Entertainment")
+    XCTAssert(vc.current.category == 0)
+    XCTAssert(vc.categoryTextField_.selectedTextRange == nil)
+  }
+  
+  func testVariousTimePickerView()
+  {
+    vc.viewDidLoad();
+    vc.pickerView(vc.categoryPickerView, didSelectRow: 1, inComponent: 1)
+    
+    XCTAssert(vc.DurationTextField_.text == "00:05 hh:mm")
+    XCTAssert(vc.current.duration == 5)
+    XCTAssert(vc.categoryTextField_.selectedTextRange == nil)
+  }
+  
+  
+
 
 }
   
