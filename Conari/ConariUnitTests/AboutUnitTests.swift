@@ -1,9 +1,9 @@
 //
 //  AboutUnitTests.swift
-//  Conari
+//  TutorialCloud
 //
-//  Created by Philipp Preiner on 08.06.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 08.06.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import XCTest

@@ -1,9 +1,9 @@
 //
 //  ViewFinishedTutorial.swift
-//  Conari
+//  TutorialCloud
 //
-//  Created by Philipp Preiner on 27.04.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 27.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import XCTest
@@ -71,13 +71,6 @@ class ViewFinishedTutorial: XCTestCase {
     let input = YouTubeManager.sharedManager.identifier + videoID
     let videoIDParsed = YouTubeManager.sharedManager.parseIdentifier(input)
     XCTAssertEqual(videoIDParsed, "Iumsqz6LMnM", "Parsing the identifier failed")
-  }
-  
-  func testInvalidAPIKey() {
-    let videoID = "Iumsqz6LMnM"
-    let input = "ConariYouTubeTutorial - apiKey: , videoID: " + videoID
-    let videoIDParsed = YouTubeManager.sharedManager.parseIdentifier(input)
-    XCTAssertNil(videoIDParsed, "Invalid API key should return nil")
   }
   
 }

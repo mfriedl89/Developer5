@@ -1,9 +1,9 @@
 //
 //  YoutubeManagerUnitTests.swift
-//  Conari
+//  TutorialCloud
 //
-//  Created by Stefan Mitterrutzner on 18/05/16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 18.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import XCTest

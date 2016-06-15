@@ -25,6 +25,9 @@ class ViewAdditionalInformationTableViewController: UITableViewController
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "LaunchscreenBackground"), forBarMetrics: UIBarMetrics.Default)
+    self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
   }
   
   

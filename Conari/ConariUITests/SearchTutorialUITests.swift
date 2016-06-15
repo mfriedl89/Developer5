@@ -31,12 +31,16 @@ class SearchTutorialUITests: XCTestCase {
   func testSimpleSearch() {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    
+   
+    sleep(1)
     
     let app = XCUIApplication()
-    app.buttons["Continue without login"].tap()
+    let answerButton = app.buttons["Continue without login"]
+    answerButton.tap()
     
-    let element = app.otherElements.containingType(.NavigationBar, identifier:"Conari").childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
+    sleep(1)
+    let element = app.otherElements.containingType(.NavigationBar, identifier:"Tutorialcloud").childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element
+    
     let textField = element.childrenMatchingType(.TextField).element
     textField.tap()
     textField.typeText("test")

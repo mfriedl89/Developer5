@@ -151,7 +151,45 @@ class MetadataUITests: XCTestCase {
     app.buttons["Select Video"].tap()
     app.sheets.collectionViews.buttons["Photo Library"].tap()
     app.navigationBars["Photos"].buttons["Cancel"].tap()
+  }
+  
+  func testEmptyTitle() {
     
+    sleep(1);
+    
+    let app = XCUIApplication()
+    let answerButton = app.buttons["Login"]
+    answerButton.tap()
+    
+    sleep(1);
+    
+    XCTAssert(app.staticTexts["Username:"].exists)
+    XCTAssert(app.staticTexts["Password:"].exists)
+    
+    let textFieldUsername = app.textFields["username"]
+    let textFieldPassword = app.secureTextFields["password"]
+    
+    textFieldUsername.tap()
+    XCTAssertTrue(textFieldUsername.exists, "Text field username doesn't exist")
+    textFieldUsername.typeText("anton")
+    XCTAssertEqual(textFieldUsername.value as? String, "anton")
+    
+    textFieldPassword.tap()
+    XCTAssertTrue(textFieldPassword.exists, "Text field password doesn't exist")
+    textFieldPassword.typeText("Test1234@")
+    
+    app.buttons["Login"].tap()
+    
+    sleep(1);
+    
+    app.buttons["Create Text Tutorial"].tap()
+    
+    sleep(1);
+
+    app.navigationBars["Text Tutorial"].buttons["Next"].tap()
+    XCTAssert(app.staticTexts["Error"].exists)
+    
+
     
   }
   

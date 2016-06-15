@@ -89,4 +89,310 @@ class NewUserUITests: XCTestCase {
 //    app.buttons["Done"].tap()
     
   }
+  
+  func testFalseName() {
+    // Use recording to get started writing UI tests.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    sleep(1);
+    
+    let app = XCUIApplication()
+    app.buttons["Login"].tap()
+    let exists = NSPredicate(format: "exists == true")
+    
+    // wait until next page appears before clicking the "Create new user" button.
+    let newUserButton = app.buttons["Create new user"]
+    expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
+    waitForExpectationsWithTimeout(5, handler: nil)
+    
+    app.buttons["Create new user"].tap()
+    
+    sleep(1);
+    
+    XCTAssert(app.staticTexts["Desired username:"].exists)
+    XCTAssert(app.staticTexts["First name:"].exists)
+    XCTAssert(app.staticTexts["Surname:"].exists)
+    XCTAssert(app.staticTexts["Email address:"].exists)
+    XCTAssert(app.staticTexts["Password:"].exists)
+    XCTAssert(app.staticTexts["Repeat password:"].exists)
+    
+    let textField = app.scrollViews.otherElements.textFields["desiredUsername"]
+    textField.tap()
+    textField.typeText(" ")
+    
+    let elementsQuery = app.scrollViews.otherElements
+    let nextButton = app.buttons["Next:"]
+    nextButton.tap()
+    elementsQuery.textFields["firstName"].typeText("Anton")
+    nextButton.tap()
+    elementsQuery.textFields["surName"].typeText("Müller")
+    nextButton.tap()
+    elementsQuery.textFields["emailAddress"].typeText("hallo@aon.at")
+    nextButton.tap()
+    elementsQuery.secureTextFields["password"].typeText("Test1234@")
+    nextButton.tap()
+    elementsQuery.secureTextFields["repeatPassword"].typeText("Test1234@")
+    
+    sleep(1)
+    app.buttons["Done"].tap()
+    sleep(1)
+    
+    XCTAssert(app.staticTexts["Enter a valid username."].exists)
+  }
+  
+  
+  func testFalseFirstname() {
+    // Use recording to get started writing UI tests.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    sleep(1);
+    
+    let app = XCUIApplication()
+    app.buttons["Login"].tap()
+    let exists = NSPredicate(format: "exists == true")
+    
+    // wait until next page appears before clicking the "Create new user" button.
+    let newUserButton = app.buttons["Create new user"]
+    expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
+    waitForExpectationsWithTimeout(5, handler: nil)
+    
+    app.buttons["Create new user"].tap()
+    
+    sleep(1);
+    
+    XCTAssert(app.staticTexts["Desired username:"].exists)
+    XCTAssert(app.staticTexts["First name:"].exists)
+    XCTAssert(app.staticTexts["Surname:"].exists)
+    XCTAssert(app.staticTexts["Email address:"].exists)
+    XCTAssert(app.staticTexts["Password:"].exists)
+    XCTAssert(app.staticTexts["Repeat password:"].exists)
+    
+    let textField = app.scrollViews.otherElements.textFields["desiredUsername"]
+    textField.tap()
+    textField.typeText("anton")
+    
+    let elementsQuery = app.scrollViews.otherElements
+    let nextButton = app.buttons["Next:"]
+    nextButton.tap()
+    elementsQuery.textFields["firstName"].typeText("Anton$$$")
+    nextButton.tap()
+    elementsQuery.textFields["surName"].typeText("Müller")
+    nextButton.tap()
+    elementsQuery.textFields["emailAddress"].typeText("hallo@aon.at")
+    nextButton.tap()
+    elementsQuery.secureTextFields["password"].typeText("Test1234@")
+    nextButton.tap()
+    elementsQuery.secureTextFields["repeatPassword"].typeText("Test1234@")
+    
+    sleep(1)
+    app.buttons["Done"].tap()
+    sleep(1)
+    
+    XCTAssert(app.staticTexts["Enter a valid first name."].exists)
+  }
+  
+  
+  func testFalseSurName() {
+    // Use recording to get started writing UI tests.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    sleep(1);
+    
+    let app = XCUIApplication()
+    app.buttons["Login"].tap()
+    let exists = NSPredicate(format: "exists == true")
+    
+    // wait until next page appears before clicking the "Create new user" button.
+    let newUserButton = app.buttons["Create new user"]
+    expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
+    waitForExpectationsWithTimeout(5, handler: nil)
+    
+    app.buttons["Create new user"].tap()
+    
+    sleep(1);
+    
+    XCTAssert(app.staticTexts["Desired username:"].exists)
+    XCTAssert(app.staticTexts["First name:"].exists)
+    XCTAssert(app.staticTexts["Surname:"].exists)
+    XCTAssert(app.staticTexts["Email address:"].exists)
+    XCTAssert(app.staticTexts["Password:"].exists)
+    XCTAssert(app.staticTexts["Repeat password:"].exists)
+    
+    let textField = app.scrollViews.otherElements.textFields["desiredUsername"]
+    textField.tap()
+    textField.typeText("anton")
+    
+    let elementsQuery = app.scrollViews.otherElements
+    let nextButton = app.buttons["Next:"]
+    nextButton.tap()
+    elementsQuery.textFields["firstName"].typeText("Anton")
+    nextButton.tap()
+    elementsQuery.textFields["surName"].typeText("Müller$$$")
+    nextButton.tap()
+    elementsQuery.textFields["emailAddress"].typeText("hallo@aon.at")
+    nextButton.tap()
+    elementsQuery.secureTextFields["password"].typeText("Test1234@")
+    nextButton.tap()
+    elementsQuery.secureTextFields["repeatPassword"].typeText("Test1234@")
+    
+    sleep(1)
+    app.buttons["Done"].tap()
+    sleep(1)
+    
+    XCTAssert(app.staticTexts["Enter a valid surname."].exists)
+  }
+  
+  
+  func testFalseEmail() {
+    // Use recording to get started writing UI tests.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    sleep(1);
+    
+    let app = XCUIApplication()
+    app.buttons["Login"].tap()
+    let exists = NSPredicate(format: "exists == true")
+    
+    // wait until next page appears before clicking the "Create new user" button.
+    let newUserButton = app.buttons["Create new user"]
+    expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
+    waitForExpectationsWithTimeout(5, handler: nil)
+    
+    app.buttons["Create new user"].tap()
+    
+    sleep(1);
+    
+    XCTAssert(app.staticTexts["Desired username:"].exists)
+    XCTAssert(app.staticTexts["First name:"].exists)
+    XCTAssert(app.staticTexts["Surname:"].exists)
+    XCTAssert(app.staticTexts["Email address:"].exists)
+    XCTAssert(app.staticTexts["Password:"].exists)
+    XCTAssert(app.staticTexts["Repeat password:"].exists)
+    
+    let textField = app.scrollViews.otherElements.textFields["desiredUsername"]
+    textField.tap()
+    textField.typeText("anton")
+    
+    let elementsQuery = app.scrollViews.otherElements
+    let nextButton = app.buttons["Next:"]
+    nextButton.tap()
+    elementsQuery.textFields["firstName"].typeText("Anton")
+    nextButton.tap()
+    elementsQuery.textFields["surName"].typeText("Müller")
+    nextButton.tap()
+    elementsQuery.textFields["emailAddress"].typeText("hallo.at")
+    nextButton.tap()
+    elementsQuery.secureTextFields["password"].typeText("Test1234@")
+    nextButton.tap()
+    elementsQuery.secureTextFields["repeatPassword"].typeText("Test1234@")
+    
+    sleep(1)
+    app.buttons["Done"].tap()
+    sleep(1)
+    
+    XCTAssert(app.staticTexts["Enter a valid E-Mail address."].exists)
+  }
+  
+  
+  func testFalsePassword() {
+    // Use recording to get started writing UI tests.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    sleep(1);
+    
+    let app = XCUIApplication()
+    app.buttons["Login"].tap()
+    let exists = NSPredicate(format: "exists == true")
+    
+    // wait until next page appears before clicking the "Create new user" button.
+    let newUserButton = app.buttons["Create new user"]
+    expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
+    waitForExpectationsWithTimeout(5, handler: nil)
+    
+    app.buttons["Create new user"].tap()
+    
+    sleep(1);
+    
+    XCTAssert(app.staticTexts["Desired username:"].exists)
+    XCTAssert(app.staticTexts["First name:"].exists)
+    XCTAssert(app.staticTexts["Surname:"].exists)
+    XCTAssert(app.staticTexts["Email address:"].exists)
+    XCTAssert(app.staticTexts["Password:"].exists)
+    XCTAssert(app.staticTexts["Repeat password:"].exists)
+    
+    let textField = app.scrollViews.otherElements.textFields["desiredUsername"]
+    textField.tap()
+    textField.typeText("anton")
+    
+    let elementsQuery = app.scrollViews.otherElements
+    let nextButton = app.buttons["Next:"]
+    nextButton.tap()
+    elementsQuery.textFields["firstName"].typeText("Anton")
+    nextButton.tap()
+    elementsQuery.textFields["surName"].typeText("Müller")
+    nextButton.tap()
+    elementsQuery.textFields["emailAddress"].typeText("hallo@aon.at")
+    nextButton.tap()
+    elementsQuery.secureTextFields["password"].typeText("Test1234")
+    nextButton.tap()
+    elementsQuery.secureTextFields["repeatPassword"].typeText("Test1234@")
+    
+    sleep(1)
+    app.buttons["Done"].tap()
+    sleep(1)
+    
+    XCTAssert(app.staticTexts["A password must contain one uppercase letter, one lowercase letter, one digit, one special character and is between 9 and 31 characters long."].exists)
+  }
+
+  
+  func testFalseRepeatedPassword() {
+    // Use recording to get started writing UI tests.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    sleep(1);
+    
+    let app = XCUIApplication()
+    app.buttons["Login"].tap()
+    let exists = NSPredicate(format: "exists == true")
+    
+    // wait until next page appears before clicking the "Create new user" button.
+    let newUserButton = app.buttons["Create new user"]
+    expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
+    waitForExpectationsWithTimeout(5, handler: nil)
+    
+    app.buttons["Create new user"].tap()
+    
+    sleep(1);
+    
+    XCTAssert(app.staticTexts["Desired username:"].exists)
+    XCTAssert(app.staticTexts["First name:"].exists)
+    XCTAssert(app.staticTexts["Surname:"].exists)
+    XCTAssert(app.staticTexts["Email address:"].exists)
+    XCTAssert(app.staticTexts["Password:"].exists)
+    XCTAssert(app.staticTexts["Repeat password:"].exists)
+    
+    let textField = app.scrollViews.otherElements.textFields["desiredUsername"]
+    textField.tap()
+    textField.typeText("anton")
+    
+    let elementsQuery = app.scrollViews.otherElements
+    let nextButton = app.buttons["Next:"]
+    nextButton.tap()
+    elementsQuery.textFields["firstName"].typeText("Anton")
+    nextButton.tap()
+    elementsQuery.textFields["surName"].typeText("Müller")
+    nextButton.tap()
+    elementsQuery.textFields["emailAddress"].typeText("hallo@aon.at")
+    nextButton.tap()
+    elementsQuery.secureTextFields["password"].typeText("Test1234@")
+    nextButton.tap()
+    elementsQuery.secureTextFields["repeatPassword"].typeText("Test1234")
+    
+    sleep(1)
+    app.buttons["Done"].tap()
+    sleep(1)
+    
+    XCTAssert(app.staticTexts["Passwords are not the same."].exists)
+  }
+
 }

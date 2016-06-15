@@ -58,11 +58,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   @IBOutlet weak var DifficultyStepper_: UIStepper!
   @IBOutlet weak var DurationTextField_: UITextField!
   
-  
-  
-  
-  
-  
+
   @IBOutlet weak var SelectVideoButton: UIButton!
   @IBOutlet weak var VideoThumbnail: UIImageView!
   @IBOutlet weak var NextButton: UIBarButtonItem!
@@ -94,9 +90,22 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     categoryPickerView = UIPickerView()
     categoryPickerView.delegate = self
+    
+    let toolBar = UIToolbar()
+    toolBar.barStyle = UIBarStyle.Default
+    toolBar.translucent = true
+    toolBar.sizeToFit()
+    
+    let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MetaDataViewController.donePicker))
+    let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+    
+    toolBar.setItems([spaceButton, spaceButton, doneButton], animated: false)
+    toolBar.userInteractionEnabled = true
+    
     categoryTextField_.inputView = categoryPickerView
     categoryTextField_.text = categories[0]
     categoryTextField_.selectedTextRange = nil;
+    categoryTextField_.inputAccessoryView = toolBar
     
     for hour in 0...10
     {
@@ -111,7 +120,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     DurationTextField_.inputView = timePickerView
     DurationTextField_.text = times[1] + " hh:mm"
     DurationTextField_.selectedTextRange = nil;
-    
+    DurationTextField_.inputAccessoryView = toolBar
     titleTextField_.delegate = self
     
     videoPicker.delegate = self
@@ -160,8 +169,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
   }
   
-  @IBAction func ClickSelectVideoButton(sender: UIButton) {
-    
+  @IBAction func ClickSelectVideoButton(sender: UIButton)
+  {
     let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
     
     let Camera = UIAlertAction(title: "Camera", style: .Default, handler: {
@@ -193,11 +202,13 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     })
     
     // 4
-    if(UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+    if(UIImagePickerController.isSourceTypeAvailable(.Camera))
+    {
       optionMenu.addAction(Camera)
     }
     
-    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary)) {
+    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
+    {
       optionMenu.addAction(Library)
     }
     
@@ -274,12 +285,15 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       DurationTextField_.selectedTextRange = nil;
     }
     
-    self.view.endEditing(true)
+//    self.view.endEditing(true)
     updateCurrentStruct()
   }
   
-  func updateCurrentStruct()
-  {
+  func donePicker() {
+        self.view.endEditing(true)
+  }
+  
+  func updateCurrentStruct() {
     current.Title = titleTextField_.text!
     current.difficulty = Int(DifficultyStepper_.value)
   }
@@ -311,13 +325,12 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   func imagePickerController(picker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String : AnyObject])
   {
-    self.pickedVideoURL = info[UIImagePickerControllerMediaURL] as? NSURL
+    let pickedVideoURL = info[UIImagePickerControllerMediaURL] as! NSURL
     
     dismissViewControllerAnimated(true, completion: nil)
-
-    VideoThumbnail.image = nil
     
-    let player = AVPlayer(URL: self.pickedVideoURL!)
+    let player = AVPlayer(URL: pickedVideoURL)
+
     let playerController = AVPlayerViewController()
     playerController.player = player
     playerController.showsPlaybackControls = true
