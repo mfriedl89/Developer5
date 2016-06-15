@@ -30,7 +30,7 @@ class DatabaseManagerUnitTests: XCTestCase {
     let difficulty = "easy"
     let duration = "00:00"
     let author = "homer"
-    let item = Tutorial_item(tut_id: id, tut_title: title, tut_category: category, tut_difficulty: difficulty, tut_duration: duration, tut_author: author);
+    let item = TutorialItem(tutID: id, tutTitle: title, tutCategory: category, tutDifficulty: difficulty, tutDuration: duration, tutAuthor: author);
     XCTAssertEqual(item.id, id);
     XCTAssertEqual(item.title, title);
     XCTAssertEqual(item.category, category);

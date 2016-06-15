@@ -318,6 +318,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     print("VideoUrl:\(pickedVideoURL)")
     
+    NextButton.enabled = false
+    
     YouTubeManager.sharedManager.postVideoToYouTube(urlYoutube, videoData: videodata!, title: titleTextField_.text!, callback: {(identifier_final, success) in
       
       if(success == false) {
@@ -335,6 +337,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             for viewcontoller in (self.navigationController?.viewControllers)! {
               if(viewcontoller.isKindOfClass(MenuViewController))
               {
+                self.NextButton.enabled = true
                 self.navigationController?.popToViewController(viewcontoller, animated: true);
               }
             }
@@ -349,6 +352,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
             
+            self.NextButton.enabled = true
             self.presentViewController(alert, animated: true, completion: nil)
             
           });

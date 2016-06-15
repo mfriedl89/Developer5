@@ -70,8 +70,6 @@
 		AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
 		AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
 		AE5416DE1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
-		AE5AF45A1D11299500BDB411 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2C1CFEFDBD002F5D3A /* Constants.swift */; };
-		AE5AF45B1D112A8200BDB411 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2C1CFEFDBD002F5D3A /* Constants.swift */; };
 		AE6DD69C1D0859B200B08232 /* CreateTutorialUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DD69B1D0859B200B08232 /* CreateTutorialUnitTests.swift */; };
 		AE9217211CC7704E00A3391C /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
@@ -83,6 +81,10 @@
 		AEE9A4FE1D08360C00E4E3F7 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532D1CFEC7C400720019 /* UIViewController+Alert.swift */; };
 		AEE9A4FF1D08361200E4E3F7 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A794ABE1CFED468003E4FB8 /* Reach.swift */; };
 		AEE9A5001D08361300E4E3F7 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A794ABE1CFED468003E4FB8 /* Reach.swift */; };
+		C0E348A11D112EA3002BD7BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2C1CFEFDBD002F5D3A /* Constants.swift */; };
+		C0E348A21D112EA3002BD7BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2C1CFEFDBD002F5D3A /* Constants.swift */; };
+		C0E348A31D112F69002BD7BA /* AppDelegate+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2F1CFEFE12002F5D3A /* AppDelegate+Setup.swift */; };
+		C0E348A41D112F69002BD7BA /* AppDelegate+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2F1CFEFE12002F5D3A /* AppDelegate+Setup.swift */; };
 		C4EF8381F892173DC53394BC /* Pods_ConariUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365C22D7441321CD72F4A174 /* Pods_ConariUnitTests.framework */; };
 		D50B0622819E37209DCB289F /* Pods_ConariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B453908F5D025818C6740170 /* Pods_ConariUITests.framework */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
@@ -520,7 +522,7 @@
 				TargetAttributes = {
 					E06D7FB51CBE221F003001BD = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = SYXK862M8H;
+						DevelopmentTeam = NC8S588S83;
 					};
 					E070D2B21CEC9B6900665154 = {
 						CreatedOnToolsVersion = 7.3;
@@ -755,6 +757,7 @@
 				3AE79A8B1CF5D9090083A630 /* NewTutorialDescriptonViewController.swift in Sources */,
 				3AE79A851CF5D9090083A630 /* ChangePasswordViewController.swift in Sources */,
 				3AE79A8F1CF5D9090083A630 /* ViewFinishedTutorialViewController.swift in Sources */,
+				C0E348A31D112F69002BD7BA /* AppDelegate+Setup.swift in Sources */,
 				3AE79A801CF5D8EE0083A630 /* DatabaseManager.swift in Sources */,
 				3AE79A881CF5D9090083A630 /* MainTutorialViewController.swift in Sources */,
 				AEE9A4FC1D0835EF00E4E3F7 /* UIViewController+ErrorHandling.swift in Sources */,
@@ -779,7 +782,7 @@
 				AEE9A5001D08361300E4E3F7 /* Reach.swift in Sources */,
 				3AE79A901CF5D9090083A630 /* WelcomeScreenViewController.swift in Sources */,
 				AE0B908C1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */,
-				AE5AF45B1D112A8200BDB411 /* Constants.swift in Sources */,
+				C0E348A11D112EA3002BD7BA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,6 +801,7 @@
 				AE0B90991CF58AB600A1CCF3 /* ChangePasswordViewController.swift in Sources */,
 				AE0B90A11CF58AD200A1CCF3 /* AdminTutorialViewController.swift in Sources */,
 				AE0B90961CF58AA900A1CCF3 /* MainTutorialViewController.swift in Sources */,
+				C0E348A41D112F69002BD7BA /* AppDelegate+Setup.swift in Sources */,
 				3AE79A7E1CF5D6940083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				AE0B909D1CF58AC600A1CCF3 /* NewUserViewController.swift in Sources */,
 				AE0B908B1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */,
@@ -822,7 +826,7 @@
 				E0307A5F1CECA616007DB00F /* LoginUnitTests.swift in Sources */,
 				AEE9A4FF1D08361200E4E3F7 /* Reach.swift in Sources */,
 				AE0B908F1CF58A9500A1CCF3 /* ViewFinishedTutorialViewController.swift in Sources */,
-				AE5AF45A1D11299500BDB411 /* Constants.swift in Sources */,
+				C0E348A21D112EA3002BD7BA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,7 +952,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari2;
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari1;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
@@ -964,7 +968,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = Conari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari2;
+				PRODUCT_BUNDLE_IDENTIFIER = at.software2016.Conari1;
 				PRODUCT_NAME = "Mr Tutor";
 				PROVISIONING_PROFILE = "";
 			};
