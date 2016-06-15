@@ -1,6 +1,6 @@
 //
 //  WelcomeScreenViewController.swift
-//  Mr Tutor
+//  Tutorialcloud
 //
 //  Created on 04.05.16.
 //  Copyright © 2016 Developer5. All rights reserved.

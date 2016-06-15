@@ -1,6 +1,6 @@
 //
 //  MetaDataViewController.swift
-//  Mr Tutor
+//  Tutorialcloud
 //
 //  Created on 13.04.16.
 //  Copyright © 2016 Developer5. All rights reserved.
@@ -325,11 +325,13 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   func imagePickerController(picker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String : AnyObject])
   {
-    let pickedVideoURL = info[UIImagePickerControllerMediaURL] as! NSURL
+    self.pickedVideoURL = info[UIImagePickerControllerMediaURL] as? NSURL
     
     dismissViewControllerAnimated(true, completion: nil)
     
-    let player = AVPlayer(URL: pickedVideoURL)
+    VideoThumbnail.image = nil
+    
+    let player = AVPlayer(URL: self.pickedVideoURL!)
 
     let playerController = AVPlayerViewController()
     playerController.player = player
