@@ -1,10 +1,11 @@
 //
 //  TutorialTableViewCell.swift
-//  Conari
+//  Tutorialcloud
 //
-//  Created by Markus Friedl on 04.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 04.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
+
 
 import UIKit
 
@@ -15,13 +16,10 @@ class TutorialTableViewCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
   }
   
   override func setSelected(selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
-    
-    // Configure the view for the selected state
   }
   
 }
