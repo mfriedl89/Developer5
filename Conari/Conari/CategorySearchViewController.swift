@@ -177,7 +177,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       if youtubeArray.count == 0 {
         return ""
       } else {
-        return "Youtube"
+        return "YouTube"
       }
       
     default:
