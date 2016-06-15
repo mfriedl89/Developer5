@@ -1,10 +1,11 @@
 //
 //  UIViewController+ErrorHandling.swift
-//  Conari
+//  Tutorialcloud
 //
-//  Created by Philipp Preiner on 01.06.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 01.06.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
+
 
 import UIKit
 
