@@ -1,6 +1,6 @@
 //
 //  ViewFinishedTutorialViewController.swift
-//  Mr Tutor
+//  Tutorialcloud
 //
 //  Created on 27.04.16.
 //  Copyright © 2016 Developer5. All rights reserved.

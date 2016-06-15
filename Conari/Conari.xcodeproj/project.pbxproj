@@ -42,6 +42,8 @@
 		3AEF13861D1141DD00579E77 /* Acknowledgements.html in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF13851D1141DD00579E77 /* Acknowledgements.html */; };
 		3AEF13881D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF13871D1142AB00579E77 /* AcknowledgementsViewController.swift */; };
 		3AEF138A1D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF13871D1142AB00579E77 /* AcknowledgementsViewController.swift */; };
+		3AEF138D1D11611400579E77 /* Acknowledgements.html in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF13851D1141DD00579E77 /* Acknowledgements.html */; };
+		3AEF138E1D11611500579E77 /* Acknowledgements.html in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF13851D1141DD00579E77 /* Acknowledgements.html */; };
 		3AF2DFBA1D085B1300DE2C72 /* AboutUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2DFB91D085B1300DE2C72 /* AboutUnitTests.swift */; };
 		721B266BA0722231E3031E89 /* Pods_Conari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB1A2D53EAE75A37FDCA2F3 /* Pods_Conari.framework */; };
 		AE0B908A1CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B90891CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift */; };
@@ -587,6 +589,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AEF138D1D11611400579E77 /* Acknowledgements.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +597,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AEF138E1D11611500579E77 /* Acknowledgements.html in Resources */,
 				AE0B908E1CF5890E00A1CCF3 /* Main.storyboard in Resources */,
 				AE0B909C1CF58AC200A1CCF3 /* LaunchScreen.storyboard in Resources */,
 			);

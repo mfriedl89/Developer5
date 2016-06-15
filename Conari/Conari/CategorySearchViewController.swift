@@ -1,6 +1,6 @@
 //
 //  CategorySearchViewController.swift
-//  Mr Tutor
+//  Tutorialcloud
 //
 //  Created on 20.04.16.
 //  Copyright © 2016 Developer5. All rights reserved.
@@ -38,6 +38,8 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   
   var selectedCategory = 0
   var textSearch = ""
+  var tutorials = [TutorialItem]()
+  var alphabetizedTutorials = [String: [TutorialItem]]()
   
   var screenWidth: CGFloat = 0
   var screenHeight: CGFloat = 0
@@ -93,78 +95,146 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   // MARK: - Table View
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    switch indexPath.section {
-    case 0:
-      let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
-      let durationHours = Int(tutorialArray[indexPath.row].duration)!/60
-      let durationMinutes = Int(tutorialArray[indexPath.row].duration)!%60
-      
-      cell.label_title?.text = tutorialArray[indexPath.row].title
-      cell.label_category?.text = categories[tutorialArray[indexPath.row].category]
-      
-      cell.label_duration.text = String(format: "%02d:%02d", durationHours,durationMinutes)
-      cell.image_view.image = UIImage(named: "\(tutorialArray[indexPath.row].category-1)")
-      
-      switch Int(tutorialArray[indexPath.row].difficulty)! {
+    if (textSearch != "") {
+      switch indexPath.section {
+      case 0:
+        let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
+        let durationHours = Int(tutorialArray[indexPath.row].duration)!/60
+        let durationMinutes = Int(tutorialArray[indexPath.row].duration)!%60
         
-      case 5:
-        cell.label_difficulty?.text = "very hard";
+        cell.label_title?.text = tutorialArray[indexPath.row].title
+        cell.label_category?.text = categories[tutorialArray[indexPath.row].category]
         
-      case 4:
-        cell.label_difficulty?.text = "hard";
+        cell.label_duration.text = String(format: "%02d:%02d", durationHours,durationMinutes)
+        cell.image_view.image = UIImage(named: "\(tutorialArray[indexPath.row].category-1)")
         
-      case 3:
-        cell.label_difficulty?.text = "medium";
-        
-      case 2:
-        cell.label_difficulty?.text = "easy";
+        switch Int(tutorialArray[indexPath.row].difficulty)! {
+          
+        case 5:
+          cell.label_difficulty?.text = "very hard";
+          
+        case 4:
+          cell.label_difficulty?.text = "hard";
+          
+        case 3:
+          cell.label_difficulty?.text = "medium";
+          
+        case 2:
+          cell.label_difficulty?.text = "easy";
+          
+        case 1:
+          cell.label_difficulty?.text = "very easy";
+          
+        default:
+          break
+        }
+        return cell
         
       case 1:
-        cell.label_difficulty?.text = "very easy";
+        let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableYoutubeViewCell", forIndexPath: indexPath) as! CategorySearchYoutubeTableViewCell
+        cell.label_title?.text = youtubeArray[indexPath.row].title
+        
+        cell.imageView?.sd_setImageWithURL(NSURL(string:self.youtubeArray[indexPath.row].thumbnail), placeholderImage: UIImage(), completed: {(image: UIImage?, error: NSError?, cacheType: SDImageCacheType!, imageURL: NSURL?) in
+          
+          if let cellToUpdate = self.table_View?.cellForRowAtIndexPath(indexPath) {
+            cellToUpdate.setNeedsLayout()
+          }
+        })
+        
+        return cell
         
       default:
         break
-      }
-      return cell
-      
-    case 1:
-      let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableYoutubeViewCell", forIndexPath: indexPath) as! CategorySearchYoutubeTableViewCell
-      cell.label_title?.text = youtubeArray[indexPath.row].title
-      
-      cell.imageView?.sd_setImageWithURL(NSURL(string:self.youtubeArray[indexPath.row].thumbnail), placeholderImage: UIImage(), completed: {(image: UIImage?, error: NSError?, cacheType: SDImageCacheType!, imageURL: NSURL?) in
         
-        if let cellToUpdate = self.table_View?.cellForRowAtIndexPath(indexPath) {
-          cellToUpdate.setNeedsLayout()
-        }
+      }
+    } else {
+      let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
+      
+      // Fetch and Sort Keys
+      let keys = alphabetizedTutorials.keys.sort({ (a, b) -> Bool in
+        a.lowercaseString < b.lowercaseString
       })
       
-      return cell
+      // Fetch Fruits for Section
+      let key = keys[indexPath.section]
       
-    default:
-      break
-      
+      if let tutorialsForSection = alphabetizedTutorials[key] {
+        // Fetch Fruit
+        let currentTutorial = tutorialsForSection[indexPath.row]
+        
+        // Configure Cell
+        let durationHours = Int(currentTutorial.duration)!/60
+        let durationMinutes = Int(currentTutorial.duration)!%60
+        
+        cell.label_title?.text = currentTutorial.title
+        cell.label_category?.text = categories[currentTutorial.category]
+        
+        cell.label_duration.text = String(format: "%02d:%02d", durationHours, durationMinutes)
+        cell.image_view.image = UIImage(named: "\(currentTutorial.category - 1)")
+        
+        switch Int(currentTutorial.difficulty)! {
+          
+        case 5:
+          cell.label_difficulty?.text = "very hard";
+          
+        case 4:
+          cell.label_difficulty?.text = "hard";
+          
+        case 3:
+          cell.label_difficulty?.text = "medium";
+          
+        case 2:
+          cell.label_difficulty?.text = "easy";
+          
+        case 1:
+          cell.label_difficulty?.text = "very easy";
+          
+        default:
+          break
+        }
+        return cell
+      }
     }
+
     return UITableViewCell()
   }
   
   func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
-    switch section {
-    case 0:
-      return tutorialArray.count
+    if textSearch != "" {
+      switch section {
+      case 0:
+        return tutorialArray.count
+        
+      case 1:
+        return youtubeArray.count
+        
+      default:
+        return 0
+      }
+    } else {
+      let keys = alphabetizedTutorials.keys
       
-    case 1:
-      return youtubeArray.count
+      // Sort Keys
+      let sortedKeys = keys.sort({ (a, b) -> Bool in
+        a.lowercaseString < b.lowercaseString
+      })
       
-    default:
-      return 0
+      // Fetch
+      let key = sortedKeys[section]
+      
+      if let alphabetizedTutorials = alphabetizedTutorials[key] {
+        return alphabetizedTutorials.count
+      }
     }
+    return 0
   }
   
   func numberOfSectionsInTableView(tableView:UITableView) -> Int {
     if textSearch != "" {
       return 2
     } else {
-      return 1
+      let keys = alphabetizedTutorials.keys
+      return keys.count
     }
   }
   
@@ -193,6 +263,12 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
         return ""
       }
     } else {
+//      // Fetch and Sort Keys
+//      let keys = alphabetizedTutorials.keys.sort({ (a, b) -> Bool in
+//        a.lowercaseString < b.lowercaseString
+//      })
+//      
+//      return keys[section]
       return nil
     }
   }
@@ -227,6 +303,15 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
     cell.imageView?.sd_cancelCurrentImageLoad();
     cell.imageView?.image = nil
+  }
+  
+  func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]?{
+    // Fetch and Sort Keys
+    let keys = alphabetizedTutorials.keys.sort({ (a, b) -> Bool in
+      a.lowercaseString < b.lowercaseString
+    })
+    
+    return keys
   }
   
   // MARK: - Helper
@@ -313,6 +398,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
       if(!response.isEmpty) {
         self.tutorialArray = response
         self.tutorialArray.sortInPlace({ $0.title.lowercaseString  < $1.title.lowercaseString })
+        self.alphabetizeArray()
         
       } else {
         self.tutorialArray.removeAll()
@@ -323,6 +409,36 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
         self.table_View.reloadData();
       })
     }
+  }
+  
+  private func alphabetizeArray() {
+    for tutorial in tutorialArray {
+      tutorials.append(tutorial)
+    }
+    alphabetizedTutorials = alphabetizeArray(tutorials)
+  }
+  
+  private func alphabetizeArray(array: [TutorialItem]) -> [String: [TutorialItem]] {
+    var result = [String: [TutorialItem]]()
+    
+    for item in array {
+      let index = item.title.startIndex.advancedBy(1)
+      let firstLetter = item.title.substringToIndex(index).uppercaseString
+      
+      if result[firstLetter] != nil {
+        result[firstLetter]!.append(item)
+      } else {
+        result[firstLetter] = [item]
+      }
+    }
+    
+    for (key, value) in result {
+      result[key] = value.sort({ (a, b) -> Bool in
+        a.title.lowercaseString < b.title.lowercaseString
+      })
+    }
+    
+    return result
   }
   
   // MARK: - Navigation

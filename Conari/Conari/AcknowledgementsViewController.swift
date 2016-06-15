@@ -1,6 +1,6 @@
 //
 //  AcknowledgementsViewController.swift
-//  Tutorial Cloud
+//  Tutorialcloud
 //
 //  Created on 15.06.16.
 //  Copyright © 2016 Markus Friedl. All rights reserved.

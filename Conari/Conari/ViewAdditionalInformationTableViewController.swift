@@ -1,6 +1,6 @@
 //
 //  WelcomeScreenViewController.swift
-//  Mr Tutor
+//  Tutorialcloud
 //
 //  Created on 04.05.16.
 //  Copyright © 2016 Developer5. All rights reserved.
@@ -25,6 +25,9 @@ class ViewAdditionalInformationTableViewController: UITableViewController
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "LaunchscreenBackground"), forBarMetrics: UIBarMetrics.Default)
+    self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
   }
   
   

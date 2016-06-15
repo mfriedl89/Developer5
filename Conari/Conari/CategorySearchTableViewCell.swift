@@ -1,17 +1,16 @@
 //
 //  CategorySearchTableViewCell.swift
-//  Conari
+//  Tutorialcloud
 //
-//  Created by ST R W on 20.04.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 20.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
+
 
 import UIKit
 
 class CategorySearchTableViewCell: UITableViewCell {
-  
-  // Properties
-  
+
   @IBOutlet var label_title: UILabel!
   @IBOutlet var label_category: UILabel!
   @IBOutlet var label_difficulty: UILabel!
@@ -32,8 +31,6 @@ class CategorySearchTableViewCell: UITableViewCell {
 }
 
 class CategorySearchYoutubeTableViewCell: UITableViewCell {
-  
-  // Properties
   
   @IBOutlet var label_title: UILabel!
   @IBOutlet var image_view: UIImageView!
