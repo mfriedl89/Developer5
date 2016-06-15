@@ -1,8 +1,8 @@
 //
 //  AcknowledgementsViewController.swift
-//  Conari
+//  Tutorial Cloud
 //
-//  Created by Philipp Preiner on 15.06.16.
+//  Created on 15.06.16.
 //  Copyright © 2016 Markus Friedl. All rights reserved.
 //
 
