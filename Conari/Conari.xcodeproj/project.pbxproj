@@ -93,7 +93,9 @@
 		C0E348A41D112F69002BD7BA /* AppDelegate+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2F1CFEFE12002F5D3A /* AppDelegate+Setup.swift */; };
 		C4EF8381F892173DC53394BC /* Pods_ConariUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365C22D7441321CD72F4A174 /* Pods_ConariUnitTests.framework */; };
 		D50B0622819E37209DCB289F /* Pods_ConariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B453908F5D025818C6740170 /* Pods_ConariUITests.framework */; };
+		DA11CA1D1D1137C100BB628E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D7FB91CBE2220003001BD /* AppDelegate.swift */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
+		DA6E71861D1141C800E9ABE7 /* AboutViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E71851D1141C800E9ABE7 /* AboutViewTest.swift */; };
 		DA7CDF171CEC9AE000D89BCF /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CDF161CEC9AE000D89BCF /* ChangeEmailViewController.swift */; };
 		DA7CDF1A1CEC9BAF00D89BCF /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CDF191CEC9BAF00D89BCF /* ChangePasswordViewController.swift */; };
 		DA7CDF1C1CEC9C4000D89BCF /* ChangeUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CDF1B1CEC9C4000D89BCF /* ChangeUserNameViewController.swift */; };
@@ -192,6 +194,7 @@
 		CC19B1584554AE041ABD6DB2 /* Pods-Conari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conari.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conari/Pods-Conari.release.xcconfig"; sourceTree = "<group>"; };
 		D94F1562B0D9C25DE3227B36 /* Pods-ConariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		DA6E71851D1141C800E9ABE7 /* AboutViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewTest.swift; sourceTree = "<group>"; };
 		DA7CDF161CEC9AE000D89BCF /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		DA7CDF191CEC9BAF00D89BCF /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		DA7CDF1B1CEC9C4000D89BCF /* ChangeUserNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeUserNameViewController.swift; sourceTree = "<group>"; };
@@ -435,6 +438,7 @@
 				E070D2C01CEC9B7A00665154 /* SearchTutorialUITests.swift */,
 				E0307A651CECA621007DB00F /* ViewAdditionalInformationUITest.swift */,
 				E070D2C11CEC9B7A00665154 /* ViewFinishedTutorialUITest.swift */,
+				DA6E71851D1141C800E9ABE7 /* AboutViewTest.swift */,
 			);
 			path = ConariUITests;
 			sourceTree = "<group>";
@@ -762,7 +766,7 @@
 			files = (
 				3AE79A8A1CF5D9090083A630 /* MetaDataViewController.swift in Sources */,
 				3AE79A931CF5D9180083A630 /* CategorySearchTableViewCell.swift in Sources */,
-				AE228CA31D1134B3002D5F81 /* AppDelegate.swift in Sources */,
+				DA11CA1D1D1137C100BB628E /* AppDelegate.swift in Sources */,
 				3AE79A831CF5D9090083A630 /* CategorySearchViewController.swift in Sources */,
 				AEE9A4FE1D08360C00E4E3F7 /* UIViewController+Alert.swift in Sources */,
 				3AE79A921CF5D9100083A630 /* KeyboardManager.swift in Sources */,
@@ -771,7 +775,7 @@
 				E0307A671CECA621007DB00F /* NewUserUITests.swift in Sources */,
 				3AE79A8B1CF5D9090083A630 /* NewTutorialDescriptonViewController.swift in Sources */,
 				3AE79A851CF5D9090083A630 /* ChangePasswordViewController.swift in Sources */,
-				3AEF13891D1142AB00579E77 /* AcknowledgementsViewController.swift in Sources */,
+				DA6E71861D1141C800E9ABE7 /* AboutViewTest.swift in Sources */,
 				3AE79A8F1CF5D9090083A630 /* ViewFinishedTutorialViewController.swift in Sources */,
 				C0E348A31D112F69002BD7BA /* AppDelegate+Setup.swift in Sources */,
 				3AE79A801CF5D8EE0083A630 /* DatabaseManager.swift in Sources */,
