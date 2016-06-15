@@ -40,10 +40,17 @@ class ViewFinishedTutorialUITest: XCTestCase {
     
     sleep(1)
     
-    let tablesQuery = app.tables
-    tablesQuery.staticTexts["Arts and Entertainment"].tap()
+    let titleTextField = app.textFields["searchForTextfield"]
+    titleTextField.tap()
+    titleTextField.clearAndEnterText("ccc")
+    
+    app.buttons["Done"].tap()
+    
+//    let tablesQuery = app.tables
+//    tablesQuery.staticTexts["Arts and Entertainment"].tap()
     
     app.tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(0).tap()
+    
     
     //sleep(1);
     
