@@ -13,32 +13,16 @@ extension UIViewController {
   
   // MARK: - General
   
-  /**
-   Shows a default iOS alert with a "OK" button.
-   
-   - parameter title:     Title of the alert.
-   - parameter message:   Message of the alert.
-   */
+
   func showAlert(title: String, message: String) {
     showAlert(title, message: message, buttonTitle: "OK")
   }
   
-  /**
-   Shows a default iOS alert with a "OK" button and error title.
-   
-   - parameter message:   Message of the alert.
-   */
+
   func showErrorMessage(message: String) {
     showAlert("Error", message: message, buttonTitle: "OK")
   }
-  
-  /**
-   Shows a default iOS alert with one button.
-   
-   - parameter title:         Title of the alert.
-   - parameter message:       Message of the alert.
-   - parameter buttonTitle:   Name of the button.
-   */
+
   func showAlert(title: String, message: String, buttonTitle: String) {
     showAlert(title, message: message, okAction: (buttonTitle, nil), cancelAction: nil)
   }

@@ -51,7 +51,6 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
       
     };
     
-    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -73,7 +72,6 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   func test (new_firstname:String, new_surname:String) -> Bool {

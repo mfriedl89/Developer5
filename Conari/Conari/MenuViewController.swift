@@ -46,8 +46,6 @@ class MenuViewController: UIViewController {
     Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: CreateTutBtn)
     Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: CreateVidTut)
     Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: ManageTut)
-
-    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(animated: Bool) {

@@ -88,7 +88,6 @@ class DatabaseManager {
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
-        // check for fundamental networking error
         success = false
         let message: String? = error?.localizedDescription
         callback(success, message)
@@ -97,7 +96,6 @@ class DatabaseManager {
       }
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
         success = false
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
       }
@@ -148,7 +146,6 @@ class DatabaseManager {
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
-        // check for fundamental networking error
         success = false
         responseString = error?.localizedDescription
         
@@ -158,7 +155,6 @@ class DatabaseManager {
       responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
         success = false
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
         let message: String? = (responseString as? String)
@@ -204,7 +200,6 @@ class DatabaseManager {
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
-        // check for fundamental networking error
         success = false
         responseString = error?.localizedDescription
         
@@ -214,7 +209,6 @@ class DatabaseManager {
       responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
         success = false
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
         let message: String? = (responseString as? String)
@@ -250,7 +244,6 @@ class DatabaseManager {
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
-        // check for fundamental networking error
         success = false
         responseString = error?.localizedDescription
         
@@ -260,7 +253,6 @@ class DatabaseManager {
       responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
         success = false
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
         let message: String? = (responseString as? String)
@@ -299,7 +291,6 @@ class DatabaseManager {
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
-        // check for fundamental networking error
         success = false
         responseString = error?.localizedDescription
         
@@ -309,7 +300,6 @@ class DatabaseManager {
       responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
         success = false
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
         let message: String? = (responseString as? String)
@@ -347,7 +337,6 @@ class DatabaseManager {
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
-        // check for fundamental networking error
         let message: String? = error?.localizedDescription
         
         callback(nil, message)
@@ -356,7 +345,6 @@ class DatabaseManager {
       }
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
       }
       do {
@@ -408,12 +396,11 @@ class DatabaseManager {
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
-      guard error == nil && data != nil else {                                                          // check for fundamental networking error
-        print("error=\(error)")
+      guard error == nil && data != nil else {                                                                  print("error=\(error)")
         return
       }
       
-      if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+      if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
         print("statusCode should be 200, but is \(httpStatus.statusCode)")
         print("response = \(response)")
       }
@@ -432,7 +419,6 @@ class DatabaseManager {
           let author = anItem["author"] as! String
           
           tutorialArray.append(TutorialItem(tutID: id, tutTitle: title, tutCategory: category, tutDifficulty: difficulty, tutDuration: duration, tutAuthor: author))
-          // do something with personName and personID
         }
         
       } catch {
@@ -464,12 +450,11 @@ class DatabaseManager {
     
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
-      guard error == nil && data != nil else {                                                          // check for fundamental networking error
-        print("error=\(error)")
+      guard error == nil && data != nil else {                                                                  print("error=\(error)")
         return
       }
       
-      if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+      if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
         print("statusCode should be 200, but is \(httpStatus.statusCode)")
         print("response = \(response)")
       }
@@ -488,7 +473,7 @@ class DatabaseManager {
           let author = anItem["author"] as! String
           
           tutorialArray.append(TutorialItem(tutID: id, tutTitle: title, tutCategory: category, tutDifficulty: difficulty, tutDuration: duration, tutAuthor: author))
-          // do something with personName and personID
+          
         }
         
       } catch {
@@ -518,7 +503,7 @@ class DatabaseManager {
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
-        // check for fundamental networking error
+        
         success = false
         let message: String? = error?.localizedDescription
         callback(success, message)
@@ -527,7 +512,7 @@ class DatabaseManager {
       }
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
+       
         success = false
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
       }
@@ -571,7 +556,7 @@ class DatabaseManager {
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
-        // check for fundamental networking error
+        
         success = false
         let message: String? = error?.localizedDescription
         callback(success, message)
@@ -580,7 +565,7 @@ class DatabaseManager {
       }
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
+       
         success = false
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
       }
@@ -624,7 +609,7 @@ class DatabaseManager {
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
-        // check for fundamental networking error
+        
         success = false
         let message: String? = error?.localizedDescription
         callback(success, message)
@@ -633,7 +618,7 @@ class DatabaseManager {
       }
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
+        
         success = false
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
       }
@@ -674,7 +659,7 @@ class DatabaseManager {
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
-        // check for fundamental networking error
+        
         let message: String? = error?.localizedDescription
         
         callback(nil, message)
@@ -683,7 +668,7 @@ class DatabaseManager {
       }
       
       if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-        // check for http errors
+        
         responseString = "statusCode should be 200, but is \(httpStatus.statusCode) (\(response))"
       }
       do {
