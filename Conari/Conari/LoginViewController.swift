@@ -43,7 +43,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     self.CreateNewUserBtn.tintColor = UIColor.whiteColor()
     Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: self.CreateNewUserBtn)
     
-    // Do any additional setup after loading the view.
     
     userNameTextField.delegate = self
     passwordTextField.delegate = self
@@ -58,19 +57,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   
   // MARK: - Navigation
   
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
     if (segue.identifier ==  "show_main_view"){
       let backItem = UIBarButtonItem()
-      navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+      navigationItem.backBarButtonItem = backItem
     }
   }
   

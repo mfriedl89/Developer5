@@ -21,8 +21,6 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
     self.view.backgroundColor = UIColor.whiteColor()
     
     SearchField_.delegate = self
-    
-    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -42,7 +40,6 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -82,9 +79,7 @@ class MainTutorialViewController: UIViewController, UITableViewDelegate, UITable
   }
   
   // MARK: - Navigation
-  
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "tutorial_list_category" {
       let csvc = (segue.destinationViewController as! CategorySearchViewController)
       csvc.selectedCategory = (sender as! Int)+1

@@ -46,8 +46,6 @@ class MenuViewController: UIViewController {
     Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: CreateTutBtn)
     Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: CreateVidTut)
     Constants.setRadiusWithColor(UIColor.whiteColor(), forButton: ManageTut)
-
-    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -58,7 +56,6 @@ class MenuViewController: UIViewController {
     
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   @IBAction func LogoutKlicked(sender: UIButton) {

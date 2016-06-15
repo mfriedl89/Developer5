@@ -135,7 +135,6 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   override func didReceiveMemoryWarning()
   {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
@@ -285,7 +284,6 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       DurationTextField_.selectedTextRange = nil;
     }
     
-//    self.view.endEditing(true)
     updateCurrentStruct()
   }
   

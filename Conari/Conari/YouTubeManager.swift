@@ -44,16 +44,13 @@ class YouTubeManager {
   func searchVideoByTitle(title: String, completionHandler: (response: [YoutubeVideo], success:Bool, messagge:String) -> Void) -> Void {
     let eTitle = title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
     let urlString = searchApiUrl+"?part=snippet&q=\(eTitle)&type=video&key=\(apiKey)"
-    //urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters()!
-    
-    // Create a NSURL object based on the above string.
+
     let targetURL = NSURL(string: urlString)
     let request = NSMutableURLRequest(URL: targetURL!)
     var returnArray = [YoutubeVideo]()
     
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
       guard error == nil && data != nil else {
-        // check for fundamental networking error
         completionHandler(response: returnArray, success: false, messagge: "error=\(error)")
         
         return
@@ -69,7 +66,6 @@ class YouTubeManager {
         
         
         
-        // Get all search result items ("items" array).
         let items: Array<Dictionary<NSObject, AnyObject>> = resultsDict["items"] as! Array<Dictionary<NSObject, AnyObject>>
         for item in items
         {
