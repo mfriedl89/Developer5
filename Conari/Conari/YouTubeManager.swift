@@ -26,7 +26,7 @@ class YouTubeManager {
   var apiKey = "AIzaSyBkPodgj3cSzd8XYnzEnUBIsonzRx7QaZA"
   var channelID = "UCTwXFSPFmBofWhl71T85WNQ"
   var searchApiUrl = "https://www.googleapis.com/youtube/v3/search"
-  var identifier = "ConariYouTubeTutorial - apiKey: " + "AIzaSyBkPodgj3cSzd8XYnzEnUBIsonzRx7QaZA" + ", videoID: "
+  var identifier = "videoID: "
   
   
   func parseIdentifier(input: String) -> String? {

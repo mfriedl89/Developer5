@@ -8,6 +8,12 @@ target 'Conari' do
   pod "RichEditorView"
   pod 'SDWebImage', '~>3.7'
   pod 'Alamofire'
+  
+  # License Kit
+  pod 'ESOpenSourceLicensesKit'
+  post_install do |installer_representation|
+    system("ruby Pods/ESOpenSourceLicensesKit/ESOpenSourceLicensesKit/Scripts/generate_licenses.rb --post_install")
+  end
 
   target 'ConariUITests' do
     inherit! :search_paths

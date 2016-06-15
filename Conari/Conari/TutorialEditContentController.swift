@@ -81,7 +81,7 @@ class TutorialEditContentController: UIViewController
       
       if success == true
       {
-        print("sucess");
+        print("success");
         dispatch_async(dispatch_get_main_queue(),{
     
           for viewcontoller in (self.navigationController?.viewControllers)!
