@@ -160,8 +160,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
   }
   
-  @IBAction func ClickSelectVideoButton(sender: UIButton) {
-    
+  @IBAction func ClickSelectVideoButton(sender: UIButton)
+  {
     let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
     
     let Camera = UIAlertAction(title: "Camera", style: .Default, handler: {
@@ -193,11 +193,13 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     })
     
     // 4
-    if(UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+    if(UIImagePickerController.isSourceTypeAvailable(.Camera))
+    {
       optionMenu.addAction(Camera)
     }
     
-    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary)) {
+    if(UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
+    {
       optionMenu.addAction(Library)
     }
     
