@@ -1,18 +1,15 @@
 //
 //  MenuUITests.swift
-//  Conari
+//  Tutorialcloud
 //
-//  Created by Paul Krassnig on 04.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 04.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import XCTest
 
 extension XCUIElement {
-  /**
-   Removes any current text in the field before typing in the new value
-   - Parameter text: the text to enter into the field
-   */
+  
   func clearAndEnterText(text: String) -> Void {
     guard let stringValue = self.value as? String else {
       XCTFail("Tried to clear and enter text into a non string value")
@@ -35,25 +32,15 @@ class MenuUITests: XCTestCase {
   
   override func setUp() {
     super.setUp()
-    
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-    
-    // In UI tests it is usually best to stop immediately when a failure occurs.
     continueAfterFailure = false
-    // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
     XCUIApplication().launch()
-    
-    // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
   }
   
   override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     super.tearDown()
   }
   
   func testMenu() {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
     
     sleep(1)
     
@@ -114,9 +101,6 @@ class MenuUITests: XCTestCase {
   }
   
   func testChangeName() {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    
     sleep(1)
     
     let app = XCUIApplication()
@@ -155,9 +139,6 @@ class MenuUITests: XCTestCase {
     
     sleep(1)
     
-    // changed Name
-    // now check it
-    
     app.buttons["Change Name"].tap()
     
     sleep(1)
@@ -173,8 +154,6 @@ class MenuUITests: XCTestCase {
   }
   
   func testChangeMail() {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
     
     sleep(1);
     
@@ -209,9 +188,6 @@ class MenuUITests: XCTestCase {
     app.buttons["DoneButton"].tap()
     app.navigationBars["Change Email"].buttons["Menu"].tap()
     
-    // changed Email
-    // now check it
-    
     app.buttons["Change Email"].tap()
     
     app.textFields["newEmail"].tap()
@@ -229,8 +205,6 @@ class MenuUITests: XCTestCase {
   }
   
   func testChangePassword() {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
     
     sleep(1);
     
@@ -274,9 +248,6 @@ class MenuUITests: XCTestCase {
     sleep(1);
     
     app.navigationBars["Change password"].buttons["Menu"].tap()
-    
-    // changed Password
-    // now check it
     
     sleep(1);
     

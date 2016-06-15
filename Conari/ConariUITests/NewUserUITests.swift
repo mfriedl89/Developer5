@@ -1,9 +1,9 @@
 //
 //  NewUserUITests.swift
-//  Conari
+//  Tutorialcloud
 //
-//  Created by Paul Krassnig on 13.04.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 13.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import XCTest
@@ -12,33 +12,21 @@ class NewUserUITests: XCTestCase {
   
   override func setUp() {
     super.setUp()
-    
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-    
-    // In UI tests it is usually best to stop immediately when a failure occurs.
     continueAfterFailure = false
-    // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
     XCUIApplication().launch()
-    
-    // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
   }
   
   override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     super.tearDown()
   }
   
   func testAllUIElements() {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    
     sleep(1);
     
     let app = XCUIApplication()
     app.buttons["Login"].tap()
     let exists = NSPredicate(format: "exists == true")
     
-    // wait until next page appears before clicking the "Create new user" button.
     let newUserButton = app.buttons["Create new user"]
     expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
     waitForExpectationsWithTimeout(5, handler: nil)
@@ -91,8 +79,6 @@ class NewUserUITests: XCTestCase {
   }
   
   func testFalseName() {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
     
     sleep(1);
     
@@ -100,7 +86,6 @@ class NewUserUITests: XCTestCase {
     app.buttons["Login"].tap()
     let exists = NSPredicate(format: "exists == true")
     
-    // wait until next page appears before clicking the "Create new user" button.
     let newUserButton = app.buttons["Create new user"]
     expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
     waitForExpectationsWithTimeout(5, handler: nil)
@@ -142,16 +127,13 @@ class NewUserUITests: XCTestCase {
   
   
   func testFalseFirstname() {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    
+
     sleep(1);
     
     let app = XCUIApplication()
     app.buttons["Login"].tap()
     let exists = NSPredicate(format: "exists == true")
     
-    // wait until next page appears before clicking the "Create new user" button.
     let newUserButton = app.buttons["Create new user"]
     expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
     waitForExpectationsWithTimeout(5, handler: nil)
@@ -193,8 +175,7 @@ class NewUserUITests: XCTestCase {
   
   
   func testFalseSurName() {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+
     
     sleep(1);
     
@@ -202,7 +183,6 @@ class NewUserUITests: XCTestCase {
     app.buttons["Login"].tap()
     let exists = NSPredicate(format: "exists == true")
     
-    // wait until next page appears before clicking the "Create new user" button.
     let newUserButton = app.buttons["Create new user"]
     expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
     waitForExpectationsWithTimeout(5, handler: nil)
@@ -244,8 +224,7 @@ class NewUserUITests: XCTestCase {
   
   
   func testFalseEmail() {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+
     
     sleep(1);
     
@@ -253,7 +232,6 @@ class NewUserUITests: XCTestCase {
     app.buttons["Login"].tap()
     let exists = NSPredicate(format: "exists == true")
     
-    // wait until next page appears before clicking the "Create new user" button.
     let newUserButton = app.buttons["Create new user"]
     expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
     waitForExpectationsWithTimeout(5, handler: nil)
@@ -295,8 +273,7 @@ class NewUserUITests: XCTestCase {
   
   
   func testFalsePassword() {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+
     
     sleep(1);
     
@@ -304,7 +281,6 @@ class NewUserUITests: XCTestCase {
     app.buttons["Login"].tap()
     let exists = NSPredicate(format: "exists == true")
     
-    // wait until next page appears before clicking the "Create new user" button.
     let newUserButton = app.buttons["Create new user"]
     expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
     waitForExpectationsWithTimeout(5, handler: nil)
@@ -346,8 +322,7 @@ class NewUserUITests: XCTestCase {
 
   
   func testFalseRepeatedPassword() {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+
     
     sleep(1);
     
@@ -355,7 +330,6 @@ class NewUserUITests: XCTestCase {
     app.buttons["Login"].tap()
     let exists = NSPredicate(format: "exists == true")
     
-    // wait until next page appears before clicking the "Create new user" button.
     let newUserButton = app.buttons["Create new user"]
     expectationForPredicate(exists, evaluatedWithObject: newUserButton, handler: nil)
     waitForExpectationsWithTimeout(5, handler: nil)

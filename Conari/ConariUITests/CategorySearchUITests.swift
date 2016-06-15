@@ -2,9 +2,10 @@
 //  CategorySearchUITests.swift
 //  Tutorialcloud
 //
-//  Created by Benjamin Wullschleger on 11.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 11.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
+
 
 import XCTest
 
@@ -67,18 +68,6 @@ func testTableCell() {
     XCTAssertTrue(XCUIApplication().tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(1).exists)
     XCTAssertTrue(XCUIApplication().tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(2).exists)
     XCTAssertTrue(XCUIApplication().tables.childrenMatchingType(.Cell).elementBoundByIndex(0).childrenMatchingType(.StaticText).elementBoundByIndex(3).exists)
-    
-
-    
-    
-    //let tableCell = CategorySearchTableViewCell()
-    
-    //tableCell.
-    
-    //XCTAssert(app.staticTexts["Test"].exists)
-    //XCTAssert(app.staticTexts["Arts and Entertainment"].exists)
-    //XCTAssert(app.staticTexts["easy"].exists)
-    //XCTAssert(app.staticTexts["00:05"].exists)
   }
   
 }
