@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0N4-dx-Xpd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0N4-dx-Xpd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1208,7 +1208,7 @@
             </objects>
             <point key="canvasLocation" x="1917" y="-825"/>
         </scene>
-        <!--Mr Tutor-->
+        <!--Tutorialcloud-->
         <scene sceneID="Hhc-gc-l5x">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="y1j-Ah-LpW" customClass="MainTutorialViewController" customModule="ConariUnitTests" customModuleProvider="target" sceneMemberID="viewController">
@@ -1304,7 +1304,7 @@
                             <constraint firstItem="WWS-M3-wU7" firstAttribute="leading" secondItem="16C-Oq-uXB" secondAttribute="leading" id="uzQ-bQ-yJn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Mr Tutor" id="pCh-G7-OYf"/>
+                    <navigationItem key="navigationItem" title="Tutorialcloud" id="pCh-G7-OYf"/>
                     <connections>
                         <outlet property="SearchField_" destination="WWS-M3-wU7" id="ihV-ry-Bg5"/>
                         <outlet property="categoryTableView_" destination="sUa-9F-PAD" id="t1Z-cl-JF9"/>
