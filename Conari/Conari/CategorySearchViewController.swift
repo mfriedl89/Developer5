@@ -155,11 +155,11 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
         a.lowercaseString < b.lowercaseString
       })
       
-      // Fetch Fruits for Section
+      // Fetch for Section
       let key = keys[indexPath.section]
       
       if let tutorialsForSection = alphabetizedTutorials[key] {
-        // Fetch Fruit
+        // Fetch
         let currentTutorial = tutorialsForSection[indexPath.row]
         
         // Configure Cell
@@ -274,30 +274,47 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    switch indexPath.section {
-    case 0:
-      self.performSegueWithIdentifier("show_tutorial", sender: indexPath.row)
-      
-    case 1:
-      if(indexPath.row < youtubeArray.count)
-      {
-        let height = self.navigationController!.navigationBar.frame.height
-        let youtubevc = UIViewController();
-        let videoPlayer = YouTubePlayerView(frame: self.view.frame)
-        videoPlayer.delegate = self
-        videoPlayer.loadVideoID(youtubeArray[indexPath.row].videoId)
-        //self.showViewController(videoPlayer, sender: nil);
-        youtubevc.navigationController?.navigationBarHidden = false
-        youtubevc.view.addSubview(videoPlayer);
-        self.navigationController?.pushViewController(youtubevc, animated: true)
-        //self.view.addSubview(videoPlayer)
+    if textSearch != "" {
+      switch indexPath.section {
+      case 0:
+        self.performSegueWithIdentifier("show_tutorial", sender: indexPath.row)
+        
+      case 1:
+        if(indexPath.row < youtubeArray.count)
+        {
+          let height = self.navigationController!.navigationBar.frame.height
+          let youtubevc = UIViewController();
+          let videoPlayer = YouTubePlayerView(frame: self.view.frame)
+          videoPlayer.delegate = self
+          videoPlayer.loadVideoID(youtubeArray[indexPath.row].videoId)
+          //self.showViewController(videoPlayer, sender: nil);
+          youtubevc.navigationController?.navigationBarHidden = false
+          youtubevc.view.addSubview(videoPlayer);
+          self.navigationController?.pushViewController(youtubevc, animated: true)
+          //self.view.addSubview(videoPlayer)
+        }
+        break;
+        
+      default:
+        return
       }
-      break;
+      tableView.deselectRowAtIndexPath(indexPath, animated: false);
+    } else {
+      // Fetch and Sort Keys
+      let keys = alphabetizedTutorials.keys.sort({ (a, b) -> Bool in
+        a.lowercaseString < b.lowercaseString
+      })
       
-    default:
-      return
+      // Fetch for Section
+      let key = keys[indexPath.section]
+      
+      if let tutorialsForSection = alphabetizedTutorials[key] {
+        // Fetch
+        let currentTutorial = tutorialsForSection[indexPath.row]
+      
+        self.performSegueWithIdentifier("show_tutorial", sender: currentTutorial)
+      }
     }
-    tableView.deselectRowAtIndexPath(indexPath, animated: false);
   }
   
   func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -305,13 +322,17 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     cell.imageView?.image = nil
   }
   
-  func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]?{
-    // Fetch and Sort Keys
-    let keys = alphabetizedTutorials.keys.sort({ (a, b) -> Bool in
-      a.lowercaseString < b.lowercaseString
-    })
-    
-    return keys
+  func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+    if textSearch != "" {
+      return nil
+    } else {
+      // Fetch and Sort Keys
+      let keys = alphabetizedTutorials.keys.sort({ (a, b) -> Bool in
+        a.lowercaseString < b.lowercaseString
+      })
+      
+      return keys
+    }
   }
   
   // MARK: - Helper
@@ -446,8 +467,15 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "show_tutorial" {
       let csvc = (segue.destinationViewController as! ViewFinishedTutorialViewController)
-      csvc.tutorialID = self.tutorialArray[(sender as! Int)].id
-      csvc.myTutorial = self.tutorialArray[(sender as! Int)]
+      if textSearch != "" {
+        csvc.tutorialID = self.tutorialArray[(sender as! Int)].id
+        csvc.myTutorial = self.tutorialArray[(sender as! Int)]
+      } else {
+        if let currentTutorial = sender as? TutorialItem {
+          csvc.tutorialID = currentTutorial.id
+          csvc.myTutorial = currentTutorial
+        }
+      }
     }
   }
   
