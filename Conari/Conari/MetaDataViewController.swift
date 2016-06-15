@@ -311,11 +311,13 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   func imagePickerController(picker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String : AnyObject])
   {
-    let pickedVideoURL = info[UIImagePickerControllerMediaURL] as! NSURL
+    self.pickedVideoURL = info[UIImagePickerControllerMediaURL] as? NSURL
     
     dismissViewControllerAnimated(true, completion: nil)
     
-    let player = AVPlayer(URL: pickedVideoURL)
+    VideoThumbnail.image = nil
+    
+    let player = AVPlayer(URL: self.pickedVideoURL!)
 
     let playerController = AVPlayerViewController()
     playerController.player = player
