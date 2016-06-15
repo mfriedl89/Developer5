@@ -58,11 +58,7 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   @IBOutlet weak var DifficultyStepper_: UIStepper!
   @IBOutlet weak var DurationTextField_: UITextField!
   
-  
-  
-  
-  
-  
+
   @IBOutlet weak var SelectVideoButton: UIButton!
   @IBOutlet weak var VideoThumbnail: UIImageView!
   @IBOutlet weak var NextButton: UIBarButtonItem!
