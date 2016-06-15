@@ -39,6 +39,7 @@
 		3AE79A921CF5D9100083A630 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E044C1CC779B60010C7EA /* KeyboardManager.swift */; };
 		3AE79A931CF5D9180083A630 /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
 		3AE79A941CF5D9180083A630 /* TutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB5D711CD9F95E002D7C91 /* TutorialTableViewCell.swift */; };
+		3AF2DFBA1D085B1300DE2C72 /* AboutUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2DFB91D085B1300DE2C72 /* AboutUnitTests.swift */; };
 		721B266BA0722231E3031E89 /* Pods_Conari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB1A2D53EAE75A37FDCA2F3 /* Pods_Conari.framework */; };
 		AE0B908A1CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B90891CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift */; };
 		AE0B908B1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADC68B41CECB0630035539B /* YouTubeManager.swift */; };
@@ -69,6 +70,7 @@
 		AE5416D81CDA14C8000EE06C /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */; };
 		AE5416D91CDA14C8000EE06C /* CategorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */; };
 		AE5416DE1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */; };
+		AE6DD69C1D0859B200B08232 /* CreateTutorialUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DD69B1D0859B200B08232 /* CreateTutorialUnitTests.swift */; };
 		AE9217211CC7704E00A3391C /* NewTutorialDescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */; };
 		AEAFD2081CD0EE1A00759429 /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFD2071CD0EE1A00759429 /* MainTutorialViewController.swift */; };
 		AEB03E041CC75B5C00FFEA38 /* MetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03E021CC75B5C00FFEA38 /* MetaDataViewController.swift */; };
@@ -79,6 +81,10 @@
 		AEE9A4FE1D08360C00E4E3F7 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D532D1CFEC7C400720019 /* UIViewController+Alert.swift */; };
 		AEE9A4FF1D08361200E4E3F7 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A794ABE1CFED468003E4FB8 /* Reach.swift */; };
 		AEE9A5001D08361300E4E3F7 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A794ABE1CFED468003E4FB8 /* Reach.swift */; };
+		C0E348A11D112EA3002BD7BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2C1CFEFDBD002F5D3A /* Constants.swift */; };
+		C0E348A21D112EA3002BD7BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2C1CFEFDBD002F5D3A /* Constants.swift */; };
+		C0E348A31D112F69002BD7BA /* AppDelegate+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2F1CFEFE12002F5D3A /* AppDelegate+Setup.swift */; };
+		C0E348A41D112F69002BD7BA /* AppDelegate+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ACA2F1CFEFE12002F5D3A /* AppDelegate+Setup.swift */; };
 		C4EF8381F892173DC53394BC /* Pods_ConariUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365C22D7441321CD72F4A174 /* Pods_ConariUnitTests.framework */; };
 		D50B0622819E37209DCB289F /* Pods_ConariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B453908F5D025818C6740170 /* Pods_ConariUITests.framework */; };
 		DA273FB81CBE5CB40049E7C8 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA273FB71CBE5CB40049E7C8 /* NewUserViewController.swift */; };
@@ -155,6 +161,7 @@
 		3A794ABE1CFED468003E4FB8 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		3ABEABA61CBE95E60058BC29 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		3ADC68B41CECB0630035539B /* YouTubeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeManager.swift; sourceTree = "<group>"; };
+		3AF2DFB91D085B1300DE2C72 /* AboutUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUnitTests.swift; sourceTree = "<group>"; };
 		53ECBBADE63CEEA4A7F36BD6 /* Pods-Conari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conari.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conari/Pods-Conari.debug.xcconfig"; sourceTree = "<group>"; };
 		7A388D1C7857AE080A3158E4 /* Pods-ConariUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConariUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConariUITests/Pods-ConariUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8AB1A2D53EAE75A37FDCA2F3 /* Pods_Conari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Conari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +171,7 @@
 		AE5416D61CDA14C8000EE06C /* CategorySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchViewController.swift; sourceTree = "<group>"; };
 		AE5416D71CDA14C8000EE06C /* CategorySearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchTableViewCell.swift; sourceTree = "<group>"; };
 		AE5416DD1CDA3043000EE06C /* ViewFinishedTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFinishedTutorialViewController.swift; sourceTree = "<group>"; };
+		AE6DD69B1D0859B200B08232 /* CreateTutorialUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTutorialUnitTests.swift; sourceTree = "<group>"; };
 		AE9217201CC7704E00A3391C /* NewTutorialDescriptonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTutorialDescriptonViewController.swift; sourceTree = "<group>"; };
 		AEA97A8B1CE316C800781C88 /* Mr Tutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Tutor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA97A971CE3176F00781C88 /* ConariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -424,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				E070D2D11CEC9BB800665154 /* Info.plist */,
+				AE6DD69B1D0859B200B08232 /* CreateTutorialUnitTests.swift */,
 				E070D2D71CEC9BC600665154 /* DatabaseManagerUnitTests.swift */,
 				E0307A5B1CECA616007DB00F /* LoginUnitTests.swift */,
 				E0307A5C1CECA616007DB00F /* NewUserUnitTests.swift */,
@@ -431,6 +440,7 @@
 				E070D2D81CEC9BC600665154 /* ViewFinishedTutorial.swift */,
 				AE0B90891CF586C700A1CCF3 /* YoutubeManagerUnitTests.swift */,
 				E0A9EBDA1CF5C01700069B86 /* EditTutorialUnitTests.swift */,
+				3AF2DFB91D085B1300DE2C72 /* AboutUnitTests.swift */,
 			);
 			path = ConariUnitTests;
 			sourceTree = "<group>";
@@ -747,6 +757,7 @@
 				3AE79A8B1CF5D9090083A630 /* NewTutorialDescriptonViewController.swift in Sources */,
 				3AE79A851CF5D9090083A630 /* ChangePasswordViewController.swift in Sources */,
 				3AE79A8F1CF5D9090083A630 /* ViewFinishedTutorialViewController.swift in Sources */,
+				C0E348A31D112F69002BD7BA /* AppDelegate+Setup.swift in Sources */,
 				3AE79A801CF5D8EE0083A630 /* DatabaseManager.swift in Sources */,
 				3AE79A881CF5D9090083A630 /* MainTutorialViewController.swift in Sources */,
 				AEE9A4FC1D0835EF00E4E3F7 /* UIViewController+ErrorHandling.swift in Sources */,
@@ -771,6 +782,7 @@
 				AEE9A5001D08361300E4E3F7 /* Reach.swift in Sources */,
 				3AE79A901CF5D9090083A630 /* WelcomeScreenViewController.swift in Sources */,
 				AE0B908C1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */,
+				C0E348A11D112EA3002BD7BA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,6 +792,7 @@
 			files = (
 				AE0B90911CF58A9C00A1CCF3 /* CategorySearchViewController.swift in Sources */,
 				AE0B90921CF58A9E00A1CCF3 /* CategorySearchTableViewCell.swift in Sources */,
+				3AF2DFBA1D085B1300DE2C72 /* AboutUnitTests.swift in Sources */,
 				AE0B90931CF58AA100A1CCF3 /* DatabaseManager.swift in Sources */,
 				E070D2D91CEC9BC600665154 /* DatabaseManagerUnitTests.swift in Sources */,
 				AE0B90A21CF58AD500A1CCF3 /* TutorialTableViewCell.swift in Sources */,
@@ -788,9 +801,11 @@
 				AE0B90991CF58AB600A1CCF3 /* ChangePasswordViewController.swift in Sources */,
 				AE0B90A11CF58AD200A1CCF3 /* AdminTutorialViewController.swift in Sources */,
 				AE0B90961CF58AA900A1CCF3 /* MainTutorialViewController.swift in Sources */,
+				C0E348A41D112F69002BD7BA /* AppDelegate+Setup.swift in Sources */,
 				3AE79A7E1CF5D6940083A630 /* ViewAdditionalInformationTableViewController.swift in Sources */,
 				AE0B909D1CF58AC600A1CCF3 /* NewUserViewController.swift in Sources */,
 				AE0B908B1CF586F300A1CCF3 /* YouTubeManager.swift in Sources */,
+				AE6DD69C1D0859B200B08232 /* CreateTutorialUnitTests.swift in Sources */,
 				E070D2DA1CEC9BC600665154 /* ViewFinishedTutorial.swift in Sources */,
 				AE0B909F1CF58ACC00A1CCF3 /* LoginViewController.swift in Sources */,
 				AE0B909B1CF58ABD00A1CCF3 /* MenuViewController.swift in Sources */,
@@ -811,6 +826,7 @@
 				E0307A5F1CECA616007DB00F /* LoginUnitTests.swift in Sources */,
 				AEE9A4FF1D08361200E4E3F7 /* Reach.swift in Sources */,
 				AE0B908F1CF58A9500A1CCF3 /* ViewFinishedTutorialViewController.swift in Sources */,
+				C0E348A21D112EA3002BD7BA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
