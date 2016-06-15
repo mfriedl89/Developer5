@@ -22,15 +22,13 @@ struct TutorialMetaData {
 class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
   // MARK: - Members
-  
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
-  
   var categoryPickerView : UIPickerView!
   var timePickerView : UIPickerView!
   let videoPicker = UIImagePickerController()
-  
   var pickedVideoURL: NSURL?
-  
+  var times: [String] = []
+  var TextOrVideo: Int?
   var categories = ["Arts and Entertainment",
                     "Cars & Other Vehicles",
                     "Computers and Electronics",
@@ -51,32 +49,36 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                     "Work World",
                     "Youth"]
   
-  var times: [String] = []
-  
-  var TextOrVideo: Int?
   
   // MARK: - Outlets
-  
   @IBOutlet weak var titleTextField_: UITextField!
   @IBOutlet weak var difficultyLabel_: UILabel!
   @IBOutlet weak var categoryTextField_: UITextField!
   @IBOutlet weak var DifficultyStepper_: UIStepper!
   @IBOutlet weak var DurationTextField_: UITextField!
   
+  
+  
+  
+  
+  
   @IBOutlet weak var SelectVideoButton: UIButton!
   @IBOutlet weak var VideoThumbnail: UIImageView!
   @IBOutlet weak var NextButton: UIBarButtonItem!
   @IBOutlet weak var TutorialTitle: UINavigationItem!
   
-  override func viewDidLoad() {
+  override func viewDidLoad()
+  {
     super.viewDidLoad()
     self.view.backgroundColor = Constants.viewBackgroundColor
         
-    if TextOrVideo == 1 {
+    if TextOrVideo == 1
+    {
       TutorialTitle.title = "Video Tutorial"
       NextButton.title = "Upload"
     }
-    else{
+    else
+    {
       TutorialTitle.title = "Text Tutorial"
       SelectVideoButton.hidden = true
       VideoThumbnail.hidden = true
@@ -95,8 +97,10 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     categoryTextField_.text = categories[0]
     categoryTextField_.selectedTextRange = nil;
     
-    for hour in 0...10 {
-      for minute in 0...11 {
+    for hour in 0...10
+    {
+      for minute in 0...11
+      {
         times.append(String(format: "%02d:%02d",hour,minute*5))
       }
     }
@@ -112,52 +116,62 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     videoPicker.delegate = self
   }
   
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(animated: Bool)
+  {
     self.navigationController?.navigationBarHidden = false
-    
     handleNetworkError()
   }
   
-  override func didReceiveMemoryWarning() {
+  override func didReceiveMemoryWarning()
+  {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
   
-  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
+  {
     self.view.endEditing(true)
   }
   
-  func textFieldShouldReturn(textField: UITextField) -> Bool {
+  func textFieldShouldReturn(textField: UITextField) -> Bool
+  {
     
-    if (textField == titleTextField_) {
+    if (textField == titleTextField_)
+    {
       titleTextField_.resignFirstResponder()
     }
     
     return true
   }
   
-  @IBAction func ClickNext(sender: AnyObject) {
+  @IBAction func ClickNext(sender: AnyObject)
+  {
     if (TextOrVideo == 0)
     {
       performSegueWithIdentifier("write_tutorial", sender: nil)
     }
-    else {
-      if pickedVideoURL != nil {
+    else
+    {
+      if pickedVideoURL != nil
+      {
         postVideoToYouTube()
       }
     }
   }
   
-  @IBAction func ClickSelectVideoButton(sender: UIButton) {
+  @IBAction func ClickSelectVideoButton(sender: UIButton)
+  {
     videoPicker.allowsEditing = false
     videoPicker.sourceType = .PhotoLibrary
     videoPicker.mediaTypes = [kUTTypeMovie as String]
     presentViewController(videoPicker, animated: true, completion: nil)
   }
   
-  @IBAction func DifficultyValueChanged_(sender: AnyObject) {
+  @IBAction func DifficultyValueChanged_(sender: AnyObject)
+  {
     
-    switch DifficultyStepper_.value {
+    switch DifficultyStepper_.value
+    {
     case 5:
       difficultyLabel_.text = "very hard";
     case 4:
@@ -174,35 +188,46 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     updateCurrentStruct();
   }
   
-  func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+  func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
+  {
     return 1
   }
   
-  func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    if pickerView == categoryPickerView{
+  func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+  {
+    if pickerView == categoryPickerView
+    {
       return categories.count
-    } else {
+    }
+    else
+    {
       return times.count
     }
   }
   
-  func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    if pickerView == categoryPickerView{
+  func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+  {
+    if pickerView == categoryPickerView
+    {
       return categories[row]
-    } else {
+    } else
+    {
       return times[row]
     }
   }
   
-  func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    if pickerView == categoryPickerView{
+  func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+  {
+    if pickerView == categoryPickerView
+    {
       categoryTextField_.text = categories[row]
       current.category = row;
       categoryTextField_.selectedTextRange = nil;
-    } else {
+    }
+    else
+    {
       current.duration = row*5
       DurationTextField_.text = times[row] + " hh:mm"
-      
       DurationTextField_.selectedTextRange = nil;
     }
     
@@ -210,14 +235,17 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     updateCurrentStruct()
   }
   
-  func updateCurrentStruct() {
+  func updateCurrentStruct()
+  {
     current.Title = titleTextField_.text!
     current.difficulty = Int(DifficultyStepper_.value)
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+  {
     updateCurrentStruct();
-    if current.Title.isEmpty {
+    if current.Title.isEmpty
+    {
       let alert = UIAlertController(title: "Error", message: "Please insert a Title", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
       
@@ -266,16 +294,20 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
   }
   
   
-  func postVideoToYouTube(){
+  func postVideoToYouTube()
+  {
     
     let urlYoutube = "http://uploads.gdata.youtube.com/feeds/api/users/default/uploads"
     
     print("VideoUrl:\(pickedVideoURL)")
     var videodata: NSData?
     
-    do {
+    do
+    {
       videodata = try NSData(contentsOfFile: (pickedVideoURL!.relativePath!), options: .DataReadingMappedAlways)
-    } catch {
+    }
+    catch
+    {
       print(error)
     }
     
@@ -285,7 +317,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     YouTubeManager.sharedManager.postVideoToYouTube(urlYoutube, videoData: videodata!, title: titleTextField_.text!, callback: {(identifier_final, success) in
       
-      if(success == false) {
+      if(success == false)
+      {
         //self.showErrorMessage("An error occurred while trying to upload a video.")
         print("An error occurred while trying to upload a video.")
         return
@@ -294,7 +327,8 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
       self.updateCurrentStruct();
       DatabaseManager.sharedManager.createTutorial(self.current, content:identifier_final) { success, message in
         print("upload-success: \(success), login-message:\(message)")
-        if success == true {
+        if success == true
+        {
           dispatch_async(dispatch_get_main_queue(),{
             
             for viewcontoller in (self.navigationController?.viewControllers)! {
@@ -306,7 +340,9 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             }
             
           });
-        } else {
+        }
+        else
+        {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
@@ -321,8 +357,6 @@ class MetaDataViewController: UIViewController, UITextFieldDelegate, UIPickerVie
           });
         }
       }
-      
-      
     })
     
   }
