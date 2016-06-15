@@ -1,12 +1,14 @@
 //
 //  YouTubeManager.swift
-//  Conari
+//  Tutorialcloud
 //
-//  Created by Philipp Preiner on 11.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 11.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
+
 import Foundation
+import Alamofire
 
 struct YoutubeVideo {
   var title: String
@@ -25,7 +27,7 @@ class YouTubeManager {
   var apiKey = "AIzaSyBkPodgj3cSzd8XYnzEnUBIsonzRx7QaZA"
   var channelID = "UCTwXFSPFmBofWhl71T85WNQ"
   var searchApiUrl = "https://www.googleapis.com/youtube/v3/search"
-  var identifier = "ConariYouTubeTutorial - apiKey: " + "AIzaSyBkPodgj3cSzd8XYnzEnUBIsonzRx7QaZA" + ", videoID: "
+  var identifier = "videoID: "
   
   
   func parseIdentifier(input: String) -> String? {
@@ -40,8 +42,8 @@ class YouTubeManager {
   }
   
   func searchVideoByTitle(title: String, completionHandler: (response: [YoutubeVideo], success:Bool, messagge:String) -> Void) -> Void {
-    let e_title = title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
-    let urlString = searchApiUrl+"?part=snippet&q=\(e_title)&type=video&key=\(apiKey)"
+    let eTitle = title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+    let urlString = searchApiUrl+"?part=snippet&q=\(eTitle)&type=video&key=\(apiKey)"
     //urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters()!
     
     // Create a NSURL object based on the above string.
@@ -91,8 +93,52 @@ class YouTubeManager {
       
     })
     task.resume()
+  }
+  
+  func postVideoToYouTube(uploadUrl: String, videoData: NSData, title: String, callback: (String, Bool) -> ()){
     
-    
+    DatabaseManager.sharedManager.getAccessToken({accessToken in
+      
+      if(accessToken == "Error") {
+        return
+      }
+      
+      let headers = ["Authorization": "Bearer \(accessToken!)"]
+      upload(
+        .POST,
+        "https://www.googleapis.com/upload/youtube/v3/videos?part=snippet",
+        headers: headers,
+        multipartFormData: { multipartFormData in
+          multipartFormData.appendBodyPart(data:"{'snippet':{'title' : '\(title)', 'description': 'This video was uploaded using Mr Tutor.'}}".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name: "snippet", mimeType: "application/json")
+          multipartFormData.appendBodyPart(data: videoData, name: "video", fileName: "sample.mp4", mimeType: "application/octet-stream")
+        },
+        encodingCompletion: { encodingResult in
+          switch encodingResult {
+          case .Success(let upload, _, _):
+            upload.responseJSON { response in
+              
+              do {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments)
+                
+                let videoID = jsonData["id"] as! String
+                let identifierFinal = self.identifier + videoID
+                callback(identifierFinal, true)
+                
+              } catch {
+                print("error serializing JSON: \(error)")
+                callback("", false)
+              }
+              
+              print("Success")
+            }
+          case .Failure(_):
+            print("Failure")
+            callback("", false)
+          }
+      })
+      
+      
+    })
   }
   
 }

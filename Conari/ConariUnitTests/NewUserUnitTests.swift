@@ -1,13 +1,12 @@
 //
 //  NewUserUnitTests.swift
-//  NewUserUnitTests
+//  TutorialCloud
 //
-//  Created by Markus Friedl on 13.04.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 13.04.14.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import XCTest
-@testable import Conari
 
 class NewUserUnitTests: XCTestCase {
   var vc: NewUserViewController!

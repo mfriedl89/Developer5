@@ -1,32 +1,35 @@
 //
 //  TutorialEditOptionsController.swift
-//  Conari
+//  Tutorialcloud
 //
-//  Created by Markus Schofnegger on 11/05/16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 11.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
 
 class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate {
-  @IBOutlet weak var categoryTextField_: UITextField!
-  @IBOutlet weak var DurationTextField_: UITextField!
-  @IBOutlet weak var titleTextField_: UITextField!
-  @IBOutlet weak var difficultyLabel_: UILabel!
-  @IBOutlet weak var DifficultyStepper_: UIStepper!
   
+  // MARK: - Members
   var categoryPickerView : UIPickerView!
   var timePickerView : UIPickerView!
-  
   var oldTitle : String?
   var oldCategory : String?
-  
   var editTutorial : Tutorial?
   var editTutorialText: String?
   var editTutorialId: String?
-  
   var current:TutorialMetaData = TutorialMetaData(id: 0, OldTitle: "", Title: "",category: 0,duration: 0,difficulty: 0)
   
+  
+  // MARK: - Outlets
+  @IBOutlet weak var categoryTextField: UITextField!
+  @IBOutlet weak var durationTextField: UITextField!
+  @IBOutlet weak var titleTextField: UITextField!
+  @IBOutlet weak var difficultyLabel: UILabel!
+  @IBOutlet weak var difficultyStepper: UIStepper!
+  
+
+  // MARK: - category, difficulty and time definitions
   var categories = ["Arts and Entertainment",
                     "Cars & Other Vehicles",
                     "Computers and Electronics",
@@ -55,116 +58,110 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
   
   var times: [String] = []
   
-  override func viewDidLoad() {
+  
+  
+  
+  // MARK: - Methods
+  override func viewDidLoad()
+  {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
-    // Do any additional setup after loading the view.
-    DifficultyStepper_.maximumValue = 5
-    DifficultyStepper_.minimumValue = 1
-    DifficultyStepper_.value = Double(self.editTutorial!.difficulty)!
-    difficultyLabel_.text = self.difficultLabels[Int(self.editTutorial!.difficulty)! - 1];
+    difficultyStepper.maximumValue = 5
+    difficultyStepper.minimumValue = 1
+    difficultyStepper.value = Double(self.editTutorial!.difficulty)!
+    difficultyLabel.text = self.difficultLabels[Int(self.editTutorial!.difficulty)! - 1];
     
     current.duration = 5
     
     categoryPickerView = UIPickerView()
     categoryPickerView.delegate = self
-    categoryTextField_.inputView = categoryPickerView
-    categoryTextField_.text = categories[0]
-    categoryTextField_.selectedTextRange = nil
+    categoryTextField.inputView = categoryPickerView
+    categoryTextField.text = categories[0]
+    categoryTextField.selectedTextRange = nil
     
-    for hour in 0...10 {
-      for minute in 0...11 {
+    for hour in 0...10
+    {
+      for minute in 0...11
+      {
         times.append(String(format: "%02d:%02d",hour,minute*5))
       }
     }
     
     timePickerView = UIPickerView()
     timePickerView.delegate = self
-    DurationTextField_.inputView = timePickerView
-    DurationTextField_.text = times[0] + " hh:mm"
-    DurationTextField_.selectedTextRange = nil
+    durationTextField.inputView = timePickerView
+    durationTextField.text = times[0] + " hh:mm"
+    durationTextField.selectedTextRange = nil
     
-    titleTextField_.delegate = self
+    titleTextField.delegate = self
     
-    // Set OldTitle of struct
     self.current.OldTitle = self.oldTitle!
-    
-    // Set title field
-    self.titleTextField_.text = self.editTutorial!.title
-    
-    // Set category field
-    self.categoryTextField_.text = self.oldCategory
-    
+    self.titleTextField.text = self.editTutorial!.title
+    self.categoryTextField.text = self.oldCategory
     let minute = Int(self.editTutorial!.duration)! % 60
     let hour = Int(self.editTutorial!.duration)! / 60
-    self.DurationTextField_.text = String(format: "%02d:%02d",hour,minute) + " hh:mm"
+    self.durationTextField.text = String(format: "%02d:%02d",hour,minute) + " hh:mm"
   }
   
-  override func viewWillAppear(animated: Bool) {
-    
+  
+  
+  
+  override func viewWillAppear(animated: Bool)
+  {
+    handleNetworkError()
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
   
-  func textFieldShouldReturn(textField: UITextField) -> Bool {
-    
-    if (textField == titleTextField_) {
-      titleTextField_.resignFirstResponder()
+  
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool
+  {
+    if (textField == titleTextField)
+    {
+      titleTextField.resignFirstResponder()
     }
     return true
   }
   
-  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+  
+  
+  
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
+  {
     self.view.endEditing(true)
   }
   
-  // Maybe needed
-  func showErrorMessage(message: String) {
-    dispatch_async(dispatch_get_main_queue(), {
-      //create alert
-      let errorAlert = UIAlertController(title: "Error",
-        message: message,
-        preferredStyle: UIAlertControllerStyle.Alert)
-      
-      //make button
-      let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-      
-      //add buttons
-      errorAlert.addAction(okAction)
-      
-      // Support display in iPad
-      errorAlert.popoverPresentationController?.sourceView = self.view
-      errorAlert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
-      //display
-      self.presentViewController(errorAlert, animated: true, completion: nil)
-    })
+  
+  
+  
+  func updateCurrentStruct()
+  {
+    current.Title = titleTextField.text!
+    current.difficulty = Int(difficultyStepper.value)
   }
   
-  func updateCurrentStruct() {
-    current.Title = titleTextField_.text!
-    current.difficulty = Int(DifficultyStepper_.value)
-  }
   
-  @IBAction func DifficultyValueChanged_(sender: AnyObject) {
-    switch DifficultyStepper_.value {
+  
+  
+  @IBAction func DifficultyValueChanged_(sender: AnyObject)
+  {
+    switch difficultyStepper.value
+    {
     case 5:
-      difficultyLabel_.text = "very hard";
+      difficultyLabel.text = "very hard";
       
     case 4:
-      difficultyLabel_.text = "hard";
+      difficultyLabel.text = "hard";
       
     case 3:
-      difficultyLabel_.text = "medium";
+      difficultyLabel.text = "medium";
       
     case 2:
-      difficultyLabel_.text = "easy";
+      difficultyLabel.text = "easy";
       
     case 1:
-      difficultyLabel_.text = "very easy";
+      difficultyLabel.text = "very easy";
       
     default:
       return;
@@ -173,18 +170,31 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     updateCurrentStruct();
   }
   
-  func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+  
+  
+  
+  func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
+  {
     return 1
   }
   
-  func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    if pickerView == categoryPickerView{
+  
+  
+  
+  func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+  {
+    if pickerView == categoryPickerView
+    {
       return categories.count
-    } else {
+    }
+    else
+    {
       return times.count
     }
-    
   }
+  
+  
+  
   
   func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     if pickerView == categoryPickerView{
@@ -195,26 +205,38 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
     
   }
   
-  func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    if pickerView == categoryPickerView{
-      categoryTextField_.text = categories[row]
+  
+  
+  
+  func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+  {
+    if pickerView == categoryPickerView
+    {
+      categoryTextField.text = categories[row]
       current.category = row;
-      categoryTextField_.selectedTextRange = nil;
+      categoryTextField.selectedTextRange = nil;
       
-    } else {
+    }
+    else
+    {
       current.duration = row * 5
-      DurationTextField_.text = times[row] + " hh:mm"
-      
-      DurationTextField_.selectedTextRange = nil;
+      durationTextField.text = times[row] + " hh:mm"
+      durationTextField.selectedTextRange = nil;
     }
     self.view.endEditing(true)
     updateCurrentStruct();
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "edit_tutorial" {
+  
+  
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+  {
+    if segue.identifier == "edit_tutorial"
+    {
       updateCurrentStruct();
-      if current.Title.isEmpty {
+      if current.Title.isEmpty
+      {
         self.showErrorMessage("Please insert a Title")
         return
       }
@@ -222,7 +244,7 @@ class TutorialEditOptionsController: UIViewController, UITextFieldDelegate, UIPi
       let nextScene =  segue.destinationViewController as! TutorialEditContentController
       nextScene.current = current
       nextScene.currentText = (editTutorial?.text)!.stringByReplacingOccurrencesOfString("\\\"", withString: "\"")
-      nextScene.currentId = self.editTutorialId
+      nextScene.currentID = self.editTutorialId
       
       return
     }

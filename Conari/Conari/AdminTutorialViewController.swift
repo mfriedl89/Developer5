@@ -1,14 +1,16 @@
 //
 //  AdminTutorialViewController.swift
-//  Conari
+//  Tutorialcloud
 //
-//  Created by Markus Friedl on 04.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 04.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
 
 class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
+  // MARK: - Members
   
   var categories = ["All",
                     "Arts and Entertainment",
@@ -31,17 +33,18 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
                     "Work World",
                     "Youth"]
   
+  var tutorialIndexPath: NSIndexPath? = nil
+  var tutorialArray = [TutorialItem]()
+  var editTutorial : Tutorial?
+  
+  // MARK: - Outlets
+  
   @IBOutlet weak var tutorialsTableView: UITableView!
   @IBOutlet weak var laodIndicator: UIActivityIndicatorView!
   
-  var tutorialIndexPath: NSIndexPath? = nil
-  var tutorial_array = [Tutorial_item]()
-  var editTutorial : Tutorial?
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = Constants.viewBackgroundColor
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -49,13 +52,15 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     
     tutorialsTableView.reloadData()
     
+    handleNetworkError()
+    
     DatabaseManager.sharedManager.findTutorialByUsername(DatabaseManager.sharedManager.username) { (response) in
       
       if(!response.isEmpty) {
-        self.tutorial_array = response
+        self.tutorialArray = response
         self.tutorialsTableView.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
       } else {
-        self.tutorial_array.removeAll()
+        self.tutorialArray.removeAll()
         self.tutorialsTableView.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
       }
     }
@@ -82,21 +87,21 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return tutorial_array.count
+    return tutorialArray.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cellIdentifier = "TutorialTableViewCell"
     let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TutorialTableViewCell
     
-    cell.tutorialTitleLabel.text = tutorial_array[indexPath.row].title
-    cell.tutorialDetailTextLabel.text = categories[tutorial_array[indexPath.row].category]
+    cell.tutorialTitleLabel.text = tutorialArray[indexPath.row].title
+    cell.tutorialDetailTextLabel.text = categories[tutorialArray[indexPath.row].category]
     
     return cell
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    self.requestTutorial(self.tutorial_array[indexPath.row].id)
+    self.requestTutorial(self.tutorialArray[indexPath.row].id)
   }
   
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -108,7 +113,7 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     }
   }
   
-  func requestTutorial(tutorialID: Int){
+  func requestTutorial(tutorialID: Int) {
     DatabaseManager.sharedManager.requestTutorial(tutorialID) { tutorial, message in
       
       dispatch_async(dispatch_get_main_queue(), {
@@ -147,17 +152,17 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
     
     if let indexPath = tutorialIndexPath {
       tutorialsTableView.beginUpdates()
-      let tutId = tutorial_array[indexPath.row].id
-      print("want to delete tutorial with title " + tutorial_array[indexPath.row].title)
+      let tutId = tutorialArray[indexPath.row].id
+      print("want to delete tutorial with title " + tutorialArray[indexPath.row].title)
       
       DatabaseManager.sharedManager.deleteTutorial(tutId) { success, message in
         print("upload-success: \(success), login-message:\(message)")
         if success == true {
           print("success");
           dispatch_async(dispatch_get_main_queue(),{
-            self.tutorial_array.removeAtIndex(indexPath.row)
+            self.tutorialArray.removeAtIndex(indexPath.row)
             self.tutorialsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-          
+            
             self.laodIndicator.stopAnimating()
             self.laodIndicator.hidden = true
           });
@@ -165,11 +170,11 @@ class AdminTutorialViewController: UIViewController, UITableViewDelegate, UITabl
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
- 
+            
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });

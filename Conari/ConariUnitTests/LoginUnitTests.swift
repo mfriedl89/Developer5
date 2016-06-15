@@ -1,13 +1,12 @@
 //
 //  LoginUnitTests.swift
-//  LoginUnitTests
+//  TutorialCloud
 //
-//  Created by Markus Friedl on 20.04.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 20.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import XCTest
-@testable import Conari
 
 class LoginUnitTests: XCTestCase {
   

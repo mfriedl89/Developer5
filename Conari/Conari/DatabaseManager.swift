@@ -1,9 +1,9 @@
 //
 //  DatabaseManager.swift
-//  Conari
+//  Tutorialcloud
 //
-//  Created by Philipp Preiner on 13.04.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 13.04.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import Foundation
@@ -23,7 +23,7 @@ struct Tutorial {
   var id: String
 }
 
-class Tutorial_item {
+class TutorialItem {
   
   var id          : Int
   var title       : String
@@ -32,13 +32,13 @@ class Tutorial_item {
   var duration    : String
   var author      : String
   
-  init(tut_id: Int, tut_title: String, tut_category : Int, tut_difficulty : String, tut_duration : String, tut_author : String){
-    self.id     = tut_id
-    self.title  = tut_title
-    self.category   = tut_category
-    self.difficulty = tut_difficulty
-    self.duration   = tut_duration
-    self.author     = tut_author
+  init(tutID: Int, tutTitle: String, tutCategory : Int, tutDifficulty : String, tutDuration : String, tutAuthor : String){
+    self.id     = tutID
+    self.title  = tutTitle
+    self.category   = tutCategory
+    self.difficulty = tutDifficulty
+    self.duration   = tutDuration
+    self.author     = tutAuthor
   }
   
 }
@@ -74,9 +74,11 @@ class DatabaseManager {
   var username: String = ""
   var password: String = ""
   
+  var baseUrl = "http://wullschi.com/"
+  
   func login(username: String, password: String, callback: (Bool, String?) -> ()) {
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/Login.php")!)
+    let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"conari/Login.php")!)
     request.HTTPMethod = "POST"
     let postString = "username=" + username + "&password=" + password
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -127,14 +129,14 @@ class DatabaseManager {
   
   func createTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/CreateTutorial.php")!)
+    let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/CreateTutorial.php")!)
     request.HTTPMethod = "POST"
     var postString:String = ""
     postString += "username=" + username
     postString += "&password=" + password
     postString += "&title=" + metadata.Title.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
     postString += "&category=" + String(metadata.category+1)
-    postString += "&difficulty=" + String(metadata.difficulty+1)
+    postString += "&difficulty=" + String(metadata.difficulty)
     postString += "&duration=" + String(metadata.duration)
     let allowedCharacters = NSCharacterSet.URLQueryAllowedCharacterSet().mutableCopy() as! NSMutableCharacterSet
     allowedCharacters.removeCharactersInString("+/=")
@@ -176,9 +178,9 @@ class DatabaseManager {
     task.resume()
   }
   
-  func EditTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
+  func editTutorial(metadata: TutorialMetaData, content: String, callback: (Bool, String?) -> ()) {
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/EditTutorial.php")!)
+    let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/EditTutorial.php")!)
     request.HTTPMethod = "POST"
     var postString:String = ""
     postString += "username=" + username
@@ -234,7 +236,7 @@ class DatabaseManager {
   
   func deleteTutorial(id: Int, callback: (Bool, String?) -> ()) {
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/DeleteTutorial")!)
+    let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/DeleteTutorial")!)
     request.HTTPMethod = "POST"
     var postString:String = ""
     postString += "username=" + username
@@ -281,7 +283,7 @@ class DatabaseManager {
   
   func createUser(username: String, password: String, firstName: String, surName: String, email: String, callback: (Bool, String?) -> ()) {
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/CreateUser.php")!)
+    let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/CreateUser.php")!)
     request.HTTPMethod = "POST"
     var postString:String = ""
     postString += "username=" + username
@@ -334,7 +336,7 @@ class DatabaseManager {
   
   func requestTutorial(tutorialID: Int, callback: (Tutorial?, String?) -> ()){
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/RequestTutorial.php")!)
+    let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/RequestTutorial.php")!)
     request.HTTPMethod = "POST"
     let postString = "tutorialID=" + String(tutorialID)
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -389,9 +391,9 @@ class DatabaseManager {
     task.resume()
   }
   
-  func findTutorialByUsername(username: String, completionHandler: (response: [Tutorial_item]) -> Void) -> Void {
+  func findTutorialByUsername(username: String, completionHandler: (response: [TutorialItem]) -> Void) -> Void {
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/FindTutorialByUsername.php")!)
+    let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/FindTutorialByUsername.php")!)
     
     request.HTTPMethod = "POST"
     
@@ -416,7 +418,7 @@ class DatabaseManager {
         print("response = \(response)")
       }
       
-      var tutorialArray = [Tutorial_item]()
+      var tutorialArray = [TutorialItem]()
       
       do {
         let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
@@ -429,7 +431,7 @@ class DatabaseManager {
           let id = anItem["id"] as! Int
           let author = anItem["author"] as! String
           
-          tutorialArray.append(Tutorial_item(tut_id: id, tut_title: title, tut_category: category, tut_difficulty: difficulty, tut_duration: duration, tut_author: author))
+          tutorialArray.append(TutorialItem(tutID: id, tutTitle: title, tutCategory: category, tutDifficulty: difficulty, tutDuration: duration, tutAuthor: author))
           // do something with personName and personID
         }
         
@@ -443,9 +445,9 @@ class DatabaseManager {
     task.resume()
   }
   
-  func findTutorialByCategory(tutorial_title: String, tutorial_category: Int , completionHandler: (response: [Tutorial_item]) -> Void) -> Void {
+  func findTutorialByCategory(tutorialTitle: String, tutorialCategory: Int , completionHandler: (response: [TutorialItem]) -> Void) -> Void {
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://www.wullschi.com/conari/FindTutorialInCategory.php")!)
+    let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/FindTutorialInCategory.php")!)
     
     request.HTTPMethod = "POST"
     
@@ -453,10 +455,10 @@ class DatabaseManager {
     allowedCharacters.removeCharactersInString("+/=")
     
     var postString:String = ""
-    if tutorial_title != "" {
-      postString += "title=" + tutorial_title.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)! as String!
+    if tutorialTitle != "" {
+      postString += "title=" + tutorialTitle.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)! as String!
     }
-    postString += "&category=" + String(tutorial_category)
+    postString += "&category=" + String(tutorialCategory)
     
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
@@ -472,7 +474,7 @@ class DatabaseManager {
         print("response = \(response)")
       }
       
-      var tutorialArray = [Tutorial_item]()
+      var tutorialArray = [TutorialItem]()
       
       do {
         let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
@@ -485,7 +487,7 @@ class DatabaseManager {
           let id = anItem["id"] as! Int
           let author = anItem["author"] as! String
           
-          tutorialArray.append(Tutorial_item(tut_id: id, tut_title: title, tut_category: category, tut_difficulty: difficulty, tut_duration: duration, tut_author: author))
+          tutorialArray.append(TutorialItem(tutID: id, tutTitle: title, tutCategory: category, tutDifficulty: difficulty, tutDuration: duration, tutAuthor: author))
           // do something with personName and personID
         }
         
@@ -501,13 +503,13 @@ class DatabaseManager {
   }
   
   
-  func changeUserPassword(username: String, new_password: String, old_password: String, callback: (Bool, String?) -> ()) {
+  func changeUserPassword(username: String, newPassword: String, oldPassword: String, callback: (Bool, String?) -> ()) {
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/ChangePassword.php")!)
+    let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/ChangePassword.php")!)
     request.HTTPMethod = "POST"
     let postString = "username=" + username +
-      "&new_password=" + new_password +
-      "&old_password=" + old_password
+      "&new_password=" + newPassword +
+      "&old_password=" + oldPassword
     
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
@@ -533,7 +535,7 @@ class DatabaseManager {
       do {
         let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
         if jsonData as! NSObject == 1 {
-          self.password = new_password
+          self.password = newPassword
           success = true
         }
         if let jsonErrorMessage = jsonData["error_message"] as? NSString {
@@ -554,13 +556,13 @@ class DatabaseManager {
     task.resume()
   }
   
-  func changeUserEmail(username: String, password: String, new_email: String, callback: (Bool, String?) -> ()) {
+  func changeUserEmail(username: String, password: String, newEmail: String, callback: (Bool, String?) -> ()) {
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/ChangeMail.php")!)
+    let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/ChangeMail.php")!)
     request.HTTPMethod = "POST"
     let postString = "username=" + username +
       "&password=" + password +
-      "&new_email=" + new_email
+      "&new_email=" + newEmail
     
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
@@ -606,14 +608,14 @@ class DatabaseManager {
     task.resume()
   }
   
-  func changeUserFirstAndSurname(username: String, password: String, new_firstname: String, new_surname: String, callback: (Bool, String?) -> ()) {
+  func changeUserFirstAndSurname(username: String, password: String, newFirstname: String, newSurname: String, callback: (Bool, String?) -> ()) {
     
-    let request = NSMutableURLRequest(URL: NSURL(string: "http://wullschi.com/conari/ChangeName.php")!)
+    let request = NSMutableURLRequest(URL: NSURL(string: baseUrl+"/conari/ChangeName.php")!)
     request.HTTPMethod = "POST"
     let postString = "username=" + username +
       "&password=" + password +
-      "&new_firstname=" + new_firstname +
-      "&new_surname=" + new_surname
+      "&new_firstname=" + newFirstname +
+      "&new_surname=" + newSurname
     
     request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
     
@@ -710,5 +712,55 @@ class DatabaseManager {
       
     })
     task.resume()
+  }
+  
+  func getAccessToken(callback: (String?) -> ()){
+    
+    /* Remark (Security)
+     Storing the data inside here is not secure, but still better than requesting it from a custom request.
+     Two possibilities:
+     1. Storing all data here
+     2. Storing all data on an external server and only requesting the access token from this server
+     Option 1 was chosen based on the assumption that decompiling the app should be more difficult than just
+     monitoring the request and getting the access token (which allows the attacker to do anything with our
+     YouTube account). The disadvantage is that an attacker gets everything after a successful decompilation
+     and not only the access token.
+    */
+    
+    let client_secret = "ElQiVGifufIdwIBF5T609ZVN"
+    let grant_type = "refresh_token"
+    let refresh_token = "1/1nfHW0Q1BZAmb7YBeD4XiLZJF2p-P9BFNa4WWPDKZUU"
+    let client_id = "234918812842-5jlqchqd5oc53tvq4s3l754ah1vhvglc.apps.googleusercontent.com"
+    
+    let request = NSMutableURLRequest(URL: NSURL(string: "https://accounts.google.com/o/oauth2/token")!)
+    request.HTTPMethod = "POST"
+    let postString = "client_secret=" + client_secret +
+        "&grant_type=" + grant_type +
+        "&refresh_token=" + refresh_token +
+        "&client_id=" + client_id
+    request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+    
+    let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
+        guard error == nil && data != nil else {
+            callback("Error")
+            return
+        }
+        if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
+            callback("Error")
+            return
+        }
+        do {
+            let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            let accessToken = jsonData["access_token"]! as? String
+            callback(accessToken)
+            
+        } catch {
+            callback("Error")
+        }
+        return
+        
+    })
+    task.resume()
+    
   }
 }

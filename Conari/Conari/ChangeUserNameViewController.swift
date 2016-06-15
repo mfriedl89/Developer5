@@ -1,29 +1,30 @@
 //
 //  ChangeUserNameViewController.swift
-//  Conari
+//  Tutorialcloud
 //
-//  Created by Paul Krassnig on 11.05.16.
-//  Copyright © 2016 Markus Friedl. All rights reserved.
+//  Created on 11.05.16.
+//  Copyright © 2016 Developer5. All rights reserved.
 //
 
 import UIKit
 
 class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   
+  // MARK: - Members
+  var username = ""
+  let password = DatabaseManager.sharedManager.getUserPassword()
+  var newUserFunc = NewUserViewController()
+  let falseFirstname = 1
+  let falseSurname = 2
+  
+  // MARK: - Outlets
   @IBOutlet weak var FirstNameTextField: UITextField!
   @IBOutlet weak var SurNameTextField: UITextField!
   @IBOutlet weak var DoneBtn: UIButton!
   
-  var username = ""
-  let password = DatabaseManager.sharedManager.getUserPassword()
-  
-  var newUserFunc = NewUserViewController()
-  
-  let falseFirstname = 1
-  let falseSurname = 2
-  
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = Constants.viewBackgroundColor
     
     FirstNameTextField.delegate = self
     SurNameTextField.delegate = self
@@ -51,6 +52,12 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
     };
     
     // Do any additional setup after loading the view.
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    handleNetworkError()
+    
+    self.navigationController?.navigationBarHidden = false
   }
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -91,7 +98,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case falseSurname:
@@ -101,11 +108,11 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
       // Support display in iPad
       alert.popoverPresentationController?.sourceView = self.view
       alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+      
       self.presentViewController(alert, animated: true, completion: nil)
       
     case 0:
-      DatabaseManager.sharedManager.changeUserFirstAndSurname(username, password: password, new_firstname: new_firstname, new_surname: new_surname) {success, message in
+      DatabaseManager.sharedManager.changeUserFirstAndSurname(username, password: password, newFirstname: new_firstname, newSurname: new_surname) {success, message in
         if success == true {
           dispatch_async(dispatch_get_main_queue(),{
             let alert = UIAlertController(title: "Changed Firstname/Surname to: \(new_firstname) \(new_surname)", message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -114,7 +121,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -127,7 +134,7 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
             // Support display in iPad
             alert.popoverPresentationController?.sourceView = self.view
             alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
+            
             self.presentViewController(alert, animated: true, completion: nil)
             
           });
@@ -144,25 +151,4 @@ class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
     test(FirstNameTextField.text!, new_surname: SurNameTextField.text!)
   }
   
-  func showErrorMessage(message: String) {
-    dispatch_async(dispatch_get_main_queue(), {
-      //create alert
-      let errorAlert = UIAlertController(title: "Error",
-        message: message,
-        preferredStyle: UIAlertControllerStyle.Alert)
-      
-      //make button
-      let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-      
-      //add buttons
-      errorAlert.addAction(okAction)
-      
-      // Support display in iPad
-      errorAlert.popoverPresentationController?.sourceView = self.view
-      errorAlert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-
-      //display
-      self.presentViewController(errorAlert, animated: true, completion: nil)
-    })
-  }
 }
