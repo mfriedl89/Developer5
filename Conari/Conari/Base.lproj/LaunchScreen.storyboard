@@ -36,7 +36,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launchscreen_Icon_White" translatesAutoresizingMaskIntoConstraints="NO" id="B1n-is-YUw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launchscreen_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="B1n-is-YUw">
                                 <rect key="frame" x="85" y="145" width="430" height="309"/>
                             </imageView>
                         </subviews>
@@ -66,6 +66,6 @@
     </scenes>
     <resources>
         <image name="LaunchscreenBackground" width="2000" height="2000"/>
-        <image name="Launchscreen_Icon_White" width="870" height="870"/>
+        <image name="Launchscreen_Icon" width="870" height="870"/>
     </resources>
 </document>
