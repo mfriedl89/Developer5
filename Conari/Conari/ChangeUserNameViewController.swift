@@ -11,17 +11,13 @@ import UIKit
 class ChangeUserNameViewController: UIViewController, UITextFieldDelegate {
   
   // MARK: - Members
-  
   var username = ""
   let password = DatabaseManager.sharedManager.getUserPassword()
-  
   var newUserFunc = NewUserViewController()
-  
   let falseFirstname = 1
   let falseSurname = 2
   
   // MARK: - Outlets
-  
   @IBOutlet weak var FirstNameTextField: UITextField!
   @IBOutlet weak var SurNameTextField: UITextField!
   @IBOutlet weak var DoneBtn: UIButton!

@@ -88,12 +88,7 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     reloadArrays()
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     switch indexPath.section {
     case 0:
       let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell", forIndexPath: indexPath) as! CategorySearchTableViewCell
@@ -162,7 +157,11 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   }
   
   func numberOfSectionsInTableView(tableView:UITableView) -> Int {
-    return 2
+    if textSearch != "" {
+      return 2
+    } else {
+      return 1
+    }
   }
   
   func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath)->CGFloat {
@@ -170,23 +169,27 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
   }
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    switch section {
-    case 0:
-      if tutorialArray.count == 0 {
+    if textSearch != "" {
+      switch section {
+      case 0:
+        if tutorialArray.count == 0 {
+          return ""
+        } else {
+          return "Tutorials"
+        }
+        
+      case 1:
+        if youtubeArray.count == 0 {
+          return ""
+        } else {
+          return "YouTube"
+        }
+        
+      default:
         return ""
-      } else {
-        return "Tutorials"
       }
-      
-    case 1:
-      if youtubeArray.count == 0 {
-        return ""
-      } else {
-        return "Youtube"
-      }
-      
-    default:
-      return ""
+    } else {
+      return nil
     }
   }
   
@@ -290,7 +293,10 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
         }
         
         self.youtubeArray.removeAll()
+        
         self.youtubeArray = response
+        self.youtubeArray.sortInPlace({ $0.title < $1.title })
+        
         dispatch_async(dispatch_get_main_queue(), {
           self.table_View.reloadData();
         })
@@ -298,9 +304,10 @@ class CategorySearchViewController:UIViewController, UITableViewDelegate, UITabl
     }
     
     DatabaseManager.sharedManager.findTutorialByCategory(textSearch, tutorialCategory: selectedCategory) { (response) in
-      if(!response.isEmpty){
+      if(!response.isEmpty) {
         self.tutorialArray = response
-        self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
+        self.tutorialArray.sortInPlace({ $0.title.lowercaseString  < $1.title.lowercaseString })
+        
       } else {
         self.tutorialArray.removeAll()
         self.table_View.performSelectorOnMainThread(#selector(UITableView.reloadData), withObject: nil, waitUntilDone: true)
