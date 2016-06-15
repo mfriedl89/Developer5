@@ -38,7 +38,7 @@ extension AppDelegate {
     
     //Others
     UIButton.appearance().tintColor = Constants.buttonColor
-    UILabel.appearance().textColor = Constants.labelColor
+//    UILabel.appearance().textColor = Constants.labelColor
     UIStepper.appearance().tintColor = Constants.buttonColor
   }
   
