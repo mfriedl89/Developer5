@@ -505,15 +505,6 @@
                                     <segue destination="y1j-Ah-LpW" kind="show" id="X42-Vz-655"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Mr Tutor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1h-mV-kvb">
-                                <rect key="frame" x="20" y="328" width="560" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="994-qD-cwD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAY-fX-DeU">
                                 <rect key="frame" x="20" y="551" width="560" height="29"/>
                                 <constraints>
@@ -537,6 +528,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launchscreen_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="WyT-Hc-KjC">
                                 <rect key="frame" x="20" y="206" width="560" height="114"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorialcloud" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1h-mV-kvb">
+                                <rect key="frame" x="20" y="328" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="994-qD-cwD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -2045,7 +2045,7 @@
     </scenes>
     <resources>
         <image name="InsertVideo" width="2691" height="2358"/>
-        <image name="Launchscreen_Icon" width="938" height="511"/>
+        <image name="Launchscreen_Icon" width="870" height="870"/>
         <image name="camera" width="597" height="476"/>
         <image name="gear" width="500" height="496"/>
         <image name="loupe" width="540" height="540"/>
@@ -2053,9 +2053,9 @@
         <image name="user" width="594" height="617"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oqj-Mq-sEP"/>
-        <segue reference="Vcy-HW-eWP"/>
+        <segue reference="X42-Vz-655"/>
         <segue reference="wtw-EX-eox"/>
+        <segue reference="oqj-Mq-sEP"/>
         <segue reference="qMN-pa-akD"/>
     </inferredMetricsTieBreakers>
 </document>
