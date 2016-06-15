@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (3.4.0)
+  - ESOpenSourceLicensesKit (1.5)
+  - RichEditorView (3.2.0)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - YouTubePlayer (0.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - ESOpenSourceLicensesKit
+  - RichEditorView
+  - SDWebImage (~> 3.7)
+  - YouTubePlayer
+
+SPEC CHECKSUMS:
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  ESOpenSourceLicensesKit: 0e2d60ba7184bd326e89b65bb706d3e03c8e9245
+  RichEditorView: b4ee60a4f5301cbe8f3fcb1f065cdd7de74ddd10
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  YouTubePlayer: 88713a96c356f2c88da8925eb61438eda88bcd57
+
+PODFILE CHECKSUM: c919bea1016e99e7ddbd6a4b86e914dbdb0caa5d
+
+COCOAPODS: 1.0.1
